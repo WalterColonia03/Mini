@@ -1,0 +1,32 @@
+{
+  "id": "AUD03Y-PREFLIGHT-IDENTIDAD01",
+  "criteria": [
+    "PROD01/CA02",
+    "PROD02/CA03",
+    "PROD03/CA02"
+  ],
+  "proposals": [
+    "DEC-03X-IDENTIDAD",
+    "PROP-03X-CA01",
+    "PROP-03X-CA02",
+    "PROP-03X-T01"
+  ],
+  "actions": [
+    "copy offline source",
+    "classify syntactic candidates",
+    "report collision groups"
+  ],
+  "not_executed": [
+    "migration",
+    "relabel data",
+    "merge UUID",
+    "application browser",
+    "phone"
+  ],
+  "input_fields": [
+    "barcode",
+    "barcode_normalized",
+    "is_active"
+  ],
+  "output": "counts and pseudonymous groups only"
+}

@@ -1,0 +1,99 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Vencimientos de productos{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>Lotes vencidos y próximos a vencer</h2>
+</div>
+
+<form method="get" class="mb-4 d-flex align-items-center gap-3 expirations-filter">
+  <label for="expiration-days" class="form-label mb-0 fw-semibold">Mostrar lotes vencidos y los que vencen en los próximos</label>
+  <div class="input-group" style="width:150px;">
+    <input id="expiration-days" type="number" name="dias" value="{{ days }}" min="1" max="3650" class="form-control">
+    <span class="input-group-text">días</span>
+  </div>
+  <button type="submit" class="btn btn-outline-primary">Filtrar</button>
+</form>
+
+<p class="text-muted">Fecha de corte: <strong>{{ cutoff }}</strong> · El sistema considera vencido un lote desde su fecha de vencimiento y lo bloquea para la venta. Al vender, descuenta primero los lotes vigentes con vencimiento más próximo.</p>
+
+{% if lots %}
+<p class="text-muted small mb-2">
+  Total en pantalla: <strong>{{ lots|length }}</strong> lote{{ lots|length|pluralize }}
+  (<strong>{{ expired_count }}</strong> vencido{{ expired_count|pluralize }} bloqueado{{ expired_count|pluralize }} para venta ·
+  <strong>{{ upcoming_count }}</strong> próximo{{ upcoming_count|pluralize }} dentro de {{ days }} día{{ days|pluralize }}).
+</p>
+<div class="table-responsive" tabindex="0" role="region" aria-label="Vencimientos de lotes, tabla desplazable">
+  <table class="table table-bordered table-hover align-middle expirations-table">
+    <thead class="table-dark">
+      <tr>
+        <th>Producto</th>
+        <th>Categoría</th>
+        <th>Lote / Nro.</th>
+        <th>Proveedor</th>
+        <th>Vence</th>
+        <th class="text-end">Cant. disponible</th>
+        <th>Estado</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for lot in lots %}
+      <tr>
+        <td class="exp-col-wrap">
+          {{ lot.product.name }}
+          {% if not lot.product.is_active %}
+            <span class="badge bg-secondary mt-1 d-inline-block">Producto inactivo</span>
+          {% endif %}
+        </td>
+        <td class="exp-col-wrap">
+          {{ lot.product.category.name }}
+          {% if not lot.product.category.is_active %}
+            <span class="badge bg-secondary mt-1 d-inline-block">Categoría desactivada</span>
+          {% endif %}
+        </td>
+        <td class="font-monospace exp-col-lot">{{ lot.number_normalized|default:lot.number }}</td>
+        <td class="exp-col-wrap">{% if lot.supplier %}{{ lot.supplier.name }}{% else %}&mdash;{% endif %}</td>
+        <td class="exp-col-date">
+          <span>{{ lot.expiration_date }}</span>
+          <small class="d-block mt-1 {% if lot.days_remaining <= 0 %}text-danger{% else %}text-muted{% endif %}">
+            {% if lot.days_remaining == 0 %}
+              Vence hoy
+            {% elif lot.days_remaining == -1 %}
+              Venció ayer (hace 1 día)
+            {% elif lot.days_remaining < -1 %}
+              Venció hace {{ lot.abs_days_remaining }} días
+            {% elif lot.days_remaining == 1 %}
+              En 1 día
+            {% else %}
+              En {{ lot.days_remaining }} días
+            {% endif %}
+          </small>
+        </td>
+        <td class="text-end">{{ lot.available_quantity }}</td>
+        <td class="exp-col-status">
+          {% if lot.days_remaining <= 0 %}
+            <span class="badge bg-danger">Vencido</span>
+            <small class="d-block text-danger mt-1">Bloqueado para venta</small>
+          {% else %}
+            <span class="badge bg-warning text-dark">Próximo</span>
+          {% endif %}
+        </td>
+        <td class="exp-col-action">
+          {% if lot.days_remaining <= 0 %}
+            <a href="{% url 'stock-writeoff' %}?lote={{ lot.pk }}" class="btn btn-sm btn-outline-danger">Dar de baja</a>
+          {% else %}
+            &mdash;
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="alert alert-success">No hay lotes con unidades disponibles que estén vencidos o venzan en los próximos {{ days }} días.</div>
+{% endif %}
+{% endblock %}
+

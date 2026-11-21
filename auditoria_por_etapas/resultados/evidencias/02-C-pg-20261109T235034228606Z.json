@@ -1,0 +1,68 @@
+{
+  "started_utc": "2026-11-09T23:50:34.232333+00:00",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit02c-pg-d6740775cb42b44864d316a1",
+  "port": 56264,
+  "mode": "verify",
+  "cases": [
+    {
+      "name": "last_admin",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "active_admins": 1
+    },
+    {
+      "name": "duplicate_email",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "normalized_count": 1
+    },
+    {
+      "name": "open_vs_deactivate",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "seller_active": true,
+      "open_shifts": 1
+    }
+  ],
+  "postgres_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "db": "audit02c_bc93de2136",
+  "isolation": "read committed",
+  "migrations": "PASS",
+  "status": "COMPLETE",
+  "port_closed": true,
+  "cluster_retained": true,
+  "finished_utc": "2026-11-09T23:50:42.577828+00:00"
+}

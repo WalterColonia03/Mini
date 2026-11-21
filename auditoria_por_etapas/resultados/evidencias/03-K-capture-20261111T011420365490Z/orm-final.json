@@ -1,0 +1,147 @@
+{
+  "catalog.Category": [
+    {
+      "id": "8012eaa4-c50b-4179-9b08-a9aa2355fe97",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "115b5379-7231-4b8f-8460-97364c699797",
+      "name": "AUD03 Bebida de prueba",
+      "barcode": "00CAT03K-C",
+      "category_id": "8012eaa4-c50b-4179-9b08-a9aa2355fe97",
+      "sale_price": "8.50",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "4afd23c7-a0b2-4567-9754-de72a16b97a4",
+      "name": "AUD03 Sin carga",
+      "barcode": "AUD03-EMPTY",
+      "category_id": "8012eaa4-c50b-4179-9b08-a9aa2355fe97",
+      "sale_price": "4.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "5d8f1a9d-f44f-4235-ad08-31c56f30a6bd",
+      "name": "AUD03 K8 jabón por unidad",
+      "barcode": "AB12AB12",
+      "category_id": "8012eaa4-c50b-4179-9b08-a9aa2355fe97",
+      "sale_price": "7.30",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "ae301838-5206-4909-b004-0ca4ca83e536",
+      "name": "AUD03 K8 manual",
+      "barcode": "00-MANUAL",
+      "category_id": "8012eaa4-c50b-4179-9b08-a9aa2355fe97",
+      "sale_price": "1.75",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "a7038b74-147f-466c-b881-a197183be936",
+      "product_id": "115b5379-7231-4b8f-8460-97364c699797",
+      "available_quantity": 19,
+      "initial_quantity": 20
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "8609bae0-de30-426b-ac26-eed7ed864ea0",
+      "product_id": "115b5379-7231-4b8f-8460-97364c699797"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "8dfa58e4-797c-4459-8a39-902f91472b40",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [
+    {
+      "id": "188f5db5-84a8-4c4b-88a2-67f7964d8a82",
+      "total_amount": "8.50",
+      "cash_received": "10.00",
+      "change_given": "1.50"
+    }
+  ],
+  "sales.SaleLine": [
+    {
+      "id": "2614dd94-312e-40ac-8ea4-06056c8d37d1",
+      "product_id": "115b5379-7231-4b8f-8460-97364c699797",
+      "product_snapshot_name": "AUD03 Bebida de prueba",
+      "product_snapshot_barcode": "AUD03-BEBIDA",
+      "unit_price": "8.50",
+      "quantity": 1
+    }
+  ],
+  "sales.SaleDraft": [
+    {
+      "id": "7d185468-847b-4dc1-adc9-070a75e25e18",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "d979002f-0634-4c98-87d2-45cf66c67636",
+      "status": "DISCARDED"
+    }
+  ],
+  "sales.SaleDraftLine": [
+    {
+      "id": "49eceeb2-32df-49fa-b77c-2f8cb0008c9e",
+      "draft_id": "7d185468-847b-4dc1-adc9-070a75e25e18",
+      "product_id": "115b5379-7231-4b8f-8460-97364c699797",
+      "quantity": 2,
+      "unit_price": "8.50"
+    },
+    {
+      "id": "e284340e-5be4-4fba-9b85-1b3c2f13c23c",
+      "draft_id": "d979002f-0634-4c98-87d2-45cf66c67636",
+      "product_id": "115b5379-7231-4b8f-8460-97364c699797",
+      "quantity": 1,
+      "unit_price": "8.50"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "115b5379-7231-4b8f-8460-97364c699797",
+      "barcode_normalized": "00cat03k-c",
+      "search_name": "aud03 bebida de prueba",
+      "average_cost": "5.0000"
+    },
+    {
+      "id": "4afd23c7-a0b2-4567-9754-de72a16b97a4",
+      "barcode_normalized": "aud03-empty",
+      "search_name": "aud03 sin carga",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "5d8f1a9d-f44f-4235-ad08-31c56f30a6bd",
+      "barcode_normalized": "ab12ab12",
+      "search_name": "aud03 k8 jabón por unidad",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "ae301838-5206-4909-b004-0ca4ca83e536",
+      "barcode_normalized": "00-manual",
+      "search_name": "aud03 k8 manual",
+      "average_cost": "0.0000"
+    }
+  ]
+}

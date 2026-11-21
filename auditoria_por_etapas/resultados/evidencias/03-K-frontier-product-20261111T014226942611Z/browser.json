@@ -1,0 +1,165 @@
+{
+  "mode": "Chrome sequential individual product suspension, checkout and stock entry",
+  "cases": [
+    {
+      "id": "mensaje-estado",
+      "ok": false
+    },
+    {
+      "id": "producto-desactivado-en-lista",
+      "ok": true
+    },
+    {
+      "id": "solo-producto-suspendido",
+      "ok": true
+    },
+    {
+      "id": "vecino-conservado",
+      "ok": true
+    },
+    {
+      "id": "cobro-antiguo-rechazado",
+      "ok": true,
+      "messages": [
+        "El producto «AUD03 Bebida de prueba» ya no está disponible para la venta. Quítalo de la venta en preparación para continuar."
+      ]
+    },
+    {
+      "id": "cobro-sin-efectos",
+      "ok": true
+    },
+    {
+      "id": "entrada-antigua-rechazada",
+      "ok": true,
+      "messages": [
+        "Seleccione un producto activo que ya tenga carga inicial."
+      ]
+    },
+    {
+      "id": "entrada-sin-efectos",
+      "ok": true
+    },
+    {
+      "id": "historico-integro",
+      "ok": true
+    },
+    {
+      "id": "almacen-motivo-stock",
+      "ok": true,
+      "cells": [
+        "AUD03 Bebida de prueba",
+        "Higiene",
+        "AUD03-BEBIDA",
+        "8,50",
+        "19",
+        "10",
+        "Inactivo"
+      ]
+    },
+    {
+      "id": "mostrador-excluye",
+      "ok": true
+    },
+    {
+      "id": "vecino-disponible-almacen",
+      "ok": true,
+      "cells": [
+        "AUD03 Sin carga",
+        "Higiene",
+        "AUD03-EMPTY",
+        "4,00",
+        "4 Stock bajo",
+        "10",
+        "Disponible"
+      ]
+    },
+    {
+      "id": "vecino-disponible-venta",
+      "ok": true
+    },
+    {
+      "id": "venta-primero",
+      "ok": true
+    },
+    {
+      "id": "constancia-tras-suspender",
+      "ok": true
+    },
+    {
+      "id": "suspension-conserva-catalog.Category",
+      "ok": true
+    },
+    {
+      "id": "suspension-conserva-inventory.Lot",
+      "ok": true
+    },
+    {
+      "id": "suspension-conserva-inventory.InitialInventoryLoad",
+      "ok": true
+    },
+    {
+      "id": "suspension-conserva-cash.CashShift",
+      "ok": true
+    },
+    {
+      "id": "suspension-conserva-sales.Sale",
+      "ok": true
+    },
+    {
+      "id": "suspension-conserva-sales.SaleLine",
+      "ok": true
+    },
+    {
+      "id": "suspension-conserva-sales.SaleDraft",
+      "ok": true
+    },
+    {
+      "id": "suspension-conserva-sales.SaleDraftLine",
+      "ok": true
+    },
+    {
+      "id": "suspension-conserva-commerce",
+      "ok": true
+    },
+    {
+      "id": "historico-vecino-integro",
+      "ok": true
+    },
+    {
+      "id": "vecino-final-integro",
+      "ok": true
+    },
+    {
+      "id": "ficha-solo-cambia-estado",
+      "ok": true
+    }
+  ],
+  "findings": [],
+  "posts": [
+    {
+      "role": "admin",
+      "path": "/productos/667855c7-b44f-4a43-bc95-c7551656c8e0/disponibilidad/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    },
+    {
+      "role": "warehouse",
+      "path": "/inventario/entrada/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/667855c7-b44f-4a43-bc95-c7551656c8e0/disponibilidad/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/667855c7-b44f-4a43-bc95-c7551656c8e0/disponibilidad/"
+    }
+  ],
+  "browser": "157.0.8103.39"
+}

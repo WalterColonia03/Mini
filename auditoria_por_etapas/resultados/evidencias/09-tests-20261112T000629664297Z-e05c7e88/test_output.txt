@@ -1,0 +1,264 @@
+Found 20 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_anonymous_redirects_on_all_cash_urls (cash.test_audit09_cash.Audit09CashRegressionTests.test_anonymous_redirects_on_all_cash_urls) ... ok
+test_fix09_01_02_close_empty_post_no_open_shift_and_retry_show_visible_errors (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_02_close_empty_post_no_open_shift_and_retry_show_visible_errors) ... ok
+test_fix09_01_04_05_open_empty_post_boundaries_ascii_and_cache_headers (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_04_05_open_empty_post_boundaries_ascii_and_cache_headers) ... ok
+test_fix09_01_draft_with_and_without_lines_vs_cash_close (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_draft_with_and_without_lines_vs_cash_close) ... Not Found: /caja/turnos/ebc91632-10bc-4883-b2b8-ec757a8cd92e/cerrado/
+FAIL
+test_fix09_03_service_validation_boundaries_and_stale_actor_checks (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_03_service_validation_boundaries_and_stale_actor_checks) ... ok
+test_logout_discards_draft_and_preserves_open_shift (cash.test_audit09_cash.Audit09CashRegressionTests.test_logout_discards_draft_and_preserves_open_shift) ... ok
+test_role_matrix_permissions_and_http_methods (cash.test_audit09_cash.Audit09CashRegressionTests.test_role_matrix_permissions_and_http_methods) ... Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/cerrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/turnos/2d2d9d6d-3e1c-4061-85b2-e31a9ad4533a/abierto/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/turnos/2d2d9d6d-3e1c-4061-85b2-e31a9ad4533a/cerrado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/turnos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/cerrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/cerrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/turnos/2d2d9d6d-3e1c-4061-85b2-e31a9ad4533a/abierto/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/cerrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Method Not Allowed (PUT): /caja/abrir/
+Method Not Allowed (DELETE): /caja/cerrar/
+Method Not Allowed (POST): /caja/turnos/2d2d9d6d-3e1c-4061-85b2-e31a9ad4533a/abierto/
+Method Not Allowed (POST): /caja/turnos/2d2d9d6d-3e1c-4061-85b2-e31a9ad4533a/cerrado/
+Method Not Allowed (POST): /caja/turnos/
+ok
+test_shift_history_isolation_styles_and_constant_query_count (cash.test_audit09_cash.Audit09CashRegressionTests.test_shift_history_isolation_styles_and_constant_query_count) ... ok
+test_database_constraint_rejects_two_open_shifts_for_register (cash.tests.CashOpeningTests.test_database_constraint_rejects_two_open_shifts_for_register) ... ok
+test_existing_global_open_shift_blocks_another_seller (cash.tests.CashOpeningTests.test_existing_global_open_shift_blocks_another_seller) ... ok
+test_invalid_amounts_do_not_create_shift (cash.tests.CashOpeningTests.test_invalid_amounts_do_not_create_shift) ... ok
+test_other_roles_cannot_open_shift_by_direct_post (cash.tests.CashOpeningTests.test_other_roles_cannot_open_shift_by_direct_post) ... Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_seller_cannot_view_another_sellers_shift_detail (cash.tests.CashOpeningTests.test_seller_cannot_view_another_sellers_shift_detail) ... Not Found: /caja/turnos/a30ead2e-6530-4562-a652-5a34b2f8567b/abierto/
+ok
+test_seller_opens_zero_amount_shift_linked_to_session (cash.tests.CashOpeningTests.test_seller_opens_zero_amount_shift_linked_to_session) ... ok
+test_admin_can_see_shift_history (cash.tests.CashShiftHistoryTests.test_admin_can_see_shift_history) ... ok
+test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link (cash.tests.CashShiftHistoryTests.test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link)
+BUG-023 y BUG-031: /caja/abrir/ informa quién ocupa la caja y /caja/turnos/<id>/abierto/ enlaza a preparar venta. ... ok
+test_cash_open_and_close_reject_scientific_notation_and_absurd_amounts (cash.tests.CashShiftHistoryTests.test_cash_open_and_close_reject_scientific_notation_and_absurd_amounts)
+BUG-009: Apertura y cierre de caja rechazan notación científica (1e5) y montos desmesurados. ... ok
+test_seller_can_see_shift_history (cash.tests.CashShiftHistoryTests.test_seller_can_see_shift_history) ... ok
+test_shift_history_renders_shortage_surplus_and_exact_labels_and_amounts (cash.tests.CashShiftHistoryTests.test_shift_history_renders_shortage_surplus_and_exact_labels_and_amounts)
+BUG-002: El historial de turnos muestra el monto y la etiqueta de la diferencia (Faltante/Sobrante/Exacto). ... ok
+test_warehouse_gets_403 (cash.tests.CashShiftHistoryTests.test_warehouse_gets_403) ... Forbidden (Permission denied): /caja/turnos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+
+======================================================================
+FAIL: test_fix09_01_draft_with_and_without_lines_vs_cash_close (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_draft_with_and_without_lines_vs_cash_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\cash\test_audit09_cash.py", line 322, in test_fix09_01_draft_with_and_without_lines_vs_cash_close
+    self.assertContains(r_acta, "success-panel panel mt-3")
+AssertionError: False is not true : Couldn't find 'success-panel panel mt-3' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Turno cerrado \xc2\xb7 Minimarket</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n          \n          \n            <a class="nav-item" href="/caja/abrir/">\n              <span class="nav-icon" aria-hidden="true">$</span><span>Apertura de caja</span>\n            </a>\n            <a class="nav-item" href="/ventas/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Preparar venta</span>\n            </a>\n            <a class="nav-item is-active" href="/caja/cerrar/">\n              <span class="nav-icon" aria-hidden="true">&#10006;</span><span>Cerrar turno</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/turno/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Mis ventas del turno</span>\n            </a>\n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">V</span>\n            <span><strong>Vendedor Uno A09</strong><small>Vendedor</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>\n              Cerrar turno\n              \n            </h1>\n          </div>\n          <div class="topbar-user"><span>Vendedor Uno A09</span><span class="role-pill">Vendedor</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<section class="success-panel panel no-print" data-testid="cash-shift-closed">\n  <div class="success-icon" aria-hidden="true">\xe2\x9c\x93</div>\n  <p class="eyebrow">Cierre registrado</p>\n  <h2>Turno cerrado correctamente</h2>\n  <p class="lede">El turno de CAJA-01 ha sido cerrado y el acta qued\xc3\xb3 registrada.</p>\n</section>\n\n<section class="success-panel panel info-panel cash-close-acta mt-3">\n  <h3>Acta de cierre del turno</h3>\n  <dl class="summary-list summary-list-wide">\n    <div><dt>Caja</dt><dd>CAJA-01</dd></div>\n    <div><dt>Vendedor</dt><dd>Vendedor Uno A09</dd></div>\n    <div><dt>Apertura</dt><dd>11/11/2026 19:06</dd></div>\n    <div><dt>Cierre</dt><dd>11/11/2026 19:06</dd></div>\n    <div><dt>Monto inicial</dt><dd>S/ 100,00</dd></div>\n    <div><dt>Total cobrado</dt><dd>S/ 10,00</dd></div>\n    <div><dt>Monto esperado</dt><dd>S/ 110,00</dd></div>\n    <div><dt>Monto contado</dt><dd>S/ 105,00</dd></div>\n    <div>\n      <dt>Diferencia</dt>\n      <dd>\n        \n          <span class="status status-error">Faltante S/ -5,00</span>\n        \n      </dd>\n    </div>\n  </dl>\n\n  <div class="form-actions no-print">\n    <a class="button button-primary" href="/inicio/">Volver al inicio</a>\n    <a class="button button-secondary" href="/caja/turnos/">Ver historial de turnos</a>\n    <button class="button button-secondary" type="button" onclick="window.print()">Imprimir acta</button>\n  </div>\n</section>\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  <script src="/static/identity/navigation.js" defer></script>\n  \n</body>\n</html>\n'
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.644s
+
+FAILED (failures=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

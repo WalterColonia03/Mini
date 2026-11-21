@@ -1,0 +1,454 @@
+{
+  "stage": "03-B",
+  "started_utc": "2026-11-10T02:05:07.766Z",
+  "cases": [
+    {
+      "id": "C00-isolation",
+      "ok": true
+    },
+    {
+      "id": "C01-empty",
+      "ok": true,
+      "screenshot": "C01-empty.png"
+    },
+    {
+      "id": "C02-full-list",
+      "ok": true,
+      "headers": [
+        "Nombre",
+        "Categoría",
+        "Código de barras",
+        "Precio (S/)",
+        "Existencias vigentes (UND)",
+        "Stock mínimo",
+        "Disponibilidad",
+        "Acciones"
+      ],
+      "screenshot": "C02-catalogue.png"
+    },
+    {
+      "id": "C02-desktop-columns",
+      "ok": true,
+      "width": 1028,
+      "contentWidth": 1028
+    },
+    {
+      "id": "C03-row-AUD03B-ZERO",
+      "ok": true,
+      "expected": {
+        "current": 0,
+        "physical": 0,
+        "minimum": 10,
+        "availability": "Sin stock vigente"
+      },
+      "observed": {
+        "Nombre": "AUD03B Cero",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-ZERO",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "0 Stock bajo",
+        "Stock mínimo": "10",
+        "Disponibilidad": "Sin stock vigente",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-LOW",
+      "ok": true,
+      "expected": {
+        "current": 9,
+        "physical": 9,
+        "minimum": 10,
+        "availability": "Disponible"
+      },
+      "observed": {
+        "Nombre": "AUD03B Bajo",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-LOW",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "9 Stock bajo",
+        "Stock mínimo": "10",
+        "Disponibilidad": "Disponible",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-EQUAL",
+      "ok": true,
+      "expected": {
+        "current": 10,
+        "physical": 10,
+        "minimum": 10,
+        "availability": "Disponible"
+      },
+      "observed": {
+        "Nombre": "AUD03B Igual",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-EQUAL",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "10 Stock bajo",
+        "Stock mínimo": "10",
+        "Disponibilidad": "Disponible",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-HIGH",
+      "ok": true,
+      "expected": {
+        "current": 11,
+        "physical": 11,
+        "minimum": 10,
+        "availability": "Disponible"
+      },
+      "observed": {
+        "Nombre": "AUD03B Alto",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-HIGH",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "11",
+        "Stock mínimo": "10",
+        "Disponibilidad": "Disponible",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-MIX",
+      "ok": true,
+      "expected": {
+        "current": 9,
+        "physical": 62,
+        "minimum": 10,
+        "availability": "Disponible"
+      },
+      "observed": {
+        "Nombre": "AUD03B Mezcla",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-MIX",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "9 Stock bajo",
+        "Stock mínimo": "10",
+        "Disponibilidad": "Disponible",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-MINZERO",
+      "ok": true,
+      "expected": {
+        "current": 0,
+        "physical": 0,
+        "minimum": 0,
+        "availability": "Sin stock vigente"
+      },
+      "observed": {
+        "Nombre": "AUD03B Mínimo cero",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-MINZERO",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "0 Stock bajo",
+        "Stock mínimo": "0",
+        "Disponibilidad": "Sin stock vigente",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-MINTHREE",
+      "ok": true,
+      "expected": {
+        "current": 4,
+        "physical": 4,
+        "minimum": 3,
+        "availability": "Disponible"
+      },
+      "observed": {
+        "Nombre": "AUD03B Mínimo tres",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-MINTHREE",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "4",
+        "Stock mínimo": "3",
+        "Disponibilidad": "Disponible",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-OFF",
+      "ok": true,
+      "expected": {
+        "current": 9,
+        "physical": 9,
+        "minimum": 10,
+        "availability": "Producto deshabilitado"
+      },
+      "observed": {
+        "Nombre": "AUD03B Producto inactivo",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-OFF",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "9 Stock bajo",
+        "Stock mínimo": "10",
+        "Disponibilidad": "Producto deshabilitado",
+        "Acciones": "Editar Habilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-CATOFF",
+      "ok": true,
+      "expected": {
+        "current": 11,
+        "physical": 11,
+        "minimum": 10,
+        "availability": "Categoría desactivada"
+      },
+      "observed": {
+        "Nombre": "AUD03B Categoría suspendida",
+        "Categoría": "AUD03B Categoría inactiva",
+        "Código de barras": "AUD03B-CATOFF",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "11",
+        "Stock mínimo": "10",
+        "Disponibilidad": "Categoría desactivada",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-ACCENT",
+      "ok": true,
+      "expected": {
+        "current": 2,
+        "physical": 2,
+        "minimum": 1,
+        "availability": "Disponible"
+      },
+      "observed": {
+        "Nombre": "AUD03B Atún clásico",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-ACCENT",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "2",
+        "Stock mínimo": "1",
+        "Disponibilidad": "Disponible",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C03-row-AUD03B-XSS",
+      "ok": true,
+      "expected": {
+        "current": 0,
+        "physical": 0,
+        "minimum": 10,
+        "availability": "Sin stock vigente"
+      },
+      "observed": {
+        "Nombre": "AUD03B <script>texto</script>",
+        "Categoría": "AUD03B Conservas",
+        "Código de barras": "AUD03B-XSS",
+        "Precio (S/)": "8,50",
+        "Existencias vigentes (UND)": "0 Stock bajo",
+        "Stock mínimo": "10",
+        "Disponibilidad": "Sin stock vigente",
+        "Acciones": "Editar Deshabilitar"
+      }
+    },
+    {
+      "id": "C04-search-code-exact",
+      "ok": true,
+      "result_codes": [
+        "AUD03B-HIGH"
+      ],
+      "query_length": 11
+    },
+    {
+      "id": "C04-search-code-spaces",
+      "ok": true,
+      "result_codes": [
+        "AUD03B-HIGH"
+      ],
+      "query_length": 23
+    },
+    {
+      "id": "C04-search-name-partial",
+      "ok": true,
+      "result_codes": [
+        "AUD03B-HIGH"
+      ],
+      "query_length": 11
+    },
+    {
+      "id": "C04-search-name-accent",
+      "ok": true,
+      "result_codes": [
+        "AUD03B-ACCENT"
+      ],
+      "query_length": 4
+    },
+    {
+      "id": "C04-search-no-match",
+      "ok": true,
+      "result_codes": [],
+      "query_length": 11
+    },
+    {
+      "id": "C04-search-html",
+      "ok": true,
+      "result_codes": [],
+      "query_length": 25
+    },
+    {
+      "id": "C04-search-sql",
+      "ok": true,
+      "result_codes": [],
+      "query_length": 11
+    },
+    {
+      "id": "C04-search-wildcard-percent",
+      "ok": true,
+      "result_codes": [],
+      "query_length": 1
+    },
+    {
+      "id": "C04-search-wildcard-underscore",
+      "ok": true,
+      "result_codes": [],
+      "query_length": 1
+    },
+    {
+      "id": "C04-search-long4096",
+      "ok": true,
+      "result_codes": [],
+      "query_length": 4096
+    },
+    {
+      "id": "C04-search-spaces",
+      "ok": true,
+      "result_codes": [
+        "AUD03B-ACCENT",
+        "AUD03B-CATOFF",
+        "AUD03B-EQUAL",
+        "AUD03B-HIGH",
+        "AUD03B-LOW",
+        "AUD03B-MINTHREE",
+        "AUD03B-MINZERO",
+        "AUD03B-MIX",
+        "AUD03B-OFF",
+        "AUD03B-XSS",
+        "AUD03B-ZERO"
+      ],
+      "query_length": 3
+    },
+    {
+      "id": "C04-search-empty",
+      "ok": true,
+      "result_codes": [
+        "AUD03B-ACCENT",
+        "AUD03B-CATOFF",
+        "AUD03B-EQUAL",
+        "AUD03B-HIGH",
+        "AUD03B-LOW",
+        "AUD03B-MINTHREE",
+        "AUD03B-MINZERO",
+        "AUD03B-MIX",
+        "AUD03B-OFF",
+        "AUD03B-XSS",
+        "AUD03B-ZERO"
+      ],
+      "query_length": 0
+    },
+    {
+      "id": "C04-unicode-case",
+      "ok": true
+    },
+    {
+      "id": "C05-no-match-message",
+      "ok": true,
+      "screenshot": "C05-no-match.png"
+    },
+    {
+      "id": "C06-clear",
+      "ok": true
+    },
+    {
+      "id": "C07-keyboard-label",
+      "ok": true
+    },
+    {
+      "id": "C08-reload",
+      "ok": true
+    },
+    {
+      "id": "C09-back",
+      "ok": true,
+      "query": "AUD03B-MIX",
+      "input": "AUD03B-MIX",
+      "first": "AUD03B-MIX"
+    },
+    {
+      "id": "C10-null-query",
+      "ok": true,
+      "screenshot": "C10-invalid.png"
+    },
+    {
+      "id": "C11-tampered-get",
+      "ok": true
+    },
+    {
+      "id": "C12-post-denied",
+      "ok": true,
+      "status": 405
+    },
+    {
+      "id": "C13-warehouse-data",
+      "ok": true,
+      "screenshot": "C13-warehouse.png"
+    },
+    {
+      "id": "C14-warehouse-search",
+      "ok": true
+    },
+    {
+      "id": "C15-seller-sale-query",
+      "ok": true,
+      "screenshot": "C15-sale-query.png"
+    },
+    {
+      "id": "C16-seller-denied",
+      "ok": true,
+      "screenshot": "C16-seller-denied.png"
+    },
+    {
+      "id": "C17-visitor",
+      "ok": true,
+      "location": "/?next=/productos/"
+    },
+    {
+      "id": "C18-mobile-actions",
+      "ok": true,
+      "moved": true,
+      "actionsVisible": true,
+      "screenshot": "C18-mobile-actions.png"
+    },
+    {
+      "id": "C19-no-business-mutation",
+      "ok": true
+    }
+  ],
+  "observations": [
+    {
+      "id": "OBS03B-mobile",
+      "screenshot": "C18-mobile.png",
+      "layout": {
+        "pageOverflow": false,
+        "tableOverflow": true
+      }
+    }
+  ],
+  "errors": [],
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "browser": "157.0.8103.39",
+  "finished_utc": "2026-11-10T02:05:16.529Z"
+}

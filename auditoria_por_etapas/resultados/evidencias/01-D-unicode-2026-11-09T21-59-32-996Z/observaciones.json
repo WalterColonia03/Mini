@@ -1,0 +1,68 @@
+{
+  "inicio_utc": "2026-11-09T21:59:32.996Z",
+  "casos": [
+    {
+      "caso": "Espacios NBSP, tabulador y mayúsculas",
+      "http_post": 302,
+      "ruta": "/inicio/",
+      "filas_antes": 23,
+      "filas_despues": 23,
+      "cookie_sesion_presente": true,
+      "rol": "Administrador",
+      "last_login_actualizado": true
+    },
+    {
+      "caso": "Correo compuesto sólo por espacios",
+      "http_post": 200,
+      "ruta": "/",
+      "filas_antes": 23,
+      "filas_despues": 23,
+      "cookie_sesion_presente": false,
+      "error_campo": [
+        "Este campo es obligatorio."
+      ],
+      "error_general": [],
+      "clave_vacia": true,
+      "captura": "caso-2.png",
+      "sha256": "fe5914bfe3d4e47dfefccd0c8e56b167afc457c4f40ecade19e37b5e1898a66a"
+    },
+    {
+      "caso": "Parte local Unicode",
+      "http_post": 200,
+      "ruta": "/",
+      "filas_antes": 23,
+      "filas_despues": 23,
+      "cookie_sesion_presente": false,
+      "error_campo": [
+        "Introduzca una dirección de correo electrónico válida."
+      ],
+      "error_general": [],
+      "clave_vacia": true,
+      "captura": "caso-3.png",
+      "sha256": "74acd63d314685236939f759aa046e4d91b9c64e37c344e743c7895acc0347f2"
+    },
+    {
+      "caso": "Dominio IDN de identificador ficticio inexistente",
+      "http_post": 200,
+      "ruta": "/",
+      "filas_antes": 23,
+      "filas_despues": 24,
+      "cookie_sesion_presente": false,
+      "error_campo": [],
+      "error_general": [
+        "Correo o contraseña incorrectos"
+      ],
+      "clave_vacia": true,
+      "captura": "caso-4.png",
+      "sha256": "94b395d8cfbf520bf63404bfedf92995ab5285ee021dd27a9f450f2cb3092c79"
+    }
+  ],
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "navegador": "157.0.8103.39",
+  "base": "datos/etapa01-20261109/audit.sqlite3",
+  "resultado": "CUMPLE en los cuatro casos",
+  "fin_utc": "2026-11-09T21:59:40.242Z"
+}

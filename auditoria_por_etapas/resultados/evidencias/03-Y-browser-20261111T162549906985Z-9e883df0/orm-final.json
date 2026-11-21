@@ -1,0 +1,142 @@
+{
+  "catalog.Category": [
+    {
+      "id": "6c5b440e-c975-4a75-abc5-ec163f8ca11b",
+      "name": "Suspendida",
+      "name_normalized": "suspendida",
+      "is_active": false
+    },
+    {
+      "id": "b29da013-043a-4fc0-8e0a-476ee5a6456d",
+      "name": "Productos enlatados",
+      "name_normalized": "productos enlatados",
+      "is_active": true
+    },
+    {
+      "id": "c5eb455b-16f8-44b9-ab5a-fafb92437b79",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "502d1cc6-5fc0-48b5-9aae-bc0ba7dda03e",
+      "name": "Interno Y",
+      "barcode": "0012345678906",
+      "category_id": "c5eb455b-16f8-44b9-ab5a-fafb92437b79",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "dc877f85-6541-4c14-a467-ba8d12105d34",
+      "name": "GTIN Y",
+      "barcode": "012345678905",
+      "category_id": "c5eb455b-16f8-44b9-ab5a-fafb92437b79",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "a061bbdd-9528-4a09-9e36-afc671cfdbf0",
+      "product_id": "dc877f85-6541-4c14-a467-ba8d12105d34",
+      "available_quantity": 6,
+      "initial_quantity": 7
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "fdee3aab-38b9-438b-b115-40ec7e39e33b",
+      "product_id": "dc877f85-6541-4c14-a467-ba8d12105d34"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "5725fad2-4bb5-4f9e-9cfe-d134377120b8",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [
+    {
+      "id": "6dc97e8b-ad16-4635-8847-1e755c6b3ac3",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    }
+  ],
+  "sales.SaleLine": [
+    {
+      "id": "8c9f6b7c-e56a-4bf8-ade5-067753b71ab6",
+      "product_id": "dc877f85-6541-4c14-a467-ba8d12105d34",
+      "product_snapshot_name": "GTIN Y",
+      "product_snapshot_barcode": "0012345678905",
+      "unit_price": "3.00",
+      "quantity": 1
+    }
+  ],
+  "sales.SaleDraft": [
+    {
+      "id": "9e395362-200e-40b6-8eaa-3ee120892fc7",
+      "status": "DISCARDED"
+    }
+  ],
+  "sales.SaleDraftLine": [
+    {
+      "id": "e2d2bd1e-5af6-465a-a8e8-1f05820f65cc",
+      "draft_id": "9e395362-200e-40b6-8eaa-3ee120892fc7",
+      "product_id": "dc877f85-6541-4c14-a467-ba8d12105d34",
+      "quantity": 1,
+      "unit_price": "3.00"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "502d1cc6-5fc0-48b5-9aae-bc0ba7dda03e",
+      "barcode_normalized": "0012345678906",
+      "search_name": "interno y",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "dc877f85-6541-4c14-a467-ba8d12105d34",
+      "barcode_normalized": "012345678905",
+      "search_name": "gtin y",
+      "average_cost": "1.0000"
+    }
+  ],
+  "identity": [
+    {
+      "id": "502d1cc6-5fc0-48b5-9aae-bc0ba7dda03e",
+      "barcode_type": "INTERNAL"
+    },
+    {
+      "id": "dc877f85-6541-4c14-a467-ba8d12105d34",
+      "barcode_type": "GTIN"
+    }
+  ],
+  "catalog.ProductBarcodeKey": [
+    {
+      "product_id": "dc877f85-6541-4c14-a467-ba8d12105d34",
+      "reading_key": "00012345678905"
+    },
+    {
+      "product_id": "dc877f85-6541-4c14-a467-ba8d12105d34",
+      "reading_key": "0012345678905"
+    },
+    {
+      "product_id": "502d1cc6-5fc0-48b5-9aae-bc0ba7dda03e",
+      "reading_key": "0012345678906"
+    },
+    {
+      "product_id": "dc877f85-6541-4c14-a467-ba8d12105d34",
+      "reading_key": "012345678905"
+    }
+  ]
+}

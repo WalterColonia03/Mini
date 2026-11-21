@@ -1,0 +1,86 @@
+# Revisión independiente para cierre de etapa14 · 14/11/2026 Lima
+
+Primera pasada. Revisor separado del implementador; corte examinado14-I,08 SHA256 `9b291fc4bd4f15cd00042e36836e8425305b09572cd969a124aebc1700909ab2`, build de las ejecuciones `cd148c66cc77dd2d1994e4d6048a2250f5c1a5bd75b939873c1effef35e1a1df`. Esta revisión no modifica producto,08ni estados de etapas. Las implementaciones posteriores deben obtener evidencia propia; los estados siguientes describen el corte14-I.
+
+El usuario ahora pide corregir lo necesario hasta completar14. El pedido permite resolver los defectos técnicos de ese alcance; no convierte una prueba no ejecutada en aprobación, no selecciona las HU futuras ni autoriza datos operativos. Leídos el protocolo completo, continuidad, informe14-I y los inventarios14-D/E/F/G/H/H2/I; se contrastaron las porciones aplicables de08 y servicios/vistas/modelos actuales de inventory, cash y sales.
+
+## Frontera verificable del cierre
+
+La etapa14 verifica conexiones identity→catalog→inventory→cash→sales, efectos entre roles, navegador y persistencia.08, **CP-INTEGRACION-ROLES-001/resultados esperados**, asigna expresamente «Concurrencia PostgreSQL, caída postwrite, restauración, CI y despliegue» a pruebas propias de15. Esa frontera ya estaba aceptada: conservarla no es trasladar un defecto para fabricar cierre. En cambio, las carencias funcionales de ajuste nuevo/costoQ0, historia de ajustes y límites que impiden cerrar caja fueron pendientes explícitos de14y deben resolverse aquí.
+
+Los80CA del inventario14-D son el universo de dependencias de23HU, no80CA que esta etapa deba volver a certificar íntegramente. Deben quedar trazados con alcance revalidado/heredado/no ejecutado. El cierre legítimo es **COMPLETADA en primera pasada para integración por roles y los casos delimitados**, no «100%de todos los módulos» ni verificación completa deCT-ROLLBACK/CT-COHERENCIA de todo el producto.
+
+## Bloqueos funcionales de14 confirmados por inspección
+
+| ID / prioridad | Fuente precisa | Estado al corte14-I y prueba previa | Qué falta / evidencia de cierre exigida |
+|---|---|---|---|
+|CI14-01 · P1|08 HU-INV-03/CA01, RN-05/C02, CP-HU-INV-03-001|`register_physical_adjustment` recibe solo Lot existente; UI solo selector de lotes. No crea origen AJUSTE.14-I deja cursor posterior|AltaADMIN de lote nuevo con número normalizado, fecha fiable, cantidadpositiva y motivo. Mismo producto/lote comercial/vencimiento ambiguo rechaza o comportamiento aceptado explícito; no inventar compra/proveedor/carga. Ver registro, stock y Kardex; ALM/VEN403. Lote vencido entra físico no vendible; POS no permite venderlo|
+|CI14-02 · P1|08 DOC-03AH-01 «Entradas y cálculo», RN14, INV03/CA01 y CP-HU-INV-03-001|Servicio actual rechaza cualquier ajuste+cuando físicoQ=0.14-E verificó rechazo sin costo, no la variante con costo|Q0con costo fiable positivo/documentado y fuente/motivo: aceptar, capturar costo4decimales y procedencia; Q0sin costo/fuente/motivo rechaza íntegro. ConQ>0 usar promedio vigente, no precio de compra inventado. Después vender/mermar y verificar costo histórico/average al agotar. UIyservicio coherentes|
+|CI14-03 · P2|08 INV03/CA03, INV04/CA03, DOC03AI historia, cursor14-J|PhysicalAdjustment conservaFKresponsible, sin snapshot. `ledger.py` lee responsable.display_name y número actual deLot.14-H2/14-I declaranCA03PARCIAL|A10@3→ajuste+2→−3=9; renombrar autor/producto/lote y reabrir comoADMIN/ALM. Conservar registro original, motivo, fecha, costo y origen; cargaoriginal sigue10. Legado ausente debe etiquetarse y no rellenarse con maestrosactuales|
+|CI14-04 · P1|08 RN-05/C04 (segmento secuencial), errores sinmutación, CP-HU-INV-03-001|Ajuste mantiene `_save_inventory_key` con50claves por sesión y fallback2s; servicio no tieneUUID. Merma14-I corrigió exactamente esa debilidad; no la resuelve para ajustes|Reproducir mismaUUID/actor/contenido en dos sesiones y tras agotamiento/fecha/estado. Debe devolver mismo resultado y un solo ajuste; divergencia/actorajeno rechaza. UUID explícita, normalización, error no consumeclave; nuevo lote no se duplica por reintento. Fallo postwrite revierte identidad/registro/stock/costo/origen|
+|CI14-05 · P1|08 DEC-11-TOPE-EFECTIVO-FORM/C01/C02, HU-CAJA-02/CA01/02,14-D pendiente «límites acumulados de cierre»|`cash/forms.py` contado max9,999,999.99; `close_cash_shift` reutiliza ese mismo tope. `sales/services.py MAX_SALE_MONEY=999,999,999,999.99` admite tope de almacenamiento como tope porventa|Venta/efectivo/apertura máx9,999,999.99; cierre acumulado puede ser10,000,000 y hasta999,999,999,999.99. No bloquear cierre legítimo; impedir antes venta que exceda capacidad acumulada. Probar max/+0.01, Decimal2, rechazo sinmutación; esperado suma totalventa, noefectivorecibido. Preservar reenvío histórico con importes antiguos conocidos si corresponde, no reescribirlos|
+
+Estos cinco bloques son observaciones de código contra contrato, no resultados de ejecución nuevos. Los agentes implementadores deben añadir reproducción/corrección/testigos en sus propios artefactos antes de marcarlos resueltos.
+
+## Evidencia que debe completar el corte final
+
+| ID / prioridad | Dependencia y evidencia anterior | Revalidación o decisión necesaria |
+|---|---|---|
+|CI14-06 · P1|14-I `navegador/cadena-final`:44checkpoints, alta de maestros→cierre114.20. 614tests estáticos respecto a buildI|Reejecutar la cadena contra buildfinal congelado después de ajustes/topes. Mantener casos de permisosPOST, categoría/productoinactivo, vencimientoentre revisiónycobro, efectivo insuficiente, mermaexceso/causa, cierre repetido. Positivos yrechazos deben comparar tablas completas pertinentes; 403soloapariencia no alcanza|
+|CI14-07 · P1|14-I `final-2`:26checks, constancia/reenvío/historia/legado; H1/G/F/H2 nuevosorígenes/snapshot/lotes|Nueva implementación AJUSTE afectará validación de origen, conciliaciónKardex, FEFO, recepción conloterepetido y salida. Revalidar secuencia con carga, recepciónR1/R2, ajuste nuevo, venta multilote, merma y saldo. No reutilizarCUMPLEH2si algoritmo deorigen cambió; comparar cada manifest relevante|
+|CI14-08 · P2|14-I inventarioI-UI03/05/22 ylimitaciones|Recorrer enChrome selectorvacío, UUIDausente/inválida, confirmacióncorrecta traserror y ramaslegadodeKardex/nuevamerma sobreorigen desconocido. Cantidad1/999999/límite+1 ytexto largo son especialmente relevantes para controlesnuevos. Si unestado es material pero no se recorre, declararloNOEJECUTADO y limitarconclusión, no convertirlo enCUMPLE|
+|CI14-09 · P2|14-H2 dos ramas deaviso noinyectadas: cabeceraincompleta/dobleorigen|Con origenAJUSTE habráotro tipo ycombinaciones. Inyectar relacionesincompletas/ambiguas enfixture y verificar que no se inventa saldo ni origen; conservar movimientos útiles. Probar saldo traslotenuovo/ajusteQ0 yvencido; errorescompensadosporlote no concilianporcasualidad|
+|CI14-10 · P2|CT-COHERENCIA-UI/C01..04; inventarios22familiasI/24H2 yD23HU80CA|Inventariar nuevoscampos/ayudas/acciones/literales yclasificarlos contra08 antes delcierre. Rutasnuevas, errores y éxito posteriorcommit deben estar trazados. La propuesta de resumen enfocableR14I-01 no era requisito funcional nuevo aceptado; si se implementa porautorizaciónactual, conservar fundamento y prueba de teclado/anuncio, sin declarar accesibilidadintegral|
+|CI14-11 · P2|08 CP-INTEGRACION-ROLES-001 estadoPARCIAL; CP-INV03DISEÑADO;08/vistas14-Icoherentes|Actualizar08porcaso con evidencia real; regenerar07/09/03 ycoherencia02/14/16/21/continuidad. Informe14debe preservarpredecesores, versión08/build, criterios yestados. Matriz final deberá resolvercadaCI14dealcanceoindicar porqué noaplica. «614verde» no suplanta requisito/caso/navegador|
+
+No encontré al revisarGETdeventas una nueva mutación automática deprecio: `active_draft_for_actor`/`sales_draft` actuales leen sin guardar; la actualización ocurre porPOSTexplícito. Esa deuda textual de14-D no debe repetirse como defecto nuevo sin ejecución. El cambio deprecio entreADMINyVENDEDOR sí merece una variante final de integración con revisión explícita y no cobro silencioso; usar evidencia03-R/S disponible como heredada hasta revalidarla.
+
+El orden dehistorialdetumos aún usa solo`-opened_at`, y08DEC12/C01 incluye desempateestable. Es defecto adyacente deconsulta12, no se ha demostrado que bloquee la cadena14. Si la revisiónfinal selecciona ese historial como salida, añadirIDdesempate yensayo dosaperturasiguales; enotrocaso conservarpendiente12con evidencia/alcance, sin declararCAcompleto. Lo mismo para80CArestantes de módulos: mapa específico, no cierre global impuesto.
+
+## Pendientes propios de otras etapas y hechos externos
+
+| Pendiente | Asignación sustentada | Lo que14 puede afirmar / lo que no |
+|---|---|---|
+|Carreras venta/baja/ajuste, recepciónvsventa, dobleUUIDconcurrente, snapshotKardex|15; asignaciónexplícitaCP-INTEGRACION-ROLES-001. RN05/C04 yDOC03AH/C04conservan segmentosconcurrentes|14cierra comportamientosecuencial/atomicidadanteexcepción. Si agregaPGes evidenciaacotada reutilizable, no15completa. NuncaSQLite=FORUPDATEreal|
+|Matar proceso tras escritura, reiniciomotor, respaldorestauración,CI/despliegue|15 yCT-ROLLBACK/C01..03 explícitos|Excepciónpostwrite ≠ caída real; éxito deregresión ≠ CI/despliegue. No se necesitan para aprobarla cadena secuencial14, peroloscontratosglobales siguenPARCIAL|
+|Constraints/privilegiosSQL, hardening,sesiones/retención/tráfico,volumen/SLA|15. DEC11/C03 puede acompañar correccióntopes y mejorarintegridad|No certificarSQLprivilegiado porvista sololectura. Medircasoaislado si seimplementa; noextrapolar afuerzaoperativa|
+|Diagnóstico/migración de datosoperativos, costos/fechaslegacy reales, apertura producto solo vencidos|Investigación/operaciónautorizada aparte;08RN05loestablece|Fixture/camposNULLsinbackfill sí comprobables. Faltahecho real noautoriza inventarlo. Baseoperativa permaneceintacta; no impide cerrar pruebascon datos ficticios|
+|Impresorafísica, móvilfísico, lectorpantalla/SLAreal|Validación dedispositivo/NFRpropia; no pedido dedispositivo específico|ChromeCSSprint/dispatchinstrumentado prueba salidaweb, no impresora. Protocolo exige declararlo; no fingir aprobaciónni exigirhardwareinexistente para cadena14|
+|Normativa/fiscalidad ydatos reales delnegocio|16|Mantenerleyendainterna; noimpresiónfiscal/SUNAT. No investigaciónlegalsuplida poreste informe|
+|Conciliacióncompleta ysegundapasada01–17|17, luego00ysegunda01–17 segúncontinuidad|Cierre14no cambiaotrosmódulos/17ni convierteprimerapasada ensegunda|
+|INV05/06, REP08, CAJA03/04, SOL completo yotrasHUfuturas|08selecciónexplícitaFUTURO|Ausencia noesincumplimientoactual; no añadirlaspor«corrige todo». Promesavisible engañosa síesdefectoactual|
+
+## Condición de aceptación del cierre14
+
+1. CI14-01..05 implementados y comprobados; si la implementaciónrevela otro defecto funcional delmismo recorrido, resolverlo antes de cerrar.
+2. Cadena y variantes secuencialesfinales efectivas con tresroles,HTTPreal, persistencia; lotenuevo/costoQ0 y sus efectos cruzados incluidos, no solo código/testClient.
+3. Trazabilidadfinal explícita requisito→prueba→build ysuperficie→requisito, con denominador delalcance14. Ningúncriterio global marcadoVERIFICADO poruna muestrasubconjunto.
+4. Evidenciaanterior conservada, nuevamanifest estable ydocumentación derivada reproducida; tiposdistintos dehash noigualados sincomparar archivos.
+5. Estado14puede pasarCOMPLETADA para esealcance;15–17 ydependenciasexternas mantienenestado ycursor propios. Elresultado noes100%producto ni autorizaciónpiloto/despliegue.
+
+Revisión actual: **NO cerrar14todavía** sobre14-I. BloqueosCI14-01..05 identificados ycomunicados alagenteprincipal; implementación yrevalidación en curso. Esta conclusión deberá complementarse con revisión de resultados finales, conservando este diagnóstico.
+
+## Complemento de revisión: límites monetarios, 14/11/2026
+
+Revisión independiente del cambio de cash/sales/catalog de cierre14. Este complemento conserva el diagnóstico anterior y no cambia el estado de otras etapas. Se revisaron formularios, servicios, modelos, migraciones cash0004/sales0007 y los resultados focales; la revisión detectó dos defectos adicionales comprobables, corregidos por delegación expresa del agente principal en esta sesión.
+
+| ID | Defecto reproducido y fuente | Corrección y prueba propia |
+|---|---|---|
+| CI14-12 · P2 | DEC-11-TOPE-EFECTIVO-FORM/C-01 incluye precio. Alta y edición aceptaban `+1` y dígitos arábigos `١٢`, normalizados por DecimalField antes del servicio; el servicio de catálogo también admitía entradas no Decimal y exponente positivo. | `catalog/forms.py` rechaza signo extra, Unicode y notación científica antes de perder su representación. `catalog/services.py` exige Decimal finito positivo con exponente entre -2 y 0, igual que caja/ventas. El tope por operación permanece después de la recuperación de una edición ya persistida. Prueba HTTP de alta y edición con vacío, cero, negativo, signo extra, Unicode, exponente, exceso de escala y tope+0.01; snapshot de todas las tablas catalog/inventory/sales/cash idéntico tras cada rechazo. Prueba de servicio de ambos caminos, límites 0.01/9999999.99 y recuperación histórica sin reescritura. |
+| CI14-13 · P2 | DEC-11-DESCUENTOS-ALCANCE/C-02 y RN25: el formulario de recuperación restauraba el límite histórico de efectivo, pero mantenía descuento máximo 9999999.99. Venta histórica con subtotal20000000, descuento10000000, total10000000 y turno cerrado: el POST original se desviaba a `/ventas/`, en lugar de recuperar su constancia. | `sales/forms.py` permite descuento histórico hasta capacidad14,2 exclusivamente en ConfirmedCheckoutRetryForm. La política de nuevos cobros sin descuentos permanece en CheckoutForm/servicio. Test HTTP repite dos veces la misma solicitud después del cierre, obtiene la constancia original y conserva las tablas de negocio; un descuento cambiado en0.01 se rechaza sin mutación. |
+
+Evidencia reproducible: [prueba anterior](../evidencias/14-CIERRE-20261114/revision-precio-retry-antes/resultado.txt), [manifiesto anterior](../evidencias/14-CIERRE-20261114/revision-precio-retry-antes/manifiesto.json), [resultado final](../evidencias/14-CIERRE-20261114/revision-precio-retry-final/resultado.txt), [manifiesto final](../evidencias/14-CIERRE-20261114/revision-precio-retry-final/manifiesto.json). El ensayo anterior ejecutó4tests y produjo19 fallos de subcasos; estos no son19 requisitos independientes, y algunos fallos posteriores derivaron de datos admitidos indebidamente en un subcaso anterior. Se conserva íntegro. El ensayo final ejecutó **142/142**, sin cambios de migración y con fuentes estables; incluye catálogo completo, nuevos tests de precio/reintento, ventas11/12 y dinero14. Base SQLite `:memory:`; no representa concurrencia PostgreSQL ni navegador real.
+
+Comando desde la raíz (usar una carpeta de evidencia nueva, pues el runner impide sobrescribir):
+
+```powershell
+& 'r1-pmv/.venv/Scripts/python.exe' 'auditoria_por_etapas/resultados/evidencias/14-CIERRE-20261114/servidor.py' 'auditoria_por_etapas/resultados/evidencias/14-CIERRE-20261114/revision-precio-retry-repeticion' 'catalog' 'sales.test_audit14closure_retry' 'sales.test_audit11_checkout' 'sales.test_audit12_receipts_history' 'cash.test_audit14closure_money'
+```
+
+Corte probado: 08 SHA256 `32270f6b6f32d8aec7c3f4883f20eef2229e3bb26da8f0c0369fd047e3f8e700`; build SHA256 `ec783ac6febb289f70efbda37d7e742ad1305088982ad1e4e6f6694549cdd172`. Se trata de primera pasada, sublote de cierre14; si el build/documento cambia después, estos resultados son heredados y deben enlazarse al manifiesto final compatible o reejecutarse.
+
+La lectura de cash0004 y sales0007 confirma diagnóstico `RunPython` antes de los nuevos checks, uso del alias de la conexión y ausencia de backfill/recorte. Cash valida rango de contado/esperado, rango de diferencia y contado−esperado; sales conserva capacidad14,2 de importes históricos y diagnostica cantidades de borrador superiores al máximo. Esto es revisión estática: no equivale a un ensayo de migración contra datos incompatibles. No se añadió constraint destructiva para precios históricos de catálogo; el ensayo de recuperación conserva un precio legacy10000000. El diagnóstico operativo de precios/cierres reales sigue siendo una acción previa al despliegue, fuera de esta base ficticia.
+
+La guardia de acumulado en checkout ocurre dentro de la transacción y después del bloqueo del turno, antes de contador, venta y descuento de existencias. La recuperación de venta persistida precede los topes de una venta nueva. El cierre distingue correctamente tope por operación y capacidad acumulada. No se encontró otro defecto concreto en estos cambios durante esta revisión; esta conclusión está limitada a ese tramo y a los cuatro tests añadidos, no certifica toda la etapa14 ni sustituye la cadena final de navegador.
+
+Cursor de esta revisión: CI14-12/13 corregidos y revalidados en servidor; producto entregado congelado al agente principal. Pendiente del informe global: integrar resultado del navegador final, ajustes, migración/PG que otros agentes ejecutan y matriz CI14-01..11 antes de decidir COMPLETADA. No trasladar por este complemento un fallo conocido de integración a15 para conseguir el cierre.

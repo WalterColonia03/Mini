@@ -1,0 +1,3826 @@
+{
+  "started_utc": "2026-11-10T00:07:30.508990+00:00",
+  "timezone": "America/Lima",
+  "criteria": [
+    {
+      "id": "HU-CAT-01/CA-01",
+      "source": "08_Historias_de_Usuario.md:166",
+      "text": "Dado que accedo a la sección de categorías, cuando la lista carga, entonces veo el nombre de cada categoría registrada.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-CAT-01/CA-02",
+      "source": "08_Historias_de_Usuario.md:167",
+      "text": "Dado que no hay ninguna categoría registrada, cuando accedo a la sección, entonces el sistema muestra un mensaje indicando que la lista está vacía.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-CAT-02/CA-01",
+      "source": "08_Historias_de_Usuario.md:176",
+      "text": "Dado que ingreso un nombre de categoría no vacío, cuando confirmo el registro, entonces el sistema retira espacios sobrantes, guarda la categoría con estado activo y la deja disponible para usos posteriores en el catálogo.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-CAT-02/CA-02",
+      "source": "08_Historias_de_Usuario.md:177",
+      "text": "Dado que ya existe una categoría registrada con el mismo nombre aunque cambien mayúsculas o espacios, cuando intento guardar, entonces el sistema muestra el mensaje «La categoría ya existe» y no crea un duplicado.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-CAT-02/CA-03",
+      "source": "08_Historias_de_Usuario.md:178",
+      "text": "Dado que el nombre queda vacío al retirar espacios, cuando intento guardar, entonces el sistema indica «El nombre es obligatorio» y no registra la categoría.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-CAT-03/CA-01",
+      "source": "08_Historias_de_Usuario.md:187",
+      "text": "Dado que edito el nombre de una categoría con un texto nuevo y único, cuando guardo, entonces el cambio se refleja en la lista y en todos los productos pertenecientes a ella.",
+      "scope": "PREVISTO/FUTURO",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-CAT-03/CA-02",
+      "source": "08_Historias_de_Usuario.md:188",
+      "text": "Dado que edito el nombre con una denominación que ya pertenece a otra categoría, cuando intento guardar, entonces el sistema muestra «La categoría ya existe» y no realiza el cambio.",
+      "scope": "PREVISTO/FUTURO",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-CAT-04/CA-01",
+      "source": "08_Historias_de_Usuario.md:197",
+      "text": "Dado que selecciono eliminar una categoría que no tiene productos asociados, cuando confirmo la acción, entonces la categoría desaparece de la lista.",
+      "scope": "PREVISTO/FUTURO",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-CAT-04/CA-02",
+      "source": "08_Historias_de_Usuario.md:198",
+      "text": "Dado que selecciono eliminar una categoría que tiene productos vinculados, cuando intento confirmar, entonces el sistema muestra «No se puede eliminar: esta categoría tiene productos registrados» y cancela la acción.",
+      "scope": "PREVISTO/FUTURO",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-01/CA-01",
+      "source": "08_Historias_de_Usuario.md:207",
+      "text": "Dado que accedo al catálogo de productos, cuando la lista carga, entonces veo por cada artículo: nombre, código de barras, categoría, precio de venta y existencias disponibles.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-01/CA-02",
+      "source": "08_Historias_de_Usuario.md:208",
+      "text": "Dado que consulto el catálogo, cuando busco por nombre o código de barras, entonces el sistema filtra los resultados y muestra solo los artículos coincidentes.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-01/CA-03",
+      "source": "08_Historias_de_Usuario.md:209",
+      "text": "Dado que un producto tiene existencias iguales o inferiores al mínimo configurado (RN-06), cuando aparece en la lista, entonces muestra una señal visual de alerta.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-02/CA-01",
+      "source": "08_Historias_de_Usuario.md:218",
+      "text": "Dado que ingreso con rol `ADMIN` y la categoría activa «Productos enlatados» ya está preparada, cuando registro nombre, código de barras, unidad, precio con IGV incluido y cantidad mínima válidos, entonces el producto queda asociado a esa categoría y con control de vencimiento obligatorio en R1-PMV (RN-29).",
+      "scope": "R1 seleccionado",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-02/CA-02",
+      "source": "08_Historias_de_Usuario.md:219",
+      "text": "Dado que registro el precio de venta en soles, cuando el sistema lo valida, entonces exige un valor mayor que cero con máximo dos decimales y lo interpreta como precio final con IGV incluido (RN-27).",
+      "scope": "R1 seleccionado",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-02/CA-03",
+      "source": "08_Historias_de_Usuario.md:220",
+      "text": "Dado que indico un código de barras que ya pertenece a otro producto, cuando intento guardar, entonces el sistema rechaza el registro por ser un código irrepetible.",
+      "scope": "R1 seleccionado",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-02/CA-04",
+      "source": "08_Historias_de_Usuario.md:221",
+      "text": "Dado que indico la cantidad mínima de existencias, cuando guardo, entonces acepta un entero igual o mayor que cero; si no ingreso el campo, almacena 10, sin exigir todavía una alerta visual en Sprint 1 (RN-06).",
+      "scope": "R1 seleccionado",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-02/CA-05",
+      "source": "08_Historias_de_Usuario.md:222",
+      "text": "Dado que todos los datos son válidos, cuando se confirma el registro, entonces el producto se crea con cero existencias y no resulta vendible hasta recibir lotes; si un `ALMACENERO` o `VENDEDOR` intenta registrar por acceso directo, el sistema deniega la operación y no crea ningún producto (RN-29).",
+      "scope": "R1 seleccionado",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-03/CA-01",
+      "source": "08_Historias_de_Usuario.md:231",
+      "text": "Dado que tengo abierto el formulario de nuevo producto, cuando paso el código de barras por el lector, entonces el campo de código se llena automáticamente con el valor leído.",
+      "scope": "PREVISTO/FUTURO",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-03/CA-02",
+      "source": "08_Historias_de_Usuario.md:232",
+      "text": "Dado que el código leído ya existe en el catálogo, cuando se detecta la lectura, entonces el sistema advierte «El código de barras ya está registrado» e impide duplicarlo.",
+      "scope": "PREVISTO/FUTURO",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-04/CA-01",
+      "source": "08_Historias_de_Usuario.md:241",
+      "text": "Dado que edito el precio de venta de un producto, cuando guardo, entonces el nuevo precio aplica a las ventas registradas a partir de ese momento; las ventas pasadas conservan el precio cobrado.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-04/CA-02",
+      "source": "08_Historias_de_Usuario.md:242",
+      "text": "Dado que edito la cantidad mínima de un producto, cuando guardo, entonces el umbral de alerta se actualiza de inmediato (RN-06).",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-04/CA-03",
+      "source": "08_Historias_de_Usuario.md:243",
+      "text": "Dado que el código de barras identifica de forma única al artículo, cuando intento editarlo, entonces el sistema mantiene bloqueado ese campo.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-04/CA-04",
+      "source": "08_Historias_de_Usuario.md:244",
+      "text": "Dado que edito el nombre de un producto con una descripción válida, cuando guardo, entonces el nuevo nombre se actualiza en el catálogo y en la pantalla de venta.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-04/CA-05",
+      "source": "08_Historias_de_Usuario.md:245",
+      "text": "Dado que reasigno la categoría de un producto, cuando confirmo el cambio, entonces el producto queda reclasificado en la nueva categoría.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-05/CA-01",
+      "source": "08_Historias_de_Usuario.md:254",
+      "text": "Dado que cambio el estado de un producto a «Inactivo», cuando un vendedor intenta buscarlo en mostrador, entonces el producto queda excluido de la venta.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-05/CA-02",
+      "source": "08_Historias_de_Usuario.md:255",
+      "text": "Dado que cambio el estado de un producto a «Activo», cuando un vendedor lo busca en mostrador, entonces vuelve a figurar disponible para cobrar con sus existencias y precio.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    },
+    {
+      "id": "HU-PROD-05/CA-03",
+      "source": "08_Historias_de_Usuario.md:256",
+      "text": "Dado que un producto se encuentra inactivo, cuando el administrador revisa el catálogo, entonces se muestra con la etiqueta «Inactivo» y conserva todo su historial.",
+      "scope": "Implementado adicionalmente; pendiente de auditoría",
+      "execution": "NO EJECUTADO"
+    }
+  ],
+  "source_hits": [
+    {
+      "source": "21_Alcance_Actual_y_Diferencias.md:11",
+      "text": "| Administrador | Gestión de empleados, categorías, productos y proveedores; consulta de stock, movimientos, vencimientos, ventas y turnos; registro de mermas y ajustes físicos. | No abre caja ni cobra. Puede consultar constancias de ventas. |"
+    },
+    {
+      "source": "21_Alcance_Actual_y_Diferencias.md:12",
+      "text": "| Almacenero | Consulta de productos, proveedores, stock, movimientos y vencimientos; registra carga inicial, entradas posteriores y mermas. | No gestiona empleados, categorías, productos ni proveedores; no registra ajustes físicos ni cobra. |"
+    },
+    {
+      "source": "01_Proyecto_y_Releases.md:17",
+      "text": "> El propósito es que una sola bodega pueda registrar productos enlatados, anotar existencias por lote, abrir su única caja, cobrar ventas en efectivo, entregar una constancia interna y cuadrar el dinero al final del turno."
+    },
+    {
+      "source": "01_Proyecto_y_Releases.md:37",
+      "text": "- Registro de productos y categorías."
+    },
+    {
+      "source": "01_Proyecto_y_Releases.md:94",
+      "text": "| `DEC-04` | R1 admite únicamente productos enlatados con vencimiento obligatorio | El modelo conserva `controla_vencimiento` para ampliaciones futuras, pero R1 siempre lo registra como verdadero |"
+    },
+    {
+      "source": "01_Proyecto_y_Releases.md:97",
+      "text": "| `DEC-07` | Dinero con decimal exacto | Precios y totales a 2 decimales; costos internos a 4; redondeo comercial `ROUND_HALF_UP` únicamente en los puntos definidos en RN-14 y RN-27 |"
+    },
+    {
+      "source": "01_Proyecto_y_Releases.md:126",
+      "text": "3. `HU-PROD-02` — Registrar un producto enlatado — 5 SP."
+    },
+    {
+      "source": "01_Proyecto_y_Releases.md:134",
+      "text": "La categoría «Productos enlatados», los tres roles y la caja única se preparan mediante semillas idempotentes. Las tres cuentas ficticias de demostración se aprovisionan con un comando repetible y contraseñas temporales suministradas como secretos del ambiente; ninguna credencial se guarda en el repositorio."
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:15",
+      "text": "| RN-03 | Control de vencimientos | En R1-PMV todo lote exige vencimiento posterior a la fecha de negocio de Lima; los lotes vencidos o que vencen hoy no se ingresan ni se venden | HU-INV-01a, HU-VEN-01b, HU-VEN-01c, HU-PROD-06, HU-SOL-05a, HU-SOL-05b |"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:18",
+      "text": "| RN-06 | Umbral de existencias mínimas | Cada producto conserva un umbral configurable, 10 por defecto; R1-PMV lo registra y las historias posteriores implementan sus alertas | HU-PROD-01, HU-PROD-02, HU-PROD-04, HU-SOL-01, HU-REP-05, HU-DASH-03 |"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:39",
+      "text": "| RN-27 | Cálculo de IGV | Precios con IGV incluido; base redondeada a dos decimales e IGV residual para que ambos sumen exactamente el total | HU-PROD-02, HU-VEN-01b, HU-VEN-01c, HU-VEN-02a, HU-REP-07 |"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:40",
+      "text": "| RN-28 | Costo histórico de venta | Conservar el costo que tenía el producto al venderse | HU-VEN-01c, HU-REP-07 |"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:41",
+      "text": "| RN-29 | Autorización de R1-PMV | Cada cuenta tiene un único rol y el servidor autoriza las nueve historias según la matriz del PMV | HU-AUTH-01, HU-AUTH-03, HU-PROD-02, HU-INV-01a, HU-CAJA-01, HU-VEN-01b, HU-VEN-01c, HU-VEN-02a, HU-CAJA-02 |"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:70",
+      "text": "### RN-03 · Bloqueo obligatorio de lotes vencidos"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:76",
+      "text": "R1-PMV abarca exclusivamente productos enlatados sujetos a vencimiento: todo lote exige una fecha de caducidad. La posibilidad de operar productos sin vencimiento queda fuera de este release y no aparece como opción en sus pantallas."
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:102",
+      "text": "### RN-06 · Alerta visual de existencias mínimas"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:108",
+      "text": "En Sprint 1, `HU-PROD-02` solo registra y recupera este umbral; no se exige todavía una alerta visual. Cuando se implementen `HU-PROD-01`, `HU-PROD-04`, `HU-SOL-01`, `HU-REP-05` o `HU-DASH-03`, las existencias vendibles iguales o inferiores al umbral configurado —no siempre a 10— activarán las señales, sugerencias o reportes descritos por cada historia."
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:309",
+      "text": "### RN-27 · Cálculo de impuestos con total exacto"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:325",
+      "text": "### RN-28 · Conservar el costo que tenía el producto al venderse"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:333",
+      "text": "### RN-29 · Autorización por rol exclusivo en R1-PMV"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:342",
+      "text": "| Registrar producto (`HU-PROD-02`) | Sí | No | No |"
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:371",
+      "text": "Durante el PMV, los precios de los productos enlatados incluyen el 18 % de IGV y su cálculo matemático se realiza conforme a la regla RN-27 para control y cuadre de la venta."
+    },
+    {
+      "source": "07_Reglas_de_Negocio.md:402",
+      "text": "   - Las tres cuentas ficticias de demostración —una `ADMIN`, una `ALMACENERO` y una `VENDEDOR`—, la categoría activa «Productos enlatados» y la caja única se preparan antes de comenzar a operar la tienda."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:16",
+      "text": "- **Reglas de negocio:** RN-29"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:18",
+      "text": "  1. Dado que tengo una cuenta activa con uno de los roles exclusivos `ADMIN`, `ALMACENERO` o `VENDEDOR`, cuando ingreso mi correo y contraseña correctos, entonces el sistema crea mi sesión y me conduce a las opciones autorizadas para ese único rol (RN-29)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:21",
+      "text": "  4. Dado que inicié sesión, cuando intento abrir por URL o solicitud directa una operación que RN-29 no permite a mi rol, entonces el sistema deniega el acceso, no expone los datos de esa operación y no modifica información."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:39",
+      "text": "- **Reglas de negocio:** RN-29, RN-30"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:161",
+      "text": "### HU-CAT-01 · Categorías — Ver lista de categorías de productos"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:163",
+      "text": "- **Historia:** Como administrador, quiero ver la lista completa de categorías registradas, para conocer cómo está organizado el catálogo antes de registrar o modificar productos."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:166",
+      "text": "  1. Dado que accedo a la sección de categorías, cuando la lista carga, entonces veo el nombre de cada categoría registrada."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:167",
+      "text": "  2. Dado que no hay ninguna categoría registrada, cuando accedo a la sección, entonces el sistema muestra un mensaje indicando que la lista está vacía."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:171",
+      "text": "### HU-CAT-02 · Categorías — Crear nueva categoría de productos"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:173",
+      "text": "- **Historia:** Como administrador de la bodega, quiero registrar una nueva categoría de productos, para organizar los artículos y facilitar su localización en el inventario."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:176",
+      "text": "  1. Dado que ingreso un nombre de categoría no vacío, cuando confirmo el registro, entonces el sistema retira espacios sobrantes, guarda la categoría con estado activo y la deja disponible para usos posteriores en el catálogo."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:177",
+      "text": "  2. Dado que ya existe una categoría registrada con el mismo nombre aunque cambien mayúsculas o espacios, cuando intento guardar, entonces el sistema muestra el mensaje «La categoría ya existe» y no crea un duplicado."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:178",
+      "text": "  3. Dado que el nombre queda vacío al retirar espacios, cuando intento guardar, entonces el sistema indica «El nombre es obligatorio» y no registra la categoría."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:182",
+      "text": "### HU-CAT-03 · Categorías — Editar nombre de categoría"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:184",
+      "text": "- **Historia:** Como administrador, quiero modificar el nombre de una categoría registrada, para corregir errores de escritura o actualizar su denominación."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:187",
+      "text": "  1. Dado que edito el nombre de una categoría con un texto nuevo y único, cuando guardo, entonces el cambio se refleja en la lista y en todos los productos pertenecientes a ella."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:188",
+      "text": "  2. Dado que edito el nombre con una denominación que ya pertenece a otra categoría, cuando intento guardar, entonces el sistema muestra «La categoría ya existe» y no realiza el cambio."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:192",
+      "text": "### HU-CAT-04 · Categorías — Eliminar categoría sin productos"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:194",
+      "text": "- **Historia:** Como administrador, quiero eliminar una categoría que no tiene productos asociados, para mantener el catálogo limpio y sin grupos vacíos."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:197",
+      "text": "  1. Dado que selecciono eliminar una categoría que no tiene productos asociados, cuando confirmo la acción, entonces la categoría desaparece de la lista."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:198",
+      "text": "  2. Dado que selecciono eliminar una categoría que tiene productos vinculados, cuando intento confirmar, entonces el sistema muestra «No se puede eliminar: esta categoría tiene productos registrados» y cancela la acción."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:202",
+      "text": "### HU-PROD-01 · Productos — Ver catálogo completo de productos"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:205",
+      "text": "- **Reglas de negocio:** RN-06"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:207",
+      "text": "  1. Dado que accedo al catálogo de productos, cuando la lista carga, entonces veo por cada artículo: nombre, código de barras, categoría, precio de venta y existencias disponibles."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:209",
+      "text": "  3. Dado que un producto tiene existencias iguales o inferiores al mínimo configurado (RN-06), cuando aparece en la lista, entonces muestra una señal visual de alerta."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:213",
+      "text": "### HU-PROD-02 · Registrar un producto enlatado"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:215",
+      "text": "- **Historia:** Como administrador de la bodega, quiero registrar un producto enlatado con sus datos comerciales y control de vencimiento, para incorporarlo a la lista de venta y controlar sus existencias."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:216",
+      "text": "- **Reglas de negocio:** RN-06, RN-27, RN-29"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:218",
+      "text": "  1. Dado que ingreso con rol `ADMIN` y la categoría activa «Productos enlatados» ya está preparada, cuando registro nombre, código de barras, unidad, precio con IGV incluido y cantidad mínima válidos, entonces el producto queda asociado a esa categoría y con control de vencimiento obligatorio en R1-PMV (RN-29)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:219",
+      "text": "  2. Dado que registro el precio de venta en soles, cuando el sistema lo valida, entonces exige un valor mayor que cero con máximo dos decimales y lo interpreta como precio final con IGV incluido (RN-27)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:221",
+      "text": "  4. Dado que indico la cantidad mínima de existencias, cuando guardo, entonces acepta un entero igual o mayor que cero; si no ingreso el campo, almacena 10, sin exigir todavía una alerta visual en Sprint 1 (RN-06)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:222",
+      "text": "  5. Dado que todos los datos son válidos, cuando se confirma el registro, entonces el producto se crea con cero existencias y no resulta vendible hasta recibir lotes; si un `ALMACENERO` o `VENDEDOR` intenta registrar por acceso directo, el sistema deniega la operación y no crea ningún producto (RN-29)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:226",
+      "text": "### HU-PROD-03 · Productos — Escanear código de barras para registrar producto"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:236",
+      "text": "### HU-PROD-04 · Productos — Editar datos de un producto"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:238",
+      "text": "- **Historia:** Como administrador, quiero modificar el nombre, precio, categoría o cantidad mínima de un producto registrado, para mantener actualizada la información de los artículos."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:239",
+      "text": "- **Reglas de negocio:** RN-06"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:242",
+      "text": "  2. Dado que edito la cantidad mínima de un producto, cuando guardo, entonces el umbral de alerta se actualiza de inmediato (RN-06)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:245",
+      "text": "  5. Dado que reasigno la categoría de un producto, cuando confirmo el cambio, entonces el producto queda reclasificado en la nueva categoría."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:249",
+      "text": "### HU-PROD-05 · Productos — Gestionar estado de disponibilidad comercial"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:263",
+      "text": "- **Reglas de negocio:** RN-03"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:266",
+      "text": "  2. Dado que un lote ya venció por tener fecha igual o anterior a hoy según la hora de Lima, cuando aparece en la lista, entonces figura marcado como «Vencido» y bloqueado para venta (RN-03)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:319",
+      "text": "- **Historia:** Como encargado del almacén, quiero ingresar las existencias iniciales de un producto enlatado mediante uno o varios lotes, para tener mercadería disponible para la venta con sus fechas de vencimiento controladas."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:320",
+      "text": "- **Reglas de negocio:** RN-01, RN-03, RN-14, RN-19, RN-29"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:322",
+      "text": "  1. Dado que ingreso con rol `ALMACENERO` y el producto aún no tiene una carga inicial confirmada, cuando envío uno o varios lotes válidos, entonces el sistema confirma una única carga directa sin pedido previo; cualquier otro rol recibe una denegación y no altera existencias (RN-01, RN-29)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:323",
+      "text": "  2. Dado que completo cada lote, cuando el sistema lo valida, entonces exige un número comercial no vacío que normaliza a mayúsculas y que sea único dentro del producto, una cantidad entera positiva, un costo unitario positivo con máximo cuatro decimales y una fecha de vencimiento posterior a la fecha actual de `America/Lima` (RN-03)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:398",
+      "text": "- **Reglas de negocio:** RN-06"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:401",
+      "text": "  2. Dado que agrego artículos con existencias iguales o inferiores a su mínimo configurado —10 solo cuando se conservó el valor predeterminado—, cuando el sistema carga la sugerencia, entonces propone dichos artículos para facilitar el pedido (RN-06)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:441",
+      "text": "- **Reglas de negocio:** RN-01, RN-03, RN-14, RN-19"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:445",
+      "text": "  3. Dado que ingreso un lote cuya fecha de vencimiento ya se cumplió o vence hoy, cuando intento confirmar, entonces el sistema bloquea la recepción conforme a la regla RN-03."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:453",
+      "text": "- **Reglas de negocio:** RN-01, RN-03, RN-14, RN-19"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:455",
+      "text": "  1. Dado que recibo solo una parte de los artículos aprobados, cuando registro las unidades recibidas con lote, vencimiento vigente posterior a hoy (RN-03) y costo de compra, entonces las existencias aumentan, el costo promedio se actualiza (RN-14) y la solicitud pasa a «Parcialmente atendida»."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:468",
+      "text": "- **Reglas de negocio:** RN-10, RN-29"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:470",
+      "text": "  1. Dado que ingreso con rol `VENDEDOR` y no existe un turno abierto, cuando declaro un monto inicial válido en soles, igual o mayor que cero y con máximo dos decimales, entonces el sistema abre un turno ligado a mi usuario y habilita la preparación de ventas (RN-10, RN-29)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:473",
+      "text": "  4. Dado que la apertura se confirmó, cuando consulto el turno, entonces conserva vendedor responsable, caja única, dinero inicial e instante inequívoco mostrado con fecha y hora de Lima; un rol no autorizado no puede abrirlo por acceso directo (RN-29)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:480",
+      "text": "- **Reglas de negocio:** RN-10, RN-29, RN-30"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:482",
+      "text": "  1. Dado que ingreso como el `VENDEDOR` responsable del turno, cuando declaro el efectivo contado, entonces el sistema exige un valor numérico igual o mayor que cero con máximo dos decimales; ante un valor inválido o un rol distinto no cierra ni modifica el turno (RN-10, RN-29)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:556",
+      "text": "- **Reglas de negocio:** RN-03, RN-10, RN-27, RN-29, RN-30"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:558",
+      "text": "  1. Dado que ingreso con rol `VENDEDOR`, cuando inicio la preparación y agrego la primera línea válida, entonces el sistema exige un turno abierto ligado a mi propio usuario y crea la venta en preparación; cualquier otro rol o vendedor sin ese turno recibe una denegación (RN-10, RN-29, RN-30)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:559",
+      "text": "  2. Dado que preparo la venta, cuando busco un producto enlatado activo por nombre o digitando su código de barras, entonces puedo seleccionarlo si posee existencias vendibles, sin requerir lector físico en Sprint 1."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:561",
+      "text": "  4. Dado que un lote vence hoy o ya venció según la fecha de `America/Lima`, cuando el sistema calcula las existencias vendibles, entonces excluye todas sus unidades y nunca las ofrece para completar la cantidad solicitada (RN-03)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:562",
+      "text": "  5. Dado que la lista contiene líneas, cuando reviso la venta, entonces se considera una venta en preparación que aún no reserva ni descuenta stock ni mueve efectivo; muestra precio unitario, cantidad, importe por línea, total y el desglose `base = HALF_UP(total / 1.18, 2)` e `IGV = total - base`. Si quito la última línea, el borrador se descarta y deja de bloquear el cierre; al descartarlo, caja y existencias quedan intactas (RN-27, RN-30)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:569",
+      "text": "- **Reglas de negocio:** RN-03, RN-10, RN-19, RN-25, RN-27, RN-28, RN-29, RN-30"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:572",
+      "text": "  2. Dado que ingreso un efectivo válido igual o mayor al total, cuando confirmo, entonces el sistema calcula `vuelto = efectivo recibido - total` con dos decimales y aumenta el efectivo esperado solo por el total vendido, no por el efectivo recibido antes del vuelto (RN-10, RN-27)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:573",
+      "text": "  3. Dado que mi turno sigue abierto y existe stock suficiente al confirmar, cuando se descuentan unidades, entonces el sistema revalida las condiciones y aplica FEFO por vencimiento, instante de ingreso e identificador interno, continúa por los lotes vigentes necesarios y nunca deja existencias negativas (RN-03, RN-19, RN-29)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:576",
+      "text": "  6. Dado que la venta queda confirmada, cuando se guarda su fotografía histórica, entonces conserva nombre del producto, cantidad, precio con dos decimales, costo promedio con cuatro decimales, importes, efectivo y vuelto; cambios posteriores del catálogo o del costo no alteran esos valores (RN-28)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:583",
+      "text": "- **Reglas de negocio:** RN-26, RN-27, RN-29"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:586",
+      "text": "  2. Dado que reviso la constancia, cuando carga su contenido histórico, entonces muestra fecha y hora de Lima, vendedor, caja, nombre de cada producto, cantidad, precio e importe, base, IGV, total, efectivo y vuelto, pero nunca muestra el costo de compra o costo promedio (RN-26, RN-27)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:588",
+      "text": "  4. Dado que el vendedor usa «Última constancia» desde la pantalla de venta de su turno, cuando la vuelve a abrir, entonces recupera el mismo correlativo y los mismos datos históricos aunque el catálogo cambie; un rol no autorizado no puede consultarla mediante acceso directo (RN-26, RN-29)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:718",
+      "text": "- **Reglas de negocio:** RN-06, RN-23"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:720",
+      "text": "  1. Dado que uno o más productos se encuentran en o por debajo de su cantidad mínima (10 unidades por defecto según RN-06), cuando abro el resumen, entonces muestra la alerta de existencias críticas indicando el producto y las unidades disponibles."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:791",
+      "text": "- **Reglas de negocio:** RN-06"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:793",
+      "text": "  1. Dado que accedo al reporte de existencias críticas, cuando el sistema lo genera, entonces lista todos los artículos cuyo stock disponible actual es menor o igual al umbral mínimo configurado (10 unidades por defecto según RN-06)."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:794",
+      "text": "  2. Dado que visualizo la lista, cuando consulto cada artículo, entonces muestra existencias actuales, cantidad mínima, categoría y unidad de medida."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:812",
+      "text": "- **Reglas de negocio:** RN-14, RN-27, RN-28"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:814",
+      "text": "  1. Dado que accedo al reporte de rentabilidad, cuando el sistema lo genera, entonces presenta para cada producto su precio de venta neto sin IGV (RN-27), el costo promedio que tenía el producto al momento de cada venta guardado históricamente (RN-28) y la ganancia unitaria en soles."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:816",
+      "text": "  3. Dado que filtro por categoría o rango de fechas, cuando consulto, entonces el sistema lista los productos vendidos en ese lapso evaluando el margen porcentual y la ganancia total obtenida."
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:872",
+      "text": "| `HU-PROD-04` / `HU-INV-06` · Editar producto y Kardex | **CA-4 (Trazabilidad histórica en Kardex con FK directa e inmutabilidad de snapshot):** Cada `SaleLine` persiste la referencia `product` además del snapshot comercial, de modo que aunque el Administrador cambie el código de barras en `/productos/<id>/editar/`, las ventas históricas permanecen vinculadas en el Kardex y `product_snapshot_barcode` permanece inmutable en las constancias emitidas (`RN-28`). | `BUG-004`, `BUG-012` | `inventory.tests.PhysicalAdjustmentTests.test_barcode_change_preserves_sales_in_product_movements_kardex`, `catalog.tests.ProductExpirationsTests.test_bug004_product_barcode_update_preserves_historical_sale_line_snapshot`, `test_initial_load_created_preserves_original_quantity_and_alias_url` |"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:874",
+      "text": "| `HU-VEN-01b..01c` / descuento sin HU asignada · Borrador, Cobro en efectivo y Descuentos | **CA-6 (Sincronización ante cambio de precio/disponibilidad, firma con `draft.pk` y errores de campos ocultos):** Si el producto o su categoría se desactiva mientras está en el borrador, `update_draft_line` y `checkout_sale` rechazan incrementar la cantidad o cobrar. En `/ventas/cobrar/`, `_draft_signature` incluye `draft.pk`, nombre y código de barras de cada línea para impedir que una pestaña antigua cobre el borrador de un nuevo cliente (`BUG-035`), y renderiza errores de campos ocultos en `.alert-error` (`BUG-036`). | `BUG-006`, `BUG-007`, `BUG-025`, `BUG-029`, `BUG-033`, `BUG-035`, `BUG-036`, `BUG-037` | `sales.tests.SalesHistoryTests.test_price_change_during_checkout_warns_seller_and_updates_draft_line_price`, `test_multitab_draft_modification_warns_seller_on_checkout`, `test_bug025_checkout_detects_same_subtotal_product_swap_via_draft_signature`, `test_bug033_and_bug037_inactive_category_or_product_blocks_search_draft_line_update_and_checkout`, `test_bug035_and_bug036_draft_signature_includes_draft_id_and_checkout_renders_hidden_field_errors` |"
+    },
+    {
+      "source": "08_Historias_de_Usuario.md:876",
+      "text": "| `HU-CAT-01..02` / `HU-PROD-01..04` · Categorías y Catálogo de productos | **CA-2 (Ciclo de vida coherente de categorías activas e inactivas):** Toda categoría activa puede usarse al registrar o editar productos y activarse/desactivarse en `/productos/categorias/`. Si una categoría se desactiva, sus productos siguen permitiendo editar precio/nombre/stock mínimo en `/productos/<id>/editar/` manteniendo su categoría actual, pero quedan excluidos de los selectores de carga inicial y entrada de mercadería (`InitialLoadProductForm`, `StockEntryProductForm`) y de la venta en mostrador (`_search_products`, `add_product_to_draft`, `update_draft_line`, `checkout_sale`). | `BUG-009`, `BUG-013`, `BUG-021`, `BUG-028`, `BUG-031`, `BUG-033` | `catalog.tests.ProductExpirationsTests.test_active_custom_category_can_be_used_to_register_product`, `test_bug028_category_toggle_and_product_edit_category_and_barcode_search`, `test_bug033_product_with_inactive_category_can_update_price_and_name`, `inventory.tests.PhysicalAdjustmentTests.test_bug033_inactive_category_excludes_products_from_initial_load_and_stock_entry_forms` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:34",
+      "text": "- **Resultado esperado:** un empleado identificado puede registrar un producto enlatado, ingresar existencias iniciales por lotes con vencimiento, abrir la caja única con dinero inicial, preparar y cobrar una venta en efectivo vendiendo primero lo que vence antes, emitir una constancia interna numerada y cerrar la caja cuadrando el dinero."
+    },
+    {
+      "source": "09_Product_Backlog.md:36",
+      "text": "- **Datos preparados:** antes de operar se crean de forma reproducible la categoría activa «Productos enlatados», la caja única y tres cuentas ficticias separadas con roles exclusivos `ADMIN`, `ALMACENERO` y `VENDEDOR`. Las credenciales reales no forman parte de este documento."
+    },
+    {
+      "source": "09_Product_Backlog.md:48",
+      "text": "| 3 | `HU-PROD-02` | Registrar un producto enlatado | Productos y proveedores | Indispensable | 5 | `R1-PMV` | Sprint 1 | `HU-AUTH-01` y preparación inicial de la categoría “Productos enlatados” |"
+    },
+    {
+      "source": "09_Product_Backlog.md:49",
+      "text": "| 4 | `HU-INV-01a` | Registrar las existencias iniciales por lotes | Mercadería y reposición | Indispensable | 5 | `R1-PMV` | Sprint 1 | `HU-PROD-02` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:65",
+      "text": "| 10 | `HU-CAT-02` | Categorías — Crear nueva categoría de productos | Productos y proveedores | Indispensable | 2 | — | — | `HU-AUTH-01` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:66",
+      "text": "| 11 | `HU-CAT-01` | Categorías — Ver lista de categorías de productos | Productos y proveedores | Indispensable | 1 | — | — | `HU-AUTH-01` y datos iniciales de categoría |"
+    },
+    {
+      "source": "09_Product_Backlog.md:67",
+      "text": "| 12 | `HU-PROD-01` | Productos — Ver catálogo completo de productos | Productos y proveedores | Indispensable | 3 | — | — | `HU-PROD-02` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:68",
+      "text": "| 13 | `HU-PROD-04` | Productos — Editar datos de un producto | Productos y proveedores | Importante | 3 | — | — | `HU-PROD-02` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:69",
+      "text": "| 14 | `HU-PROD-05` | Productos — Gestionar estado de disponibilidad comercial | Productos y proveedores | Importante | 2 | — | — | `HU-PROD-02` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:98",
+      "text": "| 43 | `HU-SOL-01` | Reposición – Crear solicitud de reposición | Mercadería y reposición | Indispensable | 3 | — | — | `HU-PROD-02`, `HU-PROV-02` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:125",
+      "text": "| 70 | `HU-CAT-03` | Categorías — Editar nombre de categoría | Productos y proveedores | Importante | 1 | — | — | `HU-CAT-02` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:126",
+      "text": "| 71 | `HU-CAT-04` | Categorías — Eliminar categoría sin productos | Productos y proveedores | Deseable | 2 | — | — | `HU-CAT-02` y `HU-PROD-01` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:127",
+      "text": "| 72 | `HU-PROD-03` | Productos — Escanear código de barras para registrar producto | Productos y proveedores | Deseable | 5 | — | — | `HU-PROD-02` |"
+    },
+    {
+      "source": "09_Product_Backlog.md:179",
+      "text": "| Productos y proveedores | 14 | 36 | Artículos enlatados, categorías y proveedores de mercadería. |"
+    },
+    {
+      "source": "09_Product_Backlog.md:223",
+      "text": "- [x] `HU-CAT-02` permanece activa pero no pertenece a Sprint 1."
+    },
+    {
+      "source": "02_Diseno_Tecnico_R1_PMV.md:37",
+      "text": "| `DT-06` | En R1-PMV todos los productos enlatados controlan vencimiento y todo lote exige una fecha posterior al día de negocio de Lima | Elimina el caso contradictorio de producto sin vencimiento dentro del Sprint 1 |"
+    },
+    {
+      "source": "02_Diseno_Tecnico_R1_PMV.md:58",
+      "text": "  ├─ catalog      categorías y productos"
+    },
+    {
+      "source": "02_Diseno_Tecnico_R1_PMV.md:87",
+      "text": "| Registrar producto enlatado | Sí | No | No | Código único y categoría sembrada |"
+    },
+    {
+      "source": "02_Diseno_Tecnico_R1_PMV.md:105",
+      "text": "| `category` | UUID, nombre, nombre normalizado, activo | nombre normalizado único; seed «Productos enlatados» |"
+    },
+    {
+      "source": "02_Diseno_Tecnico_R1_PMV.md:106",
+      "text": "| `product` | UUID, categoría, nombre, código normalizado, unidad, precio con IGV, mínimo, `controls_expiration` (controla vencimiento), costo promedio, fechas | código único; precio `> 0`; mínimo entero `>= 0`; costo `>= 0`; `CHECK` exige control de vencimiento en R1 |"
+    },
+    {
+      "source": "02_Diseno_Tecnico_R1_PMV.md:160",
+      "text": "| `DB-C02` | `UNIQUE(category.name_normalized)` | Seed idempotente y sin categorías duplicadas |"
+    },
+    {
+      "source": "02_Diseno_Tecnico_R1_PMV.md:174",
+      "text": "| `DB-C16` | `CHECK(product.controls_expiration = TRUE)` en R1 | Impide crear un producto enlatado sin control de vencimiento |"
+    },
+    {
+      "source": "02_Diseno_Tecnico_R1_PMV.md:287",
+      "text": "- El comando idempotente de datos ficticios crea roles, tres cuentas de prueba, categoría «Productos enlatados», caja `CAJA-01` y contador inicial. Las contraseñas proceden del ambiente y no del repositorio."
+    },
+    {
+      "source": "02_Diseno_Tecnico_R1_PMV.md:315",
+      "text": "- Se aplica migración una sola vez, se inicia la nueva imagen y se ejecuta smoke test: `ready`, login, lectura de categoría y acceso autorizado."
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:41",
+      "text": "| `S1-DB-04` | Seeds idempotentes de categoría, caja, roles y 3 cuentas | AUTH/PROD/CAJA | `AT-DB-03`: seed dos veces sin duplicar (`EV-DB-04`) |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:44",
+      "text": "| `S1-SEC-02` | Hash, sesión/cookies, CSRF, validación, logs y autorización server-side por rol/propiedad | `RN-29`, las 9 HU, `NFR-03`, `NFR-09` | Segmento aplicativo de `ST-BASE-01` y matriz `ST-BASE-02` (`EV-SEC-02`) |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:60",
+      "text": "| 1 | Cuenta activa + credenciales correctas → sesión rotada y pantalla de su rol | `RN-29`, `NFR-03` | `S1-AUTH01-UI`, `S1-AUTH01-SVC`, `S1-SEC-02` | `S1-AUTH01-AUTO`, `S1-AUTH01-MAN`, `S1-AUTH01-REV` | `AT-AUTH01-01`, `MT-AUTH01-01` | `EV-AUTH01-CA01` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:63",
+      "text": "| 4 | Cada cuenta ve solo su menú y una URL/POST de otro rol responde prohibido sin mutar datos | `RN-29`, `NFR-03` | `S1-AUTH01-UI`, `S1-AUTH01-AUTHZ`, `S1-SEC-02` | `S1-AUTH01-AUTO`, `S1-AUTH01-MAN`, `S1-AUTH01-REV` | `AT-AUTH01-04`, `ST-AUTH01-03`, `MT-AUTH01-04` | `EV-AUTH01-CA04` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:71",
+      "text": "| 3 | Tras salir, botón Atrás/URL/cookie no recuperan datos ni ejecutan acciones; el mismo vendedor puede retomar su turno y otro no puede apropiárselo | `RN-29`, `RN-30`, `NFR-03`, `NFR-09` | `S1-AUTH03-UI`, `S1-AUTH03-SVC`, `S1-SEC-02` | `S1-AUTH03-AUTO`, `S1-AUTH03-MAN`, `S1-AUTH03-REV` | `ST-AUTH03-01`, `MT-AUTH03-03` | `EV-AUTH03-CA03` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:73",
+      "text": "### HU-PROD-02 — Registrar un producto enlatado (5 CA)"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:77",
+      "text": "| 1 | ADMIN registra la ficha en la categoría sembrada y el producto queda con control de vencimiento obligatorio; la fecha se captura después en cada lote | `RN-29`, `DT-06`, `NFR-03` | `S1-PROD02-UI`, `S1-PROD02-SVC`, `S1-DB-01`, `S1-DB-02`, `S1-DB-03`, `S1-DB-04` | `S1-PROD02-AUTO`, `S1-PROD02-MAN`, `S1-PROD02-REV` | `AT-PROD02-01`, `MT-PROD02-01` | `EV-PROD02-CA01` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:78",
+      "text": "| 2 | Precio `> 0` y máximo 2 decimales; cero, negativo, texto o 3 decimales se rechazan en servidor | `RN-27`, `NFR-04` | `S1-PROD02-UI`, `S1-PROD02-SVC`, `S1-DB-03` | `S1-PROD02-AUTO`, `S1-PROD02-MAN`, `S1-PROD02-REV` | `AT-PROD02-02`, `MT-PROD02-02` | `EV-PROD02-CA02` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:80",
+      "text": "| 4 | Mínimo acepta entero `>= 0`; vacío aplica 10; decimal/negativo se rechaza | `RN-06`, `NFR-04` | `S1-PROD02-UI`, `S1-PROD02-SVC`, `S1-DB-03` | `S1-PROD02-AUTO`, `S1-PROD02-MAN`, `S1-PROD02-REV` | `AT-PROD02-04`, `MT-PROD02-04` | `EV-PROD02-CA04` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:81",
+      "text": "| 5 | Producto recién creado tiene existencia física/vendible cero y no aparece disponible para cobro; ALMACENERO/VENDEDOR por URL directa no pueden crearlo | `RN-29`, `DT-06`, `NFR-03`, `NFR-04` | `S1-PROD02-SVC`, `S1-SEC-02`, `S1-DB-01`, `S1-DB-03` | `S1-PROD02-AUTO`, `S1-PROD02-MAN`, `S1-PROD02-REV` | `AT-PROD02-05`, `ST-PROD02-01`, `MT-PROD02-05` | `EV-PROD02-CA05` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:87",
+      "text": "| 1 | ALMACENERO guarda la primera carga con uno/varios lotes válidos; otro rol no altera datos y una segunda carga directa, incluso simultánea, se rechaza | `RN-01`, `RN-29`, `NFR-02`, `NFR-03` | `S1-INV01A-UI`, `S1-INV01A-VALID`, `S1-INV01A-TXDB`, `S1-SEC-02`, `S1-DB-03` | `S1-INV01A-AUTO`, `S1-INV01A-MAN`, `S1-INV01A-REV` | `AT-INV01A-01`, `ST-INV01A-01`, `CT-CONC-01`, `MT-INV01A-01` | `EV-INV01A-CA01` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:88",
+      "text": "| 2 | Lote comercial no vacío, uppercase y único por producto; cantidad entera positiva, costo positivo ≤4 decimales y vencimiento `> hoy Lima`; toda frontera inválida se rechaza | `RN-03`, `RN-14`, `DT-07`, `DT-08`, `NFR-04`, `NFR-11` | `S1-INV01A-UI`, `S1-INV01A-VALID`, `S1-DB-03` | `S1-INV01A-AUTO`, `S1-INV01A-MAN`, `S1-INV01A-REV` | `AT-INV01A-02`, `AT-TIME-01`, `MT-INV01A-02` | `EV-INV01A-CA02` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:97",
+      "text": "| 1 | VENDEDOR sin turno declara `0.00` o positivo y abre la caja única; otro rol por acceso directo no modifica datos | `RN-10`, `RN-29`, `NFR-03`, `NFR-04` | `S1-CAJA01-UI`, `S1-CAJA01-SVC`, `S1-SEC-02`, `S1-DB-03` | `S1-CAJA01-AUTO`, `S1-CAJA01-MAN`, `S1-CAJA01-REV` | `AT-CAJA01-01`, `ST-CAJA01-01`, `MT-CAJA01-01` | `EV-CAJA01-CA01` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:100",
+      "text": "| 4 | Turno guarda vendedor autenticado, caja, UTC, presentación Lima y monto exacto; cliente no puede suplantar vendedor y otro rol por URL directa no abre caja | `RN-10`, `RN-29`, `NFR-03`, `NFR-11` | `S1-CAJA01-SVC`, `S1-CAJA01-CONC`, `S1-SEC-02` | `S1-CAJA01-AUTO`, `S1-CAJA01-MAN`, `S1-CAJA01-REV` | `AT-CAJA01-03`, `ST-CAJA01-01`, `MT-CAJA01-04` | `EV-CAJA01-CA04` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:106",
+      "text": "| 1 | Solo el VENDEDOR dueño de un turno abierto puede agregar la primera línea válida y crear el único borrador activo; una pantalla vacía no lo crea | `RN-10`, `RN-29`, `RN-30`, `NFR-03` | `S1-VEN01B-UI`, `S1-VEN01B-SVC`, `S1-SEC-02` | `S1-VEN01B-AUTO`, `S1-VEN01B-MAN`, `S1-VEN01B-REV` | `AT-VEN01B-01`, `ST-VEN01B-01`, `MT-VEN01B-01` | `EV-VEN01B-CA01` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:108",
+      "text": "| 3 | Cantidad entera positiva y no mayor al stock vendible; límites se revalidan en servidor | `RN-03`, `NFR-04` | `S1-VEN01B-UI`, `S1-VEN01B-SVC` | `S1-VEN01B-AUTO`, `S1-VEN01B-MAN`, `S1-VEN01B-REV` | `AT-VEN01B-03`, `MT-VEN01B-03` | `EV-VEN01B-CA03` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:109",
+      "text": "| 4 | Lote con vencimiento igual/anterior al día Lima no suma a disponibilidad | `RN-03`, `NFR-04`, `NFR-11` | `S1-VEN01B-SVC`, `S1-DB-03` | `S1-VEN01B-AUTO`, `S1-VEN01B-MAN`, `S1-VEN01B-REV` | `AT-VEN01B-04`, `AT-TIME-02`, `MT-VEN01B-04` | `EV-VEN01B-CA04` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:110",
+      "text": "| 5 | Borrador muestra precio, línea, base, IGV y total exactos sin cambiar lotes ni caja; quitar su última línea lo descarta y deja de bloquear el cierre | `RN-27`, `RN-30`, `NFR-01`, `NFR-04` | `S1-VEN01B-UI`, `S1-VEN01B-SVC` | `S1-VEN01B-AUTO`, `S1-VEN01B-MAN`, `S1-VEN01B-REV` | `AT-VEN01B-05`, `MT-VEN01B-05`, `AT-CAJA02-04` | `EV-VEN01B-CA05` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:117",
+      "text": "| 2 | Efectivo igual/mayor produce vuelto exacto decimal, incluido caso de centavos | `RN-25`, `RN-27`, `DT-08`, `NFR-04` | `S1-VEN01C-UI`, `S1-VEN01C-PAY` | `S1-VEN01C-AUTO`, `S1-VEN01C-MAN`, `S1-VEN01C-REV` | `AT-VEN01C-02`, `MT-VEN01C-02` | `EV-VEN01C-CA02` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:118",
+      "text": "| 3 | Solo el VENDEDOR dueño con turno abierto puede cobrar; múltiples lotes descuentan FEFO estable, saltan vencidos y nunca quedan negativos bajo carrera | `RN-03`, `RN-19`, `RN-29`, `NFR-02`, `NFR-03`, `NFR-04`, `NFR-11` | `S1-VEN01C-PAY`, `S1-VEN01C-FEFO`, `S1-VEN01C-TXDB`, `S1-SEC-02`, `S1-DB-03` | `S1-VEN01C-AUTO`, `S1-VEN01C-MAN`, `S1-VEN01C-REV`, `S1-QA-DB-03` | `AT-VEN01C-03`, `ST-VEN01C-01`, `CT-CONC-03`, `MT-VEN01C-03` | `EV-VEN01C-CA03` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:121",
+      "text": "| 6 | Venta guarda snapshots de nombre, precio y costo a 4 decimales; cambios maestros posteriores no alteran historial | `RN-28`, `NFR-12` | `S1-VEN01C-TXDB`, `S1-DB-01`, `S1-DB-03` | `S1-VEN01C-AUTO`, `S1-VEN01C-MAN`, `S1-VEN01C-REV` | `AT-VEN01C-05`, `MT-VEN01C-06` | `EV-VEN01C-CA06` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:128",
+      "text": "| 2 | DTO histórico muestra Lima, vendedor/caja, líneas, base, IGV, total, efectivo y vuelto; nunca muestra costo | `RN-26`, `RN-27`, `RN-28`, `NFR-09`, `NFR-11`, `NFR-12` | `S1-VEN02A-UI`, `S1-VEN02A-SVC` | `S1-VEN02A-AUTO`, `S1-VEN02A-MAN`, `S1-VEN02A-REV` | `AT-VEN02A-02`, `ST-VEN02A-01`, `MT-VEN02A-02` | `EV-VEN02A-CA02` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:130",
+      "text": "| 4 | «Última constancia» abre mediante su correlativo la misma venta autorizada tras recarga; cambios a producto no alteran importes | `RN-26`, `RN-29`, `NFR-03`, `NFR-12` | `S1-VEN02A-UI`, `S1-VEN02A-SVC`, `S1-SEC-02` | `S1-VEN02A-AUTO`, `S1-VEN02A-MAN`, `S1-VEN02A-REV` | `AT-VEN02A-04`, `ST-VEN02A-02`, `MT-VEN02A-04` | `EV-VEN02A-CA04` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:136",
+      "text": "| 1 | Solo el VENDEDOR dueño del turno puede declarar un contado decimal no negativo con hasta 2 decimales; dato inválido o rol ajeno no modifica el turno | `RN-10`, `RN-29`, `NFR-03`, `NFR-04` | `S1-CAJA02-UI`, `S1-CAJA02-SVC`, `S1-SEC-02` | `S1-CAJA02-AUTO`, `S1-CAJA02-MAN`, `S1-CAJA02-REV` | `AT-CAJA02-01`, `ST-CAJA02-01`, `MT-CAJA02-01` | `EV-CAJA02-CA01` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:138",
+      "text": "| 3 | Cierre guarda vendedor/UTC, cambia a `CLOSED`, impide vender y un segundo cierre no altera el acta | `RN-10`, `RN-29`, `NFR-02`, `NFR-03`, `NFR-11` | `S1-CAJA02-SVC`, `S1-DB-03` | `S1-CAJA02-AUTO`, `S1-CAJA02-MAN`, `S1-CAJA02-REV`, `S1-QA-DB-03` | `AT-CAJA02-03`, `CT-CONC-05`, `MT-CAJA02-03` | `EV-CAJA02-CA03` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:140",
+      "text": "| 5 | Tras cierre, otro VENDEDOR puede abrir un nuevo turno; nunca coexisten dos `OPEN` | `RN-10`, `RN-29`, `NFR-02`, `NFR-03` | `S1-CAJA02-SVC`, `S1-CAJA01-CONC` | `S1-CAJA02-AUTO`, `S1-CAJA02-MAN`, `S1-CAJA02-REV` | `AT-CAJA02-05`, `CT-CONC-02`, `MT-CAJA02-05` | `EV-CAJA02-CA05` |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:150",
+      "text": "| `AT-DB-03` | Ejecutar seed dos veces | Exactamente 3 cuentas, 3 roles, 1 categoría, 1 caja y 1 contador |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:180",
+      "text": "| `PROD-SIN-STOCK` | enlatado, stock 0, mínimo 10 | Alta de producto/carga inicial |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:249",
+      "text": "HU-AUTH-01 → HU-PROD-02 → HU-AUTH-03"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:277",
+      "text": "| `BUG-001` | `HU-USR-03`, `HU-CAJA-01` | `CA-USR03-04`, `RN-03` | `S3-USR03-SVC` | `identity/services.py::update_employee` | `identity.tests.EmployeeEditDeactivateTests.test_cannot_change_role_of_seller_with_open_shift` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:280",
+      "text": "| `BUG-004` | `HU-PROD-04`, `HU-INV-06` | `CA-PROD04-03`, `CA-INV06-01` | `S2-PROD04-SVC` | `sales/models.py::SaleLine.product` (`0004_saleline_product`), `catalog/services.py::update_product`, `inventory/views.py::product_movements` | `inventory.tests.PhysicalAdjustmentTests.test_barcode_change_preserves_sales_in_product_movements_kardex` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:282",
+      "text": "| `BUG-006` | `HU-VEN-01a`, `HU-VEN-01c`, `HU-PROD-04` | `CA-VEN01C-01`, `RN-10` | `S1-VEN01C-SVC` | `sales/services.py::checkout_sale`, `sales/views.py::sales_draft`, `sales_line_update`, `sales_checkout` | `sales.tests.SalesHistoryTests.test_price_change_during_checkout_warns_seller_and_updates_draft_line_price`, `test_bug006_draft_warns_seller_when_catalog_price_changes_during_preparation` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:285",
+      "text": "| `BUG-009` | `HU-PROD-04`, `HU-CAJA-01`, `HU-CAJA-02`, `HU-VEN-01c` | `CA-PROD02-03`, `CA-CAJA01-03` | `S1-CAJA01-UI`, `S2-PROD04-UI` | `catalog/forms.py::ProductEditForm`, `cash/forms.py::CashOpeningForm`, `CashCloseForm`, `sales/forms.py::CheckoutForm` | `catalog.tests.ProductExpirationsTests.test_product_edit_rejects_scientific_notation_and_excessive_minimum_stock`, `cash.tests.CashShiftHistoryTests.test_cash_open_and_close_reject_scientific_notation_and_absurd_amounts` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:289",
+      "text": "| `BUG-013` | `HU-PROD-02`, `HU-PROD-04` | `CA-PROD02-02`, `NFR-04` | `S1-PROD02-SVC`, `S2-PROD04-SVC` | `catalog/forms.py::BARCODE_PATTERN`, `catalog/services.py::update_product` | `catalog.tests.ProductExpirationsTests.test_barcode_rejects_xss_and_special_characters_on_create_and_edit` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:297",
+      "text": "| `BUG-021` | `HU-CAT-02`, `HU-PROD-02`, `HU-INV-01a`, `HU-VEN-01b` | `CA-CAT02-01` | `S2-CAT02-SVC`, `S1-PROD02-UI` | `catalog/models.py`, `catalog/forms.py`, `inventory/services.py`, `sales_draft.html`, `identity/forms.py` | `catalog.tests.ProductExpirationsTests.test_active_custom_category_can_be_used_to_register_product` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:299",
+      "text": "| `BUG-023` | `HU-PROD-02`, `HU-INV-01a`, `HU-CAJA-01`, `HU-CAJA-02`, `HU-VEN-02a` | `NFR-07` (Navegación y semántica HTML) | `S1-PROD02-UI`, `S1-INV01A-UI`, `S1-CAJA02-UI` | `catalog/urls.py`, `inventory/urls.py`, `dashboard.html`, `stock_overview.html`, `cash_shift_opened.html` | `catalog.tests.ProductExpirationsTests.test_product_created_alias_url_and_catalog_link`, `cash.tests.CashShiftHistoryTests.test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:304",
+      "text": "| `BUG-028` | `HU-CAT-01`, `HU-CAT-02`, `HU-PROD-04` | `CA-CAT02-01`, `CA-PROD04-01` | `QA-FIX-CAT-01` | `catalog/services.py::toggle_category_status`, `catalog/views.py::category_toggle`, `catalog/forms.py::ProductEditForm`, `category_form.html`, `category_list.html` | `catalog.tests.ProductExpirationsTests.test_bug028_category_toggle_and_product_edit_category_and_barcode_search` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:306",
+      "text": "| `BUG-030` | `HU-INV-01a` (`HUECO-09`) | `CA-INV01A-04` | `QA-FIX-CAT-01` | `catalog/management/commands/seed_demo.py` | `catalog.tests.ProductExpirationsTests.test_bug030_seed_demo_populates_weighted_average_cost` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:307",
+      "text": "| `BUG-031` | `HU-CAJA-01`, `HU-PROD-01`, Transversal UI | `CA-CAJA01-02`, `CA-PROD01-02`, `NFR-07` | `QA-FIX-CASH-01`, `QA-FIX-CAT-01`, `QA-FIX-UI-01` | `cash/templates/cash/cash_open.html`, `catalog/views.py::product_list`, `templates/403.html`, `templates/404.html` | `cash.tests.CashShiftHistoryTests.test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link`, `catalog.tests.ProductExpirationsTests.test_bug028_category_toggle_and_product_edit_category_and_barcode_search` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:309",
+      "text": "| `BUG-033` | `HU-CAT-01`, `HU-PROD-04`, `HU-INV-01a`, `HU-INV-01b`, `HU-VEN-01a..01c` | `CA-CAT01-02`, `CA-PROD04-01`, `CA-VEN01B-02` | `QA-FIX-CAT-01`, `QA-FIX-INV-01`, `QA-FIX-SALES-01` | `catalog/models.py::Product.clean`, `Product.is_sellable`, `inventory/forms.py::InitialLoadProductForm`, `StockEntryProductForm`, `sales/views.py::_search_products`, `sales/services.py::add_product_to_draft`, `update_draft_line`, `checkout_sale` | `catalog.tests.ProductExpirationsTests.test_bug033_product_with_inactive_category_can_update_price_and_name`, `inventory.tests.PhysicalAdjustmentTests.test_bug033_inactive_category_excludes_products_from_initial_load_and_stock_entry_forms`, `sales.tests.SalesHistoryTests.test_bug033_and_bug037_inactive_category_or_product_blocks_search_draft_line_update_and_checkout` | ✅ PASS |"
+    },
+    {
+      "source": "03_Matriz_de_Trazabilidad_y_Pruebas.md:312",
+      "text": "| `BUG-037` | `HU-VEN-01b`, `HU-INV-02`, `HU-INV-03`, `HU-PROD-04` | `CA-VEN01B-03`, `RN-14`, `RN-28` | `QA-FIX-SALES-01`, `QA-FIX-INV-01`, `QA-FIX-CAT-01` | `sales/services.py::update_draft_line`, `inventory/services.py::_recalculate_product_average_cost`, `catalog/services.py::update_product` | `sales.tests.SalesHistoryTests.test_bug033_and_bug037_inactive_category_or_product_blocks_search_draft_line_update_and_checkout`, `inventory.tests.PhysicalAdjustmentTests.test_bug005_writeoff_and_physical_adjustment_recalculate_average_cost`, `catalog.tests.ProductExpirationsTests.test_bug004_product_barcode_update_preserves_historical_sale_line_snapshot` | ✅ PASS |"
+    },
+    {
+      "source": "14_Sprint_Planning.md:66",
+      "text": "> Permitir que el minimarket complete una venta en efectivo desde el ingreso del trabajador hasta el cuadre de su única caja: registrar un producto enlatado, cargar sus lotes, abrir el turno, preparar y cobrar, descontar existencias por FEFO, entregar una constancia interna y cerrar la caja con integridad recuperable."
+    },
+    {
+      "source": "14_Sprint_Planning.md:76",
+      "text": "| 3 | `HU-PROD-02` | Registrar producto enlatado no vendible sin stock | 5 | `HU-AUTH-01`, categoría seed | Des.2 - Nolasco | Des.6 - Angeles |"
+    },
+    {
+      "source": "14_Sprint_Planning.md:77",
+      "text": "| 4 | `HU-INV-01a` | Confirmar una sola carga inicial multilot atómica | 5 | `HU-PROD-02` | Des.1 - Velasquez | Des.6 - Angeles |"
+    },
+    {
+      "source": "14_Sprint_Planning.md:96",
+      "text": "| `HU-PROD-02` | 5 Subtasks | 16 |"
+    },
+    {
+      "source": "14_Sprint_Planning.md:123",
+      "text": "             ├──► HU-PROD-02 ──► HU-INV-01a ─┐"
+    },
+    {
+      "source": "16_Task_Breakdown.md:60",
+      "text": "| S1-DB-01 | Task | Todas / BD | Elaborar modelo lógico y diccionario con roles, cuentas, sesiones, categorías, productos, cargas, lotes, caja, turnos, ventas, detalles, asignaciones e idempotencia | RN-01, RN-03, RN-10, RN-12, RN-14, RN-19, RN-25, RN-26, RN-27, RN-28, RN-29 | [H] S1-ARQ-01 | D1 | D2 | 4 | Diagrama y diccionario trazado |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:63",
+      "text": "| S1-DB-04 | Task | Todas / datos | Crear seeds idempotentes de roles, cuentas ficticias, categoría `Productos enlatados` y caja única, sin secretos reales | HU-AUTH-01; HU-PROD-02; HU-CAJA-01 | [H] S1-DB-02; [I] S1-SEC-02 | D5 | D6 | 3 | Comando repetido dos veces sin duplicados |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:66",
+      "text": "| S1-SEC-02 | Task | AUTH/PROD/INV/CAJA/VEN / seguridad | Definir baseline de hash, sesión/cookies, CSRF, validación de entradas, autorización de servidor y logs sin datos sensibles | DoD-5; HU-AUTH-01, HU-AUTH-03; RN-29; NFR-03, NFR-09 | [H] S1-SEC-01 | D5 | D6 | 4 | Checklist de seguridad y casos negativos |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:83",
+      "text": "| S1-AUTH01-AUTHZ | Subtask / seguridad | Autorizar cada operación en servidor y ocultar rutas/menús no permitidos según matriz de permisos | CA1,4; RN-29; NFR-03 | [H] S1-AUTH01-SVC, S1-SEC-02 | D5 | D6 | 3 | Matriz y respuestas permitida/prohibida |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:94",
+      "text": "| S1-AUTH03-SVC | Subtask / servicio-seguridad | Descartar atómicamente el borrador activo si se confirma, preservar el turno y su dueño, invalidar la sesión e impedir reutilización | CA1-3; RN-29, RN-30; NFR-03, NFR-09 | [H] S1-AUTH01-SVC, S1-AUTH01-AUTHZ | D5 | D6 | 3 | Borrador/sesión/turno antes y después |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:100",
+      "text": "## 16.5 `HU-PROD-02` — Registrar producto enlatado — 5 Subtasks / 16 h"
+    },
+    {
+      "source": "16_Task_Breakdown.md:104",
+      "text": "| S1-PROD02-UI | Subtask / UI | Formulario accesible con nombre, código, categoría, unidad, precio y mínimo; informa que el control de vencimiento es obligatorio y que la fecha se registrará por lote | CA1-5; RN-06, RN-27 | [H] S1-ARQ-01; [I] S1-PROD02-SVC | D3 | D4 | 4 | Capturas, foco, validaciones y estados |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:105",
+      "text": "| S1-PROD02-SVC | Subtask / servicio-BD | Autorizar ADMIN; validar y persistir nombre, código normalizado único, categoría sembrada, unidad, precio decimal, mínimo 10 por defecto y control de vencimiento obligatorio, con cero stock | CA1-5; RN-06, RN-27, RN-29 | [H] S1-DB-03; [I] S1-AUTH01-AUTHZ | D2 | D3 | 5 | Registro completo persistido y entradas/duplicado rechazados |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:107",
+      "text": "| S1-PROD02-MAN | Subtask / QA manual | Ejecutar todos los criterios con la categoría preparada y verificar cero existencias | CA1-5 | [H] S1-PROD02-UI, S1-PROD02-AUTO; [I] S1-DB-04 | D3 | D4 | 2 | Caso manual y consulta de catálogo |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:116",
+      "text": "| S1-INV01A-VALID | Subtask / servicio | Autorizar ALMACENERO y validar cantidad entera positiva, costo decimal positivo, fecha posterior a hoy en Lima, lote normalizado/único y primera carga | CA1-3; RN-01, RN-03, RN-29; NFR-03 | [H] S1-DB-03; [I] S1-PROD02-SVC, S1-AUTH01-AUTHZ | D2 | D3 | 3 | Casos válidos, inválidos y de rol directo |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:127",
+      "text": "| S1-CAJA01-UI | Subtask / UI | Formulario de apertura y resumen con monto, vendedor, fecha/hora y mensajes de bloqueo | CA1-4; RN-10, RN-29 | [H] S1-ARQ-01; [I] S1-CAJA01-SVC | D4 | D5 | 2 | Capturas de monto cero, positivo e inválido |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:128",
+      "text": "| S1-CAJA01-SVC | Subtask / servicio-BD | Validar monto decimal no negativo, vendedor autorizado y persistir apertura transaccional | CA1,2,4; RN-10, RN-29 | [H] S1-DB-03; [I] S1-AUTH01-AUTHZ | D4 | D5 | 3 | Turno persistido y entradas inválidas rechazadas |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:139",
+      "text": "| S1-VEN01B-UI | Subtask / UI | Buscar por nombre/código, agregar/cambiar/quitar líneas y mostrar precio, cantidad, importe, base, IGV y total | CA2,3,5; RN-27, RN-30 | [H] S1-ARQ-01; [I] S1-PROD02-UI, S1-VEN01B-SVC | D3 | D4 | 5 | Recorrido y capturas de la venta preparada |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:140",
+      "text": "| S1-VEN01B-SVC | Subtask / servicio-BD | Exigir turno propio abierto; crear el borrador `ACTIVE` con la primera línea válida, descartarlo al quitar la última, consultar stock vendible en Lima, validar enteros/stock y calcular importes sin descontar | CA1-5; RN-03, RN-27, RN-29, RN-30 | [H] S1-DB-03; [I] S1-AUTH01-AUTHZ, S1-INV01A-TXDB, S1-CAJA01-SVC | D3 | D4 | 6 | Respuestas de servicio, ciclo de vida del borrador y stock sin cambio |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:151",
+      "text": "| S1-VEN01C-PAY | Subtask / servicio | Autorizar al VENDEDOR dueño, revalidar turno/borrador, efectivo decimal y calcular faltante/vuelto sin mutar datos ante rechazo | CA1,2,3; RN-25, RN-27, RN-29, RN-30; NFR-03 | [H] S1-DB-03; [I] S1-VEN01B-SVC, S1-CAJA01-SVC, S1-AUTH01-AUTHZ | D4 | D5 | 3 | Pruebas de cálculo, propiedad/rol y estado inalterado |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:152",
+      "text": "| S1-VEN01C-FEFO | Subtask / servicio-BD | Seleccionar y bloquear lotes vigentes por vencimiento, ingreso e identificador interno; dividir salida sin negativos | CA3; RN-03, RN-19 | [H] S1-DB-03; [I] S1-INV01A-TXDB | D1 | D2 | 5 | Asignaciones de lote y caso concurrente |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:153",
+      "text": "| S1-VEN01C-TXDB | Subtask / servicio-BD | Guardar venta, pago, detalles, asignaciones, stock y snapshots históricos en una transacción | CA3,4,6; RN-25, RN-28 | [H] S1-DB-03; [I] S1-VEN01C-PAY, S1-VEN01C-FEFO | D1 | D2 | 6 | Venta completa y fallos sin residuos |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:164",
+      "text": "| S1-VEN02A-UI | Subtask / UI | Mostrar constancia accesible con correlativo, fecha Lima, vendedor, caja, líneas, importes, efectivo, vuelto y leyenda legal visible | CA1-3; RN-26, RN-27 | [H] S1-ARQ-01; [I] S1-VEN02A-SVC | D6 | D1 | 4 | Captura/impresión y revisión de leyenda |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:165",
+      "text": "| S1-VEN02A-SVC | Subtask / servicio-BD | Recuperar por el correlativo del enlace «Última constancia» una venta autorizada desde snapshots, sin recalcular ni exponer costo | CA1,2,4; RN-26, RN-27, RN-28 | [H] S1-DB-03; [I] S1-VEN01C-TXDB, S1-VEN01C-IDEM | D6 | D1 | 3 | Consulta repetida con mismos datos/importes |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:176",
+      "text": "| S1-CAJA02-SVC | Subtask / servicio-BD | Autorizar al VENDEDOR dueño, bloquear/revalidar turno, impedir borrador activo con líneas y doble cierre, calcular movimientos confirmados y guardar cierre atómico frente a cobros concurrentes | CA1-5; RN-10, RN-25, RN-29, RN-30; NFR-03 | [H] S1-DB-03; [I] S1-CAJA01-CONC, S1-VEN01C-TXDB, S1-AUTH01-AUTHZ | D6 | D1 | 5 | Turno cerrado inmutable, permisos y carreras resueltas |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:191",
+      "text": "| HU-PROD-02 | 5 | 16 |"
+    },
+    {
+      "source": "16_Task_Breakdown.md:222",
+      "text": "             ├──[I]──► HU-PROD-02 ──[I]──► HU-INV-01a ─┐"
+    },
+    {
+      "source": "16_Task_Breakdown.md:328",
+      "text": "| `QA-FIX-CAT-01` | `HU-CAT-01`, `HU-CAT-02`, `HU-PROD-01`, `HU-PROD-02`, `HU-PROD-04` | `catalog` | Habilitación de todas las categorías activas en registro y edición de productos (`ProductEditForm`), activación/desactivación de categorías (`category-toggle`), preservación de categoría actual en `Product.clean()` al editar precio/nombre de productos con categoría desactivada, inmutabilidad de `SaleLine.product_snapshot_barcode` al actualizar código de barras en `update_product`, búsqueda por nombre o código de barras en `/productos/`, validación alfanumérica de `barcode` (`BARCODE_PATTERN`), rechazo de notación científica (`1e5`) y topes en `ProductEditForm`, cálculo de `average_cost` ponderado en `seed_demo`, y ruta alias `/productos/<id>/creado/`. | `BUG-004`, `BUG-009`, `BUG-013`, `BUG-021`, `BUG-023`, `BUG-028`, `BUG-030`, `BUG-031`, `BUG-033` | ✅ Hecho |"
+    },
+    {
+      "source": "r1-pmv/CONTROL_SPRINTS.md:14",
+      "text": "| HU-PROD-02 | Registrar producto enlatado | ✅ Completada |"
+    },
+    {
+      "source": "r1-pmv/CONTROL_SPRINTS.md:35",
+      "text": "| HU-CAT-01 | Ver lista de categorías | ✅ Completada |"
+    },
+    {
+      "source": "r1-pmv/CONTROL_SPRINTS.md:36",
+      "text": "| HU-CAT-02 | Crear nueva categoría | ✅ Completada |"
+    },
+    {
+      "source": "r1-pmv/CONTROL_SPRINTS.md:37",
+      "text": "| HU-PROD-01 | Ver catálogo completo de productos | ✅ Completada |"
+    },
+    {
+      "source": "r1-pmv/CONTROL_SPRINTS.md:38",
+      "text": "| HU-PROD-04 | Editar datos de un producto | ✅ Completada |"
+    },
+    {
+      "source": "r1-pmv/CONTROL_SPRINTS.md:39",
+      "text": "| HU-PROD-05 | Gestionar estado de disponibilidad | ✅ Completada |"
+    },
+    {
+      "source": "r1-pmv/CONTROL_SPRINTS.md:92",
+      "text": "| `BUG-001`..`BUG-037` | Corrección integral de los 37 hallazgos de la Auditoría de Caos Multi-Rol y UX/UI (bloqueo de cambio de rol con turno abierto, diferencias en historial de turnos, idempotencia y `@never_cache` en mermas/ajustes con prioridad de `POST lot_id`, FK `SaleLine.product` e inmutabilidad de snapshot en Kardex/constancias, migraciones `Lot.supplier`, `Lot.is_initial` y `Lot.responsible` con acceso de `ADMIN` a `/inventario/cargas/<id>/`, recálculo de `average_cost` en entradas/mermas/ajustes, sincronización de precios/disponibilidad y firma `draft_signature` con `draft.pk` multi-pestaña en cobro, expiración de 5 min en bloqueo de login, validación de `unit_cost` contra notación científica, ciclo de vida completo de categorías activas/inactivas, `seed_demo` con `average_cost`, y unificación de estilos CSS) | ✅ Completada | **202 tests en verde (`manage.py test`)** · `REPORTE_CAOS_Y_UX_QA.md` §8 |"
+    }
+  ],
+  "surface": [
+    {
+      "source": "r1-pmv/catalog/admin.py:7",
+      "text": "class CategoryAdmin(admin.ModelAdmin):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/admin.py:9",
+      "text": "    search_fields = (\"name\", \"name_normalized\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/admin.py:13",
+      "text": "class ProductAdmin(admin.ModelAdmin):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/admin.py:16",
+      "text": "    search_fields = (\"name\", \"barcode\", \"barcode_normalized\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/admin.py:17",
+      "text": "    readonly_fields = (\"barcode_normalized\", \"controls_expiration\", \"average_cost\", \"created_at\", \"updated_at\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/apps.py:4",
+      "text": "class CatalogConfig(AppConfig):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/apps.py:5",
+      "text": "    default_auto_field = \"django.db.models.BigAutoField\"",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:7",
+      "text": "from django.core.validators import MaxValueValidator",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:14",
+      "text": "class CategoryForm(forms.Form):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:16",
+      "text": "        label=\"Nombre de la categoría\",",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:17",
+      "text": "        max_length=120,",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:21",
+      "text": "    def clean_name(self) -> str:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:24",
+      "text": "            raise forms.ValidationError(\"El nombre de la categoría debe contener letras o números.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:28",
+      "text": "class ProductRegistrationForm(forms.ModelForm):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:29",
+      "text": "    class Meta:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:31",
+      "text": "        fields = (\"name\", \"barcode\", \"category\", \"unit\", \"sale_price\", \"minimum_stock\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:32",
+      "text": "        labels = {",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:40",
+      "text": "        help_texts = {",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:52",
+      "text": "    def __init__(self, *args, **kwargs) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:57",
+      "text": "        self.fields[\"category\"].error_messages.update(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:63",
+      "text": "        self.fields[\"sale_price\"].validators.append(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:70",
+      "text": "        self.fields[\"minimum_stock\"].validators.append(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:74",
+      "text": "    def clean_name(self) -> str:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:77",
+      "text": "            raise forms.ValidationError(\"El nombre del producto debe contener letras o números.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:79",
+      "text": "            raise forms.ValidationError(\"Ya existe un producto registrado con este nombre.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:82",
+      "text": "    def clean_sale_price(self):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:85",
+      "text": "            raise forms.ValidationError(\"Introduzca un número decimal válido sin notación científica.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:88",
+      "text": "    def clean_minimum_stock(self) -> int:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:92",
+      "text": "    def clean_barcode(self) -> str:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:95",
+      "text": "            raise forms.ValidationError(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:100",
+      "text": "            raise forms.ValidationError(\"Ya existe un producto con este código de barras.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:104",
+      "text": "class ProductEditForm(forms.ModelForm):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:105",
+      "text": "    class Meta:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:107",
+      "text": "        fields = (\"name\", \"barcode\", \"category\", \"sale_price\", \"minimum_stock\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:108",
+      "text": "        labels = {",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:122",
+      "text": "    def __init__(self, *args, **kwargs) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:129",
+      "text": "        self.fields[\"sale_price\"].validators.append(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:135",
+      "text": "        self.fields[\"minimum_stock\"].validators.append(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:139",
+      "text": "    def clean_category(self):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:142",
+      "text": "    def clean_name(self) -> str:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:145",
+      "text": "            raise forms.ValidationError(\"El nombre del producto debe contener letras o números.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:147",
+      "text": "            raise forms.ValidationError(\"Ya existe un producto registrado con este nombre.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:150",
+      "text": "    def clean_sale_price(self):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:153",
+      "text": "            raise forms.ValidationError(\"Introduzca un número decimal válido sin notación científica.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:156",
+      "text": "    def clean_barcode(self) -> str:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:159",
+      "text": "            raise forms.ValidationError(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/forms.py:164",
+      "text": "            raise forms.ValidationError(\"Ya existe un producto con este código de barras.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/management/commands/seed_demo.py:22",
+      "text": "class Command(BaseCommand):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/management/commands/seed_demo.py:26",
+      "text": "    def handle(self, *args, **options):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0001_initial.py:6",
+      "text": "class Migration(migrations.Migration):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0001_initial.py:13",
+      "text": "                (\"id\", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0001_initial.py:14",
+      "text": "                (\"name\", models.CharField(max_length=120)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0001_initial.py:15",
+      "text": "                (\"name_normalized\", models.CharField(editable=False, max_length=120, unique=True)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0001_initial.py:16",
+      "text": "                (\"is_active\", models.BooleanField(default=True)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0001_initial.py:17",
+      "text": "                (\"created_at\", models.DateTimeField(auto_now_add=True)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:4",
+      "text": "import django.core.validators",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:9",
+      "text": "class Migration(migrations.Migration):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:16",
+      "text": "                (\"id\", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:17",
+      "text": "                (\"name\", models.CharField(max_length=160)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:18",
+      "text": "                (\"barcode\", models.CharField(max_length=64)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:19",
+      "text": "                (\"barcode_normalized\", models.CharField(editable=False, max_length=64, unique=True)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:22",
+      "text": "                    models.CharField(choices=[(\"UND\", \"Unidad (UND)\")], default=\"UND\", max_length=3),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:26",
+      "text": "                    models.DecimalField(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:29",
+      "text": "                        validators=[django.core.validators.MinValueValidator(decimal.Decimal(\"0.01\"))],",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:32",
+      "text": "                (\"minimum_stock\", models.PositiveIntegerField(default=10)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:33",
+      "text": "                (\"controls_expiration\", models.BooleanField(default=True, editable=False)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:36",
+      "text": "                    models.DecimalField(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:40",
+      "text": "                        validators=[django.core.validators.MinValueValidator(decimal.Decimal(\"0.0000\"))],",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:43",
+      "text": "                (\"is_active\", models.BooleanField(default=True)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:44",
+      "text": "                (\"created_at\", models.DateTimeField(auto_now_add=True)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/migrations/0002_product.py:45",
+      "text": "                (\"updated_at\", models.DateTimeField(auto_now=True)),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:8",
+      "text": "from django.core.validators import MinValueValidator",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:14",
+      "text": "class Category(models.Model):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:17",
+      "text": "    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:18",
+      "text": "    name = models.CharField(max_length=120)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:19",
+      "text": "    name_normalized = models.CharField(max_length=120, unique=True, editable=False)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:20",
+      "text": "    is_active = models.BooleanField(default=True)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:21",
+      "text": "    created_at = models.DateTimeField(auto_now_add=True)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:23",
+      "text": "    class Meta:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:26",
+      "text": "    def save(self, *args, **kwargs) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:31",
+      "text": "    def __str__(self) -> str:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:35",
+      "text": "class Product(models.Model):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:42",
+      "text": "    class Unit(models.TextChoices):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:45",
+      "text": "    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:47",
+      "text": "    name = models.CharField(max_length=160)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:48",
+      "text": "    barcode = models.CharField(max_length=64)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:49",
+      "text": "    barcode_normalized = models.CharField(max_length=64, unique=True, editable=False)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:50",
+      "text": "    unit = models.CharField(max_length=3, choices=Unit.choices, default=Unit.UNIT)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:51",
+      "text": "    sale_price = models.DecimalField(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:54",
+      "text": "        validators=[MinValueValidator(Decimal(\"0.01\"))],",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:56",
+      "text": "    minimum_stock = models.PositiveIntegerField(default=10)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:57",
+      "text": "    controls_expiration = models.BooleanField(default=True, editable=False)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:58",
+      "text": "    average_cost = models.DecimalField(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:62",
+      "text": "        validators=[MinValueValidator(Decimal(\"0.0000\"))],",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:64",
+      "text": "    is_active = models.BooleanField(default=True)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:65",
+      "text": "    created_at = models.DateTimeField(auto_now_add=True)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:66",
+      "text": "    updated_at = models.DateTimeField(auto_now=True)",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:68",
+      "text": "    class Meta:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:79",
+      "text": "    def normalize_barcode(value: str) -> str:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:83",
+      "text": "    def clean(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:89",
+      "text": "            raise ValidationError({\"name\": \"Ingrese el nombre del producto.\"})",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:91",
+      "text": "            raise ValidationError({\"barcode\": \"Ingrese el código de barras.\"})",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:95",
+      "text": "                raise ValidationError({\"category\": \"Seleccione una categoría activa.\"})",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:97",
+      "text": "            raise ValidationError({\"controls_expiration\": \"El control de vencimiento es obligatorio para este producto.\"})",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:99",
+      "text": "    def save(self, *args, **kwargs) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:106",
+      "text": "    def physical_stock(self) -> int:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:112",
+      "text": "    def sellable_stock(self) -> int:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:122",
+      "text": "    def is_sellable(self) -> bool:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/models.py:125",
+      "text": "    def __str__(self) -> str:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:12",
+      "text": "def create_category(*, actor: Account, name: str) -> Category:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:15",
+      "text": "        raise PermissionDenied(\"No tiene permiso para crear categorías.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:18",
+      "text": "        raise ValidationError({\"name\": \"Ingrese el nombre de la categoría.\"})",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:21",
+      "text": "        raise ValidationError({\"name\": \"Ya existe una categoría con ese nombre.\"})",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:26",
+      "text": "def toggle_category_status(*, actor: Account, category: Category) -> Category:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:29",
+      "text": "        raise PermissionDenied(\"No tiene permiso para cambiar el estado de categorías.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:36",
+      "text": "def update_product(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:51",
+      "text": "        raise PermissionDenied(\"No tiene permiso para editar productos.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:54",
+      "text": "        raise ValidationError(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:63",
+      "text": "    update_fields = [\"name\", \"barcode\", \"barcode_normalized\", \"sale_price\", \"minimum_stock\", \"updated_at\"]",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:66",
+      "text": "            raise ValidationError({\"category\": \"Seleccione una categoría activa.\"})",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:73",
+      "text": "        raise ValidationError({\"barcode\": \"Ya existe un producto con este código de barras.\"}) from exc",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:82",
+      "text": "def toggle_product_availability(*, actor: Account, product: Product) -> Product:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:85",
+      "text": "        raise PermissionDenied(\"No tiene permiso para cambiar la disponibilidad de productos.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:92",
+      "text": "def register_canned_product(",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:104",
+      "text": "        raise PermissionDenied(\"No tiene permiso para registrar productos.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/services.py:124",
+      "text": "            raise ValidationError({\"barcode\": \"Ya existe un producto con este código de barras.\"}) from exc",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:14",
+      "text": "class CategoryTests(TestCase):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:15",
+      "text": "    def test_name_normalization_is_persisted(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:20",
+      "text": "class ProductRegistrationTests(TestCase):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:24",
+      "text": "    def setUpTestData(cls) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:39",
+      "text": "    def payload(self, **overrides):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:51",
+      "text": "    def test_admin_registers_zero_stock_non_sellable_product(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:68",
+      "text": "    def test_omitted_minimum_stock_defaults_to_ten(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:75",
+      "text": "    def test_normalized_duplicate_barcode_is_rejected_without_second_row(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:92",
+      "text": "    def test_invalid_prices_never_create_product(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:100",
+      "text": "    def test_invalid_minimums_never_create_product(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:110",
+      "text": "    def test_inactive_or_wrong_category_is_rejected(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:121",
+      "text": "    def test_non_admin_post_is_forbidden_and_does_not_create_product(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:129",
+      "text": "    def test_database_rejects_product_without_expiration_control(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:144",
+      "text": "class _CatalogS2Base(TestCase):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:149",
+      "text": "    def setUpTestData(cls) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:167",
+      "text": "class CategoryListTests(_CatalogS2Base):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:168",
+      "text": "    def test_admin_can_see_category_list(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:174",
+      "text": "    def test_non_admin_gets_403(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:183",
+      "text": "class CategoryCreateTests(_CatalogS2Base):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:184",
+      "text": "    def test_admin_creates_category(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:190",
+      "text": "    def test_duplicate_name_is_rejected(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:197",
+      "text": "    def test_non_admin_post_is_forbidden(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:205",
+      "text": "class ProductListTests(_CatalogS2Base):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:207",
+      "text": "    def setUpTestData(cls) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:216",
+      "text": "    def test_admin_sees_product_list(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:222",
+      "text": "    def test_warehouse_sees_product_list(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:227",
+      "text": "    def test_seller_gets_403(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:231",
+      "text": "    def test_search_filters_by_name(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:238",
+      "text": "    def test_catalog_and_registration_page_show_current_sale_availability(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:266",
+      "text": "class ProductEditTests(_CatalogS2Base):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:268",
+      "text": "    def setUpTestData(cls) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:277",
+      "text": "    def _edit_payload(self, **overrides):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:287",
+      "text": "    def test_admin_can_edit_product_name(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:297",
+      "text": "    def test_duplicate_barcode_is_rejected(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:312",
+      "text": "    def test_non_admin_gets_403(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:322",
+      "text": "class ProductToggleTests(_CatalogS2Base):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:324",
+      "text": "    def setUpTestData(cls) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:333",
+      "text": "    def test_admin_toggles_availability(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:340",
+      "text": "    def test_non_admin_gets_403(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:349",
+      "text": "class ProductExpirationsTests(_CatalogS2Base):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:350",
+      "text": "    def test_admin_accesses_expirations_page(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:355",
+      "text": "    def test_warehouse_accesses_expirations_page(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:360",
+      "text": "    def test_seller_gets_403(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:364",
+      "text": "    def test_invalid_and_extreme_dias_parameters_fall_back_gracefully(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:371",
+      "text": "    def test_active_custom_category_can_be_used_to_register_product(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:390",
+      "text": "    def test_barcode_rejects_xss_and_special_characters_on_create_and_edit(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:426",
+      "text": "    def test_product_edit_rejects_scientific_notation_and_excessive_minimum_stock(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:452",
+      "text": "    def test_product_created_alias_url_and_catalog_link(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:465",
+      "text": "    def test_bug028_category_toggle_and_product_edit_category_and_barcode_search(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:504",
+      "text": "    def test_bug030_seed_demo_populates_weighted_average_cost(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:524",
+      "text": "    def test_bug033_product_with_inactive_category_can_update_price_and_name(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/tests.py:570",
+      "text": "    def test_bug004_product_barcode_update_preserves_historical_sale_line_snapshot(self) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:7",
+      "text": "    path(\"categorias/\", views.category_list, name=\"category-list\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:8",
+      "text": "    path(\"categorias/nueva/\", views.category_create, name=\"category-create\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:9",
+      "text": "    path(\"categorias/<uuid:category_id>/estado/\", views.category_toggle, name=\"category-toggle\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:11",
+      "text": "    path(\"vencimientos/\", views.product_expirations, name=\"product-expirations\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:13",
+      "text": "    path(\"\", views.product_list, name=\"product-list\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:14",
+      "text": "    path(\"nuevo/\", views.product_create, name=\"product-entry\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:15",
+      "text": "    path(\"<uuid:product_id>/registrado/\", views.product_created, name=\"product-created\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:16",
+      "text": "    path(\"<uuid:product_id>/creado/\", views.product_created, name=\"product-created-alias\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:17",
+      "text": "    path(\"<uuid:product_id>/editar/\", views.product_edit, name=\"product-edit\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/urls.py:18",
+      "text": "    path(\"<uuid:product_id>/disponibilidad/\", views.product_toggle_availability, name=\"product-toggle\"),",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:24",
+      "text": "def _attach_validation_error(form, error: ValidationError) -> None:",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:39",
+      "text": "def category_list(request):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:48",
+      "text": "def category_create(request):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:56",
+      "text": "            messages.success(request, f\"Categoría «{cat.name}» creada correctamente.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:63",
+      "text": "def category_toggle(request, category_id):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:68",
+      "text": "        messages.error(request, error.messages[0])",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:71",
+      "text": "        messages.success(request, f\"Categoría «{category.name}» ahora está {estado}.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:79",
+      "text": "def product_list(request):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:98",
+      "text": "def product_create(request):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:112",
+      "text": "def product_created(request, product_id):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:121",
+      "text": "def product_edit(request, product_id):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:138",
+      "text": "            messages.success(request, f\"Producto «{product.name}» actualizado.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:147",
+      "text": "def product_toggle_availability(request, product_id):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:152",
+      "text": "        messages.error(request, error.messages[0])",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:155",
+      "text": "        messages.success(request, f\"«{product.name}» ahora está {estado}.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:163",
+      "text": "def product_expirations(request):",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:174",
+      "text": "                messages.error(request, \"Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/views.py:176",
+      "text": "            messages.error(request, \"Ingrese un número entero válido de días. Se muestran 30 días por defecto.\")",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:1",
+      "text": "{% extends \"identity/base.html\" %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:3",
+      "text": "{% block title %}Nueva categoría{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:5",
+      "text": "{% block content %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:6",
+      "text": "<div class=\"row justify-content-center\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:7",
+      "text": "  <div class=\"col-md-6\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:8",
+      "text": "    <h2 class=\"mb-4\">Nueva categoría</h2>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:10",
+      "text": "    <div class=\"alert alert-info mb-3\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:11",
+      "text": "      Las categor&iacute;as activas estar&aacute;n disponibles inmediatamente al registrar o editar productos en el cat&aacute;logo.",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:12",
+      "text": "    </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:14",
+      "text": "    {% if form.non_field_errors %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:15",
+      "text": "      <div class=\"alert alert-danger\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:16",
+      "text": "        {% for error in form.non_field_errors %}{{ error }}{% endfor %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:17",
+      "text": "      </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:18",
+      "text": "    {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:20",
+      "text": "    <form method=\"post\" novalidate>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:21",
+      "text": "      {% csrf_token %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:22",
+      "text": "      <div class=\"mb-3\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:23",
+      "text": "        <label for=\"{{ form.name.id_for_label }}\" class=\"form-label fw-semibold\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:24",
+      "text": "          {{ form.name.label }}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:25",
+      "text": "        </label>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:26",
+      "text": "        {{ form.name }}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:27",
+      "text": "        {% if form.name.errors %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:28",
+      "text": "          <div class=\"text-danger small mt-1\">{{ form.name.errors.0 }}</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:29",
+      "text": "        {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:30",
+      "text": "      </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:31",
+      "text": "      <div class=\"d-flex gap-2\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:32",
+      "text": "        <button type=\"submit\" class=\"btn btn-primary\">Guardar</button>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:33",
+      "text": "        <a href=\"{% url 'category-list' %}\" class=\"btn btn-secondary\">Cancelar</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:34",
+      "text": "      </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:35",
+      "text": "    </form>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:36",
+      "text": "  </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:37",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_form.html:38",
+      "text": "{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:1",
+      "text": "{% extends \"identity/base.html\" %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:3",
+      "text": "{% block title %}Categorías{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:5",
+      "text": "{% block content %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:6",
+      "text": "<div class=\"d-flex justify-content-between align-items-center mb-4\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:7",
+      "text": "  <h2>Categorías</h2>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:8",
+      "text": "  <a href=\"{% url 'category-create' %}\" class=\"btn btn-primary\">+ Nueva categoría</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:9",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:11",
+      "text": "<div class=\"alert alert-info mb-3\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:12",
+      "text": "  Las categor&iacute;as activas est&aacute;n disponibles inmediatamente al registrar nuevos productos en el cat&aacute;logo.",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:13",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:15",
+      "text": "{% if categories %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:16",
+      "text": "<div class=\"table-responsive\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:17",
+      "text": "  <table class=\"table table-bordered table-hover\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:18",
+      "text": "    <thead class=\"table-dark\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:19",
+      "text": "      <tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:20",
+      "text": "        <th>Nombre</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:21",
+      "text": "        <th>Estado</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:22",
+      "text": "        {% if user.role.code == \"ADMIN\" %}<th>Acciones</th>{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:23",
+      "text": "      </tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:24",
+      "text": "    </thead>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:25",
+      "text": "    <tbody>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:26",
+      "text": "      {% for cat in categories %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:27",
+      "text": "      <tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:28",
+      "text": "        <td>{{ cat.name }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:29",
+      "text": "        <td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:30",
+      "text": "          {% if cat.is_active %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:31",
+      "text": "            <span class=\"badge bg-success\">Activa</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:32",
+      "text": "          {% else %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:33",
+      "text": "            <span class=\"badge bg-secondary\">Inactiva</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:34",
+      "text": "          {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:35",
+      "text": "        </td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:36",
+      "text": "        {% if user.role.code == \"ADMIN\" %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:37",
+      "text": "        <td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:38",
+      "text": "          <form method=\"post\" action=\"{% url 'category-toggle' cat.pk %}\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:39",
+      "text": "            {% csrf_token %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:40",
+      "text": "            <button type=\"submit\" class=\"btn btn-sm btn-outline-warning\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:41",
+      "text": "              {% if cat.is_active %}Desactivar{% else %}Activar{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:42",
+      "text": "            </button>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:43",
+      "text": "          </form>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:44",
+      "text": "        </td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:45",
+      "text": "        {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:46",
+      "text": "      </tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:47",
+      "text": "      {% endfor %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:48",
+      "text": "    </tbody>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:49",
+      "text": "  </table>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:50",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:51",
+      "text": "{% else %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:52",
+      "text": "<div class=\"alert alert-info\">No hay categorías registradas.</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:53",
+      "text": "{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/category_list.html:54",
+      "text": "{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:1",
+      "text": "{% extends \"identity/base.html\" %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:3",
+      "text": "{% block title %}Producto registrado · Minimarket{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:5",
+      "text": "{% block content %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:6",
+      "text": "<section class=\"success-panel panel\" data-testid=\"product-created\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:7",
+      "text": "  <div class=\"success-icon\" aria-hidden=\"true\">✓</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:8",
+      "text": "  <p class=\"eyebrow\">Registro completado</p>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:9",
+      "text": "  <h2>{{ product.name }}</h2>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:10",
+      "text": "  <p class=\"lede\">El producto se creó con cero existencias. Los datos siguientes muestran su estado actual.</p>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:12",
+      "text": "  <dl class=\"summary-list summary-list-wide\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:13",
+      "text": "    <div><dt>Código</dt><dd>{{ product.barcode }}</dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:14",
+      "text": "    <div><dt>Categoría</dt><dd>{{ product.category.name }}</dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:15",
+      "text": "    <div><dt>Precio de venta</dt><dd>S/ {{ product.sale_price|floatformat:2 }}</dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:16",
+      "text": "    <div><dt>Existencia mínima</dt><dd>{{ product.minimum_stock }} {{ product.unit }}</dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:17",
+      "text": "    <div><dt>Existencias físicas</dt><dd data-testid=\"physical-stock\">{{ product.physical_stock }} {{ product.unit }}</dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:18",
+      "text": "    <div><dt>Disponibilidad actual</dt><dd>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:19",
+      "text": "      {% if not product.is_active %}<span class=\"status status-pending\">Producto deshabilitado</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:20",
+      "text": "      {% elif not product.category.is_active %}<span class=\"status status-pending\">Categoría desactivada</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:21",
+      "text": "      {% elif product.is_sellable %}<span class=\"status\">Disponible para venta</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:22",
+      "text": "      {% else %}<span class=\"status status-pending\">No disponible para venta: sin stock vigente</span>{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:23",
+      "text": "    </dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:24",
+      "text": "  </dl>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:26",
+      "text": "  <div class=\"form-actions\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:27",
+      "text": "    <a class=\"button button-primary\" href=\"{% url 'product-entry' %}\">Registrar otro producto</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:28",
+      "text": "    <a class=\"button button-secondary\" href=\"{% url 'product-list' %}\">Ver catálogo</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:29",
+      "text": "    <a class=\"button button-secondary\" href=\"{% url 'dashboard' %}\">Ir al inicio</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:30",
+      "text": "  </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:31",
+      "text": "</section>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_created.html:32",
+      "text": "{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:1",
+      "text": "{% extends \"identity/base.html\" %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:3",
+      "text": "{% block title %}Editar producto{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:5",
+      "text": "{% block content %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:6",
+      "text": "<div class=\"row justify-content-center\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:7",
+      "text": "  <div class=\"col-md-7\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:8",
+      "text": "    <h2 class=\"mb-1\">Editar producto</h2>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:9",
+      "text": "    <p class=\"text-muted mb-4\">{{ product.name }}</p>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:11",
+      "text": "    {% if form.non_field_errors %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:12",
+      "text": "      <div class=\"alert alert-danger\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:13",
+      "text": "        {% for error in form.non_field_errors %}{{ error }}<br>{% endfor %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:14",
+      "text": "      </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:15",
+      "text": "    {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:17",
+      "text": "    <form method=\"post\" novalidate>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:18",
+      "text": "      {% csrf_token %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:20",
+      "text": "      {% for field in form %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:21",
+      "text": "      <div class=\"mb-3\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:22",
+      "text": "        <label for=\"{{ field.id_for_label }}\" class=\"form-label fw-semibold\">{{ field.label }}</label>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:23",
+      "text": "        {{ field }}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:24",
+      "text": "        {% if field.errors %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:25",
+      "text": "          <div class=\"text-danger small mt-1\">{{ field.errors.0 }}</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:26",
+      "text": "        {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:27",
+      "text": "        {% if field.help_text %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:28",
+      "text": "          <div class=\"form-text\">{{ field.help_text }}</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:29",
+      "text": "        {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:30",
+      "text": "      </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:31",
+      "text": "      {% endfor %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:33",
+      "text": "      <div class=\"d-flex gap-2\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:34",
+      "text": "        <button type=\"submit\" class=\"btn btn-primary\">Guardar cambios</button>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:35",
+      "text": "        <a href=\"{% url 'product-list' %}\" class=\"btn btn-secondary\">Cancelar</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:36",
+      "text": "      </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:37",
+      "text": "    </form>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:38",
+      "text": "  </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:39",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_edit.html:40",
+      "text": "{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:1",
+      "text": "{% extends \"identity/base.html\" %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:3",
+      "text": "{% block title %}Vencimientos de productos{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:5",
+      "text": "{% block content %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:6",
+      "text": "<div class=\"d-flex justify-content-between align-items-center mb-4\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:7",
+      "text": "  <h2>Lotes vencidos y próximos a vencer</h2>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:8",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:10",
+      "text": "<form method=\"get\" class=\"mb-4 d-flex align-items-center gap-3\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:11",
+      "text": "  <label for=\"expiration-days\" class=\"form-label mb-0 fw-semibold\">Mostrar lotes vencidos y los que vencen en los próximos</label>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:12",
+      "text": "  <div class=\"input-group\" style=\"width:150px;\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:13",
+      "text": "    <input id=\"expiration-days\" type=\"number\" name=\"dias\" value=\"{{ days }}\" min=\"1\" max=\"3650\" class=\"form-control\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:14",
+      "text": "    <span class=\"input-group-text\">días</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:15",
+      "text": "  </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:16",
+      "text": "  <button type=\"submit\" class=\"btn btn-outline-primary\">Filtrar</button>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:17",
+      "text": "</form>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:19",
+      "text": "<p class=\"text-muted\">Fecha de corte: <strong>{{ cutoff }}</strong> · El sistema considera vencido un lote desde su fecha de vencimiento. Al vender, descuenta primero los lotes vigentes con vencimiento más próximo.</p>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:21",
+      "text": "{% if lots %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:22",
+      "text": "<div class=\"table-responsive\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:23",
+      "text": "  <table class=\"table table-bordered table-hover align-middle\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:24",
+      "text": "    <thead class=\"table-dark\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:25",
+      "text": "      <tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:26",
+      "text": "        <th>Producto</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:27",
+      "text": "        <th>Categoría</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:28",
+      "text": "        <th>Lote / Nro.</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:29",
+      "text": "        <th>Proveedor</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:30",
+      "text": "        <th>Vence</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:31",
+      "text": "        <th class=\"text-end\">Cant. disponible</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:32",
+      "text": "        <th>Estado</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:33",
+      "text": "      </tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:34",
+      "text": "    </thead>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:35",
+      "text": "    <tbody>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:36",
+      "text": "      {% for lot in lots %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:37",
+      "text": "      {% with days_left=lot.expiration_date|timeuntil %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:38",
+      "text": "      <tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:39",
+      "text": "        <td>{{ lot.product.name }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:40",
+      "text": "        <td>{{ lot.product.category.name }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:41",
+      "text": "        <td class=\"font-monospace\">{{ lot.number_normalized|default:lot.number }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:42",
+      "text": "        <td>{% if lot.supplier %}{{ lot.supplier.name }}{% else %}&mdash;{% endif %}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:43",
+      "text": "        <td>{{ lot.expiration_date }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:44",
+      "text": "        <td class=\"text-end\">{{ lot.available_quantity }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:45",
+      "text": "        <td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:46",
+      "text": "          {% if lot.expiration_date <= today %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:47",
+      "text": "            <span class=\"badge bg-danger\">Vencido</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:48",
+      "text": "          {% else %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:49",
+      "text": "            <span class=\"badge bg-warning text-dark\">Próximo</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:50",
+      "text": "          {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:51",
+      "text": "        </td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:52",
+      "text": "      </tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:53",
+      "text": "      {% endwith %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:54",
+      "text": "      {% endfor %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:55",
+      "text": "    </tbody>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:56",
+      "text": "  </table>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:57",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:58",
+      "text": "{% else %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:59",
+      "text": "<div class=\"alert alert-success\">No hay lotes con unidades disponibles que estén vencidos o venzan en los próximos {{ days }} días.</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:60",
+      "text": "{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_expirations.html:61",
+      "text": "{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:1",
+      "text": "{% extends \"identity/base.html\" %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:3",
+      "text": "{% block title %}Registrar producto · Minimarket{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:5",
+      "text": "{% block content %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:6",
+      "text": "<section class=\"page-heading\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:7",
+      "text": "  <div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:8",
+      "text": "    <p class=\"eyebrow\">Productos</p>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:9",
+      "text": "    <h2>Registrar producto enlatado</h2>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:10",
+      "text": "    <p class=\"lede\">Registra sus datos comerciales y el control de vencimiento. El producto inicia con cero existencias y no está disponible para venta hasta recibir lotes.</p>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:11",
+      "text": "  </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:12",
+      "text": "  <a class=\"button button-secondary\" href=\"{% url 'dashboard' %}\">Volver al inicio</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:13",
+      "text": "</section>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:15",
+      "text": "<div class=\"content-grid content-grid-aside\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:16",
+      "text": "  <form method=\"post\" class=\"panel form-panel\" novalidate data-testid=\"product-form\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:17",
+      "text": "    {% csrf_token %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:18",
+      "text": "    {% if form.non_field_errors %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:19",
+      "text": "      <div class=\"alert alert-error\" role=\"alert\">{{ form.non_field_errors }}</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:20",
+      "text": "    {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:22",
+      "text": "    {% for field in form %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:23",
+      "text": "      <div class=\"field{% if field.errors %} field-error{% endif %}\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:24",
+      "text": "        <label for=\"{{ field.id_for_label }}\">{{ field.label }}</label>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:25",
+      "text": "        {{ field }}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:26",
+      "text": "        {% if field.help_text %}<p class=\"help\">{{ field.help_text }}</p>{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:27",
+      "text": "        {% if field.errors %}<div class=\"error-list\" role=\"alert\">{{ field.errors }}</div>{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:28",
+      "text": "      </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:29",
+      "text": "    {% endfor %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:31",
+      "text": "    <div class=\"form-actions\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:32",
+      "text": "      <button class=\"button button-primary\" type=\"submit\" data-testid=\"product-submit\">Registrar producto</button>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:33",
+      "text": "      <a class=\"button button-ghost\" href=\"{% url 'dashboard' %}\">Cancelar</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:34",
+      "text": "    </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:35",
+      "text": "  </form>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:37",
+      "text": "  <aside class=\"panel info-panel\" aria-label=\"Condiciones del registro\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:38",
+      "text": "    <span class=\"status status-zero\">Existencias iniciales: 0</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:39",
+      "text": "    <h3>Control de vencimiento</h3>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:40",
+      "text": "    <p>Los productos enlatados requieren fecha de vencimiento. La fecha, cantidad y costo se registran en las existencias por lotes.</p>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:41",
+      "text": "    <dl class=\"summary-list\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:42",
+      "text": "      <div><dt>Unidad</dt><dd>UND</dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:43",
+      "text": "      <div><dt>Precio</dt><dd>Incluye IGV</dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:44",
+      "text": "      <div><dt>Existencia mínima</dt><dd>10 por defecto</dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:45",
+      "text": "      <div><dt>Disponible para venta</dt><dd>No</dd></div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:46",
+      "text": "    </dl>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:47",
+      "text": "  </aside>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:48",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_form.html:49",
+      "text": "{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:1",
+      "text": "{% extends \"identity/base.html\" %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:3",
+      "text": "{% block title %}Catálogo de productos{% endblock %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:5",
+      "text": "{% block content %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:6",
+      "text": "<div class=\"d-flex justify-content-between align-items-center mb-4\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:7",
+      "text": "  <h2>Catálogo de productos</h2>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:8",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:10",
+      "text": "<form method=\"get\" class=\"mb-4\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:11",
+      "text": "  <div class=\"input-group\" style=\"max-width:400px;\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:12",
+      "text": "    <label for=\"product-search\">Buscar por nombre o código de barras</label>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:13",
+      "text": "    <input id=\"product-search\" type=\"text\" name=\"q\" value=\"{{ query }}\" class=\"form-control\"",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:14",
+      "text": "           placeholder=\"Buscar por nombre o código de barras…\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:15",
+      "text": "    <button class=\"btn btn-outline-secondary\" type=\"submit\">Buscar</button>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:16",
+      "text": "    {% if query %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:17",
+      "text": "      <a href=\"{% url 'product-list' %}\" class=\"btn btn-outline-danger\" aria-label=\"Limpiar búsqueda\">✕</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:18",
+      "text": "    {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:19",
+      "text": "  </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:20",
+      "text": "</form>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:22",
+      "text": "{% if products %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:23",
+      "text": "<div class=\"table-responsive\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:24",
+      "text": "  <table class=\"table table-bordered table-hover align-middle\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:25",
+      "text": "    <thead class=\"table-dark\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:26",
+      "text": "      <tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:27",
+      "text": "        <th>Nombre</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:28",
+      "text": "        <th>Categoría</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:29",
+      "text": "        <th>Código de barras</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:30",
+      "text": "        <th>Precio (S/)</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:31",
+      "text": "        <th>Stock mínimo</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:32",
+      "text": "        <th>Disponibilidad</th>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:33",
+      "text": "        {% if user.role.code == \"ADMIN\" %}<th>Acciones</th>{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:34",
+      "text": "      </tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:35",
+      "text": "    </thead>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:36",
+      "text": "    <tbody>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:37",
+      "text": "      {% for product in products %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:38",
+      "text": "      <tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:39",
+      "text": "        <td>{{ product.name }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:40",
+      "text": "        <td>{{ product.category.name }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:41",
+      "text": "        <td class=\"font-monospace\">{{ product.barcode|default:\"—\" }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:42",
+      "text": "        <td class=\"text-end\">{{ product.sale_price|floatformat:2 }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:43",
+      "text": "        <td class=\"text-end\">{{ product.minimum_stock }}</td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:44",
+      "text": "        <td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:45",
+      "text": "          {% if not product.is_active %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:46",
+      "text": "            <span class=\"badge bg-secondary\">Producto deshabilitado</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:47",
+      "text": "          {% elif not product.category.is_active %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:48",
+      "text": "            <span class=\"badge bg-secondary\">Categoría desactivada</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:49",
+      "text": "          {% elif product.is_sellable %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:50",
+      "text": "            <span class=\"badge bg-success\">Disponible</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:51",
+      "text": "          {% else %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:52",
+      "text": "            <span class=\"badge bg-secondary\">Sin stock vigente</span>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:53",
+      "text": "          {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:54",
+      "text": "        </td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:55",
+      "text": "        {% if user.role.code == \"ADMIN\" %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:56",
+      "text": "        <td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:57",
+      "text": "          <div class=\"d-flex gap-2 flex-wrap\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:58",
+      "text": "            <a href=\"{% url 'product-edit' product.pk %}\" class=\"btn btn-sm btn-outline-primary\">Editar</a>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:59",
+      "text": "            <form method=\"post\" action=\"{% url 'product-toggle' product.pk %}\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:60",
+      "text": "              {% csrf_token %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:61",
+      "text": "              <button type=\"submit\" class=\"btn btn-sm btn-outline-warning\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:62",
+      "text": "                {% if product.is_active %}Deshabilitar{% else %}Habilitar{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:63",
+      "text": "              </button>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:64",
+      "text": "            </form>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:65",
+      "text": "          </div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:66",
+      "text": "        </td>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:67",
+      "text": "        {% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:68",
+      "text": "      </tr>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:69",
+      "text": "      {% endfor %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:70",
+      "text": "    </tbody>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:71",
+      "text": "  </table>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:72",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:73",
+      "text": "{% else %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:74",
+      "text": "<div class=\"alert alert-info\">",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:75",
+      "text": "  {% if query %}No se encontraron productos con «{{ query }}».{% else %}No hay productos registrados.{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:76",
+      "text": "</div>",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:77",
+      "text": "{% endif %}",
+      "status": "NO EXAMINADO"
+    },
+    {
+      "source": "r1-pmv/catalog/templates/catalog/product_list.html:78",
+      "text": "{% endblock %}",
+      "status": "NO EXAMINADO"
+    }
+  ],
+  "protected_hashes": {
+    "r1-pmv/r1_pmv.sqlite3": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+    "auditoria_por_etapas/resultados/datos/etapa00-20261105/audit.sqlite3": "19546d1c77d5874c8d0d5061cba97be8abfe9f03435600ef40a6c9c9c9209b5e",
+    "auditoria_por_etapas/resultados/datos/etapa01-20261109/audit.sqlite3": "52dda9f78a76ee307d3cab3a4a989030a3ec15e0bea3320d128562d9300f9e75",
+    "auditoria_por_etapas/resultados/datos/etapa02-20261109/audit.sqlite3": "ceac9251fe80f171079dfc74af617818a1ae4725cff122acc5bf3e4730cd747f",
+    "auditoria_por_etapas/resultados/datos/etapa02a-20261109T231223297870Z/audit.sqlite3": "e3c836c26f3d12792b48f902e4373651fa5b40c79e49e9ac996b4267a080d6fa",
+    "auditoria_por_etapas/resultados/datos/etapa02a-20261109T235435476251Z/audit.sqlite3": "87fbdf01fce0c44c9a56aae7e74251fec6acd8d186f60fe7fc9e1962b63c1d6b",
+    "auditoria_por_etapas/resultados/datos/etapa02a-b-20261109T235102894578Z/audit.sqlite3": "076b082e40cdda76c00e8d9903828febd05246295c5325def35a873f5f597801",
+    "auditoria_por_etapas/resultados/datos/etapa02a-b-20261109T235313324286Z/audit.sqlite3": "eba7bb428036ded272e106c1a115431763f74f6aa78dba96e0ed741a7eca3437",
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": "a9604b90d08dead7b815817f859004a802353aaf6f91f7e78a4467fa18406b49"
+  },
+  "source_hashes": {
+    "21_Alcance_Actual_y_Diferencias.md": "191a6ce4c8348b77cbe756f64bdd503e66eee27915bb97842697c83d1ab4fed3",
+    "01_Proyecto_y_Releases.md": "c48d551ad139d82aa1218670088b001e8e64d84819a98a238d949145324d588a",
+    "07_Reglas_de_Negocio.md": "ae80cfc94f468ddb62fea55bc2b76de1aaaccb6e99ee7cff5cf8d276c2359dbe",
+    "08_Historias_de_Usuario.md": "d458d235edd01f83a6e8df301714b6d823b069e72d9ab27a148ae899d42a63fe",
+    "09_Product_Backlog.md": "bbd8c3c92182518f99eb37e9281b1b140680ea93db04a6d1c9f36e4694168468",
+    "02_Diseno_Tecnico_R1_PMV.md": "96a6e4b3be0feb8ad9a5cb3612bf1979c21ba7c4531244575b13fbb983943df8",
+    "03_Matriz_de_Trazabilidad_y_Pruebas.md": "ce720a64dc622371efa863b1dee70ae38c58183663112f6529941af5202526d3",
+    "14_Sprint_Planning.md": "0e6ee2676517a6c287efd8d1ee1a014c07e1b2c7dc7efdc027deec66a9811f72",
+    "16_Task_Breakdown.md": "2d30412570018f46516d7207b3503e827595968437d2cd00bd2e8c7f342ded78",
+    "r1-pmv/CONTROL_SPRINTS.md": "dfbd6bcd3466ce6d4315b7af0614bc7eabfe8230e3cb0d7ffbd3db3131bd8eec",
+    "r1-pmv/AUDITORIA_USABILIDAD_05NOV2026.md": "216a225e8dd0073524a99aa99033d68f04b7718bbc7b868308a989b9de0cf82e",
+    "r1-pmv/manage.py": "a618f03e2ff6f5ffe1b6f9730f15fb90757f3726be3991c7000846a6cc067e11",
+    "r1-pmv/PROMPT_PRUEBAS_EXPLORATORIAS.md": "9cda21f1df1b4613907dba02ee0b2a4a930291b298bf032c6c2a500808edf8d2",
+    "r1-pmv/README.md": "a7fa8a4b04b18363459f435d999bed2775cee8115953369b04212a3100f0583a",
+    "r1-pmv/REPORTE_CAOS_Y_UX_QA.md": "dfd8e4b962ba92ae1d1d3b1974591cb6d306659b4e5390eef218893e99b1be10",
+    "r1-pmv/REPORTE_PRUEBAS_EXPLORATORIAS_05NOV2026.md": "3aa42bf26285cab629ba6d06e5a6127546ab1e2bd524dd07e676b58fb5b045be",
+    "r1-pmv/app_platform/apps.py": "3824048712af07c443b9042e09d7a7092580f2a5700a1f4eee4e1ba200fbe147",
+    "r1-pmv/app_platform/logging.py": "bf45f2858168fe45ff00db77b729400c8a385cab5e04265a3658dccd1ef658dc",
+    "r1-pmv/app_platform/test_env.py": "6e2a2be933216ac829c6f55b77da97c57aecdf0b9d1be202a30dce233bb30f92",
+    "r1-pmv/app_platform/test_security.py": "9ba0fff444867747f67c0cb8975d164ba19d9ffab28633e12584c3f82802d2ad",
+    "r1-pmv/app_platform/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/cash/admin.py": "64ff13adf2ecbe8d5a79dc17a1adcbdc78d81660452756df5cc36e7881747e4e",
+    "r1-pmv/cash/apps.py": "73992acfe95331c4dc586268ef3db80bc62174cb6eae568088e649a2fa83a49a",
+    "r1-pmv/cash/forms.py": "24958000b90ae242fbe775bbb0466d34565b5b16656beab126e85db7666ea7fa",
+    "r1-pmv/cash/models.py": "f1f4d021f68f508b6cec695dfd078339fbb0b7cb6258034625323349afa5e746",
+    "r1-pmv/cash/services.py": "415d2f4af257af20635178519f0b0fc94f116c9ca521256d16660bd0df733856",
+    "r1-pmv/cash/tests.py": "b3ef17ed6e1b5a4b7038678ddf8351abc23a2b5f336204ff5820839739c2e970",
+    "r1-pmv/cash/urls.py": "bb782415860a08d4945c014ca7339c349e6be3588d6c4d72140cd0b913a630e4",
+    "r1-pmv/cash/views.py": "c2d57fb095d6924a1d255662d6dd32ceed939cb99c97c934030dbc739dc42b98",
+    "r1-pmv/cash/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/catalog/admin.py": "7555033484e3d2a85d9af6aab69f03e63049762c47b3de62db6b1bf29b02906d",
+    "r1-pmv/catalog/apps.py": "c0db772e87b95bd49393d1b12a58cc69462e3ae04e231c399233b84b56aa8a4c",
+    "r1-pmv/catalog/forms.py": "5d97d8f84e0dc225373c5e781309f5e5b0e95cccdf6fcd27f071c0ce5fae21e0",
+    "r1-pmv/catalog/models.py": "9b05a150dae25f51f91f6779a1ab998781fa0fc53a2412e949004eb6928ca07d",
+    "r1-pmv/catalog/services.py": "343a3a22d768b36035cb455461df9086c1910956abd3fc8b27ae86102b4b6baa",
+    "r1-pmv/catalog/tests.py": "d74666c80a9d5db0c98011381e8852cfd6ff1593eee561f8c31954bc84c8a47d",
+    "r1-pmv/catalog/urls.py": "476dc7e5820df33111af84d609bfe74fcd683835366266871d0ab1f452c82e1c",
+    "r1-pmv/catalog/views.py": "31571b20a945db33d801b30ec95b5f86a2994672bb956fd3d18abac7e92c3fe7",
+    "r1-pmv/catalog/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/config/asgi.py": "87dc0298a0d49e45b05a7ff597ea096291e481b54fe8d1b9c9248d68b679d7df",
+    "r1-pmv/config/env.py": "0ad5dffc10cc2ef2d7f8d3fb3763d8ef4d99132b20d23d12b0c70f77bc91b5c8",
+    "r1-pmv/config/settings.py": "e2f3d116e44702ba4df97eaee8f7ace7fa50a6b54e0545d4b8922cac71465685",
+    "r1-pmv/config/test_runner.py": "adeaa2a3a7efcb041872a3c9013e38d543ce548a4d2f8c955fde1366495d4842",
+    "r1-pmv/config/urls.py": "5ccb691b7d6fddb1447c414539247c529c7acc2218136e113fb8aa887135ef99",
+    "r1-pmv/config/wsgi.py": "0a7693d31b081f83c2827ab601799bfc96c8f991b29843f9470bceaaff4415f1",
+    "r1-pmv/config/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/docs/alcance_comercial_y_normativo.md": "3d79fa473ed16feed6d22bc83d8c8782f22a0a009d5e30d9944138dd3f54dbdb",
+    "r1-pmv/docs/seguridad.md": "c864fe3f14c23bf15f4a48eee7af75489674beed63724c1abcf79388f3b08067",
+    "r1-pmv/evidencias/CONTROL_DE_HORAS_Y_ESTADO.md": "42ae7be6fc33ba374e9d654e2dc7afd1040106bdd92b440c683774b167394f45",
+    "r1-pmv/evidencias/CORTE_SEMANA_1_2026-10-13.md": "a1df98f72a99caa8e7fa75399baa260d8c2b89b92fa8c742fd39d90374029d70",
+    "r1-pmv/evidencias/README.md": "c5e89448dd687a4acd50c137d6172d63db41f9f341b4f9454407b75eda01d4ae",
+    "r1-pmv/identity/admin.py": "f61bd2ebe6a4ccfe226b4fd2e409183c21fd003f09ffa0eed264be65baa5f792",
+    "r1-pmv/identity/apps.py": "43b59332e80f6d8d6bfb3f47e9f7ee03187ba315184c08cda97d73fa9eafef99",
+    "r1-pmv/identity/authorization.py": "4128e3891f56123eb9f7f598cb7ece9bcf805133da6abb4be77b4b41ce71e365",
+    "r1-pmv/identity/forms.py": "52088bd643ad35de04e83c69bd63afb8b3bc320dd290169bf4c4036a38332e6d",
+    "r1-pmv/identity/models.py": "d7435d3325c60ab192fdb1bb5fd97c6104c7e3935077a52bad070134d0d678a1",
+    "r1-pmv/identity/services.py": "9a6eb0d441bd18b41ec7a8b05ff5305deccce0b81a97c80371fa0cb10714b469",
+    "r1-pmv/identity/tests.py": "e8b83841826bf18f3e35a17c75af8283f4af514f382c69e222540659abb1e4bf",
+    "r1-pmv/identity/test_audit02_boundaries.py": "0e8b47e7c4b144c50dcb9b6eb8533167f7551443233721833fd5765882063b0a",
+    "r1-pmv/identity/test_audit02_history.py": "d81777ad92b29344913d9a5db4625a50e2f2d16cf828baa134c61285c302ec8d",
+    "r1-pmv/identity/test_audit02_logout_atomic.py": "463c200227c0eb32fc75b1630b68f0ec03b02714e004be92d8d47fa46452a9b3",
+    "r1-pmv/identity/test_auth_audit01.py": "4a5d1e340a08647c5589b2aa070fd7d9a7c4d66643035b60aec8964bafd35ee1",
+    "r1-pmv/identity/test_etapa02_audit.py": "e747787a3319e85a0bdbd13467e2a4ca3305b55d1aa62577917c9d4d7f625d4c",
+    "r1-pmv/identity/test_etapa02_estado.py": "ee7058c6d7fa689e5406a06045e0f0815988e4a264c6365f7bd47e5733651a3e",
+    "r1-pmv/identity/test_reset_demo_db.py": "86ba434e86a10abbe898f50dc76664629770b8e409f518d4be635d7530cb0b45",
+    "r1-pmv/identity/test_seeds.py": "e062cdb1496332797c1725cb85e72ac536b39b5757b643bfab0372920f54880c",
+    "r1-pmv/identity/urls.py": "62b4f57fcc3250c4cbb2d34cfaa2fe4de884fa3691a59c724f55ae6faeb30da6",
+    "r1-pmv/identity/views.py": "8f5bf9e41761305703ea2d335a2a191a44f862393c66c80c6b0c1c1f4199624f",
+    "r1-pmv/identity/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/inventory/admin.py": "562a853945d6f02422fd55743b17a34af8e3d9555c06ed58ea8b702366cafd4d",
+    "r1-pmv/inventory/apps.py": "016ca91b5b2f07955b458c1bb574a315fa8e3f34a43578a7246f139bf5f221be",
+    "r1-pmv/inventory/forms.py": "028d46f70d4f0775193fc204fcffa20e56cefbda6a4c53f1fc94b45015ee6772",
+    "r1-pmv/inventory/models.py": "1937ad8b4bbc6dab621e65a55e2aefc65f24dc296cad09ef9f8a9038c469200c",
+    "r1-pmv/inventory/services.py": "9d5624ac7b40949806133fd0c633d3a54d4cf0518f9887e28dbf4c6b0af56a55",
+    "r1-pmv/inventory/tests.py": "0f0cd0625296aca9475714c67b7e4d67bbddbde7779888c40eaa33e49e9b1fa5",
+    "r1-pmv/inventory/urls.py": "a657ce9d7fa369d0710d20f4cdba7c7ab722ce88c9cf77f6be0330f1a2163765",
+    "r1-pmv/inventory/views.py": "2476f7acf79e9fc7695ff7154f9699c39accaa326610d5673e858731774aa389",
+    "r1-pmv/inventory/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/sales/apps.py": "ba96364ad9fe6a6336cb2a9181744048284a64123cdbfd196a1629ea1eae4828",
+    "r1-pmv/sales/forms.py": "125ac263476d52733025824df9ca71fa61d6fd27eef28f241b858a10bc496199",
+    "r1-pmv/sales/models.py": "d7d37c37b649c3ce3fa26f2b0b2ff91109eb0c927b6098496e70bcf42fa22328",
+    "r1-pmv/sales/services.py": "f247371d26c704a335acb9d5142c0a763ffa56480a7d4534ea1b0dc8826bf5aa",
+    "r1-pmv/sales/tests.py": "ca81ec3eecc210457a4e84ecd4350ac5fbb04c065cfeee36b10d9dd5ad9d29c1",
+    "r1-pmv/sales/urls.py": "5895fd47e031b719dbe699bb6f18b84bbfbf80f881ca4ba339be88249446cbe7",
+    "r1-pmv/sales/views.py": "fa16af9829e11ad6e28fe795d3f6c55f4708160bb07629634dbcde7818e9f5cc",
+    "r1-pmv/sales/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/templates/403.html": "fb9d2cb058ded6a4d17b56d1cbfab51d80c0ebf5546190137a69a2a4588c4e9a",
+    "r1-pmv/templates/404.html": "7c26861861792fd1f3c21fdd10a7bc725b2d35a9c40c2ab570772039b3c0a141",
+    "r1-pmv/cash/migrations/0001_initial.py": "0a8fa627450578f8de3d4fb31186ebf23e37138886059907e22f4fe048da80d5",
+    "r1-pmv/cash/migrations/0002_cashshift.py": "b28cd19ad8fc306664b867c8ffb35d6a5b2674e9c1cc64e3ce34571b44859b02",
+    "r1-pmv/cash/migrations/0003_cashshiftclose.py": "7276b43105c5b497d32b18daefd024134d6423d03633733e2c98f6d853c2a212",
+    "r1-pmv/cash/migrations/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/cash/templates/cash/cash_close.html": "6503d73fb2277a7f95be1a6e61a2d7440932a4154c1c6cf10a8816d7288a11d0",
+    "r1-pmv/cash/templates/cash/cash_open.html": "d5d4c18291fc22069a3de749ae61556ea5c2c549d938d23b2c6370861bb32bac",
+    "r1-pmv/cash/templates/cash/cash_shift_closed.html": "6776b0f2eef40854c2c1b8e6d7cad93b89660745ab8b9642264d3576cee8b0d0",
+    "r1-pmv/cash/templates/cash/cash_shift_history.html": "f374781366867de48a390a30877fb3f5b9fd5b63bf41e5258dd3962ac884dd3b",
+    "r1-pmv/cash/templates/cash/cash_shift_opened.html": "596cbbefa93bc056d388e6d65d9e76cecc902e748570bfac4b96ef6dbcefb78c",
+    "r1-pmv/catalog/management/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "r1-pmv/catalog/migrations/0001_initial.py": "72d6f3b5a64609a716bb2dc5360bf4130e19b08eaa8bc641a7ba4a6610c683d3",
+    "r1-pmv/catalog/migrations/0002_product.py": "937fab75007bf4929cf36af1446cc357fbfb4c2b0bc367164b9580b954a63e35",
+    "r1-pmv/catalog/migrations/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/catalog/management/commands/seed_demo.py": "7121f1e185591226c7f0c21c5ef5e38f1cc6743234129d27db76c561b77c08ec",
+    "r1-pmv/catalog/management/commands/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "r1-pmv/catalog/templates/catalog/category_form.html": "e0168c77f336c2a3243412d45c0933b2c5fac862f704b13bbe7a94cb12552471",
+    "r1-pmv/catalog/templates/catalog/category_list.html": "48b29480c30ad4eafddf208074ffa57635b8cd3aeec6cf64b4f93d9bf0b51c70",
+    "r1-pmv/catalog/templates/catalog/product_created.html": "9d36be79b7b022c2c5a6754b229b6150efef230c7a605c15019a8467cd58b48f",
+    "r1-pmv/catalog/templates/catalog/product_edit.html": "4cf7ca7722ec5041394e4ebcf7fb94efe9dbcf61040545b8fb0c00322c6d5ce8",
+    "r1-pmv/catalog/templates/catalog/product_expirations.html": "1c2e44806d9054140120233b123a70c32d6a21a039fa1d55a722c6e4da40c1d4",
+    "r1-pmv/catalog/templates/catalog/product_form.html": "87261a50df05f2bea63e794417de7822bdc4330b0d37781569c6bcdebac17e6f",
+    "r1-pmv/catalog/templates/catalog/product_list.html": "cb5feffbc666d3f1dcc3dc5051b902f71fcd6786750da35361eec7a9a41c5c29",
+    "r1-pmv/evidencias/HU-AUTH-01/S1-AUTH01-AUTHZ/resultado-prueba.md": "f8f37805039a34d34e1c607426b36df7f54e3c37d86c0d5ad15d6d6c9117030b",
+    "r1-pmv/evidencias/HU-AUTH-01/S1-AUTH01-AUTO/resultado-prueba.md": "cfc38af8642b053168d46d8d6072d8f993efd3481c76542dd5a253b8f700a172",
+    "r1-pmv/evidencias/HU-AUTH-01/S1-AUTH01-SVC/resultado-prueba.md": "d1f24034ed5c085e8da1b14fa3a907668499f990102ba911107a1c1e9ae8e8f2",
+    "r1-pmv/evidencias/HU-AUTH-03/S1-AUTH03-SVC/resultado-prueba.md": "67767a4a6ff0406a5ab317c219fbdce03264769824a443d899998153c8cfff33",
+    "r1-pmv/evidencias/HU-CAJA-02/S1-CAJA02-AUTO/resultado-prueba.md": "3c5baf1fc05a11a4fcc08be2be284f1e353a614677f317ed643f34ef3d1e4a8b",
+    "r1-pmv/evidencias/HU-CAJA-05/S2-CAJA05-AUTO/resultado-prueba.md": "6c51d9eea92a8eda72b104e4c9f21fddc4bf1eec95410b2f7a0fda8fbd7697fc",
+    "r1-pmv/evidencias/HU-CAT-01/S2-CAT01-AUTO/resultado-prueba.md": "0ee1103fbed9ca21fd39ae23403ab4a45b9839a856d58bfba0735954815a2cae",
+    "r1-pmv/evidencias/HU-CAT-02/S2-CAT02-AUTO/resultado-prueba.md": "99e37442f34dd67c35fc233e33e23dd0cd86ab47bdc98536708ece74f743c32e",
+    "r1-pmv/evidencias/HU-INV-01b/S3-INV01B-AUTO/resultado-prueba.md": "b20fba550d12d5a5a4a0192d0bd9ba00c47363f78d85b5789be01bed4211d60c",
+    "r1-pmv/evidencias/HU-INV-02/S3-INV02-AUTO/resultado-prueba.md": "79f31b6fd0f355bb142254457e5bc51482f5a947e91de23f47e992b62484e4ba",
+    "r1-pmv/evidencias/HU-INV-03/S3-INV03-AUTO/resultado-prueba.md": "740479ac16607038db9e28efeb1d0aa33337add0bdb6471159db14fc64e0cec7",
+    "r1-pmv/evidencias/HU-PROD-01/S2-PROD01-AUTO/resultado-prueba.md": "d5a44faff2563e9d293dc9abe0aadd3d81f5c027e253e0dd36e810c5b9de7ec7",
+    "r1-pmv/evidencias/HU-PROD-04/S2-PROD04-AUTO/resultado-prueba.md": "0a6550370b9fd21a142ee4573e543c7b3ba9634e17f376257025ca9b1592b726",
+    "r1-pmv/evidencias/HU-PROD-05/S2-PROD05-AUTO/resultado-prueba.md": "77b0c2ff7b624e387428339d3b4f6accdf8825c4ee7d0c1d9cc1e2c950c8c258",
+    "r1-pmv/evidencias/HU-PROD-06/S2-PROD06-AUTO/resultado-prueba.md": "3d5e0d197aa55fdfeeba701bb3a099bac3a0d4e264f12734e56e5db48b1a587a",
+    "r1-pmv/evidencias/HU-PROV-01/S3-PROV01-AUTO/resultado-prueba.md": "48933927f1a85e21e19922a4cb3465625696fc3230053b3fce9f4eb9004c4bd5",
+    "r1-pmv/evidencias/HU-PROV-02/S3-PROV02-AUTO/resultado-prueba.md": "6419b3ce2dbe1600ff55e2aea7121130a6eaca5c7e3d12e12c035cca2549e5f3",
+    "r1-pmv/evidencias/HU-PROV-04/S3-PROV04-AUTO/resultado-prueba.md": "ea738d621cd22d35bb99350c8babbaa5c995938eeea5ff91db8a7c5cff7506f2",
+    "r1-pmv/evidencias/HU-USR-01/S2-USR01-AUTO/resultado-prueba.md": "9e73b04013da1b645d812d58d81e36c0827dca0d42355e20714faccd472d256f",
+    "r1-pmv/evidencias/HU-USR-02/S2-USR02-AUTO/resultado-prueba.md": "3fcdb18e5f8c996b4da948860ad12376c4b87f0cbde8e846e3bd40e182db4907",
+    "r1-pmv/evidencias/HU-USR-03/S3-USR03-AUTO/resultado-prueba.md": "1cac443e154bfe2a4229520f7fdb51bb1c92c60a04faa5c4d39d31151d2da8f2",
+    "r1-pmv/evidencias/HU-USR-04/S3-USR04-AUTO/resultado-prueba.md": "17b28ce5ec49af6cca0d065ec07dc1b4bf476c4dcbd23321ba8340b05c33e13e",
+    "r1-pmv/evidencias/HU-VEN-01c/S1-VEN01C-AUTO/resultado-prueba.md": "e574d64131e84a32240a52b5d14c7fb01be4ca40b7d83531e78b28a75a194efb",
+    "r1-pmv/evidencias/HU-VEN-02a/S1-VEN02A-AUTO/resultado-prueba.md": "c99a5db506ba16ef050a9c0135ec59f48d64a951cafea10df738d9015bf0eb85",
+    "r1-pmv/evidencias/HU-VEN-05a/S2-VEN05A-AUTO/resultado-prueba.md": "04ad8075c1569c15de4184bcfdaf8e79e69bb84a3489f4916b590ada47205683",
+    "r1-pmv/evidencias/HU-VEN-05b/S2-VEN05B-AUTO/resultado-prueba.md": "b2011b4146d242a37d148a05cee8904a4c88d4d78420fd36329104ef2584003d",
+    "r1-pmv/evidencias/TRANSVERSAL/S1-DB-04/resultado-prueba.md": "b1f38c3fa5326c829b9751bca7f45b02d3216bc8508dd68901c6be9a87e91e76",
+    "r1-pmv/evidencias/TRANSVERSAL/S1-DB-05/resultado-prueba.md": "6d886bb75306bcd7fb4ff8f724aa1d513b31dca2b378e45eaca865d52a8f3d72",
+    "r1-pmv/evidencias/TRANSVERSAL/S1-SEC-01/resultado-prueba.md": "38a28bf1ec672bf68df384041ea9bbbddda883773456d721983a6e4819b9d0ee",
+    "r1-pmv/evidencias/TRANSVERSAL/S1-SEC-02/resultado-prueba.md": "6d3f0aa2275e521085ae6758fa675012d9c29da15e1a3bb3fcb4778415ee1509",
+    "r1-pmv/identity/management/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/identity/migrations/0001_initial.py": "0c47bb38ca34d9b02fca858737317d91b87692ff5af825664276c45f17948493",
+    "r1-pmv/identity/migrations/0002_alter_account_managers.py": "a6eaee20426feb6b2bc2bd2fbdb4f479285759c0f63cbf735e2c9ca65f0ca62c",
+    "r1-pmv/identity/migrations/0003_alter_role_code.py": "1bb7c3f4e325b783c7735c0fa7984e34fa3bd9abd972abae22c550b011b427a3",
+    "r1-pmv/identity/migrations/0004_alter_role_code.py": "58fdd953066c4050228b1f801718299081cafc7a813ac008d4a7b8239669c57b",
+    "r1-pmv/identity/migrations/0005_loginattempt.py": "f2b6513d82b851cca1d4ada84c647291c295bc3963d6cd69218efbf21922e305",
+    "r1-pmv/identity/migrations/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/identity/management/commands/reset_demo_db.py": "9bafecdeeccf676abf0af1c852ee2e9a25b4523e77be013a6dc661e1961be063",
+    "r1-pmv/identity/management/commands/seed_pmv.py": "7c41e1b00947332911ad2e2fb2423d45c090176c6025d14a238d2a4c92c6d48b",
+    "r1-pmv/identity/management/commands/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/identity/static/identity/app.css": "fd1e00df900624a10a9296c255a8ea94eb8d2233987608b4e70b5b3323cb4eb8",
+    "r1-pmv/identity/templates/identity/base.html": "ef5b64957344c2cc61daf5512b6ee7924f873db575eaff9383caece84c38049d",
+    "r1-pmv/identity/templates/identity/dashboard.html": "ba4ae338f808afe8b14a87762b5f1e2fdf9d25efaa44a06f282c56ac772e0fe5",
+    "r1-pmv/identity/templates/identity/employee_edit.html": "402a0c8fb095220c15844641845ad13f45bccf2674fb506f52bd20bbee11a468",
+    "r1-pmv/identity/templates/identity/employee_form.html": "162a0fd0b1b4c311f08b42eac03f82f71599c4d7d1a57b9298282798f272dac5",
+    "r1-pmv/identity/templates/identity/employee_list.html": "d800758d189ce4cefc4e0dd77858f7b9651cfa521020f8fcbb84d26cc0392c89",
+    "r1-pmv/identity/templates/identity/login.html": "d710f7f488454ff13a6e1059fad852a8f022d9f58f965d4a7d6f7f19d208a8b4",
+    "r1-pmv/identity/templates/identity/logout_confirm.html": "bab871951c7f6541b75ed0742e8649debf94632040e0b2621f737aaf3f1af03e",
+    "r1-pmv/identity/templates/identity/protected_placeholder.html": "5c0fd81ae7353328b77ed1b40dc2f5e0376c90a198064adaf77c64c417343a88",
+    "r1-pmv/inventory/migrations/0001_initial.py": "49e44db25b2d2615bd74d833b7f44021f98752d40be521ef371995caa97f77b9",
+    "r1-pmv/inventory/migrations/0002_supplier_physicaladjustment_stockwriteoff.py": "f80a4bc105bec6e01b7357f91204b41a5541e0329a396198f52f9d5e2f02e842",
+    "r1-pmv/inventory/migrations/0003_lot_supplier.py": "3c5d2a2131fe14ffbbcbb5fe76ecf207bda1769dac1f140fe968008f8d55f206",
+    "r1-pmv/inventory/migrations/0004_lot_is_initial.py": "94fc930fd64c49905026f2b90766ce7cdedba3d4ef4dbb517d0b5f2e14ce8b5c",
+    "r1-pmv/inventory/migrations/0005_lot_responsible.py": "d25e527a86f192726010db4fd3f06ee39dba4ede6f854e8ab61f2bb5e2af62cc",
+    "r1-pmv/inventory/migrations/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/inventory/templates/inventory/adjustment_form.html": "89c9485e0e80eb119284c0ffcce6eaed2cbb3f37687361d42d30a1cbd0620961",
+    "r1-pmv/inventory/templates/inventory/initial_load_created.html": "91bac86eae7e22ed82f216ce803dd0330af3ef7b0aed3904fd3d96fbf5c5fd3a",
+    "r1-pmv/inventory/templates/inventory/initial_load_form.html": "2df842ca16edbfd713162d9294eae322abd087a1810d72e07823b42d2556a8a8",
+    "r1-pmv/inventory/templates/inventory/product_movements.html": "929198d948bdfc4c0acc5c8e7b18d66049b099fc34401dbe6cc76b42db7d1775",
+    "r1-pmv/inventory/templates/inventory/stock_entry_form.html": "93e0d4f4c9be441d72d7a49db9b25b3456798a4748c99952afb52973bb8f50d4",
+    "r1-pmv/inventory/templates/inventory/stock_overview.html": "58a8aa14fcd7d1443f8eebd3cdd17d898504077173908ea78d4fc10bbdc949b1",
+    "r1-pmv/inventory/templates/inventory/supplier_form.html": "9e832337695cb8ac41abd90d00b178702453b4288f1152a756b0a9ee7ad37546",
+    "r1-pmv/inventory/templates/inventory/supplier_list.html": "51c1e47b70984d692937e7d98e09a94de030246ed210717dd318ad1d44e04fbf",
+    "r1-pmv/inventory/templates/inventory/writeoff_form.html": "77a186c12f406ea58bb6ea09bde468bf967f8f9a719fa0c1f57fb8385c1c3716",
+    "r1-pmv/sales/migrations/0001_initial.py": "132c002e2272693205a0ddb1e0066a97a982991efb63609eb0c2c73f0c93975f",
+    "r1-pmv/sales/migrations/0002_salecounter_sale_saleline.py": "8bb0dd9aedcbc5ffe47a2923c41d94290d8ac896e21eb34eccd844e37ed0bff7",
+    "r1-pmv/sales/migrations/0003_sale_discount_amount.py": "186fdc4f506fe0cb664d5feb32ac6f71510dc265b82e83945acdb967d05a5fb9",
+    "r1-pmv/sales/migrations/0004_saleline_product.py": "09d35f7acc7c895db1c719f9edb6173072150a8a6cdf8c34f61b374b77a96acd",
+    "r1-pmv/sales/migrations/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "r1-pmv/sales/templates/sales/sales_checkout.html": "34096d8a94d8518db44e514fcec3eb86bd29b2b98a353eb0339f60b9cb2b9503",
+    "r1-pmv/sales/templates/sales/sales_draft.html": "4ee5ddabdb184e2330c4e1d3274d613918d89128c63af3dd75232cd4248db1b7",
+    "r1-pmv/sales/templates/sales/sales_history.html": "97b168423b201c35873500ff71a4a366bd69a758fb9129d4b04471568fd77fd5",
+    "r1-pmv/sales/templates/sales/sales_receipt.html": "bdaadaf12537568fafcb2fc097462f8889457860572724ea7d335868742cdb71",
+    "r1-pmv/sales/templates/sales/sales_shift_history.html": "be15f069863670ea79d1fda2d8af43d5214c6663eba72b64b9fb641c20695d27"
+  },
+  "git_status": " M .env.example\n M .gitignore\n M README.md\n M cash/forms.py\n M cash/models.py\n M cash/services.py\n M cash/templates/cash/cash_open.html\n M cash/templates/cash/cash_shift_opened.html\n M cash/tests.py\n M cash/urls.py\n M cash/views.py\n M catalog/forms.py\n M catalog/models.py\n M catalog/services.py\n M catalog/templates/catalog/product_created.html\n M catalog/tests.py\n M catalog/urls.py\n M catalog/views.py\n M config/env.py\n M config/settings.py\n M evidencias/CONTROL_DE_HORAS_Y_ESTADO.md\n M identity/forms.py\n M identity/models.py\n M identity/services.py\n M identity/static/identity/app.css\n M identity/static/identity/favicon.svg\n M identity/templates/identity/base.html\n M identity/templates/identity/dashboard.html\n M identity/templates/identity/login.html\n M identity/templates/identity/logout_confirm.html\n M identity/tests.py\n M identity/urls.py\n M identity/views.py\n M inventory/forms.py\n M inventory/models.py\n M inventory/services.py\n M inventory/templates/inventory/initial_load_created.html\n M inventory/templates/inventory/initial_load_form.html\n M inventory/tests.py\n M inventory/urls.py\n M inventory/views.py\n M sales/forms.py\n M sales/models.py\n M sales/services.py\n M sales/templates/sales/sales_draft.html\n M sales/tests.py\n M sales/urls.py\n M sales/views.py\n M templates/403.html\n?? AUDITORIA_USABILIDAD_05NOV2026.md\n?? CONTROL_SPRINTS.md\n?? PROMPT_PRUEBAS_EXPLORATORIAS.md\n?? REPORTE_CAOS_Y_UX_QA.md\n?? REPORTE_PRUEBAS_EXPLORATORIAS_05NOV2026.md\n?? cash/migrations/0003_cashshiftclose.py\n?? cash/templates/cash/cash_close.html\n?? cash/templates/cash/cash_shift_closed.html\n?? cash/templates/cash/cash_shift_history.html\n?? catalog/management/\n?? catalog/templates/catalog/category_form.html\n?? catalog/templates/catalog/category_list.html\n?? catalog/templates/catalog/product_edit.html\n?? catalog/templates/catalog/product_expirations.html\n?? catalog/templates/catalog/product_list.html\n?? config/test_runner.py\n?? docs/alcance_comercial_y_normativo.md\n?? evidencias/HU-CAJA-02/\n?? evidencias/HU-CAJA-05/\n?? evidencias/HU-CAT-01/\n?? evidencias/HU-CAT-02/\n?? evidencias/HU-INV-01b/\n?? evidencias/HU-INV-02/\n?? evidencias/HU-INV-03/\n?? evidencias/HU-PROD-01/\n?? evidencias/HU-PROD-04/\n?? evidencias/HU-PROD-05/\n?? evidencias/HU-PROD-06/\n?? evidencias/HU-PROV-01/\n?? evidencias/HU-PROV-02/\n?? evidencias/HU-PROV-04/\n?? evidencias/HU-USR-01/\n?? evidencias/HU-USR-02/\n?? evidencias/HU-USR-03/\n?? evidencias/HU-USR-04/\n?? evidencias/HU-VEN-01c/\n?? evidencias/HU-VEN-02a/\n?? evidencias/HU-VEN-05a/\n?? evidencias/HU-VEN-05b/\n?? identity/migrations/0003_alter_role_code.py\n?? identity/migrations/0004_alter_role_code.py\n?? identity/migrations/0005_loginattempt.py\n?? identity/templates/identity/employee_edit.html\n?? identity/templates/identity/employee_form.html\n?? identity/templates/identity/employee_list.html\n?? identity/test_audit02_boundaries.py\n?? identity/test_audit02_history.py\n?? identity/test_audit02_logout_atomic.py\n?? identity/test_auth_audit01.py\n?? identity/test_etapa02_audit.py\n?? identity/test_etapa02_estado.py\n?? inventory/migrations/0002_supplier_physicaladjustment_stockwriteoff.py\n?? inventory/migrations/0003_lot_supplier.py\n?? inventory/migrations/0004_lot_is_initial.py\n?? inventory/migrations/0005_lot_responsible.py\n?? inventory/templates/inventory/adjustment_form.html\n?? inventory/templates/inventory/product_movements.html\n?? inventory/templates/inventory/stock_entry_form.html\n?? inventory/templates/inventory/stock_overview.html\n?? inventory/templates/inventory/supplier_form.html\n?? inventory/templates/inventory/supplier_list.html\n?? inventory/templates/inventory/writeoff_form.html\n?? sales/migrations/0002_salecounter_sale_saleline.py\n?? sales/migrations/0003_sale_discount_amount.py\n?? sales/migrations/0004_saleline_product.py\n?? sales/templates/sales/sales_checkout.html\n?? sales/templates/sales/sales_history.html\n?? sales/templates/sales/sales_receipt.html\n?? sales/templates/sales/sales_shift_history.html\n?? templates/404.html\n",
+  "git_head": "7816d3328115cf5aa5bcdd0985fffd795b3ae084"
+}

@@ -1,0 +1,41 @@
+{
+  "stamp_utc": "20261114T214017494074Z-17a34721",
+  "targets": [
+    "sales",
+    "catalog",
+    "cash",
+    "app_platform",
+    "tests"
+  ],
+  "exit_code": 0,
+  "duration_s": 79.281,
+  "evidence_txt": "auditoria_por_etapas\\resultados\\evidencias\\06-reval-tests-20261114T214017494074Z-17a34721\\test_output.txt",
+  "protected_unchanged": true,
+  "tail": [
+    "La línea de venta guarda snapshot del nombre y código del producto. ... ok",
+    "test_C18_cannot_open_second_shift (test_audit14c_edge_cases.BehaviorToPlanningTest.test_C18_cannot_open_second_shift)",
+    "Un segundo vendedor no puede abrir turno si ya hay uno abierto. ... ok",
+    "test_C19_igv_calculation (test_audit14c_edge_cases.BehaviorToPlanningTest.test_C19_igv_calculation)",
+    "La venta calcula base e IGV correctamente (factor 1.18). ... ok",
+    "test_C01_checkout_fails_after_product_deactivation (test_audit14c_edge_cases.PROP14_03_AdminDeactivatesProductWithDraftTest.test_C01_checkout_fails_after_product_deactivation)",
+    "Vendedor agrega producto al borrador. Admin lo desactiva. El cobro debe fallar. ... ok",
+    "test_C02_checkout_fails_after_category_deactivation (test_audit14c_edge_cases.PROP14_03_AdminDeactivatesProductWithDraftTest.test_C02_checkout_fails_after_category_deactivation)",
+    "Admin desactiva la categoría del producto en el borrador. Cobro rechazado. ... ok",
+    "test_stage12_migrations_round_trip_and_no_pending_migrations (sales.test_audit12_receipts_history.Stage12MigrationOrderingTests.test_stage12_migrations_round_trip_and_no_pending_migrations) ... ok",
+    "test_upgrade_preserves_unknown_history_without_fefo_backfill (sales.test_audit14f_allocations.LegacyAllocationMigrationTests.test_upgrade_preserves_unknown_history_without_fefo_backfill) ... ok",
+    "test_database_url_rejects_non_postgresql_scheme (app_platform.test_env.EnvironmentConfigurationTests.test_database_url_rejects_non_postgresql_scheme) ... ok",
+    "test_dotenv_does_not_override_process_environment (app_platform.test_env.EnvironmentConfigurationTests.test_dotenv_does_not_override_process_environment) ... ok",
+    "test_empty_database_url_uses_local_sqlite (app_platform.test_env.EnvironmentConfigurationTests.test_empty_database_url_uses_local_sqlite) ... ok",
+    "test_invalid_boolean_is_rejected (app_platform.test_env.EnvironmentConfigurationTests.test_invalid_boolean_is_rejected) ... ok",
+    "test_postgresql_url_decodes_percent_encoded_credentials (app_platform.test_env.EnvironmentConfigurationTests.test_postgresql_url_decodes_percent_encoded_credentials) ... ok",
+    "test_postgresql_url_is_parsed_without_logging_credentials (app_platform.test_env.EnvironmentConfigurationTests.test_postgresql_url_is_parsed_without_logging_credentials) ... ok",
+    "test_cookie_session_and_header_baseline_is_enabled (app_platform.test_security.SecurityConfigurationTests.test_cookie_session_and_header_baseline_is_enabled) ... ok",
+    "test_logging_filter_redacts_query_json_cookie_and_authorization_values (app_platform.test_security.SecurityConfigurationTests.test_logging_filter_redacts_query_json_cookie_and_authorization_values) ... ok",
+    "",
+    "----------------------------------------------------------------------",
+    "Ran 372 tests in 73.153s",
+    "",
+    "OK",
+    "Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')..."
+  ]
+}

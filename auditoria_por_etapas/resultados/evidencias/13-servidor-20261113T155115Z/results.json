@@ -1,0 +1,456 @@
+{
+  "run": "etapa13-20261113T155109Z-c9836092",
+  "database": "C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\auditoria_por_etapas\\resultados\\datos\\etapa13-20261113T155109Z-c9836092\\audit.sqlite3",
+  "engine": "sqlite",
+  "at_utc": "2026-11-13T15:51:16.701475+00:00",
+  "date_lima": "2026-11-13",
+  "fixture": {
+    "run": "etapa13-20261113T155109Z-c9836092",
+    "empty": true,
+    "accounts": {
+      "admin": "dac47847-11b2-41fa-baa5-b39d3515dacc",
+      "warehouse": "3a6274c2-c89a-4b9d-92ca-257552f817dd",
+      "seller": "b99ff29a-3385-42a1-b0d2-7daf4bf2b55f",
+      "seller2": "c6cf0161-85c9-460f-b087-b2c54c3922da"
+    },
+    "date_lima": "2026-11-13"
+  },
+  "results": [
+    {
+      "id": "13-S-EMPTY",
+      "expected": {
+        "sales_count": 0,
+        "sales_total": "0.00",
+        "discount_total": "0.00",
+        "open_shifts": 0,
+        "low_stock": 0,
+        "expiring": 0,
+        "expired": 0
+      },
+      "observed": {
+        "expiring": 0,
+        "expired": 0,
+        "low_stock": 0,
+        "sales_count": 0,
+        "sales_total": "0.00",
+        "discount_total": "0.00",
+        "open_shifts": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-EMPTY-admin",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-EMPTY-warehouse",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-EMPTY-seller",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-EMPTY-seller2",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-EMPTY-DEST-/inventario/stock/",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-EMPTY-DEST-/productos/vencimientos/",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-EMPTY-DEST-/ventas/historial/",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-12-POST-admin",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-12-HEAD-admin",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-12-POST-warehouse",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-12-HEAD-warehouse",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-12-POST-seller",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-12-HEAD-seller",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-12-POST-seller2",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-12-HEAD-seller2",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-warehouseget/ventas/historial/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-warehousepost/ventas/historial/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-sellerget/inventario/stock/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-sellerpost/inventario/stock/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-sellerget/productos/vencimientos/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-sellerpost/productos/vencimientos/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-sellerget/productos/nuevo/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-sellerpost/productos/nuevo/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-warehouseget/empleados/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-warehousepost/empleados/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-adminget/ventas/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-13-DENY-adminpost/ventas/",
+      "expected": 403,
+      "observed": 403,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-14-ANON",
+      "expected": {
+        "status": 302,
+        "location": "/?next=/inicio/"
+      },
+      "observed": {
+        "status": 302,
+        "location": "/?next=/inicio/"
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-15-NO-MUTATION",
+      "expected": "292f9eebd5b74a712eaad7a35a988c3f75848a647cfcbe235694f48f19a82613",
+      "observed": "292f9eebd5b74a712eaad7a35a988c3f75848a647cfcbe235694f48f19a82613",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "13-S-16-DAYS-default",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 0,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-empty",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 0,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-min",
+      "expected": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 1,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-max",
+      "expected": {
+        "status": 200,
+        "days": 3650,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 3650,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 4,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-zero",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 1,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-negative",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 2,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-above",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 4,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-decimal",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 3,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-plus",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 2,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-unicode",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 1,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-repeat",
+      "expected": {
+        "status": 200,
+        "days": 3650,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 3650,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 2,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-five-significant-digits",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 5,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-leadingzeros",
+      "expected": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 7,
+      "note": "No raw giant query logged in evidence"
+    },
+    {
+      "id": "13-S-16-DAYS-negativezeros",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 6,
+      "note": "No raw giant query logged in evidence"
+    }
+  ],
+  "counts": {
+    "CUMPLE": 44,
+    "INCUMPLE": 0
+  },
+  "limitations": [
+    "HTTP client is not visual browser",
+    "SQLite does not verify PostgreSQL locks or snapshot concurrency",
+    "This run mutates only its new marked isolated DB; do not rerun against a populated probe DB",
+    "Fixtures have synthetic historical snapshots; service integration is separately identified"
+  ]
+}

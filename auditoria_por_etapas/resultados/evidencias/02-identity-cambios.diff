@@ -1,0 +1,478 @@
+--- a/r1-pmv/identity/models.py
++++ b/r1-pmv/identity/models.py
+@@ -39,6 +39,8 @@
+     def create_user(self, email: str, password: str | None = None, **extra_fields: object) -> "Account":
+         if not email:
+             raise ValueError("El correo es obligatorio.")
++        if "display_name" in extra_fields and isinstance(extra_fields["display_name"], str):
++            extra_fields["display_name"] = extra_fields["display_name"].strip()
+         normalized = Account.normalize_email(email)
+         account = self.model(email=email.strip(), email_normalized=normalized, **extra_fields)
+         if password is None:
+@@ -80,6 +82,8 @@
+ 
+     def clean(self) -> None:
+         super().clean()
++        if isinstance(self.display_name, str):
++            self.display_name = self.display_name.strip()
+         validate_email(self.email)
+         self.email = self.email.strip()
+         self.email_normalized = self.normalize_email(self.email)
+
+--- a/r1-pmv/identity/forms.py
++++ b/r1-pmv/identity/forms.py
+@@ -34,9 +34,25 @@
+ 
+ 
+ def _validate_strong_password(value: str) -> str:
+-    if len(value) < 8:
+-        raise forms.ValidationError("La contraseña debe tener al menos 8 caracteres.")
+-    if len(set(value)) == 1 or value.lower() in {"12345678", "123456789", "password", "contraseña", "qwertyui"}:
++    if len(value) < 7:
++        raise forms.ValidationError(
++            "La contraseña debe tener al menos 7 caracteres e incluir mayúscula, minúscula y número."
++        )
++    has_upper = any(ch.isupper() for ch in value)
++    has_lower = any(ch.islower() for ch in value)
++    has_digit = any(ch.isdigit() for ch in value)
++    if not (has_upper and has_lower and has_digit):
++        raise forms.ValidationError(
++            "La contraseña debe tener al menos 7 caracteres e incluir mayúscula, minúscula y número."
++        )
++    if len(set(value)) == 1 or value.lower() in {
++        "1234567",
++        "12345678",
++        "123456789",
++        "password",
++        "contraseña",
++        "qwertyui",
++    }:
+         raise forms.ValidationError(
+             "La contraseña elegida es demasiado débil o predecible. Combine letras y números distintos."
+         )
+@@ -51,15 +67,16 @@
+     )
+     email = forms.EmailField(
+         label="Correo de trabajo",
++        max_length=254,
+         widget=forms.EmailInput(attrs={"class": "form-control", "placeholder": "ana@empresa.com"}),
+     )
+     password = forms.CharField(
+         label="Contraseña inicial",
+         strip=False,
+-        min_length=8,
+-        help_text="Mínimo 8 caracteres. Evite secuencias simples como 12345678.",
++        min_length=7,
++        help_text="Mínimo 7 caracteres, con al menos una mayúscula, una minúscula y un número.",
+         error_messages={
+-            "min_length": "La contraseña debe tener al menos 8 caracteres.",
++            "min_length": "La contraseña debe tener al menos 7 caracteres e incluir mayúscula, minúscula y número.",
+             "required": "Ingrese una contraseña inicial.",
+         },
+         widget=forms.PasswordInput(attrs={"class": "form-control"}),
+@@ -89,6 +106,7 @@
+     )
+     email = forms.EmailField(
+         label="Correo de trabajo",
++        max_length=254,
+         widget=forms.EmailInput(attrs={"class": "form-control"}),
+     )
+     role = RoleChoiceField(
+@@ -105,10 +123,10 @@
+         label="Nueva contraseña (opcional)",
+         required=False,
+         strip=False,
+-        min_length=8,
+-        help_text="Déjelo en blanco si no desea cambiar la contraseña actual.",
++        min_length=7,
++        help_text="Déjelo en blanco si no desea cambiar la contraseña actual. Si ingresa una nueva, debe tener al menos 7 caracteres, mayúscula, minúscula y número.",
+         error_messages={
+-            "min_length": "La nueva contraseña debe tener al menos 8 caracteres.",
++            "min_length": "La nueva contraseña debe tener al menos 7 caracteres e incluir mayúscula, minúscula y número.",
+         },
+         widget=forms.PasswordInput(attrs={"class": "form-control", "autocomplete": "new-password"}),
+     )
+
+--- a/r1-pmv/identity/services.py
++++ b/r1-pmv/identity/services.py
+@@ -74,28 +74,87 @@
+ from django.core.exceptions import ValidationError
+ 
+ 
++def _login_identifier(normalized_email: str) -> str:
++    return salted_hmac("identity.login.throttle", normalized_email, algorithm="sha256").hexdigest()
++
++
++def _reset_login_attempt(normalized_email: str) -> None:
++    identifier = _login_identifier(normalized_email)
++    LoginAttempt.objects.filter(identifier=identifier).update(
++        failures=0,
++        locked_until=None,
++        updated_at=timezone.now(),
++    )
++
++
++def _delete_account_sessions(account: Account) -> None:
++    from django.contrib.sessions.models import Session
++
++    account_id = str(account.pk)
++    keys_to_delete: list[str] = []
++    for session_obj in Session.objects.all():
++        try:
++            data = session_obj.get_decoded()
++        except Exception:
++            continue
++        if str(data.get("_auth_user_id")) == account_id:
++            keys_to_delete.append(session_obj.session_key)
++    if keys_to_delete:
++        Session.objects.filter(session_key__in=keys_to_delete).delete()
++
++
++def _sync_account_sessions_role(account: Account, role_code: str) -> None:
++    from django.contrib.sessions.backends.db import SessionStore
++    from django.contrib.sessions.models import Session
++
++    account_id = str(account.pk)
++    for session_obj in Session.objects.all():
++        try:
++            data = session_obj.get_decoded()
++        except Exception:
++            continue
++        if str(data.get("_auth_user_id")) == account_id and data.get("role_code") != role_code:
++            store = SessionStore(session_key=session_obj.session_key)
++            store["role_code"] = role_code
++            store.save()
++
++
++@sensitive_variables("password")
++@transaction.atomic
+ def create_employee(*, actor, display_name: str, email: str, password: str, role) -> Account:
+     """Crea una cuenta de empleado. Solo el ADMIN puede ejecutar esta acción."""
++    from .forms import _validate_strong_password
+     from .models import Role as RoleModel
+ 
+     if actor.role.code != RoleModel.Code.ADMIN:
+         raise ValidationError("Solo el administrador puede crear empleados.")
+ 
+-    if role.code not in RoleModel.Code.values:
++    if role is None or role.code not in RoleModel.Code.values:
+         raise ValidationError({"role": "Seleccione un rol válido del minimarket."})
+ 
+-    normalized = Account.normalize_email(email)
++    cleaned_name = (display_name or "").strip()
++    if not cleaned_name:
++        raise ValidationError({"display_name": "Este campo es obligatorio."})
++
++    try:
++        _validate_strong_password(password or "")
++    except ValidationError as exc:
++        raise ValidationError({"password": exc.messages}) from exc
++
++    normalized = Account.normalize_email(email or "")
+     if Account.objects.filter(email_normalized=normalized).exists():
+-        raise ValidationError({"email": "Ya existe una cuenta con ese correo electrónico."})
++        raise ValidationError({"email": "El correo ya está registrado."})
+ 
+     return Account.objects.create_user(
+-        email,
++        (email or "").strip(),
+         password,
+-        display_name=display_name,
++        display_name=cleaned_name,
+         role=role,
+     )
+ 
+ 
++@sensitive_variables("new_password")
++@transaction.atomic
+ def update_employee(
+     *,
+     actor,
+@@ -106,6 +165,7 @@
+     new_password: str = "",
+ ) -> Account:
+     """Edita nombre, correo, rol y opcionalmente contraseña de un empleado. Solo ADMIN."""
++    from .forms import _validate_strong_password
+     from .models import Role as RoleModel
+ 
+     if actor.role.code != RoleModel.Code.ADMIN:
+@@ -114,8 +174,18 @@
+     if account.pk == actor.pk and role != account.role:
+         raise ValidationError({"role": "No puedes cambiar el rol de tu propia cuenta."})
+ 
+-    if account.role.code not in RoleModel.Code.values or role.code not in RoleModel.Code.values:
++    if role is None or account.role.code not in RoleModel.Code.values or role.code not in RoleModel.Code.values:
+         raise ValidationError({"role": "Seleccione un rol válido del minimarket."})
++
++    cleaned_name = (display_name or "").strip()
++    if not cleaned_name:
++        raise ValidationError({"display_name": "Este campo es obligatorio."})
++
++    if new_password:
++        try:
++            _validate_strong_password(new_password)
++        except ValidationError as exc:
++            raise ValidationError({"new_password": exc.messages}) from exc
+ 
+     if role != account.role:
+         from cash.models import CashShift
+@@ -141,42 +211,74 @@
+         if account.role.code == RoleModel.Code.SELLER:
+             discard_active_draft(actor=account)
+ 
+-    normalized = Account.normalize_email(email)
++    normalized = Account.normalize_email(email or "")
+     if Account.objects.filter(email_normalized=normalized).exclude(pk=account.pk).exists():
+-        raise ValidationError({"email": "Ya existe una cuenta con ese correo electrónico."})
+-
+-    account.display_name = display_name.strip()
+-    account.email = email.strip()
++        raise ValidationError({"email": "El correo ya está registrado."})
++
++    original_display_name = account.display_name
++    original_email = account.email
++    original_normalized = account.email_normalized
++    original_role = account.role
++
++    account.display_name = cleaned_name
++    account.email = (email or "").strip()
+     account.email_normalized = normalized
+     account.role = role
++    try:
++        account.full_clean(exclude=["password"])
++    except ValidationError:
++        account.display_name = original_display_name
++        account.email = original_email
++        account.email_normalized = original_normalized
++        account.role = original_role
++        raise
++
+     update_fields = ["display_name", "email", "email_normalized", "role", "updated_at"]
+     if new_password:
+         account.set_password(new_password)
+         update_fields.append("password")
+-    account.full_clean(exclude=["password"])
+     account.save(update_fields=update_fields)
++
++    if role != original_role:
++        _sync_account_sessions_role(account, role.code)
++    if normalized != original_normalized or new_password:
++        _reset_login_attempt(original_normalized)
++        _reset_login_attempt(normalized)
+     return account
+ 
+ 
++@transaction.atomic
+ def deactivate_employee(*, actor, account: Account) -> Account:
+     """Desactiva la cuenta de un empleado. Solo ADMIN."""
+     from cash.models import CashShift
++    from sales.services import discard_active_draft
+     from .models import Role as RoleModel
+ 
+     if actor.role.code != RoleModel.Code.ADMIN:
+         raise ValidationError("Solo el administrador puede desactivar cuentas.")
+     if account.pk == actor.pk:
+         raise ValidationError("No puedes desactivar tu propia cuenta.")
++    if (
++        account.role.code == RoleModel.Code.ADMIN
++        and not Account.objects.filter(role__code=RoleModel.Code.ADMIN, is_active=True)
++        .exclude(pk=account.pk)
++        .exists()
++    ):
++        raise ValidationError("No se puede desactivar al único administrador activo.")
+     if CashShift.objects.filter(seller=account, status=CashShift.Status.OPEN).exists():
+         raise ValidationError(
+             "No se puede desactivar a un vendedor con un turno de caja abierto. Cierre el turno primero."
+         )
++    if account.role.code == RoleModel.Code.SELLER:
++        discard_active_draft(actor=account)
+ 
+     account.is_active = False
+-    account.save(update_fields=["is_active"])
++    account.save(update_fields=["is_active", "updated_at"])
++    _delete_account_sessions(account)
+     return account
+ 
+ 
++@transaction.atomic
+ def reactivate_employee(*, actor, account: Account) -> Account:
+     """Reactiva la cuenta de un empleado inactivo. Solo ADMIN."""
+     from .models import Role as RoleModel
+@@ -185,6 +287,7 @@
+         raise ValidationError("Solo el administrador puede reactivar cuentas.")
+ 
+     account.is_active = True
+-    account.save(update_fields=["is_active"])
++    account.save(update_fields=["is_active", "updated_at"])
++    _reset_login_attempt(account.email_normalized)
+     return account
+ 
+
+--- a/r1-pmv/identity/views.py
++++ b/r1-pmv/identity/views.py
+@@ -73,38 +73,55 @@
+     from sales.services import active_draft_for_actor, discard_active_draft
+ 
+     draft = active_draft_for_actor(actor=request.user)
++    has_active_draft = bool(draft is not None and draft.lines.exists())
+     if request.method == "POST":
+         if draft is not None:
+             discard_active_draft(actor=request.user)
+         logout(request)
+         return redirect("login")
+-    return render(request, "identity/logout_confirm.html", {"has_active_draft": draft is not None})
++    return render(request, "identity/logout_confirm.html", {"has_active_draft": has_active_draft})
+ 
+ 
+ # ── HU-USR-01 · Lista de empleados ───────────────────────────────────────────
+ 
+ @roles_required(Role.Code.ADMIN)
+ @require_GET
++@never_cache
+ def employee_list(request):
+     """Lista de todos los empleados del minimarket registrados en el sistema."""
+-    accounts = (
+-        Account.objects.select_related("role")
+-        .filter(role__code__in=Role.Code.values)
+-        .order_by("display_name")
++    from django.db.models import Q
++    from django.db.models.functions import Lower
++
++    query = request.GET.get("q", "").strip()
++    accounts = Account.objects.select_related("role").filter(role__code__in=Role.Code.values)
++    if query:
++        normalized_query = Account.normalize_email(query)
++        accounts = accounts.filter(
++            Q(display_name__icontains=query)
++            | Q(email__icontains=query)
++            | Q(email_normalized__icontains=normalized_query)
++        )
++    accounts = accounts.order_by(Lower("display_name"), "email_normalized")
++    return render(
++        request,
++        "identity/employee_list.html",
++        {"accounts": accounts, "employees": accounts, "query": query},
+     )
+-    return render(request, "identity/employee_list.html", {"accounts": accounts})
+ 
+ 
+ # ── HU-USR-02 · Crear nuevo empleado ─────────────────────────────────────────
+ 
+ @roles_required(Role.Code.ADMIN)
+ @require_http_methods(["GET", "POST"])
++@sensitive_post_parameters("password")
++@sensitive_variables("form")
++@never_cache
+ def employee_create(request):
+     """Formulario para crear una nueva cuenta de empleado."""
+-    form = EmployeeCreationForm(request.POST or None)
++    form = EmployeeCreationForm(request.POST if request.method == "POST" else None)
+     if request.method == "POST" and form.is_valid():
+         try:
+-            create_employee(
++            account = create_employee(
+                 actor=request.user,
+                 display_name=form.cleaned_data["display_name"],
+                 email=form.cleaned_data["email"],
+@@ -114,14 +131,18 @@
+         except ValidationError as error:
+             if hasattr(error, "error_dict"):
+                 for field, errors in error.error_dict.items():
+-                    target = field if field in form.fields else None
++                    target = (
++                        "email"
++                        if field == "email_normalized"
++                        else (field if field in form.fields else None)
++                    )
+                     for item in errors:
+                         form.add_error(target, item)
+             else:
+                 for item in error.error_list:
+                     form.add_error(None, item)
+         else:
+-            messages.success(request, f"Empleado «{form.cleaned_data['display_name']}» creado correctamente.")
++            messages.success(request, f"Empleado «{account.display_name}» creado correctamente.")
+             return redirect("employee-list")
+     return render(request, "identity/employee_form.html", {"form": form})
+ 
+@@ -130,6 +151,9 @@
+ 
+ @roles_required(Role.Code.ADMIN)
+ @require_http_methods(["GET", "POST"])
++@sensitive_post_parameters("new_password")
++@sensitive_variables("form")
++@never_cache
+ def employee_edit(request, account_id):
+     """Formulario para editar nombre, correo y rol de un empleado."""
+     account = get_object_or_404(Account.objects.select_related("role"), pk=account_id, role__code__in=Role.Code.values)
+@@ -138,7 +162,7 @@
+         "email": account.email,
+         "role": account.role,
+     }
+-    form = EmployeeEditForm(request.POST or None, initial=initial)
++    form = EmployeeEditForm(request.POST if request.method == "POST" else None, initial=initial)
+     if request.method == "POST" and form.is_valid():
+         try:
+             update_employee(
+@@ -152,7 +176,11 @@
+         except ValidationError as error:
+             if hasattr(error, "error_dict"):
+                 for field, errors in error.error_dict.items():
+-                    target = field if field in form.fields else None
++                    target = (
++                        "email"
++                        if field == "email_normalized"
++                        else (field if field in form.fields else None)
++                    )
+                     for item in errors:
+                         form.add_error(target, item)
+             else:
+@@ -168,6 +196,7 @@
+ 
+ @roles_required(Role.Code.ADMIN)
+ @require_http_methods(["POST"])
++@never_cache
+ def employee_deactivate(request, account_id):
+     """Desactiva (o reactiva) la cuenta de un empleado."""
+     account = get_object_or_404(Account, pk=account_id, role__code__in=Role.Code.values)
+
+--- a/r1-pmv/identity/templates/identity/employee_list.html
++++ b/r1-pmv/identity/templates/identity/employee_list.html
+@@ -7,6 +7,26 @@
+   <h2>Empleados</h2>
+   <a href="{% url 'employee-create' %}" class="btn btn-primary">+ Nuevo empleado</a>
+ </div>
++
++<form method="get" class="row g-2 align-items-end mb-4" role="search">
++  <div class="col-sm-8 col-md-6">
++    <label for="id_q" class="form-label fw-semibold">Buscar por nombre o correo</label>
++    <input
++      type="search"
++      id="id_q"
++      name="q"
++      value="{{ query }}"
++      class="form-control"
++      placeholder="Ej.: Ana o ventas@minimarket.local"
++    >
++  </div>
++  <div class="col-auto d-flex gap-2">
++    <button type="submit" class="btn btn-outline-primary">Buscar</button>
++    {% if query %}
++      <a href="{% url 'employee-list' %}" class="btn btn-outline-secondary">Limpiar</a>
++    {% endif %}
++  </div>
++</form>
+ 
+ {% if accounts %}
+ <div class="table-responsive">
+@@ -52,6 +72,10 @@
+   </table>
+ </div>
+ {% else %}
++{% if query %}
++<div class="alert alert-info">No se encontraron empleados para el criterio ingresado.</div>
++{% else %}
+ <div class="alert alert-info">No hay empleados registrados.</div>
+ {% endif %}
++{% endif %}
+ {% endblock %}

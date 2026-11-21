@@ -1,0 +1,53 @@
+{
+  "status": "PROBADO: modelos aislados, NO producto ni banco",
+  "django_imported": false,
+  "db_opened": false,
+  "network": false,
+  "results": [
+    {
+      "case": "M01",
+      "expected": "Algoritmo por importe asigna A tardío a B",
+      "observed": "B",
+      "passes_counterexample": true
+    },
+    {
+      "case": "M02",
+      "expected": "Nombre/monto/código/minuto no identifican operación universal",
+      "same_visible": [
+        300,
+        "Ana",
+        "123",
+        "12:00"
+      ],
+      "passes_counterexample": true
+    },
+    {
+      "case": "M03",
+      "expected": "Dos IDs locales pueden duplicar un solo abono",
+      "naive_cents": 600,
+      "real_cents": 300,
+      "passes_counterexample": true
+    },
+    {
+      "case": "M04",
+      "expected": "E+Y=T; R-vuelto=E",
+      "splits_checked": 1001,
+      "passed": true
+    },
+    {
+      "case": "M05",
+      "expected": "3+7=10 con Decimal",
+      "passed": true
+    },
+    {
+      "case": "M06",
+      "expected": "Dos lecturas antes de reservar permiten 14 sobre saldo10",
+      "naive_accepted": [
+        true,
+        true
+      ],
+      "passes_counterexample": true
+    }
+  ],
+  "limits": "No demuestra frecuencia de colisión, campos reales Yape, autenticidad, rendimiento, locks PostgreSQL ni seguridad del producto."
+}

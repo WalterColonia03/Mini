@@ -1,0 +1,39 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Estado de categoría · Minimarket{% endblock %}
+{% block page_heading %}Categorías{% endblock %}
+
+{% block content %}
+<section class="panel form-panel" aria-labelledby="category-state-title">
+  <h2 id="category-state-title">{% if error %}Revise el estado de la categoría{% elif target %}Activar categoría{% else %}Desactivar categoría{% endif %}</h2>
+  <p><strong>{{ category.name }}</strong> · Estado actual: {% if category.is_active %}Activa{% else %}Inactiva{% endif %}</p>
+
+  {% if error %}
+    <div class="alert alert-error" role="alert" tabindex="-1" autofocus>{{ error }}</div>
+    <a class="button button-primary" href="{% url 'category-list' %}">Revisar categorías</a>
+  {% else %}
+    <dl class="summary-list" aria-label="Situación actual">
+      <div><dt>Productos asociados</dt><dd>{{ product_count }}</dd></div>
+      <div><dt>Ventas en preparación con estos productos</dt><dd>{{ draft_count }}</dd></div>
+      <div><dt>Existencias físicas registradas (UND)</dt><dd>{{ physical_units }}</dd></div>
+    </dl>
+    <p class="help">Estas cantidades corresponden al momento de abrir esta confirmación y pueden cambiar mientras trabaja.</p>
+    {% if target %}
+      <p>Los productos volverán a estar disponibles para las operaciones permitidas de inventario. En venta, solo se ofrecerán los productos activos con existencias vigentes. Los productos deshabilitados individualmente seguirán deshabilitados.</p>
+      <p>Las ventas en preparación podrán continuar si sus productos cumplen esas condiciones; su precio y disponibilidad se comprobarán al operar.</p>
+    {% else %}
+      <p>Esta categoría dejará de estar disponible para registrar o reclasificar productos. Sus productos no aparecerán en los selectores de carga inicial y entrada de mercadería ni en la búsqueda de venta.</p>
+      <p>Las líneas que ya estén en ventas en preparación se conservarán, pero no podrán actualizarse ni cobrarse mientras la categoría esté inactiva.</p>
+    {% endif %}
+    <p>No se eliminarán productos, existencias ni movimientos. Las ventas confirmadas conservarán sus datos. Podrá cambiar el estado de nuevo desde Categorías.</p>
+    <form method="post" action="{% url 'category-toggle' category.pk %}" class="form-actions">
+      {% csrf_token %}
+      <input type="hidden" name="is_active" value="{% if target %}true{% else %}false{% endif %}">
+      <input type="hidden" name="state_version" value="{{ category.state_version }}">
+      <input type="hidden" name="confirm" value="yes">
+      <button class="button button-primary" type="submit">{% if target %}Confirmar activación{% else %}Confirmar desactivación{% endif %}</button>
+      <a class="button button-secondary" href="{% url 'category-list' %}">Cancelar</a>
+    </form>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,126 @@
+{
+  "criteria": [
+    "INV-01a/CA01-05",
+    "INV-01b/CA01-02",
+    "PROP-03-RET-T01/03/05/11"
+  ],
+  "rules": [
+    "RN-01",
+    "RN-03",
+    "RN-14",
+    "RN-19",
+    "RN-29"
+  ],
+  "scope": "03-AJ expired session and account revocation",
+  "routes": [
+    "/inventario/carga-inicial/",
+    "/inventario/entrada/",
+    "/inventario/cargas/<uuid>/"
+  ],
+  "forms": {
+    "InitialLoadProductForm": {
+      "product": {
+        "label": "Producto",
+        "required": true,
+        "type": "ModelChoiceField",
+        "minimum": "None",
+        "maximum": "None",
+        "length": null,
+        "decimals": null
+      },
+      "supplier": {
+        "label": "Proveedor (opcional)",
+        "required": false,
+        "type": "ModelChoiceField",
+        "minimum": "None",
+        "maximum": "None",
+        "length": null,
+        "decimals": null
+      }
+    },
+    "StockEntryProductForm": {
+      "product": {
+        "label": "Producto con carga inicial previa",
+        "required": true,
+        "type": "ModelChoiceField",
+        "minimum": "None",
+        "maximum": "None",
+        "length": null,
+        "decimals": null
+      },
+      "supplier": {
+        "label": "Proveedor (opcional)",
+        "required": false,
+        "type": "ModelChoiceField",
+        "minimum": "None",
+        "maximum": "None",
+        "length": null,
+        "decimals": null
+      }
+    },
+    "LotInputForm": {
+      "number": {
+        "label": "Número de lote",
+        "required": true,
+        "type": "CharField",
+        "minimum": "None",
+        "maximum": "None",
+        "length": 64,
+        "decimals": null
+      },
+      "quantity": {
+        "label": "Cantidad",
+        "required": true,
+        "type": "IntegerField",
+        "minimum": "1",
+        "maximum": "999999",
+        "length": null,
+        "decimals": null
+      },
+      "unit_cost": {
+        "label": "Costo unitario (S/)",
+        "required": true,
+        "type": "DecimalField",
+        "minimum": "0.0001",
+        "maximum": "9999999.9999",
+        "length": null,
+        "decimals": 4
+      },
+      "expiration_date": {
+        "label": "Vencimiento",
+        "required": true,
+        "type": "DateField",
+        "minimum": "None",
+        "maximum": "None",
+        "length": null,
+        "decimals": null
+      }
+    }
+  },
+  "actions": [
+    "confirm initial receipt",
+    "confirm later entry",
+    "cancel",
+    "reload",
+    "replay HTTP POST"
+  ],
+  "outputs": [
+    "form errors",
+    "receipt quantities, supplier, expiration, cost",
+    "catalogue and sale quantities"
+  ],
+  "pending": [
+    "approved replenishment request conflict",
+    "multi-product single transaction",
+    "PostgreSQL concurrency",
+    "physical packaging conversion",
+    "quarantine and recalls"
+  ],
+  "cases": [
+    "expire stored session",
+    "old form redirects without writes",
+    "login does not replay POST",
+    "role revoked",
+    "account deactivated and reactivated"
+  ]
+}

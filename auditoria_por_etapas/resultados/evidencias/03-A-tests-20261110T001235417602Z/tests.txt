@@ -1,0 +1,75 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 18 test(s).
+Found 18 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_create_collapses_spaces_and_persists_active (catalog.test_audit03_categories.CategoryAudit03Tests.test_create_collapses_spaces_and_persists_active) ... ok
+test_duplicate_case_spaces_and_inactive_are_rejected (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_case_spaces_and_inactive_are_rejected) ... ok
+test_duplicate_insert_race_is_a_validation_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_insert_race_is_a_validation_error) ... ok
+test_empty_list_then_all_names_including_inactive (catalog.test_audit03_categories.CategoryAudit03Tests.test_empty_list_then_all_names_including_inactive) ... ok
+test_error_description_points_to_visible_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_error_description_points_to_visible_error) ... ok
+test_form_rejects_121_and_script_is_escaped (catalog.test_audit03_categories.CategoryAudit03Tests.test_form_rejects_121_and_script_is_escaped) ... ok
+test_methods_absent_uuid_and_csrf_do_not_mutate (catalog.test_audit03_categories.CategoryAudit03Tests.test_methods_absent_uuid_and_csrf_do_not_mutate) ... ok
+test_missing_empty_and_whitespace_show_required_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_missing_empty_and_whitespace_show_required_error) ... ok
+test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) ... ok
+test_other_roles_and_anonymous_cannot_read_or_write_categories (catalog.test_audit03_categories.CategoryAudit03Tests.test_other_roles_and_anonymous_cannot_read_or_write_categories) ... ok
+test_services_deny_warehouse_and_seller (catalog.test_audit03_categories.CategoryAudit03Tests.test_services_deny_warehouse_and_seller) ... ok
+test_unrelated_database_failure_is_not_hidden (catalog.test_audit03_categories.CategoryAudit03Tests.test_unrelated_database_failure_is_not_hidden) ... ok
+test_name_normalization_is_persisted (catalog.tests.CategoryTests.test_name_normalization_is_persisted) ... ok
+test_admin_can_see_category_list (catalog.tests.CategoryListTests.test_admin_can_see_category_list) ... ok
+test_non_admin_gets_403 (catalog.tests.CategoryListTests.test_non_admin_gets_403) ... ok
+test_admin_creates_category (catalog.tests.CategoryCreateTests.test_admin_creates_category) ... ok
+test_duplicate_name_is_rejected (catalog.tests.CategoryCreateTests.test_duplicate_name_is_rejected) ... ok
+test_non_admin_post_is_forbidden (catalog.tests.CategoryCreateTests.test_non_admin_post_is_forbidden) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.541s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

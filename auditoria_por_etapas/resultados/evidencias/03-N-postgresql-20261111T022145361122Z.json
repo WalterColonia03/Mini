@@ -1,0 +1,1128 @@
+{
+  "started_utc": "20261111T022145361122Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit03n-pg-3a0c68f79508aec0b6958785",
+  "port": 52606,
+  "cases": [
+    {
+      "id": "PG-N-venta-reclasificacion",
+      "ok": true,
+      "checks": {
+        "real_wait": true,
+        "first_commits": true,
+        "second_expected": true,
+        "product_identity_and_commercial": true,
+        "category_state": true,
+        "historical_line_preserved": true,
+        "cost_shift_lines_preserved": true,
+        "stock": true,
+        "sale_count": true,
+        "draft_status": true,
+        "sale_money": true,
+        "sale_snapshot": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+            "category": "e75adce7-f7ca-4e39-9611-9a045ecd009e"
+          }
+        },
+        "contender": {
+          "status": "committed",
+          "value": {
+            "id": "edcf7421-fe6a-4c11-8d15-1f104813b90c",
+            "total": "17.00"
+          }
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": false
+      },
+      "before": {
+        "product": {
+          "id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+          "name": "AUD03 N ficha venta-reclasificacion",
+          "barcode": "N-venta-reclasificacion",
+          "category_id": "39963dd4-5703-43d2-a549-277823e7dcab",
+          "sale_price": "8.50",
+          "minimum_stock": 10,
+          "is_active": true
+        },
+        "average_cost": "2.5000",
+        "categories": [
+          {
+            "id": "39963dd4-5703-43d2-a549-277823e7dcab",
+            "name": "AUD03 N A venta-reclasificacion",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "e75adce7-f7ca-4e39-9611-9a045ecd009e",
+            "name": "AUD03 N B venta-reclasificacion",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "lots": [
+          {
+            "id": "47dca2c7-4922-452c-872b-1b633c71cd8c",
+            "product_id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+            "number": "BASE",
+            "initial_quantity": 21,
+            "available_quantity": 20,
+            "unit_cost": "2.5000",
+            "expiration_date": "2026-12-10"
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "id": "6e8edee8-b442-4b72-8496-39f993c300c7",
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "id": "aff79bb0-aef6-40e0-aeb5-640685bf1767",
+            "product_id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [
+          {
+            "id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000001"
+          }
+        ],
+        "details": [
+          {
+            "id": "cdf19ef4-dd23-4616-9338-dfc9f2e47d41",
+            "sale_id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "product_id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+            "product_snapshot_name": "AUD03 N ficha venta-reclasificacion",
+            "product_snapshot_barcode": "N-venta-reclasificacion",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 2
+          }
+        ]
+      },
+      "after": {
+        "product": {
+          "id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+          "name": "AUD03 N ficha venta-reclasificacion",
+          "barcode": "N-venta-reclasificacion",
+          "category_id": "e75adce7-f7ca-4e39-9611-9a045ecd009e",
+          "sale_price": "8.50",
+          "minimum_stock": 10,
+          "is_active": true
+        },
+        "average_cost": "2.5000",
+        "categories": [
+          {
+            "id": "39963dd4-5703-43d2-a549-277823e7dcab",
+            "name": "AUD03 N A venta-reclasificacion",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "e75adce7-f7ca-4e39-9611-9a045ecd009e",
+            "name": "AUD03 N B venta-reclasificacion",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "lots": [
+          {
+            "id": "47dca2c7-4922-452c-872b-1b633c71cd8c",
+            "product_id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+            "number": "BASE",
+            "initial_quantity": 21,
+            "available_quantity": 18,
+            "unit_cost": "2.5000",
+            "expiration_date": "2026-12-10"
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "id": "6e8edee8-b442-4b72-8496-39f993c300c7",
+            "status": "DISCARDED"
+          }
+        ],
+        "lines": [
+          {
+            "id": "aff79bb0-aef6-40e0-aeb5-640685bf1767",
+            "product_id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [
+          {
+            "id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000001"
+          },
+          {
+            "id": "edcf7421-fe6a-4c11-8d15-1f104813b90c",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000002"
+          }
+        ],
+        "details": [
+          {
+            "id": "cdf19ef4-dd23-4616-9338-dfc9f2e47d41",
+            "sale_id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "product_id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+            "product_snapshot_name": "AUD03 N ficha venta-reclasificacion",
+            "product_snapshot_barcode": "N-venta-reclasificacion",
+            "quantity": 1,
+            "unit_price": "8.50"
+          },
+          {
+            "id": "08968900-5834-4d18-93dc-95057a1a9539",
+            "sale_id": "edcf7421-fe6a-4c11-8d15-1f104813b90c",
+            "product_id": "844a48ea-a64f-496f-a039-ba49d16bd23a",
+            "product_snapshot_name": "AUD03 N ficha venta-reclasificacion",
+            "product_snapshot_barcode": "N-venta-reclasificacion",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 3
+          }
+        ]
+      },
+      "retry": null
+    },
+    {
+      "id": "PG-N-venta-venta",
+      "ok": true,
+      "checks": {
+        "real_wait": true,
+        "first_commits": true,
+        "second_expected": true,
+        "product_identity_and_commercial": true,
+        "category_state": true,
+        "historical_line_preserved": true,
+        "cost_shift_lines_preserved": true,
+        "stock": true,
+        "sale_count": true,
+        "draft_status": true,
+        "sale_money": true,
+        "sale_snapshot": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "id": "273f5dfe-7a60-4d0f-b2ba-f6cf71b9a873",
+            "total": "17.00"
+          }
+        },
+        "contender": {
+          "status": "committed",
+          "value": {
+            "id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+            "category": "c3dc106c-85eb-4c0b-8bce-2dd3b828ec2d"
+          }
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": false
+      },
+      "before": {
+        "product": {
+          "id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+          "name": "AUD03 N ficha venta-venta",
+          "barcode": "N-venta-venta",
+          "category_id": "912e34fa-71ff-4666-bd5a-8a700ac80038",
+          "sale_price": "8.50",
+          "minimum_stock": 10,
+          "is_active": true
+        },
+        "average_cost": "2.5000",
+        "categories": [
+          {
+            "id": "912e34fa-71ff-4666-bd5a-8a700ac80038",
+            "name": "AUD03 N A venta-venta",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "c3dc106c-85eb-4c0b-8bce-2dd3b828ec2d",
+            "name": "AUD03 N B venta-venta",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "lots": [
+          {
+            "id": "008473bb-4232-4126-8b49-2033c423cb35",
+            "product_id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+            "number": "BASE",
+            "initial_quantity": 21,
+            "available_quantity": 20,
+            "unit_cost": "2.5000",
+            "expiration_date": "2026-12-10"
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "id": "cfce4d2d-492a-4bb7-aee8-a953089a4294",
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "id": "741c994b-b003-4b0d-9996-1f8289266a18",
+            "product_id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [
+          {
+            "id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000001"
+          },
+          {
+            "id": "edcf7421-fe6a-4c11-8d15-1f104813b90c",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000002"
+          },
+          {
+            "id": "57c0c46e-b565-4092-aa03-03d02910a910",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000003"
+          }
+        ],
+        "details": [
+          {
+            "id": "ddc547ea-25d6-49f9-b7e9-1f3a75553dfd",
+            "sale_id": "57c0c46e-b565-4092-aa03-03d02910a910",
+            "product_id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+            "product_snapshot_name": "AUD03 N ficha venta-venta",
+            "product_snapshot_barcode": "N-venta-venta",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 4
+          }
+        ]
+      },
+      "after": {
+        "product": {
+          "id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+          "name": "AUD03 N ficha venta-venta",
+          "barcode": "N-venta-venta",
+          "category_id": "c3dc106c-85eb-4c0b-8bce-2dd3b828ec2d",
+          "sale_price": "8.50",
+          "minimum_stock": 10,
+          "is_active": true
+        },
+        "average_cost": "2.5000",
+        "categories": [
+          {
+            "id": "912e34fa-71ff-4666-bd5a-8a700ac80038",
+            "name": "AUD03 N A venta-venta",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "c3dc106c-85eb-4c0b-8bce-2dd3b828ec2d",
+            "name": "AUD03 N B venta-venta",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "lots": [
+          {
+            "id": "008473bb-4232-4126-8b49-2033c423cb35",
+            "product_id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+            "number": "BASE",
+            "initial_quantity": 21,
+            "available_quantity": 18,
+            "unit_cost": "2.5000",
+            "expiration_date": "2026-12-10"
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "id": "cfce4d2d-492a-4bb7-aee8-a953089a4294",
+            "status": "DISCARDED"
+          }
+        ],
+        "lines": [
+          {
+            "id": "741c994b-b003-4b0d-9996-1f8289266a18",
+            "product_id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [
+          {
+            "id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000001"
+          },
+          {
+            "id": "edcf7421-fe6a-4c11-8d15-1f104813b90c",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000002"
+          },
+          {
+            "id": "57c0c46e-b565-4092-aa03-03d02910a910",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000003"
+          },
+          {
+            "id": "273f5dfe-7a60-4d0f-b2ba-f6cf71b9a873",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000004"
+          }
+        ],
+        "details": [
+          {
+            "id": "ddc547ea-25d6-49f9-b7e9-1f3a75553dfd",
+            "sale_id": "57c0c46e-b565-4092-aa03-03d02910a910",
+            "product_id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+            "product_snapshot_name": "AUD03 N ficha venta-venta",
+            "product_snapshot_barcode": "N-venta-venta",
+            "quantity": 1,
+            "unit_price": "8.50"
+          },
+          {
+            "id": "08fcbf79-2406-4ed5-9a98-6656417b5612",
+            "sale_id": "273f5dfe-7a60-4d0f-b2ba-f6cf71b9a873",
+            "product_id": "dac93126-142a-486b-adb2-a7383ec5c0ba",
+            "product_snapshot_name": "AUD03 N ficha venta-venta",
+            "product_snapshot_barcode": "N-venta-venta",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 5
+          }
+        ]
+      },
+      "retry": null
+    },
+    {
+      "id": "PG-N-suspension-reclasificacion",
+      "ok": true,
+      "checks": {
+        "real_wait": true,
+        "first_commits": true,
+        "second_expected": true,
+        "product_identity_and_commercial": true,
+        "category_state": true,
+        "historical_line_preserved": true,
+        "cost_shift_lines_preserved": true,
+        "stock": true,
+        "sale_count": true,
+        "draft_status": true,
+        "no_side_effects": true,
+        "sellable_after": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "id": "28b33e62-bfc9-4e92-b8f9-68ca95b235c2",
+            "category": "fa10ee9e-a2d9-4315-a48f-9229878c188f"
+          }
+        },
+        "contender": {
+          "status": "committed",
+          "value": {
+            "active": false,
+            "version": 1
+          }
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": true
+      },
+      "before": {
+        "product": {
+          "id": "28b33e62-bfc9-4e92-b8f9-68ca95b235c2",
+          "name": "AUD03 N ficha suspension-reclasificacion",
+          "barcode": "N-suspension-reclasificacion",
+          "category_id": "f6d2bcbb-129a-403a-9714-0a918d969050",
+          "sale_price": "8.50",
+          "minimum_stock": 10,
+          "is_active": true
+        },
+        "average_cost": "2.5000",
+        "categories": [
+          {
+            "id": "f6d2bcbb-129a-403a-9714-0a918d969050",
+            "name": "AUD03 N A suspension-reclasificacion",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "fa10ee9e-a2d9-4315-a48f-9229878c188f",
+            "name": "AUD03 N B suspension-reclasificacion",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "lots": [
+          {
+            "id": "b55b453a-b3f3-49c5-82a0-dea9e2d1be51",
+            "product_id": "28b33e62-bfc9-4e92-b8f9-68ca95b235c2",
+            "number": "BASE",
+            "initial_quantity": 21,
+            "available_quantity": 20,
+            "unit_cost": "2.5000",
+            "expiration_date": "2026-12-10"
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "id": "f143aadc-59be-46bf-8752-9e3038b4ee44",
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "id": "5e3b2d35-a498-482e-94b2-c2a1c9f2239a",
+            "product_id": "28b33e62-bfc9-4e92-b8f9-68ca95b235c2",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [
+          {
+            "id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000001"
+          },
+          {
+            "id": "edcf7421-fe6a-4c11-8d15-1f104813b90c",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000002"
+          },
+          {
+            "id": "57c0c46e-b565-4092-aa03-03d02910a910",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000003"
+          },
+          {
+            "id": "273f5dfe-7a60-4d0f-b2ba-f6cf71b9a873",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000004"
+          },
+          {
+            "id": "511a3d4a-46e4-4d3f-aabb-49aeb0e6c9ad",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000005"
+          }
+        ],
+        "details": [
+          {
+            "id": "0f7b1dab-8ee4-4828-b3fa-9a874806682d",
+            "sale_id": "511a3d4a-46e4-4d3f-aabb-49aeb0e6c9ad",
+            "product_id": "28b33e62-bfc9-4e92-b8f9-68ca95b235c2",
+            "product_snapshot_name": "AUD03 N ficha suspension-reclasificacion",
+            "product_snapshot_barcode": "N-suspension-reclasificacion",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 6
+          }
+        ]
+      },
+      "after": {
+        "product": {
+          "id": "28b33e62-bfc9-4e92-b8f9-68ca95b235c2",
+          "name": "AUD03 N ficha suspension-reclasificacion",
+          "barcode": "N-suspension-reclasificacion",
+          "category_id": "fa10ee9e-a2d9-4315-a48f-9229878c188f",
+          "sale_price": "8.50",
+          "minimum_stock": 10,
+          "is_active": true
+        },
+        "average_cost": "2.5000",
+        "categories": [
+          {
+            "id": "f6d2bcbb-129a-403a-9714-0a918d969050",
+            "name": "AUD03 N A suspension-reclasificacion",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "fa10ee9e-a2d9-4315-a48f-9229878c188f",
+            "name": "AUD03 N B suspension-reclasificacion",
+            "is_active": false,
+            "state_version": 1
+          }
+        ],
+        "lots": [
+          {
+            "id": "b55b453a-b3f3-49c5-82a0-dea9e2d1be51",
+            "product_id": "28b33e62-bfc9-4e92-b8f9-68ca95b235c2",
+            "number": "BASE",
+            "initial_quantity": 21,
+            "available_quantity": 20,
+            "unit_cost": "2.5000",
+            "expiration_date": "2026-12-10"
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "id": "f143aadc-59be-46bf-8752-9e3038b4ee44",
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "id": "5e3b2d35-a498-482e-94b2-c2a1c9f2239a",
+            "product_id": "28b33e62-bfc9-4e92-b8f9-68ca95b235c2",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [
+          {
+            "id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000001"
+          },
+          {
+            "id": "edcf7421-fe6a-4c11-8d15-1f104813b90c",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000002"
+          },
+          {
+            "id": "57c0c46e-b565-4092-aa03-03d02910a910",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000003"
+          },
+          {
+            "id": "273f5dfe-7a60-4d0f-b2ba-f6cf71b9a873",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000004"
+          },
+          {
+            "id": "511a3d4a-46e4-4d3f-aabb-49aeb0e6c9ad",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000005"
+          }
+        ],
+        "details": [
+          {
+            "id": "0f7b1dab-8ee4-4828-b3fa-9a874806682d",
+            "sale_id": "511a3d4a-46e4-4d3f-aabb-49aeb0e6c9ad",
+            "product_id": "28b33e62-bfc9-4e92-b8f9-68ca95b235c2",
+            "product_snapshot_name": "AUD03 N ficha suspension-reclasificacion",
+            "product_snapshot_barcode": "N-suspension-reclasificacion",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 6
+          }
+        ]
+      },
+      "retry": null
+    },
+    {
+      "id": "PG-N-suspension-suspension",
+      "ok": true,
+      "checks": {
+        "real_wait": true,
+        "first_commits": true,
+        "second_expected": true,
+        "product_identity_and_commercial": true,
+        "category_state": true,
+        "historical_line_preserved": true,
+        "cost_shift_lines_preserved": true,
+        "stock": true,
+        "sale_count": true,
+        "draft_status": true,
+        "no_side_effects": true,
+        "sellable_after": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "active": false,
+            "version": 1
+          }
+        },
+        "contender": {
+          "status": "rejected",
+          "messages": [
+            "Seleccione una categoría activa."
+          ]
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": true
+      },
+      "before": {
+        "product": {
+          "id": "a6781d8a-dbc6-4a10-b2ad-a564baef4025",
+          "name": "AUD03 N ficha suspension-suspension",
+          "barcode": "N-suspension-suspension",
+          "category_id": "dde458c2-515a-4726-8ed9-bb51add1ea41",
+          "sale_price": "8.50",
+          "minimum_stock": 10,
+          "is_active": true
+        },
+        "average_cost": "2.5000",
+        "categories": [
+          {
+            "id": "dde458c2-515a-4726-8ed9-bb51add1ea41",
+            "name": "AUD03 N A suspension-suspension",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "dc23131a-9a4f-4444-8ef7-f2ff2d4ca10a",
+            "name": "AUD03 N B suspension-suspension",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "lots": [
+          {
+            "id": "2f3b7476-d378-4432-8c7d-716d8c3b4de6",
+            "product_id": "a6781d8a-dbc6-4a10-b2ad-a564baef4025",
+            "number": "BASE",
+            "initial_quantity": 21,
+            "available_quantity": 20,
+            "unit_cost": "2.5000",
+            "expiration_date": "2026-12-10"
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "id": "455f5d48-064c-434f-ac96-9775c9560f7c",
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "id": "2624e13c-d586-4283-9a58-00e3d31a4751",
+            "product_id": "a6781d8a-dbc6-4a10-b2ad-a564baef4025",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [
+          {
+            "id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000001"
+          },
+          {
+            "id": "edcf7421-fe6a-4c11-8d15-1f104813b90c",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000002"
+          },
+          {
+            "id": "57c0c46e-b565-4092-aa03-03d02910a910",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000003"
+          },
+          {
+            "id": "273f5dfe-7a60-4d0f-b2ba-f6cf71b9a873",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000004"
+          },
+          {
+            "id": "511a3d4a-46e4-4d3f-aabb-49aeb0e6c9ad",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000005"
+          },
+          {
+            "id": "3c5c5530-0c48-4c3a-bdda-b00263477e50",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000006"
+          }
+        ],
+        "details": [
+          {
+            "id": "651a6c01-1ccd-4a4f-adfa-3b000e3dc38e",
+            "sale_id": "3c5c5530-0c48-4c3a-bdda-b00263477e50",
+            "product_id": "a6781d8a-dbc6-4a10-b2ad-a564baef4025",
+            "product_snapshot_name": "AUD03 N ficha suspension-suspension",
+            "product_snapshot_barcode": "N-suspension-suspension",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 7
+          }
+        ]
+      },
+      "after": {
+        "product": {
+          "id": "a6781d8a-dbc6-4a10-b2ad-a564baef4025",
+          "name": "AUD03 N ficha suspension-suspension",
+          "barcode": "N-suspension-suspension",
+          "category_id": "dde458c2-515a-4726-8ed9-bb51add1ea41",
+          "sale_price": "8.50",
+          "minimum_stock": 10,
+          "is_active": true
+        },
+        "average_cost": "2.5000",
+        "categories": [
+          {
+            "id": "dde458c2-515a-4726-8ed9-bb51add1ea41",
+            "name": "AUD03 N A suspension-suspension",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "dc23131a-9a4f-4444-8ef7-f2ff2d4ca10a",
+            "name": "AUD03 N B suspension-suspension",
+            "is_active": false,
+            "state_version": 1
+          }
+        ],
+        "lots": [
+          {
+            "id": "2f3b7476-d378-4432-8c7d-716d8c3b4de6",
+            "product_id": "a6781d8a-dbc6-4a10-b2ad-a564baef4025",
+            "number": "BASE",
+            "initial_quantity": 21,
+            "available_quantity": 20,
+            "unit_cost": "2.5000",
+            "expiration_date": "2026-12-10"
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "id": "455f5d48-064c-434f-ac96-9775c9560f7c",
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "id": "2624e13c-d586-4283-9a58-00e3d31a4751",
+            "product_id": "a6781d8a-dbc6-4a10-b2ad-a564baef4025",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [
+          {
+            "id": "c3998d7b-1c93-40bf-864a-eaae7810dac7",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000001"
+          },
+          {
+            "id": "edcf7421-fe6a-4c11-8d15-1f104813b90c",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000002"
+          },
+          {
+            "id": "57c0c46e-b565-4092-aa03-03d02910a910",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000003"
+          },
+          {
+            "id": "273f5dfe-7a60-4d0f-b2ba-f6cf71b9a873",
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000004"
+          },
+          {
+            "id": "511a3d4a-46e4-4d3f-aabb-49aeb0e6c9ad",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000005"
+          },
+          {
+            "id": "3c5c5530-0c48-4c3a-bdda-b00263477e50",
+            "total_amount": "8.50",
+            "cash_received": "10.00",
+            "change_given": "1.50",
+            "correlative": "V-00000006"
+          }
+        ],
+        "details": [
+          {
+            "id": "651a6c01-1ccd-4a4f-adfa-3b000e3dc38e",
+            "sale_id": "3c5c5530-0c48-4c3a-bdda-b00263477e50",
+            "product_id": "a6781d8a-dbc6-4a10-b2ad-a564baef4025",
+            "product_snapshot_name": "AUD03 N ficha suspension-suspension",
+            "product_snapshot_barcode": "N-suspension-suspension",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 7
+          }
+        ]
+      },
+      "retry": null
+    }
+  ],
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "database": "audit03_3bb22d701c",
+  "isolation": "read committed",
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa01-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T231223297870Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T235435476251Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235102894578Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235313324286Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T000927933696Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001124615788Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001235417602Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001320983361Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001337606973Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001427294717Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010641541584Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010857906402Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020054712835Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020104229903Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020324334766Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020335877235Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020505026105Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T023934536531Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024200044720Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024338422290Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024349330265Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024455907968Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024617290091Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024628699915Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024749832414Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024801097155Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030010177604Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030036511029Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030252413844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030314191882Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030339870193Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030352675316Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T031505677093Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032216300260Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032251838417Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032333068344Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032528496946Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032641479670Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T033002861512Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034307344201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034318782440Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041750658883Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041757169052Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041945048165Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042659237619Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042730963824Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042756100441Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042844036974Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042912719703Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T043008623021Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165543164740Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165640773189Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165730633729Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171321742969Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171341873895Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171546908471Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171905215655Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172006895618Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172054000837Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172105045406Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173453359047Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173526027077Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173808145023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173927046544Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174028204311Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174235672078Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T175820924988Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180229612612Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180807525819Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180914638365Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181416503086Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181948564537Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T182622655374Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T183956099863Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184821961380Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184947335287Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184949253446Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T185008205808Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010526631267Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010655936590Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010725864129Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010846464247Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011420365490Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011843801709Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T012116957301Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T013518362010Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014121377023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014226942611Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014304366278Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015423105806Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015529367360Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015549608567Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015623098100Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015703446000Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015739066270Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015806678855Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015848208296Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T020804804408Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021009799064Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021726658069Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021749298118Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022024345104Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022054827383Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022113097844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-migrations-20261111T020942208035Z\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-11T02:21:57.561735+00:00"
+}

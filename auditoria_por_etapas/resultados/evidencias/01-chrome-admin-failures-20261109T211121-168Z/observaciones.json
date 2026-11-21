@@ -1,0 +1,72 @@
+{
+  "date_utc": "2026-11-09T21:11:21.168Z",
+  "zone": "America/Lima",
+  "attempts": [
+    {
+      "number": 1,
+      "status": 200,
+      "path": "/admin/login/",
+      "session": false,
+      "passwordEmpty": true,
+      "message": "Por favor introduzca el email y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas."
+    },
+    {
+      "number": 2,
+      "status": 200,
+      "path": "/admin/login/",
+      "session": false,
+      "passwordEmpty": true,
+      "message": "Por favor introduzca el email y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas."
+    },
+    {
+      "number": 3,
+      "status": 200,
+      "path": "/admin/login/",
+      "session": false,
+      "passwordEmpty": true,
+      "message": "Por favor introduzca el email y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas."
+    },
+    {
+      "number": 4,
+      "status": 200,
+      "path": "/admin/login/",
+      "session": false,
+      "passwordEmpty": true,
+      "message": "Por favor introduzca el email y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas."
+    },
+    {
+      "number": 5,
+      "status": 200,
+      "path": "/admin/login/",
+      "session": false,
+      "passwordEmpty": true,
+      "message": "Por favor introduzca el email y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas."
+    }
+  ],
+  "before": {
+    "utc": "2026-11-09T21:11:24.345Z",
+    "sql": "SELECT COUNT(*) AS rows, COALESCE(SUM(failures), 0) AS total_failures, COUNT(locked_until) AS rows_with_lock_date FROM identity_loginattempt",
+    "counts": {
+      "rows": 23,
+      "total_failures": 29,
+      "rows_with_lock_date": 3
+    }
+  },
+  "tool": "Playwright Core / Chrome estable headless 157.0.8103.39",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "after": {
+    "utc": "2026-11-09T21:11:42.404Z",
+    "sql": "SELECT COUNT(*) AS rows, COALESCE(SUM(failures), 0) AS total_failures, COUNT(locked_until) AS rows_with_lock_date FROM identity_loginattempt",
+    "counts": {
+      "rows": 23,
+      "total_failures": 29,
+      "rows_with_lock_date": 3
+    }
+  },
+  "status": "completado",
+  "scope": "Cinco contraseñas aleatorias erróneas de fixture staff, perfil nuevo, sólo formulario Django admin. Contadores globales de LoginAttempt leídos sin identificadores. Otros navegadores pueden modificar el agregado durante el intervalo.",
+  "limitations": "No se intentó autenticación válida después de estos fallos. La política de bloqueo, tráfico y acceso administrativo queda pendiente de decisión y revisión adicional."
+}

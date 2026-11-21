@@ -1,0 +1,107 @@
+{
+  "catalog.Category": [
+    {
+      "id": "6c2af220-69db-485a-b6e5-8cdf77b8445a",
+      "name": "Suspendida",
+      "name_normalized": "suspendida",
+      "is_active": false
+    },
+    {
+      "id": "7d6861cb-0b7d-4b6c-a95c-e2ca4a9d7312",
+      "name": "Productos enlatados",
+      "name_normalized": "productos enlatados",
+      "is_active": true
+    },
+    {
+      "id": "d42f54ab-9f89-489f-9086-165de34bbe01",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "10aa4d82-3487-477f-baf4-d76ce286015c",
+      "name": "Mínimo maximo",
+      "barcode": "H-maximo",
+      "category_id": "d42f54ab-9f89-489f-9086-165de34bbe01",
+      "sale_price": "8.50",
+      "minimum_stock": 999999,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "21874327-3126-498e-944c-32849d464d41",
+      "name": "Mínimo vacio",
+      "barcode": "H-vacio",
+      "category_id": "d42f54ab-9f89-489f-9086-165de34bbe01",
+      "sale_price": "8.50",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "a1965045-0f83-4a74-b6ec-d4dc11824fac",
+      "name": "Mínimo omitido",
+      "barcode": "H-OMIT",
+      "category_id": "d42f54ab-9f89-489f-9086-165de34bbe01",
+      "sale_price": "8.50",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "f739fb97-69fc-4867-a89d-76763296d061",
+      "name": "Mínimo cero",
+      "barcode": "H-cero",
+      "category_id": "d42f54ab-9f89-489f-9086-165de34bbe01",
+      "sale_price": "8.50",
+      "minimum_stock": 0,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [],
+  "inventory.InitialInventoryLoad": [],
+  "cash.CashShift": [
+    {
+      "id": "e03a5db7-4c7a-43e7-b6e4-0f16af058250",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [],
+  "sales.SaleLine": [],
+  "sales.SaleDraft": [],
+  "sales.SaleDraftLine": [],
+  "commerce": [
+    {
+      "id": "10aa4d82-3487-477f-baf4-d76ce286015c",
+      "barcode_normalized": "h-maximo",
+      "search_name": "mínimo maximo",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "21874327-3126-498e-944c-32849d464d41",
+      "barcode_normalized": "h-vacio",
+      "search_name": "mínimo vacio",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "a1965045-0f83-4a74-b6ec-d4dc11824fac",
+      "barcode_normalized": "h-omit",
+      "search_name": "mínimo omitido",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "f739fb97-69fc-4867-a89d-76763296d061",
+      "barcode_normalized": "h-cero",
+      "search_name": "mínimo cero",
+      "average_cost": "0.0000"
+    }
+  ]
+}

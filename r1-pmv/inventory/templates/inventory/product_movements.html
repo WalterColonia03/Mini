@@ -1,0 +1,118 @@
+{% extends "identity/base.html" %}
+{% block title %}Movimientos · Minimarket{% endblock %}
+{% block page_heading %}Movimientos del producto{% endblock %}
+
+{% block content %}
+<div class="page-heading">
+  <div>
+    <p class="eyebrow">Stock f&#237;sico actual: {{ product.physical_stock }} unid. &middot; Stock vigente: {{ product.sellable_stock }} unid.</p>
+    <h2>Movimientos: {{ product.name }}</h2>
+  </div>
+</div>
+
+<form method="get" class="panel form-panel history-filter-panel mb-4" aria-label="Filtros de movimientos">
+  <p class="help">Fechas y horas de Lima. Complete ambas fechas o deje ambas vacías para toda la historia. El minuto final está incluido.</p>
+  {{ filter_form.non_field_errors }}
+  <div class="history-filter-grid">
+    <div class="field">{{ filter_form.desde.label_tag }}{{ filter_form.desde }}{{ filter_form.desde.errors }}</div>
+    <div class="field">{{ filter_form.hasta.label_tag }}{{ filter_form.hasta }}{{ filter_form.hasta.errors }}</div>
+    <div class="field">{{ filter_form.tipo.label_tag }}{{ filter_form.tipo }}{{ filter_form.tipo.errors }}</div>
+  </div>
+  {{ filter_form.page.errors }}
+  <div class="form-actions">
+    <button type="submit" class="button button-primary">Aplicar filtros</button>
+    <a href="{% url 'product-movements' product.pk %}" class="button button-secondary">Limpiar filtros</a>
+  </div>
+</form>
+
+{% if query_valid %}
+<section class="panel info-panel mb-4 movements-summary" aria-label="Resumen de movimientos">
+  <h3>Resumen del período</h3>
+  <p class="help">Apertura, cierre y saldo por movimiento consideran todos los tipos de operación, incluso los que oculta el filtro. No dependen de la página.</p>
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Saldo de apertura (UND)</dt><dd data-testid="opening-balance">{{ opening_balance|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Saldo de cierre (UND)</dt><dd data-testid="closing-balance">{{ closing_balance|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Variación documentada del filtro (UND)</dt><dd data-testid="filtered-delta">{{ filtered_delta_display }}</dd></div>
+    <div><dt>Movimientos coincidentes, todas las páginas</dt><dd data-testid="filtered-count">{{ filtered_count }}</dd></div>
+  </dl>
+  {% if balance_issues %}
+  <p><strong>Saldo no disponible.</strong> Los registros conservados no permiten reconstruir y conciliar el saldo de este producto.</p>
+  <ul>{% for issue in balance_issues %}<li>{{ issue }}</li>{% endfor %}</ul>
+  {% else %}
+  <p class="help">Saldo reconstruido desde los registros conservados y conciliado por lote con el stock físico actual.</p>
+  {% endif %}
+</section>
+
+<div class="table-wrap" tabindex="0" role="region" aria-label="Movimientos, tabla desplazable">
+  <table class="movements-table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Tipo</th>
+        <th>Detalle</th>
+        <th>Cantidad</th>
+        <th>Saldo</th>
+        <th>Responsable</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in events %}
+      <tr data-event-id="{{ e.orden_id }}">
+        <td>{{ e.fecha|date:"d/m/Y H:i:s" }} (Lima)</td>
+        <td>{{ e.icono }} {% if e.tipo == "entrada" %}Entrada{% elif e.tipo == "venta" %}Venta{% elif e.tipo == "merma" %}Merma{% else %}Ajuste{% endif %}</td>
+        <td class="col-wrap">
+          {{ e.descripcion }}
+          {% if e.receipt_id %}<a href="{% url 'stock-receipt' e.receipt_id %}">Ver recepción</a>{% endif %}
+          {% if e.load_id %}<a href="{% url 'inventory-load-created' e.load_id %}">Ver carga inicial</a>{% endif %}
+          {% if e.writeoff_id %}<a href="{% url 'stock-writeoff-receipt' e.writeoff_id %}">Ver constancia de merma</a>{% endif %}
+          {% if e.adjustment_id %}<a href="{% url 'physical-adjustment-detail' e.adjustment_id %}">Ver ajuste</a>{% endif %}
+          {% if e.adjustment_legacy %}<p class="help">Fotografía histórica de ajuste no disponible. Consulte los datos conservados en su detalle.</p>{% endif %}
+          {% if e.writeoff_legacy %}<p class="help">Fotografía histórica de merma no disponible. Consulte los datos conservados en su constancia.</p>{% endif %}
+          {% if e.legacy_origin %}<p class="help">Origen histórico incompleto. Cantidad original no disponible; los nombres corresponden a los maestros actuales.</p>{% endif %}
+          {% if e.tipo == "venta" %}
+            {% if e.product_identity_unknown %}
+              <p class="help">Coincidencia por código histórico; identidad del producto no confirmada.</p>
+            {% endif %}
+            {% if e.allocation_complete %}
+              <div>Lotes de salida:</div>
+            {% elif e.allocations %}
+              <p class="help">Asignación incompleta. Solo se muestran los lotes registrados.</p>
+            {% else %}
+              <p class="help">Lotes de salida: No disponibles (registro anterior o incompleto).</p>
+            {% endif %}
+            {% if e.allocations %}
+              <ul>
+                {% for allocation in e.allocations %}
+                  <li>{{ allocation.lot_snapshot_number }} · {{ allocation.quantity }} UND · Vence {{ allocation.lot_snapshot_expiration_date|date:"d/m/Y" }}
+                    {% if allocation.lot.receipt_line %} · <a href="{% url 'stock-receipt' allocation.lot.receipt_line.receipt_id %}">{{ allocation.lot.receipt_line.receipt.correlative }}</a>{% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            <p class="help">Costo unitario de salida: {% if e.unit_cost != None %}S/ {{ e.unit_cost|floatformat:4 }}{% else %}No disponible{% endif %}</p>
+          {% endif %}
+        </td>
+        <td><strong>{{ e.cantidad }}</strong></td>
+        <td data-testid="movement-balance">{{ e.balance|default_if_none:"No disponible" }}</td>
+        <td class="col-wrap">{{ e.responsable }}</td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="6" class="empty-table">No hay movimientos coincidentes con estos filtros.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<nav aria-label="Páginas de movimientos" class="form-actions">
+  {% if previous_url %}<a class="button button-secondary" href="{{ previous_url }}">Anterior</a>{% endif %}
+  <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }} · 25 movimientos por página</span>
+  {% if next_url %}<a class="button button-secondary" href="{{ next_url }}">Siguiente</a>{% endif %}
+</nav>
+{% else %}
+<p role="alert">No se realizó la consulta. Corrija los filtros indicados.</p>
+{% endif %}
+
+<div class="form-actions" style="margin-top:1.5rem;">
+  <a href="{% url 'stock-overview' %}" class="button">&larr; Volver al inventario</a>
+</div>
+{% endblock %}
+

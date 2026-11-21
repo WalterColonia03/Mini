@@ -1,0 +1,45 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Turno cerrado · Minimarket{% endblock %}
+
+{% block content %}
+<section class="success-panel panel no-print" data-testid="cash-shift-closed">
+  <div class="success-icon" aria-hidden="true">✓</div>
+  <p class="eyebrow">Cierre registrado</p>
+  <h2>Turno cerrado correctamente</h2>
+  <p class="lede">El turno de {{ shift.cash_register.code }} ha sido cerrado y el acta quedó registrada.</p>
+</section>
+
+<section class="success-panel panel info-panel cash-close-acta mt-3">
+  <h3>Acta de cierre del turno</h3>
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Caja</dt><dd>{{ shift.cash_register.code }}</dd></div>
+    <div><dt>Vendedor</dt><dd>{{ shift.seller.display_name }}</dd></div>
+    <div><dt>Apertura</dt><dd>{{ shift.opened_at|date:"d/m/Y H:i" }}</dd></div>
+    <div><dt>Cierre</dt><dd>{{ close.closed_at|date:"d/m/Y H:i" }}</dd></div>
+    <div><dt>Monto inicial</dt><dd>S/ {{ shift.opening_amount|floatformat:2 }}</dd></div>
+    <div><dt>Total cobrado</dt><dd>S/ {{ sales_total|floatformat:2 }}</dd></div>
+    <div><dt>Monto esperado</dt><dd>S/ {{ close.expected_amount|floatformat:2 }}</dd></div>
+    <div><dt>Monto contado</dt><dd>S/ {{ close.counted_amount|floatformat:2 }}</dd></div>
+    <div>
+      <dt>Diferencia</dt>
+      <dd>
+        {% if close.difference > 0 %}
+          <span class="status status-ready">Sobrante S/ {{ close.difference|floatformat:2 }}</span>
+        {% elif close.difference < 0 %}
+          <span class="status status-error">Faltante S/ {{ close.difference|floatformat:2 }}</span>
+        {% else %}
+          <span class="status status-ready">Exacto S/ {{ close.difference|floatformat:2 }}</span>
+        {% endif %}
+      </dd>
+    </div>
+  </dl>
+
+  <div class="form-actions no-print">
+    <a class="button button-primary" href="{% url 'dashboard' %}">Volver al inicio</a>
+    <a class="button button-secondary" href="{% url 'cash-shift-history' %}">Ver historial de turnos</a>
+    <button class="button button-secondary" type="button" onclick="window.print()">Imprimir acta</button>
+  </div>
+</section>
+{% endblock %}
+

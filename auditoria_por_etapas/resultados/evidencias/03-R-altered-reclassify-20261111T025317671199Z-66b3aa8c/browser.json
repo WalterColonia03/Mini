@@ -1,0 +1,32 @@
+{
+  "mode": "Valid CSRF direct POST from an obsolete checkout with hidden inputs omitted",
+  "cases": [
+    {
+      "id": "isolation",
+      "ok": true
+    },
+    {
+      "id": "second-tab-updated",
+      "ok": true
+    },
+    {
+      "id": "intact-stale-post-rejected",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "id": "altered-request-executed",
+      "ok": true
+    }
+  ],
+  "posts": [],
+  "observed": {
+    "status": 302,
+    "location": "/ventas/constancia/94256770-356f-4c4d-8ee3-aad8850dceb8/",
+    "newSales": 1,
+    "total": "29.50",
+    "stockP": 17,
+    "stockQ": 5,
+    "draft": "DISCARDED"
+  }
+}

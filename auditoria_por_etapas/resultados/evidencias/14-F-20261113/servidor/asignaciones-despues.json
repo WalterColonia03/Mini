@@ -1,0 +1,188 @@
+{
+  "fecha_lima": "2026-11-13",
+  "base": "C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\auditoria_por_etapas\\resultados\\evidencias\\14-F-20261113\\servidor\\asignaciones-despues.sqlite3",
+  "herramienta": "Django Client con CSRF y login HTTP, SQLite archivo nueva",
+  "casos": [
+    {
+      "id": "F01",
+      "caso": "FEFO A3 B7 vender4 conserva saldo A0 B6",
+      "esperado": [
+        [
+          "A",
+          0
+        ],
+        [
+          "B",
+          6
+        ]
+      ],
+      "observado": [
+        [
+          "A",
+          0
+        ],
+        [
+          "B",
+          6
+        ]
+      ],
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F02",
+      "caso": "Asignaciones durables venta4",
+      "esperado": [
+        [
+          "A",
+          3
+        ],
+        [
+          "B",
+          1
+        ]
+      ],
+      "observado": [
+        [
+          "A",
+          3
+        ],
+        [
+          "B",
+          1
+        ]
+      ],
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F03",
+      "caso": "Constancia conserva identidad original al cambiar maestros",
+      "esperado": {
+        "vendedor": "Vendedor original ficticio",
+        "caja": "CAJA-01"
+      },
+      "observado": {
+        "vendedor": "Vendedor original ficticio",
+        "caja": "CAJA-01"
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F04",
+      "caso": "Venta persiste snapshots vendedor y caja",
+      "esperado": {
+        "vendedor": "Vendedor original ficticio",
+        "caja": "CAJA-01"
+      },
+      "observado": {
+        "vendedor": "Vendedor original ficticio",
+        "caja": "CAJA-01"
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F05",
+      "caso": "Reenvío recupera misma venta sin modificar datos",
+      "esperado": true,
+      "observado": true,
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F06",
+      "caso": "ALMACENERO no cobra",
+      "esperado": true,
+      "observado": true,
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F07",
+      "caso": "Contrato A3 B2 vender5 tiene asignaciones3/2",
+      "esperado": [
+        [
+          "A",
+          3
+        ],
+        [
+          "B",
+          2
+        ]
+      ],
+      "observado": [
+        [
+          "A",
+          3
+        ],
+        [
+          "B",
+          2
+        ]
+      ],
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F08",
+      "caso": "Agotar mantiene costo histórico3 y reinicia vigente0",
+      "esperado": {
+        "fisico": 0,
+        "promedio": "0.0000",
+        "snapshot": "3.0000"
+      },
+      "observado": {
+        "fisico": 0,
+        "promedio": "0.0000",
+        "snapshot": "3.0000"
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F09",
+      "caso": "Constancia mantiene orden agregado independiente deUUID",
+      "esperado": [
+        "Orden-A",
+        "Orden-B",
+        "Orden-C"
+      ],
+      "observado": [
+        "Orden-A",
+        "Orden-B",
+        "Orden-C"
+      ],
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F10",
+      "caso": "Posición de línea persistida",
+      "esperado": [
+        1,
+        2,
+        3
+      ],
+      "observado": [
+        1,
+        2,
+        3
+      ],
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F11",
+      "caso": "Constancia avisa dato histórico no disponible",
+      "esperado": true,
+      "observado": true,
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F12",
+      "caso": "Consultar legado conservaNULL y asignaciones vacías",
+      "esperado": true,
+      "observado": true,
+      "resultado": "CUMPLE"
+    }
+  ],
+  "fuentes_sha256": {
+    "sales/models.py": "ecc79ebc9ee4b7b68f1bc615d617da6a18778235f1aa10972a2a1ff0b0cee7c6",
+    "sales/services.py": "99465fefe6f0b1e053902aa5f50b215d777ca871810da1b95f624a98af7a920b",
+    "sales/views.py": "db6e32ebd13c1a0d59e85b587931ddd229dee8d4e881c21a7614aec3210ec012",
+    "sales/templates/sales/sales_receipt.html": "ca010f8c79e1614c0560f15692a9a78ab3d9cff86b6507bd629fd862409fcb68"
+  },
+  "08_sha256": "ddadb1091e8501a00c0ae9ff9da212bce65446000131f137cede389ebc5313ad"
+}

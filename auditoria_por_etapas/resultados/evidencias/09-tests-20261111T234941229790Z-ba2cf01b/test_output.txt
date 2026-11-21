@@ -1,0 +1,109 @@
+Found 12 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_database_constraint_rejects_two_open_shifts_for_register (cash.tests.CashOpeningTests.test_database_constraint_rejects_two_open_shifts_for_register) ... ok
+test_existing_global_open_shift_blocks_another_seller (cash.tests.CashOpeningTests.test_existing_global_open_shift_blocks_another_seller) ... ok
+test_invalid_amounts_do_not_create_shift (cash.tests.CashOpeningTests.test_invalid_amounts_do_not_create_shift) ... ok
+test_other_roles_cannot_open_shift_by_direct_post (cash.tests.CashOpeningTests.test_other_roles_cannot_open_shift_by_direct_post) ... Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_seller_cannot_view_another_sellers_shift_detail (cash.tests.CashOpeningTests.test_seller_cannot_view_another_sellers_shift_detail) ... Not Found: /caja/turnos/3b20bc81-a210-4709-907d-d7d87b9a700f/abierto/
+ok
+test_seller_opens_zero_amount_shift_linked_to_session (cash.tests.CashOpeningTests.test_seller_opens_zero_amount_shift_linked_to_session) ... ok
+test_admin_can_see_shift_history (cash.tests.CashShiftHistoryTests.test_admin_can_see_shift_history) ... ok
+test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link (cash.tests.CashShiftHistoryTests.test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link)
+BUG-023 y BUG-031: /caja/abrir/ informa quién ocupa la caja y /caja/turnos/<id>/abierto/ enlaza a preparar venta. ... ok
+test_cash_open_and_close_reject_scientific_notation_and_absurd_amounts (cash.tests.CashShiftHistoryTests.test_cash_open_and_close_reject_scientific_notation_and_absurd_amounts)
+BUG-009: Apertura y cierre de caja rechazan notación científica (1e5) y montos desmesurados. ... ok
+test_seller_can_see_shift_history (cash.tests.CashShiftHistoryTests.test_seller_can_see_shift_history) ... ok
+test_shift_history_renders_shortage_surplus_and_exact_labels_and_amounts (cash.tests.CashShiftHistoryTests.test_shift_history_renders_shortage_surplus_and_exact_labels_and_amounts)
+BUG-002: El historial de turnos muestra el monto y la etiqueta de la diferencia (Faltante/Sobrante/Exacto). ... ok
+test_warehouse_gets_403 (cash.tests.CashShiftHistoryTests.test_warehouse_gets_403) ... Forbidden (Permission denied): /caja/turnos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.936s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

@@ -1,0 +1,887 @@
+{
+  "started_utc": "20261111T172507444169Z",
+  "source": "r1-pmv\\r1_pmv.sqlite3",
+  "copy": "auditoria_por_etapas\\resultados\\datos\\etapa03k-AD-migrations-20261111T172507444169Z\\audit.sqlite3",
+  "scope": "catalog and inventory, offline SQLite copy, no production deployment",
+  "source_sha256": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+  "integrity_before": "ok",
+  "preflight": {
+    "categories": 2,
+    "products": 5,
+    "category_collision_groups": 0,
+    "category_invalid_keys": 0,
+    "product_collision_groups": 0,
+    "product_empty_keys": 0,
+    "invalid_minima": 0
+  },
+  "plan": [
+    {
+      "app": "catalog",
+      "name": "0003_normalize_category_spaces",
+      "backwards": false
+    },
+    {
+      "app": "catalog",
+      "name": "0004_product_search_name",
+      "backwards": false
+    },
+    {
+      "app": "catalog",
+      "name": "0005_product_name_and_minimum_policy",
+      "backwards": false
+    },
+    {
+      "app": "catalog",
+      "name": "0006_category_state_version",
+      "backwards": false
+    },
+    {
+      "app": "catalog",
+      "name": "0007_product_barcode_identity",
+      "backwards": false
+    },
+    {
+      "app": "inventory",
+      "name": "0006_lot_received_at_immutable",
+      "backwards": false
+    }
+  ],
+  "migration": "applied",
+  "django_checks": "passed",
+  "receipt_guard_installed": true,
+  "integrity_after": "ok",
+  "correct_literal_keys": 5,
+  "all_existing_preserved_unclassified": true,
+  "foreign_key_violations": 0,
+  "preserved_tables": {
+    "auth_group": true,
+    "auth_group_permissions": true,
+    "auth_permission": true,
+    "cash_cashregister": true,
+    "cash_cashshift": true,
+    "cash_cashshiftclose": true,
+    "catalog_category": true,
+    "catalog_product": true,
+    "django_admin_log": true,
+    "django_content_type": true,
+    "django_session": true,
+    "identity_account": true,
+    "identity_account_groups": true,
+    "identity_account_user_permissions": true,
+    "identity_loginattempt": true,
+    "identity_role": true,
+    "inventory_initialinventoryload": true,
+    "inventory_lot": true,
+    "inventory_physicaladjustment": true,
+    "inventory_stockwriteoff": true,
+    "inventory_supplier": true,
+    "sales_sale": true,
+    "sales_salecounter": true,
+    "sales_saledraft": true,
+    "sales_saledraftline": true,
+    "sales_saleline": true
+  },
+  "business_before": {
+    "auth_group": {
+      "columns": [
+        "id",
+        "name"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "auth_group_permissions": {
+      "columns": [
+        "id",
+        "group_id",
+        "permission_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "auth_permission": {
+      "columns": [
+        "id",
+        "content_type_id",
+        "codename",
+        "name"
+      ],
+      "rows": 92,
+      "sha256": "e8fd41f71631d75695d45a8b91c30e3c5a3224fdef64b6b20cea05040b2259a4"
+    },
+    "cash_cashregister": {
+      "columns": [
+        "id",
+        "code",
+        "is_active",
+        "created_at"
+      ],
+      "rows": 1,
+      "sha256": "666731b1674660f47c78d4f57e05d29cca2d9527e232cf08fd9dc8ec64ae171d"
+    },
+    "cash_cashshift": {
+      "columns": [
+        "id",
+        "opening_amount",
+        "status",
+        "opened_at",
+        "cash_register_id",
+        "seller_id"
+      ],
+      "rows": 2,
+      "sha256": "ff5aa9293c5d73dce8ccf84e62dece9298366970875069e35f3645dadabbe9ce"
+    },
+    "cash_cashshiftclose": {
+      "columns": [
+        "id",
+        "counted_amount",
+        "expected_amount",
+        "difference",
+        "closed_at",
+        "cash_shift_id",
+        "closed_by_id"
+      ],
+      "rows": 1,
+      "sha256": "9b9c752d3610558fc1ff028a031859758284eac26799c579cceec6b00ef20f38"
+    },
+    "catalog_category": {
+      "columns": [
+        "id",
+        "name",
+        "is_active",
+        "created_at"
+      ],
+      "rows": 2,
+      "sha256": "8cd519b499d56ffce02377aa15b6c5540ef5ddf0e15e6ed3f1a602726b5da973"
+    },
+    "catalog_product": {
+      "columns": [
+        "id",
+        "name",
+        "barcode",
+        "barcode_normalized",
+        "unit",
+        "sale_price",
+        "minimum_stock",
+        "controls_expiration",
+        "average_cost",
+        "is_active",
+        "created_at",
+        "updated_at",
+        "category_id"
+      ],
+      "rows": 5,
+      "sha256": "559b8fdc8c21ca35fc68d7a8da823e881aeedb5d059b561afea796c1eb65faeb"
+    },
+    "django_admin_log": {
+      "columns": [
+        "id",
+        "object_id",
+        "object_repr",
+        "action_flag",
+        "change_message",
+        "content_type_id",
+        "user_id",
+        "action_time"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "django_content_type": {
+      "columns": [
+        "id",
+        "app_label",
+        "model"
+      ],
+      "rows": 23,
+      "sha256": "42484fa6ec70cc9f48073141a6e2613dcfe047ac098d8cd95fe0b13fcb115151"
+    },
+    "django_session": {
+      "columns": [
+        "session_key",
+        "session_data",
+        "expire_date"
+      ],
+      "rows": 78,
+      "sha256": "c6bfb590816bb8ecd80f44209c78d21c15011fa72b896541e9431d9c358c3f01"
+    },
+    "identity_account": {
+      "columns": [
+        "password",
+        "last_login",
+        "is_superuser",
+        "id",
+        "display_name",
+        "email",
+        "email_normalized",
+        "is_active",
+        "is_staff",
+        "created_at",
+        "updated_at",
+        "role_id"
+      ],
+      "rows": 4,
+      "sha256": "a0e1a09e1231e7f41fc9fc81dad18fc89ae43647f9a65a3d147fcca48c95ca7c"
+    },
+    "identity_account_groups": {
+      "columns": [
+        "id",
+        "account_id",
+        "group_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "identity_account_user_permissions": {
+      "columns": [
+        "id",
+        "account_id",
+        "permission_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "identity_loginattempt": {
+      "columns": [
+        "identifier",
+        "failures",
+        "locked_until",
+        "updated_at"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "identity_role": {
+      "columns": [
+        "id",
+        "code",
+        "name"
+      ],
+      "rows": 3,
+      "sha256": "c12c764103a3de8b7a9c35530e5d394a6330703885aba0422d2ca55217b0de74"
+    },
+    "inventory_initialinventoryload": {
+      "columns": [
+        "id",
+        "confirmed_at",
+        "product_id",
+        "responsible_id"
+      ],
+      "rows": 5,
+      "sha256": "7dd55ceaca387082dc7cfa10d28ed7bd1e40c7b067a489a832b5e9f532c94bed"
+    },
+    "inventory_lot": {
+      "columns": [
+        "id",
+        "number",
+        "number_normalized",
+        "initial_quantity",
+        "available_quantity",
+        "unit_cost",
+        "expiration_date",
+        "received_at",
+        "initial_load_id",
+        "product_id",
+        "supplier_id",
+        "is_initial",
+        "responsible_id"
+      ],
+      "rows": 6,
+      "sha256": "e8b382cb065b4738abbef6803b61f6dd8dbcda9f201a076a826cd8b2633c2cf2"
+    },
+    "inventory_physicaladjustment": {
+      "columns": [
+        "id",
+        "delta",
+        "reason",
+        "created_at",
+        "lot_id",
+        "responsible_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "inventory_stockwriteoff": {
+      "columns": [
+        "id",
+        "quantity",
+        "reason",
+        "notes",
+        "correlativo",
+        "created_at",
+        "lot_id",
+        "responsible_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "inventory_supplier": {
+      "columns": [
+        "id",
+        "name",
+        "ruc",
+        "phone",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sales_sale": {
+      "columns": [
+        "id",
+        "total_amount",
+        "base_amount",
+        "igv_amount",
+        "cash_received",
+        "change_given",
+        "correlative",
+        "idempotency_key",
+        "confirmed_at",
+        "cash_shift_id",
+        "draft_id",
+        "seller_id",
+        "discount_amount"
+      ],
+      "rows": 1,
+      "sha256": "816842ea547d76f8e8663766df721d4368eac7a933e3466ffc258835bb7d571b"
+    },
+    "sales_salecounter": {
+      "columns": [
+        "id",
+        "next_value"
+      ],
+      "rows": 1,
+      "sha256": "3a316d6d3226f84c1e46e4447fa8d5fd800bff4a1bc6498152523cd4a602b69b"
+    },
+    "sales_saledraft": {
+      "columns": [
+        "id",
+        "status",
+        "created_at",
+        "updated_at",
+        "discarded_at",
+        "cash_shift_id",
+        "seller_id"
+      ],
+      "rows": 3,
+      "sha256": "f01413a06f092c3cd83a97c7783cfd10a73c17d1675271435da39405491db68d"
+    },
+    "sales_saledraftline": {
+      "columns": [
+        "id",
+        "quantity",
+        "unit_price",
+        "created_at",
+        "updated_at",
+        "draft_id",
+        "product_id"
+      ],
+      "rows": 1,
+      "sha256": "ea091db87e8be0f12893c9214c5846c1894159f9e9bc6772a143df019683ead3"
+    },
+    "sales_saleline": {
+      "columns": [
+        "id",
+        "product_snapshot_name",
+        "product_snapshot_barcode",
+        "quantity",
+        "unit_price",
+        "amount",
+        "sale_id",
+        "product_id"
+      ],
+      "rows": 1,
+      "sha256": "40cf357ea1bc0b5870fe6b446bfa9691d570ed633f80d94d12d226e873774a13"
+    }
+  },
+  "business_after": {
+    "auth_group": {
+      "columns": [
+        "id",
+        "name"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "auth_group_permissions": {
+      "columns": [
+        "id",
+        "group_id",
+        "permission_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "auth_permission": {
+      "columns": [
+        "id",
+        "content_type_id",
+        "codename",
+        "name"
+      ],
+      "rows": 92,
+      "sha256": "e8fd41f71631d75695d45a8b91c30e3c5a3224fdef64b6b20cea05040b2259a4"
+    },
+    "cash_cashregister": {
+      "columns": [
+        "id",
+        "code",
+        "is_active",
+        "created_at"
+      ],
+      "rows": 1,
+      "sha256": "666731b1674660f47c78d4f57e05d29cca2d9527e232cf08fd9dc8ec64ae171d"
+    },
+    "cash_cashshift": {
+      "columns": [
+        "id",
+        "opening_amount",
+        "status",
+        "opened_at",
+        "cash_register_id",
+        "seller_id"
+      ],
+      "rows": 2,
+      "sha256": "ff5aa9293c5d73dce8ccf84e62dece9298366970875069e35f3645dadabbe9ce"
+    },
+    "cash_cashshiftclose": {
+      "columns": [
+        "id",
+        "counted_amount",
+        "expected_amount",
+        "difference",
+        "closed_at",
+        "cash_shift_id",
+        "closed_by_id"
+      ],
+      "rows": 1,
+      "sha256": "9b9c752d3610558fc1ff028a031859758284eac26799c579cceec6b00ef20f38"
+    },
+    "catalog_category": {
+      "columns": [
+        "id",
+        "name",
+        "is_active",
+        "created_at"
+      ],
+      "rows": 2,
+      "sha256": "8cd519b499d56ffce02377aa15b6c5540ef5ddf0e15e6ed3f1a602726b5da973"
+    },
+    "catalog_product": {
+      "columns": [
+        "id",
+        "name",
+        "barcode",
+        "barcode_normalized",
+        "unit",
+        "sale_price",
+        "minimum_stock",
+        "controls_expiration",
+        "average_cost",
+        "is_active",
+        "created_at",
+        "updated_at",
+        "category_id"
+      ],
+      "rows": 5,
+      "sha256": "559b8fdc8c21ca35fc68d7a8da823e881aeedb5d059b561afea796c1eb65faeb"
+    },
+    "django_admin_log": {
+      "columns": [
+        "id",
+        "object_id",
+        "object_repr",
+        "action_flag",
+        "change_message",
+        "content_type_id",
+        "user_id",
+        "action_time"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "django_content_type": {
+      "columns": [
+        "id",
+        "app_label",
+        "model"
+      ],
+      "rows": 23,
+      "sha256": "42484fa6ec70cc9f48073141a6e2613dcfe047ac098d8cd95fe0b13fcb115151"
+    },
+    "django_session": {
+      "columns": [
+        "session_key",
+        "session_data",
+        "expire_date"
+      ],
+      "rows": 78,
+      "sha256": "c6bfb590816bb8ecd80f44209c78d21c15011fa72b896541e9431d9c358c3f01"
+    },
+    "identity_account": {
+      "columns": [
+        "password",
+        "last_login",
+        "is_superuser",
+        "id",
+        "display_name",
+        "email",
+        "email_normalized",
+        "is_active",
+        "is_staff",
+        "created_at",
+        "updated_at",
+        "role_id"
+      ],
+      "rows": 4,
+      "sha256": "a0e1a09e1231e7f41fc9fc81dad18fc89ae43647f9a65a3d147fcca48c95ca7c"
+    },
+    "identity_account_groups": {
+      "columns": [
+        "id",
+        "account_id",
+        "group_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "identity_account_user_permissions": {
+      "columns": [
+        "id",
+        "account_id",
+        "permission_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "identity_loginattempt": {
+      "columns": [
+        "identifier",
+        "failures",
+        "locked_until",
+        "updated_at"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "identity_role": {
+      "columns": [
+        "id",
+        "code",
+        "name"
+      ],
+      "rows": 3,
+      "sha256": "c12c764103a3de8b7a9c35530e5d394a6330703885aba0422d2ca55217b0de74"
+    },
+    "inventory_initialinventoryload": {
+      "columns": [
+        "id",
+        "confirmed_at",
+        "product_id",
+        "responsible_id"
+      ],
+      "rows": 5,
+      "sha256": "7dd55ceaca387082dc7cfa10d28ed7bd1e40c7b067a489a832b5e9f532c94bed"
+    },
+    "inventory_lot": {
+      "columns": [
+        "id",
+        "number",
+        "number_normalized",
+        "initial_quantity",
+        "available_quantity",
+        "unit_cost",
+        "expiration_date",
+        "received_at",
+        "initial_load_id",
+        "product_id",
+        "supplier_id",
+        "is_initial",
+        "responsible_id"
+      ],
+      "rows": 6,
+      "sha256": "e8b382cb065b4738abbef6803b61f6dd8dbcda9f201a076a826cd8b2633c2cf2"
+    },
+    "inventory_physicaladjustment": {
+      "columns": [
+        "id",
+        "delta",
+        "reason",
+        "created_at",
+        "lot_id",
+        "responsible_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "inventory_stockwriteoff": {
+      "columns": [
+        "id",
+        "quantity",
+        "reason",
+        "notes",
+        "correlativo",
+        "created_at",
+        "lot_id",
+        "responsible_id"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "inventory_supplier": {
+      "columns": [
+        "id",
+        "name",
+        "ruc",
+        "phone",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sales_sale": {
+      "columns": [
+        "id",
+        "total_amount",
+        "base_amount",
+        "igv_amount",
+        "cash_received",
+        "change_given",
+        "correlative",
+        "idempotency_key",
+        "confirmed_at",
+        "cash_shift_id",
+        "draft_id",
+        "seller_id",
+        "discount_amount"
+      ],
+      "rows": 1,
+      "sha256": "816842ea547d76f8e8663766df721d4368eac7a933e3466ffc258835bb7d571b"
+    },
+    "sales_salecounter": {
+      "columns": [
+        "id",
+        "next_value"
+      ],
+      "rows": 1,
+      "sha256": "3a316d6d3226f84c1e46e4447fa8d5fd800bff4a1bc6498152523cd4a602b69b"
+    },
+    "sales_saledraft": {
+      "columns": [
+        "id",
+        "status",
+        "created_at",
+        "updated_at",
+        "discarded_at",
+        "cash_shift_id",
+        "seller_id"
+      ],
+      "rows": 3,
+      "sha256": "f01413a06f092c3cd83a97c7783cfd10a73c17d1675271435da39405491db68d"
+    },
+    "sales_saledraftline": {
+      "columns": [
+        "id",
+        "quantity",
+        "unit_price",
+        "created_at",
+        "updated_at",
+        "draft_id",
+        "product_id"
+      ],
+      "rows": 1,
+      "sha256": "ea091db87e8be0f12893c9214c5846c1894159f9e9bc6772a143df019683ead3"
+    },
+    "sales_saleline": {
+      "columns": [
+        "id",
+        "product_snapshot_name",
+        "product_snapshot_barcode",
+        "quantity",
+        "unit_price",
+        "amount",
+        "sale_id",
+        "product_id"
+      ],
+      "rows": 1,
+      "sha256": "40cf357ea1bc0b5870fe6b446bfa9691d570ed633f80d94d12d226e873774a13"
+    }
+  },
+  "catalog_migrations_after": [
+    "0001_initial",
+    "0002_product",
+    "0003_normalize_category_spaces",
+    "0004_product_search_name",
+    "0005_product_name_and_minimum_policy",
+    "0006_category_state_version",
+    "0007_product_barcode_identity"
+  ],
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa01-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T231223297870Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T235435476251Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235102894578Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235313324286Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T000927933696Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001124615788Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001235417602Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001320983361Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001337606973Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001427294717Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010641541584Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010857906402Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020054712835Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020104229903Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020324334766Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020335877235Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020505026105Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T023934536531Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024200044720Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024338422290Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024349330265Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024455907968Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024617290091Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024628699915Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024749832414Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024801097155Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030010177604Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030036511029Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030252413844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030314191882Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030339870193Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030352675316Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T031505677093Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032216300260Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032251838417Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032333068344Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032528496946Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032641479670Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T033002861512Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034307344201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034318782440Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041750658883Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041757169052Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041945048165Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042659237619Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042730963824Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042756100441Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042844036974Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042912719703Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T043008623021Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165543164740Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165640773189Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165730633729Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171321742969Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171341873895Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171546908471Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171905215655Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172006895618Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172054000837Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172105045406Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173453359047Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173526027077Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173808145023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173927046544Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174028204311Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174235672078Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T175820924988Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180229612612Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180807525819Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180914638365Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181416503086Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181948564537Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T182622655374Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T183956099863Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184821961380Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184947335287Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184949253446Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T185008205808Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010526631267Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010655936590Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010725864129Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010846464247Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011420365490Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011843801709Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T012116957301Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T013518362010Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014121377023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014226942611Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014304366278Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015423105806Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015529367360Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015549608567Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015623098100Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015703446000Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015739066270Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015806678855Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015848208296Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T020804804408Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021009799064Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021726658069Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021749298118Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022024345104Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022054827383Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022113097844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025217937214Z-6d2387e5\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025317671199Z-66b3aa8c\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025449334980Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025515269778Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025536057632Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025555676509Z-837d210a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025612323774Z-69c9c66e\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025641628831Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032441129639Z-0bdc8478\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032522908138Z-4bfa962a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032724611710Z-4f696853\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032808941201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T033849664862Z-0c3c972b\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T033958715784Z-c91e0f04\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T034025997777Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T034440987277Z-46258ffc\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T162459264125Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T162903761819Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T164543844233Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T170225624727Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T170257775466Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T170315564731Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T170342686891Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T170954823785Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T171212923892Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T171347502254Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T172130433685Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T172251893922Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T172343659488Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-AA-20261111T165403451847Z-71d9a79a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-AB-20261111T170146816213Z-aa9e7ee7\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-AB-20261111T170449018934Z-6fb82e57\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-AB-20261111T170552228012Z-419c81d4\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-AC-20261111T171131139219Z-23558f23\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-AC-20261111T171301636750Z-bd514b19\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-AC-20261111T171405144997Z-87619aa4\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-AD-20261111T172241713263Z-063fcb33\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-AD-20261111T172437755749Z-3d88b13d\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-migrations-20261111T020942208035Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-X-20261111T040056659143Z-a42ce2ac\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-X-20261111T040227561878Z-69a0d2f3\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-X-20261111T040311661823Z-6ffff079\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Y-20261111T162549906985Z-9e883df0\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Y-20261111T162954154680Z-6afbba6d\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Y-20261111T163627687822Z-baab0881\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Y-migrations-20261111T162718225424Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Z-20261111T164236190387Z-f44e99df\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Z-20261111T164333798955Z-9c222ad2\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Z-20261111T164502190381Z-6948357a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Z-20261111T164646767674Z-a3a9756a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Z-20261111T164756108754Z-ff0c3b52\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-Z-20261111T164928308022Z-13e15589\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03y-identity-20261111T161915632116Z\\audit.sqlite3": true
+  },
+  "finished_utc": "2026-11-11T17:25:08.304002+00:00"
+}

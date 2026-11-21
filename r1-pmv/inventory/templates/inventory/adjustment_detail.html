@@ -1,0 +1,29 @@
+{% extends "identity/base.html" %}
+{% block title %}Ajuste físico · Minimarket{% endblock %}
+{% block content %}
+<section class="page-heading"><div><p class="eyebrow">Ajuste confirmado</p><h2>Detalle del ajuste físico</h2>
+<p class="lede">Datos originales del conteo. Un ajuste no es una recepción de compra.</p></div></section>
+<section class="panel form-panel" data-testid="adjustment-detail">
+  {% if not adjustment.has_snapshot %}<p class="alert alert-warning" role="status">Registro anterior o incompleto: la fotografía original de producto, lote, origen o responsable no está disponible. No se reconstruye con los maestros actuales.</p>{% endif %}
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Referencia del ajuste</dt><dd style="overflow-wrap:anywhere">{{ adjustment.pk }}</dd></div>
+    <div><dt>Fecha y hora de Lima</dt><dd>{{ adjustment.created_at|date:"d/m/Y H:i:s" }}</dd></div>
+    <div><dt>Responsable original</dt><dd>{{ adjustment.responsible_snapshot_name|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Producto original</dt><dd>{{ adjustment.product_snapshot_name|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Código original</dt><dd>{{ adjustment.product_snapshot_barcode|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Lote original</dt><dd>{{ adjustment.lot_snapshot_number|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Vencimiento original</dt><dd>{% if adjustment.lot_snapshot_expiration_date %}{{ adjustment.lot_snapshot_expiration_date|date:"d/m/Y" }}{% else %}No disponible{% endif %}</dd></div>
+    <div><dt>Origen registrado</dt><dd style="overflow-wrap:anywhere">{{ adjustment.origin_snapshot|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Variación de unidades</dt><dd>{{ adjustment.delta|stringformat:"+d" }} {{ adjustment.unit_snapshot|default_if_none:"unidades" }}</dd></div>
+    <div><dt>Motivo</dt><dd style="white-space:pre-wrap;overflow-wrap:anywhere">{{ adjustment.reason }}</dd></div>
+    <div><dt>Costo unitario del ajuste</dt><dd>{% if adjustment.unit_cost != None %}S/ {{ adjustment.unit_cost|floatformat:4 }}{% else %}No disponible{% endif %}</dd></div>
+    <div><dt>Fuente del costo</dt><dd style="overflow-wrap:anywhere">{{ adjustment.cost_source|default_if_none:"No disponible" }}</dd></div>
+  </dl>
+  <p class="help">Registro interno de ajuste físico. No es un comprobante de pago.</p>
+  <div class="form-actions no-print">
+    {% if user.role.code == "ADMIN" %}<a class="button button-primary" href="{% url 'physical-adjustment' %}">Registrar otro ajuste</a>{% endif %}
+    <a class="button button-secondary" href="{% url 'product-movements' adjustment.lot.product_id %}">Ver movimientos</a>
+    <a class="button button-secondary" href="{% url 'stock-overview' %}">Ver inventario</a>
+  </div>
+</section>
+{% endblock %}

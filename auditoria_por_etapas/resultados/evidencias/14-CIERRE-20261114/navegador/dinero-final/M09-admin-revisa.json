@@ -1,0 +1,250 @@
+{
+  "id": "M09-admin-revisa",
+  "rol": "ADMIN",
+  "utc": "2026-11-14T15:28:50.596727+00:00",
+  "ruta": "/ventas/historial/",
+  "texto_visible": "Saltar al contenido\nM\nMinimarket\nGestión de bodega\n\nOPERACIONES\n\n⌂\nInicio\n\nCATÁLOGO\n\n☰\nProductos\n▦\nRegistrar producto\n▮\nCategorías\n\nINVENTARIO\n\n✦\nProveedores\n☷\nVer inventario y alertas\n⏳\nVencimientos de lotes\n⏫\nAjuste físico\n\nPERSONAL\n\n☺\nEmpleados\n\nCAJA Y VENTAS\n\n☰\nHistorial de turnos\n☰\nHistorial de ventas\nA\nAdministración 14D\nAdministrador\n↪\nCerrar sesión\n\nMINIMARKET\n\nHistorial de ventas\nAdministración 14D\nAdministrador\n\nCAJA Y VENTAS\n\nHistorial de ventas\n\nConsulta las ventas confirmadas de toda la tienda por correlativo, fecha, vendedor o turno.\n\nVolver al inicio\nCorrelativo\nFecha exacta\nDesde\nHasta\nVendedor\nTodos\nVenta 14D\nTurno\nTodos\nCAJA-01 · 14/11/2026 10:28 · Venta 14D\nFiltrar\nLimpiar\nTotal vendido (filtrado): S/ 10000000,00 · Descuentos otorgados: S/ 0,00\nCORRELATIVO\tVENDEDOR\tFECHA/HORA\tCAJA\tPAGO\tDESCUENTO (S/)\tTOTAL (S/)\tEFECTIVO RECIBIDO\tVUELTO\nV-00000002\tVenta 14D\t14/11/2026 10:28\tCAJA-01\tEfectivo\t0,00\t5000000,00\t5000000,00\t0,00\nV-00000001\tVenta 14D\t14/11/2026 10:28\tCAJA-01\tEfectivo\t0,00\t5000000,00\t5000000,00\t0,00\nMinimarket · Gestión de bodega",
+  "controles": [
+    {
+      "campo": "correlativo",
+      "etiqueta": "Correlativo",
+      "tipo": "text",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "fecha",
+      "etiqueta": "Fecha exacta",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "fecha_desde",
+      "etiqueta": "Desde",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "fecha_hasta",
+      "etiqueta": "Hasta",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "vendedor",
+      "etiqueta": "Vendedor",
+      "tipo": "select-one",
+      "valor": "Todos",
+      "opciones": [
+        "Todos",
+        "Venta 14D"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "turno",
+      "etiqueta": "Turno",
+      "tipo": "select-one",
+      "valor": "Todos",
+      "opciones": [
+        "Todos",
+        "CAJA-01 · 14/11/2026 10:28 · Venta 14D"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    }
+  ],
+  "testigo": {
+    "sha256": "513a682a65312edc4c388b3f159dc865cc68ff41ebd639c8dde2d8b529cbf69c",
+    "por_tabla": {
+      "cash_cashregister": "8c2780d2569daebbbb4e9f91c23ed7b8d3dd7defb1a12711a2caa279414ea449",
+      "cash_cashshift": "7d84be3c0b6996790ff05a4d20a3a7ec9272fa5b1adc670fa19fc793630497e8",
+      "cash_cashshiftclose": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "catalog_category": "cc79fb168ff88825b849907888a2d8c29b9d60883f2b022b9808f8c7230695e3",
+      "catalog_product": "a45a7a57dee8d7c79179a2a22a4453577116a0f55b8b21f0a56f74e8aaf3a8cd",
+      "catalog_productbarcodekey": "a6f771f499676ff3ab203840c28abfa0722b2f9ff0098e440bbe38d9126b9fa2",
+      "inventory_initialinventoryload": "cd1422d13977f4921fd305f79eb577c5770c19bb1b3f174ae51178fc940ef1a2",
+      "inventory_initialloadline": "32b5d3bf7897755ad3787a1f45f169a6c33279a48aab0c46a11ef3fe97a45e66",
+      "inventory_lot": "22b8b20bb94f080b9ee3055bfb9a7f603d24e45d42e16a2b1c292db0bd9ed39e",
+      "inventory_physicaladjustment": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceipt": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptcounter": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockwriteoff": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_supplier": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_sale": "3e8e06127139aba11d897691d387dc50d0a938d8e48bb06b0d7d69c4ca5f644f",
+      "sales_salecounter": "644094b0b0c3ab18e7b6992b8ff97d7a0ec8e2cd36dc0633cc5c09b305e9cb21",
+      "sales_saledraft": "98740874f5187805ef9defdfd3294dfb8868919d9856ca889b88ef965fad5a3f",
+      "sales_saledraftline": "828f84418c8e2d2495c819676f9ffda983e397182f0add5b80d10d0d20e0b7b1",
+      "sales_saleline": "64e77f5dede6c457a0fa3bd20e5737f6f43514ade05f66cc528735d230ccd2c5",
+      "sales_salelotallocation": "ff7344b7b2d74153765bb9cdba3951730457482918506a9ad007a2282b138e22",
+      "identity_role_membership_active": "d37b310029ebc424529ed8f05e942d3784c3cd317f1be1ed3642343a98a18b73"
+    },
+    "filas": {
+      "cash_cashregister": 1,
+      "cash_cashshift": 1,
+      "cash_cashshiftclose": 0,
+      "catalog_category": 1,
+      "catalog_product": 1,
+      "catalog_productbarcodekey": 1,
+      "inventory_initialinventoryload": 1,
+      "inventory_initialloadline": 1,
+      "inventory_lot": 1,
+      "inventory_physicaladjustment": 0,
+      "inventory_stockreceipt": 0,
+      "inventory_stockreceiptcounter": 0,
+      "inventory_stockreceiptline": 0,
+      "inventory_stockwriteoff": 0,
+      "inventory_supplier": 0,
+      "sales_sale": 2,
+      "sales_salecounter": 1,
+      "sales_saledraft": 3,
+      "sales_saledraftline": 2,
+      "sales_saleline": 2,
+      "sales_salelotallocation": 2
+    },
+    "cuentas_rol_activas": [
+      [
+        "ADMIN",
+        1
+      ],
+      [
+        "ALMACENERO",
+        1
+      ],
+      [
+        "VENDEDOR",
+        1
+      ]
+    ],
+    "categorias": [
+      {
+        "name": "Dinero14",
+        "is_active": 1,
+        "state_version": 0
+      }
+    ],
+    "productos": [
+      {
+        "name": "Límite monetario14",
+        "barcode": "INT-MONEY14",
+        "sale_price": 5000000,
+        "minimum_stock": 10,
+        "average_cost": 3,
+        "is_active": 1
+      }
+    ],
+    "proveedores": [],
+    "lotes": [
+      {
+        "number": "A",
+        "initial_quantity": 10,
+        "available_quantity": 8,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "Límite monetario14",
+        "proveedor": null,
+        "autor_carga": "Almacén 14D"
+      }
+    ],
+    "borrador": [
+      {
+        "status": "DISCARDED",
+        "quantity": null,
+        "unit_price": null
+      },
+      {
+        "status": "DISCARDED",
+        "quantity": 1,
+        "unit_price": 5000000
+      },
+      {
+        "status": "DISCARDED",
+        "quantity": 1,
+        "unit_price": 5000000
+      }
+    ],
+    "ventas": [
+      {
+        "correlative": "V-00000001",
+        "total_amount": 5000000,
+        "base_amount": 4237288.14,
+        "igv_amount": 762711.86,
+        "discount_amount": 0,
+        "cash_received": 5000000,
+        "change_given": 0,
+        "vendedor": "Venta 14D",
+        "opening_amount": 0
+      },
+      {
+        "correlative": "V-00000002",
+        "total_amount": 5000000,
+        "base_amount": 4237288.14,
+        "igv_amount": 762711.86,
+        "discount_amount": 0,
+        "cash_received": 5000000,
+        "change_given": 0,
+        "vendedor": "Venta 14D",
+        "opening_amount": 0
+      }
+    ],
+    "lineas": [
+      {
+        "product_snapshot_name": "Límite monetario14",
+        "product_snapshot_barcode": "INT-MONEY14",
+        "quantity": 1,
+        "unit_price": 5000000,
+        "amount": 5000000,
+        "unit_cost": 3
+      },
+      {
+        "product_snapshot_name": "Límite monetario14",
+        "product_snapshot_barcode": "INT-MONEY14",
+        "quantity": 1,
+        "unit_price": 5000000,
+        "amount": 5000000,
+        "unit_cost": 3
+      }
+    ],
+    "bajas": [],
+    "turnos": [
+      {
+        "status": "OPEN",
+        "opening_amount": 0,
+        "vendedor": "Venta 14D"
+      }
+    ],
+    "cierres": []
+  },
+  "sin_mutacion_verificada": false
+}

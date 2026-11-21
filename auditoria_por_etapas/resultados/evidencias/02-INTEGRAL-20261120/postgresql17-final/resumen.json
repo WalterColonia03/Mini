@@ -1,0 +1,205 @@
+{
+  "stage": "02-E",
+  "started_utc": "2026-11-20T16:58:20.066240+00:00",
+  "port": 63695,
+  "cases": [
+    {
+      "name": "last_admin_race",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "active_admins": 1,
+      "passed": true
+    },
+    {
+      "name": "duplicate_email_race",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "normalized_count": 1,
+      "passed": true
+    },
+    {
+      "name": "open_shift_vs_role_change",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "role": "VENDEDOR",
+      "open_shifts": 1,
+      "passed": true
+    },
+    {
+      "name": "lockout_preservation_pg",
+      "lock_survives_reactivate_and_rename": true,
+      "passed": true
+    },
+    {
+      "name": "logout_atomic_pg",
+      "draft_kept_on_rollback": true,
+      "audit_unchanged_on_rollback": true,
+      "commit_status": 302,
+      "draft_deleted_on_commit": true,
+      "audit_created_on_commit": true,
+      "passed": true
+    },
+    {
+      "name": "role-admin-first-True",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "success"
+        }
+      ],
+      "login_status": [
+        200
+      ],
+      "session_roles": [],
+      "passed": false
+    },
+    {
+      "name": "role-admin-first-False",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "success"
+        }
+      ],
+      "login_status": [
+        302
+      ],
+      "session_roles": [
+        "ALMACENERO"
+      ],
+      "passed": true
+    },
+    {
+      "name": "deactivate-admin-first-True",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "success"
+        }
+      ],
+      "login_status": [
+        200
+      ],
+      "session_roles": [],
+      "passed": true
+    },
+    {
+      "name": "deactivate-admin-first-False",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "success"
+        }
+      ],
+      "login_status": [
+        302
+      ],
+      "session_roles": [],
+      "passed": true
+    },
+    {
+      "name": "password-admin-first-True",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "success"
+        }
+      ],
+      "login_status": [
+        200
+      ],
+      "session_roles": [],
+      "passed": true
+    },
+    {
+      "name": "password-admin-first-False",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "success"
+        }
+      ],
+      "login_status": [
+        302
+      ],
+      "session_roles": [],
+      "passed": true
+    }
+  ],
+  "postgres_version": "PostgreSQL 17.10 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "db": "audit02e_ffa67af35e",
+  "isolation": "read committed",
+  "migrations": "PASS",
+  "audit_events_total": 25,
+  "status": "FAILED",
+  "port_closed": true,
+  "prod_db_unchanged": true,
+  "prod_db_sha256": "83e79733798e2e00af2b8f11b7a23aac2b1727d16707d078873d5a36d441bb6c",
+  "finished_utc": "2026-11-20T16:58:32.849453+00:00"
+}

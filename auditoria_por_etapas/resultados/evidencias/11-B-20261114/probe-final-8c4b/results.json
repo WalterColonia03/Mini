@@ -1,0 +1,268 @@
+{
+  "executed_utc": "2026-11-15T02:51:22.133039+00:00",
+  "database": ":memory:",
+  "plan08_sha256": "69b886a3be2610546c30e9d587c28813e50ad4e79ad644847aa7c20ba50b87e2",
+  "build_before": {
+    "count": 213,
+    "sha256": "cba31def676c2c12d5048fcbcfa3c760c260322d2a5a974c12f11138e27f177a"
+  },
+  "checks": {
+    "P01_cantidad_y_precio": {
+      "bad_qty_cases": {
+        "0": {
+          "status": 200,
+          "unchanged": true
+        },
+        "-1": {
+          "status": 200,
+          "unchanged": true
+        },
+        "1.5": {
+          "status": 200,
+          "unchanged": true
+        },
+        "abc": {
+          "status": 200,
+          "unchanged": true
+        },
+        "1000000": {
+          "status": 200,
+          "unchanged": true
+        }
+      },
+      "db_qty_max_constraint": true,
+      "min_0_01_sale": {
+        "total": "0.01",
+        "base": "0.01",
+        "igv": "0.00"
+      },
+      "max_9999999_99_ok": true,
+      "over_10M_rejected": true,
+      "over_total_errors": [
+        "El total no puede superar S/ 9999999.99 por venta. Reduzca la cantidad antes de cobrar."
+      ],
+      "accumulated_10M_shift_close_ok": true
+    },
+    "P02_efectivo_y_faltante": {
+      "invalid_cash_cases": {
+        "": {
+          "status": 200,
+          "field_errors": [
+            "Este campo es obligatorio."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "0": {
+          "status": 200,
+          "field_errors": [
+            "Asegúrese de que este valor es mayor o igual a 0.01."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "0.00": {
+          "status": 200,
+          "field_errors": [
+            "Asegúrese de que este valor es mayor o igual a 0.01."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "-5.00": {
+          "status": 200,
+          "field_errors": [
+            "Asegúrese de que este valor es mayor o igual a 0.01."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "abc": {
+          "status": 200,
+          "field_errors": [
+            "Introduzca un número."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "20.001": {
+          "status": 200,
+          "field_errors": [
+            "Asegúrese de que no haya más de 2 dígitos decimales."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "+20.00": {
+          "status": 200,
+          "field_errors": [
+            "Introduzca el monto usando únicamente dígitos ASCII (0-9) y punto decimal."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "1e2": {
+          "status": 200,
+          "field_errors": [
+            "Introduzca un monto decimal válido sin notación científica."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "١٠": {
+          "status": 200,
+          "field_errors": [
+            "Introduzca el monto usando únicamente dígitos ASCII (0-9) y punto decimal."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "10000000.00": {
+          "status": 200,
+          "field_errors": [
+            "Asegúrese de que este valor es menor o igual a 9999999.99."
+          ],
+          "non_field_errors": [],
+          "unchanged": true
+        },
+        "19.99": {
+          "status": 200,
+          "field_errors": [],
+          "non_field_errors": [
+            "El efectivo recibido (S/ 19.99) es insuficiente para cubrir el total (S/ 20.00)."
+          ],
+          "unchanged": true
+        }
+      },
+      "insufficient_19_99_messages": [
+        "El efectivo recibido (S/ 19.99) es insuficiente para cubrir el total (S/ 20.00)."
+      ],
+      "mentions_shortfall_amount": false,
+      "exact_cash_change": "0.00",
+      "excess_50_change": "30.00",
+      "shift_expected_after_excess_cash": "140.00"
+    },
+    "P03_descuentos_y_recuperacion": {
+      "has_visible_discount_input_in_checkout_get": false,
+      "hidden_discount_input_present": false,
+      "rejected_discount_cases": {
+        "2.00": {
+          "status": 200,
+          "message_present": true,
+          "unchanged": true
+        },
+        "0.01": {
+          "status": 200,
+          "message_present": true,
+          "unchanged": true
+        },
+        "-1.00": {
+          "status": 200,
+          "message_present": true,
+          "unchanged": true
+        },
+        "0.001": {
+          "status": 200,
+          "message_present": true,
+          "unchanged": true
+        },
+        "abc": {
+          "status": 200,
+          "message_present": true,
+          "unchanged": true
+        },
+        " 0.00 ": {
+          "status": 200,
+          "message_present": true,
+          "unchanged": true
+        }
+      },
+      "multi_value_rejected": true,
+      "service_discount_rejected": true,
+      "historical_discount_retry_with_new_draft_ok": true,
+      "historical_discount_tampered_rejected": true,
+      "historical_discount_retry_after_close_ok": true
+    },
+    "P04_igv_half_up": {
+      "0.01": {
+        "base": "0.01",
+        "igv": "0.00"
+      },
+      "1.80": {
+        "base": "1.53",
+        "igv": "0.27"
+      },
+      "10.65": {
+        "base": "9.03",
+        "igv": "1.62"
+      },
+      "11.80": {
+        "base": "10.00",
+        "igv": "1.80"
+      },
+      "14.20": {
+        "base": "12.03",
+        "igv": "2.17"
+      },
+      "20.00": {
+        "base": "16.95",
+        "igv": "3.05"
+      },
+      "25.00": {
+        "base": "21.19",
+        "igv": "3.81"
+      }
+    },
+    "P05_fefo_vencimiento": {
+      "trigger_blocked_received_at_update": true,
+      "expired_past_today_untouched": true,
+      "allocations_order": [
+        [
+          "L-SOON",
+          2
+        ],
+        [
+          "L-TIE-EARLY",
+          2
+        ],
+        [
+          "L-UUID-SMALL",
+          2
+        ],
+        [
+          "L-UUID-LARGE",
+          1
+        ]
+      ],
+      "avg_cost_with_expired_only": "2.0000",
+      "deplete_physical_zero_resets_product_avg": "0.0000",
+      "deplete_keeps_line_unit_cost_4dec": "2.3456",
+      "midnight_expiry_rejected": true,
+      "midnight_msg": "Stock insuficiente para 'Leche Medianoche'. Disponible: 0, solicitado: 1."
+    },
+    "P06_advertencia_y_snapshots": {
+      "tax_warning_text": "Esta venta genera una constancia interna. No emite una boleta ni factura electrónica autorizada por SUNAT.",
+      "tax_warning_visible_before_confirm": true,
+      "receipt_has_legal_legend": true,
+      "receipt_hides_cost_seller_and_admin": true,
+      "snapshots_preserved_after_rename": true
+    },
+    "P07_cambios_y_reversion": {
+      "price_decrease_get_no_muta": true,
+      "price_decrease_post_requires_review": true,
+      "post_write_allocation_rollback_exact": true,
+      "retry_after_rollback_succeeds": true
+    },
+    "P08_autorizacion": {
+      "anon_redirected_302": true,
+      "admin_checkout_403": true,
+      "warehouse_checkout_and_receipt_403": true,
+      "other_seller_receipt_404": true
+    }
+  },
+  "build_after": {
+    "count": 213,
+    "sha256": "cba31def676c2c12d5048fcbcfa3c760c260322d2a5a974c12f11138e27f177a"
+  },
+  "sources_stable": true
+}

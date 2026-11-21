@@ -1,0 +1,66 @@
+{
+  "pasada": 1,
+  "sublote": "14-H2",
+  "criterios": [
+    {
+      "criterio": "HU-INV-04/CA-01",
+      "texto": "Dado que selecciono un producto, cuando consulto sus movimientos, entonces el sistema muestra en orden cronológico todas las entradas, salidas y saldo resultante con fecha, tipo de operación, cantidad y lote.",
+      "clasificacion": "CUMPLE",
+      "alcance": "Muestra ejecutada; no garantía universal. Secuencias20/30/25/23/24 y10/20/25/3/2; orden ascendente, lote y saldo. Legado odesajusteNo disponible.",
+      "evidencia": "01,02,19,20; test_written_case,three_origins,negative_sequence,compensating_discrepancy",
+      "pendiente": "Concurrencia/volumen15; historia de ajustes y datosoperativos según informe"
+    },
+    {
+      "criterio": "HU-INV-04/CA-02",
+      "texto": "Dado que un movimiento nació de una recepción directa, cuando abro el detalle, entonces muestra su referencia propia, responsable y proveedor o ausencia declarada; si en el futuro nació de HU-SOL-05a, mostrará además la solicitud aprobada sin inventar esa relación para entradas actuales.",
+      "clasificacion": "CUMPLE",
+      "alcance": "Muestra ejecutada; no garantía universal. ReferenciasR1/R2, responsable/proveedor capturados y asignaciones preservadas. SOL futuro noaplica aentrada directa.",
+      "evidencia": "01,02; three_origins; regresión14-G/H1",
+      "pendiente": "Concurrencia/volumen15; historia de ajustes y datosoperativos según informe"
+    },
+    {
+      "criterio": "HU-INV-04/CA-03",
+      "texto": "Dado que una entrada provino de carga inicial o ajuste, cuando abro el detalle, entonces se etiqueta como carga directa o ajuste con su motivo y responsable.",
+      "clasificacion": "PARCIAL",
+      "alcance": "Muestra ejecutada; no garantía universal. Carga etiquetada/capturada y ajuste con motivo/autor visibles. Nombre delautor de ajustes sigue maestroactual, sin fotografía histórica.",
+      "evidencia": "01,11,12; test_written_case; test_audit08 traceability",
+      "pendiente": "Concurrencia/volumen15; historia de ajustes y datosoperativos según informe"
+    },
+    {
+      "criterio": "HU-INV-04/CA-04",
+      "texto": "Dado que aplico filtros por fechas o tipo de movimiento, cuando ejecuto la búsqueda, entonces se visualizan solo las operaciones coincidentes.",
+      "clasificacion": "CUMPLE",
+      "alcance": "Muestra ejecutada; no garantía universal. Fechas/tipo/períodoLima/errores/vacío yparámetros; controles yrecarga probados.",
+      "evidencia": "02..10,14; invalid_dates,empty_period,written_case",
+      "pendiente": "Concurrencia/volumen15; historia de ajustes y datosoperativos según informe"
+    },
+    {
+      "criterio": "DEC-08-KARDEX-COMPRAS/C-01",
+      "texto": "Dada secuencia de movimientos conocidos, cuando se consulta período/tipo, entonces muestra orden ascendente total por instante+ID y saldo inicial del período/saldo resultante correcto. Filtrar filas no recalcula el saldo real ignorando movimientos excluidos; explicar saldo de apertura/cierre y total filtrado.",
+      "clasificacion": "CUMPLE",
+      "alcance": "Muestra ejecutada; no garantía universal. Apertura/cierre independientedeltipo, saldo real porfila, variación filtrada; no resta retrospectiva desdeactual.",
+      "evidencia": "02,10..12; known_cases,per_lot",
+      "pendiente": "Concurrencia/volumen15; historia de ajustes y datosoperativos según informe"
+    },
+    {
+      "criterio": "DEC-08-KARDEX-COMPRAS/C-02",
+      "texto": "Dada venta multilote, entonces su salida se puede atribuir a las asignaciones persistidas. Un lote legado no asignado se identifica como desconocido; no presentar asociación inferida como comprobada.",
+      "clasificacion": "CUMPLE",
+      "alcance": "Muestra ejecutada; no garantía universal. Salida22 atribuida10/10/2; incompleta/identidadambigua señalaausencia ynoinventaFEFO.",
+      "evidencia": "02,19; incomplete_allocation,legacy_input; regresión14-F",
+      "pendiente": "Concurrencia/volumen15; historia de ajustes y datosoperativos según informe"
+    },
+    {
+      "criterio": "DEC-08-KARDEX-COMPRAS/C-03",
+      "texto": "Dados ADMIN/ALMACENERO, entonces consulta no muta; VENDEDOR no obtiene costos. Aplicar paginación estable25 con filtros preservados y totales calculados sobre conjunto filtrado, no solo página.",
+      "clasificacion": "CUMPLE",
+      "alcance": "Muestra ejecutada; no garantía universal. 25+1 ajustes empatados, orden estableUUID, filtros/variación26constantes. GET/403/405 sinmutación.",
+      "evidencia": "11..16; same_instant_pages,roles_methods",
+      "pendiente": "Concurrencia/volumen15; historia de ajustes y datosoperativos según informe"
+    }
+  ],
+  "clasificaciones": {
+    "CUMPLE": 6,
+    "PARCIAL": 1
+  }
+}

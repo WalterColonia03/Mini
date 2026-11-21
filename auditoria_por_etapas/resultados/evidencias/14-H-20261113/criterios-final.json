@@ -1,0 +1,119 @@
+{
+  "pasada": 1,
+  "sublote": "14-H1",
+  "criterios": [
+    {
+      "criterio": "HU-INV-01a/CA-01",
+      "texto": "Dado que ingreso con rol `ALMACENERO` y el producto aún no tiene una carga inicial confirmada, cuando envío uno o varios lotes válidos, entonces el sistema confirma una única carga directa sin pedido previo; cualquier otro rol recibe una denegación y no altera existencias (RN-01, RN-29).",
+      "clasificacion": "CUMPLE",
+      "alcance": "Muestra de carga única ALMACENERO, ADMIN/VENDEDOR denegados; no aprobación universal de roles.",
+      "grupo": "Dependencia ejecutada",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "HU-INV-01a/CA-02",
+      "texto": "Dado que completo cada lote, cuando el sistema lo valida, entonces exige número comercial no vacío normalizado y no repetido dentro de la carga, cantidad entera positiva, costo unitario positivo con máximo cuatro decimales y vencimiento posterior a hoy en America/Lima (RN-03); límites y normalización siguen el contrato DEC-05-LOTE-ESPACIOS de este documento. Las recepciones posteriores conservan identidad propia conforme a DOC-03AI-01.",
+      "clasificacion": "PARCIAL",
+      "alcance": "Normalización, costo4, límites y vencimiento revalidados por suite y muestra UI; no toda frontera de cada campo en Chrome.",
+      "grupo": "Dependencia ejecutada",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "HU-INV-01a/CA-03",
+      "texto": "Dado que algún lote es inválido o repetido, o que ya existe o compite simultáneamente otra carga inicial para el producto, cuando intento confirmar, entonces el sistema rechaza toda la operación y no guarda lotes, existencias ni costo; como máximo una carga concurrente puede resultar confirmada (RN-01).",
+      "clasificacion": "PARCIAL",
+      "alcance": "Rechazo secuencial y cuatro fallos posteriores a escritura sin residuos; carreraPG/caída real pendientes15.",
+      "grupo": "Dependencia ejecutada",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "HU-INV-01a/CA-04",
+      "texto": "Dado que todos los lotes son válidos, cuando se confirma la carga, entonces las existencias del producto equivalen a la suma de sus cantidades, el producto queda vendible y su costo promedio inicial se obtiene ponderando cantidad por costo, almacenado con cuatro decimales `HALF_UP` y mostrado con dos (RN-14).",
+      "clasificacion": "CUMPLE",
+      "alcance": "Muestra3×2.1234+7×4 = promedio3.4370; UI3.44, físico10; prueba de expiración conserva físico.",
+      "grupo": "Dependencia ejecutada",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "HU-INV-01a/CA-05",
+      "texto": "Dado que los lotes quedaron guardados, cuando se revisan sus datos, entonces cada uno conserva su número comercial, cantidad disponible, costo, vencimiento, instante de ingreso inmutable y un identificador interno; la futura salida FEFO ordena por vencimiento, instante de ingreso e identificador interno (RN-19).",
+      "clasificacion": "PARCIAL",
+      "alcance": "Fotografía de número/cantidad/costo/fecha/instante y guard recibido preservados; FEFO revalidado en cadenas, defensa SQL integral pendiente.",
+      "grupo": "Dependencia ejecutada",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "HU-INV-04/CA-01",
+      "texto": "Dado que selecciono un producto, cuando consulto sus movimientos, entonces el sistema muestra en orden cronológico todas las entradas, salidas y saldo resultante con fecha, tipo de operación, cantidad y lote.",
+      "clasificacion": "INCUMPLE",
+      "alcance": "Sigue sin saldo y con orden descendente; no implementado enH1.",
+      "grupo": "Kardex inventariado",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "HU-INV-04/CA-02",
+      "texto": "Dado que un movimiento nació de una recepción directa, cuando abro el detalle, entonces muestra su referencia propia, responsable y proveedor o ausencia declarada; si en el futuro nació de HU-SOL-05a, mostrará además la solicitud aprobada sin inventar esa relación para entradas actuales.",
+      "clasificacion": "PARCIAL",
+      "alcance": "Revalidación de referencias/autor/proveedor de recepción en23 checkpoints; SOL futuro y totalidad deKardex no cerrada.",
+      "grupo": "Kardex inventariado",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "HU-INV-04/CA-03",
+      "texto": "Dado que una entrada provino de carga inicial o ajuste, cuando abro el detalle, entonces se etiqueta como carga directa o ajuste con su motivo y responsable.",
+      "clasificacion": "PARCIAL",
+      "alcance": "Carga nueva con origen/cantidad/autor conservados; ajuste conserva motivo; resto de historia/autor de bajas/ajustes abierto.",
+      "grupo": "Kardex inventariado",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "HU-INV-04/CA-04",
+      "texto": "Dado que aplico filtros por fechas o tipo de movimiento, cuando ejecuto la búsqueda, entonces se visualizan solo las operaciones coincidentes.",
+      "clasificacion": "INCUMPLE",
+      "alcance": "Filtros de período/tipo ausentes; H2 pendiente.",
+      "grupo": "Kardex inventariado",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "DEC-08-KARDEX-COMPRAS/C-01",
+      "texto": "Dada secuencia de movimientos conocidos, cuando se consulta período/tipo, entonces muestra orden ascendente total por instante+ID y saldo inicial del período/saldo resultante correcto. Filtrar filas no recalcula el saldo real ignorando movimientos excluidos; explicar saldo de apertura/cierre y total filtrado.",
+      "clasificacion": "INCUMPLE",
+      "alcance": "Sin saldo apertura/cierre/total filtrado ni orden ascendente; no se cuentan como ejecutados.",
+      "grupo": "Kardex inventariado",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "DEC-08-KARDEX-COMPRAS/C-02",
+      "texto": "Dada venta multilote, entonces su salida se puede atribuir a las asignaciones persistidas. Un lote legado no asignado se identifica como desconocido; no presentar asociación inferida como comprobada.",
+      "clasificacion": "PARCIAL",
+      "alcance": "Asignaciones y referencias revalidadas en recepción conectada y cadena; saldo por lote conciliado pendiente.",
+      "grupo": "Kardex inventariado",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    },
+    {
+      "criterio": "DEC-08-KARDEX-COMPRAS/C-03",
+      "texto": "Dados ADMIN/ALMACENERO, entonces consulta no muta; VENDEDOR no obtiene costos. Aplicar paginación estable25 con filtros preservados y totales calculados sobre conjunto filtrado, no solo página.",
+      "clasificacion": "PARCIAL",
+      "alcance": "Permisos y GET no mutante revalidados; paginación25 y totales de conjunto ausentes.",
+      "grupo": "Kardex inventariado",
+      "evidencia": "servidor/INFORME.md; navegador/RESUMEN.md",
+      "siguiente": "14-H2-KARDEX-SALDOS-01; etapa15 donde se indica"
+    }
+  ],
+  "clasificaciones": {
+    "CUMPLE": 2,
+    "PARCIAL": 7,
+    "INCUMPLE": 3
+  }
+}

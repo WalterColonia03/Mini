@@ -1,0 +1,398 @@
+Found 80 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_duplicate_numbers_in_same_request_leave_no_residue (inventory.tests.InitialInventoryLoadTests.test_duplicate_numbers_in_same_request_leave_no_residue) ... ok
+test_invalid_middle_lot_rolls_back_entire_load (inventory.tests.InitialInventoryLoadTests.test_invalid_middle_lot_rolls_back_entire_load) ... ok
+test_multiple_lots_are_confirmed_atomically_with_weighted_cost (inventory.tests.InitialInventoryLoadTests.test_multiple_lots_are_confirmed_atomically_with_weighted_cost) ... ok
+test_non_warehouse_post_is_forbidden_without_mutation (inventory.tests.InitialInventoryLoadTests.test_non_warehouse_post_is_forbidden_without_mutation) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "2ca9239e-470a-47b8-aa1d-6617ffd6e569", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:10.613858+00:00", "outcome": "REJECTED", "request_id": "4cc446dfbf2c42ad88f2ea50430222e7", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "7ac3e355-6a8c-4fb4-849b-6dca73ba9dba", "actor_identifier": "seller@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:10.621424+00:00", "outcome": "REJECTED", "request_id": "20865e997236474996825f0583a174ae", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+ok
+test_second_initial_load_is_rejected (inventory.tests.InitialInventoryLoadTests.test_second_initial_load_is_rejected) ... ok
+test_absurd_future_expiration_year_9999_is_rejected (inventory.tests.PhysicalAdjustmentTests.test_absurd_future_expiration_year_9999_is_rejected)
+BUG-014: El año 9999 en fecha de vencimiento es rechazado. ... ok
+test_admin_registers_positive_adjustment (inventory.tests.PhysicalAdjustmentTests.test_admin_registers_positive_adjustment) ... ok
+test_barcode_change_preserves_sales_in_product_movements_kardex (inventory.tests.PhysicalAdjustmentTests.test_barcode_change_preserves_sales_in_product_movements_kardex)
+BUG-004: Editar el código de barras de un producto no oculta sus ventas históricas en el Kardex. ... ok
+test_bug024_stock_entry_preserves_initial_load_lots_and_labels_subsequent_entries_in_kardex (inventory.tests.PhysicalAdjustmentTests.test_bug024_stock_entry_preserves_initial_load_lots_and_labels_subsequent_entries_in_kardex)
+BUG-024: Las entradas posteriores no alteran los lotes de la carga inicial y el Kardex las distingue. ... ok
+test_bug027_lot_unit_cost_rejects_scientific_notation_and_excessive_values (inventory.tests.PhysicalAdjustmentTests.test_bug027_lot_unit_cost_rejects_scientific_notation_and_excessive_values)
+BUG-027: LotInputForm y _validate_lots rechazan notación científica y costos desmesurados. ... ok
+test_bug032_subsequent_stock_entry_records_second_warehouse_worker_and_admin_can_view_load (inventory.tests.PhysicalAdjustmentTests.test_bug032_subsequent_stock_entry_records_second_warehouse_worker_and_admin_can_view_load)
+BUG-032: Entradas posteriores registran al almacenero real por lote, incluyen proveedor en carga inicial y permiten vista a Admin. ... ok
+test_bug033_inactive_category_excludes_products_from_initial_load_and_stock_entry_forms (inventory.tests.PhysicalAdjustmentTests.test_bug033_inactive_category_excludes_products_from_initial_load_and_stock_entry_forms)
+BUG-033: InitialLoadProductForm y StockEntryProductForm excluyen productos cuya categoría fue desactivada. ... ok
+test_bug036_writeoff_and_adjustment_prioritize_posted_lot_id_and_render_hidden_field_errors (inventory.tests.PhysicalAdjustmentTests.test_bug036_writeoff_and_adjustment_prioritize_posted_lot_id_and_render_hidden_field_errors)
+BUG-036: Baja y ajuste priorizan request.POST['lot_id'] sobre ?lote= y muestran errores de campos ocultos. ... ok
+test_doc03ah_receipt_includes_expired_physical_stock (inventory.tests.PhysicalAdjustmentTests.test_doc03ah_receipt_includes_expired_physical_stock)
+DOC-03AH-01 sustituye la expectativa BUG-005 de excluir vencidos físicos. ... ok
+test_doc03ah_writeoff_and_physical_adjustment_preserve_moving_average (inventory.tests.PhysicalAdjustmentTests.test_doc03ah_writeoff_and_physical_adjustment_preserve_moving_average)
+RN-14 conserva promedio para salidas y hallazgos con físico restante. ... ok
+test_duplicate_idempotency_key_is_ignored (inventory.tests.PhysicalAdjustmentTests.test_duplicate_idempotency_key_is_ignored) ... ok
+test_failed_validation_does_not_consume_idempotency_key_in_writeoff_or_adjustment (inventory.tests.PhysicalAdjustmentTests.test_failed_validation_does_not_consume_idempotency_key_in_writeoff_or_adjustment)
+BUG-003: Si falla la validación de negocio, la clave de idempotencia no se quema. ... ok
+test_huge_delta_is_rejected_without_overflow (inventory.tests.PhysicalAdjustmentTests.test_huge_delta_is_rejected_without_overflow) ... ok
+test_initial_load_created_preserves_original_quantity_and_alias_url (inventory.tests.PhysicalAdjustmentTests.test_initial_load_created_preserves_original_quantity_and_alias_url)
+BUG-012, BUG-022 y BUG-023: /inventario/carga-inicial/<id>/creada/ conserva cantidad inicial original. ... ok
+test_invalid_uuid_in_lote_param_returns_404 (inventory.tests.PhysicalAdjustmentTests.test_invalid_uuid_in_lote_param_returns_404) ... ok
+test_missing_idempotency_key_rejects_adjustment_without_mutation (inventory.tests.PhysicalAdjustmentTests.test_missing_idempotency_key_rejects_adjustment_without_mutation)
+14-J: HTTP requires a durable explicit operation key, not a time bucket. ... ok
+test_negative_adjustment_exceeding_stock_is_rejected (inventory.tests.PhysicalAdjustmentTests.test_negative_adjustment_exceeding_stock_is_rejected) ... ok
+test_positive_adjustment_does_not_alter_initial_load_in_movements (inventory.tests.PhysicalAdjustmentTests.test_positive_adjustment_does_not_alter_initial_load_in_movements) ... ok
+test_stock_entry_view_registers_subsequent_lots_and_links_supplier (inventory.tests.PhysicalAdjustmentTests.test_stock_entry_view_registers_subsequent_lots_and_links_supplier)
+BUG-005 y BUG-011: La vista /inventario/entrada/ permite registrar lotes posteriores con proveedor. ... ok
+test_warehouse_gets_403 (inventory.tests.PhysicalAdjustmentTests.test_warehouse_gets_403) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "2c389f44-b01c-4809-8114-5408917b51d1", "actor_identifier": "whadj@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:11.323955+00:00", "outcome": "REJECTED", "request_id": "498e2b4d982643ebb780e1203e0c5a52", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+ok
+test_zero_delta_is_rejected_by_form (inventory.tests.PhysicalAdjustmentTests.test_zero_delta_is_rejected_by_form) ... ok
+test_admin_registers_writeoff (inventory.tests.StockWriteOffTests.test_admin_registers_writeoff) ... ok
+test_damage_reason_requires_notes (inventory.tests.StockWriteOffTests.test_damage_reason_requires_notes) ... ok
+test_invalid_writeoff_reason_is_rejected_by_service (inventory.tests.StockWriteOffTests.test_invalid_writeoff_reason_is_rejected_by_service) ... ok
+test_quantity_exceeding_stock_is_rejected (inventory.tests.StockWriteOffTests.test_quantity_exceeding_stock_is_rejected) ... ok
+test_seller_gets_403 (inventory.tests.StockWriteOffTests.test_seller_gets_403) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "f9028633-2c55-45d2-8063-ee6ec14d6671", "actor_identifier": "sellerwo@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:11.574034+00:00", "outcome": "REJECTED", "request_id": "b297bd031bf54952a4b845d1a8e2e7b2", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+ok
+test_warehouse_accesses_writeoff_page (inventory.tests.StockWriteOffTests.test_warehouse_accesses_writeoff_page) ... ok
+test_admin_creates_supplier (inventory.tests.SupplierTests.test_admin_creates_supplier) ... ok
+test_admin_sees_supplier_list (inventory.tests.SupplierTests.test_admin_sees_supplier_list) ... ok
+test_admin_toggles_supplier_status (inventory.tests.SupplierTests.test_admin_toggles_supplier_status) ... ok
+test_duplicate_ruc_is_rejected (inventory.tests.SupplierTests.test_duplicate_ruc_is_rejected) ... ok
+test_non_admin_cannot_create_supplier (inventory.tests.SupplierTests.test_non_admin_cannot_create_supplier) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "4e461403-c564-43d0-be6e-a15bb267ad02", "actor_identifier": "whp@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:11.807907+00:00", "outcome": "REJECTED", "request_id": "0a334e9725c94e1784f35232430d28f8", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+ok
+test_non_admin_gets_403_on_toggle (inventory.tests.SupplierTests.test_non_admin_gets_403_on_toggle) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "4e461403-c564-43d0-be6e-a15bb267ad02", "actor_identifier": "whp@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:11.813943+00:00", "outcome": "REJECTED", "request_id": "8c64dd7be6674d65b3a746f14853ca0d", "target_id": "/inventario/proveedores/2597397f-5a2c-4ce0-a8bf-c90e6917c731/estado/", "target_type": "Endpoint"}
+ok
+test_search_filters_by_name (inventory.tests.SupplierTests.test_search_filters_by_name) ... ok
+test_seller_gets_403_on_supplier_list (inventory.tests.SupplierTests.test_seller_gets_403_on_supplier_list) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "bfb1364d-f1bf-444b-b6c8-5bab789ed335", "actor_identifier": "sellerp@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:11.832910+00:00", "outcome": "REJECTED", "request_id": "5ccca949570c414c9a78015dfde518ac", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+ok
+test_warehouse_sees_supplier_list (inventory.tests.SupplierTests.test_warehouse_sees_supplier_list) ... ok
+test_atomic_rollback_on_mid_transaction_database_failure_ct_rollback_01 (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_atomic_rollback_on_mid_transaction_database_failure_ct_rollback_01) ... ok
+test_downstream_sellability_lima_clock_and_fefo_tie_breakers (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_downstream_sellability_lima_clock_and_fefo_tie_breakers) ... ok
+test_eligible_products_queryset_includes_any_active_category_und_and_excludes_ineligible (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_eligible_products_queryset_includes_any_active_category_und_and_excludes_ineligible) ... ok
+test_empty_post_with_header_csrf_and_tampered_management_forms_do_not_crash_or_bind_empty (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_empty_post_with_header_csrf_and_tampered_management_forms_do_not_crash_or_bind_empty) ... ok
+test_ineligible_products_rejected_via_http_and_service_without_residue (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_ineligible_products_rejected_via_http_and_service_without_residue) ... ok
+test_lot_form_rejects_today_and_past_expiration_arabic_digits_and_does_not_mask_later_errors (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_lot_form_rejects_today_and_past_expiration_arabic_digits_and_does_not_mask_later_errors) ... ok
+test_nul_bytes_and_invalid_lot_types_are_rejected_without_db_crash (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_nul_bytes_and_invalid_lot_types_are_rejected_without_db_crash) ... ok
+test_role_matrix_cache_headers_and_rn06_consistency_across_queries (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_role_matrix_cache_headers_and_rn06_consistency_across_queries) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-14T21:42:16.273944+00:00", "outcome": "REJECTED", "request_id": "7d6f4f7ac7fe4da2b0330765dd86a98c", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-14T21:42:16.275457+00:00", "outcome": "REJECTED", "request_id": "dc3cfd4f1c194895b9776eb7d74218c3", "target_id": "/inventario/cargas/5d9e0e64-ebc6-466c-8a5e-de024d88a233/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-14T21:42:16.275457+00:00", "outcome": "REJECTED", "request_id": "d2d6e28359fe410abe566abc93a419a4", "target_id": "/inventario/carga-inicial/5d9e0e64-ebc6-466c-8a5e-de024d88a233/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-14T21:42:16.277659+00:00", "outcome": "REJECTED", "request_id": "590fd0943d8e4fe0a87b4555ddfc8f4e", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-14T21:42:16.278021+00:00", "outcome": "REJECTED", "request_id": "b13790ca990b4dc5865f80b4509683d8", "target_id": "/inventario/productos/cbb10e27-6083-4df1-adba-3eab3d41bc9c/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-14T21:42:16.278666+00:00", "outcome": "REJECTED", "request_id": "350e6b4f43ea44579265d4d4baadaaab", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-14T21:42:16.280172+00:00", "outcome": "REJECTED", "request_id": "5f64be0ed3464a91afbab4c61b8c745d", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c041e563-6615-4caa-91ef-8e01217f6733", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.285690+00:00", "outcome": "REJECTED", "request_id": "9ff97034b228408d933c8e713ff6682a", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c041e563-6615-4caa-91ef-8e01217f6733", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.288207+00:00", "outcome": "REJECTED", "request_id": "375dfa9a0ba7461c8201848a4251c67f", "target_id": "/inventario/cargas/5d9e0e64-ebc6-466c-8a5e-de024d88a233/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c041e563-6615-4caa-91ef-8e01217f6733", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.291217+00:00", "outcome": "REJECTED", "request_id": "f98231f309d740e6b903120676684858", "target_id": "/inventario/carga-inicial/5d9e0e64-ebc6-466c-8a5e-de024d88a233/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c041e563-6615-4caa-91ef-8e01217f6733", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.294225+00:00", "outcome": "REJECTED", "request_id": "1b860d9d777849eba49cb4b256c7959c", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c041e563-6615-4caa-91ef-8e01217f6733", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.300801+00:00", "outcome": "REJECTED", "request_id": "9fafc42fb1fb4a07bf80b044d9ea7411", "target_id": "/inventario/productos/cbb10e27-6083-4df1-adba-3eab3d41bc9c/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c041e563-6615-4caa-91ef-8e01217f6733", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.303802+00:00", "outcome": "REJECTED", "request_id": "82fc9d57eb4148e3b588c18451b7a761", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c041e563-6615-4caa-91ef-8e01217f6733", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.306834+00:00", "outcome": "REJECTED", "request_id": "9e78c2743ca44237aa9bd4d588fc93c6", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c041e563-6615-4caa-91ef-8e01217f6733", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.310364+00:00", "outcome": "REJECTED", "request_id": "c34302229c034df89c717140337403fa", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "27f533b0-7bae-427a-b2b9-ca07b0656819", "actor_identifier": "admin.audit05@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.315902+00:00", "outcome": "REJECTED", "request_id": "f4908c3d936742acb66a007bfbdb8acc", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "27f533b0-7bae-427a-b2b9-ca07b0656819", "actor_identifier": "admin.audit05@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.319428+00:00", "outcome": "REJECTED", "request_id": "cbb4ff7b06774301b2a88db9392e82a2", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+ok
+test_sparse_rows_weighted_cost_half_up_boundaries_and_constancia (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_sparse_rows_weighted_cost_half_up_boundaries_and_constancia) ... ok
+test_denied_invalid_and_stale_state_leave_no_partial_history (inventory.test_audit14h_initial_history.InitialHistoryTests.test_denied_invalid_and_stale_state_leave_no_partial_history) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "c0228150-c603-4c0d-9661-a9e16d006b89", "actor_identifier": "admin@history14h.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.570452+00:00", "outcome": "REJECTED", "request_id": "5f7b57f4febf493dad0968c7c4821756", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb940a3c-fd01-42c3-80a7-08a4ffdcc171", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.576987+00:00", "outcome": "REJECTED", "request_id": "84955ea4df884aa1b250e9fc5a3068ff", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+ok
+test_expiration_and_deactivation_do_not_rewrite_originals (inventory.test_audit14h_initial_history.InitialHistoryTests.test_expiration_and_deactivation_do_not_rewrite_originals) ... ok
+test_four_postwrite_failures_roll_back_all_business_tables (inventory.test_audit14h_initial_history.InitialHistoryTests.test_four_postwrite_failures_roll_back_all_business_tables) ... ok
+test_legacy_capacity_is_never_reported_as_original_quantity (inventory.test_audit14h_initial_history.InitialHistoryTests.test_legacy_capacity_is_never_reported_as_original_quantity) ... ok
+test_no_supplier_and_output_escaping_with_boundary_values (inventory.test_audit14h_initial_history.InitialHistoryTests.test_no_supplier_and_output_escaping_with_boundary_values) ... ok
+test_originals_survive_master_renames_adjustment_receipt_sale_and_loss (inventory.test_audit14h_initial_history.InitialHistoryTests.test_originals_survive_master_renames_adjustment_receipt_sale_and_loss) ... ok
+test_read_permissions_alias_cache_and_get_nonmutation (inventory.test_audit14h_initial_history.InitialHistoryTests.test_read_permissions_alias_cache_and_get_nonmutation) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb940a3c-fd01-42c3-80a7-08a4ffdcc171", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.822659+00:00", "outcome": "REJECTED", "request_id": "2a989b72d0aa41b385afea7cd74948a1", "target_id": "/inventario/cargas/cbc0f011-5874-4bdd-b124-73d41cf79431/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb940a3c-fd01-42c3-80a7-08a4ffdcc171", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.826701+00:00", "outcome": "REJECTED", "request_id": "2cdf952f6dbd445c91461d797979b69e", "target_id": "/inventario/cargas/cbc0f011-5874-4bdd-b124-73d41cf79431/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb940a3c-fd01-42c3-80a7-08a4ffdcc171", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.829737+00:00", "outcome": "REJECTED", "request_id": "55e61ea8de6d4b8ea5919c3c75033163", "target_id": "/inventario/carga-inicial/cbc0f011-5874-4bdd-b124-73d41cf79431/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb940a3c-fd01-42c3-80a7-08a4ffdcc171", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:16.832736+00:00", "outcome": "REJECTED", "request_id": "ab76c0580d2b4c0abd717d300bbd7e1e", "target_id": "/inventario/carga-inicial/cbc0f011-5874-4bdd-b124-73d41cf79431/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-14T21:42:16.837781+00:00", "outcome": "REJECTED", "request_id": "7b2f7628dd42427086aa08a19344bcc9", "target_id": "/inventario/cargas/cbc0f011-5874-4bdd-b124-73d41cf79431/", "target_type": "Endpoint"}
+ok
+test_compensating_discrepancy_between_lots_is_detected (inventory.test_audit14h2_ledger.LedgerTests.test_compensating_discrepancy_between_lots_is_detected) ... ok
+test_empty_period_year_boundaries_and_minute_end (inventory.test_audit14h2_ledger.LedgerTests.test_empty_period_year_boundaries_and_minute_end) ... ok
+test_incomplete_allocation_and_ambiguous_product_are_explicit (inventory.test_audit14h2_ledger.LedgerTests.test_incomplete_allocation_and_ambiguous_product_are_explicit) ... ok
+test_inconsistent_origin_link_never_passes_by_coincidental_total (inventory.test_audit14h2_ledger.LedgerTests.test_inconsistent_origin_link_never_passes_by_coincidental_total) ... ok
+test_invalid_dates_types_pages_and_repeated_keys_never_mutate_or_render_results (inventory.test_audit14h2_ledger.LedgerTests.test_invalid_dates_types_pages_and_repeated_keys_never_mutate_or_render_results) ... ok
+test_legacy_input_does_not_invent_opening_from_current_stock (inventory.test_audit14h2_ledger.LedgerTests.test_legacy_input_does_not_invent_opening_from_current_stock) ... ok
+test_negative_sequence_is_not_presented_as_trustworthy (inventory.test_audit14h2_ledger.LedgerTests.test_negative_sequence_is_not_presented_as_trustworthy) ... ok
+test_new_lot_seen_between_reads_degrades_to_unknown_without_crashing (inventory.test_audit14h2_ledger.LedgerTests.test_new_lot_seen_between_reads_degrades_to_unknown_without_crashing) ... ok
+test_roles_methods_inactive_product_and_empty_product (inventory.test_audit14h2_ledger.LedgerTests.test_roles_methods_inactive_product_and_empty_product) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "d87b54d3-f0f7-4166-a241-185360895bfb", "actor_identifier": "vendedor@ledger14h2.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:17.943980+00:00", "outcome": "REJECTED", "request_id": "3a5432afb0f6446a985d40c1b1a04dfe", "target_id": "/inventario/productos/5e028141-4838-44e8-a929-942c98f7cb86/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d87b54d3-f0f7-4166-a241-185360895bfb", "actor_identifier": "vendedor@ledger14h2.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:17.947714+00:00", "outcome": "REJECTED", "request_id": "786d5fd3b6fb4448b75e50b69a05b2ef", "target_id": "/inventario/productos/5e028141-4838-44e8-a929-942c98f7cb86/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-14T21:42:17.952727+00:00", "outcome": "REJECTED", "request_id": "a3d149b47f0644729327025b334535a1", "target_id": "/inventario/productos/5e028141-4838-44e8-a929-942c98f7cb86/movimientos/", "target_type": "Endpoint"}
+ok
+test_same_instant_pages25_preserve_period_and_full_totals (inventory.test_audit14h2_ledger.LedgerTests.test_same_instant_pages25_preserve_period_and_full_totals) ... ok
+test_three_origins_sale22_period_open20_close2 (inventory.test_audit14h2_ledger.LedgerTests.test_three_origins_sale22_period_open20_close2) ... ok
+test_written_case_real_balances_and_outgoing_filter (inventory.test_audit14h2_ledger.LedgerTests.test_written_case_real_balances_and_outgoing_filter) ... ok
+test_commercial_spaces_are_canonical_without_rewriting_legacy (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_commercial_spaces_are_canonical_without_rewriting_legacy) ... ok
+test_expired_or_inactive_confirmed_payload_replays_but_new_entry_rejects (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_expired_or_inactive_confirmed_payload_replays_but_new_entry_rejects) ... ok
+test_failure_after_each_write_rolls_back_every_business_table (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_failure_after_each_write_rolls_back_every_business_table) ... Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 749, in register_stock_entry
+    counter.save(update_fields=["last_number"])
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 750, in register_stock_entry
+    receipt = StockReceipt.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 759, in register_stock_entry
+    created_lots = Lot.objects.bulk_create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 3, in bulk_create
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 777, in register_stock_entry
+    StockReceiptLine.objects.bulk_create([
+  File "<string>", line 3, in bulk_create
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 786, in register_stock_entry
+    locked_product.save(update_fields=('average_cost', 'updated_at'))
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+ok
+test_invalid_inputs_keep_key_and_no_partial_state_then_correct (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_invalid_inputs_keep_key_and_no_partial_state_then_correct) ... ok
+test_order_independent_signature_and_distinct_actor_rejected (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_order_independent_signature_and_distinct_actor_rejected) ... ok
+test_permissions_on_post_and_receipt_and_counter_exhaustion (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_permissions_on_post_and_receipt_and_counter_exhaustion) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "b213f7b8-035a-4626-85ab-de68d7f2916b", "actor_identifier": "admin@receipt14g.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:18.900154+00:00", "outcome": "REJECTED", "request_id": "475c250addd54941b252a181d32616f8", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6c930dd-bba0-4c02-bc71-1b142912db8a", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:18.915785+00:00", "outcome": "REJECTED", "request_id": "8511d99831e442dea370d9e1e63b53c6", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6c930dd-bba0-4c02-bc71-1b142912db8a", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-14T21:42:18.920863+00:00", "outcome": "REJECTED", "request_id": "62694f42636b4c4d8332939d19880c17", "target_id": "/inventario/recepciones/c1d3827a-7932-468d-b0b8-ed63b4d76419/", "target_type": "Endpoint"}
+ok
+test_sale_fefo_keeps_two_receipt_origins_and_average_snapshot (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_sale_fefo_keeps_two_receipt_origins_and_average_snapshot) ... ok
+test_snapshots_and_original_quantity_survive_master_changes_and_adjustment (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_snapshots_and_original_quantity_survive_master_changes_and_adjustment) ... ok
+test_two_receipts_same_lot_replay_and_divergent_content (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_two_receipts_same_lot_replay_and_divergent_content) ... ok
+test_nullable_migration_preserves_old_rows_and_lot_instant_guard (inventory.test_audit14h_initial_history.InitialHistoryMigrationTests.test_nullable_migration_preserves_old_rows_and_lot_instant_guard) ... ok
+test_old_rows_remain_identical_without_receipt_backfill (inventory.test_audit14g_receipts.ReceiptMigrationTests.test_old_rows_remain_identical_without_receipt_backfill) ... ok
+
+----------------------------------------------------------------------
+Ran 80 tests in 15.365s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

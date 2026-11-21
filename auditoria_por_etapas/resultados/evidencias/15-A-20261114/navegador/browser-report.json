@@ -1,0 +1,81 @@
+{
+  "started_utc": "2026-11-15T03:01:07.953Z",
+  "browser_executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "checks": [
+    {
+      "id": "CHK-NAV-01-anonimo-login-cookies-almacenamiento",
+      "ok": true,
+      "ms": 1248,
+      "cacheControl": "max-age=0, no-cache, no-store, must-revalidate, private",
+      "storageEmpty": true,
+      "jsCookieHidden": true
+    },
+    {
+      "id": "CHK-NAV-02-bloqueo-rn18-5-fallos-en-chrome",
+      "ok": true,
+      "ms": 5541,
+      "lockoutText": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 15 minuto(s)."
+    },
+    {
+      "id": "CHK-NAV-03-roles-menus-403-y-cabeceras",
+      "ok": true,
+      "ms": 12252,
+      "sessionCookieFlags": {
+        "httpOnly": true,
+        "sameSite": "Lax"
+      },
+      "csrfCookieFlags": {
+        "httpOnly": true,
+        "sameSite": "Lax"
+      },
+      "adminMenuCount": 11,
+      "warehouseMenuCount": 8,
+      "productListCacheControl": "max-age=0, no-cache, no-store, must-revalidate, private",
+      "productNewMissingNoStoreHeader": true,
+      "xFrameOptions": "DENY"
+    },
+    {
+      "id": "CHK-NAV-04-05-vendedor-borrador-logout-y-ausencia-bloqueo300s",
+      "ok": true,
+      "ms": 10732,
+      "sellerSidebarHasOwnHistories": true,
+      "sellerHistRoutes200WithOwnIsolation": true,
+      "crossSellerReceipt404": true,
+      "draftScripts": [
+        "http://127.0.0.1:51160/static/identity/navigation.js"
+      ],
+      "navigationJsHasInactivityLock": false,
+      "logoutDiscardsDraftAndRevokesSession": true
+    },
+    {
+      "id": "CHK-NAV-06-admin-bypass-rn18-y-404-amigable",
+      "ok": true,
+      "ms": 8035,
+      "lockedOnCommercialLogin": true,
+      "bypassedViaDjangoAdminLogin": true,
+      "sessionBridgedToDashboard": true,
+      "friendly404WithoutTraceback": true
+    },
+    {
+      "id": "CHK-NAV-07-desactivacion-revoca-otra-sesion-en-chrome",
+      "ok": true,
+      "ms": 6552,
+      "evictedImmediatelyToLogin": true
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedReqs": [],
+  "serverErrors": [],
+  "observations": {
+    "doc02_04_has_state_confirm": true
+  },
+  "passed": 6,
+  "total": 6,
+  "ok": true,
+  "finished_utc": "2026-11-15T03:01:52.857Z"
+}

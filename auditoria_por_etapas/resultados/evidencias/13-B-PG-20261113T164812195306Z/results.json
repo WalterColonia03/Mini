@@ -1,0 +1,519 @@
+{
+  "pass": "primera",
+  "sublote": "13-B-04",
+  "at_utc": "2026-11-13T16:48:12.200039+00:00",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit13-pg-372a3108bbe7eff19297c798",
+  "database": "audit13_2b34882a53",
+  "port": 60984,
+  "cases": [
+    {
+      "id": "PG-01-admin-seven",
+      "expected": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "observed": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "ok": true
+    },
+    {
+      "id": "PG-02-warehouse-three",
+      "expected": {
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "observed": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3
+      },
+      "ok": true
+    },
+    {
+      "id": "PG-03-seller-none",
+      "expected": null,
+      "observed": null,
+      "ok": true
+    },
+    {
+      "id": "PG-04-next-Lima-day",
+      "expected": {
+        "sales_count": 1,
+        "sales_total": "92.22"
+      },
+      "observed": {
+        "sales_count": 1,
+        "sales_total": "92.22"
+      },
+      "ok": true
+    },
+    {
+      "id": "PG-05-linked-/inventario/stock/",
+      "expected": [
+        3,
+        6,
+        5
+      ],
+      "observed": [
+        3,
+        6,
+        5
+      ],
+      "ok": true
+    },
+    {
+      "id": "PG-05-linked-/productos/vencimientos/",
+      "expected": [
+        30,
+        6,
+        5,
+        11
+      ],
+      "observed": [
+        30,
+        6,
+        5,
+        11
+      ],
+      "ok": true
+    },
+    {
+      "id": "PG-05-linked-/ventas/historial/?fecha=2026-11-13",
+      "expected": [
+        3,
+        "60.06"
+      ],
+      "observed": [
+        3,
+        "60.06"
+      ],
+      "ok": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-0",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        21020,
+        9732
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-1",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        21020,
+        9732
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-2",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        21020,
+        9732
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-3",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        21020,
+        9732
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-4",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        21020,
+        9732
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-07-decimal-volume",
+      "expected": {
+        "sales_count": 30003,
+        "sales_total": "360.06",
+        "discount_total": "5.06"
+      },
+      "observed": {
+        "sales_count": 30003,
+        "sales_total": "360.06",
+        "discount_total": "5.06"
+      },
+      "ok": true
+    }
+  ],
+  "plan08_sha256": "eee0807a618a8995b07b524c63e3c1cefecd71aa8a74cc504da7147dbf508d4f",
+  "identity_views_sha256": "67c398ae422340b75cb49dbea48de10f0e9d4c81cf761c87752ca411fbdfdb5d",
+  "postgres_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "date_lima": "2026-11-13",
+  "isolation": "read committed",
+  "reader_pid": 21020,
+  "fixture": {
+    "run": "etapa13-pg-20261113T164812195306Z",
+    "date_lima": "2026-11-13",
+    "timezone": "America/Lima",
+    "accounts": {
+      "admin": "eec90111-e5af-499b-bd50-35574d817515",
+      "warehouse": "2692cbeb-c46a-4c2b-8422-cb81d10247f3",
+      "seller": "59bce72c-744d-4a2e-a3c4-147af4217df3",
+      "seller2": "edc87e1f-7f86-4a46-9af2-3a813a8e4a8f"
+    },
+    "products": {
+      "sin-lotes": "49e86968-9b8d-4cc1-ba3c-59d44aa54330",
+      "igual-minimo": "9ae92229-de34-446a-9bb1-c469a47b87cd",
+      "sobre-minimo": "df235cfc-ab3e-477c-a926-a8ff800e129c",
+      "solo-vencido": "98ee1195-28cb-4a6f-a635-8ef3fef075c1",
+      "mixto": "ec341449-b8c2-4f34-b297-165916bda91b",
+      "producto-inactivo": "947ad2ed-caf8-4d25-88ff-dcb2924fecdb",
+      "categoria-inactiva": "21370f79-6ab7-476c-8dfc-0f3d6264ec35",
+      "venta-integracion": "adbb7b9c-0107-483c-861c-3f67a8d2346d"
+    },
+    "lots": {
+      "A13-igual-minimo-0": "d2e16742-1100-406f-ad9e-b71021020921",
+      "A13-sobre-minimo-0": "6886fff4-4af5-44e0-ac07-d73d5aaa0709",
+      "A13-solo-vencido-0": "6081aa87-fb35-4238-9cdf-705a10e57a46",
+      "A13-solo-vencido-1": "1059b7b0-c287-4f82-b3ec-b110032ee431",
+      "A13-mixto-0": "b5f1f651-b428-400d-bcff-7357ac86d216",
+      "A13-mixto-1": "9ede4552-85ca-4137-a0dc-4d8867e66740",
+      "A13-mixto-2": "2a349064-2387-434a-86c8-8f7c5b939ef9",
+      "A13-mixto-3": "d809ace5-58d9-4b32-aa22-071bc5e7f48b",
+      "A13-mixto-4": "b1b51245-d268-407c-980a-a31e38e5ae0f",
+      "A13-producto-inactivo-0": "6786f10c-d8d1-4e7a-aa5f-9bf812f540f3",
+      "A13-producto-inactivo-1": "d987ae09-68f4-4ca2-8ba2-0f3315a95bd1",
+      "A13-categoria-inactiva-0": "832e4caf-92e6-4985-9088-b529bb368194",
+      "A13-categoria-inactiva-1": "096ecff8-1abd-4ea8-913c-2753d0880a57",
+      "A13-venta-integracion-0": "cab73202-ef67-4c38-ba71-6d5c8946c2f8"
+    },
+    "sales": [
+      {
+        "name": "prev-boundary",
+        "id": "71f7dfba-69cb-4680-88d8-e4aa898c1441",
+        "at_lima": "2026-11-12 23:59:59.999999-05:00",
+        "total": "91.11",
+        "discount": "1.11",
+        "seller": "seller2@audit13.invalid",
+        "shift": "cab1b627-c343-4431-98ba-f329d3a4dafc"
+      },
+      {
+        "name": "start-boundary",
+        "id": "47746eae-aca9-4467-9097-5255fced21de",
+        "at_lima": "2026-11-13 00:00:00-05:00",
+        "total": "10.01",
+        "discount": "0.01",
+        "seller": "seller2@audit13.invalid",
+        "shift": "cab1b627-c343-4431-98ba-f329d3a4dafc"
+      },
+      {
+        "name": "today-other",
+        "id": "83191bbc-1968-41b2-bf84-56993e62849e",
+        "at_lima": "2026-11-13 10:00:00-05:00",
+        "total": "20.02",
+        "discount": "2.02",
+        "seller": "seller@audit13.invalid",
+        "shift": "d4f436b6-2a1b-419a-a2fa-d1e873240074"
+      },
+      {
+        "name": "end-boundary",
+        "id": "136d987b-f561-4986-b2c2-67e933370ef3",
+        "at_lima": "2026-11-13 23:59:59.999999-05:00",
+        "total": "30.03",
+        "discount": "3.03",
+        "seller": "seller@audit13.invalid",
+        "shift": "d4f436b6-2a1b-419a-a2fa-d1e873240074"
+      },
+      {
+        "name": "next-boundary",
+        "id": "fa8a706f-f901-4924-8f36-bc2d50d923e1",
+        "at_lima": "2026-11-14 00:00:00-05:00",
+        "total": "92.22",
+        "discount": "2.22",
+        "seller": "seller@audit13.invalid",
+        "shift": "d4f436b6-2a1b-419a-a2fa-d1e873240074"
+      }
+    ],
+    "open_shift": "d4f436b6-2a1b-419a-a2fa-d1e873240074",
+    "closed_shift": "cab1b627-c343-4431-98ba-f329d3a4dafc",
+    "expected_summary": {
+      "sales_count": 3,
+      "sales_total": "60.06",
+      "discount_total": "5.06",
+      "open_shifts": 1,
+      "low_stock": 3,
+      "expiring": 6,
+      "expired": 5
+    },
+    "fixture_note": "Sales/expired lots inserted as synthetic historical snapshots via ORM; not proof of historical checkout or validation. Integration probe separately uses services."
+  },
+  "writer_pid": 9732,
+  "volume": {
+    "synthetic_added": {
+      "products": 2000,
+      "lots": 20000,
+      "sales": 30000
+    },
+    "total_rows": {
+      "products": 2008,
+      "lots": 20014,
+      "sales": 30005
+    },
+    "roles": {
+      "ADMIN": {
+        "query_count": 1,
+        "samples_ms": [
+          49.71200000727549,
+          48.123900007340126,
+          50.03749999741558,
+          49.980399999185465,
+          50.70600000908598,
+          53.99739999847952,
+          69.28150000749156,
+          61.99100000958424,
+          59.45520001114346,
+          71.03150000330061,
+          54.54280000412837,
+          65.08810000377707,
+          62.60850001126528,
+          63.39270000171382,
+          55.741499993018806,
+          69.6648000011919,
+          74.07119999697898,
+          61.71919999178499,
+          70.88610000209883,
+          62.34519999998156,
+          59.01769999763928
+        ],
+        "median_ms": 61.71919999178499,
+        "sample_p95_ms": 71.03150000330061,
+        "max_ms": 74.07119999697898
+      },
+      "ALMACENERO": {
+        "query_count": 1,
+        "samples_ms": [
+          33.93680001317989,
+          31.411799995112233,
+          32.53110000514425,
+          32.09649999917019,
+          33.67679999792017,
+          32.69239999644924,
+          36.455699999351054,
+          31.891600010567345,
+          28.40450000076089,
+          26.424199997563846,
+          31.61499999987427,
+          31.754499999806285,
+          26.91469999263063,
+          29.805800004396588,
+          29.591700003948063,
+          25.582200003555045,
+          28.93400000175461,
+          26.666299992939457,
+          29.866900003980845,
+          35.08329999749549,
+          31.17950000159908
+        ],
+        "median_ms": 31.411799995112233,
+        "sample_p95_ms": 35.08329999749549,
+        "max_ms": 36.455699999351054
+      },
+      "VENDEDOR": {
+        "query_count": 0,
+        "samples_ms": [
+          0.029100003303028643,
+          0.005399997462518513,
+          0.0039000005926936865,
+          0.0036999990697950125,
+          0.0039000005926936865,
+          0.0039000005926936865,
+          0.0034999975468963385,
+          0.0034999975468963385,
+          0.0034999975468963385,
+          0.0037999998312443495,
+          0.0035999983083456755,
+          0.0034999975468963385,
+          0.0034999975468963385,
+          0.0034999975468963385,
+          0.0034999975468963385,
+          0.0035999983083456755,
+          0.0034999975468963385,
+          0.0034999975468963385,
+          0.0034999975468963385,
+          0.0034999975468963385,
+          0.0034999975468963385
+        ],
+        "median_ms": 0.0034999975468963385,
+        "sample_p95_ms": 0.005399997462518513,
+        "max_ms": 0.029100003303028643
+      }
+    },
+    "cache": "no app cache; warmed local DB; sequential observations"
+  },
+  "error": "setup_test_environment() was already called and can't be called again without first calling teardown_test_environment().",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\auditoria_por_etapas\\resultados\\soporte\\audit13_pg.py\", line 154, in <module>\n    call_command('test','identity.test_audit13_summary','sales.test_audit13_history_boundaries',interactive=False,verbosity=2,stdout=log,stderr=log)\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\core\\management\\__init__.py\", line 194, in call_command\n    return command.execute(*args, **defaults)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\core\\management\\base.py\", line 464, in execute\n    output = self.handle(*args, **options)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\core\\management\\commands\\test.py\", line 63, in handle\n    failures = test_runner.run_tests(test_labels)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\test\\runner.py\", line 1072, in run_tests\n    self.setup_test_environment()\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\test\\runner.py\", line 859, in setup_test_environment\n    setup_test_environment(debug=self.debug_mode)\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\test\\utils.py\", line 128, in setup_test_environment\n    raise RuntimeError(\nRuntimeError: setup_test_environment() was already called and can't be called again without first calling teardown_test_environment().\n",
+  "port_closed": true,
+  "finished_utc": "2026-11-13T16:48:34.763213+00:00"
+}

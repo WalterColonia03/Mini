@@ -1,0 +1,32 @@
+{
+  "criteria": [
+    "INV01a/CA01-04",
+    "08:873 receipt access",
+    "PROP-03-RET-T05"
+  ],
+  "routes": [
+    "/inventario/carga-inicial/",
+    "/inventario/stock/",
+    "/inventario/cargas/<uuid>/",
+    "/inventario/carga-inicial/<uuid>/creada/"
+  ],
+  "fields": [
+    "product",
+    "supplier",
+    "lot number/quantity/cost/expiration"
+  ],
+  "roles": [
+    "warehouse submits and recovers",
+    "admin reads receipt",
+    "seller denied receipt"
+  ],
+  "cases": [
+    "abort POST before delivery",
+    "commit POST then abort browser response",
+    "replay exact payload after response loss",
+    "recover through stock menu",
+    "HALF_UP four-decimal tie",
+    "two-decimal display tie",
+    "receipt alias permissions"
+  ]
+}

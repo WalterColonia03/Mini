@@ -1,0 +1,52 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Editar empleado{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2 class="mb-1">Editar empleado</h2>
+    <p class="text-muted mb-4">{{ account.display_name }} · {% if account.is_active %}Activo{% else %}Inactivo{% endif %}</p>
+
+    {% if lockout_until %}
+      <div class="alert alert-warning" role="status">
+        Cuenta con bloqueo temporal vigente por intentos fallidos (hasta {{ lockout_until|date:"d/m/Y H:i" }}). Renombrar el correo o reactivar la cuenta conserva este bloqueo; marca «Desbloquear cuenta explícitamente» para levantarlo de forma auditada.
+      </div>
+    {% endif %}
+
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger" role="alert">
+        {% for error in form.non_field_errors %}{{ error }}<br>{% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% for field in form %}
+      {% if field.field.widget.input_type == 'checkbox' %}
+      <div class="mb-3 field-checkbox">
+        <label for="{{ field.id_for_label }}" class="checkbox-label">
+          {{ field }}
+          <span>{{ field.label }}</span>
+        </label>
+        {% if field.errors %}<div id="{{ field.auto_id }}_error" class="text-danger small mt-1" role="alert">{{ field.errors.0 }}</div>{% endif %}
+        {% if field.help_text %}<div id="{{ field.auto_id }}_helptext" class="form-text">{{ field.help_text }}</div>{% endif %}
+      </div>
+      {% else %}
+      <div class="mb-3">
+        <label for="{{ field.id_for_label }}" class="form-label fw-semibold">{{ field.label }}</label>
+        {{ field }}
+        {% if field.errors %}<div id="{{ field.auto_id }}_error" class="text-danger small mt-1" role="alert">{{ field.errors.0 }}</div>{% endif %}
+        {% if field.help_text %}<div id="{{ field.auto_id }}_helptext" class="form-text">{{ field.help_text }}</div>{% endif %}
+      </div>
+      {% endif %}
+      {% endfor %}
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        <a href="{% url 'employee-list' %}" class="btn btn-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

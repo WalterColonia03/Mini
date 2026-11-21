@@ -1,0 +1,82 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - paragraph: Catálogo
+    - link "Productos":
+      - /url: /productos/
+      - generic: ☰
+      - generic: Productos
+    - link "Registrar producto":
+      - /url: /productos/nuevo/
+      - generic: ▦
+      - generic: Registrar producto
+    - link "Categorías":
+      - /url: /productos/categorias/
+      - generic: ▮
+      - generic: Categorías
+    - paragraph: Inventario
+    - link "Proveedores":
+      - /url: /inventario/proveedores/
+      - generic: ✦
+      - generic: Proveedores
+    - link "Ver inventario y alertas":
+      - /url: /inventario/stock/
+      - generic: ☷
+      - generic: Ver inventario y alertas
+    - link "Vencimientos de lotes":
+      - /url: /productos/vencimientos/
+      - generic: ⏳
+      - generic: Vencimientos de lotes
+    - link "Ajuste físico":
+      - /url: /inventario/ajustes/nuevo/
+      - generic: ⏫
+      - generic: Ajuste físico
+    - paragraph: Personal
+    - link "Empleados":
+      - /url: /empleados/
+      - generic: ☺
+      - generic: Empleados
+    - paragraph: Caja y ventas
+    - link "Historial de turnos":
+      - /url: /caja/turnos/
+      - generic: ☰
+      - generic: Historial de turnos
+    - link "Historial de ventas":
+      - /url: /ventas/historial/
+      - generic: ☰
+      - generic: Historial de ventas
+  - generic: A
+  - strong: Audit13 Administrador admin
+  - generic: Administrador
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Vencimientos de lotes" [level=1]
+  - generic: Audit13 Administrador admin
+  - generic: Administrador
+- main:
+  - heading "Lotes vencidos y próximos a vencer" [level=2]
+  - generic: Mostrar lotes vencidos y los que vencen en los próximos
+  - spinbutton "Mostrar lotes vencidos y los que vencen en los próximos": "30"
+  - generic: días
+  - button "Filtrar"
+  - paragraph:
+    - text: "Fecha de corte:"
+    - strong: 13 de diciembre de 2026
+    - text: · El sistema considera vencido un lote desde su fecha de vencimiento y lo bloquea para la venta. Al vender, descuenta primero los lotes vigentes con vencimiento más próximo.
+  - generic: No hay lotes con unidades disponibles que estén vencidos o venzan en los próximos 30 días.
+- contentinfo: Minimarket · Gestión de bodega

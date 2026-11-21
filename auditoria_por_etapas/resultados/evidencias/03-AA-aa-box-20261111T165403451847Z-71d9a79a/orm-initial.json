@@ -1,0 +1,259 @@
+{
+  "catalog.Category": [
+    {
+      "id": "7a245832-335f-4bd7-b020-6a23244a2bc1",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    },
+    {
+      "id": "aaf6da59-4a40-4a79-a717-a8e0570d79a4",
+      "name": "Suspendida",
+      "name_normalized": "suspendida",
+      "is_active": false
+    },
+    {
+      "id": "bb498c88-8a67-4ba8-8945-670585c920a2",
+      "name": "Productos enlatados",
+      "name_normalized": "productos enlatados",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "name": "Unidad CC",
+      "barcode": "012345678905",
+      "category_id": "7a245832-335f-4bd7-b020-6a23244a2bc1",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "75118a3d-399f-4227-842f-d962cabee8d3",
+      "name": "Interno BB",
+      "barcode": "00-BB",
+      "category_id": "7a245832-335f-4bd7-b020-6a23244a2bc1",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6",
+      "name": "Unidad AA",
+      "barcode": "4006381333931",
+      "category_id": "7a245832-335f-4bd7-b020-6a23244a2bc1",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "0252e772-943e-4e9f-bd0e-012e9c08fa82",
+      "product_id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "available_quantity": 2,
+      "initial_quantity": 2
+    },
+    {
+      "id": "13428cf9-5c53-43e9-b5a5-97334c62875b",
+      "product_id": "75118a3d-399f-4227-842f-d962cabee8d3",
+      "available_quantity": 2,
+      "initial_quantity": 2
+    },
+    {
+      "id": "72b34bed-8619-42ed-aa87-82098747fdb4",
+      "product_id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "available_quantity": 6,
+      "initial_quantity": 7
+    },
+    {
+      "id": "98a8084f-843f-4f5f-a67e-22d7c71bf20e",
+      "product_id": "75118a3d-399f-4227-842f-d962cabee8d3",
+      "available_quantity": 5,
+      "initial_quantity": 6
+    },
+    {
+      "id": "dd821c76-3157-4a31-9e42-9f0d27b3000d",
+      "product_id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6",
+      "available_quantity": 2,
+      "initial_quantity": 2
+    },
+    {
+      "id": "ed4ed146-ec0f-49b8-975e-d980c7068dea",
+      "product_id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6",
+      "available_quantity": 4,
+      "initial_quantity": 5
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "281f9d2a-864d-4b3c-8b73-9dba39e543e1",
+      "product_id": "75118a3d-399f-4227-842f-d962cabee8d3"
+    },
+    {
+      "id": "35043735-9491-49e2-ae0a-90f2e73c1c0a",
+      "product_id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286"
+    },
+    {
+      "id": "b3fa3025-f72c-4545-ab40-c0b206c56b71",
+      "product_id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "dd0d7a56-7ec5-457f-9916-bbc4a22a4fe5",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [
+    {
+      "id": "16d5c1c4-fa57-4e78-bd82-7f3596f0afab",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    },
+    {
+      "id": "f19092d5-1b30-4005-92a7-3c3c9d7e9753",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    },
+    {
+      "id": "f5ab67db-ff08-4d11-a6b7-6cd09ca32dde",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    }
+  ],
+  "sales.SaleLine": [
+    {
+      "id": "3b45a9f3-b4c7-4cc7-9435-63025faf75ef",
+      "product_id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6",
+      "product_snapshot_name": "Unidad AA",
+      "product_snapshot_barcode": "4006381333931",
+      "unit_price": "3.00",
+      "quantity": 1
+    },
+    {
+      "id": "a71182e6-39d9-47ff-a70f-1cd9594e3ead",
+      "product_id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "product_snapshot_name": "Unidad CC",
+      "product_snapshot_barcode": "012345678905",
+      "unit_price": "3.00",
+      "quantity": 1
+    },
+    {
+      "id": "dd82305b-e22d-4cfe-b008-97543910915c",
+      "product_id": "75118a3d-399f-4227-842f-d962cabee8d3",
+      "product_snapshot_name": "Interno BB",
+      "product_snapshot_barcode": "00-BB",
+      "unit_price": "3.00",
+      "quantity": 1
+    }
+  ],
+  "sales.SaleDraft": [
+    {
+      "id": "0bbe6376-b38a-4ce6-a7f8-05b4895d0ac7",
+      "status": "DISCARDED"
+    },
+    {
+      "id": "11a7f3a1-2000-4805-b9e1-753dade5fb78",
+      "status": "DISCARDED"
+    },
+    {
+      "id": "37360f71-ec47-4dd5-992f-7e49a69d800b",
+      "status": "DISCARDED"
+    }
+  ],
+  "sales.SaleDraftLine": [
+    {
+      "id": "5e3367b3-5cb7-42b1-802e-b445353b5f2d",
+      "draft_id": "37360f71-ec47-4dd5-992f-7e49a69d800b",
+      "product_id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6",
+      "quantity": 1,
+      "unit_price": "3.00"
+    },
+    {
+      "id": "7e57c6ac-49f9-47cc-828c-f1b7dbb3e03d",
+      "draft_id": "11a7f3a1-2000-4805-b9e1-753dade5fb78",
+      "product_id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "quantity": 1,
+      "unit_price": "3.00"
+    },
+    {
+      "id": "f3f8ee00-93de-421d-bccd-8f0be7efb9e5",
+      "draft_id": "0bbe6376-b38a-4ce6-a7f8-05b4895d0ac7",
+      "product_id": "75118a3d-399f-4227-842f-d962cabee8d3",
+      "quantity": 1,
+      "unit_price": "3.00"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "barcode_normalized": "012345678905",
+      "search_name": "unidad cc",
+      "average_cost": "1.0000"
+    },
+    {
+      "id": "75118a3d-399f-4227-842f-d962cabee8d3",
+      "barcode_normalized": "00-bb",
+      "search_name": "interno bb",
+      "average_cost": "1.0000"
+    },
+    {
+      "id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6",
+      "barcode_normalized": "4006381333931",
+      "search_name": "unidad aa",
+      "average_cost": "1.0000"
+    }
+  ],
+  "identity": [
+    {
+      "id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "barcode_type": "GTIN"
+    },
+    {
+      "id": "75118a3d-399f-4227-842f-d962cabee8d3",
+      "barcode_type": "INTERNAL"
+    },
+    {
+      "id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6",
+      "barcode_type": "GTIN"
+    }
+  ],
+  "catalog.ProductBarcodeKey": [
+    {
+      "product_id": "75118a3d-399f-4227-842f-d962cabee8d3",
+      "reading_key": "00-bb"
+    },
+    {
+      "product_id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "reading_key": "00012345678905"
+    },
+    {
+      "product_id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "reading_key": "0012345678905"
+    },
+    {
+      "product_id": "0a517557-b1b5-4b4e-bd02-ad180e6fa286",
+      "reading_key": "012345678905"
+    },
+    {
+      "product_id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6",
+      "reading_key": "04006381333931"
+    },
+    {
+      "product_id": "e165d198-ebbd-4d2e-b4b8-cb4a9a3b1ad6",
+      "reading_key": "4006381333931"
+    }
+  ]
+}

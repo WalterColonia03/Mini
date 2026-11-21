@@ -1,0 +1,55 @@
+{
+  "checks": [
+    "service_disabled_read_302",
+    "service_disabled_write_302",
+    "service_disabled_no_writes",
+    "service_old_cookie_revoked_after_reactivation",
+    "raw_disabled_read_302",
+    "raw_disabled_write_302",
+    "raw_disabled_no_writes"
+  ],
+  "observations": [
+    {
+      "mode": "service",
+      "disabled": {
+        "active": false,
+        "account_sessions": 0
+      }
+    },
+    {
+      "mode": "service",
+      "after_denial": {
+        "active": false,
+        "account_sessions": 0
+      }
+    },
+    {
+      "mode": "service",
+      "replay_status": 302
+    },
+    {
+      "mode": "raw",
+      "disabled": {
+        "active": false,
+        "account_sessions": 1
+      }
+    },
+    {
+      "mode": "raw",
+      "after_denial": {
+        "active": false,
+        "account_sessions": 1
+      }
+    },
+    {
+      "mode": "raw",
+      "replay_status": 200
+    }
+  ],
+  "screenshots": [
+    "04D-service-login-required.png"
+  ],
+  "page_errors": [],
+  "chrome": "157.0.8103.78",
+  "error": "raw_old_cookie_revoked_after_reactivation\n\n200 !== 302\n"
+}

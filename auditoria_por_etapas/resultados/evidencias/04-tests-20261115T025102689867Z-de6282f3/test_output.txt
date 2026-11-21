@@ -1,0 +1,542 @@
+Found 155 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_receipt_routes_emit_no_store_and_detail_panel_layout_classes (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_receipt_routes_emit_no_store_and_detail_panel_layout_classes) ... ok
+test_redirected_login_with_non_warehouse_role_denies_without_writes (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_redirected_login_with_non_warehouse_role_denies_without_writes) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "61b01918-f397-4e8f-be7d-a2cae2066c92", "actor_identifier": "admin-aj@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:07.288172+00:00", "outcome": "REJECTED", "request_id": "8bdd05a794404c61bbfc8b43ba4d91cd", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "61b01918-f397-4e8f-be7d-a2cae2066c92", "actor_identifier": "admin-aj@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:07.295075+00:00", "outcome": "REJECTED", "request_id": "da26c0570f2142e88c03ecff2f2b9953", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+ok
+test_service_rejects_anonymous_inactive_and_stale_actor_instances (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_service_rejects_anonymous_inactive_and_stale_actor_instances) ... ok
+test_surviving_inactive_session_is_logged_out_before_view_or_service (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_surviving_inactive_session_is_logged_out_before_view_or_service) ... identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/entrada/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:07.505604+00:00", "outcome": "REJECTED", "request_id": "1ee657975dbc4203a0bd0a8b27e50e8a", "target_id": "b915cb10-3ddc-4df3-88a8-321beb6d1a12", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:07.506139+00:00", "outcome": "REJECTED", "request_id": "1ee657975dbc4203a0bd0a8b27e50e8a", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:07.508389+00:00", "outcome": "REJECTED", "request_id": "a74e2ff3ea2e430fb7406e80c8fc78c3", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:07.510579+00:00", "outcome": "REJECTED", "request_id": "da8eed629c3d45f1b5c0b04cec7e147a", "target_id": "/inventario/cargas/0f93c927-4232-405e-b688-7a9abfc6015c/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/entrada/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:07.536930+00:00", "outcome": "REJECTED", "request_id": "a74dd3477a0a460da98f5bd5cba53337", "target_id": "0f3aee21-4820-461e-8e58-3ca6ce125d95", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:07.539446+00:00", "outcome": "REJECTED", "request_id": "a74dd3477a0a460da98f5bd5cba53337", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inicio/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:07.545506+00:00", "outcome": "REJECTED", "request_id": "82890b0d9e82419781ebc219794fc4b3", "target_id": "b915cb10-3ddc-4df3-88a8-321beb6d1a12", "target_type": "Session"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:07.550537+00:00", "outcome": "REJECTED", "request_id": "ea970479bfb74a8097cd80ceb7c0d09b", "target_id": "b915cb10-3ddc-4df3-88a8-321beb6d1a12", "target_type": "Session"}
+ok
+test_create_view_empty_post_shows_errors_shifts_autofocus_and_handles_two_tab_toggle (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_create_view_empty_post_shows_errors_shifts_autofocus_and_handles_two_tab_toggle) ... ok
+test_duplicate_ruc_rejected_even_when_existing_supplier_is_inactive (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_duplicate_ruc_rejected_even_when_existing_supplier_is_inactive) ... ok
+test_inactive_supplier_rejected_without_silent_none_and_history_preserved (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_inactive_supplier_rejected_without_silent_none_and_history_preserved) ... ok
+test_model_and_form_enforce_ascii_ruc_and_distinguish_sunat_disclaimer (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_model_and_form_enforce_ascii_ruc_and_distinguish_sunat_disclaimer) ... ok
+test_model_form_and_service_reject_bad_names_and_phones (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_model_form_and_service_reject_bad_names_and_phones) ... ok
+test_role_matrix_nav_headers_and_unimplemented_edit_routes (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_role_matrix_nav_headers_and_unimplemented_edit_routes) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:08.123120+00:00", "outcome": "REJECTED", "request_id": "8fb527c4a70344c296da9b62dc2042d3", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:08.124639+00:00", "outcome": "REJECTED", "request_id": "7aa7f031c83c431290d9a16e518f3498", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:08.125641+00:00", "outcome": "REJECTED", "request_id": "3bac31e43e1f462985b852e8d50f11fc", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:08.127151+00:00", "outcome": "REJECTED", "request_id": "40b9c229a129433fb27a1c2678a2fe60", "target_id": "/inventario/proveedores/17eb801e-08a3-4655-b457-8a79282da649/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a8e029c1-3e90-4193-8d30-715195a59010", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:08.149467+00:00", "outcome": "REJECTED", "request_id": "78d59714d6e84236992d2c7c38338150", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a8e029c1-3e90-4193-8d30-715195a59010", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:08.154509+00:00", "outcome": "REJECTED", "request_id": "f2bf9a0b6d16478bacd45acb5715d767", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a8e029c1-3e90-4193-8d30-715195a59010", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:08.160495+00:00", "outcome": "REJECTED", "request_id": "2ab6ca3b2c1d41bbac3792e22b1b6dda", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a8e029c1-3e90-4193-8d30-715195a59010", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:08.167499+00:00", "outcome": "REJECTED", "request_id": "0fe74a1c7b4545f98bdb017eb2312856", "target_id": "/inventario/proveedores/17eb801e-08a3-4655-b457-8a79282da649/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "5b2385c6-0aa8-4d1a-8898-18db36137534", "actor_identifier": "warehouse.audit04@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:08.190640+00:00", "outcome": "REJECTED", "request_id": "9f2984188e5a4918bd9535c46b46c9d3", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "5b2385c6-0aa8-4d1a-8898-18db36137534", "actor_identifier": "warehouse.audit04@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:08.196970+00:00", "outcome": "REJECTED", "request_id": "cf4778e301aa4551a1e9f88e9f425e0c", "target_id": "/inventario/proveedores/17eb801e-08a3-4655-b457-8a79282da649/estado/", "target_type": "Endpoint"}
+ok
+test_search_label_placement_whitespace_collapse_and_nul_guard (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_search_label_placement_whitespace_collapse_and_nul_guard) ... ok
+test_services_block_anonymous_non_admin_and_stale_revoked_admin (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_services_block_anonymous_non_admin_and_stale_revoked_admin) ... ok
+test_toggle_service_handles_idempotency_stale_instance_and_missing_supplier (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_toggle_service_handles_idempotency_stale_instance_and_missing_supplier) ... ok
+test_anonymous_session_without_identity_is_preserved (inventory.test_audit04d_session.SupplierSessionRevocationTests.test_anonymous_session_without_identity_is_preserved) ... ok
+test_normal_deactivation_revokes_even_without_intermediate_request (inventory.test_audit04d_session.SupplierSessionRevocationTests.test_normal_deactivation_revokes_even_without_intermediate_request) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:08.821300+00:00", "outcome": "REJECTED", "request_id": "92d327fec32f45d786e8ecfb3625287c", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+ok
+test_surviving_identity_is_removed_and_cannot_revive (inventory.test_audit04d_session.SupplierSessionRevocationTests.test_surviving_identity_is_removed_and_cannot_revive) ... identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:08.986839+00:00", "outcome": "REJECTED", "request_id": "945d433041b94d45b47bae2411c923e0", "target_id": "dab84939-89cc-44f7-85a4-79a52d75de84", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:08.986839+00:00", "outcome": "REJECTED", "request_id": "945d433041b94d45b47bae2411c923e0", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:08.991163+00:00", "outcome": "REJECTED", "request_id": "698d4461930b4f848ab272f1e5b41e22", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/nuevo/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:09.003568+00:00", "outcome": "REJECTED", "request_id": "25edb57332044b71a09123fc5abeeb0d", "target_id": "dab84939-89cc-44f7-85a4-79a52d75de84", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:09.004673+00:00", "outcome": "REJECTED", "request_id": "25edb57332044b71a09123fc5abeeb0d", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:09.008834+00:00", "outcome": "REJECTED", "request_id": "2a5c60f95eb8463884a1909a99105e9a", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/nuevo/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:09.018831+00:00", "outcome": "REJECTED", "request_id": "fab77a7fbfcd4473ba5e260268411e37", "target_id": "dab84939-89cc-44f7-85a4-79a52d75de84", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:09.019841+00:00", "outcome": "REJECTED", "request_id": "fab77a7fbfcd4473ba5e260268411e37", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:09.023891+00:00", "outcome": "REJECTED", "request_id": "0aa1a07a24d34b04b88afce32a03367a", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/5ac9420b-3530-421f-9767-db0496aa2a6e/estado/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:09.035441+00:00", "outcome": "REJECTED", "request_id": "b990d10ef3e744ab80913e2fb07ba531", "target_id": "dab84939-89cc-44f7-85a4-79a52d75de84", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:09.036952+00:00", "outcome": "REJECTED", "request_id": "b990d10ef3e744ab80913e2fb07ba531", "target_id": "/inventario/proveedores/5ac9420b-3530-421f-9767-db0496aa2a6e/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:09.041259+00:00", "outcome": "REJECTED", "request_id": "d50e6f4cf8b147a2aa117f0b216e301c", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:09.050202+00:00", "outcome": "REJECTED", "request_id": "fac0de7f153c416ca271e8b572c6b4f7", "target_id": "dab84939-89cc-44f7-85a4-79a52d75de84", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:09.057720+00:00", "outcome": "REJECTED", "request_id": "b2c04e5f28534bef9de04488a52457cc", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inicio/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:51:09.070926+00:00", "outcome": "REJECTED", "request_id": "0ad67b8bd8d84fd7bc57d61a7f832ad2", "target_id": "dab84939-89cc-44f7-85a4-79a52d75de84", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:09.075674+00:00", "outcome": "REJECTED", "request_id": "c77e7c36c0134bfca7b42e254bf273bd", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+ok
+test_atomic_rollback_on_mid_transaction_database_failure_ct_rollback_01 (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_atomic_rollback_on_mid_transaction_database_failure_ct_rollback_01) ... ok
+test_downstream_sellability_lima_clock_and_fefo_tie_breakers (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_downstream_sellability_lima_clock_and_fefo_tie_breakers) ... ok
+test_eligible_products_queryset_includes_any_active_category_und_and_excludes_ineligible (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_eligible_products_queryset_includes_any_active_category_und_and_excludes_ineligible) ... ok
+test_empty_post_with_header_csrf_and_tampered_management_forms_do_not_crash_or_bind_empty (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_empty_post_with_header_csrf_and_tampered_management_forms_do_not_crash_or_bind_empty) ... ok
+test_ineligible_products_rejected_via_http_and_service_without_residue (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_ineligible_products_rejected_via_http_and_service_without_residue) ... ok
+test_lot_form_rejects_today_and_past_expiration_arabic_digits_and_does_not_mask_later_errors (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_lot_form_rejects_today_and_past_expiration_arabic_digits_and_does_not_mask_later_errors) ... ok
+test_nul_bytes_and_invalid_lot_types_are_rejected_without_db_crash (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_nul_bytes_and_invalid_lot_types_are_rejected_without_db_crash) ... ok
+test_role_matrix_cache_headers_and_rn06_consistency_across_queries (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_role_matrix_cache_headers_and_rn06_consistency_across_queries) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:15.014056+00:00", "outcome": "REJECTED", "request_id": "bad5e6c51cee424392f1aa8f421b8c53", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:15.014573+00:00", "outcome": "REJECTED", "request_id": "953c814b1f5b4233a44645c4d6b89fed", "target_id": "/inventario/cargas/aed570d6-bc70-4254-b89d-feaf5e281997/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:15.016026+00:00", "outcome": "REJECTED", "request_id": "46f06994a4194d039a2ca2e79eaafd88", "target_id": "/inventario/carga-inicial/aed570d6-bc70-4254-b89d-feaf5e281997/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:15.017027+00:00", "outcome": "REJECTED", "request_id": "0e1cabbfe8984c2b9de0e4a9327d62ac", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:15.018148+00:00", "outcome": "REJECTED", "request_id": "21a5aaf27d444ae08ddce63818e8c391", "target_id": "/inventario/productos/665cff1b-8eed-4aad-89fd-fb0a9a37bf8f/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:15.019147+00:00", "outcome": "REJECTED", "request_id": "c2643a05af0a4cfb980432db52810863", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:15.021148+00:00", "outcome": "REJECTED", "request_id": "1b573c53308744cd852cda0257f4fa54", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3f320d6-5209-45cc-8a2e-10804713f16b", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.028694+00:00", "outcome": "REJECTED", "request_id": "42d221cadb9a4eee8c05fe84064a1cbd", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3f320d6-5209-45cc-8a2e-10804713f16b", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.031767+00:00", "outcome": "REJECTED", "request_id": "668134288e7c421d8a657047b89f434c", "target_id": "/inventario/cargas/aed570d6-bc70-4254-b89d-feaf5e281997/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3f320d6-5209-45cc-8a2e-10804713f16b", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.034506+00:00", "outcome": "REJECTED", "request_id": "2278cfaee7aa42d7bcb733c6c18aaf87", "target_id": "/inventario/carga-inicial/aed570d6-bc70-4254-b89d-feaf5e281997/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3f320d6-5209-45cc-8a2e-10804713f16b", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.037036+00:00", "outcome": "REJECTED", "request_id": "c89d951eeba64333acb36283f3829219", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3f320d6-5209-45cc-8a2e-10804713f16b", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.041297+00:00", "outcome": "REJECTED", "request_id": "6d1cdbaa01a34b14847df7cd4dba3f0f", "target_id": "/inventario/productos/665cff1b-8eed-4aad-89fd-fb0a9a37bf8f/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3f320d6-5209-45cc-8a2e-10804713f16b", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.045598+00:00", "outcome": "REJECTED", "request_id": "74f04d8072384bf68da64d1ff582d14f", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3f320d6-5209-45cc-8a2e-10804713f16b", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.050372+00:00", "outcome": "REJECTED", "request_id": "944fa3166e104c8a906ea76135d7a6bb", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3f320d6-5209-45cc-8a2e-10804713f16b", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.056969+00:00", "outcome": "REJECTED", "request_id": "9ca9eeb21583496181f3ca953b5b5bb5", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "db7b4289-2701-47c7-9603-8851471b8957", "actor_identifier": "admin.audit05@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.062244+00:00", "outcome": "REJECTED", "request_id": "ae781bec6aa44bc8ab480480b22a0915", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "db7b4289-2701-47c7-9603-8851471b8957", "actor_identifier": "admin.audit05@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:15.065263+00:00", "outcome": "REJECTED", "request_id": "21bfe31467684b5f81a5bc668b89d4cb", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+ok
+test_sparse_rows_weighted_cost_half_up_boundaries_and_constancia (inventory.test_audit05_initial_load.Stage05InitialLoadAuditTests.test_sparse_rows_weighted_cost_half_up_boundaries_and_constancia) ... ok
+test_eligible_products_and_suppliers_queryset_and_sentinels (inventory.test_audit06_stock_entry.Stage06StockEntryAuditTests.test_eligible_products_and_suppliers_queryset_and_sentinels) ... ok
+test_empty_post_header_csrf_tampered_management_forms_and_non_masking_validation (inventory.test_audit06_stock_entry.Stage06StockEntryAuditTests.test_empty_post_header_csrf_tampered_management_forms_and_non_masking_validation) ... ok
+test_lot_preservation_kardex_constancia_received_at_and_rn28_pos_fefo (inventory.test_audit06_stock_entry.Stage06StockEntryAuditTests.test_lot_preservation_kardex_constancia_received_at_and_rn28_pos_fefo) ... ok
+test_role_matrix_cache_control_actor_revocation_and_no_hu_sol_routes (inventory.test_audit06_stock_entry.Stage06StockEntryAuditTests.test_role_matrix_cache_control_actor_revocation_and_no_hu_sol_routes) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:22.447778+00:00", "outcome": "REJECTED", "request_id": "dbc6a9e540d64bd996ce39850e9e4a24", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2bd9099a-341e-45ef-8564-94d8fdfe1b6b", "actor_identifier": "seller.audit06@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:22.460396+00:00", "outcome": "REJECTED", "request_id": "752f1256cfa9464ea0e1ca866faf7c0e", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2bd9099a-341e-45ef-8564-94d8fdfe1b6b", "actor_identifier": "seller.audit06@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:22.468152+00:00", "outcome": "REJECTED", "request_id": "d01dd32376cb4473bbb2068040e0e532", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d9d3e208-e2bc-4f8d-b98e-5336bde6ea91", "actor_identifier": "admin.audit06@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:22.479312+00:00", "outcome": "REJECTED", "request_id": "497725ddf05a400cafa0cf7226453a0f", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "d9d3e208-e2bc-4f8d-b98e-5336bde6ea91", "actor_identifier": "admin.audit06@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:22.486929+00:00", "outcome": "REJECTED", "request_id": "afcc7490ee2a40f3adebb2704ed46230", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+ok
+test_weighted_cost_half_up_zero_prior_stock_atomic_and_fix06_02_savepoint (inventory.test_audit06_stock_entry.Stage06StockEntryAuditTests.test_weighted_cost_half_up_zero_prior_stock_atomic_and_fix06_02_savepoint) ... ok
+test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos) ... ok
+test_dias_filter_boundaries_and_strict_ascii_validation (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_dias_filter_boundaries_and_strict_ascii_validation) ... ok
+test_exact_date_boundaries_zero_lots_and_deterministic_ordering (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_exact_date_boundaries_zero_lots_and_deterministic_ordering) ... ok
+test_expirations_writeoff_cross_role_lifecycle (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_expirations_writeoff_cross_role_lifecycle) ... ok
+test_lima_utc_midnight_transition_synchronized_across_all_views (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_lima_utc_midnight_transition_synchronized_across_all_views) ... ok
+test_role_matrix_anonymous_and_http_contract (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_role_matrix_anonymous_and_http_contract) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:24.764559+00:00", "outcome": "REJECTED", "request_id": "e911af80a42742f4aef0534c1558fe59", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:24.768104+00:00", "outcome": "REJECTED", "request_id": "da40a449fdfd48ddb67b5f1175db6731", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "77e8624d-1106-45f4-bdd1-c2eac2176eb2", "actor_identifier": "seller.audit07@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:24.777721+00:00", "outcome": "REJECTED", "request_id": "49fa43a039e34d9eb2944798c620527a", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "77e8624d-1106-45f4-bdd1-c2eac2176eb2", "actor_identifier": "seller.audit07@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:24.784848+00:00", "outcome": "REJECTED", "request_id": "b8cef51b35b3416baeda42682cc53b85", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "77e8624d-1106-45f4-bdd1-c2eac2176eb2", "actor_identifier": "seller.audit07@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:24.794737+00:00", "outcome": "REJECTED", "request_id": "343841198da14f0db2b66230f6aa5e9f", "target_id": "/productos/", "target_type": "Endpoint"}
+ok
+test_stock_overview_and_dashboard_avoid_n_plus_one_lot_queries (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_stock_overview_and_dashboard_avoid_n_plus_one_lot_queries) ... ok
+test_actor_lock_and_missing_lot_guards_in_services (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_actor_lock_and_missing_lot_guards_in_services) ... ok
+test_empty_post_no_500_and_strict_type_digit_null_validations (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_empty_post_no_500_and_strict_type_digit_null_validations) ... ok
+test_explicit_gaps_not_implemented_in_r1_remain_absent (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_explicit_gaps_not_implemented_in_r1_remain_absent) ... ok
+test_idempotency_replay_vs_tampered_payload_rejection (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_idempotency_replay_vs_tampered_payload_rejection) ... ok
+test_product_movements_isolates_reused_barcode_and_preserves_legacy_null_product_lines (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_product_movements_isolates_reused_barcode_and_preserves_legacy_null_product_lines) ... ok
+test_product_movements_traceability_trailing_period_and_bounded_queries (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_product_movements_traceability_trailing_period_and_bounded_queries) ... ok
+test_role_matrix_and_cache_control (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_role_matrix_and_cache_control) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:27.799266+00:00", "outcome": "REJECTED", "request_id": "328b6f6c1100493286d5517bbdf8c6be", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:27.801796+00:00", "outcome": "REJECTED", "request_id": "6c2fe2a9623d435594db84d04126e798", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:27.805368+00:00", "outcome": "REJECTED", "request_id": "397f68ba8ac6411cbfd1461deccd6c9a", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:27.806883+00:00", "outcome": "REJECTED", "request_id": "900fd3f86c744c64b1cb15a128043dce", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:27.808904+00:00", "outcome": "REJECTED", "request_id": "d9a6ae44606d4f539adbc2e6064d0c04", "target_id": "/inventario/productos/bb6c1a48-f3c1-4318-9ea8-3d7497aeb29e/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:27.809920+00:00", "outcome": "REJECTED", "request_id": "4a534af294be48ab90ca55f2eab50669", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:27.812506+00:00", "outcome": "REJECTED", "request_id": "6763012b75214d44907a9330310f8340", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb816fdd-5fd7-4261-bbce-795d244899e3", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:27.824272+00:00", "outcome": "REJECTED", "request_id": "679eb4b0f513480f9b2d6ff25a5feac7", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb816fdd-5fd7-4261-bbce-795d244899e3", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:27.834116+00:00", "outcome": "REJECTED", "request_id": "49547c579ad841abb6a48ac1f31ea153", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb816fdd-5fd7-4261-bbce-795d244899e3", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:27.845608+00:00", "outcome": "REJECTED", "request_id": "e14b3ec2ccae47fab19999af7698cfce", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb816fdd-5fd7-4261-bbce-795d244899e3", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:27.856792+00:00", "outcome": "REJECTED", "request_id": "21e6ae250cad49029d1eb8313adc5f7a", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cb816fdd-5fd7-4261-bbce-795d244899e3", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:27.870253+00:00", "outcome": "REJECTED", "request_id": "e620f12c3e2c4727b435468af6457d69", "target_id": "/inventario/productos/bb6c1a48-f3c1-4318-9ea8-3d7497aeb29e/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "df625419-9f49-4578-983f-1eafa7e6350f", "actor_identifier": "wh1.audit08@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:27.939238+00:00", "outcome": "REJECTED", "request_id": "90b470e9a570436ca3a83fb74d2ba223", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "df625419-9f49-4578-983f-1eafa7e6350f", "actor_identifier": "wh1.audit08@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:27.953836+00:00", "outcome": "REJECTED", "request_id": "97225a4816d44999a49768d4962fc1c5", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+ok
+test_stock_cost_doc03ah01_and_pos_sale_unit_cost_impact (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_stock_cost_doc03ah01_and_pos_sale_unit_cost_impact) ... ok
+test_writeoff_expired_lot_lima_midnight_correlatives_and_depletion (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_writeoff_expired_lot_lima_midnight_correlatives_and_depletion) ... ok
+test_writeoff_http_date_and_real_cause_preserve_rejected_data (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_writeoff_http_date_and_real_cause_preserve_rejected_data)
+RN-05 vigente: caducidad, daño y faltante por ambas funciones autorizadas. ... ok
+test_http_physical_cost_receipt_sale_writeoff_adjustment_and_history (inventory.test_audit14e_valuation.MovingAverageIntegrationTests.test_http_physical_cost_receipt_sale_writeoff_adjustment_and_history) ... ok
+test_legacy_unknown_costs_are_not_filled_from_current_average (inventory.test_audit14e_valuation.MovingAverageIntegrationTests.test_legacy_unknown_costs_are_not_filled_from_current_average) ... ok
+test_role_and_input_rejections_do_not_mutate_cost_or_stock (inventory.test_audit14e_valuation.MovingAverageIntegrationTests.test_role_and_input_rejections_do_not_mutate_cost_or_stock) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "c8efc7e2-4d9c-4f7c-86cf-15ff3af11622", "actor_identifier": "admin@valuation.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:29.750197+00:00", "outcome": "REJECTED", "request_id": "331e391e97294d73b500f7b33b8df369", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "659ad058-c4cd-43b2-92a3-a45240694e2e", "actor_identifier": "vendedor@valuation.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:29.787622+00:00", "outcome": "REJECTED", "request_id": "17aaf50dc4f54a7fa2ba29bc1f2f97b4", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a0caddee-67ca-4ed4-ab2f-f3be12fd173b", "actor_identifier": "almacenero@valuation.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:29.825682+00:00", "outcome": "REJECTED", "request_id": "03864bb16c1146d3a5eea3a524145258", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+ok
+test_runtime_failure_after_write_rolls_back_all_cost_operations (inventory.test_audit14e_valuation.MovingAverageIntegrationTests.test_runtime_failure_after_write_rolls_back_all_cost_operations) ... ok
+test_zero_stock_resets_average_preserves_last_cost_and_rejects_unpriced_adjustment (inventory.test_audit14e_valuation.MovingAverageIntegrationTests.test_zero_stock_resets_average_preserves_last_cost_and_rejects_unpriced_adjustment) ... ok
+test_commercial_spaces_are_canonical_without_rewriting_legacy (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_commercial_spaces_are_canonical_without_rewriting_legacy) ... ok
+test_expired_or_inactive_confirmed_payload_replays_but_new_entry_rejects (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_expired_or_inactive_confirmed_payload_replays_but_new_entry_rejects) ... ok
+test_failure_after_each_write_rolls_back_every_business_table (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_failure_after_each_write_rolls_back_every_business_table) ... Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 749, in register_stock_entry
+    counter.save(update_fields=["last_number"])
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 750, in register_stock_entry
+    receipt = StockReceipt.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 759, in register_stock_entry
+    created_lots = Lot.objects.bulk_create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 3, in bulk_create
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 777, in register_stock_entry
+    StockReceiptLine.objects.bulk_create([
+  File "<string>", line 3, in bulk_create
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 786, in register_stock_entry
+    locked_product.save(update_fields=('average_cost', 'updated_at'))
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+ok
+test_invalid_inputs_keep_key_and_no_partial_state_then_correct (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_invalid_inputs_keep_key_and_no_partial_state_then_correct) ... ok
+test_order_independent_signature_and_distinct_actor_rejected (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_order_independent_signature_and_distinct_actor_rejected) ... ok
+test_permissions_on_post_and_receipt_and_counter_exhaustion (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_permissions_on_post_and_receipt_and_counter_exhaustion) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "db816636-f4dd-41a4-81cf-907d6084b75b", "actor_identifier": "admin@receipt14g.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:32.449905+00:00", "outcome": "REJECTED", "request_id": "4bf0ac4eecaa4bf7ad3000d99de5f3b1", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e708a102-f8c1-4e08-9de6-146949d9f2cf", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:32.488879+00:00", "outcome": "REJECTED", "request_id": "2e8ea410b23e4279b1a9ca36e10501c4", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e708a102-f8c1-4e08-9de6-146949d9f2cf", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:32.505079+00:00", "outcome": "REJECTED", "request_id": "60fbd55d1dde4633aa00477e848ef82d", "target_id": "/inventario/recepciones/f30027c2-0390-4903-911a-436f90d0b166/", "target_type": "Endpoint"}
+ok
+test_sale_fefo_keeps_two_receipt_origins_and_average_snapshot (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_sale_fefo_keeps_two_receipt_origins_and_average_snapshot) ... ok
+test_snapshots_and_original_quantity_survive_master_changes_and_adjustment (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_snapshots_and_original_quantity_survive_master_changes_and_adjustment) ... ok
+test_two_receipts_same_lot_replay_and_divergent_content (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_two_receipts_same_lot_replay_and_divergent_content) ... ok
+test_compensating_discrepancy_between_lots_is_detected (inventory.test_audit14h2_ledger.LedgerTests.test_compensating_discrepancy_between_lots_is_detected) ... ok
+test_empty_period_year_boundaries_and_minute_end (inventory.test_audit14h2_ledger.LedgerTests.test_empty_period_year_boundaries_and_minute_end) ... ok
+test_incomplete_allocation_and_ambiguous_product_are_explicit (inventory.test_audit14h2_ledger.LedgerTests.test_incomplete_allocation_and_ambiguous_product_are_explicit) ... ok
+test_inconsistent_origin_link_never_passes_by_coincidental_total (inventory.test_audit14h2_ledger.LedgerTests.test_inconsistent_origin_link_never_passes_by_coincidental_total) ... ok
+test_invalid_dates_types_pages_and_repeated_keys_never_mutate_or_render_results (inventory.test_audit14h2_ledger.LedgerTests.test_invalid_dates_types_pages_and_repeated_keys_never_mutate_or_render_results) ... ok
+test_legacy_input_does_not_invent_opening_from_current_stock (inventory.test_audit14h2_ledger.LedgerTests.test_legacy_input_does_not_invent_opening_from_current_stock) ... ok
+test_negative_sequence_is_not_presented_as_trustworthy (inventory.test_audit14h2_ledger.LedgerTests.test_negative_sequence_is_not_presented_as_trustworthy) ... ok
+test_new_lot_seen_between_reads_degrades_to_unknown_without_crashing (inventory.test_audit14h2_ledger.LedgerTests.test_new_lot_seen_between_reads_degrades_to_unknown_without_crashing) ... ok
+test_roles_methods_inactive_product_and_empty_product (inventory.test_audit14h2_ledger.LedgerTests.test_roles_methods_inactive_product_and_empty_product) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "cc0acc54-325f-4ad8-82a6-085d828b5c11", "actor_identifier": "vendedor@ledger14h2.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:36.141839+00:00", "outcome": "REJECTED", "request_id": "78c8b0ef835c42198db180793d94bc79", "target_id": "/inventario/productos/764badd7-33d2-4e8d-b228-99bd8e7c34db/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cc0acc54-325f-4ad8-82a6-085d828b5c11", "actor_identifier": "vendedor@ledger14h2.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:36.149115+00:00", "outcome": "REJECTED", "request_id": "193ddc9c05784c75b8931b1ad5bc0ed9", "target_id": "/inventario/productos/764badd7-33d2-4e8d-b228-99bd8e7c34db/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:36.159009+00:00", "outcome": "REJECTED", "request_id": "799a829dbf9f464a9e9dd8b20a7d17fd", "target_id": "/inventario/productos/764badd7-33d2-4e8d-b228-99bd8e7c34db/movimientos/", "target_type": "Endpoint"}
+ok
+test_same_instant_pages25_preserve_period_and_full_totals (inventory.test_audit14h2_ledger.LedgerTests.test_same_instant_pages25_preserve_period_and_full_totals) ... ok
+test_three_origins_sale22_period_open20_close2 (inventory.test_audit14h2_ledger.LedgerTests.test_three_origins_sale22_period_open20_close2) ... ok
+test_written_case_real_balances_and_outgoing_filter (inventory.test_audit14h2_ledger.LedgerTests.test_written_case_real_balances_and_outgoing_filter) ... ok
+test_denied_invalid_and_stale_state_leave_no_partial_history (inventory.test_audit14h_initial_history.InitialHistoryTests.test_denied_invalid_and_stale_state_leave_no_partial_history) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "5b18f244-2801-4bbd-b433-473af19e5704", "actor_identifier": "admin@history14h.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:37.682208+00:00", "outcome": "REJECTED", "request_id": "3c13a66c893a44669b81a3a3d53080d5", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "3366c0c4-0250-49b6-922e-7a0bacd2e8cf", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:37.707560+00:00", "outcome": "REJECTED", "request_id": "1bb330d7b4cb4dafb061cc30d493a210", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+ok
+test_expiration_and_deactivation_do_not_rewrite_originals (inventory.test_audit14h_initial_history.InitialHistoryTests.test_expiration_and_deactivation_do_not_rewrite_originals) ... ok
+test_four_postwrite_failures_roll_back_all_business_tables (inventory.test_audit14h_initial_history.InitialHistoryTests.test_four_postwrite_failures_roll_back_all_business_tables) ... ok
+test_legacy_capacity_is_never_reported_as_original_quantity (inventory.test_audit14h_initial_history.InitialHistoryTests.test_legacy_capacity_is_never_reported_as_original_quantity) ... ok
+test_no_supplier_and_output_escaping_with_boundary_values (inventory.test_audit14h_initial_history.InitialHistoryTests.test_no_supplier_and_output_escaping_with_boundary_values) ... ok
+test_originals_survive_master_renames_adjustment_receipt_sale_and_loss (inventory.test_audit14h_initial_history.InitialHistoryTests.test_originals_survive_master_renames_adjustment_receipt_sale_and_loss) ... ok
+test_read_permissions_alias_cache_and_get_nonmutation (inventory.test_audit14h_initial_history.InitialHistoryTests.test_read_permissions_alias_cache_and_get_nonmutation) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "3366c0c4-0250-49b6-922e-7a0bacd2e8cf", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:38.799005+00:00", "outcome": "REJECTED", "request_id": "87a6fa4b72dd4494ab6585182faa971b", "target_id": "/inventario/cargas/892632bc-4087-4ea1-9c8a-69bb8c7ae77c/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "3366c0c4-0250-49b6-922e-7a0bacd2e8cf", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:38.816841+00:00", "outcome": "REJECTED", "request_id": "8b38c79be1474651aeaeb92a87f828f6", "target_id": "/inventario/cargas/892632bc-4087-4ea1-9c8a-69bb8c7ae77c/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "3366c0c4-0250-49b6-922e-7a0bacd2e8cf", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:38.839113+00:00", "outcome": "REJECTED", "request_id": "4cbbeccb73f44ec98f3939a6614c7be0", "target_id": "/inventario/carga-inicial/892632bc-4087-4ea1-9c8a-69bb8c7ae77c/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "3366c0c4-0250-49b6-922e-7a0bacd2e8cf", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:38.854985+00:00", "outcome": "REJECTED", "request_id": "d98e12ec718648b28108048b74d31b30", "target_id": "/inventario/carga-inicial/892632bc-4087-4ea1-9c8a-69bb8c7ae77c/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:51:38.865686+00:00", "outcome": "REJECTED", "request_id": "59bb42d1bfb74fb3b9b469cbaada702a", "target_id": "/inventario/cargas/892632bc-4087-4ea1-9c8a-69bb8c7ae77c/", "target_type": "Endpoint"}
+ok
+test_invalid_http_keys_and_fields_do_not_mutate_or_consume_key (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_invalid_http_keys_and_fields_do_not_mutate_or_consume_key) ... ok
+test_legacy_is_not_invented (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_legacy_is_not_invented) ... ok
+test_postwrite_failures_rollback_every_business_table_and_retry (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_postwrite_failures_rollback_every_business_table_and_retry) ... ok
+test_receipt_escapes_notes_and_conserves_full_detail (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_receipt_escapes_notes_and_conserves_full_detail) ... ok
+test_receipt_roles_methods_unknown_and_revoked_replay (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_receipt_roles_methods_unknown_and_revoked_replay) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "301f30ed-9bb1-4d25-8cbb-76f571496de2", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:39.638816+00:00", "outcome": "REJECTED", "request_id": "3eb1f42d1427413f81be414fea3fda1d", "target_id": "/inventario/bajas/61a521a9-e4e1-4ca4-be17-9584cd5c5e36/", "target_type": "Endpoint"}
+ok
+test_replay_across_sessions_and_after_state_date_changes (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_replay_across_sessions_and_after_state_date_changes) ... ok
+test_same_commercial_lot_has_unambiguous_receipt_origin (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_same_commercial_lot_has_unambiguous_receipt_origin) ... ok
+test_same_key_after_stock_exhausted_returns_same_result (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_same_key_after_stock_exhausted_returns_same_result) ... ok
+test_service_types_expiry_and_inactive_product_policy (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_service_types_expiry_and_inactive_product_policy) ... ok
+test_snapshot_and_ledger_survive_master_changes (inventory.test_audit14i_writeoff_history.WriteoffHistoryTests.test_snapshot_and_ledger_survive_master_changes) ... ok
+test_existing_sequence_original_quantity_and_history_survive_changes (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_existing_sequence_original_quantity_and_history_survive_changes) ... ok
+test_http_new_lot_roles_methods_and_unknown_id (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_http_new_lot_roles_methods_and_unknown_id) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "fedba3ca-d01c-4e5d-9edc-5cc218cd1ca2", "actor_identifier": "almacenero@receipt14g.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:40.591707+00:00", "outcome": "REJECTED", "request_id": "5a3f6210582f44ae944ca83364acf10b", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "3ec73572-c00c-4373-90fa-d56bcea058e1", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:40.612203+00:00", "outcome": "REJECTED", "request_id": "a5f6870960b844fab382a48dfce85a46", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "3ec73572-c00c-4373-90fa-d56bcea058e1", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:40.716842+00:00", "outcome": "REJECTED", "request_id": "0e4614ede9bf4166a96e1219c3210999", "target_id": "/inventario/ajustes/8243658d-7d9f-4df9-9117-670bd6e02bbb/", "target_type": "Endpoint"}
+ok
+test_invalid_existing_new_and_http_requests_do_not_consume_key (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_invalid_existing_new_and_http_requests_do_not_consume_key) ... ok
+test_legacy_and_escaped_snapshot_output (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_legacy_and_escaped_snapshot_output) ... ok
+test_new_expired_inactive_lot_is_physical_only_and_zero_cost_is_supported (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_new_expired_inactive_lot_is_physical_only_and_zero_cost_is_supported) ... ok
+test_new_lot_has_adjustment_origin_single_ledger_entry_and_is_sellable (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_new_lot_has_adjustment_origin_single_ledger_entry_and_is_sellable) ... ok
+test_postwrite_rollback_after_new_lot_record_stock_and_cost (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_postwrite_rollback_after_new_lot_record_stock_and_cost) ... ok
+test_product_without_initial_load_rejects_both_modes (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_product_without_initial_load_rejects_both_modes) ... ok
+test_replay_across_sessions_divergence_and_revocation (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_replay_across_sessions_divergence_and_revocation) ... ok
+test_zero_stock_requires_documented_cost_and_preserves_previous_outputs (inventory.test_audit14j_adjustments.AdjustmentIntegrationTests.test_zero_stock_requires_documented_cost_and_preserves_previous_outputs) ... ok
+test_bulk_and_direct_updates_cannot_rewrite_timestamp (inventory.test_lot_receipt_time.LotReceiptTimeTests.test_bulk_and_direct_updates_cannot_rewrite_timestamp) ... ok
+test_saved_timestamp_cannot_be_rewritten (inventory.test_lot_receipt_time.LotReceiptTimeTests.test_saved_timestamp_cannot_be_rewritten) ... ok
+test_stock_update_preserves_original_timestamp (inventory.test_lot_receipt_time.LotReceiptTimeTests.test_stock_update_preserves_original_timestamp) ... ok
+test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) ... ok
+test_valid_boundary_values_are_preserved (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_valid_boundary_values_are_preserved) ... ok
+test_leap_day_anniversary_uses_last_day_of_february (inventory.test_receipt_dates.ReceiptDateTests.test_leap_day_anniversary_uses_last_day_of_february) ... ok
+test_midnight_in_lima_changes_eligibility_atomically (inventory.test_receipt_dates.ReceiptDateTests.test_midnight_in_lima_changes_eligibility_atomically) ... ok
+test_twenty_year_anniversary_matches_form_model_and_service (inventory.test_receipt_dates.ReceiptDateTests.test_twenty_year_anniversary_matches_form_model_and_service) ... ok
+test_reactivated_supplier_uses_current_database_state (inventory.test_receipt_supplier.ReceiptSupplierTests.test_reactivated_supplier_uses_current_database_state) ... ok
+test_removed_supplier_is_rejected_without_writes (inventory.test_receipt_supplier.ReceiptSupplierTests.test_removed_supplier_is_rejected_without_writes) ... ok
+test_stale_active_supplier_is_rejected_atomically (inventory.test_receipt_supplier.ReceiptSupplierTests.test_stale_active_supplier_is_rejected_atomically) ... ok
+test_duplicate_numbers_in_same_request_leave_no_residue (inventory.tests.InitialInventoryLoadTests.test_duplicate_numbers_in_same_request_leave_no_residue) ... ok
+test_invalid_middle_lot_rolls_back_entire_load (inventory.tests.InitialInventoryLoadTests.test_invalid_middle_lot_rolls_back_entire_load) ... ok
+test_multiple_lots_are_confirmed_atomically_with_weighted_cost (inventory.tests.InitialInventoryLoadTests.test_multiple_lots_are_confirmed_atomically_with_weighted_cost) ... ok
+test_non_warehouse_post_is_forbidden_without_mutation (inventory.tests.InitialInventoryLoadTests.test_non_warehouse_post_is_forbidden_without_mutation) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "84878b19-52a9-4ceb-bf41-28ba26ed470f", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:43.797360+00:00", "outcome": "REJECTED", "request_id": "8ad24ea761804a119fce0005a9e909ec", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "3c78d769-0b2e-4cd8-8c1e-535061e2f01d", "actor_identifier": "seller@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:43.817276+00:00", "outcome": "REJECTED", "request_id": "5027c283f270496b84519ec47774f3d0", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+ok
+test_second_initial_load_is_rejected (inventory.tests.InitialInventoryLoadTests.test_second_initial_load_is_rejected) ... ok
+test_absurd_future_expiration_year_9999_is_rejected (inventory.tests.PhysicalAdjustmentTests.test_absurd_future_expiration_year_9999_is_rejected)
+BUG-014: El año 9999 en fecha de vencimiento es rechazado. ... ok
+test_admin_registers_positive_adjustment (inventory.tests.PhysicalAdjustmentTests.test_admin_registers_positive_adjustment) ... ok
+test_barcode_change_preserves_sales_in_product_movements_kardex (inventory.tests.PhysicalAdjustmentTests.test_barcode_change_preserves_sales_in_product_movements_kardex)
+BUG-004: Editar el código de barras de un producto no oculta sus ventas históricas en el Kardex. ... ok
+test_bug024_stock_entry_preserves_initial_load_lots_and_labels_subsequent_entries_in_kardex (inventory.tests.PhysicalAdjustmentTests.test_bug024_stock_entry_preserves_initial_load_lots_and_labels_subsequent_entries_in_kardex)
+BUG-024: Las entradas posteriores no alteran los lotes de la carga inicial y el Kardex las distingue. ... ok
+test_bug027_lot_unit_cost_rejects_scientific_notation_and_excessive_values (inventory.tests.PhysicalAdjustmentTests.test_bug027_lot_unit_cost_rejects_scientific_notation_and_excessive_values)
+BUG-027: LotInputForm y _validate_lots rechazan notación científica y costos desmesurados. ... ok
+test_bug032_subsequent_stock_entry_records_second_warehouse_worker_and_admin_can_view_load (inventory.tests.PhysicalAdjustmentTests.test_bug032_subsequent_stock_entry_records_second_warehouse_worker_and_admin_can_view_load)
+BUG-032: Entradas posteriores registran al almacenero real por lote, incluyen proveedor en carga inicial y permiten vista a Admin. ... ok
+test_bug033_inactive_category_excludes_products_from_initial_load_and_stock_entry_forms (inventory.tests.PhysicalAdjustmentTests.test_bug033_inactive_category_excludes_products_from_initial_load_and_stock_entry_forms)
+BUG-033: InitialLoadProductForm y StockEntryProductForm excluyen productos cuya categoría fue desactivada. ... ok
+test_bug036_writeoff_and_adjustment_prioritize_posted_lot_id_and_render_hidden_field_errors (inventory.tests.PhysicalAdjustmentTests.test_bug036_writeoff_and_adjustment_prioritize_posted_lot_id_and_render_hidden_field_errors)
+BUG-036: Baja y ajuste priorizan request.POST['lot_id'] sobre ?lote= y muestran errores de campos ocultos. ... ok
+test_doc03ah_receipt_includes_expired_physical_stock (inventory.tests.PhysicalAdjustmentTests.test_doc03ah_receipt_includes_expired_physical_stock)
+DOC-03AH-01 sustituye la expectativa BUG-005 de excluir vencidos físicos. ... ok
+test_doc03ah_writeoff_and_physical_adjustment_preserve_moving_average (inventory.tests.PhysicalAdjustmentTests.test_doc03ah_writeoff_and_physical_adjustment_preserve_moving_average)
+RN-14 conserva promedio para salidas y hallazgos con físico restante. ... ok
+test_duplicate_idempotency_key_is_ignored (inventory.tests.PhysicalAdjustmentTests.test_duplicate_idempotency_key_is_ignored) ... ok
+test_failed_validation_does_not_consume_idempotency_key_in_writeoff_or_adjustment (inventory.tests.PhysicalAdjustmentTests.test_failed_validation_does_not_consume_idempotency_key_in_writeoff_or_adjustment)
+BUG-003: Si falla la validación de negocio, la clave de idempotencia no se quema. ... ok
+test_huge_delta_is_rejected_without_overflow (inventory.tests.PhysicalAdjustmentTests.test_huge_delta_is_rejected_without_overflow) ... ok
+test_initial_load_created_preserves_original_quantity_and_alias_url (inventory.tests.PhysicalAdjustmentTests.test_initial_load_created_preserves_original_quantity_and_alias_url)
+BUG-012, BUG-022 y BUG-023: /inventario/carga-inicial/<id>/creada/ conserva cantidad inicial original. ... ok
+test_invalid_uuid_in_lote_param_returns_404 (inventory.tests.PhysicalAdjustmentTests.test_invalid_uuid_in_lote_param_returns_404) ... ok
+test_missing_idempotency_key_rejects_adjustment_without_mutation (inventory.tests.PhysicalAdjustmentTests.test_missing_idempotency_key_rejects_adjustment_without_mutation)
+14-J: HTTP requires a durable explicit operation key, not a time bucket. ... ok
+test_negative_adjustment_exceeding_stock_is_rejected (inventory.tests.PhysicalAdjustmentTests.test_negative_adjustment_exceeding_stock_is_rejected) ... ok
+test_positive_adjustment_does_not_alter_initial_load_in_movements (inventory.tests.PhysicalAdjustmentTests.test_positive_adjustment_does_not_alter_initial_load_in_movements) ... ok
+test_stock_entry_view_registers_subsequent_lots_and_links_supplier (inventory.tests.PhysicalAdjustmentTests.test_stock_entry_view_registers_subsequent_lots_and_links_supplier)
+BUG-005 y BUG-011: La vista /inventario/entrada/ permite registrar lotes posteriores con proveedor. ... ok
+test_warehouse_gets_403 (inventory.tests.PhysicalAdjustmentTests.test_warehouse_gets_403) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "bff941b5-a42d-4906-ab45-8e95e3d2b3ab", "actor_identifier": "whadj@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:46.005261+00:00", "outcome": "REJECTED", "request_id": "d1a9802127bb40e5acd74e61fdc20d66", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+ok
+test_zero_delta_is_rejected_by_form (inventory.tests.PhysicalAdjustmentTests.test_zero_delta_is_rejected_by_form) ... ok
+test_admin_registers_writeoff (inventory.tests.StockWriteOffTests.test_admin_registers_writeoff) ... ok
+test_damage_reason_requires_notes (inventory.tests.StockWriteOffTests.test_damage_reason_requires_notes) ... ok
+test_invalid_writeoff_reason_is_rejected_by_service (inventory.tests.StockWriteOffTests.test_invalid_writeoff_reason_is_rejected_by_service) ... ok
+test_quantity_exceeding_stock_is_rejected (inventory.tests.StockWriteOffTests.test_quantity_exceeding_stock_is_rejected) ... ok
+test_seller_gets_403 (inventory.tests.StockWriteOffTests.test_seller_gets_403) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "099be875-793f-46ed-aa64-4677773fbb36", "actor_identifier": "sellerwo@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:46.569139+00:00", "outcome": "REJECTED", "request_id": "69c96c581c4946f5bf1f58df798a6c1e", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+ok
+test_warehouse_accesses_writeoff_page (inventory.tests.StockWriteOffTests.test_warehouse_accesses_writeoff_page) ... ok
+test_admin_creates_supplier (inventory.tests.SupplierTests.test_admin_creates_supplier) ... ok
+test_admin_sees_supplier_list (inventory.tests.SupplierTests.test_admin_sees_supplier_list) ... ok
+test_admin_toggles_supplier_status (inventory.tests.SupplierTests.test_admin_toggles_supplier_status) ... ok
+test_duplicate_ruc_is_rejected (inventory.tests.SupplierTests.test_duplicate_ruc_is_rejected) ... ok
+test_non_admin_cannot_create_supplier (inventory.tests.SupplierTests.test_non_admin_cannot_create_supplier) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "9ec554af-afcf-4a57-85fe-e3b71e3a9669", "actor_identifier": "whp@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:47.053982+00:00", "outcome": "REJECTED", "request_id": "c3a516ad6326464b9272cdf7e092ebfb", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+ok
+test_non_admin_gets_403_on_toggle (inventory.tests.SupplierTests.test_non_admin_gets_403_on_toggle) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "9ec554af-afcf-4a57-85fe-e3b71e3a9669", "actor_identifier": "whp@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:47.069516+00:00", "outcome": "REJECTED", "request_id": "20dcbc5aa8594c9890d99279bac9b263", "target_id": "/inventario/proveedores/3bf91f06-b3e5-434c-8d6a-159827a43c01/estado/", "target_type": "Endpoint"}
+ok
+test_search_filters_by_name (inventory.tests.SupplierTests.test_search_filters_by_name) ... ok
+test_seller_gets_403_on_supplier_list (inventory.tests.SupplierTests.test_seller_gets_403_on_supplier_list) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "1a300bd0-3073-4f44-8954-b2189e5c4c3e", "actor_identifier": "sellerp@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:51:47.112487+00:00", "outcome": "REJECTED", "request_id": "ee434c6a9c7f45d0b0096ae242981ba6", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+ok
+test_warehouse_sees_supplier_list (inventory.tests.SupplierTests.test_warehouse_sees_supplier_list) ... ok
+test_upgrade_preserves_old_rows_with_unknown_cost (inventory.test_audit14e_valuation.LegacyOutputCostMigrationTests.test_upgrade_preserves_old_rows_with_unknown_cost) ... ok
+test_old_rows_remain_identical_without_receipt_backfill (inventory.test_audit14g_receipts.ReceiptMigrationTests.test_old_rows_remain_identical_without_receipt_backfill) ... ok
+test_nullable_migration_preserves_old_rows_and_lot_instant_guard (inventory.test_audit14h_initial_history.InitialHistoryMigrationTests.test_nullable_migration_preserves_old_rows_and_lot_instant_guard) ... ok
+
+----------------------------------------------------------------------
+Ran 155 tests in 67.848s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

@@ -1,0 +1,36 @@
+{% extends "identity/base.html" %}
+{% block title %}Recepción {{ receipt.correlative }} · Minimarket{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Recepción confirmada</p>
+    <h2>{{ receipt.correlative }}</h2>
+    <p class="lede">Datos originales del ingreso de mercadería. Las salidas y ajustes posteriores no cambian esta constancia interna.</p>
+  </div>
+</section>
+<section class="panel form-panel" data-testid="stock-receipt">
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Producto</dt><dd>{{ receipt.product_snapshot_name }}</dd></div>
+    <div><dt>Código</dt><dd>{{ receipt.product_snapshot_barcode }}</dd></div>
+    <div><dt>Fecha y hora de Lima</dt><dd>{{ receipt.confirmed_at|date:"d/m/Y H:i" }}</dd></div>
+    <div><dt>Responsable</dt><dd>{{ receipt.responsible_snapshot_name }}</dd></div>
+    <div><dt>Proveedor</dt><dd>{% if receipt.supplier_id %}{{ receipt.supplier_snapshot_name }} · {{ receipt.supplier_snapshot_ruc }}{% else %}Sin proveedor asignado{% endif %}</dd></div>
+    <div><dt>Costo promedio después de esta recepción</dt><dd>S/ {{ receipt.average_cost_after|floatformat:2 }}</dd></div>
+  </dl>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Lotes recibidos, tabla desplazable">
+    <table>
+      <thead><tr><th>Lote</th><th>Cantidad recibida</th><th>Costo unitario (S/)</th><th>Importe (S/)</th><th>Vencimiento</th></tr></thead>
+      <tbody>{% for line in receipt.lines.all %}<tr>
+        <td>{{ line.number }}</td><td>{{ line.quantity }} UND</td><td>{{ line.unit_cost|floatformat:4 }}</td>
+        <td>{{ line.amount|floatformat:2 }}</td><td>{{ line.expiration_date|date:"d/m/Y" }}</td>
+      </tr>{% endfor %}</tbody>
+    </table>
+  </div>
+  <p class="help">Constancia interna de ingreso de mercadería. No sustituye un comprobante del proveedor.</p>
+  <div class="form-actions">
+    {% if user.role.code == "ALMACENERO" %}<a class="button button-primary" href="{% url 'stock-entry' %}">Registrar otra recepción</a>{% endif %}
+    <a class="button button-secondary" href="{% url 'product-movements' receipt.product_id %}">Ver movimientos</a>
+    <a class="button button-secondary" href="{% url 'stock-overview' %}">Ver inventario</a>
+  </div>
+</section>
+{% endblock %}

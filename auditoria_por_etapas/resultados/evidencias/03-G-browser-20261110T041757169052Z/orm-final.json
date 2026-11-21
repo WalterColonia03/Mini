@@ -1,0 +1,167 @@
+{
+  "catalog.Category": [
+    {
+      "id": "15b83900-12ce-430a-9909-1c03e8af0611",
+      "name": "Suspendida",
+      "name_normalized": "suspendida",
+      "is_active": false
+    },
+    {
+      "id": "aae8d147-f623-4ba8-a05d-b7b41c4f7def",
+      "name": "Alternativa activa",
+      "name_normalized": "alternativa activa",
+      "is_active": false
+    },
+    {
+      "id": "fff16f3e-ecc1-4558-8fe2-dad8b18598fe",
+      "name": "Productos enlatados",
+      "name_normalized": "productos enlatados",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "0aa24cba-f34e-46b8-b73b-45a24b5aaf90",
+      "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "barcode": "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+      "category_id": "fff16f3e-ecc1-4558-8fe2-dad8b18598fe",
+      "sale_price": "9999999.99",
+      "minimum_stock": 999999,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "1fba3e98-6c2d-4e02-84a6-a71e26618e6d",
+      "name": "AUD03D Atún nuevo",
+      "barcode": "AUD03D-NUEVO",
+      "category_id": "fff16f3e-ecc1-4558-8fe2-dad8b18598fe",
+      "sale_price": "9.20",
+      "minimum_stock": 16,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "eb169c28-c180-46df-bc87-df00062ea3b1",
+      "name": "Atún ocupado",
+      "barcode": "DUPLICADO",
+      "category_id": "fff16f3e-ecc1-4558-8fe2-dad8b18598fe",
+      "sale_price": "2.50",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "9299aab0-867b-4b8c-a6f5-230544c19afc",
+      "product_id": "1fba3e98-6c2d-4e02-84a6-a71e26618e6d",
+      "available_quantity": 17,
+      "initial_quantity": 20
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "a03670b8-3bdd-4637-a25d-f9341f7e3334",
+      "product_id": "1fba3e98-6c2d-4e02-84a6-a71e26618e6d"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "671bbcaa-658e-49ea-b870-a32612139ce0",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [
+    {
+      "id": "2e98528d-b9a2-4a26-8923-54d5bde39f60",
+      "total_amount": "8.50",
+      "cash_received": "10.00",
+      "change_given": "1.50"
+    },
+    {
+      "id": "afbedc24-c414-4ebd-b355-700353c02101",
+      "total_amount": "18.40",
+      "cash_received": "30.00",
+      "change_given": "11.60"
+    }
+  ],
+  "sales.SaleLine": [
+    {
+      "id": "46437a0d-0a08-4827-9884-69740f62e5c5",
+      "product_id": "1fba3e98-6c2d-4e02-84a6-a71e26618e6d",
+      "product_snapshot_name": "AUD03 Bebida de prueba",
+      "product_snapshot_barcode": "AUD03-BEBIDA",
+      "unit_price": "9.20",
+      "quantity": 2
+    },
+    {
+      "id": "63c46893-7510-48e5-823b-836e37253b3e",
+      "product_id": "1fba3e98-6c2d-4e02-84a6-a71e26618e6d",
+      "product_snapshot_name": "AUD03 Bebida de prueba",
+      "product_snapshot_barcode": "AUD03-BEBIDA",
+      "unit_price": "8.50",
+      "quantity": 1
+    }
+  ],
+  "sales.SaleDraft": [
+    {
+      "id": "95f6f20b-67c2-4dc8-9611-ee2e1c82bd77",
+      "status": "DISCARDED"
+    },
+    {
+      "id": "9e34c8bc-d888-464e-9957-99600fc9a9c8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "f288179a-db4f-4e21-b796-05fc2ac76aac",
+      "status": "DISCARDED"
+    }
+  ],
+  "sales.SaleDraftLine": [
+    {
+      "id": "804bbdd2-0229-488d-aece-77f01b13c1d1",
+      "draft_id": "9e34c8bc-d888-464e-9957-99600fc9a9c8",
+      "product_id": "1fba3e98-6c2d-4e02-84a6-a71e26618e6d",
+      "quantity": 1,
+      "unit_price": "9.20"
+    },
+    {
+      "id": "b9dee249-2a31-40f4-9821-2ac60b17cc5d",
+      "draft_id": "f288179a-db4f-4e21-b796-05fc2ac76aac",
+      "product_id": "1fba3e98-6c2d-4e02-84a6-a71e26618e6d",
+      "quantity": 1,
+      "unit_price": "8.50"
+    },
+    {
+      "id": "fafdb551-3397-4746-a4e6-4a837c118f11",
+      "draft_id": "95f6f20b-67c2-4dc8-9611-ee2e1c82bd77",
+      "product_id": "1fba3e98-6c2d-4e02-84a6-a71e26618e6d",
+      "quantity": 2,
+      "unit_price": "9.20"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "0aa24cba-f34e-46b8-b73b-45a24b5aaf90",
+      "barcode_normalized": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+      "search_name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "1fba3e98-6c2d-4e02-84a6-a71e26618e6d",
+      "barcode_normalized": "aud03d-nuevo",
+      "search_name": "aud03d atún nuevo",
+      "average_cost": "5.0000"
+    },
+    {
+      "id": "eb169c28-c180-46df-bc87-df00062ea3b1",
+      "barcode_normalized": "duplicado",
+      "search_name": "atún ocupado",
+      "average_cost": "0.0000"
+    }
+  ]
+}

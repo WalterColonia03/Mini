@@ -1,0 +1,51 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Editar producto{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center product-edit">
+  <div class="col-md-7">
+    <h2 class="mb-1">Editar producto</h2>
+    <p class="text-muted mb-4">{{ product.name }}</p>
+
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger" role="alert">
+        {% for error in form.non_field_errors %}{{ error }}<br>{% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post" novalidate class="panel form-panel">
+      {% csrf_token %}
+      {{ form.edit_snapshot }}
+      {% if form.edit_snapshot.errors %}
+        <div class="alert alert-danger" role="alert">{{ form.edit_snapshot.errors.0 }}</div>
+      {% endif %}
+      {% if stale_product %}
+        <p>Para revisar la ficha actual, vuelva a abrirla. Los cambios escritos aquí se descartarán.</p>
+        <a href="{% url 'product-edit' product.pk %}" class="btn btn-secondary">Revisar ficha actual</a>
+      {% endif %}
+
+      {% include "catalog/barcode_capture.html" with barcode=form.barcode product_id=product.pk only %}
+
+      {% for field in form.visible_fields %}
+      <div class="field{% if field.errors %} field-error{% endif %}">
+        <label for="{{ field.id_for_label }}" class="form-label fw-semibold">{{ field.label }}</label>
+        {{ field }}
+        {% if field.errors %}
+          <div id="{{ field.auto_id }}_error" class="text-danger small mt-1" role="alert">{{ field.errors.0 }}</div>
+        {% endif %}
+        {% if field.help_text %}
+          <div id="{{ field.auto_id }}_helptext" class="help">{{ field.help_text }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        <a href="{% url 'product-list' %}" class="btn btn-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

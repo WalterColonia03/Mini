@@ -1,0 +1,449 @@
+{
+  "stamp_utc": "20261112T001710298048Z-3eb15ad1",
+  "pg_port": 52058,
+  "db_name": "audit12_pg_788fbf7b",
+  "pg_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "nul_cases": {
+    "sales_corr_nul": {
+      "status": 200,
+      "has_error": true
+    },
+    "sales_fecha_nul": {
+      "status": 200,
+      "has_error": true
+    },
+    "sales_desde_nul": {
+      "status": 200,
+      "has_error": true
+    },
+    "sales_vendedor_nul": {
+      "status": 200,
+      "has_error": true
+    },
+    "sales_turno_nul": {
+      "status": 200,
+      "has_error": true
+    },
+    "cash_desde_nul": {
+      "status": 200,
+      "has_error": true
+    },
+    "cash_hasta_nul": {
+      "status": 200,
+      "has_error": true
+    },
+    "cash_vendedor_nul": {
+      "status": 200,
+      "has_error": true
+    }
+  },
+  "lima_boundary": {
+    "sales_10": [
+      "V-00000001"
+    ],
+    "sales_11": [
+      "V-00000002"
+    ],
+    "shifts_11_collected": [
+      "25.00"
+    ]
+  },
+  "query_counts": {
+    "cash_history_before": 4,
+    "cash_history_after_15_sales": 4,
+    "sales_history_before": 7,
+    "sales_history_after_15_sales": 7
+  },
+  "explain": {
+    "cash_shift_history_list": [
+      {
+        "Plan": {
+          "Node Type": "Sort",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 6107.28,
+          "Total Cost": 6108.86,
+          "Plan Rows": 630,
+          "Plan Width": 1964,
+          "Disabled": false,
+          "Sort Key": [
+            "cash_cashshift.opened_at DESC"
+          ],
+          "Plans": [
+            {
+              "Node Type": "Hash Join",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Join Type": "Left",
+              "Startup Cost": 57.67,
+              "Total Cost": 6077.99,
+              "Plan Rows": 630,
+              "Plan Width": 1964,
+              "Disabled": false,
+              "Inner Unique": true,
+              "Hash Cond": "(cash_cashshift.id = cash_cashshiftclose.cash_shift_id)",
+              "Plans": [
+                {
+                  "Node Type": "Hash Join",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Join Type": "Inner",
+                  "Startup Cost": 34.4,
+                  "Total Cost": 54.05,
+                  "Plan Rows": 630,
+                  "Plan Width": 1822,
+                  "Disabled": false,
+                  "Inner Unique": true,
+                  "Hash Cond": "(cash_cashshift.seller_id = identity_account.id)",
+                  "Plans": [
+                    {
+                      "Node Type": "Hash Join",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Join Type": "Inner",
+                      "Startup Cost": 23.5,
+                      "Total Cost": 41.46,
+                      "Plan Rows": 630,
+                      "Plan Width": 207,
+                      "Disabled": false,
+                      "Inner Unique": true,
+                      "Hash Cond": "(cash_cashshift.cash_register_id = cash_cashregister.id)",
+                      "Plans": [
+                        {
+                          "Node Type": "Seq Scan",
+                          "Parent Relationship": "Outer",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Relation Name": "cash_cashshift",
+                          "Alias": "cash_cashshift",
+                          "Startup Cost": 0.0,
+                          "Total Cost": 16.3,
+                          "Plan Rows": 630,
+                          "Plan Width": 100,
+                          "Disabled": false
+                        },
+                        {
+                          "Node Type": "Hash",
+                          "Parent Relationship": "Inner",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Startup Cost": 16.0,
+                          "Total Cost": 16.0,
+                          "Plan Rows": 600,
+                          "Plan Width": 107,
+                          "Disabled": false,
+                          "Plans": [
+                            {
+                              "Node Type": "Seq Scan",
+                              "Parent Relationship": "Outer",
+                              "Parallel Aware": false,
+                              "Async Capable": false,
+                              "Relation Name": "cash_cashregister",
+                              "Alias": "cash_cashregister",
+                              "Startup Cost": 0.0,
+                              "Total Cost": 16.0,
+                              "Plan Rows": 600,
+                              "Plan Width": 107,
+                              "Disabled": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "Node Type": "Hash",
+                      "Parent Relationship": "Inner",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Startup Cost": 10.4,
+                      "Total Cost": 10.4,
+                      "Plan Rows": 40,
+                      "Plan Width": 1615,
+                      "Disabled": false,
+                      "Plans": [
+                        {
+                          "Node Type": "Seq Scan",
+                          "Parent Relationship": "Outer",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Relation Name": "identity_account",
+                          "Alias": "identity_account",
+                          "Startup Cost": 0.0,
+                          "Total Cost": 10.4,
+                          "Plan Rows": 40,
+                          "Plan Width": 1615,
+                          "Disabled": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Node Type": "Hash",
+                  "Parent Relationship": "Inner",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 15.9,
+                  "Total Cost": 15.9,
+                  "Plan Rows": 590,
+                  "Plan Width": 110,
+                  "Disabled": false,
+                  "Plans": [
+                    {
+                      "Node Type": "Seq Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Relation Name": "cash_cashshiftclose",
+                      "Alias": "cash_cashshiftclose",
+                      "Startup Cost": 0.0,
+                      "Total Cost": 15.9,
+                      "Plan Rows": 590,
+                      "Plan Width": 110,
+                      "Disabled": false
+                    }
+                  ]
+                },
+                {
+                  "Node Type": "Limit",
+                  "Parent Relationship": "SubPlan",
+                  "Subplan Name": "SubPlan 1",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 4.16,
+                  "Total Cost": 9.52,
+                  "Plan Rows": 1,
+                  "Plan Width": 48,
+                  "Disabled": false,
+                  "Plans": [
+                    {
+                      "Node Type": "Aggregate",
+                      "Strategy": "Sorted",
+                      "Partial Mode": "Simple",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Startup Cost": 4.16,
+                      "Total Cost": 9.52,
+                      "Plan Rows": 1,
+                      "Plan Width": 48,
+                      "Disabled": false,
+                      "Plans": [
+                        {
+                          "Node Type": "Bitmap Heap Scan",
+                          "Parent Relationship": "Outer",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Relation Name": "sales_sale",
+                          "Alias": "u0",
+                          "Startup Cost": 4.16,
+                          "Total Cost": 9.5,
+                          "Plan Rows": 2,
+                          "Plan Width": 34,
+                          "Disabled": false,
+                          "Recheck Cond": "(cash_shift_id = cash_cashshift.id)",
+                          "Plans": [
+                            {
+                              "Node Type": "Bitmap Index Scan",
+                              "Parent Relationship": "Outer",
+                              "Parallel Aware": false,
+                              "Async Capable": false,
+                              "Index Name": "sales_sale_cash_shift_id_609d1ae0",
+                              "Startup Cost": 0.0,
+                              "Total Cost": 4.16,
+                              "Plan Rows": 2,
+                              "Plan Width": 0,
+                              "Disabled": false,
+                              "Index Cond": "(cash_shift_id = cash_cashshift.id)"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "sales_history_list": [
+      {
+        "Plan": {
+          "Node Type": "Sort",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 86.3,
+          "Total Cost": 87.05,
+          "Plan Rows": 300,
+          "Plan Width": 2060,
+          "Disabled": false,
+          "Sort Key": [
+            "sales_sale.confirmed_at DESC",
+            "sales_sale.correlative DESC"
+          ],
+          "Plans": [
+            {
+              "Node Type": "Hash Join",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Join Type": "Inner",
+              "Startup Cost": 58.57,
+              "Total Cost": 73.96,
+              "Plan Rows": 300,
+              "Plan Width": 2060,
+              "Disabled": false,
+              "Inner Unique": true,
+              "Hash Cond": "(sales_sale.seller_id = identity_account.id)",
+              "Plans": [
+                {
+                  "Node Type": "Hash Join",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Join Type": "Inner",
+                  "Startup Cost": 47.67,
+                  "Total Cost": 62.25,
+                  "Plan Rows": 300,
+                  "Plan Width": 445,
+                  "Disabled": false,
+                  "Inner Unique": true,
+                  "Hash Cond": "(cash_cashshift.cash_register_id = cash_cashregister.id)",
+                  "Plans": [
+                    {
+                      "Node Type": "Hash Join",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Join Type": "Inner",
+                      "Startup Cost": 24.18,
+                      "Total Cost": 37.96,
+                      "Plan Rows": 300,
+                      "Plan Width": 338,
+                      "Disabled": false,
+                      "Inner Unique": true,
+                      "Hash Cond": "(sales_sale.cash_shift_id = cash_cashshift.id)",
+                      "Plans": [
+                        {
+                          "Node Type": "Seq Scan",
+                          "Parent Relationship": "Outer",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Relation Name": "sales_sale",
+                          "Alias": "sales_sale",
+                          "Startup Cost": 0.0,
+                          "Total Cost": 13.0,
+                          "Plan Rows": 300,
+                          "Plan Width": 238,
+                          "Disabled": false
+                        },
+                        {
+                          "Node Type": "Hash",
+                          "Parent Relationship": "Inner",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Startup Cost": 16.3,
+                          "Total Cost": 16.3,
+                          "Plan Rows": 630,
+                          "Plan Width": 100,
+                          "Disabled": false,
+                          "Plans": [
+                            {
+                              "Node Type": "Seq Scan",
+                              "Parent Relationship": "Outer",
+                              "Parallel Aware": false,
+                              "Async Capable": false,
+                              "Relation Name": "cash_cashshift",
+                              "Alias": "cash_cashshift",
+                              "Startup Cost": 0.0,
+                              "Total Cost": 16.3,
+                              "Plan Rows": 630,
+                              "Plan Width": 100,
+                              "Disabled": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "Node Type": "Hash",
+                      "Parent Relationship": "Inner",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Startup Cost": 16.0,
+                      "Total Cost": 16.0,
+                      "Plan Rows": 600,
+                      "Plan Width": 107,
+                      "Disabled": false,
+                      "Plans": [
+                        {
+                          "Node Type": "Seq Scan",
+                          "Parent Relationship": "Outer",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Relation Name": "cash_cashregister",
+                          "Alias": "cash_cashregister",
+                          "Startup Cost": 0.0,
+                          "Total Cost": 16.0,
+                          "Plan Rows": 600,
+                          "Plan Width": 107,
+                          "Disabled": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Node Type": "Hash",
+                  "Parent Relationship": "Inner",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 10.4,
+                  "Total Cost": 10.4,
+                  "Plan Rows": 40,
+                  "Plan Width": 1615,
+                  "Disabled": false,
+                  "Plans": [
+                    {
+                      "Node Type": "Seq Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Relation Name": "identity_account",
+                      "Alias": "identity_account",
+                      "Startup Cost": 0.0,
+                      "Total Cost": 10.4,
+                      "Plan Rows": 40,
+                      "Plan Width": 1615,
+                      "Disabled": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "concurrent_checkout_retry": {
+    "results": [
+      [
+        302,
+        "/ventas/constancia/c3282525-e95b-4d0a-94f0-acd2bffb3825/"
+      ],
+      [
+        302,
+        "/ventas/constancia/c3282525-e95b-4d0a-94f0-acd2bffb3825/"
+      ]
+    ],
+    "sale_count_for_key": 1
+  },
+  "port_closed": true,
+  "protected_unchanged": true
+}

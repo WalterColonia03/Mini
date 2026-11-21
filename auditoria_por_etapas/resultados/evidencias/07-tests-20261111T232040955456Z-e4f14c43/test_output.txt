@@ -1,0 +1,130 @@
+Found 7 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos) ... FAIL
+test_dias_filter_boundaries_and_strict_ascii_validation (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_dias_filter_boundaries_and_strict_ascii_validation) ... ok
+test_exact_date_boundaries_zero_lots_and_deterministic_ordering (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_exact_date_boundaries_zero_lots_and_deterministic_ordering) ... ok
+test_expirations_writeoff_cross_role_lifecycle (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_expirations_writeoff_cross_role_lifecycle) ... ok
+test_lima_utc_midnight_transition_synchronized_across_all_views (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_lima_utc_midnight_transition_synchronized_across_all_views) ... ok
+test_role_matrix_anonymous_and_http_contract (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_role_matrix_anonymous_and_http_contract) ... Forbidden (Permission denied): /inventario/stock/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /productos/vencimientos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /productos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ERROR
+test_stock_overview_and_dashboard_avoid_n_plus_one_lot_queries (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_stock_overview_and_dashboard_avoid_n_plus_one_lot_queries) ... FAIL
+
+======================================================================
+ERROR: test_role_matrix_anonymous_and_http_contract (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_role_matrix_anonymous_and_http_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit07_stock_expirations.py", line 252, in test_role_matrix_anonymous_and_http_contract
+    token = csrf_client.get(reverse("stock-overview")).cookies["csrftoken"].value
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'csrftoken'
+
+======================================================================
+FAIL: test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit07_stock_expirations.py", line 396, in test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos
+    self.assertContains(stock, "Jugo Producto Inactivo (Inactivo)")
+AssertionError: False is not true : Couldn't find 'Jugo Producto Inactivo (Inactivo)' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Stock e inventario \xc2\xb7 Minimarket</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n            <p class="sidebar-label">Cat&#225;logo</p>\n            <a class="nav-item" href="/productos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>\n            </a>\n            <a class="nav-item" href="/productos/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>\n            </a>\n            <a class="nav-item" href="/productos/categorias/">\n              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>\n            </a>\n            <p class="sidebar-label">Inventario</p>\n            <a class="nav-item" href="/inventario/proveedores/">\n              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>\n            </a>\n            <a class="nav-item is-active" href="/inventario/stock/">\n              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>\n            </a>\n            <a class="nav-item" href="/productos/vencimientos/">\n              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>\n            </a>\n            <a class="nav-item" href="/inventario/ajustes/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>\n            </a>\n            <p class="sidebar-label">Personal</p>\n            <a class="nav-item" href="/empleados/">\n              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>\n            </a>\n            <p class="sidebar-label">Caja y ventas</p>\n            <a class="nav-item" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>\n            </a>\n          \n          \n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">A</span>\n            <span><strong>Admin Audit07</strong><small>Administrador</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>Stock e inventario</h1>\n          </div>\n          <div class="topbar-user"><span>Admin Audit07</span><span class="role-pill">Administrador</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<div class="page-heading">\n  <div>\n    <p class="eyebrow">Estado del stock al d&#237;a de hoy &mdash; 11 de noviembre de 2026</p>\n    <h2>Inventario actual</h2>\n  </div>\n</div>\n\n\n\n<div class="panel panel-danger stock-alert-panel" style="border-left:4px solid #c0392b;padding:1rem 1.25rem;margin-bottom:1.5rem;background:#fdf0ef;">\n  <p class="section-heading" style="color:#c0392b;margin-top:0;">&#9888; Lotes VENCIDOS con unidades registradas (4)</p>\n  <ul style="margin:0;padding-left:1.25rem;">\n    \n    <li><strong>Leche Mezcla Audit07</strong> &mdash; Lote MIX-PAST-2D &mdash; 3 unid. &mdash; Venci&#243;: 9 de noviembre de 2026</li>\n    \n    <li><strong>Jugo Producto Inactivo</strong> (Inactivo) &mdash; Lote INACT-VENC-1D &mdash; 3 unid. &mdash; Venci&#243;: 10 de noviembre de 2026</li>\n    \n    <li><strong>Conserva Vencida Hoy</strong> &mdash; Lote ONLY-VENC-HOY &mdash; 8 unid. &mdash; Venci&#243;: 11 de noviembre de 2026</li>\n    \n    <li><strong>Leche Mezcla Audit07</strong> &mdash; Lote MIX-TODAY-0D &mdash; 4 unid. &mdash; Venci&#243;: 11 de noviembre de 2026</li>\n    \n  </ul>\n</div>\n\n\n\n<div class="panel panel-warning stock-alert-panel" style="border-left:4px solid #e67e22;padding:1rem 1.25rem;margin-bottom:1.5rem;background:#fef9ef;">\n  <p class="section-heading" style="color:#e67e22;margin-top:0;">&#9203; Lotes pr&#243;ximos a vencer (dentro de 30 d&#237;as) &mdash; 6</p>\n  <ul style="margin:0;padding-left:1.25rem;">\n    \n    <li><strong>Leche Mezcla Audit07</strong> &mdash; Lote MIX-TIE-Z-FIRST &mdash; 2 unid. &mdash; Vence: 12 de noviembre de 2026</li>\n    \n    <li><strong>Leche Mezcla Audit07</strong> &mdash; Lote MIX-TIE-A-SECOND &mdash; 2 unid. &mdash; Vence: 12 de noviembre de 2026</li>\n    \n    <li><strong>Galletas Cat Desactivada</strong> (Categor&#237;a desactivada) &mdash; Lote CATOFF-PROX-3D &mdash; 2 unid. &mdash; Vence: 14 de noviembre de 2026</li>\n    \n    <li><strong>Jugo Producto Inactivo</strong> (Inactivo) &mdash; Lote INACT-PROX-4D &mdash; 2 unid. &mdash; Vence: 15 de noviembre de 2026</li>\n    \n    <li><strong>Leche Mezcla Audit07</strong> &mdash; Lote MIX-DAY07 &mdash; 6 unid. &mdash; Vence: 18 de noviembre de 2026</li>\n    \n    <li><strong>Yogurt GTIN 30D</strong> &mdash; Lote EDGE-D30 &mdash; 4 unid. &mdash; Vence: 11 de diciembre de 2026</li>\n    \n  </ul>\n</div>\n\n\n\n<div class="panel panel-warning stock-alert-panel" style="border-left:4px solid #f39c12;padding:1rem 1.25rem;margin-bottom:1.5rem;background:#fffbf0;">\n  <p class="section-heading" style="color:#b7770d;margin-top:0;">&#128310; Stock bajo el m&#237;nimo o sin stock vigente (3 productos)</p>\n  <ul style="margin:0;padding-left:1.25rem;">\n    \n    <li><strong>Avena MinCero Vacia</strong> &mdash; 0 unid. vigentes (0 registradas) / m&#237;nimo 0</li>\n    \n    <li><strong>Conserva Vencida Hoy</strong> &mdash; 0 unid. vigentes (8 registradas) / m&#237;nimo 5</li>\n    \n    <li><strong>Leche Mezcla Audit07</strong> &mdash; 10 unid. vigentes (17 registradas) / m&#237;nimo 10</li>\n    \n  </ul>\n</div>\n\n\n\n\n<p class="muted small mb-2">\n  <strong>Stock f&#237;sico:</strong> unidades registradas en el sistema (incluye lotes vencidos); debe contrastarse con el conteo f&#237;sico.\n  <strong>Stock vigente:</strong> unidades de lotes no vencidos. Para venderlas, el producto y su categor&#237;a tambi&#233;n deben estar habilitados. El sistema considera vencido un lote desde su fecha de vencimiento.\n</p>\n\n\n<div class="table-wrap">\n  <table class="stock-overview-table">\n    <thead>\n      <tr>\n        <th>Producto</th>\n        <th>Categor&#237;a</th>\n        <th>Stock f&#237;sico</th>\n        <th>Stock vigente</th>\n        <th>M&#237;nimo</th>\n        <th>Estado</th>\n        <th>Acciones</th>\n      </tr>\n    </thead>\n    <tbody>\n      \n      <tr>\n        <td><strong>Avena MinCero Vacia</strong><br><small>775070000004</small></td>\n        <td>Lacteos Audit07</td>\n        <td>\n          \n            <span style="color:#c0392b;font-weight:600;">0</span>\n          \n        </td>\n        <td>\n          \n            <span style="color:#c0392b;font-weight:600;">0</span>\n          \n        </td>\n        <td>0</td>\n        <td>\n          \n            <span style="color:#c0392b;font-weight:600;">Sin stock vendible</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap stock-actions">\n            <a href="/inventario/productos/cc1ec18a-77de-4d44-b62f-e76c377a7b64/movimientos/" class="button">\n              Ver movimientos\n            </a>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td><strong>Conserva Vencida Hoy</strong><br><small>775070000003</small></td>\n        <td>Lacteos Audit07</td>\n        <td>\n          \n            8\n          \n        </td>\n        <td>\n          \n            <span style="color:#c0392b;font-weight:600;">0</span>\n          \n        </td>\n        <td>5</td>\n        <td>\n          \n            <span style="color:#c0392b;font-weight:600;">Sin stock vendible</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap stock-actions">\n            <a href="/inventario/productos/988de55c-d407-428b-b658-8f0aa6126144/movimientos/" class="button">\n              Ver movimientos\n            </a>\n            \n              <a href="/inventario/cargas/cfa25f00-7856-42b4-b8bf-b4ce90763f19/" class="button button-secondary">\n                Ver carga\n              </a>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td><strong>Galletas Cat Desactivada</strong><br><small>775070000007</small></td>\n        <td>Snacks Suspendidos07</td>\n        <td>\n          \n            2\n          \n        </td>\n        <td>\n          \n            2\n          \n        </td>\n        <td>10</td>\n        <td>\n          \n            <span style="color:#95a5a6;">Categor&#237;a desactivada</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap stock-actions">\n            <a href="/inventario/productos/1ef05328-3653-4a5d-94ef-2923ee4fc2ea/movimientos/" class="button">\n              Ver movimientos\n            </a>\n            \n              <a href="/inventario/cargas/8f1849f7-97ca-4985-9b35-271575691eb4/" class="button button-secondary">\n                Ver carga\n              </a>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td><strong>Jugo Producto Inactivo</strong><br><small>775070000006</small></td>\n        <td>Lacteos Audit07</td>\n        <td>\n          \n            5\n          \n        </td>\n        <td>\n          \n            2\n          \n        </td>\n        <td>10</td>\n        <td>\n          \n            <span style="color:#95a5a6;">Inactivo</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap stock-actions">\n            <a href="/inventario/productos/45bdfa2a-4dd0-4554-80b2-588a1e52becd/movimientos/" class="button">\n              Ver movimientos\n            </a>\n            \n              <a href="/inventario/cargas/1f99c828-512b-49b5-82c2-ff0d81603cc7/" class="button button-secondary">\n                Ver carga\n              </a>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td><strong>Leche Mezcla Audit07</strong><br><small>775070000001</small></td>\n        <td>Lacteos Audit07</td>\n        <td>\n          \n            17\n          \n        </td>\n        <td>\n          \n            <span style="color:#c0392b;font-weight:600;">10</span>\n          \n        </td>\n        <td>10</td>\n        <td>\n          \n            <span style="color:#e67e22;font-weight:600;">Stock bajo</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap stock-actions">\n            <a href="/inventario/productos/11a641b8-fdbd-41f2-97b2-37e9c192ef3b/movimientos/" class="button">\n              Ver movimientos\n            </a>\n            \n              <a href="/inventario/cargas/13037b14-89cb-4017-8f5a-5408d1e7d40d/" class="button button-secondary">\n                Ver carga\n              </a>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td><strong>Sal MinCero Sana</strong><br><small>775070000005</small></td>\n        <td>Lacteos Audit07</td>\n        <td>\n          \n            7\n          \n        </td>\n        <td>\n          \n            7\n          \n        </td>\n        <td>0</td>\n        <td>\n          \n            <span style="color:#27ae60;">OK</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap stock-actions">\n            <a href="/inventario/productos/a2433467-a028-4812-a1fa-11d722c9e406/movimientos/" class="button">\n              Ver movimientos\n            </a>\n            \n              <a href="/inventario/cargas/f705b52f-b96d-4c91-bfbe-2fc6ae411ed9/" class="button button-secondary">\n                Ver carga\n              </a>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td><strong>Yogurt GTIN 30D</strong><br><small>036000291452</small></td>\n        <td>Lacteos Audit07</td>\n        <td>\n          \n            9\n          \n        </td>\n        <td>\n          \n            9\n          \n        </td>\n        <td>3</td>\n        <td>\n          \n            <span style="color:#27ae60;">OK</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap stock-actions">\n            <a href="/inventario/productos/0b452e58-fcb4-47fa-b055-18515200a063/movimientos/" class="button">\n              Ver movimientos\n            </a>\n            \n              <a href="/inventario/cargas/94ba4dc2-0380-4081-bc6b-4e56b7503dec/" class="button button-secondary">\n                Ver carga\n              </a>\n            \n          </div>\n        </td>\n      </tr>\n      \n    </tbody>\n  </table>\n</div>\n\n<div class="form-actions" style="margin-top:1.5rem;">\n  \n  \n  <a href="/inventario/ajustes/nuevo/" class="button">Ajuste f&#237;sico</a>\n  \n  <a href="/inventario/bajas/nueva/" class="button">Registrar merma</a>\n</div>\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  \n</body>\n</html>\n'
+
+======================================================================
+FAIL: test_stock_overview_and_dashboard_avoid_n_plus_one_lot_queries (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_stock_overview_and_dashboard_avoid_n_plus_one_lot_queries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit07_stock_expirations.py", line 487, in test_stock_overview_and_dashboard_avoid_n_plus_one_lot_queries
+    with self.assertNumQueries(0):
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : 2 queries executed, 0 expected
+Captured queries were:
+1. SELECT "inventory_lot"."available_quantity" AS "available_quantity" FROM "inventory_lot" WHERE "inventory_lot"."product_id" = '0a2f6c7d7f714e479569ce9b4a152d8d' ORDER BY "inventory_lot"."expiration_date" ASC, "inventory_lot"."received_at" ASC, "inventory_lot"."id" ASC
+2. SELECT "inventory_lot"."available_quantity" AS "available_quantity" FROM "inventory_lot" WHERE ("inventory_lot"."product_id" = '0a2f6c7d7f714e479569ce9b4a152d8d' AND "inventory_lot"."expiration_date" > '2026-11-11') ORDER BY "inventory_lot"."expiration_date" ASC, "inventory_lot"."received_at" ASC, "inventory_lot"."id" ASC
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.019s
+
+FAILED (failures=2, errors=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

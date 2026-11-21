@@ -1,0 +1,14 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Página no encontrada · Minimarket{% endblock %}
+
+{% block content %}
+<section class="panel empty-state" data-testid="not-found">
+  <span class="status status-pending">Error 404</span>
+  <div class="empty-icon" aria-hidden="true">?</div>
+  <h2>Página no encontrada</h2>
+  <p>La dirección solicitada no existe o el registro ya no está disponible.</p>
+  <a class="button button-primary" href="{% url 'dashboard' %}">Volver al inicio</a>
+</section>
+{% endblock %}
+

@@ -1,0 +1,342 @@
+{
+  "inicio_utc": "2026-11-21T03:02:32.626072+00:00",
+  "url": "https://minimarket-academico-auditoria02.vercel.app",
+  "fixture": "PRECIO-D5F3FFCBB6",
+  "controles": [
+    {
+      "caso": "sin borrador previo en turno ficticio",
+      "observado": false,
+      "esperado": false,
+      "cumple": true
+    },
+    {
+      "caso": "v1 catálogo y categoría ADMIN",
+      "observado": [
+        "Lácteos ensayo D5F3FFCBB6",
+        "PRECIO-D5F3FFCBB6",
+        "10,00"
+      ],
+      "esperado": [
+        "Lácteos ensayo D5F3FFCBB6",
+        "PRECIO-D5F3FFCBB6",
+        "10,00"
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "v1 catálogo y categoría ALMACENERO",
+      "observado": [
+        "Lácteos ensayo D5F3FFCBB6",
+        "PRECIO-D5F3FFCBB6",
+        "10,00"
+      ],
+      "esperado": [
+        "Lácteos ensayo D5F3FFCBB6",
+        "PRECIO-D5F3FFCBB6",
+        "10,00"
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "almacén sin acción de edición",
+      "observado": 0,
+      "esperado": 0,
+      "cumple": true
+    },
+    {
+      "caso": "ALMACENERO GET /productos/categorias/",
+      "observado": 403,
+      "esperado": 403,
+      "cumple": true
+    },
+    {
+      "caso": "ALMACENERO GET /productos/851cd527-afdc-47b6-88cf-7ebcd1cb1e78/editar/",
+      "observado": 403,
+      "esperado": 403,
+      "cumple": true
+    },
+    {
+      "caso": "VENDEDOR GET /productos/categorias/",
+      "observado": 403,
+      "esperado": 403,
+      "cumple": true
+    },
+    {
+      "caso": "VENDEDOR GET /productos/851cd527-afdc-47b6-88cf-7ebcd1cb1e78/editar/",
+      "observado": 403,
+      "esperado": 403,
+      "cumple": true
+    },
+    {
+      "caso": "VENDEDOR GET catálogo",
+      "observado": 403,
+      "esperado": 403,
+      "cumple": true
+    },
+    {
+      "caso": "ADMIN categorías",
+      "observado": 200,
+      "esperado": 200,
+      "cumple": true
+    },
+    {
+      "caso": "constancia v1",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    },
+    {
+      "caso": "etiqueta precio con IGV",
+      "observado": "Precio final con IGV (S/)",
+      "esperado": "Precio final con IGV (S/)",
+      "cumple": true
+    },
+    {
+      "caso": "aviso de edición",
+      "observado": 1,
+      "esperado": 1,
+      "cumple": true
+    },
+    {
+      "caso": "v2 catálogo tras recarga ADMIN",
+      "observado": [
+        "Lácteos ensayo D5F3FFCBB6",
+        "PRECIO-D5F3FFCBB6",
+        "11,50"
+      ],
+      "esperado": [
+        "Lácteos ensayo D5F3FFCBB6",
+        "PRECIO-D5F3FFCBB6",
+        "11,50"
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "v2 catálogo tras recarga ALMACENERO",
+      "observado": [
+        "Lácteos ensayo D5F3FFCBB6",
+        "PRECIO-D5F3FFCBB6",
+        "11,50"
+      ],
+      "esperado": [
+        "Lácteos ensayo D5F3FFCBB6",
+        "PRECIO-D5F3FFCBB6",
+        "11,50"
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "v1 en carrito tras recarga",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    },
+    {
+      "caso": "v2 en nueva búsqueda del vendedor",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    },
+    {
+      "caso": "GET conserva línea antigua",
+      "observado": [
+        "10.00"
+      ],
+      "esperado": [
+        "10.00"
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "resumen exige revisión",
+      "observado": 1,
+      "esperado": 1,
+      "cumple": true
+    },
+    {
+      "caso": "revisión conserva stock, ventas y caja",
+      "observado": [
+        6,
+        1,
+        "70.00"
+      ],
+      "esperado": [
+        6,
+        1,
+        "70.00"
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "línea revisada",
+      "observado": [
+        "11.50"
+      ],
+      "esperado": [
+        "11.50"
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "constancia v2",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    },
+    {
+      "caso": "base, IGV y total",
+      "observado": [
+        "9.75",
+        "1.75",
+        "11.50"
+      ],
+      "esperado": [
+        "9.75",
+        "1.75",
+        "11.50"
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "ambas líneas históricas",
+      "observado": [
+        [
+          2,
+          "10.00",
+          "20.00"
+        ],
+        [
+          1,
+          "11.50",
+          "11.50"
+        ]
+      ],
+      "esperado": [
+        [
+          2,
+          "10.00",
+          "20.00"
+        ],
+        [
+          1,
+          "11.50",
+          "11.50"
+        ]
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "un descuento de stock y un ingreso",
+      "observado": [
+        5,
+        2,
+        true
+      ],
+      "esperado": [
+        5,
+        2,
+        true
+      ],
+      "cumple": true
+    },
+    {
+      "caso": "total histórico V-00000001",
+      "observado": "20.00",
+      "esperado": "20.00",
+      "cumple": true
+    },
+    {
+      "caso": "total histórico V-00000002",
+      "observado": "11.50",
+      "esperado": "11.50",
+      "cumple": true
+    },
+    {
+      "caso": "constancia anterior recuperada desde historial",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    }
+  ],
+  "estados": {
+    "inicio": {
+      "precio": "10.00",
+      "lote": 8,
+      "lineas_venta": [],
+      "carrito": [],
+      "ventas_turno": 0,
+      "efectivo_esperado": "50.00"
+    },
+    "borrador_antes": {
+      "precio": "10.00",
+      "lote": 6,
+      "lineas_venta": [
+        [
+          2,
+          "10.00",
+          "20.00"
+        ]
+      ],
+      "carrito": [
+        "10.00"
+      ],
+      "ventas_turno": 1,
+      "efectivo_esperado": "70.00"
+    },
+    "recarga": {
+      "precio": "11.50",
+      "lote": 6,
+      "lineas_venta": [
+        [
+          2,
+          "10.00",
+          "20.00"
+        ]
+      ],
+      "carrito": [
+        "10.00"
+      ],
+      "ventas_turno": 1,
+      "efectivo_esperado": "70.00"
+    },
+    "revision": {
+      "precio": "11.50",
+      "lote": 6,
+      "lineas_venta": [
+        [
+          2,
+          "10.00",
+          "20.00"
+        ]
+      ],
+      "carrito": [
+        "11.50"
+      ],
+      "ventas_turno": 1,
+      "efectivo_esperado": "70.00"
+    },
+    "confirmada": {
+      "precio": "11.50",
+      "lote": 5,
+      "lineas_venta": [
+        [
+          2,
+          "10.00",
+          "20.00"
+        ],
+        [
+          1,
+          "11.50",
+          "11.50"
+        ]
+      ],
+      "carrito": [],
+      "ventas_turno": 2,
+      "efectivo_esperado": "81.50"
+    }
+  },
+  "postgresql": "17.2",
+  "chrome": "157.0.8103.80",
+  "resultado": "P1 y P2 ejecutados",
+  "fin_utc": "2026-11-21T03:03:14.900971+00:00"
+}

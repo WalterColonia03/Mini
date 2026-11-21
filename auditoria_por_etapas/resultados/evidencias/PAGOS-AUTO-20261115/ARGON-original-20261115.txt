@@ -1,0 +1,191 @@
+Fecha de emisión: 15/11/2026 (America/Lima)
+Actualización de restricciones autorizada por el responsable: 15/11/2026 — Se elimina la restricción de "cero comisión de cobro" (dado que en la demostración en vivo el volumen total de prueba será de ~S/ 10.00 entre 6 integrantes, haciendo irrelevante una comisión de céntimos) y se prioriza confiabilidad total el día de la presentación, flexibilidad, seguridad antifraude y defensa arquitectónica ante cualquier pregunta del profesor.
+Única restricción dura vigente: No se cuenta con RUC (solo DNI de persona natural).
+Autoridad funcional de contraste: 08_Historias_de_Usuario.md (SHA-256 c0aa262b2dceba783ffa08e61bcca985857d777f5ef38be7749c4dd99d47e632) y código real r1-pmv.zip (SHA-256 03145af8aa1063e62b37c6d4736413ad306cd05ce971914fc44df61bfd40522d).
+Estado de las etapas previas: Se conserva intacto el cierre local de Etapa 01 (01-K) y de Etapa 02 (02-E). Ninguna etapa ajena se reabre ni se declara cerrada por este dictamen.
+Al levantar la prohibición de comisión pero mantener la restricción real de no tener RUC, el panorama técnico en el Perú se divide en tres realidades verificadas documentalmente que debes conocer para no caer en una trampa antes de la presentación:
+Opción en Perú aceptando pagar comisión
+¿Permite afiliarse solo con DNI (sin RUC)?
+¿Sirve para cobro por QR y cómo funciona?
+Costo real en una demo de S/ 10.00
+Veredicto técnico para tu presentación
+1. Culqi / TAYPI / Izipay / Niubiz
+NO (Exigen RUC 10 o RUC 20 activo y habido en SUNAT) ([Requisitos Culqi 2026](https://monederoelectronico.net/culqi/requisitos-culqi-tiempos-abono-bcp-2026 "null") y [TAYPI KYB Nivel 2](https://taypi.pe/blog/taypi-vs-mercado-pago-peru/ "null")).
+Aunque tienen excelentes APIs, te rechazarán el alta de producción por no tener RUC.
+N/A (bloqueado por falta de RUC).
+DESCARTADA (Imposible pasar a producción con pagos reales sin RUC).
+2. Mercado Pago Perú (Cuenta Personal con DNI + Checkout API de Yape)
+SÍ permite crear Cuenta Personal con DNI ([Mercado Pago Perú - Registro Cuenta Personal con DNI](https://www.mercadopago.com.pe/signup/splitter "null")).
+OJO TÉCNICO: La API de Yape en Mercado Pago Perú NO es por escaneo de QR; exige que el comprador entre a su app Yape, copie el código de aprobación de 6 dígitos (OTP) y su número de celular y se los dicte al cajero (phoneNumber + otp en [Mercado Pago Developers Perú - Yape](https://www.mercadopago.com.pe/developers/es/docs/checkout-api-payments/integration-configuration/yape "null")). A cambio, da confirmación síncrona por API en 1 segundo y reembolsos totales o parciales automáticos por API ([Mercado Pago Developers - Reembolsos](https://www.mercadopago.com.pe/developers/es/docs/subscriptions/additional-content/cancellations-and-refunds "null")).
+~3.99 % + IGV (aprox. S/ 0.47 en total por S/ 10.00 de pruebas).
+EXCELENTE COMO SEGUNDO CANAL (PAGO YAPE CON OTP + REEMBOLSO AUTOMÁTICO POR API), pero no sustituye por sí solo el escaneo de un código QR.
+3. Yape Empresa (afiliado con DNI) + Perfil «Ayudantes» + Puente Android / Cotejo de Seguridad
+SÍ permite afiliarse solo con DNI (sin RUC): los [Términos y Condiciones Oficiales de Yape Empresa](https://www.yape.com.pe/terminos-y-condiciones/yape-empresa "null") definen al usuario como "Cliente BCP o cliente YAPE con DNI, que haya configurado el Perfil Empresa" ([Guía Yape Empresa - Chócala](https://chocala.lat/guias/yape-empresa-comision-y-cuando-conviene "null")).
+Permite cobrar por QR oficial, recibir pagos de Yape y Plin, agregar hasta 5 Ayudantes oficiales (tus compañeros de grupo ven en su propio celular que el pago entró en tiempo real sin tener acceso al saldo ni poder mover dinero del dueño, [Centro de Ayuda Yape - Ayudantes](https://www.yape.com.pe/preguntas-frecuentes/yape-empresa/que-podran-hacer-mis-ayudantes "null")) y descargar reportes oficiales de 90 días.
+2.95 % del total del día ([Yape Oficial - Comisiones](https://www.yape.com.pe/preguntas-frecuentes/enviar-y-recibir-yapeos/yape-cobra-comisiones "null")). En S/ 10.00 de demostración pagarás exactamente S/ 0.30 (30 céntimos). Y al terminar la presentación puedes desafiliarte desde la misma app.
+RECOMENDACIÓN PRINCIPAL INFALIBLE PARA EL COBRO QR.
+Como sois 6 integrantes y el costo por mover S/ 10.00 en el día de la exposición será de S/ 0.30 a S/ 0.50 en total, ya no tienes que elegir una sola vía frágil. La decisión ganadora —que te garantiza cero fallos en vivo y deja al profesor sin ningún ángulo débil por donde atacar tu proyecto— es implementar el Motor de Pagos Multi-Canal con Doble Respaldo:
+1. Canal QR Oficial con Delegación Bancaria Real (Yape Empresa con DNI — costo S/ 0.30 por cada S/ 10):
+   - Uno de los 6 integrantes activa temporalmente el perfil Yape Empresa en su app Yape (solo requiere DNI/cuenta BCP, sin RUC) y registra a otros 2 integrantes del grupo como «Ayudantes» oficiales en la app de Yape ([Yape Empresa Oficial](https://www.yape.com.pe/productos/yape-empresa "null")).
+   - Por qué esto destruye cualquier objeción del profesor sobre la ausencia del dueño: Ya no dependemos de un "truco casero". La propia infraestructura bancaria del BCP (Yape Empresa) le entrega al empleado autorizado (el Ayudante) una vista oficial de solo lectura en su celular donde ve cada pago recibido con monto, nombre del pagador, hora y número de operación, sin poder ver el saldo total de la tienda ni hacer transferencias.
+2. Automatización en Vivo + Respaldo Instantáneo (Doble Cinturón de Seguridad para el Día de la Demo):
+   - Vía Rápida Automática (Puente Android + Reclamo por Código en POS): El teléfono receptor (o el teléfono del Ayudante) tiene activo el puente NotificationListenerService ([Android Developers](https://developer.android.com/reference/android/service/notification/NotificationListenerService "null")) que inyecta el aviso en segundos al servidor Django (ObservedPaymentEvent). El cajero solo digita los 3 dígitos de seguridad (o confirma el aviso en pantalla) y el pago queda vinculado sin poder inventarlo ni repetirlo.
+   - Vía Infalible Anti-Fallos (Si el Wi-Fi del salón o las notificaciones push de Android fallan en plena exposición): Como el compañero que hace de verificador/almacenero es Ayudante oficial de Yape Empresa, abre su app Yape, ve el pago real en la pestaña oficial de Ayudante y lo aprueba en 3 segundos desde su vista del sistema, o bien usamos el flujo Yape por API con Código de Aprobación OTP (Mercado Pago con DNI) donde el pago y hasta su reembolso se ejecutan 100 % por API REST oficial ([Mercado Pago Developers Perú - Yape](https://www.mercadopago.com.pe/developers/es/docs/checkout-api-payments/integration-configuration/yape "null")). Resultado: es técnicamente imposible que la demostración en vivo se trabe.
+#
+Afirmación evaluada
+Origen
+Veredicto
+Clasificación de evidencia
+Evidencia oficial y cómo cambia con tu nueva decisión
+1
+"Yape Empresa / Ayudantes exige RUC, por lo que no podríamos usarlo sin empresa constituida."
+Creencia común en blogs no oficiales
+INCORRECTA
+VERIFICADO DOCUMENTALMENTE
+Los [Términos y Condiciones Oficiales de Yape Empresa](https://www.yape.com.pe/terminos-y-condiciones/yape-empresa "null") y la [Guía de Yape Empresa (Chócala)](https://chocala.lat/guias/yape-empresa-comision-y-cuando-conviene "null") confirman que cualquier persona natural con cuenta Yape con BCP o con DNI puede pasar a Yape Empresa desde el menú de la app sin RUC. Su comisión es 2.95 % sobre lo cobrado en el día (S/ 0.30 por S/ 10.00 de demo) y permite desafiliarse al terminar el día.
+2
+"Los Ayudantes de Yape Empresa ven los cobros del día en tiempo real desde su propio celular sin ver el saldo del dueño ni poder sacar dinero."
+Documentación oficial de Yape (PAGOS_YAPE_Y_MIXTOS.md)
+CORRECTA
+VERIFICADO DOCUMENTALMENTE
+Confirmado en [Centro de Ayuda Oficial de Yape - Qué podrán hacer mis ayudantes](https://www.yape.com.pe/preguntas-frecuentes/yape-empresa/que-podran-hacer-mis-ayudantes "null"): hasta 5 ayudantes reciben confirmación de cada venta en tiempo real sin acceso a los fondos del titular. Resuelve de raíz el problema de "dueño ausente".
+3
+"Mercado Pago Perú permite abrir una Cuenta Personal solo con DNI y usar su API de pagos Yape (payment_method_id='yape') y su API de reembolsos automáticos."
+Documentación de Mercado Pago Perú
+CORRECTA (CON PRECISIÓN DE FLUJO)
+VERIFICADO DOCUMENTALMENTE
+El registro en [Mercado Pago Perú Splitter](https://www.mercadopago.com.pe/signup/splitter "null") ofrece «Cuenta personal: Necesitas tener tu DNI contigo» (a diferencia de Cuenta Negocio que pide RUC). Su integración [Checkout API - Yape](https://www.mercadopago.com.pe/developers/es/docs/checkout-api-payments/integration-configuration/yape "null") funciona pidiendo el celular del comprador y el código de aprobación OTP de 6 dígitos de la app Yape (no por QR), confirma en tiempo real por API y habilita reembolsos totales o parciales por API ([Reembolsos y cancelaciones - Mercado Pago](https://www.mercadopago.com.pe/developers/es/docs/subscriptions/additional-content/cancellations-and-refunds "null")).
+4
+"Conviene mantener en nuestra base de datos la separación entre Intento, Abono Observado/Verificado, Aplicación a Venta y Resolución de Reintegro, sin auto-confirmar jamás solo por coincidencia de monto."
+Revisión anterior (REVISION-PROPUESTA-GEMINI-PAGOS.md) y Sección 3 de este dictamen
+CORRECTA
+PROBADO / INFERIDO
+Incluso usando Yape Empresa o puente Android, en un cobro por QR estático dos clientes pueden pagar S/ 10.00 al mismo tiempo. Mantener el modelo ObservedPaymentEvent + vínculo por código/referencia garantiza que el profesor vea una arquitectura bancaria profesional.
+5
+"Si ahora aceptamos pagar ~30 céntimos de comisión en el día de la demo, también podemos permitir devolver un pago mediante un nuevo yapeo o por reembolso API cuando el profesor lo pida."
+Nuevo escenario sin restricciones financieras
+CORRECTA (DECISIÓN HABILITADA)
+DECISIÓN DE NEGOCIO
+Al levantar las restricciones rígidas, el sistema puede ofrecer 3 mecanismos limpios de devolución según cómo pagó el cliente: (1) si se quiere aplicar a otro producto en el acto (Crédito en tienda, S/ 0 costo), (2) si el pago entró por pasarela API con token (Reembolso automático por API), o (3) si entró por QR directo (Devolución autorizada por Control Dual/ADMIN en efectivo de caja o transferencia de extorno registrada con su número de operación).
+Para que el día de la presentación tengas tanto la velocidad del QR en mostrador como la solidez de una integración verificada, el sistema soporta el mismo flujo unificado alimentado por dos canales complementarios que no requieren RUC:
+1. Canal Principal en Mostrador — Cobro por QR con Yape Empresa (DNI) + Puente Observador Android + Ayudante Oficial:
+   - Paso 1: El vendedor prepara la venta en /ventas/ (SaleDraft) y pasa a /ventas/cobrar/. Elige Yape (QR) o Pago Mixto (Efectivo + Yape).
+   - Paso 2: La pantalla muestra el QR oficial de la cuenta receptora del negocio (configurado por ADMIN) e indica el monto exacto a yapear (o los montos parciales si dos amigos van a yapear S/ 3.00 y S/ 7.00).
+   - Paso 3 (Recepción por doble vía simultánea): El cliente escanea el QR y yapea. En ese instante ocurren dos cosas a la vez:
+     - Vía Automática (Puente Android): El teléfono receptor (o el teléfono del Ayudante con el puente Android activo) detecta la notificación oficial de com.bcp.innovacxion.yapeapp y la envía firmada por HMAC-SHA256 a POST /api/pagos/notificaciones/, creando en PostgreSQL una fila ObservedPaymentEvent(status='UNCLAIMED').
+     - Vía de Respaldo Oficial (App de Ayudante Yape Empresa / Consola Delegada): El integrante del equipo con rol ALMACENERO o ADMIN (registrado como Ayudante oficial en Yape Empresa) recibe también en su celular la confirmación oficial de Yape Empresa. Si por cualquier motivo el Wi-Fi del aula bloqueara la notificación push del puente, el compañero confirma el abono desde su vista web en 3 segundos.
+   - Paso 4 (Vínculo inequívoco con la compra sin regalar pagos ajenos): El cajero ingresa los 3 dígitos del código de seguridad (en Yape normal) o los últimos dígitos de operación / confirmación del Ayudante (en Yape Empresa/Plin). El servidor valida en una transacción atómica que el evento exista en ObservedPaymentEvent(status='UNCLAIMED'), que el monto coincida al céntimo, muestra el nombre del pagador y lo bloquea (RESERVED → APPLIED).
+2. Canal Opcional de Demostración API — Cobro Yape con Código de Aprobación OTP (Mercado Pago Perú con DNI):
+   - Si el profesor pregunta: «¿Y cómo funcionaría con una pasarela API real sin intervención humana y con reembolso automático?», en la misma pantalla tienes la pestaña Yape Directo (Código OTP - Pasarela API): el comprador dicta su celular y su código de aprobación de 6 dígitos de la app Yape, nuestro backend Django llama a la API de Mercado Pago Perú (payment_method_id="yape"), recibe "status": "approved" con id de transacción bancario real en 1 segundo y, si el profesor pide anular la venta, ejecuta POST /v1/payments/{id}/refunds devolviendo el dinero automáticamente a la cuenta Yape del comprador.
+Se mantienen íntegramente las cinco entidades del dominio en sales/models.py (PaymentReceiverConfig, ObservedPaymentEvent, PaymentAttempt, SalePaymentAllocation, RefundOrCreditResolution) y la resolución matemática exacta de los 9 casos:
+#
+Caso que el profesor puede pedir probar en vivo
+Cómo responde el sistema con números exactos
+1
+Compra de S/ 10.00 pagada con S/ 3.00 y S/ 7.00 desde dos celulares distintos
+El PaymentAttempt (target_total = 10.00) permite agregar múltiples abonos digitales: se reclama el primer abono de S/ 3.00 (Cubierto: S/ 3.00 · Falta: S/ 7.00) y luego el segundo abono de S/ 7.00 (Cubierto: S/ 10.00 · Falta: S/ 0.00). Al confirmar se crea 1 sola Sale (V-########) con 2 filas en SalePaymentAllocation (cada una vinculada con OneToOneField a su respectivo ObservedPaymentEvent). Gaveta física: +S/ 0.00 · Yape: +S/ 10.00.
+2
+Pago Mixto exacto (S/ 15.00 en Yape + S/ 10.00 en efectivo para una venta de S/ 25.00)
+El sistema verifica primero el abono Yape (Y = S/ 15.00), calcula el saldo en efectivo requerido (E = 25.00 - 15.00 = S/ 10.00), recibe R = S/ 10.00 (change_given = 0.00) y registra en la venta cash_applied_amount = 10.00 y digital_applied_amount = 15.00. Gaveta física esperada: +S/ 10.00 · Yape: +S/ 15.00.
+3
+Pago Mixto con vuelto en efectivo (Venta de S/ 30.00 pagada con S/ 20.00 en Yape y un billete de S/ 20.00)
+Como Y = S/ 20.00, la parte que corresponde pagar en efectivo es E = 30.00 - 20.00 = S/ 10.00. Como el cliente entrega un billete de R = S/ 20.00, el sistema calcula Vuelto = R - E = 20.00 - 10.00 = S/ 10.00. La gaveta física aumenta únicamente en E = +S/ 10.00 (entra billete de 20, salen 10 de vuelto).
+4
+Pago insuficiente o exceso digital
+Si E + Y < T, el servidor bloquea la confirmación indicando cuánto falta sin perder los abonos ya verificados (RESERVED). Si el cliente yapeó de más (Y > T, ej. yapeó S/ 12.00 para una compra de S/ 10.00), no se convierte automáticamente en efectivo de gaveta: aplica S/ 10.00 a la venta y crea un RefundOrCreditResolution por los S/ 2.00 de exceso para aplicarlo a otro producto o devolverlo con autorización.
+5
+Cancelación después de haber recibido el primer abono (ej. pagó S/ 3.00 de S/ 10.00 y cancela)
+El borrador se descarta (DISCARDED, no se descuenta stock), pero el abono real de S/ 3.00 pasa a estado UNAPPLIED_INCIDENT y genera automáticamente un RefundOrCreditResolution(amount_to_resolve=3.00, status='PENDING_RESOLUTION') trazado en el turno.
+6
+Cambio de stock o de precio después de que el cliente ya yapeó
+La verificación del abono (RESERVED) se guarda en una transacción independiente previa al descuento de stock. Si al confirmar la venta el lock detecta que otro rol cambió el precio o dio de baja el lote, revierte la creación de Sale, conserva intacto el abono verificado y permite ajustar el carrito, completar la diferencia o pasar el abono a resolución de reintegro.
+7
+Devolución parcial, duplicada o concurrente
+Bajo lock SELECT ... FOR UPDATE de Sale, el servidor valida que unidades_devueltas_acumuladas + nuevas <= SaleLine.quantity y monto_reintegrado_acumulado + nuevo <= Sale.total_amount. Un segundo clic o pestaña paralela es rechazado sin duplicar salida de dinero ni entrada de stock.
+8
+Pago tardío que llega después de que se canceló la compra (y ya hay otro cliente comprando por el mismo monto)
+El aviso tardío entra a ObservedPaymentEvent como UNCLAIMED. Como jamás se auto-confirma por monto, el segundo cliente no puede apropiarse de ese pago porque no conoce el código de seguridad/operación del primer cliente. Cuando el primer cliente reclama, se recupera su abono por su código y se resuelve.
+9
+Corte de red / timeout justo al confirmar una compra ya pagada
+Si el commit en PostgreSQL ya había terminado, reenviar el formulario con la misma idempotency_key recupera la misma Sale y redirige a su constancia V-########. Si el corte fue antes del commit, el borrador sigue activo con sus abonos RESERVED listos para confirmar en un clic.
+Amenaza
+Quién intenta explotarla
+Cómo la bloquea nuestra solución
+Riesgo residual real (explicado con transparencia para el profesor)
+1. Captura de pantalla editada o APK de "Yape Falso"
+Cliente malicioso
+El cajero no puede dar por válido un pago mirando el celular del cliente: el servidor exige que el abono exista en ObservedPaymentEvent (ingresado por el puente del teléfono del negocio o confirmado por el Ayudante en Yape Empresa).
+Ninguno si el servidor exige ObservedPaymentEvent previo.
+2. Cajero intenta inventar un pago Yape para robar efectivo o regalar productos
+Cajero malicioso
+El formulario de cobro Yape no acepta texto libre: solo permite reclamar un registro existente en ObservedPaymentEvent que coincida en monto y código secreto.
+El cajero no puede inventar abonos en el sistema.
+3. Cajero intenta usar el mismo yapeo de S/ 10.00 en dos ventas distintas
+Cajero malicioso / Doble pestaña
+SELECT ... FOR UPDATE sobre ObservedPaymentEvent + OneToOneField (UNIQUE) en SalePaymentAllocation.
+Cero en base de datos: PostgreSQL impide que un abono se asigne a dos ventas.
+4. Dos clientes pagan el mismo monto (ej. S/ 5.00) al mismo tiempo
+Casualidad en hora punta
+Prohibido emparejar solo por monto. Se exige el código de 3 dígitos / código de operación del comprobante del cliente y se verifica el nombre del pagador.
+Si dos pagos en el mismo minuto tienen igual monto y por azar ($1/1000$) el mismo código de 3 dígitos, el sistema detecta ambigüedad y exige elegir por nombre completo e instante exacto.
+5. Cajero pega su propio QR impreso encima del mostrador y entrega productos sin registrarlos
+Cajero malicioso
+En la pantalla del sistema el QR solo lo edita ADMIN (HU-VEN-07/CA-07). Si el cliente yapea al QR personal del cajero, el abono no entra a nuestro servidor y la venta no puede registrarse como Yape.
+Si el cajero entrega el producto "por fuera del sistema" sin registrar la venta, eso es hurto físico de mercadería; ningún software de pagos lo impide en el acto, pero queda expuesto al hacer el Conteo Físico de Inventario (HU-INV-03) y la baja por Robo o faltante (HU-INV-02).
+6. Cajero finge una anulación/devolución para sacar billetes de la gaveta
+Cajero malicioso
+Control Dual de 4 Ojos (VENDEDOR + ALMACENERO o ADMIN): El vendedor solo puede solicitar la anulación; para que se ejecute y descuente gaveta, el ALMACENERO o ADMIN debe confirmar en el sistema que recibió físicamente el producto devuelto y asignarle destino (RN-09).
+Requiere colusión simultánea entre el VENDEDOR y el ALMACENERO del turno, acotada además por un tope máximo por turno y auditable en el Kardex (HU-INV-04).
+Como haréis pagos reales pequeños (S/ 1.00 a S/ 2.00, gastando menos de S/ 0.30 en comisiones en total), ejecutad este ensayo de 15 minutos dos días antes de la exposición:
+1. Preparación (5 min):
+   - El integrante titular activa Yape Empresa en su app Yape (solo con su DNI, sin RUC) o deja lista su cuenta Yape Personal + el teléfono Android conectado al cargador y con el puente apuntando a la URL HTTPS pública del sistema.
+   - Si usa Yape Empresa, agrega como Ayudante en la app a otro integrante del grupo (quien actuará como ALMACENERO / ADMIN en la demo).
+2. Ejecución de 3 pagos reales de S/ 1.00 (5 min):
+   - Prueba 1 (Yape simple por QR): Venta de S/ 1.00 → escanear QR → verificar llegada del aviso al servidor en < 5 s → reclamar con código → imprimir constancia V-########.
+   - Prueba 2 (Pago dividido entre 2 compañeros): Venta de S/ 2.00 → Compañero A yapea S/ 1.00 y Compañero B yapea S/ 1.00 → reclamar ambos abonos en el mismo intento → confirmar que solo cuando suma S/ 2.00 se habilita el cierre de la venta.
+   - Prueba 3 (Pago mixto con vuelto): Venta de S/ 3.00 → Compañero A yapea S/ 1.00 y entrega una moneda de S/ 5.00 en efectivo → verificar que el sistema calcule Efectivo aplicado = S/ 2.00, Vuelto = S/ 3.00 y que al previsualizar el cierre de caja la gaveta solo haya subido en +S/ 2.00 y el acumulado Yape en +S/ 1.00.
+3. Prueba del interruptor de contingencia (5 min):
+   - Poner en «Modo Avión» el teléfono del puente Android, hacer una venta de S/ 1.00 y confirmar el abono desde la Consola Web de Verificación Delegada mirando la app del Ayudante. Con esto tenéis 100 % de certeza de que ni siquiera una caída del teléfono o del Wi-Fi del celular puede arruinar vuestra nota.
+Con la flexibilidad actual, tu sistema responde con solvencia a cualquier caso de devolución que el profesor plantee en vivo, usando los 3 roles existentes (ADMIN, ALMACENERO, VENDEDOR) sin inventar un cuarto rol:
+1. Modalidad 1 — Re-aplicación inmediata a otra compra en el mismo turno (Resolución en mostrador por el VENDEDOR):
+   - Si el cliente pagó S/ 5.00 por Yape pero antes de confirmar la venta se agotó el producto o decidió cambiarlo por otro, el abono verificado queda como Saldo a Favor Verificado del Turno (RefundOrCreditResolution) y el VENDEDOR lo aplica en el acto al nuevo carrito del cliente sin mover efectivo ni hacer transferencias.
+2. Modalidad 2 — Anulación con devolución física de mercadería bajo Control Dual de 4 Ojos (VENDEDOR solicita + ALMACENERO o ADMIN certifica RN-09):
+   - Cuando un cliente devuelve un producto de una venta confirmada en el turno abierto (RN-08):
+     1. El VENDEDOR inicia la solicitud de anulación total o parcial indicando el motivo.
+     2. El ALMACENERO (que es el dueño natural del inventario en r1-pmv) o el ADMIN inspecciona físicamente el producto devuelto y registra en el sistema si las unidades regresan al lote original vendible (si están íntegras y vigentes) o pasan a baja por merma (si el envase fue abierto o dañado, HU-VEN-06c).
+     3. Una vez certificado el destino físico de la mercadería, se habilita la ejecución del reintegro monetario hasta por el importe exacto devuelto (con un tope delegado parametrizable para ALMACENERO, p. ej. S/ 50.00 por operación / S/ 100.00 por turno, y sin tope para ADMIN).
+3. Modalidad 3 — Trazabilidad del medio de reintegro (Efectivo en gaveta vs. Extorno Digital / API):
+   - Si la parte devuelta se pagó en efectivo, se devuelve de la gaveta y resta de expected_amount.
+   - Si la parte devuelta se pagó por Yape, el autorizador (ADMIN o Control Dual) elige explícitamente cómo se liquidó:
+     - Opción A (APPLIED_TO_NEW_SALE): Aplicado a otra compra inmediata (no toca gaveta).
+     - Opción B (CASH_REFUND_AUTHORIZED): Entregado en efectivo de la gaveta (solo si el servidor comprueba que efectivo_esperado_actual >= monto_a_devolver, registrándolo en una línea contable separada del acta de cierre: «Salidas de efectivo por reintegro de ventas Yape autorizadas», para que la gaveta cuadre al céntimo).
+     - Opción C (EXTERNAL_DIGITAL_REVERSAL / API_REFUND): Liquidado digitalmente por ADMIN (registrando el número de operación de extorno o el reembolso API de Mercado Pago), lo cual deja la gaveta física intacta (HU-VEN-06b/CA-02).
+Para que el profesor vea correspondencia 1:1 entre tu planificación Scrum (08, 02, 16, 07, 09, 03) y el software funcionando, estos son los ajustes propuestos que aplicaremos en cuanto me des luz verde:
+1. En 08_Historias_de_Usuario.md (y regeneración automática de 07, 09 y 03):
+   - Actualizar el encabezado de contexto DEMO-INTERNET y RN-02: retirar la restricción rígida de rechazar opciones por unos céntimos de comisión, manteniendo la exigencia de operar sin RUC (con DNI) y habilitando como canales legítimos: (a) el aviso observado del receptor + reclamo por código (RECEIVER_NOTIFICATION_MATCH), (b) la verificación delegada por Ayudante/consola ADMIN (DELEGATED_HELPER_VERIFICATION), y (c) opcionalmente token OTP de pasarela con DNI.
+   - Concretar los criterios y literales de HU-VEN-07 (Yape simple) y HU-VEN-10 (Pago mixto y múltiples abonos por compra).
+   - Pasar HU-VEN-06a, HU-VEN-06b y HU-VEN-06c de FUTURO (W) a SELECCIONADO (M) para la entrega DEMO-INTERNET, incorporando el Control Dual (VENDEDOR + ALMACENERO/ADMIN) en la matriz de permisos de RN-29.
+2. En 02_Diseno_Tecnico_R1_PMV.md:
+   - Documentar las 5 tablas nuevas de sales (PaymentReceiverConfig, ObservedPaymentEvent, PaymentAttempt, SalePaymentAllocation, RefundOrCreditResolution), el endpoint HMAC /api/pagos/notificaciones/ y la nueva fórmula de cierre de turno en cash/services.py.
+3. En 16_Task_Breakdown.md:
+   - Actualizar el estado de PAY-CANAL y PAY-REINTEGRO a resueltos bajo la Arquitectura Dual ASTRA-PRO sin RUC y enlazar las tareas de implementación PAY-MODELO, PAY-UI, PAY-ABUSO y DEMO-PUBLICAR.
+Paso
+Qué construimos
+Qué demuestra ante el profesor
+Paso 1 (Inmediato)
+Actualizar 08_Historias_de_Usuario.md, regenerar 07/09/03 y actualizar 02 y 16 (solo requiere tu confirmación final abajo).
+Trazabilidad Scrum perfecta: ninguna pantalla ni botón existe sin su HU, CA, RN y CP aprobados.
+Paso 2
+Migración sales.0009 + Servicios Transaccionales (PAY-MODELO): ObservedPaymentEvent, PaymentAttempt, SalePaymentAllocation, RefundOrCreditResolution y actualización de close_cash_shift en cash/services.py.
+Soportar compras con 2 o más yapeos (S/ 3 + S/ 7), pagos mixtos (Efectivo + Yape con vuelto exacto), bloqueo de doble uso en PostgreSQL y cuadre de gaveta separado de Yape.
+Paso 3
+Interfaz de Mostrador (/ventas/cobrar/), Constancia (sales_receipt.html), Consola de Verificación Delegada/Puente (/api/pagos/notificaciones/) y Pantalla de Anulaciones con Control Dual (HU-VEN-06a/b/c).
+Flujo visual rápido, bloqueo contra códigos inventados por el cajero, modo a prueba de fallos de red y devoluciones controladas entre VENDEDOR y ALMACENERO/ADMIN.
+Paso 4
+Despliegue en URL Pública HTTPS con PostgreSQL durable (DEMO-PUBLICAR) + Ensayo en Vivo de S/ 1.00 (ENSAYO-PRE-DEMO-15MIN).
+El sistema corre en Internet real con HTTPS, sobrevive a reinicios y procesa transferencias reales frente al profesor en segundos.
+- RECOMENDACIÓN: Adoptar la Arquitectura Dual ASTRA-PRO sin RUC: cuenta receptora con DNI (usando Yape Empresa con DNI + Ayudantes oficiales por solo S/ 0.30 de comisión en toda tu demo de S/ 10.00, o Yape Personal con DNI), combinando el Puente Android de Notificaciones + Reclamo Ciego por Código de Seguridad (para velocidad automática en mostrador) con la Consola Web de Verificación Delegada para el Ayudante/ADMIN (como respaldo infalible para que nada falle en vivo) y Control Dual (VENDEDOR + ALMACENERO/ADMIN) para anulaciones y reintegros.
+- CONDICIONES PENDIENTES: Únicamente tu autorización en este chat para aplicar los cambios propuestos en la planificación (08, 02, 16) y empezar a codificar el Paso 1 y Paso 2.
+- QUÉ PODEMOS CONSTRUIR YA: Absolutamente todo el backend, base de datos, pantallas de cobro Yape/Mixto, consola de verificación delegada, webhook del puente Android y módulo de anulaciones/reintegros en r1-pmv, porque con este diseño ya no hay ningún bloqueo técnico ni legal con el RUC.
+- QUÉ TODAVÍA NO PUEDE HABILITARSE EN PRODUCCIÓN REAL HASTA EL ENSAYO: Declarar ejecutados los casos CP-ACA-001..006 hasta correr la suite sobre el despliegue HTTPS y hacer los 3 yapeos de S/ 1.00 del ensayo previo.
+¿Autorizas adoptar esta Arquitectura Dual ASTRA-PRO (sin RUC) y que proceda en el siguiente turno a actualizar la planificación (08, 02, 16) y construir el Incremento 1 (modelos, migración y servicios de pagos Yape, mixtos y anulaciones en r1-pmv)?

@@ -1,0 +1,56 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Categorías{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>Categorías</h2>
+  <a href="{% url 'category-create' %}" class="btn btn-primary">+ Nueva categoría</a>
+</div>
+
+<div class="alert alert-info mb-3">
+  Las categor&iacute;as activas est&aacute;n disponibles inmediatamente al registrar nuevos productos en el cat&aacute;logo.
+</div>
+
+{% if categories %}
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Nombre</th>
+        <th>Estado</th>
+        {% if user.role.code == "ADMIN" %}<th>Acciones</th>{% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for cat in categories %}
+      <tr>
+        <td>{{ cat.name }}</td>
+        <td>
+          {% if cat.is_active %}
+            <span class="badge bg-success">Activa</span>
+          {% else %}
+            <span class="badge bg-secondary">Inactiva</span>
+          {% endif %}
+        </td>
+        {% if user.role.code == "ADMIN" %}
+        <td>
+          <form method="get" action="{% url 'category-state-confirm' cat.pk %}">
+            <input type="hidden" name="is_active" value="{% if cat.is_active %}false{% else %}true{% endif %}">
+            <input type="hidden" name="state_version" value="{{ cat.state_version }}">
+            <button type="submit" class="btn btn-sm btn-outline-warning">
+              {% if cat.is_active %}Desactivar{% else %}Activar{% endif %}
+            </button>
+          </form>
+        </td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="alert alert-info">No hay categorías registradas.</div>
+{% endif %}
+{% endblock %}
+

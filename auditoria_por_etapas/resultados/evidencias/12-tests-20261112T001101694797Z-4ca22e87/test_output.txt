@@ -1,0 +1,129 @@
+Found 5 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_checkout_retry_recovers_receipt_even_with_new_active_draft_without_touching_it (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_recovers_receipt_even_with_new_active_draft_without_touching_it) ... ok
+test_checkout_retry_recovers_receipt_when_no_active_draft (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_recovers_receipt_when_no_active_draft) ... ok
+test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected) ... ERROR
+test_histories_filters_nul_lima_dates_isolation_and_query_counts (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_histories_filters_nul_lima_dates_isolation_and_query_counts) ... Not Found: /caja/turnos/26fdea11-7444-41e8-a6d2-9eb6d872f73a/cerrado/
+FAIL
+test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation) ... Not Found: /ventas/constancia/6b343775-810f-4c68-9440-1dd04aeede5e/
+Not Found: /ventas/constancia/5e35867f-959c-4d88-bff9-4a739a477bdf/
+Not Found: /ventas/no-es-uuid/constancia/
+Forbidden (Permission denied): /ventas/constancia/6b343775-810f-4c68-9440-1dd04aeede5e/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /ventas/constancia/6b343775-810f-4c68-9440-1dd04aeede5e/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+FAIL
+
+======================================================================
+ERROR: test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit12_receipts_history.py", line 198, in test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected
+    close_cash_shift(actor=self.seller1, counted_amount=Decimal("60.00"))
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\cash\services.py", line 95, in close_cash_shift
+    raise ValidationError(
+django.core.exceptions.ValidationError: ['Hay una venta en preparación con productos. Descártala o cóbrala antes de cerrar el turno.']
+
+======================================================================
+FAIL: test_histories_filters_nul_lima_dates_isolation_and_query_counts (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_histories_filters_nul_lima_dates_isolation_and_query_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit12_receipts_history.py", line 430, in test_histories_filters_nul_lima_dates_isolation_and_query_counts
+    with self.assertNumQueries(6):
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 7 != 6 : 7 queries executed, 6 expected
+Captured queries were:
+1. SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2026-11-12 00:11:04.048225' AND "django_session"."session_key" = 'hnx0ez9n76bh0wb3kimugya640ab8nt1') LIMIT 21
+2. SELECT "identity_account"."password", "identity_account"."last_login", "identity_account"."is_superuser", "identity_account"."id", "identity_account"."display_name", "identity_account"."email", "identity_account"."email_normalized", "identity_account"."role_id", "identity_account"."is_active", "identity_account"."is_staff", "identity_account"."created_at", "identity_account"."updated_at" FROM "identity_account" WHERE "identity_account"."id" = 'e91858567c884c97b9c6657176faa5eb' LIMIT 21
+3. SELECT "identity_role"."id", "identity_role"."code", "identity_role"."name" FROM "identity_role" WHERE "identity_role"."id" = 1 LIMIT 21
+4. SELECT (CAST(SUM("sales_sale"."total_amount") AS NUMERIC)) AS "total", (CAST(SUM("sales_sale"."discount_amount") AS NUMERIC)) AS "discount" FROM "sales_sale"
+5. SELECT DISTINCT "identity_account"."password", "identity_account"."last_login", "identity_account"."is_superuser", "identity_account"."id", "identity_account"."display_name", "identity_account"."email", "identity_account"."email_normalized", "identity_account"."role_id", "identity_account"."is_active", "identity_account"."is_staff", "identity_account"."created_at", "identity_account"."updated_at", LOWER("identity_account"."display_name") FROM "identity_account" INNER JOIN "identity_role" ON ("identity_account"."role_id" = "identity_role"."id") LEFT OUTER JOIN "sales_sale" ON ("identity_account"."id" = "sales_sale"."seller_id") WHERE ("identity_role"."code" = 'VENDEDOR' OR "sales_sale"."id" IS NOT NULL) ORDER BY LOWER("identity_account"."display_name") ASC, "identity_account"."id" ASC
+6. SELECT "cash_cashshift"."id", "cash_cashshift"."cash_register_id", "cash_cashshift"."seller_id", "cash_cashshift"."opening_amount", "cash_cashshift"."status", "cash_cashshift"."opened_at", "cash_cashregister"."id", "cash_cashregister"."code", "cash_cashregister"."is_active", "cash_cashregister"."created_at", "identity_account"."password", "identity_account"."last_login", "identity_account"."is_superuser", "identity_account"."id", "identity_account"."display_name", "identity_account"."email", "identity_account"."email_normalized", "identity_account"."role_id", "identity_account"."is_active", "identity_account"."is_staff", "identity_account"."created_at", "identity_account"."updated_at" FROM "cash_cashshift" INNER JOIN "cash_cashregister" ON ("cash_cashshift"."cash_register_id" = "cash_cashregister"."id") INNER JOIN "identity_account" ON ("cash_cashshift"."seller_id" = "identity_account"."id") ORDER BY "cash_cashshift"."opened_at" DESC LIMIT 200
+7. SELECT "sales_sale"."id", "sales_sale"."cash_shift_id", "sales_sale"."seller_id", "sales_sale"."draft_id", "sales_sale"."total_amount", "sales_sale"."base_amount", "sales_sale"."igv_amount", "sales_sale"."discount_amount", "sales_sale"."cash_received", "sales_sale"."change_given", "sales_sale"."correlative", "sales_sale"."idempotency_key", "sales_sale"."confirmed_at", "cash_cashshift"."id", "cash_cashshift"."cash_register_id", "cash_cashshift"."seller_id", "cash_cashshift"."opening_amount", "cash_cashshift"."status", "cash_cashshift"."opened_at", "cash_cashregister"."id", "cash_cashregister"."code", "cash_cashregister"."is_active", "cash_cashregister"."created_at", "identity_account"."password", "identity_account"."last_login", "identity_account"."is_superuser", "identity_account"."id", "identity_account"."display_name", "identity_account"."email", "identity_account"."email_normalized", "identity_account"."role_id", "identity_account"."is_active", "identity_account"."is_staff", "identity_account"."created_at", "identity_account"."updated_at" FROM "sales_sale" INNER JOIN "cash_cashshift" ON ("sales_sale"."cash_shift_id" = "cash_cashshift"."id") INNER JOIN "cash_cashregister" ON ("cash_cashshift"."cash_register_id" = "cash_cashregister"."id") INNER JOIN "identity_account" ON ("sales_sale"."seller_id" = "identity_account"."id") ORDER BY "sales_sale"."confirmed_at" DESC, "sales_sale"."correlative" DESC
+
+======================================================================
+FAIL: test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit12_receipts_history.py", line 293, in test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation
+    self.assertEqual(self.client.post(reverse("sales-receipt", args=(sale.pk,))).status_code, 405)
+AssertionError: 403 != 405
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.113s
+
+FAILED (failures=2, errors=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

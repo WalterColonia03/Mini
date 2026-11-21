@@ -1,0 +1,134 @@
+{
+  "timestamp_utc": "2026-11-15T02:49:43.772273+00:00",
+  "exit_code": 0,
+  "operational_db_sha256_before": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58",
+  "operational_db_sha256_after": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58",
+  "operational_db_untouched": true,
+  "stderr": "identity_audit {\"action\": \"LOGIN_SUCCESS\", \"actor_id\": \"a3e66d2d-35b0-4052-a8e0-d0c528f0856c\", \"actor_identifier\": \"seller.pg@demo.invalid\", \"event_id\": \"ffd5047d-cba5-4a85-b9c6-db30887f86b8\", \"metadata\": {\"role\": \"VENDEDOR\"}, \"occurred_at_utc\": \"2026-11-15T02:49:40.987869+00:00\", \"outcome\": \"SUCCESS\", \"request_id\": \"5b67d3bf3153485684e3d277415da3e1\", \"target_id\": \"a3e66d2d-35b0-4052-a8e0-d0c528f0856c\", \"target_type\": \"Account\"}",
+  "worker": {
+    "pg_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+    "pg_db": "audit10b_pg",
+    "total": 9,
+    "passed": 9,
+    "failed": 0,
+    "cases": [
+      {
+        "id": "PG01_lima_midnight_expiration_boundary",
+        "ok": true,
+        "before_mid_ok": true,
+        "after_mid_err": "El producto no tiene existencias vendibles disponibles."
+      },
+      {
+        "id": "PG02_locale_c_unicode_and_nul_safety",
+        "ok": true,
+        "found": [
+          "Café & Té Especial 100g"
+        ],
+        "nul_http_status": 200,
+        "nul_err": null
+      },
+      {
+        "id": "PG03_concurrent_add_stock_ceiling",
+        "ok": true,
+        "results": [
+          [
+            "OK",
+            4
+          ],
+          [
+            "ERR",
+            "{'quantity': ['La cantidad supera las existencias vendibles disponibles.']}"
+          ]
+        ],
+        "final_line_qty": 4
+      },
+      {
+        "id": "PG04_concurrent_update_discard_and_add_close_invariant",
+        "ok": true,
+        "upd_vs_disc": [
+          [
+            "DISC_OK",
+            null
+          ],
+          [
+            "UPD_ERR",
+            "['La línea de venta ya no está disponible.']"
+          ]
+        ],
+        "add_vs_close": [
+          "CLOSE_OK",
+          "ADD_ERR:['Necesitas un turno de caja abierto a tu nombre para preparar una venta.']"
+        ],
+        "invariant_ok": true
+      },
+      {
+        "id": "PG05_account_lock_pg_blocking_pids_and_revocation",
+        "ok": true,
+        "pg_blocking_pids_observed": [
+          [
+            [
+              29904,
+              "Lock",
+              "transactionid",
+              [
+                30624
+              ]
+            ]
+          ]
+        ],
+        "other_activity_snapshot": [
+          [
+            12872,
+            "idle",
+            "Client",
+            "ClientRead"
+          ],
+          [
+            29904,
+            "active",
+            "Lock",
+            "transactionid"
+          ]
+        ],
+        "waiter_outcome": [
+          "PermissionDenied:No tiene permiso para preparar ventas."
+        ]
+      },
+      {
+        "id": "PG06_concurrent_category_toggle_vs_draft_no_deadlock",
+        "ok": true,
+        "outcomes": [
+          "CAT_DISABLED",
+          "ADD_ERR:['El producto seleccionado no está disponible para la venta.']"
+        ],
+        "cat_active_after": false
+      },
+      {
+        "id": "PG07_query_invariance_and_pg_explain",
+        "ok": true,
+        "queries_before": 1,
+        "queries_after_plus20": 1,
+        "found_count": 21,
+        "top_node_type": "Unique"
+      },
+      {
+        "id": "PG08_dec11_c03_pg_check_constraints",
+        "ok": true,
+        "constraints": {
+          "qty_zero": "new row for relation \"sales_saledraftline\" violates check constraint \"sale_draft_line_quantity_gt_zero\"",
+          "qty_1000000": "new row for relation \"sales_saledraftline\" violates check constraint \"sale_draft_line_quantity_max\"",
+          "price_zero": "new row for relation \"sales_saledraftline\" violates check constraint \"sale_draft_line_unit_price_gt_zero\""
+        }
+      },
+      {
+        "id": "PG09_dec12_c04_concurrent_price_vs_checkout_pg",
+        "ok": true,
+        "outcomes": [
+          "PRICE_8_00",
+          "CHECKOUT_REJECTED:El precio de «Café & Té Especial 100g» cambió de S/ 4.50 a S/ 8.00. Verifica el nuevo total antes de confirmar el cobro."
+        ],
+        "sales_created": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+--- antes/forms.py
++++ identity/forms.py
+@@ -6,6 +6,7 @@
+ class LoginForm(forms.Form):
+     email = forms.EmailField(
+         label="Correo de trabajo",
++        max_length=254,
+         widget=forms.EmailInput(
+             attrs={
+                 "autocomplete": "username",
+--- antes/test_auth_audit01.py
++++ identity/test_auth_audit01.py
+@@ -240,16 +240,26 @@
+         self.assertEqual(LoginAttempt.objects.count(), 0)
+ 
+     def test_email_length_boundaries_254_255_319_320_321(self):
+-        # Django's EmailValidator permits 320, while the Account model permits 254.
+-        # Unknown valid identifiers still receive the uniform credentials message.
++        # DOC-02-04: login and account identifiers share the 254-character limit.
++        # Oversized altered POSTs must not create persistent attempt rows.
+         for size in (254, 255, 319, 320, 321):
+             email = "a" * (size - len("@example.invalid")) + "@example.invalid"
+             response = self.post(email=email)
+-            if size <= 320:
++            if size <= 254:
+                 self.assertEqual(list(response.context["form"].non_field_errors()), [INVALID_CREDENTIALS_MESSAGE])
+             else:
+                 self.assertIn("email", response.context["form"].errors)
+-        self.assertEqual(LoginAttempt.objects.count(), 4)
++        self.assertEqual(LoginAttempt.objects.count(), 1)
++
++    def test_maximum_length_registered_email_authenticates_and_widget_matches(self):
++        email = "a" * (254 - len("@example.invalid")) + "@example.invalid"
++        account = Account.objects.create_user(
++            email, self.password, display_name="AUD01 boundary", role=self.admin.role,
++        )
++        self.assertContains(self.client.get(reverse("login")), 'maxlength="254"')
++        response = self.post(email="  " + email.upper() + "  ")
++        self.assertEqual(response.status_code, 302)
++        self.assertEqual(self.client.session["_auth_user_id"], str(account.pk))
+ 
+     def test_password_is_not_repopulated_and_next_is_html_escaped(self):
+         marker = '<script data-audit="untrusted">alert(1)</script>'

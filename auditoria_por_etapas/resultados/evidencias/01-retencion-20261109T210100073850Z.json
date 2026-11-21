@@ -1,0 +1,57 @@
+{
+  "superficie": "E01-S03 / DOC-01-05 / PROP-E01-T-RETENCION",
+  "instant_utc": "2026-11-09T21:01:00.073850+00:00",
+  "instant_lima": "2026-11-09T16:01:00.073850-05:00",
+  "motor": "Python sqlite3 / SQLite 3.49.1",
+  "base_relativa_a_resultados": "datos/etapa01-20261109/audit.sqlite3",
+  "apertura": "URI file en mode=ro, ruta absoluta cotejada con datos/etapa01-20261109/prepared.json, PRAGMA query_only=ON confirmado; BEGIN de lectura y ROLLBACK.",
+  "esquema_sql": "PRAGMA table_info(\"identity_loginattempt\")",
+  "esquema_sin_valores_de_filas": [
+    {
+      "cid": 0,
+      "name": "identifier",
+      "type": "varchar(64)",
+      "notnull": 1,
+      "dflt_value": null,
+      "pk": 1
+    },
+    {
+      "cid": 1,
+      "name": "failures",
+      "type": "smallint unsigned",
+      "notnull": 1,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 2,
+      "name": "locked_until",
+      "type": "datetime",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 3,
+      "name": "updated_at",
+      "type": "datetime",
+      "notnull": 1,
+      "dflt_value": null,
+      "pk": 0
+    }
+  ],
+  "consulta_sql": "WITH clasificacion AS (\n  SELECT CASE\n    WHEN locked_until IS NULL AND failures = 0 THEN 'cero_sin_bloqueo'\n    WHEN locked_until IS NULL AND failures > 0 THEN 'positivos_sin_bloqueo'\n    WHEN julianday(locked_until) > julianday(:instant_utc) THEN 'bloqueo_vigente'\n    WHEN julianday(locked_until) <= julianday(:instant_utc) THEN 'bloqueo_vencido_persistido'\n    ELSE 'resto'\n  END AS clase\n  FROM identity_loginattempt\n)\nSELECT count(*) AS total,\n       count(*) FILTER (WHERE clase = 'cero_sin_bloqueo') AS cero_sin_bloqueo,\n       count(*) FILTER (WHERE clase = 'positivos_sin_bloqueo') AS positivos_sin_bloqueo,\n       count(*) FILTER (WHERE clase = 'bloqueo_vigente') AS bloqueo_vigente,\n       count(*) FILTER (WHERE clase = 'bloqueo_vencido_persistido') AS bloqueo_vencido_persistido,\n       count(*) FILTER (WHERE clase = 'resto') AS resto\nFROM clasificacion",
+  "parametros": {
+    "instant_utc": "2026-11-09T21:01:00.073850+00:00"
+  },
+  "conteos_disjuntos": {
+    "total": 23,
+    "cero_sin_bloqueo": 8,
+    "positivos_sin_bloqueo": 12,
+    "bloqueo_vigente": 1,
+    "bloqueo_vencido_persistido": 2,
+    "resto": 0
+  },
+  "alcance": "Instantanea de todas las filas de identity_loginattempt en una copia reutilizada por sublotes de auditoria con fixtures. El quinto fallo y una actividad de prueba en otro navegador pueden cambiar los totales futuros. Los bloqueos se clasifican por locked_until UTC frente al instante de corte mediante julianday. No se consultaron identificadores ni cuentas individuales. No se hizo trafico HTTP en este caso.",
+  "limites": "El snapshot mide filas presentes en ese instante. Por si solo no mide tasa de crecimiento, cuanto tiempo se conservaran, politica de retencion, plazo legal ni eficacia o ejecucion de depuracion. Bases original y etapa 00 sin abrir en esta consulta."
+}

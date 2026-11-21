@@ -1,0 +1,124 @@
+{
+  "time_utc": "2026-11-11T17:38:41.244292+00:00",
+  "scope": "05-E / 03-AF",
+  "criteria": [
+    {
+      "id": "HU-INV-01a/CA01",
+      "source": "08:322",
+      "state": "CUMPLE en muestras",
+      "evidence": [
+        "AB",
+        "AC",
+        "AE",
+        "AF"
+      ],
+      "limits": "No prueba de sesión expirada durante confirmación en este conjunto; identidad transversal conserva su auditoría."
+    },
+    {
+      "id": "HU-INV-01a/CA02",
+      "source": "08:323",
+      "state": "CUMPLE en muestras",
+      "evidence": [
+        "AB",
+        "AC"
+      ],
+      "limits": "No cobertura exhaustiva de todo valor posible ni rendimiento al máximo de filas."
+    },
+    {
+      "id": "HU-INV-01a/CA03",
+      "source": "08:324",
+      "state": "CUMPLE en muestras",
+      "evidence": [
+        "AB",
+        "AC",
+        "AE",
+        "AF"
+      ],
+      "limits": "Respuesta perdida simulada; caída de proceso o motor no ejecutada."
+    },
+    {
+      "id": "HU-INV-01a/CA04",
+      "source": "08:325",
+      "state": "CUMPLE en muestras",
+      "evidence": [
+        "AB",
+        "AF"
+      ],
+      "limits": "Disponibilidad sujeta a producto/categoría activos y lotes vigentes; no acredita rentabilidad histórica."
+    },
+    {
+      "id": "HU-INV-01a/CA05",
+      "source": "08:326",
+      "state": "CUMPLE en muestras",
+      "evidence": [
+        "AD"
+      ],
+      "limits": "inventory0006 pendiente de despliegue; asignación persistente venta-lote pendiente en otras etapas."
+    }
+  ],
+  "runs": [
+    {
+      "cut": "AB",
+      "evidence": "auditoria_por_etapas\\resultados\\evidencias\\03-AB-ab-receipt-20261111T170552228012Z-419c81d4\\browser.json",
+      "controls": 79,
+      "execution": "previous evidence, not rerun",
+      "port_closed": true,
+      "protected_count": 150,
+      "protected_unchanged": true
+    },
+    {
+      "cut": "AC",
+      "evidence": "auditoria_por_etapas\\resultados\\evidencias\\03-AC-ac-supplier-20261111T171405144997Z-87619aa4\\browser.json",
+      "controls": 29,
+      "execution": "previous evidence, not rerun",
+      "port_closed": true,
+      "protected_count": 156,
+      "protected_unchanged": true
+    },
+    {
+      "cut": "AD",
+      "evidence": "auditoria_por_etapas\\resultados\\evidencias\\03-AD-ad-fefo-20261111T172528211721Z-2dbcafee\\browser.json",
+      "controls": 24,
+      "execution": "previous evidence, not rerun",
+      "port_closed": true,
+      "protected_count": 163,
+      "protected_unchanged": true
+    },
+    {
+      "cut": "AE",
+      "evidence": "auditoria_por_etapas\\resultados\\evidencias\\03-AE-ae-initial-20261111T173009717921Z-b0e29f78\\browser.json",
+      "controls": 29,
+      "execution": "previous evidence, not rerun",
+      "port_closed": true,
+      "protected_count": 164,
+      "protected_unchanged": true
+    },
+    {
+      "cut": "AF",
+      "evidence": "auditoria_por_etapas\\resultados\\evidencias\\03-AF-af-recovery-20261111T173709141159Z-d8b1cd5f\\browser.json",
+      "controls": 38,
+      "execution": "new",
+      "port_closed": true,
+      "protected_count": 165,
+      "protected_unchanged": true
+    }
+  ],
+  "sources_sha256": {
+    "08_Historias_de_Usuario.md": "7206f296f881b96d600d100d7a39c2f8c271337402560e63c83820ce9b05ed9b",
+    "07_Reglas_de_Negocio.md": "32c44f14d8759ce524806df68800c7ba1a64d638e8f3eb5819c4b2912c618b63",
+    "16_Task_Breakdown.md": "64c929b8b1e67896d55997dd7ee5455c2a7b64f53074c5d18567e2a5da9dc871",
+    "r1-pmv/inventory/services.py": "ae3c3c30906774e52019cfa182b837e6f475a7c541f0161011ebd62c54bde35c",
+    "r1-pmv/inventory/views.py": "2476f7acf79e9fc7695ff7154f9699c39accaa326610d5673e858731774aa389",
+    "r1-pmv/inventory/forms.py": "8c6a2c8e6d4bcdcad8ffa570e2e8bcc41fcc46c7a3771cb2998a398e0c92ed6f",
+    "r1-pmv/inventory/models.py": "f393518e8fdea788dde1193182e8814f43fb119bcd23fa5efb832e8b57f6410a",
+    "r1-pmv/inventory/urls.py": "a657ce9d7fa369d0710d20f4cdba7c7ab722ce88c9cf77f6be0330f1a2163765",
+    "r1-pmv/inventory/templates/inventory/initial_load_created.html": "251c2e3940d4da483b346b5b60eeacfc6a4aa4d45742f31eb6c49526b4519fea",
+    "auditoria_por_etapas/resultados/soporte/audit03af_browser.cjs": "ab15bc88bf2fe972aca11349fdb4ae33a9a7e25cb8483d234562380b6d073ab4",
+    "auditoria_por_etapas/resultados/soporte/audit03y_browser_run.py": "223a41236d52f8b232938f34d929bfe02cadea57112d47e59ffd0b767b156c4c"
+  },
+  "original_sha256": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+  "new_functional_application_changes": false,
+  "new_browser_checks": 38,
+  "new_postgresql_tests": 0,
+  "regression_suite_rerun": false
+}

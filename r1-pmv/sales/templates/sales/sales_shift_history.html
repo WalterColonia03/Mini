@@ -1,0 +1,68 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Ventas del turno{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Caja y ventas</p>
+    <h2>Ventas del turno actual</h2>
+    <p class="lede">Consulta únicamente las ventas confirmadas dentro de tu turno abierto.</p>
+  </div>
+  <div class="page-heading-actions">
+    <a href="{% url 'sales-history' %}" class="button button-secondary">Historial completo</a>
+    <a href="{% url 'cash-shift-history' %}" class="button button-secondary">Mis turnos</a>
+    <a href="{% url 'sales-draft' %}" class="button button-primary">← Volver a ventas</a>
+  </div>
+</section>
+
+{% if shift %}
+<div class="alert alert-info mb-4">
+  Turno abierto: <strong>{{ shift.cash_register }}</strong> —
+  desde {{ shift.opened_at|date:"d/m/Y H:i" }} ·
+  <strong>Total vendido en el turno: S/ {{ shift_total|floatformat:2 }}</strong>
+  {% if shift_discount %} · <strong>Descuentos: S/ {{ shift_discount|floatformat:2 }}</strong>{% endif %}
+</div>
+
+{% if sales %}
+<div class="table-responsive" tabindex="0" role="region" aria-label="Ventas del turno, tabla desplazable">
+  <table class="table table-bordered table-hover align-middle shift-sales-table">
+    <thead class="table-dark">
+      <tr>
+        <th>Correlativo</th>
+        <th>Fecha/Hora</th>
+        <th>Pago</th>
+        <th class="text-end">Descuento (S/)</th>
+        <th class="text-end">Total (S/)</th>
+        <th class="text-end">Efectivo recibido</th>
+        <th class="text-end">Vuelto</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sale in sales %}
+      <tr>
+        <td class="font-monospace">
+          <a href="{% url 'sales-receipt' sale.pk %}">{{ sale.correlative }}</a>
+        </td>
+        <td>{{ sale.confirmed_at|date:"d/m/Y H:i" }}</td>
+        <td>Efectivo</td>
+        <td class="text-end">{{ sale.discount_amount|floatformat:2 }}</td>
+        <td class="text-end">{{ sale.total_amount|floatformat:2 }}</td>
+        <td class="text-end">{{ sale.cash_received|floatformat:2 }}</td>
+        <td class="text-end">{{ sale.change_given|floatformat:2 }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="alert alert-warning">No hay ventas registradas en este turno.</div>
+{% endif %}
+{% else %}
+<div class="alert alert-secondary">No tienes un turno de caja abierto.</div>
+{% endif %}
+
+<div class="mt-3">
+  <a href="{% url 'sales-draft' %}" class="btn btn-secondary">← Volver a ventas</a>
+</div>
+{% endblock %}

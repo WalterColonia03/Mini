@@ -1,0 +1,182 @@
+{
+  "caso": "E01-PG-01-revalidacion-01I",
+  "inicio_utc": "2026-11-15T15:39:32.748919+00:00",
+  "herramienta": "PostgreSQL 18.4 nativo efímero / Django Client CSRF / conexiones por hilo",
+  "escenarios": [
+    {
+      "escenario": "primera-fila",
+      "fin_utc": "2026-11-15T15:39:40.873614+00:00",
+      "barrera_insert": 2,
+      "espera_fila_observada_pg": false,
+      "respuestas": [
+        {
+          "hilo": 0,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "credenciales"
+        },
+        {
+          "hilo": 1,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "credenciales"
+        }
+      ],
+      "persistencia": {
+        "filas": 1,
+        "fallos": 2,
+        "locked_until": null
+      },
+      "resultado": "PASS"
+    },
+    {
+      "escenario": "cinco-fallos",
+      "fin_utc": "2026-11-15T15:39:41.630774+00:00",
+      "barrera_insert": 0,
+      "espera_fila_observada_pg": false,
+      "respuestas": [
+        {
+          "hilo": 0,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "credenciales"
+        },
+        {
+          "hilo": 1,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "credenciales"
+        },
+        {
+          "hilo": 2,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "credenciales"
+        },
+        {
+          "hilo": 3,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "credenciales"
+        },
+        {
+          "hilo": 4,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "bloqueo15"
+        }
+      ],
+      "persistencia": {
+        "filas": 1,
+        "fallos": 5,
+        "locked_until": "2026-11-15T15:54:41.609973+00:00"
+      },
+      "resultado": "PASS"
+    },
+    {
+      "escenario": "exito-antes-fallo",
+      "fin_utc": "2026-11-15T15:39:42.270367+00:00",
+      "barrera_insert": 0,
+      "espera_fila_observada_pg": true,
+      "respuestas": [
+        {
+          "hilo": 0,
+          "http": 302,
+          "destino": "/inicio/",
+          "sesion_fixture": true,
+          "mensaje": ""
+        },
+        {
+          "hilo": 1,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "credenciales"
+        }
+      ],
+      "persistencia": {
+        "filas": 1,
+        "fallos": 1,
+        "locked_until": null
+      },
+      "resultado": "PASS"
+    },
+    {
+      "escenario": "fallo-antes-exito",
+      "fin_utc": "2026-11-15T15:39:42.831828+00:00",
+      "barrera_insert": 0,
+      "espera_fila_observada_pg": true,
+      "respuestas": [
+        {
+          "hilo": 0,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "bloqueo15"
+        },
+        {
+          "hilo": 1,
+          "http": 200,
+          "destino": null,
+          "sesion_fixture": false,
+          "mensaje": "bloqueo15"
+        }
+      ],
+      "persistencia": {
+        "filas": 1,
+        "fallos": 5,
+        "locked_until": "2026-11-15T15:54:42.788079+00:00"
+      },
+      "resultado": "PASS"
+    },
+    {
+      "escenario": "admin-denegado-concurrente",
+      "respuestas": [
+        {
+          "ruta": "/",
+          "http": 200,
+          "sesion_fixture": false,
+          "dash": 302
+        },
+        {
+          "ruta": "/admin/login/?next=/admin/",
+          "http": 404,
+          "sesion_fixture": false,
+          "dash": 302
+        }
+      ],
+      "persistencia": {
+        "filas": 1,
+        "fallos": 5,
+        "locked_until": "2026-11-15T15:54:42.911843+00:00"
+      },
+      "resultado": "PASS"
+    }
+  ],
+  "limpieza": {
+    "puerto_cerrado": true,
+    "carpeta_propia_eliminada": true
+  },
+  "servidor": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "base_efimera": "audit01i_99127e5399",
+  "puerto_loopback": 57655,
+  "isolation": "read committed",
+  "django": "5.2.18",
+  "migraciones": "PASS",
+  "check": "PASS",
+  "resultado": "PASS, cinco escenarios",
+  "fuentes_sha256": {
+    "identity/services.py": "28244f2eed675080b45fede6e66f1c8787845c3c3bfff2373b941ebb50693a9f",
+    "identity/views.py": "ef597eada4b57d3fe90a41724cf44434a01dc29f301cbccf1aa3dcf99c38c40b",
+    "identity/forms.py": "065e2b34058f9dd5bb5add38907cb9063b1c4a04d9464a5a822facc0483b66e6",
+    "identity/models.py": "0a7b103cbf4d4186adcbba7c9894fc2a222a6ff79bacc5bd32ba533b01789f46"
+  },
+  "fin_utc": "2026-11-15T15:39:45.066496+00:00"
+}

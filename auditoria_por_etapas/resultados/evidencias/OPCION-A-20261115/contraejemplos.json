@@ -1,0 +1,50 @@
+{
+  "time_utc": "2026-11-16T04:14:06.523389+00:00",
+  "status": "PROBADO solo para siete contraejemplos en memoria",
+  "cases": [
+    {
+      "id": "A01",
+      "pending_cash_cents": 0,
+      "real_excess_cents": 500,
+      "passed": true
+    },
+    {
+      "id": "A02",
+      "external_payable_cents": 2500,
+      "order_cents": 1500,
+      "passed": true
+    },
+    {
+      "id": "A03",
+      "heuristic_merges_two_distinct_payments": true,
+      "passed": true
+    },
+    {
+      "id": "A04",
+      "same_bank_payment_can_be_outside_local_window": true,
+      "passed": true
+    },
+    {
+      "id": "A05",
+      "aggregate_rounding": "6.35",
+      "per_operation_rounding": "6.36",
+      "passed": true
+    },
+    {
+      "id": "A06",
+      "book_allows": true,
+      "physical_cash_sufficient": false,
+      "passed": true
+    },
+    {
+      "id": "A07",
+      "erroneous_double_classification_cents": 2000,
+      "received_cents": 1000,
+      "passed": true
+    }
+  ],
+  "django_imported": false,
+  "db_opened": false,
+  "network": false,
+  "limits": "No ejecuta el algoritmo de Argon, Django, PostgreSQL ni billeteras. No estima frecuencia de colision, tarifa efectiva, fraude o rendimiento."
+}

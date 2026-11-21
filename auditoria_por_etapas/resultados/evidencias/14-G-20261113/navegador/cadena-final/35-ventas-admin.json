@@ -1,0 +1,244 @@
+{
+  "id": "35-ventas-admin",
+  "rol": "ADMIN",
+  "utc": "2026-11-14T04:15:21.879939+00:00",
+  "ruta": "/ventas/historial/",
+  "texto_visible": "Saltar al contenido\nM\nMinimarket\nGestión de bodega\n\nOPERACIONES\n\n⌂\nInicio\n\nCATÁLOGO\n\n☰\nProductos\n▦\nRegistrar producto\n▮\nCategorías\n\nINVENTARIO\n\n✦\nProveedores\n☷\nVer inventario y alertas\n⏳\nVencimientos de lotes\n⏫\nAjuste físico\n\nPERSONAL\n\n☺\nEmpleados\n\nCAJA Y VENTAS\n\n☰\nHistorial de turnos\n☰\nHistorial de ventas\nA\nAdministración 14D\nAdministrador\n↪\nCerrar sesión\n\nMINIMARKET\n\nHistorial de ventas\nAdministración 14D\nAdministrador\n\nCAJA Y VENTAS\n\nHistorial de ventas\n\nConsulta las ventas confirmadas de toda la tienda por correlativo, fecha, vendedor o turno.\n\nVolver al inicio\nCorrelativo\nFecha exacta\nDesde\nHasta\nVendedor\nTodos\nVenta 14D\nTurno\nTodos\nCAJA-01 · 13/11/2026 23:15 · Venta 14D\nFiltrar\nLimpiar\nTotal vendido (filtrado): S/ 14,20 · Descuentos otorgados: S/ 0,00\nCORRELATIVO\tVENDEDOR\tFECHA/HORA\tCAJA\tPAGO\tDESCUENTO (S/)\tTOTAL (S/)\tEFECTIVO RECIBIDO\tVUELTO\nV-00000001\tVenta 14D\t13/11/2026 23:15\tCAJA-01\tEfectivo\t0,00\t14,20\t20,00\t5,80\nMinimarket · Gestión de bodega",
+  "controles": [
+    {
+      "campo": "correlativo",
+      "etiqueta": "Correlativo",
+      "tipo": "text",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "fecha",
+      "etiqueta": "Fecha exacta",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "fecha_desde",
+      "etiqueta": "Desde",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "fecha_hasta",
+      "etiqueta": "Hasta",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "vendedor",
+      "etiqueta": "Vendedor",
+      "tipo": "select-one",
+      "valor": "Todos",
+      "opciones": [
+        "Todos",
+        "Venta 14D"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "turno",
+      "etiqueta": "Turno",
+      "tipo": "select-one",
+      "valor": "Todos",
+      "opciones": [
+        "Todos",
+        "CAJA-01 · 13/11/2026 23:15 · Venta 14D"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    }
+  ],
+  "testigo": {
+    "sha256": "cd18d22ae720d5afb943131abed0978821c10bec0f9a77e24dc7120295b09dec",
+    "por_tabla": {
+      "cash_cashregister": "06a97b878e609d0dd60b5e8e0193282e97b51247e743dd60d33ba805e8c0d5e0",
+      "cash_cashshift": "fbfead6d4b01fba448cd8f8fb276e3516737495a133fc6f37a8635bc44b6cf43",
+      "cash_cashshiftclose": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "catalog_category": "76cf9648ef7efd1de897dacbe5d12ad1a0e15400ebbff722226e8eee6dd97ccf",
+      "catalog_product": "9bdb905e9cbaca61eef1ae7a807dbb4df2b7fa6a1a0a8a012f2fa7fb3c02a87a",
+      "catalog_productbarcodekey": "ff98f8dce822baaa309d20256ec86de19b038405dc262697ec0f0543b86789a1",
+      "inventory_initialinventoryload": "a833454fa16bf6c251b61c8b536203e02cd86018a14c45bb3396b3458f634a81",
+      "inventory_lot": "c165655835622565c1cb56466a213a97d080367741b1ebb1fd755980a1ba8f01",
+      "inventory_physicaladjustment": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceipt": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptcounter": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockwriteoff": "21c462e9a290c30772c9cbeac72efaef1e6657c37bda66004ce01bf9aec28ce6",
+      "inventory_supplier": "888d7025ac2003ea1f3e9e773ff067c77daed2a36290410c1ac306833cca3ea7",
+      "sales_sale": "472c4aff52a1e753786bece75c19f46566e21d67bbe1cf1e6bca65e44081535b",
+      "sales_salecounter": "0f99aed32426007c8506b83fccbdc38cffbf39d424ca937978c6d04e4c9273e7",
+      "sales_saledraft": "5b95bea6a2ec5f77d20b6a40d8f3a472bc716dee1b79ca80f8d0b2c94611770c",
+      "sales_saledraftline": "c87e4bcf0d2c2b83845bc043b8127f29b05b83566438bbe9d697b0ead7f085ac",
+      "sales_saleline": "3144633f62df4890e1804d6e4d6dca34234a53a6272483ec7451c483906642c6",
+      "sales_salelotallocation": "48623c453fc9a7ab3ea7a1d33d58fff0fa66cc3cdab0b0c25ae3252e770dfc70",
+      "identity_role_membership_active": "d37b310029ebc424529ed8f05e942d3784c3cd317f1be1ed3642343a98a18b73"
+    },
+    "filas": {
+      "cash_cashregister": 1,
+      "cash_cashshift": 1,
+      "cash_cashshiftclose": 0,
+      "catalog_category": 1,
+      "catalog_product": 1,
+      "catalog_productbarcodekey": 1,
+      "inventory_initialinventoryload": 1,
+      "inventory_lot": 2,
+      "inventory_physicaladjustment": 0,
+      "inventory_stockreceipt": 0,
+      "inventory_stockreceiptcounter": 0,
+      "inventory_stockreceiptline": 0,
+      "inventory_stockwriteoff": 1,
+      "inventory_supplier": 1,
+      "sales_sale": 1,
+      "sales_salecounter": 1,
+      "sales_saledraft": 1,
+      "sales_saledraftline": 1,
+      "sales_saleline": 1,
+      "sales_salelotallocation": 2
+    },
+    "cuentas_rol_activas": [
+      [
+        "ADMIN",
+        1
+      ],
+      [
+        "ALMACENERO",
+        1
+      ],
+      [
+        "VENDEDOR",
+        1
+      ]
+    ],
+    "categorias": [
+      {
+        "name": "Familia 14D",
+        "is_active": 1,
+        "state_version": 2
+      }
+    ],
+    "productos": [
+      {
+        "name": "Harina 14D",
+        "barcode": "INT-14D-HARINA",
+        "sale_price": 3.55,
+        "minimum_stock": 5,
+        "average_cost": 2,
+        "is_active": 1
+      }
+    ],
+    "proveedores": [
+      {
+        "name": "Proveedor 14D",
+        "ruc": "20000000014",
+        "is_active": 1
+      }
+    ],
+    "lotes": [
+      {
+        "number": "14D-PRIMERO",
+        "initial_quantity": 3,
+        "available_quantity": 0,
+        "unit_cost": 2,
+        "expiration_date": "2026-11-20",
+        "producto": "Harina 14D",
+        "proveedor": "Proveedor 14D",
+        "autor_carga": "Almacén 14D"
+      },
+      {
+        "number": "14D-SEGUNDO",
+        "initial_quantity": 7,
+        "available_quantity": 5,
+        "unit_cost": 2,
+        "expiration_date": "2026-12-13",
+        "producto": "Harina 14D",
+        "proveedor": "Proveedor 14D",
+        "autor_carga": "Almacén 14D"
+      }
+    ],
+    "borrador": [
+      {
+        "status": "DISCARDED",
+        "quantity": 4,
+        "unit_price": 3.55
+      }
+    ],
+    "ventas": [
+      {
+        "correlative": "V-00000001",
+        "total_amount": 14.2,
+        "base_amount": 12.03,
+        "igv_amount": 2.17,
+        "discount_amount": 0,
+        "cash_received": 20,
+        "change_given": 5.8,
+        "vendedor": "Venta 14D",
+        "opening_amount": 100
+      }
+    ],
+    "lineas": [
+      {
+        "product_snapshot_name": "Harina 14D",
+        "product_snapshot_barcode": "INT-14D-HARINA",
+        "quantity": 4,
+        "unit_price": 3.55,
+        "amount": 14.2,
+        "unit_cost": 2
+      }
+    ],
+    "bajas": [
+      {
+        "correlativo": "B-00000001",
+        "number": "14D-SEGUNDO",
+        "quantity": 1,
+        "reason": "DAÑO",
+        "notes": "Envase roto en estante de prueba 14D",
+        "responsable": "Almacén 14D"
+      }
+    ],
+    "turnos": [
+      {
+        "status": "OPEN",
+        "opening_amount": 100,
+        "vendedor": "Venta 14D"
+      }
+    ],
+    "cierres": []
+  },
+  "sin_mutacion_verificada": true
+}

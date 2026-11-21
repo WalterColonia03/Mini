@@ -1,0 +1,98 @@
+Creating test database for alias 'default'...
+
+FFFFF
+======================================================================
+FAIL: test_empty_post_is_bound_and_reports_both_required_fields (identity.test_auth_audit01.LoginAudit01Tests.test_empty_post_is_bound_and_reports_both_required_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\identity\test_auth_audit01.py", line 66, in test_empty_post_is_bound_and_reports_both_required_fields
+    self.assertTrue(response.context["form"].is_bound)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_get_and_failed_post_are_not_cacheable (identity.test_auth_audit01.LoginAudit01Tests.test_get_and_failed_post_are_not_cacheable) (status=200)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\identity\test_auth_audit01.py", line 73, in test_get_and_failed_post_are_not_cacheable
+    self.assertIn("no-store", response.headers.get("Cache-Control", ""))
+AssertionError: 'no-store' not found in ''
+
+======================================================================
+FAIL: test_get_and_failed_post_are_not_cacheable (identity.test_auth_audit01.LoginAudit01Tests.test_get_and_failed_post_are_not_cacheable) (status=200)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\identity\test_auth_audit01.py", line 73, in test_get_and_failed_post_are_not_cacheable
+    self.assertIn("no-store", response.headers.get("Cache-Control", ""))
+AssertionError: 'no-store' not found in ''
+
+======================================================================
+FAIL: test_exception_filter_redacts_submitted_credentials (identity.test_auth_audit01.LoginAudit01Tests.test_exception_filter_redacts_submitted_credentials)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\identity\test_auth_audit01.py", line 85, in test_exception_filter_redacts_submitted_credentials
+    login_view(request)
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\identity\views.py", line 36, in login_view
+    result = authenticate_active_account(form.cleaned_data["email"], form.cleaned_data["password"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+RuntimeError: AUD01 induced failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\test\utils.py", line 456, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\identity\test_auth_audit01.py", line 89, in test_exception_filter_redacts_submitted_credentials
+    self.assertFalse(self.password in reporter.get_traceback_text(), "Credential leaked into exception report")
+AssertionError: True is not false : Credential leaked into exception report
+
+======================================================================
+FAIL: test_service_exception_filter_redacts_credential_locals (identity.test_auth_audit01.LoginAudit01Tests.test_service_exception_filter_redacts_credential_locals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\identity\test_auth_audit01.py", line 98, in test_service_exception_filter_redacts_credential_locals
+    authenticate_active_account(self.admin.email, self.password)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\identity\services.py", line 35, in authenticate_active_account
+    LoginAttempt.objects.get_or_create(identifier=identifier)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+RuntimeError: AUD01 induced failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\test\utils.py", line 456, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Im�genes\planificacion_limpia\r1-pmv\identity\test_auth_audit01.py", line 105, in test_service_exception_filter_redacts_credential_locals
+    self.assertFalse(self.password in str(filtered), "Credential leaked from service locals")
+AssertionError: True is not false : Credential leaked from service locals
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.489s
+
+FAILED (failures=5)
+Destroying test database for alias 'default'...
+
+Found 4 test(s).
+System check identified no issues (0 silenced).

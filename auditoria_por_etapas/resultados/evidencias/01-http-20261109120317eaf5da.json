@@ -1,0 +1,854 @@
+{
+  "started_lima": "2026-11-09T12:03:17.687971-05:00",
+  "finished_lima": "2026-11-09T12:03:21.654648-05:00",
+  "tool": "urllib real HTTP + cookies/CSRF + Django ORM; no browser",
+  "database": "C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\auditoria_por_etapas\\resultados\\datos\\etapa01-20261109\\audit.sqlite3",
+  "server_identity_verified": true,
+  "fixture_prefix": "AUD01HTTP",
+  "fixture_run": "20261109120317eaf5da",
+  "accounts_created": 5,
+  "clock": "remaining/expiry via locked_until fixture adjustment; exact T+900 covered in unit tests",
+  "results": [
+    {
+      "case": "HTTP-01 GET login/cache",
+      "expected": [
+        200,
+        true
+      ],
+      "observed": [
+        200,
+        true
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-CSRF-missing",
+      "expected": [
+        403,
+        5,
+        false
+      ],
+      "observed": [
+        403,
+        5,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-CSRF-altered",
+      "expected": [
+        403,
+        5,
+        false
+      ],
+      "observed": [
+        403,
+        5,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-CSRF-cross-origin",
+      "expected": [
+        403,
+        5,
+        false
+      ],
+      "observed": [
+        403,
+        5,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-EMPTY POST vacio con CSRF header",
+      "expected": [
+        200,
+        2,
+        5
+      ],
+      "observed": [
+        200,
+        2,
+        5
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-ROLE-admin",
+      "expected": [
+        302,
+        "/inicio/",
+        "21ee696b-1ecc-4642-8a75-2624047a13ee",
+        true,
+        false
+      ],
+      "observed": [
+        302,
+        "/inicio/",
+        "21ee696b-1ecc-4642-8a75-2624047a13ee",
+        true,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-SESSION-admin",
+      "expected": [
+        200,
+        true
+      ],
+      "observed": [
+        200,
+        true
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-COOKIE-admin",
+      "expected": [
+        true,
+        true,
+        false
+      ],
+      "observed": [
+        true,
+        true,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-NONSTAFF-admin",
+      "expected": 302,
+      "observed": 302,
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-ROLE-almacen",
+      "expected": [
+        302,
+        "/inicio/",
+        "e0a3b685-fd03-40b0-ab28-8107c2ec8e4e",
+        true,
+        false
+      ],
+      "observed": [
+        302,
+        "/inicio/",
+        "e0a3b685-fd03-40b0-ab28-8107c2ec8e4e",
+        true,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-SESSION-almacen",
+      "expected": [
+        200,
+        true
+      ],
+      "observed": [
+        200,
+        true
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-COOKIE-almacen",
+      "expected": [
+        true,
+        true,
+        false
+      ],
+      "observed": [
+        true,
+        true,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-NONSTAFF-almacen",
+      "expected": 302,
+      "observed": 302,
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-ROLE-vendedor",
+      "expected": [
+        302,
+        "/inicio/",
+        "95ee3456-de96-4963-a599-8ca31afb13f2",
+        true,
+        false
+      ],
+      "observed": [
+        302,
+        "/inicio/",
+        "95ee3456-de96-4963-a599-8ca31afb13f2",
+        true,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-SESSION-vendedor",
+      "expected": [
+        200,
+        true
+      ],
+      "observed": [
+        200,
+        true
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-COOKIE-vendedor",
+      "expected": [
+        true,
+        true,
+        false
+      ],
+      "observed": [
+        true,
+        true,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-NONSTAFF-vendedor",
+      "expected": 302,
+      "observed": 302,
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-DENIED-admin-GET",
+      "expected": [
+        403,
+        false
+      ],
+      "observed": [
+        403,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-DENIED-admin-POST",
+      "expected": [
+        403,
+        false
+      ],
+      "observed": [
+        403,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-DENIED-almacen-GET",
+      "expected": [
+        403,
+        false
+      ],
+      "observed": [
+        403,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-DENIED-almacen-POST",
+      "expected": [
+        403,
+        false
+      ],
+      "observed": [
+        403,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-DENIED-vendedor-GET",
+      "expected": [
+        403,
+        false
+      ],
+      "observed": [
+        403,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-DENIED-vendedor-POST",
+      "expected": [
+        403,
+        false
+      ],
+      "observed": [
+        403,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-VISITOR-GET",
+      "expected": [
+        302,
+        "/?next=/empleados/nuevo/",
+        false
+      ],
+      "observed": [
+        302,
+        "/?next=/empleados/nuevo/",
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-VISITOR-POST",
+      "expected": [
+        302,
+        "/?next=/empleados/nuevo/",
+        false
+      ],
+      "observed": [
+        302,
+        "/?next=/empleados/nuevo/",
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-UNIFORM-admin",
+      "expected": [
+        200,
+        "Correo o contraseña incorrectos",
+        null,
+        false
+      ],
+      "observed": [
+        200,
+        "Correo o contraseña incorrectos",
+        null,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-UNIFORM-inactive",
+      "expected": [
+        200,
+        "Correo o contraseña incorrectos",
+        null,
+        false
+      ],
+      "observed": [
+        200,
+        "Correo o contraseña incorrectos",
+        null,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-UNIFORM-unknown",
+      "expected": [
+        200,
+        "Correo o contraseña incorrectos",
+        null,
+        false
+      ],
+      "observed": [
+        200,
+        "Correo o contraseña incorrectos",
+        null,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-NEXT-/empleados/",
+      "expected": [
+        302,
+        "/empleados/"
+      ],
+      "observed": [
+        302,
+        "/empleados/"
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-NEXT-https://example.invalid/",
+      "expected": [
+        302,
+        "/inicio/"
+      ],
+      "observed": [
+        302,
+        "/inicio/"
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-NEXT-//example.invalid/",
+      "expected": [
+        302,
+        "/inicio/"
+      ],
+      "observed": [
+        302,
+        "/inicio/"
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-NEXT-javascript:alert(1)",
+      "expected": [
+        302,
+        "/inicio/"
+      ],
+      "observed": [
+        302,
+        "/inicio/"
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-NEXT-ROLE",
+      "expected": [
+        403,
+        false
+      ],
+      "observed": [
+        403,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-LOCK-1",
+      "expected": [
+        200,
+        1,
+        false
+      ],
+      "observed": [
+        200,
+        1,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-LOCK-2",
+      "expected": [
+        200,
+        2,
+        false
+      ],
+      "observed": [
+        200,
+        2,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-LOCK-3",
+      "expected": [
+        200,
+        3,
+        false
+      ],
+      "observed": [
+        200,
+        3,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-LOCK-4",
+      "expected": [
+        200,
+        4,
+        false
+      ],
+      "observed": [
+        200,
+        4,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-LOCK-5",
+      "expected": [
+        200,
+        5,
+        true
+      ],
+      "observed": [
+        200,
+        5,
+        true
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-LOCK-DURATION",
+      "expected": true,
+      "observed": true,
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-LOCK-OTHER-SESSION",
+      "expected": [
+        200,
+        true,
+        {
+          "failures": 5,
+          "locked_until": "2026-11-09 17:18:20.095012+00:00"
+        }
+      ],
+      "observed": [
+        200,
+        true,
+        {
+          "failures": 5,
+          "locked_until": "2026-11-09 17:18:20.095012+00:00"
+        }
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-REMAINING-2",
+      "expected": [
+        200,
+        true
+      ],
+      "observed": [
+        200,
+        true
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-REMAINING-1",
+      "expected": [
+        200,
+        true
+      ],
+      "observed": [
+        200,
+        true
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-EXPIRY",
+      "expected": [
+        302,
+        "/inicio/",
+        {
+          "failures": 0,
+          "locked_until": null
+        }
+      ],
+      "observed": [
+        302,
+        "/inicio/",
+        {
+          "failures": 0,
+          "locked_until": null
+        }
+      ],
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-GROWTH-THREE-NEW",
+      "expected": 3,
+      "observed": 3,
+      "passed": true,
+      "classification": "CONFIRMA hallazgo de acumulacion; no prueba carga"
+    },
+    {
+      "case": "HTTP-GROWTH-REPEATED",
+      "expected": [
+        13,
+        2
+      ],
+      "observed": [
+        13,
+        2
+      ],
+      "passed": true,
+      "classification": "CONFIRMA una fila agregada por identificador"
+    },
+    {
+      "case": "HTTP-ADMIN-FIVE-FAILS",
+      "expected": [
+        200,
+        13,
+        null
+      ],
+      "observed": [
+        200,
+        13,
+        null
+      ],
+      "passed": true,
+      "classification": "CONFIRMA admin no usa bloqueo funcional"
+    },
+    {
+      "case": "HTTP-ADMIN-APP-LOCK-SET",
+      "expected": 5,
+      "observed": 5,
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-ADMIN-BYPASSES-APP-LOCK",
+      "expected": [
+        302,
+        "/admin/",
+        {
+          "failures": 5,
+          "locked_until": "2026-11-09 17:18:21.539748+00:00"
+        }
+      ],
+      "observed": [
+        302,
+        "/admin/",
+        {
+          "failures": 5,
+          "locked_until": "2026-11-09 17:18:21.539748+00:00"
+        }
+      ],
+      "passed": true,
+      "classification": "CONFIRMA superficie separada; politica pendiente P1"
+    },
+    {
+      "case": "HTTP-ADMIN-STAFF-NO-GRANTS",
+      "expected": [
+        200,
+        false
+      ],
+      "observed": [
+        200,
+        false
+      ],
+      "passed": true,
+      "classification": "CUMPLE entrada staff sin permisos de modelo; CRUD no examinado"
+    },
+    {
+      "case": "HTTP-BUSINESS-UNCHANGED",
+      "expected": {
+        "catalog.Category": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "catalog.Product": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.InitialInventoryLoad": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.Lot": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.Supplier": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.StockWriteOff": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.PhysicalAdjustment": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "cash.CashRegister": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "cash.CashShift": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "cash.CashShiftClose": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.SaleCounter": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.SaleDraft": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.SaleDraftLine": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.Sale": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.SaleLine": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      },
+      "observed": {
+        "catalog.Category": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "catalog.Product": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.InitialInventoryLoad": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.Lot": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.Supplier": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.StockWriteOff": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "inventory.PhysicalAdjustment": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "cash.CashRegister": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "cash.CashShift": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "cash.CashShiftClose": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.SaleCounter": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.SaleDraft": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.SaleDraftLine": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.Sale": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "sales.SaleLine": {
+          "count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      },
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    },
+    {
+      "case": "HTTP-PROTECTED-DATABASES",
+      "expected": {
+        "r1-pmv\\r1_pmv.sqlite3": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+        "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": "19546d1c77d5874c8d0d5061cba97be8abfe9f03435600ef40a6c9c9c9209b5e"
+      },
+      "observed": {
+        "r1-pmv\\r1_pmv.sqlite3": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+        "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": "19546d1c77d5874c8d0d5061cba97be8abfe9f03435600ef40a6c9c9c9209b5e"
+      },
+      "passed": true,
+      "classification": "CUMPLE caso acotado"
+    }
+  ],
+  "passed": 51,
+  "total": 51,
+  "limitations": [
+    "No PostgreSQL concurrency",
+    "No production infrastructure or load test",
+    "No complete admin CRUD",
+    "No full RBAC matrix"
+  ],
+  "source_hashes": {
+    "identity/views.py": "0b963b2d952847ea47dad7f84dd429d7571f983d8e81335191cffcb51a23e741",
+    "identity/services.py": "e4f0e8c99fe304efd0c737d73cca75c3d8a4664fced1ae59a5a4449a98e480e1",
+    "identity/forms.py": "aea36b357104b556cc0b4ccf81c82ca07dc29b91da8ac374da170f9c38c5bda5",
+    "identity/models.py": "bdad1c4c70e1d17428d93eae1790fc8f573ffbba8456ebfbbd2b15080a5b8b3d"
+  }
+}

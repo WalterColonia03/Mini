@@ -1,0 +1,244 @@
+{
+  "started_utc": "2026-11-15T02:50:46.423629+00:00",
+  "etapa": "ETAPA-15",
+  "sublote": "15-A",
+  "pasada": 1,
+  "cursor_entrada": "15-SEGURIDAD-BASELINE-01",
+  "plan08_sha256": "69b886a3be2610546c30e9d587c28813e50ad4e79ad644847aa7c20ba50b87e2",
+  "head": "7816d3328115cf5aa5bcdd0985fffd795b3ae084",
+  "before_build": {
+    "count": 216,
+    "sha256": "f94faec701beaf938f5af06c2de605337f699f87abf83179e0600dbdb9041907"
+  },
+  "cases": [
+    {
+      "id": "SRV15-01-matriz-rutas-roles-metodos",
+      "ok": true,
+      "seconds": 12.859,
+      "combinations_checked": 232,
+      "anon_redirects_302": 58,
+      "role_denials_403": 96,
+      "seller_ownership_isolation_verified": 5,
+      "sales_receipt_cost_redaction_verified": true,
+      "warehouse_readonly_catalog_suppliers_verified": true,
+      "method_405_verified": 14,
+      "missing_never_cache_catalog_routes": [
+        "category-create-get",
+        "category-create-post",
+        "product-created",
+        "product-created-alias",
+        "product-edit-get",
+        "product-edit-post",
+        "product-entry-get",
+        "product-entry-post",
+        "product-toggle-post"
+      ]
+    },
+    {
+      "id": "SRV15-02-coherencia-menu-vs-servidor",
+      "ok": true,
+      "seconds": 0.516,
+      "verified_roles": {
+        "ADMIN": [
+          "/caja/turnos/",
+          "/empleados/",
+          "/inicio/",
+          "/inventario/ajustes/nuevo/",
+          "/inventario/proveedores/",
+          "/inventario/stock/",
+          "/productos/",
+          "/productos/categorias/",
+          "/productos/nuevo/",
+          "/productos/vencimientos/",
+          "/salir/",
+          "/ventas/historial/"
+        ],
+        "ALMACENERO": [
+          "/inicio/",
+          "/inventario/bajas/nueva/",
+          "/inventario/carga-inicial/",
+          "/inventario/entrada/",
+          "/inventario/proveedores/",
+          "/inventario/stock/",
+          "/productos/",
+          "/productos/vencimientos/",
+          "/salir/"
+        ],
+        "VENDEDOR": [
+          "/caja/abrir/",
+          "/caja/cerrar/",
+          "/caja/turnos/",
+          "/inicio/",
+          "/salir/",
+          "/ventas/",
+          "/ventas/historial/",
+          "/ventas/historial/turno/"
+        ]
+      }
+    },
+    {
+      "id": "SRV15-03-csrf-enforcement-transversal",
+      "ok": true,
+      "seconds": 3.5,
+      "endpoints_tested": 16,
+      "modes": [
+        "missing",
+        "invalid",
+        "cross_origin"
+      ],
+      "db_unchanged": true
+    },
+    {
+      "id": "SRV15-04-sesiones-cookies-rotacion-y-revocacion",
+      "ok": true,
+      "seconds": 0.219,
+      "session_rotated_on_login": true,
+      "csrf_rotated_on_login": true,
+      "session_cookie_httponly": true,
+      "csrf_cookie_httponly": true,
+      "session_cookie_samesite": "Lax",
+      "session_expire_at_browser_close": true,
+      "session_cookie_age_seconds": 1209600,
+      "session_save_every_request": false,
+      "idle_session_timeout_finding": true,
+      "role_change_updates_active_session": true,
+      "deactivation_deletes_session_row": true
+    },
+    {
+      "id": "SRV15-05-06-argon2id-rn24-y-limite-email-login",
+      "ok": true,
+      "seconds": 0.0,
+      "primary_hasher": "argon2",
+      "password_hashers": [
+        "django.contrib.auth.hashers.Argon2PasswordHasher",
+        "django.contrib.auth.hashers.PBKDF2PasswordHasher"
+      ],
+      "login_form_email_max_length": 254,
+      "employee_create_email_max_length": 254,
+      "employee_edit_email_max_length": 254,
+      "account_model_email_max_length": 254,
+      "login_email_254_aligned": true,
+      "long_email_300_rejected_without_loginattempt": true,
+      "rn24_weak_passwords_rejected": 6
+    },
+    {
+      "id": "SRV15-07-doc02-04-lockout-sesiones-y-auditoria",
+      "ok": true,
+      "seconds": 0.343,
+      "reactivate_preserves_active_lockout": true,
+      "email_change_carries_active_lockout": true,
+      "explicit_unlock_clears_lockout": true,
+      "session_deleted_immediately_on_pw_reset": true,
+      "session_invalidated_on_next_http_request": true,
+      "identity_audit_actions": [
+        "ACCOUNT_UNLOCKED",
+        "EMPLOYEE_DEACTIVATED",
+        "EMPLOYEE_REACTIVATED",
+        "EMPLOYEE_UPDATED",
+        "LOGIN_SUCCESS",
+        "PASSWORD_RESET"
+      ]
+    },
+    {
+      "id": "SRV15-08-admin-exposicion-y-puente-sesion",
+      "ok": true,
+      "seconds": 0.594,
+      "admin_url_mounted": true,
+      "registered_models": [
+        "auth.Group",
+        "cash.CashRegister",
+        "cash.CashShift",
+        "catalog.Category",
+        "catalog.Product",
+        "identity.Account",
+        "identity.Role",
+        "inventory.InitialInventoryLoad",
+        "inventory.Lot"
+      ],
+      "locked_staff_bypassed_via_admin_login": true,
+      "admin_session_bridges_to_commercial_dashboard": true
+    },
+    {
+      "id": "SRV15-09-logging-redaccion-exc-info-y-request-id",
+      "ok": true,
+      "seconds": 0.0,
+      "msg_and_args_redacted": true,
+      "exc_info_redacted": true,
+      "response_echoes_x_request_id": true,
+      "template_500_has_request_id": false
+    },
+    {
+      "id": "SRV15-10-check-deploy-por-ambiente",
+      "ok": true,
+      "seconds": 4.516,
+      "local_default": {
+        "returncode": 0,
+        "warnings": [
+          "?: (security.W004) You have not set a value for the SECURE_HSTS_SECONDS setting. If your entire site is served only over SSL, you may want to consider setting a value and enabling HTTP Strict Transport Security. Be sure to read the documentation first; enabling HSTS carelessly can cause serious, irreversible problems.",
+          "?: (security.W008) Your SECURE_SSL_REDIRECT setting is not set to True. Unless your site should be available over both SSL and non-SSL connections, you may want to either set this setting True or configure a load balancer or reverse-proxy server to redirect all connections to HTTPS.",
+          "?: (security.W009) Your SECRET_KEY has less than 50 characters, less than 5 unique characters, or it's prefixed with 'django-insecure-' indicating that it was generated automatically by Django. Please generate a long and random value, otherwise many of Django's security-critical features will be vulnerable to attack.",
+          "?: (security.W012) SESSION_COOKIE_SECURE is not set to True. Using a secure-only session cookie makes it more difficult for network traffic sniffers to hijack user sessions.",
+          "?: (security.W016) You have 'django.middleware.csrf.CsrfViewMiddleware' in your MIDDLEWARE, but you have not set CSRF_COOKIE_SECURE to True. Using a secure-only CSRF cookie makes it more difficult for network traffic sniffers to steal the CSRF token."
+        ]
+      },
+      "demo_default": {
+        "returncode": 0,
+        "warnings": [
+          "?: (security.W009) Your SECRET_KEY has less than 50 characters, less than 5 unique characters, or it's prefixed with 'django-insecure-' indicating that it was generated automatically by Django. Please generate a long and random value, otherwise many of Django's security-critical features will be vulnerable to attack."
+        ]
+      },
+      "demo_ssl_true": {
+        "returncode": 0,
+        "warnings": [
+          "?: (security.W009) Your SECRET_KEY has less than 50 characters, less than 5 unique characters, or it's prefixed with 'django-insecure-' indicating that it was generated automatically by Django. Please generate a long and random value, otherwise many of Django's security-critical features will be vulnerable to attack."
+        ]
+      },
+      "production_default": {
+        "returncode": 0,
+        "warnings": [
+          "?: (security.W009) Your SECRET_KEY has less than 50 characters, less than 5 unique characters, or it's prefixed with 'django-insecure-' indicating that it was generated automatically by Django. Please generate a long and random value, otherwise many of Django's security-critical features will be vulnerable to attack."
+        ]
+      }
+    },
+    {
+      "id": "SRV15-11-12-defectos-reset-demo-db-y-seed-demo",
+      "ok": true,
+      "seconds": 0.437,
+      "reset_demo_db_raises_protected_error_with_movements": true,
+      "reset_demo_db_error_excerpt": "(\"Cannot delete some instances of model 'SaleDraft' because they are referenced through protected foreign keys: 'Sale.draft'.\", {<Sale: V-00000001 · Carla Ventas>})",
+      "seed_demo_creates_initial_load_line": false,
+      "seed_demo_product_kardex_shows_unavailable_defect": true
+    },
+    {
+      "id": "SRV15-13-artefactos-despliegue-compose-dockerfile",
+      "ok": true,
+      "seconds": 0.0,
+      "dockerfile_base_image": "FROM python:3.13-slim",
+      "dockerfile_runs_nonroot_user": true,
+      "dockerfile_cmd_uses_gunicorn": true,
+      "design_02_target_python": "Python 3.12 (02_Diseno_Tecnico_R1_PMV.md §2.1)",
+      "compose_postgres_image": "image: postgres:17",
+      "compose_web_uses_runserver": true,
+      "compose_web_binds_loopback_only": true,
+      "init_sh_creates_migrator_and_app_user": true,
+      "backup_restore_scripts_in_repo": false
+    },
+    {
+      "id": "SRV15-00-regresion-completa-tests",
+      "ok": true,
+      "seconds": 176.485,
+      "returncode": 0,
+      "tests_ran": 652,
+      "log_file": "regresion-suite.txt"
+    }
+  ],
+  "after_build": {
+    "count": 216,
+    "sha256": "f94faec701beaf938f5af06c2de605337f699f87abf83179e0600dbdb9041907"
+  },
+  "source_stable": true,
+  "passed": 12,
+  "total": 12,
+  "ok": true,
+  "finished_utc": "2026-11-15T02:54:13.798800+00:00"
+}

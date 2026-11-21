@@ -1,0 +1,36 @@
+{
+  "at_utc": "2026-11-15T15:13:28.642Z",
+  "checks": [
+    {
+      "id": "CROSS_PROOF",
+      "ok": true
+    },
+    {
+      "id": "CROSS_ADMIN_SIGUE_BLOQUEADO",
+      "ok": true,
+      "status": 200,
+      "message": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 4 minuto(s)."
+    },
+    {
+      "id": "CROSS_WAREHOUSE_INGRESA_PERO_NO_EMPLEADOS",
+      "ok": true,
+      "status": 302,
+      "role": "Almacenero",
+      "employees_status": 403
+    },
+    {
+      "id": "CROSS_SELLER_INGRESA_PERO_NO_EMPLEADOS",
+      "ok": true,
+      "status": 302,
+      "role": "Vendedor",
+      "employees_status": 403
+    },
+    {
+      "id": "CROSS_OTROS_ROLES_NO_DESBLOQUEAN_ADMIN",
+      "ok": true,
+      "status": 200,
+      "message": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 4 minuto(s)."
+    }
+  ],
+  "chrome": "157.0.8103.78"
+}

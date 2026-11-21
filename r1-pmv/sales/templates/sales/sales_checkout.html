@@ -1,0 +1,121 @@
+{% extends "identity/base.html" %}
+{% load l10n %}
+
+{% block title %}Cobrar venta · Minimarket{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Mostrador</p>
+    <h2>Cobrar venta</h2>
+    <p class="lede">Revisa el resumen e ingresa el efectivo recibido para confirmar el cobro.</p>
+    <p class="alert alert-info">Esta venta genera una constancia interna. No emite una boleta ni factura electrónica autorizada por SUNAT.</p>
+  </div>
+  <a class="button button-secondary" href="{% url 'sales-draft' %}">Volver a preparación</a>
+</section>
+
+<div class="content-grid content-grid-aside">
+  <section class="panel form-panel">
+    <h3>Efectivo recibido</h3>
+
+    {% if form.non_field_errors or form.idempotency_key.errors or form.expected_subtotal.errors or form.draft_signature.errors %}
+      <div class="alert alert-error" role="alert">
+        <ul class="errorlist">
+          {% for error in form.non_field_errors %}<li>{{ error }}</li>{% endfor %}
+          {% for hidden in form.hidden_fields %}
+            {% for error in hidden.errors %}<li>{{ hidden.label|default:hidden.name }}: {{ error }}</li>{% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {{ form.idempotency_key }}
+      {{ form.expected_subtotal }}
+      {{ form.draft_signature }}
+
+      <div class="field{% if form.cash_received.errors %} field-error{% endif %}">
+        <label for="{{ form.cash_received.id_for_label }}">{{ form.cash_received.label }}</label>
+        <div class="money-input"><span>S/</span>{{ form.cash_received }}</div>
+        <p class="help">Debe ser igual o mayor al total de la venta.</p>
+        {% if form.cash_received.errors %}
+          <div class="error-list" role="alert">{{ form.cash_received.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="form-actions">
+        <button class="button button-primary" type="submit">Confirmar cobro</button>
+        <a class="button button-ghost" href="{% url 'sales-draft' %}">Cancelar</a>
+      </div>
+    </form>
+  </section>
+
+  <aside class="panel info-panel" data-subtotal="{{ subtotal|unlocalize }}">
+    <h3>Resumen de la venta</h3>
+    <div class="draft-lines">
+      {% for line in draft.lines.all %}
+        <article class="draft-line">
+          <div><strong>{{ line.product.name }}</strong></div>
+          <div class="draft-line-total">
+            <span>{{ line.quantity }} und. × S/ {{ line.unit_price|floatformat:2 }}</span>
+            <strong>S/ {{ line.amount|floatformat:2 }}</strong>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    <dl class="summary-list sale-totals">
+      <div><dt>Subtotal</dt><dd id="checkout-subtotal">S/ {{ subtotal|floatformat:2 }}</dd></div>
+      <div><dt>Base imponible</dt><dd id="checkout-base">S/ {{ totals.base|floatformat:2 }}</dd></div>
+      <div><dt>IGV (18 %)</dt><dd id="checkout-igv">S/ {{ totals.igv|floatformat:2 }}</dd></div>
+      <div class="total-row"><dt>Total a cobrar</dt><dd id="checkout-total">S/ {{ totals.total|floatformat:2 }}</dd></div>
+      <div><dt>Vuelto estimado</dt><dd id="checkout-change">—</dd></div>
+    </dl>
+    <p class="help">El cobro descuenta existencias y registra la constancia interna.</p>
+  </aside>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+  var aside = document.querySelector('[data-subtotal]');
+  var cashInput = document.getElementById('id_cash_received');
+  if (!aside || !cashInput) return;
+  function cents(value) {
+    var match = /^(\d+)(?:[.,](\d{1,2}))?$/.exec(String(value).trim());
+    return match ? BigInt(match[1]) * 100n + BigInt((match[2] || '').padEnd(2, '0') || '0') : null;
+  }
+  var total = cents(aside.getAttribute('data-subtotal'));
+  function fmt(value) { return 'S/ ' + (value / 100n) + ',' + String(value % 100n).padStart(2, '0'); }
+  function recalc() {
+    var cash = cashInput.validity.badInput ? null : cents(cashInput.value);
+    document.getElementById('checkout-change').textContent =
+      cash !== null && total !== null && cash <= 999999999n && cash >= total ? fmt(cash - total) : '—';
+  }
+  cashInput.addEventListener('input', recalc);
+  recalc();
+
+  var form = cashInput.closest('form');
+  var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+  var submitted = false;
+  if (form && submitBtn) {
+    form.addEventListener('submit', function(event) {
+      if (submitted) {
+        event.preventDefault();
+        return;
+      }
+      submitted = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Procesando cobro…';
+    });
+    window.addEventListener('pageshow', function() {
+      submitted = false;
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Confirmar cobro';
+    });
+  }
+})();
+</script>
+{% endblock %}
+

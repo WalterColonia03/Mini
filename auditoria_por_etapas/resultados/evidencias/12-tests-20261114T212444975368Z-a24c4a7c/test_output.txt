@@ -1,0 +1,161 @@
+Found 9 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_checkout_retry_recovers_receipt_even_with_new_active_draft_without_touching_it (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_recovers_receipt_even_with_new_active_draft_without_touching_it) ... ok
+test_checkout_retry_recovers_receipt_when_no_active_draft (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_recovers_receipt_when_no_active_draft) ... ok
+test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected) ... ok
+test_histories_filters_nul_lima_dates_isolation_and_query_counts (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_histories_filters_nul_lima_dates_isolation_and_query_counts) ... Not Found: /caja/turnos/e839a02a-f81a-4114-9579-bf48fd1e9010/cerrado/
+Forbidden (Permission denied): /ventas/historial/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /ventas/historial/turno/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/turnos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/turnos/5d3fbde3-982f-4aaf-8737-12098b12cca3/cerrado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Method Not Allowed (POST): /ventas/historial/
+Method Not Allowed (POST): /caja/turnos/
+ok
+test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation) ... Not Found: /ventas/constancia/e92b34b2-b67d-46d8-b542-db9714d08cfd/
+Not Found: /ventas/constancia/0dd0f3dc-3ac1-4976-b4e4-84f4f7e260d5/
+Not Found: /ventas/constancia/no-es-uuid/
+Forbidden (Permission denied): /ventas/constancia/e92b34b2-b67d-46d8-b542-db9714d08cfd/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /ventas/constancia/e92b34b2-b67d-46d8-b542-db9714d08cfd/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Method Not Allowed (POST): /ventas/constancia/e92b34b2-b67d-46d8-b542-db9714d08cfd/
+ok
+test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback) ... ok
+test_seller_menu_closed_acta_title_last_sale_disappears_and_deactivated_cookie (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_seller_menu_closed_acta_title_last_sale_disappears_and_deactivated_cookie) ... ok
+test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe) ... FAIL
+test_stage12_migrations_round_trip_and_no_pending_migrations (sales.test_audit12_receipts_history.Stage12MigrationOrderingTests.test_stage12_migrations_round_trip_and_no_pending_migrations) ... ok
+
+======================================================================
+FAIL: test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit12_receipts_history.py", line 600, in test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe
+    self.assertContains(r_dup, "repetido")
+AssertionError: False is not true : Couldn't find 'repetido' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Historial de ventas</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n            <p class="sidebar-label">Cat&#225;logo</p>\n            <a class="nav-item" href="/productos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>\n            </a>\n            <a class="nav-item" href="/productos/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>\n            </a>\n            <a class="nav-item" href="/productos/categorias/">\n              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>\n            </a>\n            <p class="sidebar-label">Inventario</p>\n            <a class="nav-item" href="/inventario/proveedores/">\n              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>\n            </a>\n            <a class="nav-item" href="/inventario/stock/">\n              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>\n            </a>\n            <a class="nav-item" href="/productos/vencimientos/">\n              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>\n            </a>\n            <a class="nav-item" href="/inventario/ajustes/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>\n            </a>\n            <p class="sidebar-label">Personal</p>\n            <a class="nav-item" href="/empleados/">\n              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>\n            </a>\n            <p class="sidebar-label">Caja y ventas</p>\n            <a class="nav-item" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>\n            </a>\n            <a class="nav-item is-active" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>\n            </a>\n          \n          \n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">A</span>\n            <span><strong>Admin Stage12</strong><small>Administrador</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>\n              Historial de ventas\n              \n            </h1>\n          </div>\n          <div class="topbar-user"><span>Admin Stage12</span><span class="role-pill">Administrador</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n      <div class="flash-stack" aria-live="polite">\n        <div class="alert alert-error">No repita el par\xc3\xa1metro page.</div>\n      </div>\n    \n    \n<section class="page-heading">\n  <div>\n    <p class="eyebrow">Caja y ventas</p>\n    <h2>Historial de ventas</h2>\n    <p class="lede">\n      \n        Consulta las ventas confirmadas de toda la tienda por correlativo, fecha, vendedor o turno.\n      \n    </p>\n  </div>\n  <div class="page-heading-actions">\n    \n    <a class="button button-secondary" href="/inicio/">Volver al inicio</a>\n  </div>\n</section>\n\n<form method="get" class="panel form-panel history-filter-panel mb-4">\n  <div class="history-filter-grid">\n    <div>\n      <label for="sales-correlative" class="form-label fw-semibold">Correlativo</label>\n      <input id="sales-correlative" type="text" name="correlativo" value=""\n             maxlength="64" class="form-control" placeholder="V-00000001">\n    </div>\n    <div>\n      <label for="sales-date" class="form-label fw-semibold">Fecha exacta</label>\n      <input id="sales-date" type="date" name="fecha" value="" class="form-control">\n    </div>\n    <div>\n      <label for="sales-date-from" class="form-label fw-semibold">Desde</label>\n      <input id="sales-date-from" type="date" name="fecha_desde" value="" class="form-control">\n    </div>\n    <div>\n      <label for="sales-date-to" class="form-label fw-semibold">Hasta</label>\n      <input id="sales-date-to" type="date" name="fecha_hasta" value="" class="form-control">\n    </div>\n    \n    <div>\n      <label for="sales-seller" class="form-label fw-semibold">Vendedor</label>\n      <select id="sales-seller" name="vendedor" class="form-select">\n        <option value="">Todos</option>\n        \n          <option value="3067def7-9515-4dbf-81f3-c4ce356f23bf" >Vendedor Dos 12</option>\n        \n          <option value="556b7b2d-1572-4dee-a6e5-c9b911d9a9d7" >Vendedora Uno 12</option>\n        \n      </select>\n    </div>\n    \n    <div>\n      <label for="sales-shift" class="form-label fw-semibold">Turno</label>\n      <select id="sales-shift" name="turno" class="form-select">\n        <option value="">Todos</option>\n        \n          <option value="fb152fe5-ba41-4514-bf7d-130c70773851" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="f176da19-568f-428a-a214-8a8912ab6a38" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="df6cd8fe-83f9-4bef-8eb7-cf7212b6739b" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="dca14fd2-020d-485d-9744-32b1ac4df098" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="c16ce0e3-9484-479d-95db-19139b32f488" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="b70c4e47-37cb-4a1d-8c1d-1e18e328e8f0" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="b3ade319-aaae-4c07-a85b-19a44396d572" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="a80bf215-287e-41ee-95e3-d2c524e3da69" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="9d89cf31-3e72-4924-95b2-d4c4dfe928f7" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="9bd4955a-2cd7-48c4-ba96-f1656e6ea031" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="96bc08d4-b837-4861-aa94-9fb081eddd99" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="8e3671f9-90e7-48ef-b49b-5ba6769f5ddf" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="86d9d3f1-da45-40bd-a105-6406404f4687" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="74059324-d77c-4aeb-9e4a-f96598860438" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="6832feba-685c-4f72-b16e-d8707237378a" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="6312db37-4871-4521-a919-43bb0260f987" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="5d998785-607a-402b-a68c-f3e5f349f874" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="5a923a45-ebce-4e33-ab91-7c628fe2e060" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="57c313ba-59dc-4b18-ae05-aa03cc450f9f" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="4b304db3-1227-4852-a49e-24d2c7c4e05f" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="3e2613ef-7c21-4278-ac0f-f904655e0730" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="39981816-2980-4cb0-a321-46e44782b644" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="2a75fb7c-b0d6-4148-ad43-d02c3b1d6671" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="222b1a09-1ea3-4108-8cc4-068406dc7c19" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedora Uno 12\n          </option>\n        \n          <option value="195417a2-8a11-496d-bf04-02ed5095682b" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n          <option value="07d7c67d-1216-4ea3-bab7-0c939738aa69" >\n            CAJA-01 \xc2\xb7 12/11/2026 10:00 \xc2\xb7 Vendedor Dos 12\n          </option>\n        \n      </select>\n    </div>\n  </div>\n  <div class="form-actions history-filter-actions">\n    <button type="submit" class="btn btn-primary">Filtrar</button>\n    <a href="/ventas/historial/" class="btn btn-outline-secondary">Limpiar</a>\n  </div>\n</form>\n\n\n<div class="alert alert-warning" role="alert">No se realiz\xc3\xb3 la consulta. Corrija los filtros o la p\xc3\xa1gina indicados.</div>\n\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  <script src="/static/identity/navigation.js" defer></script>\n  \n</body>\n</html>\n'
+
+----------------------------------------------------------------------
+Ran 9 tests in 10.210s
+
+FAILED (failures=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

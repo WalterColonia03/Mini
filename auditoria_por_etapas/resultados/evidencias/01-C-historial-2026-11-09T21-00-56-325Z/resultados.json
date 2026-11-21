@@ -1,0 +1,487 @@
+{
+  "inicioUtc": "2026-11-09T21:00:56.325Z",
+  "hito": "E01-B-01",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "resultados": [
+    {
+      "caso": "GET / fresco",
+      "cumple": true,
+      "observado": {
+        "ruta": "/",
+        "hash": "",
+        "titulo": "Ingresar — Sistema de gestión",
+        "foco": "id_email",
+        "visible": true,
+        "indicador": {
+          "outline": "none",
+          "ancho": "3px",
+          "sombra": "rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+        },
+        "correoVacio": true,
+        "claveVacia": true,
+        "alerta": null,
+        "ancho": 1366,
+        "alto": 768,
+        "desbordeHorizontal": false,
+        "centrosOperables": [
+          true,
+          true,
+          true
+        ],
+        "tipoNavegacion": "navigate"
+      }
+    },
+    {
+      "caso": "POST / rechazo",
+      "cumple": true,
+      "observado": {
+        "dom": {
+          "ruta": "/",
+          "hash": "",
+          "titulo": "Ingresar — Sistema de gestión",
+          "foco": "id_email",
+          "visible": true,
+          "indicador": {
+            "outline": "none",
+            "ancho": "3px",
+            "sombra": "rgba(11, 125, 119, 0.016) 0px 0px 0px 0.357623px"
+          },
+          "correoVacio": false,
+          "claveVacia": true,
+          "alerta": "Correo o contraseña incorrectos",
+          "ancho": 1366,
+          "alto": 768,
+          "desbordeHorizontal": false,
+          "centrosOperables": [
+            true,
+            true,
+            true
+          ],
+          "tipoNavegacion": "navigate"
+        },
+        "antes": {
+          "fallos": 0,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 20:57:23.050709"
+        },
+        "despues": {
+          "fallos": 1,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 20:57:23.050709"
+        },
+        "sinCookieSesion": true
+      }
+    },
+    {
+      "caso": "atras desde flujo de rechazo",
+      "cumple": true,
+      "observado": {
+        "dom": {
+          "ruta": "/",
+          "hash": "",
+          "titulo": "Ingresar — Sistema de gestión",
+          "foco": "id_email",
+          "visible": true,
+          "indicador": {
+            "outline": "none",
+            "ancho": "3px",
+            "sombra": "rgba(11, 125, 119, 0.004) 0px 0px 0px 0.120908px"
+          },
+          "correoVacio": false,
+          "claveVacia": true,
+          "alerta": null,
+          "ancho": 1366,
+          "alto": 768,
+          "desbordeHorizontal": false,
+          "centrosOperables": [
+            true,
+            true,
+            true
+          ],
+          "tipoNavegacion": "back_forward"
+        },
+        "correoCoincideConElEnviado": true,
+        "status": 200,
+        "red": [
+          {
+            "metodo": "GET",
+            "ruta": "/",
+            "status": 200,
+            "cacheControl": "max-age=0, no-cache, no-store, must-revalidate, private"
+          }
+        ],
+        "despues": {
+          "fallos": 1,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 20:57:23.050709"
+        }
+      }
+    },
+    {
+      "caso": "recarga desde flujo de rechazo",
+      "cumple": true,
+      "observado": {
+        "dom": {
+          "ruta": "/",
+          "hash": "",
+          "titulo": "Ingresar — Sistema de gestión",
+          "foco": "id_email",
+          "visible": true,
+          "indicador": {
+            "outline": "none",
+            "ancho": "3px",
+            "sombra": "rgba(11, 125, 119, 0.004) 0px 0px 0px 0.120908px"
+          },
+          "correoVacio": true,
+          "claveVacia": true,
+          "alerta": null,
+          "ancho": 1366,
+          "alto": 768,
+          "desbordeHorizontal": false,
+          "centrosOperables": [
+            true,
+            true,
+            true
+          ],
+          "tipoNavegacion": "reload"
+        },
+        "correoCoincideConElEnviado": false,
+        "status": 200,
+        "red": [
+          {
+            "metodo": "GET",
+            "ruta": "/",
+            "status": 200,
+            "cacheControl": "max-age=0, no-cache, no-store, must-revalidate, private"
+          }
+        ],
+        "despues": {
+          "fallos": 1,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 20:57:23.050709"
+        }
+      }
+    },
+    {
+      "caso": "Destino privado tras recarga",
+      "cumple": true,
+      "observado": {
+        "ruta": "/",
+        "siguiente": "/inicio/"
+      }
+    },
+    {
+      "caso": "Orden de teclado y salto",
+      "cumple": true,
+      "observado": [
+        {
+          "tecla": "Shift+Tab",
+          "foco": "brand",
+          "visible": true,
+          "indicador": {
+            "outline": "auto",
+            "ancho": "1px",
+            "sombra": "none"
+          }
+        },
+        {
+          "tecla": "Shift+Tab",
+          "foco": "skip-link",
+          "visible": true,
+          "indicador": {
+            "outline": "auto",
+            "ancho": "1px",
+            "sombra": "none"
+          }
+        },
+        {
+          "tecla": "Enter",
+          "foco": "contenido",
+          "visible": true,
+          "indicador": {
+            "outline": "auto",
+            "ancho": "1px",
+            "sombra": "none"
+          }
+        },
+        {
+          "tecla": "Tab",
+          "foco": "id_email",
+          "visible": true,
+          "indicador": {
+            "outline": "none",
+            "ancho": "3px",
+            "sombra": "rgba(11, 125, 119, 0.13) 0px 0px 0px 3px"
+          }
+        },
+        {
+          "tecla": "Tab",
+          "foco": "id_password",
+          "visible": true,
+          "indicador": {
+            "outline": "none",
+            "ancho": "3px",
+            "sombra": "rgba(11, 125, 119, 0.13) 0px 0px 0px 3px"
+          }
+        },
+        {
+          "tecla": "Tab",
+          "foco": "button button-primary button-block",
+          "visible": true,
+          "indicador": {
+            "outline": "solid",
+            "ancho": "3px",
+            "sombra": "none"
+          }
+        }
+      ]
+    },
+    {
+      "caso": "Errores asociados al enviar vacíos desde teclado",
+      "cumple": true,
+      "observado": {
+        "campos": [
+          {
+            "id": "id_email",
+            "etiqueta": "Correo de trabajo",
+            "invalido": "true",
+            "errores": [
+              "Este campo es obligatorio."
+            ]
+          },
+          {
+            "id": "id_password",
+            "etiqueta": "Contraseña",
+            "invalido": "true",
+            "errores": [
+              "Este campo es obligatorio."
+            ]
+          }
+        ],
+        "dom": {
+          "ruta": "/",
+          "hash": "#contenido",
+          "titulo": "Ingresar — Sistema de gestión",
+          "foco": "contenido",
+          "visible": true,
+          "indicador": {
+            "outline": "auto",
+            "ancho": "1px",
+            "sombra": "none"
+          },
+          "correoVacio": true,
+          "claveVacia": true,
+          "alerta": null,
+          "ancho": 1366,
+          "alto": 768,
+          "desbordeHorizontal": false,
+          "centrosOperables": [
+            true,
+            true,
+            true
+          ],
+          "tipoNavegacion": "navigate"
+        },
+        "contadorFixture": {
+          "fallos": 1,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 20:57:23.050709"
+        }
+      }
+    },
+    {
+      "caso": "Ingreso y recarga de Administrador",
+      "cumple": true,
+      "observado": {
+        "rolVisible": "Administrador",
+        "enlaceEmpleados": true,
+        "ruta": "/inicio/",
+        "antes": {
+          "fallos": 1,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 20:57:23.050709"
+        },
+        "despues": {
+          "fallos": 0,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 21:01:02.719049"
+        },
+        "recargaHTTP": 200
+      }
+    },
+    {
+      "caso": "Atrás con sesión después de corregir credenciales",
+      "cumple": true,
+      "observado": {
+        "ruta": "/inicio/",
+        "titulo": "Inicio · Minimarket",
+        "tieneCampoClave": false,
+        "red": [
+          {
+            "metodo": "GET",
+            "ruta": "/",
+            "status": 302,
+            "cacheControl": "max-age=0, no-cache, no-store, must-revalidate, private"
+          },
+          {
+            "metodo": "GET",
+            "ruta": "/inicio/",
+            "status": 200,
+            "cacheControl": "max-age=0, no-cache, no-store, must-revalidate, private"
+          }
+        ],
+        "despues": {
+          "fallos": 0,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 21:01:02.719049"
+        }
+      }
+    },
+    {
+      "caso": "Puerta de Empleados, Administrador",
+      "cumple": true,
+      "observado": {
+        "metodo": "menú",
+        "status": 200
+      }
+    },
+    {
+      "caso": "Ingreso y recarga de Almacenero",
+      "cumple": true,
+      "observado": {
+        "rolVisible": "Almacenero",
+        "enlaceEmpleados": false,
+        "ruta": "/inicio/",
+        "antes": {
+          "fallos": 0,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 20:58:50.362639"
+        },
+        "despues": {
+          "fallos": 0,
+          "bloqueo": null,
+          "ultimoIngreso": "2026-11-09 21:01:03.743735"
+        },
+        "recargaHTTP": 200
+      }
+    },
+    {
+      "caso": "Puerta de Empleados, Almacenero",
+      "cumple": true,
+      "observado": {
+        "metodo": "URL directa",
+        "status": 403
+      }
+    },
+    {
+      "caso": "Personas y muestra comercial",
+      "cumple": true,
+      "observado": {
+        "inicial": {
+          "identity_account": 15,
+          "catalog_product": 0,
+          "inventory_lot": 0,
+          "cash_cashshift": 0,
+          "sales_sale": 0
+        },
+        "final": {
+          "identity_account": 15,
+          "catalog_product": 0,
+          "inventory_lot": 0,
+          "cash_cashshift": 0,
+          "sales_sale": 0
+        }
+      }
+    },
+    {
+      "caso": "Bases protegidas",
+      "cumple": true,
+      "observado": {
+        "r1-pmv\\r1_pmv.sqlite3": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+        "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": "19546d1c77d5874c8d0d5061cba97be8abfe9f03435600ef40a6c9c9c9209b5e"
+      }
+    }
+  ],
+  "capturas": [
+    {
+      "archivo": "01-ingreso.png",
+      "sha256": "b2cb6950e71357cf91bd103500bdafaca3eb913705907f23eccec8a26c281da5"
+    },
+    {
+      "archivo": "02-rechazo.png",
+      "sha256": "95a50333ab662bd4b76632d9c880579a3b271a2f5dc3ae8fad732b12458a6b7f"
+    },
+    {
+      "archivo": "03-atras.png",
+      "sha256": "426bbd5fd49a3161a478a13e203b6ac96f500366c0e905556265a6af61726cc0"
+    },
+    {
+      "archivo": "04-recarga.png",
+      "sha256": "b2cb6950e71357cf91bd103500bdafaca3eb913705907f23eccec8a26c281da5"
+    },
+    {
+      "archivo": "05-salto.png",
+      "sha256": "baa032f51f854f82f7753f8bdf74118de630f9d2b47e7cdbfafa0c77277fda6c"
+    },
+    {
+      "archivo": "06-errores-campos.png",
+      "sha256": "203e3e74611e45a7deef55390029552cd97c5512ab2ff70af6d323f2d0baecb9"
+    },
+    {
+      "archivo": "07-admin.png",
+      "sha256": "03577d562132a65d8cffead24e00945bebf3f516f6ffa171096c8e824b701a2d"
+    },
+    {
+      "archivo": "07-almacen.png",
+      "sha256": "7ce2eea78efaf4b307265151ccd32cdf67d00445a2f8ed846d5dc74a44956cd6"
+    }
+  ],
+  "herramientas": {
+    "chrome": "157.0.8103.39",
+    "playwright": "1.62.1",
+    "node": "v24.13.0",
+    "windows": "10.0.26200",
+    "headless": true,
+    "cacheRedSinIntercepcion": true
+  },
+  "fuentes": {
+    "identity/views.py": "0b963b2d952847ea47dad7f84dd429d7571f983d8e81335191cffcb51a23e741",
+    "identity/services.py": "e4f0e8c99fe304efd0c737d73cca75c3d8a4664fced1ae59a5a4449a98e480e1",
+    "identity/forms.py": "aea36b357104b556cc0b4ccf81c82ca07dc29b91da8ac374da170f9c38c5bda5",
+    "identity/models.py": "bdad1c4c70e1d17428d93eae1790fc8f573ffbba8456ebfbbd2b15080a5b8b3d",
+    "identity/templates/identity/login.html": "d710f7f488454ff13a6e1059fad852a8f022d9f58f965d4a7d6f7f19d208a8b4",
+    "identity/templates/identity/base.html": "ef5b64957344c2cc61daf5512b6ee7924f873db575eaff9383caece84c38049d",
+    "identity/static/identity/app.css": "fd1e00df900624a10a9296c255a8ea94eb8d2233987608b4e70b5b3323cb4eb8"
+  },
+  "intercambiosHistorial": [
+    {
+      "metodo": "GET",
+      "ruta": "/",
+      "status": 200,
+      "cacheControl": "max-age=0, no-cache, no-store, must-revalidate, private"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/",
+      "status": 200,
+      "cacheControl": "max-age=0, no-cache, no-store, must-revalidate, private"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/",
+      "status": 200,
+      "cacheControl": "max-age=0, no-cache, no-store, must-revalidate, private"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/",
+      "status": 200,
+      "cacheControl": "max-age=0, no-cache, no-store, must-revalidate, private"
+    }
+  ],
+  "recorridoCompleto": true,
+  "finUtc": "2026-11-09T21:01:04.358Z"
+}

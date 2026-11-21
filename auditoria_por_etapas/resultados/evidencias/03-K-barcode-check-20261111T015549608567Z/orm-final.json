@@ -1,0 +1,113 @@
+{
+  "catalog.Category": [
+    {
+      "id": "14cb393a-e2aa-4969-a51a-d0d7b6f45a3e",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "13a6b9da-ae71-442e-a56e-d993349667d1",
+      "name": "AUD03 Sin carga",
+      "barcode": "AUD03-EMPTY",
+      "category_id": "14cb393a-e2aa-4969-a51a-d0d7b6f45a3e",
+      "sale_price": "4.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "6a41e442-a9ae-4d93-8927-d80b4d4efa68",
+      "name": "AUD03 Bebida de prueba",
+      "barcode": "AUD03-BEBIDA",
+      "category_id": "14cb393a-e2aa-4969-a51a-d0d7b6f45a3e",
+      "sale_price": "8.50",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "66f40758-2d4a-41e9-83ef-50025c027816",
+      "product_id": "6a41e442-a9ae-4d93-8927-d80b4d4efa68",
+      "available_quantity": 19,
+      "initial_quantity": 20
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "e64e48d0-100f-43b1-825f-c648bdd01132",
+      "product_id": "6a41e442-a9ae-4d93-8927-d80b4d4efa68"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "ea71d7ef-4147-444c-8cfe-e08761f5c574",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [
+    {
+      "id": "567ea4a1-efe4-4e0b-a40c-55fcb4823736",
+      "total_amount": "8.50",
+      "cash_received": "10.00",
+      "change_given": "1.50"
+    }
+  ],
+  "sales.SaleLine": [
+    {
+      "id": "1a5d086a-2f2e-4a4a-b7f4-893c629f0996",
+      "product_id": "6a41e442-a9ae-4d93-8927-d80b4d4efa68",
+      "product_snapshot_name": "AUD03 Bebida de prueba",
+      "product_snapshot_barcode": "AUD03-BEBIDA",
+      "unit_price": "8.50",
+      "quantity": 1
+    }
+  ],
+  "sales.SaleDraft": [
+    {
+      "id": "1405a1f6-f73c-4664-893e-cc571be6fe8c",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "3e55dff6-521e-4be6-9542-020f92671de5",
+      "status": "DISCARDED"
+    }
+  ],
+  "sales.SaleDraftLine": [
+    {
+      "id": "44181399-bf30-484b-ae7c-01f26b3f7332",
+      "draft_id": "1405a1f6-f73c-4664-893e-cc571be6fe8c",
+      "product_id": "6a41e442-a9ae-4d93-8927-d80b4d4efa68",
+      "quantity": 2,
+      "unit_price": "8.50"
+    },
+    {
+      "id": "d301a32f-729d-444d-a29f-72f5e7c58150",
+      "draft_id": "3e55dff6-521e-4be6-9542-020f92671de5",
+      "product_id": "6a41e442-a9ae-4d93-8927-d80b4d4efa68",
+      "quantity": 1,
+      "unit_price": "8.50"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "13a6b9da-ae71-442e-a56e-d993349667d1",
+      "barcode_normalized": "aud03-empty",
+      "search_name": "aud03 sin carga",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "6a41e442-a9ae-4d93-8927-d80b4d4efa68",
+      "barcode_normalized": "aud03-bebida",
+      "search_name": "aud03 bebida de prueba",
+      "average_cost": "5.0000"
+    }
+  ]
+}

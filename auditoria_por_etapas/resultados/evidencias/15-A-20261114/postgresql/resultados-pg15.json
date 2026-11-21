@@ -1,0 +1,542 @@
+{
+  "started_utc": "2026-11-15T02:56:55.484251+00:00",
+  "etapa": "ETAPA-15",
+  "sublote": "15-A-PG",
+  "pasada": 1,
+  "cursor_entrada": "15-SEGURIDAD-BASELINE-01",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit15-pg-fb6d122f26c7070e29a7",
+  "database": "audit15_4a00f3886e",
+  "database_restored": "audit15_4a00f3886e_restored",
+  "port": 63596,
+  "plan08_sha256": "69b886a3be2610546c30e9d587c28813e50ad4e79ad644847aa7c20ba50b87e2",
+  "head": "7816d3328115cf5aa5bcdd0985fffd795b3ae084",
+  "before_build": {
+    "count": 216,
+    "sha256": "f94faec701beaf938f5af06c2de605337f699f87abf83179e0600dbdb9041907"
+  },
+  "cases": [
+    {
+      "id": "PG15-00-contraste-herencia-14-CIERRE",
+      "ok": true,
+      "seconds": 0.297,
+      "inherited_from": "14-CIERRE-20261114/postgresql/final/results.json",
+      "inherited_status": "HISTORICA_NO_REUTILIZABLE_POR_CAMBIO_DE_BUILD",
+      "pg14_build_sha256": "ef8bc3fa42ebf84377ec8b910f38acee1ecc7e12f0c252a59ab72adbcbccdd65",
+      "current_build_sha256": "f94faec701beaf938f5af06c2de605337f699f87abf83179e0600dbdb9041907",
+      "pg14_plan08_sha256": "32270f6b6f32d8aec7c3f4883f20eef2229e3bb26da8f0c0369fd047e3f8e700",
+      "current_plan08_sha256": "69b886a3be2610546c30e9d587c28813e50ad4e79ad644847aa7c20ba50b87e2",
+      "build_matches": false,
+      "plan08_matches": false,
+      "inherited_cases_count": 19,
+      "inherited_cases_passed": 19,
+      "inherited_case_ids": [
+        "PG14-01-merma-UUID-concurrente",
+        "PG14-02-merma-clave-otro-actor",
+        "PG14-03-recepcion-UUID-concurrente",
+        "PG14-04-dos-entregas-reales-mismo-C",
+        "PG14-05-Merma-primero-Venta",
+        "PG14-05-Merma-primero-Inventario",
+        "PG14-05-Ajuste-primero-Venta",
+        "PG14-05-Ajuste-primero-Inventario",
+        "PG14-06-dos-ajustes-sin-negativo",
+        "PG14-07-rollback-postwrite",
+        "PG14-08-colision-correlativos-8conexiones",
+        "PG14-09-kardex-escritura-entre-lecturas",
+        "PG14-10-ajuste-nuevo-reenvio-UUID",
+        "PG14-11-ajuste-nuevo-colision-comercial",
+        "PG14-12-checks-montos-cantidad-cierre",
+        "PG14-13-cierre-acumulado-y-capacidad-previa",
+        "PG14-14-HTTP-dos-sesiones-Merma",
+        "PG14-14-HTTP-dos-sesiones-Ajuste",
+        "PG14-15-recepcion-rollback-y-reintento"
+      ]
+    },
+    {
+      "id": "PG15-01-login-5to-fallo-vs-clave-correcta",
+      "ok": true,
+      "seconds": 0.891,
+      "pids": {
+        "0": 13196,
+        "1": 15244
+      },
+      "lock_waits": [
+        {
+          "blocked": 15244,
+          "blocker": 13196,
+          "table": "identity_loginattempt"
+        }
+      ],
+      "results": [
+        {
+          "result": "success",
+          "value": "bloqueo15"
+        },
+        {
+          "result": "success",
+          "value": "bloqueo15"
+        }
+      ],
+      "failures": 5,
+      "locked_until": "2026-11-15T03:12:11.811864+00:00"
+    },
+    {
+      "id": "PG15-02-ultimo-admin-desactivacion-mutua",
+      "ok": true,
+      "seconds": 0.203,
+      "pids": {
+        "0": 28248,
+        "1": 27728
+      },
+      "lock_waits": [
+        {
+          "blocked": 27728,
+          "blocker": 28248,
+          "table": "identity_role"
+        }
+      ],
+      "results": [
+        {
+          "result": "success",
+          "value": "6ff2200d-d0cc-4cbf-bcfd-7e77ac39f7a6"
+        },
+        {
+          "result": "ValidationError",
+          "detail": "['Solo el administrador activo puede desactivar cuentas.']"
+        }
+      ],
+      "active_admins_after_race": 1
+    },
+    {
+      "id": "PG15-03-empleado-correo-duplicado-normalizado",
+      "ok": true,
+      "seconds": 0.312,
+      "pids": {
+        "0": 18868,
+        "1": 28356
+      },
+      "lock_waits": [
+        {
+          "blocked": 28356,
+          "blocker": 18868,
+          "table": "identity_role"
+        }
+      ],
+      "results": [
+        {
+          "result": "success",
+          "value": "b3dde4b1-e11b-4fce-9323-a8f874db518a"
+        },
+        {
+          "result": "ValidationError",
+          "detail": "{'email': ['El correo ya está registrado.']}"
+        }
+      ],
+      "persisted_accounts": 1
+    },
+    {
+      "id": "PG15-04-desactivar-vendedor-vs-turno-y-cobro",
+      "ok": true,
+      "seconds": 0.875,
+      "deactivate_vs_open": {
+        "pids": {
+          "0": 14240,
+          "1": 17668
+        },
+        "lock_waits": [
+          {
+            "blocked": 17668,
+            "blocker": 14240,
+            "table": "identity_account"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "ecf5314c-a60b-4884-bd30-144939198109"
+          },
+          {
+            "result": "PermissionDenied",
+            "detail": "No tiene permiso para abrir caja."
+          }
+        ]
+      },
+      "checkout_vs_deactivate_with_open_shift": {
+        "pids": {
+          "0": 12640,
+          "1": 29860
+        },
+        "lock_waits": [
+          {
+            "blocked": 29860,
+            "blocker": 12640,
+            "table": "identity_account"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "5790c42b-125c-472f-812e-80225b3caebd"
+          },
+          {
+            "result": "ValidationError",
+            "detail": "['No se puede desactivar a un vendedor con un turno de caja abierto. Cierre el turno primero.']"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PG15-05-cambio-rol-vs-caja-y-borrador",
+      "ok": true,
+      "seconds": 0.563,
+      "role_change_vs_open": {
+        "pids": {
+          "0": 24084,
+          "1": 17464
+        },
+        "lock_waits": [
+          {
+            "blocked": 17464,
+            "blocker": 24084,
+            "table": "identity_account"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "6d691f85-a400-4fb1-b6e1-ca866a5b72fb"
+          },
+          {
+            "result": "PermissionDenied",
+            "detail": "No tiene permiso para abrir caja."
+          }
+        ]
+      },
+      "add_draft_vs_role_change_with_open_shift": {
+        "pids": {
+          "0": 21928,
+          "1": 20768
+        },
+        "lock_waits": [
+          {
+            "blocked": 20768,
+            "blocker": 21928,
+            "table": "identity_account"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "ac3f3d52-4132-4ff2-85e1-6c378f45d2a5"
+          },
+          {
+            "result": "ValidationError",
+            "detail": "{'role': ['No se puede cambiar el rol de un empleado con un turno de caja abierto. Cierre el turno primero.']}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PG15-06-logout-descarte-vs-checkout-venta",
+      "ok": true,
+      "seconds": 0.5,
+      "discard_first": {
+        "pids": {
+          "0": 2432,
+          "1": 11652
+        },
+        "lock_waits": [
+          {
+            "blocked": 11652,
+            "blocker": 2432,
+            "table": "identity_account"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "True"
+          },
+          {
+            "result": "ValidationError",
+            "detail": "['El borrador de venta ya no está disponible.']"
+          }
+        ]
+      },
+      "checkout_first": {
+        "pids": {
+          "0": 22132,
+          "1": 21600
+        },
+        "lock_waits": [
+          {
+            "blocked": 21600,
+            "blocker": 22132,
+            "table": "identity_account"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "dfbd32d7-494f-4424-98f0-5ae638aad0d1"
+          },
+          {
+            "result": "success",
+            "value": "False"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PG15-07-08-apertura-y-cierre-caja-concurrentes",
+      "ok": true,
+      "seconds": 0.297,
+      "concurrent_open_register": {
+        "pids": {
+          "0": 17700,
+          "1": 6456
+        },
+        "lock_waits": [
+          {
+            "blocked": 6456,
+            "blocker": 17700,
+            "table": "cash_cashregister"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "7dc81e90-b3f4-404d-8845-0d325b9596e0"
+          },
+          {
+            "result": "ValidationError",
+            "detail": "['Ya existe un turno abierto. Cierre ese turno antes de abrir otro.']"
+          }
+        ]
+      },
+      "concurrent_close_shift": {
+        "pids": {
+          "0": 7292,
+          "1": 31960
+        },
+        "lock_waits": [
+          {
+            "blocked": 31960,
+            "blocker": 7292,
+            "table": "identity_account"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "fa634459-28a3-4227-b095-3514b1edbbd9"
+          },
+          {
+            "result": "ValidationError",
+            "detail": "['No tienes un turno de caja abierto para cerrar.']"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PG15-09-dos-ventas-fefo-multilote-y-salecounter",
+      "ok": true,
+      "seconds": 0.422,
+      "pids": {
+        "0": 15232,
+        "1": 30332
+      },
+      "lock_waits": [
+        {
+          "blocked": 30332,
+          "blocker": 15232,
+          "table": "catalog_product"
+        }
+      ],
+      "results": [
+        {
+          "result": "success",
+          "value": "d1d980ce-0504-41c3-a7d1-8391fd16c90d"
+        },
+        {
+          "result": "success",
+          "value": "557a6971-8635-49a9-ab63-2d9134a8cca5"
+        }
+      ],
+      "correlatives": [
+        "V-00000003",
+        "V-00000004"
+      ],
+      "allocations_sale1": [
+        {
+          "lot_snapshot_number": "FEFO-1",
+          "quantity": 3
+        },
+        {
+          "lot_snapshot_number": "FEFO-2",
+          "quantity": 1
+        }
+      ],
+      "allocations_sale2": [
+        {
+          "lot_snapshot_number": "FEFO-2",
+          "quantity": 4
+        }
+      ],
+      "lots_after": [
+        {
+          "number": "FEFO-1",
+          "available_quantity": 0
+        },
+        {
+          "number": "FEFO-2",
+          "available_quantity": 0
+        }
+      ],
+      "product_average_cost_after_zero": "0.0000"
+    },
+    {
+      "id": "PG15-10-checkout-venta-vs-cambio-precio",
+      "ok": true,
+      "seconds": 0.828,
+      "price_update_first": {
+        "pids": {
+          "0": 21288,
+          "1": 16252
+        },
+        "lock_waits": [
+          {
+            "blocked": 16252,
+            "blocker": 21288,
+            "table": "catalog_product"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "a1ff1e84-fe5e-4b84-ab24-d12084ef74ed"
+          },
+          {
+            "result": "ValidationError",
+            "detail": "['Un producto o precio cambió. Revisa la venta antes de confirmar el cobro.']"
+          }
+        ]
+      },
+      "checkout_first": {
+        "pids": {
+          "1": 10856,
+          "0": 24000
+        },
+        "lock_waits": [
+          {
+            "blocked": 10856,
+            "blocker": 24000,
+            "table": "catalog_product"
+          }
+        ],
+        "results": [
+          {
+            "result": "success",
+            "value": "a7241b6b-45aa-4dc0-b760-6ab3a6a0e4bf"
+          },
+          {
+            "result": "success",
+            "value": "a1ff1e84-fe5e-4b84-ab24-d12084ef74ed"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PG15-11-carga-inicial-simultanea",
+      "ok": true,
+      "seconds": 0.25,
+      "pids": {
+        "0": 8040,
+        "1": 28012
+      },
+      "lock_waits": [
+        {
+          "blocked": 28012,
+          "blocker": 8040,
+          "table": "catalog_product"
+        }
+      ],
+      "results": [
+        {
+          "result": "success",
+          "value": "43b22b15-88ff-4c4e-950d-81710693de92"
+        },
+        {
+          "result": "ValidationError",
+          "detail": "['Este producto ya tiene una carga inicial confirmada.']"
+        }
+      ],
+      "initial_loads": 1,
+      "lots": 1
+    },
+    {
+      "id": "PG15-12-muerte-real-proceso-postwrite-y-reintento",
+      "ok": true,
+      "seconds": 2.515,
+      "child_os_pid": 16216,
+      "child_pg_backend_pid": 25756,
+      "observed_pg_state_before_kill": "idle in transaction",
+      "all_business_tables_identical_after_kill": true,
+      "tables_verified": 26,
+      "retry_with_same_idempotency_key_succeeded": true,
+      "retry_sale_correlative": "V-00000006",
+      "lot_stock_after_retry": 7
+    },
+    {
+      "id": "PG15-13-caida-abrupta-motor-pg-wal-recovery-y-reintento",
+      "ok": true,
+      "seconds": 13.109,
+      "crash_mode": "pg_ctl stop -m immediate + pg_ctl start (WAL crash recovery)",
+      "worker_exception_on_crash": [],
+      "all_business_tables_identical_after_wal_recovery": true,
+      "tables_verified": 26,
+      "retry_receipt_correlative": "R-00000001",
+      "stock_after_retry": 15,
+      "average_cost_after_retry": "5.0000"
+    },
+    {
+      "id": "PG15-14-privilegios-roles-bd-app-user-vs-ddl",
+      "ok": true,
+      "seconds": 0.235,
+      "init_sh_default_privileges_require_migrator_owner_finding": true,
+      "app_user_dml_select_works_after_grant": true,
+      "app_user_ddl_blocked": {
+        "create_table": true,
+        "drop_table": true,
+        "alter_table": true
+      }
+    },
+    {
+      "id": "PG15-15-backup-pg-dump-manifiesto-y-pg-restore",
+      "ok": true,
+      "seconds": 2.079,
+      "dump_sha256": "98e34ebf19e0acb2309ff005c297ad517634494f0f78bf199e6e1d4759e3b220",
+      "dump_size_bytes": 131092,
+      "manifest_file": "backup_restore_artifacts/manifest.json",
+      "tables_restored_and_verified": 26,
+      "counts_identical": true,
+      "digests_identical": true,
+      "http_smoke_checks_passed": 6
+    }
+  ],
+  "postgres_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "isolation": "read committed",
+  "migrated": true,
+  "django": "5.2.18",
+  "port_closed": true,
+  "cluster_stopped": true,
+  "cluster_deleted": true,
+  "after_build": {
+    "count": 216,
+    "sha256": "f94faec701beaf938f5af06c2de605337f699f87abf83179e0600dbdb9041907"
+  },
+  "source_stable": true,
+  "passed": 15,
+  "total": 15,
+  "ok": true,
+  "finished_utc": "2026-11-15T02:57:37.259452+00:00"
+}

@@ -1,0 +1,334 @@
+{
+  "fecha_lima_real": "2026-11-13",
+  "fecha_simulada": "2026-11-14",
+  "base": ":memory:",
+  "CSRF": true,
+  "runner": "Django Client WSGI y ORM",
+  "casos": [
+    {
+      "id": "E01",
+      "caso": "Carga inicial 18 a3",
+      "esperado": {
+        "fisico": 18,
+        "vendible": 18,
+        "promedio": "3.0000"
+      },
+      "observado": {
+        "fisico": 18,
+        "vendible": 18,
+        "promedio": "3.0000"
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "E02",
+      "caso": "Expirar8 conserva físico y promedio",
+      "esperado": {
+        "fisico": 18,
+        "vendible": 10,
+        "promedio": "3.0000"
+      },
+      "observado": {
+        "fisico": 18,
+        "vendible": 10,
+        "promedio": "3.0000"
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "E03",
+      "caso": "Rechazo sin mutación /inventario/entrada/",
+      "esperado": {
+        "status_valido": true,
+        "datos_iguales": true
+      },
+      "observado": {
+        "status_valido": true,
+        "datos_iguales": true
+      },
+      "resultado": "CUMPLE",
+      "HTTP": 403,
+      "huella_antes": "715ade0a01a0cf2200aa6e79c66423e4349bedc4686b70ae9d526fe8130b2fed",
+      "huella_despues": "715ade0a01a0cf2200aa6e79c66423e4349bedc4686b70ae9d526fe8130b2fed"
+    },
+    {
+      "id": "E04",
+      "caso": "Rollback postwrite /inventario/entrada/",
+      "esperado": {
+        "escribio": true,
+        "restauro": true
+      },
+      "observado": {
+        "escribio": true,
+        "restauro": true
+      },
+      "resultado": "CUMPLE",
+      "huella_antes": "715ade0a01a0cf2200aa6e79c66423e4349bedc4686b70ae9d526fe8130b2fed",
+      "huella_despues": "715ade0a01a0cf2200aa6e79c66423e4349bedc4686b70ae9d526fe8130b2fed"
+    },
+    {
+      "id": "E05",
+      "caso": "Recepción usa Q físico18 y C3",
+      "esperado": {
+        "fisico": 28,
+        "vendible": 20,
+        "promedio": "4.0714"
+      },
+      "observado": {
+        "fisico": 28,
+        "vendible": 20,
+        "promedio": "4.5000"
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E06",
+      "caso": "Rechazo sin mutación /inventario/ajustes/nuevo/",
+      "esperado": {
+        "status_valido": true,
+        "datos_iguales": true
+      },
+      "observado": {
+        "status_valido": true,
+        "datos_iguales": true
+      },
+      "resultado": "CUMPLE",
+      "HTTP": 403,
+      "huella_antes": "d9fe3aad2b8bf94bab40a8a15b3f170c92b8fa7fea35bf65450cf1191977c27f",
+      "huella_despues": "d9fe3aad2b8bf94bab40a8a15b3f170c92b8fa7fea35bf65450cf1191977c27f"
+    },
+    {
+      "id": "E07",
+      "caso": "Rechazo sin mutación /inventario/bajas/nueva/",
+      "esperado": {
+        "status_valido": true,
+        "datos_iguales": true
+      },
+      "observado": {
+        "status_valido": true,
+        "datos_iguales": true
+      },
+      "resultado": "CUMPLE",
+      "HTTP": 403,
+      "huella_antes": "d9fe3aad2b8bf94bab40a8a15b3f170c92b8fa7fea35bf65450cf1191977c27f",
+      "huella_despues": "d9fe3aad2b8bf94bab40a8a15b3f170c92b8fa7fea35bf65450cf1191977c27f"
+    },
+    {
+      "id": "E08",
+      "caso": "Rechazo sin mutación /inventario/bajas/nueva/",
+      "esperado": {
+        "status_valido": true,
+        "datos_iguales": true
+      },
+      "observado": {
+        "status_valido": true,
+        "datos_iguales": true
+      },
+      "resultado": "CUMPLE",
+      "HTTP": 200,
+      "huella_antes": "d9fe3aad2b8bf94bab40a8a15b3f170c92b8fa7fea35bf65450cf1191977c27f",
+      "huella_despues": "d9fe3aad2b8bf94bab40a8a15b3f170c92b8fa7fea35bf65450cf1191977c27f"
+    },
+    {
+      "id": "E09",
+      "caso": "Rollback postwrite /ventas/cobrar/",
+      "esperado": {
+        "escribio": true,
+        "restauro": true
+      },
+      "observado": {
+        "escribio": true,
+        "restauro": true
+      },
+      "resultado": "CUMPLE",
+      "huella_antes": "a43026b3814ae72400fedf772e54aa46332be5da9aecd66d4318df51850b065d",
+      "huella_despues": "a43026b3814ae72400fedf772e54aa46332be5da9aecd66d4318df51850b065d"
+    },
+    {
+      "id": "E10",
+      "caso": "Venta1 conserva promedio",
+      "esperado": {
+        "fisico": 27,
+        "vendible": 19,
+        "promedio": "4.0714"
+      },
+      "observado": {
+        "fisico": 27,
+        "vendible": 19,
+        "promedio": "4.5000"
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E11",
+      "caso": "Costo histórico de venta",
+      "esperado": "4.0714",
+      "observado": "4.5000",
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E12",
+      "caso": "Rollback postwrite /inventario/bajas/nueva/",
+      "esperado": {
+        "escribio": true,
+        "restauro": true
+      },
+      "observado": {
+        "escribio": true,
+        "restauro": true
+      },
+      "resultado": "CUMPLE",
+      "huella_antes": "d9957a03328233df1b982bf3dfd21cab26d6cab1feb488eb3a7c72bf01935fa1",
+      "huella_despues": "d9957a03328233df1b982bf3dfd21cab26d6cab1feb488eb3a7c72bf01935fa1"
+    },
+    {
+      "id": "E13",
+      "caso": "Baja1 conserva promedio",
+      "esperado": {
+        "fisico": 26,
+        "vendible": 18,
+        "promedio": "4.0714"
+      },
+      "observado": {
+        "fisico": 26,
+        "vendible": 18,
+        "promedio": "4.6667"
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E14",
+      "caso": "Costo histórico de baja",
+      "esperado": "4.0714",
+      "observado": "None",
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E15",
+      "caso": "Rollback postwrite /inventario/ajustes/nuevo/",
+      "esperado": {
+        "escribio": true,
+        "restauro": true
+      },
+      "observado": {
+        "escribio": true,
+        "restauro": true
+      },
+      "resultado": "CUMPLE",
+      "huella_antes": "bebc8ce4b1a3fd2b26ab59951fac09691f9ffc687a32f4fdfb4f2ebbfd85fb3e",
+      "huella_despues": "bebc8ce4b1a3fd2b26ab59951fac09691f9ffc687a32f4fdfb4f2ebbfd85fb3e"
+    },
+    {
+      "id": "E16",
+      "caso": "Ajuste+2 con físico conserva promedio",
+      "esperado": {
+        "fisico": 28,
+        "vendible": 20,
+        "promedio": "4.0714"
+      },
+      "observado": {
+        "fisico": 28,
+        "vendible": 20,
+        "promedio": "4.5000"
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E17",
+      "caso": "Costo histórico de ajuste",
+      "esperado": "4.0714",
+      "observado": "None",
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E18",
+      "caso": "Agotar vencidos conserva promedio con físico restante",
+      "esperado": {
+        "fisico": 20,
+        "vendible": 20,
+        "promedio": "4.0714"
+      },
+      "observado": {
+        "fisico": 20,
+        "vendible": 20,
+        "promedio": "4.5000"
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E19",
+      "caso": "Agotar físico por venta lleva promedio a cero",
+      "esperado": {
+        "fisico": 0,
+        "vendible": 0,
+        "promedio": "0.0000"
+      },
+      "observado": {
+        "fisico": 0,
+        "vendible": 0,
+        "promedio": "4.5000"
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E20",
+      "caso": "Snapshots previos conservados tras agotamiento",
+      "esperado": true,
+      "observado": true,
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "E21",
+      "caso": "Rechazo sin mutación /inventario/ajustes/nuevo/",
+      "esperado": {
+        "status_valido": true,
+        "datos_iguales": true
+      },
+      "observado": {
+        "status_valido": false,
+        "datos_iguales": false
+      },
+      "resultado": "INCUMPLE",
+      "HTTP": 302,
+      "huella_antes": "caf99facd529536203d05a11039d6d84f3efcda2af9d7400a1c011c60d0ec3cb",
+      "huella_despues": "095eb5df5758b2600b4c8827aa27a66c173ff7771d726e0c0f0d43b2f41964e2"
+    },
+    {
+      "id": "E22",
+      "caso": "Agotamiento por baja/ajuste lleva promedio a cero",
+      "esperado": {
+        "fisico": 0,
+        "vendible": 0,
+        "promedio": "0.0000"
+      },
+      "observado": {
+        "fisico": 0,
+        "vendible": 0,
+        "promedio": "7.0000"
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "E23",
+      "caso": "Agotamiento por baja/ajuste lleva promedio a cero",
+      "esperado": {
+        "fisico": 0,
+        "vendible": 0,
+        "promedio": "0.0000"
+      },
+      "observado": {
+        "fisico": 0,
+        "vendible": 0,
+        "promedio": "7.0000"
+      },
+      "resultado": "INCUMPLE"
+    }
+  ],
+  "fuentes_sha256": {
+    "inventory/services.py": "f553df92971f76d3e2e61f0d3358579ca4bfb31b8946dafda747012d50e8f090",
+    "inventory/models.py": "9ede79df59737c95d387219d6049e7e8c3b7e5d7eef9c26659a4065b39d8fbf7",
+    "sales/services.py": "e751aa00e626bda61c1a85fb96e210bf1da2064d14c28a5b8a57dce049a1b088",
+    "sales/models.py": "f74234d6fc8a3ad514ab22cc7524a6e2a85245a3fc9c5828691be51e4fefada3"
+  },
+  "08_sha256": "e8acd6d39ce5fc5c526d2dfa8c326f2c19b0f46ef032c6b0245bd89ac3644847"
+}

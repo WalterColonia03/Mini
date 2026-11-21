@@ -1,0 +1,125 @@
+Found 24 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_create_view_empty_post_shows_errors_shifts_autofocus_and_handles_two_tab_toggle (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_create_view_empty_post_shows_errors_shifts_autofocus_and_handles_two_tab_toggle) ... ok
+test_duplicate_ruc_rejected_even_when_existing_supplier_is_inactive (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_duplicate_ruc_rejected_even_when_existing_supplier_is_inactive) ... ok
+test_inactive_supplier_rejected_without_silent_none_and_history_preserved (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_inactive_supplier_rejected_without_silent_none_and_history_preserved) ... ok
+test_model_and_form_enforce_ascii_ruc_and_distinguish_sunat_disclaimer (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_model_and_form_enforce_ascii_ruc_and_distinguish_sunat_disclaimer) ... ok
+test_model_form_and_service_reject_bad_names_and_phones (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_model_form_and_service_reject_bad_names_and_phones) ... ok
+test_role_matrix_nav_headers_and_unimplemented_edit_routes (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_role_matrix_nav_headers_and_unimplemented_edit_routes) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:39.370550+00:00", "outcome": "REJECTED", "request_id": "8e7429aa70af45ba95aa56f572083e3a", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:39.374262+00:00", "outcome": "REJECTED", "request_id": "98016fc6a6da4f709d3639a5b0fa2b75", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:39.378193+00:00", "outcome": "REJECTED", "request_id": "1ba319c989cf4bf38acd2a0248e6a72f", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:39.379897+00:00", "outcome": "REJECTED", "request_id": "19eea4b1bf2b451b9df45c06c958ae09", "target_id": "/inventario/proveedores/89ff24d7-4a8b-4757-94d0-d0b3014facbb/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f68011bd-24d0-4163-919d-9b6e7f312e11", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:48:39.409402+00:00", "outcome": "REJECTED", "request_id": "fd02aa83225e40e49b7a9aca35a6158a", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f68011bd-24d0-4163-919d-9b6e7f312e11", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:48:39.422100+00:00", "outcome": "REJECTED", "request_id": "73cf5905c6e24dd287e21547cd68b55d", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f68011bd-24d0-4163-919d-9b6e7f312e11", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:48:39.430907+00:00", "outcome": "REJECTED", "request_id": "10121e551f824b9e946cf29e4e193240", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f68011bd-24d0-4163-919d-9b6e7f312e11", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:48:39.440529+00:00", "outcome": "REJECTED", "request_id": "3ec2a598d1a74ae1ae08823435e9ebf4", "target_id": "/inventario/proveedores/89ff24d7-4a8b-4757-94d0-d0b3014facbb/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "feb9486e-84a4-414e-a0c0-db22e555548f", "actor_identifier": "warehouse.audit04@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:48:39.492955+00:00", "outcome": "REJECTED", "request_id": "34eb49e9492c415db6314bc5ff0ae63d", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "feb9486e-84a4-414e-a0c0-db22e555548f", "actor_identifier": "warehouse.audit04@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:48:39.504740+00:00", "outcome": "REJECTED", "request_id": "a20d9b58c1cd4b309e047a85704a8bdd", "target_id": "/inventario/proveedores/89ff24d7-4a8b-4757-94d0-d0b3014facbb/estado/", "target_type": "Endpoint"}
+ok
+test_search_label_placement_whitespace_collapse_and_nul_guard (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_search_label_placement_whitespace_collapse_and_nul_guard) ... ok
+test_services_block_anonymous_non_admin_and_stale_revoked_admin (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_services_block_anonymous_non_admin_and_stale_revoked_admin) ... ok
+test_toggle_service_handles_idempotency_stale_instance_and_missing_supplier (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_toggle_service_handles_idempotency_stale_instance_and_missing_supplier) ... ok
+test_admin_creates_supplier (inventory.tests.SupplierTests.test_admin_creates_supplier) ... ok
+test_admin_sees_supplier_list (inventory.tests.SupplierTests.test_admin_sees_supplier_list) ... ok
+test_admin_toggles_supplier_status (inventory.tests.SupplierTests.test_admin_toggles_supplier_status) ... ok
+test_duplicate_ruc_is_rejected (inventory.tests.SupplierTests.test_duplicate_ruc_is_rejected) ... ok
+test_non_admin_cannot_create_supplier (inventory.tests.SupplierTests.test_non_admin_cannot_create_supplier) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "5a006e5f-cf19-4b3b-968b-d95499e49ffb", "actor_identifier": "whp@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:48:40.690338+00:00", "outcome": "REJECTED", "request_id": "4186ea3689c547159ce58350b71e7d29", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+ok
+test_non_admin_gets_403_on_toggle (inventory.tests.SupplierTests.test_non_admin_gets_403_on_toggle) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "5a006e5f-cf19-4b3b-968b-d95499e49ffb", "actor_identifier": "whp@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:48:40.722610+00:00", "outcome": "REJECTED", "request_id": "8b4029f0e5054900be95d2c28736181e", "target_id": "/inventario/proveedores/a0ea3264-f0a5-44a2-bc87-094febcffd20/estado/", "target_type": "Endpoint"}
+ok
+test_search_filters_by_name (inventory.tests.SupplierTests.test_search_filters_by_name) ... ok
+test_seller_gets_403_on_supplier_list (inventory.tests.SupplierTests.test_seller_gets_403_on_supplier_list) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "0cc6ed07-95e7-426d-b3fc-03cf2dc08be0", "actor_identifier": "sellerp@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:48:40.787984+00:00", "outcome": "REJECTED", "request_id": "e877b40259f946fc9a10eed66de9bbfc", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+ok
+test_warehouse_sees_supplier_list (inventory.tests.SupplierTests.test_warehouse_sees_supplier_list) ... ok
+test_reactivated_supplier_uses_current_database_state (inventory.test_receipt_supplier.ReceiptSupplierTests.test_reactivated_supplier_uses_current_database_state) ... ok
+test_removed_supplier_is_rejected_without_writes (inventory.test_receipt_supplier.ReceiptSupplierTests.test_removed_supplier_is_rejected_without_writes) ... ok
+test_stale_active_supplier_is_rejected_atomically (inventory.test_receipt_supplier.ReceiptSupplierTests.test_stale_active_supplier_is_rejected_atomically) ... ok
+test_anonymous_session_without_identity_is_preserved (inventory.test_audit04d_session.SupplierSessionRevocationTests.test_anonymous_session_without_identity_is_preserved) ... ok
+test_normal_deactivation_revokes_even_without_intermediate_request (inventory.test_audit04d_session.SupplierSessionRevocationTests.test_normal_deactivation_revokes_even_without_intermediate_request) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:41.676162+00:00", "outcome": "REJECTED", "request_id": "35abdb2765a748bebd274fd04bba343b", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+ok
+test_surviving_identity_is_removed_and_cannot_revive (inventory.test_audit04d_session.SupplierSessionRevocationTests.test_surviving_identity_is_removed_and_cannot_revive) ... identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:48:41.977071+00:00", "outcome": "REJECTED", "request_id": "fa8a3d7c5f1b4e53afc91d06cd2b238d", "target_id": "94bd07e7-50b6-4c2d-a96c-2f691184428c", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:41.978084+00:00", "outcome": "REJECTED", "request_id": "fa8a3d7c5f1b4e53afc91d06cd2b238d", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:41.985064+00:00", "outcome": "REJECTED", "request_id": "0d9901b13d634f4fb902ce565f973ceb", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/nuevo/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:48:42.009559+00:00", "outcome": "REJECTED", "request_id": "c0bbfd700fd3490c9a02dd36ac3444e6", "target_id": "94bd07e7-50b6-4c2d-a96c-2f691184428c", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:42.010732+00:00", "outcome": "REJECTED", "request_id": "c0bbfd700fd3490c9a02dd36ac3444e6", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:42.017639+00:00", "outcome": "REJECTED", "request_id": "337bade98af6435cb21e0cf33b8011bb", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/nuevo/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:48:42.039061+00:00", "outcome": "REJECTED", "request_id": "ff53d9eeee2342508c23250cde0bb1f9", "target_id": "94bd07e7-50b6-4c2d-a96c-2f691184428c", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:42.040446+00:00", "outcome": "REJECTED", "request_id": "ff53d9eeee2342508c23250cde0bb1f9", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:42.048689+00:00", "outcome": "REJECTED", "request_id": "a460d2751e4d44669111a02583616edd", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/1728c5d1-3e89-47d1-8ec5-e3352718dd6b/estado/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:48:42.068792+00:00", "outcome": "REJECTED", "request_id": "c386399d55094f789e2c6a900fd6ab84", "target_id": "94bd07e7-50b6-4c2d-a96c-2f691184428c", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:42.070456+00:00", "outcome": "REJECTED", "request_id": "c386399d55094f789e2c6a900fd6ab84", "target_id": "/inventario/proveedores/1728c5d1-3e89-47d1-8ec5-e3352718dd6b/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:42.081283+00:00", "outcome": "REJECTED", "request_id": "ed17a84d2cbf43d690b1534e77141d06", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:48:42.101884+00:00", "outcome": "REJECTED", "request_id": "bb24466f79ef4d4fab8e719166757aa6", "target_id": "94bd07e7-50b6-4c2d-a96c-2f691184428c", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:42.112015+00:00", "outcome": "REJECTED", "request_id": "21a78148bf774d6bb67f1a7976eae9db", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inicio/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:48:42.140270+00:00", "outcome": "REJECTED", "request_id": "0632187bf75b4a8b82d3f5b90c1543c3", "target_id": "94bd07e7-50b6-4c2d-a96c-2f691184428c", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:48:42.151422+00:00", "outcome": "REJECTED", "request_id": "af4ee0839ef644989fb559a970375a62", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 5.099s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

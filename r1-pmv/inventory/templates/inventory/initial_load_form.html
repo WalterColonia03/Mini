@@ -1,0 +1,93 @@
+{% extends "identity/base.html" %}
+{% load static %}
+
+{% block title %}Existencias iniciales · Minimarket{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Existencias iniciales</p>
+    <h2>Registrar existencias iniciales por lotes</h2>
+    <p class="lede">Ingresa uno o varios lotes de un producto, con sus cantidades en unidades y fechas de vencimiento.</p>
+  </div>
+  <a class="button button-secondary" href="{% url 'dashboard' %}">Volver al inicio</a>
+</section>
+
+<form method="post" class="stack" novalidate data-testid="inventory-load-form">
+  {% csrf_token %}
+  {% if product_form.errors or lot_formset.errors or lot_formset.non_form_errors %}
+    <section id="initial-load-errors" class="alert alert-error" tabindex="-1" role="alert" aria-labelledby="initial-load-errors-title">
+      <h3 id="initial-load-errors-title">Revisa los datos de la carga</h3>
+      <p>No se confirmó la carga. Corrige los errores indicados.</p>
+      <ul>
+        {% for error in product_form.non_field_errors %}<li>{{ error }}</li>{% endfor %}
+        {% for field in product_form %}{% for error in field.errors %}
+          <li><a href="#{{ field.id_for_label }}">{{ field.label }}: {{ error }}</a></li>
+        {% endfor %}{% endfor %}
+        {% for error in lot_formset.non_form_errors %}<li>{{ error }}</li>{% endfor %}
+        {% for lot_form in lot_formset %}
+          {% for field in lot_form %}{% for error in field.errors %}
+            <li><a href="#{{ field.id_for_label }}">Lote {{ forloop.parentloop.parentloop.counter }} · {{ field.label }}: {{ error }}</a></li>
+          {% endfor %}{% endfor %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+  <section class="panel form-panel">
+    <div class="section-heading">
+      <div><span class="step">1</span><h3>Producto</h3></div>
+    </div>
+    {% if product_form.non_field_errors %}
+      <div class="alert alert-error" role="alert">{{ product_form.non_field_errors }}</div>
+    {% endif %}
+    <div class="field{% if product_form.product.errors %} field-error{% endif %}">
+      <label for="{{ product_form.product.id_for_label }}">{{ product_form.product.label }}</label>
+      {{ product_form.product }}
+      {% if product_form.product.errors %}<div class="error-list" role="alert">{{ product_form.product.errors }}</div>{% endif %}
+      <p class="help">Solo aparecen productos activos que todavía no tienen carga inicial. Si el producto ya tuvo su carga inicial y deseas ingresar una nueva compra o reposición por lotes, usa <a href="{% url 'stock-entry' %}" class="text-link">Entrada de mercadería</a>.</p>
+    </div>
+    {% if product_form.supplier %}
+    <div class="field{% if product_form.supplier.errors %} field-error{% endif %}">
+      <label for="{{ product_form.supplier.id_for_label }}">{{ product_form.supplier.label }}</label>
+      {{ product_form.supplier }}
+      {% if product_form.supplier.errors %}<div class="error-list" role="alert">{{ product_form.supplier.errors }}</div>{% endif %}
+    </div>
+    {% endif %}
+  </section>
+
+  <section class="panel form-panel">
+    <div class="section-heading">
+      <div><span class="step">2</span><h3>Lotes recibidos</h3></div>
+      <span class="muted">Completa una o más filas</span>
+    </div>
+    {{ lot_formset.management_form }}
+    {% if lot_formset.non_form_errors %}
+      <div class="alert alert-error" role="alert">{{ lot_formset.non_form_errors }}</div>
+    {% endif %}
+    <div class="lot-grid" role="group" aria-label="Lotes de la carga inicial">
+      {% for lot_form in lot_formset %}
+        <fieldset class="lot-card">
+          <legend>Lote {{ forloop.counter }}</legend>
+          {% for hidden in lot_form.hidden_fields %}{{ hidden }}{% endfor %}
+          {% for field in lot_form.visible_fields %}
+            <div class="field{% if field.errors %} field-error{% endif %}">
+              <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+              {{ field }}
+              {% if field.errors %}<div class="error-list" role="alert">{{ field.errors }}</div>{% endif %}
+            </div>
+          {% endfor %}
+        </fieldset>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="form-actions sticky-actions">
+    <button class="button button-primary" type="submit">Confirmar existencias</button>
+    <a class="button button-ghost" href="{% url 'dashboard' %}">Cancelar</a>
+  </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'inventory/initial_load.js' %}" defer></script>
+{% endblock %}

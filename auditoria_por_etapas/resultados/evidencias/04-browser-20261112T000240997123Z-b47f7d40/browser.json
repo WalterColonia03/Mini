@@ -1,0 +1,64 @@
+{
+  "checks": [
+    "isolated_server_proof",
+    "service_disabled_read_302",
+    "service_disabled_write_302",
+    "service_disabled_toggle_302",
+    "service_disabled_no_writes",
+    "service_old_cookie_revoked_after_reactivation",
+    "service_replay_write_302",
+    "service_replay_no_writes",
+    "raw_disabled_read_302",
+    "raw_disabled_write_302",
+    "raw_disabled_toggle_302",
+    "raw_disabled_no_writes",
+    "raw_old_cookie_revoked_after_reactivation",
+    "raw_replay_write_302",
+    "raw_replay_no_writes",
+    "no_page_errors"
+  ],
+  "observations": [
+    {
+      "mode": "service",
+      "disabled": {
+        "active": false,
+        "account_sessions": 0
+      }
+    },
+    {
+      "mode": "service",
+      "after_denial": {
+        "active": false,
+        "account_sessions": 0
+      }
+    },
+    {
+      "mode": "service",
+      "replay_status": 302
+    },
+    {
+      "mode": "raw",
+      "disabled": {
+        "active": false,
+        "account_sessions": 1
+      }
+    },
+    {
+      "mode": "raw",
+      "after_denial": {
+        "active": false,
+        "account_sessions": 0
+      }
+    },
+    {
+      "mode": "raw",
+      "replay_status": 302
+    }
+  ],
+  "screenshots": [
+    "04D-service-login-required.png",
+    "04D-raw-login-required.png"
+  ],
+  "page_errors": [],
+  "chrome": "157.0.8103.78"
+}

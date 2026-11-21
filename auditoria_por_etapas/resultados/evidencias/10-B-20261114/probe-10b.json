@@ -1,0 +1,178 @@
+{
+  "total": 12,
+  "all_probes_executed_ok": true,
+  "cases": [
+    {
+      "id": "P01a_no_shift_gate",
+      "ok": true,
+      "status": 200,
+      "drafts": 0
+    },
+    {
+      "id": "P01b_empty_draft_no_row_no_side_effect",
+      "ok": true,
+      "status": 200,
+      "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private"
+    },
+    {
+      "id": "P02_add_and_consolidate_zero_stock_cash_effect",
+      "ok": true,
+      "line_qty": 5,
+      "draft_lines": 1
+    },
+    {
+      "id": "P03_rn27_rounding_and_remove_last_discards",
+      "ok": true,
+      "draft_status_after_last_remove": "DISCARDED"
+    },
+    {
+      "id": "P04_bounds_forms_and_db_check_constraints",
+      "ok": true,
+      "constraint_hits": {
+        "qty_zero": "CHECK constraint failed: sale_draft_line_quantity_gt_zero",
+        "qty_over_999999": "CHECK constraint failed: sale_draft_line_quantity_max",
+        "price_zero": "CHECK constraint failed: sale_draft_line_unit_price_gt_zero"
+      },
+      "max_999999_forms_valid": true
+    },
+    {
+      "id": "P05_stock_expiration_and_inactive_guards",
+      "ok": true,
+      "today_exp_blocked_msg": [
+        "El producto no tiene existencias vendibles disponibles."
+      ],
+      "over_msg": [
+        "La cantidad supera las existencias vendibles disponibles."
+      ],
+      "cumul_msg": [
+        "La cantidad supera las existencias vendibles disponibles."
+      ],
+      "inact_prod_alert": [
+        "El producto seleccionado no está disponible para la venta."
+      ],
+      "inact_cat_alert": [
+        "El producto seleccionado no está disponible para la venta."
+      ]
+    },
+    {
+      "id": "P06_dec12_price_freeze_get_vs_post_warn_vs_stale_checkout",
+      "ok": true,
+      "get_preserved_unit_price_5_00": true,
+      "get_checkout_status": 200,
+      "stale_price_checkout_sales_created": 0,
+      "stale_price_checkout_alerts": [
+        "Esta venta genera una constancia interna. No emite una boleta ni factura electrónica autorizada por SUNAT.",
+        "El precio de «Atún Clásico 170g» cambió de S/ 6.50 a S/ 7.00. Verifica el nuevo total antes de confirmar el cobro."
+      ],
+      "stale_sig_checkout_alerts": [
+        "Esta venta genera una constancia interna. No emite una boleta ni factura electrónica autorizada por SUNAT.",
+        "El resumen de la venta en preparación cambió. El subtotal actual es S/ 21.00; revisa el resumen antes de confirmar el cobro."
+      ],
+      "stale_checkout_no_sale": true,
+      "post_upd_price_now": "6.50",
+      "post_upd_alerts": [
+        "El precio unitario de «Atún Clásico 170g» se actualizó de S/ 5.00 a S/ 6.50."
+      ]
+    },
+    {
+      "id": "P07_rn30_cash_close_guard_and_two_tab_stale_line",
+      "ok": true,
+      "close_blocked_alerts": [
+        "Hay una venta en preparación con productos. Descártala o cóbrala antes de cerrar el turno. Ir a la venta en preparación para cobrarla o descartarla"
+      ],
+      "tab1_stale_alerts": [
+        "La línea de venta ya no está disponible."
+      ],
+      "shift_status_final": "CLOSED"
+    },
+    {
+      "id": "P08_logout_and_doc02_04_c04_truthfulness",
+      "ok": true,
+      "doc02_04_c04_seller_no_shift_passes": true,
+      "doc02_04_c04_non_seller_passes": true,
+      "seller_no_shift_logout_text": "Cerrar sesión · Minimarket Saltar al contenido M Minimarket Gestión de bodega Operaciones ⌂ Inicio $ Apertura de caja ▦ Preparar venta ✖ Cerrar turno ☰ Mis ventas del turno ☰ Mi historial de ventas ☰ Mi historial de turnos V Vendedor 10B Vendedor ↪ Cerrar sesión Minimarket Cerrar sesión Vendedor 10B Vendedor Sesión de trabajo ↪ ¿Deseas cerrar sesión? Volverás a la pantalla de ingreso. Cualquier venta en preparación abierta se descartará al confirmar; actualmente no tienes un turno de caja abierto. Cerrar sesión Cancelar Minimarket · Gestión de bodega",
+      "admin_logout_text": "Cerrar sesión · Minimarket Saltar al contenido M Minimarket Gestión de bodega Operaciones ⌂ Inicio Catálogo ☰ Productos ▦ Registrar producto ▮ Categorías Inventario ✦ Proveedores ☷ Ver inventario y alertas ⏳ Vencimientos de lotes ⏫ Ajuste físico Personal ☺ Empleados Caja y ventas ☰ Historial de turnos ☰ Historial de ventas A Admin 10B Administrador ↪ Cerrar sesión Minimarket Cerrar sesión Admin 10B Administrador Sesión de trabajo ↪ ¿Deseas cerrar sesión? Volverás a la pantalla de ingreso. Tu cuenta no opera turnos de caja. Cerrar sesión Cancelar Minimarket · Gestión de bodega",
+      "wh_logout_text": "Cerrar sesión · Minimarket Saltar al contenido M Minimarket Gestión de bodega Operaciones ⌂ Inicio ☷ Ver inventario y alertas ⏳ Vencimientos de lotes ◫ Existencias iniciales ✚ Entrada de mercadería ☒ Registrar merma Consulta ☰ Catálogo de productos ✦ Proveedores A Almacenero 10B Almacenero ↪ Cerrar sesión Minimarket Cerrar sesión Almacenero 10B Almacenero Sesión de trabajo ↪ ¿Deseas cerrar sesión? Volverás a la pantalla de ingreso. Tu cuenta no opera turnos de caja. Cerrar sesión Cancelar Minimarket · Gestión de bodega",
+      "seller_with_draft_logout_text": "Cerrar sesión · Minimarket Saltar al contenido M Minimarket Gestión de bodega Operaciones ⌂ Inicio $ Apertura de caja ▦ Preparar venta ✖ Cerrar turno ☰ Mis ventas del turno ☰ Mi historial de ventas ☰ Mi historial de turnos V Vendedor 10B Vendedor ↪ Cerrar sesión Minimarket Cerrar sesión Vendedor 10B Vendedor Sesión de trabajo ↪ ¿Deseas cerrar sesión? La venta en preparación se descartará. El turno abierto seguirá ligado a tu cuenta. Cerrar sesión Cancelar Minimarket · Gestión de bodega",
+      "logout_post_status": 200,
+      "seller2_open_shift_alerts": [
+        "Ya existe un turno abierto. Cierre ese turno antes de abrir otro."
+      ]
+    },
+    {
+      "id": "P09_hu_ven_04_search_variants",
+      "ok": true,
+      "missing_code_message": [
+        "No se encontraron productos con existencias vendibles.",
+        "Aún no agregaste productos a la venta."
+      ],
+      "zero_stock_message": [
+        "No se encontraron productos con existencias vendibles.",
+        "Aún no agregaste productos a la venta."
+      ]
+    },
+    {
+      "id": "P10_role_perimeter_methods_and_revocation",
+      "ok": true,
+      "role_matrix": {
+        "ADMIN": {
+          "GET_/ventas/": 403,
+          "POST_/ventas/": 403,
+          "POST_/ventas/lineas/<id>/": 403,
+          "POST_/ventas/lineas/<id>/quitar/": 403,
+          "POST_/ventas/descartar/": 403,
+          "GET_/ventas/cobrar/": 403
+        },
+        "ALMACENERO": {
+          "GET_/ventas/": 403,
+          "POST_/ventas/": 403,
+          "POST_/ventas/lineas/<id>/": 403,
+          "POST_/ventas/lineas/<id>/quitar/": 403,
+          "POST_/ventas/descartar/": 403,
+          "GET_/ventas/cobrar/": 403
+        },
+        "ANON": {
+          "GET_/ventas/": 302,
+          "POST_/ventas/": 302,
+          "POST_/ventas/lineas/<id>/": 302,
+          "POST_/ventas/lineas/<id>/quitar/": 302,
+          "POST_/ventas/descartar/": 302,
+          "GET_/ventas/cobrar/": 302
+        }
+      },
+      "get_mut_statuses": {
+        "GET_line_update": 405,
+        "GET_line_remove": 405,
+        "GET_discard": 405
+      },
+      "revoked": [
+        302,
+        302
+      ]
+    },
+    {
+      "id": "P11_explicit_hu_ven_01a_inactivity_lock_check",
+      "ok": true,
+      "hu_ven_01a_cumple": false,
+      "session_cookie_age_seconds": 1209600,
+      "session_expire_at_browser_close": true,
+      "middleware": [
+        "audit10b_settings.ProofMiddleware",
+        "django.middleware.security.SecurityMiddleware",
+        "identity.middleware.RequestIdMiddleware",
+        "django.contrib.sessions.middleware.SessionMiddleware",
+        "django.middleware.common.CommonMiddleware",
+        "django.middleware.csrf.CsrfViewMiddleware",
+        "django.contrib.auth.middleware.AuthenticationMiddleware",
+        "identity.middleware.RevokeRejectedSessionMiddleware",
+        "django.contrib.messages.middleware.MessageMiddleware",
+        "django.middleware.clickjacking.XFrameOptionsMiddleware"
+      ],
+      "lock_routes_found": [],
+      "http_get_after_305s": 200,
+      "http_post_after_305s_status": 200,
+      "draft_line_mutated_after_305s_to_qty": 2,
+      "finding": "INCUMPLE: 300s inactivity screen lock is NOT implemented; session stays open at +305s and accepts GET/POST."
+    }
+  ]
+}

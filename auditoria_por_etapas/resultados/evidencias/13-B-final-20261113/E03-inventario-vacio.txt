@@ -1,0 +1,98 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - paragraph: Catálogo
+    - link "Productos":
+      - /url: /productos/
+      - generic: ☰
+      - generic: Productos
+    - link "Registrar producto":
+      - /url: /productos/nuevo/
+      - generic: ▦
+      - generic: Registrar producto
+    - link "Categorías":
+      - /url: /productos/categorias/
+      - generic: ▮
+      - generic: Categorías
+    - paragraph: Inventario
+    - link "Proveedores":
+      - /url: /inventario/proveedores/
+      - generic: ✦
+      - generic: Proveedores
+    - link "Ver inventario y alertas":
+      - /url: /inventario/stock/
+      - generic: ☷
+      - generic: Ver inventario y alertas
+    - link "Vencimientos de lotes":
+      - /url: /productos/vencimientos/
+      - generic: ⏳
+      - generic: Vencimientos de lotes
+    - link "Ajuste físico":
+      - /url: /inventario/ajustes/nuevo/
+      - generic: ⏫
+      - generic: Ajuste físico
+    - paragraph: Personal
+    - link "Empleados":
+      - /url: /empleados/
+      - generic: ☺
+      - generic: Empleados
+    - paragraph: Caja y ventas
+    - link "Historial de turnos":
+      - /url: /caja/turnos/
+      - generic: ☰
+      - generic: Historial de turnos
+    - link "Historial de ventas":
+      - /url: /ventas/historial/
+      - generic: ☰
+      - generic: Historial de ventas
+  - generic: A
+  - strong: Audit13 Administrador admin
+  - generic: Administrador
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Stock e inventario" [level=1]
+  - generic: Audit13 Administrador admin
+  - generic: Administrador
+- main:
+  - paragraph: Estado del stock al día de hoy — 13 de noviembre de 2026
+  - heading "Inventario actual" [level=2]
+  - paragraph: ✓ Sin alertas de stock bajo ni de vencimiento.
+  - paragraph:
+    - strong: "Stock físico:"
+    - text: unidades registradas en el sistema (incluye lotes vencidos); debe contrastarse con el conteo físico.
+    - strong: "Stock vigente:"
+    - text: unidades de lotes no vencidos. Para venderlas, el producto y su categoría también deben estar habilitados. El sistema considera vencido un lote desde su fecha de vencimiento.
+  - region "Existencias y acciones, tabla desplazable":
+    - table:
+      - rowgroup:
+        - row "Producto Categoría Stock físico Stock vigente Mínimo Estado Acciones":
+          - columnheader "Producto"
+          - columnheader "Categoría"
+          - columnheader "Stock físico"
+          - columnheader "Stock vigente"
+          - columnheader "Mínimo"
+          - columnheader "Estado"
+          - columnheader "Acciones"
+      - rowgroup:
+        - row "No hay productos registrados en el catálogo todavía.":
+          - cell "No hay productos registrados en el catálogo todavía."
+  - link "Ajuste físico":
+    - /url: /inventario/ajustes/nuevo/
+  - link "Registrar merma":
+    - /url: /inventario/bajas/nueva/
+- contentinfo: Minimarket · Gestión de bodega

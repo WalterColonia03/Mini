@@ -1,0 +1,408 @@
+{
+  "pass": "primera",
+  "sublote": "13-B-04",
+  "at_utc": "2026-11-13T16:38:15.583075+00:00",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit13-pg-b85d69ed9e7469415f01c6e9",
+  "database": "audit13_db945b9f09",
+  "port": 56760,
+  "cases": [
+    {
+      "id": "PG-01-admin-seven",
+      "expected": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "observed": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "ok": true
+    },
+    {
+      "id": "PG-02-warehouse-three",
+      "expected": {
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "observed": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3
+      },
+      "ok": true
+    },
+    {
+      "id": "PG-03-seller-none",
+      "expected": null,
+      "observed": null,
+      "ok": true
+    },
+    {
+      "id": "PG-04-next-Lima-day",
+      "expected": {
+        "sales_count": 1,
+        "sales_total": "92.22"
+      },
+      "observed": {
+        "sales_count": 1,
+        "sales_total": "92.22"
+      },
+      "ok": true
+    },
+    {
+      "id": "PG-05-linked-/inventario/stock/",
+      "expected": [
+        3,
+        6,
+        5
+      ],
+      "observed": [
+        3,
+        6,
+        5
+      ],
+      "ok": true
+    },
+    {
+      "id": "PG-05-linked-/productos/vencimientos/",
+      "expected": [
+        30,
+        6,
+        5,
+        11
+      ],
+      "observed": [
+        30,
+        6,
+        5,
+        11
+      ],
+      "ok": true
+    },
+    {
+      "id": "PG-05-linked-/ventas/historial/?fecha=2026-11-13",
+      "expected": [
+        3,
+        "60.06"
+      ],
+      "observed": [
+        3,
+        "60.06"
+      ],
+      "ok": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-0",
+      "expected": true,
+      "observed": false,
+      "ok": false,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        5016,
+        16924
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-1",
+      "expected": true,
+      "observed": false,
+      "ok": false,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        5016,
+        16924
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-2",
+      "expected": true,
+      "observed": false,
+      "ok": false,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        5016,
+        16924
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-3",
+      "expected": true,
+      "observed": false,
+      "ok": false,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        5016,
+        16924
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-4",
+      "expected": true,
+      "observed": false,
+      "ok": false,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        5016,
+        16924
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    }
+  ],
+  "plan08_sha256": "5735fb283b70bca02ed551e0000c72df2025eaef9b977607b1e4a2b890e5a1d9",
+  "identity_views_sha256": "ea5c0771612547a3c2885f9ecef49b6c896f6f135e826dbb9c06a8674db28764",
+  "postgres_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "date_lima": "2026-11-13",
+  "isolation": "read committed",
+  "reader_pid": 5016,
+  "fixture": {
+    "run": "etapa13-pg-20261113T163815572545Z",
+    "date_lima": "2026-11-13",
+    "timezone": "America/Lima",
+    "accounts": {
+      "admin": "2bb7a8ec-1189-430c-a964-009b3eeea6fe",
+      "warehouse": "c72b356a-670f-41fb-944a-ba9636c8e19f",
+      "seller": "22e357fd-b643-43e8-9845-de10968be0d1",
+      "seller2": "cf91f898-0f2e-4b19-81dc-b3f0f68bb7e1"
+    },
+    "products": {
+      "sin-lotes": "68677f96-c7e2-4b46-b06f-f4830c7c6570",
+      "igual-minimo": "b2164a6d-4b6f-4c24-9c24-31c0fcfd16eb",
+      "sobre-minimo": "bbe564f6-a78c-47fe-beb5-b48b3c5a672b",
+      "solo-vencido": "664daca2-231b-48b8-a9fc-0e0746492ea6",
+      "mixto": "e2c3ce64-5996-4014-8e0e-3e4715e26403",
+      "producto-inactivo": "faa6a438-6825-447c-99cf-2f7074320942",
+      "categoria-inactiva": "295f2a20-7bac-47a9-9a03-7d6327b900f5",
+      "venta-integracion": "573d32a0-b333-4057-baa4-dc7203df954b"
+    },
+    "lots": {
+      "A13-igual-minimo-0": "e38f5af4-b6f8-4f1b-83da-d85509367189",
+      "A13-sobre-minimo-0": "153bfccc-2147-41ed-b080-6081cc22757c",
+      "A13-solo-vencido-0": "5b7aac0f-2ccf-4d01-9664-0478e820400d",
+      "A13-solo-vencido-1": "19a683d4-e2b3-4f02-8d1b-5e161cf35f6a",
+      "A13-mixto-0": "8f5d2ab1-f908-4788-95b1-7cf82f100001",
+      "A13-mixto-1": "41a9f07e-fa2c-4c64-b262-a41153cda68d",
+      "A13-mixto-2": "b7490958-bba6-4e05-a116-0f40dbcdace5",
+      "A13-mixto-3": "601ada96-fa95-4b03-a7f9-794ef84cff62",
+      "A13-mixto-4": "9345fec7-99b4-43e1-b04d-86701a967503",
+      "A13-producto-inactivo-0": "7aed7ab5-6e8a-4664-abd4-020da58b317e",
+      "A13-producto-inactivo-1": "59f2daaf-a35e-4e32-9def-b6a94001fa1e",
+      "A13-categoria-inactiva-0": "c6bcf0cf-cf7a-492b-844c-747f520b1f0f",
+      "A13-categoria-inactiva-1": "e8297597-ca30-46c9-8ec0-52d650e60bb9",
+      "A13-venta-integracion-0": "c017bc33-32d6-4478-91aa-e47e9be0eec0"
+    },
+    "sales": [
+      {
+        "name": "prev-boundary",
+        "id": "3502ab2b-0079-4310-85f2-5006264e5cf1",
+        "at_lima": "2026-11-12 23:59:59.999999-05:00",
+        "total": "91.11",
+        "discount": "1.11",
+        "seller": "seller2@audit13.invalid",
+        "shift": "d8c33442-28a6-4273-8c48-f281c5853a58"
+      },
+      {
+        "name": "start-boundary",
+        "id": "a6f78948-4ece-4c25-93e1-e79afd0c37a1",
+        "at_lima": "2026-11-13 00:00:00-05:00",
+        "total": "10.01",
+        "discount": "0.01",
+        "seller": "seller2@audit13.invalid",
+        "shift": "d8c33442-28a6-4273-8c48-f281c5853a58"
+      },
+      {
+        "name": "today-other",
+        "id": "4994faea-3904-4ac6-ba39-70852bcd190c",
+        "at_lima": "2026-11-13 10:00:00-05:00",
+        "total": "20.02",
+        "discount": "2.02",
+        "seller": "seller@audit13.invalid",
+        "shift": "d3f75b65-9140-4cab-b6b2-c6fb89677ff1"
+      },
+      {
+        "name": "end-boundary",
+        "id": "24e80423-39d4-463e-aa50-f1a096edfc00",
+        "at_lima": "2026-11-13 23:59:59.999999-05:00",
+        "total": "30.03",
+        "discount": "3.03",
+        "seller": "seller@audit13.invalid",
+        "shift": "d3f75b65-9140-4cab-b6b2-c6fb89677ff1"
+      },
+      {
+        "name": "next-boundary",
+        "id": "d1951aa0-3fd2-4548-a8c0-8b10ec1d659b",
+        "at_lima": "2026-11-14 00:00:00-05:00",
+        "total": "92.22",
+        "discount": "2.22",
+        "seller": "seller@audit13.invalid",
+        "shift": "d3f75b65-9140-4cab-b6b2-c6fb89677ff1"
+      }
+    ],
+    "open_shift": "d3f75b65-9140-4cab-b6b2-c6fb89677ff1",
+    "closed_shift": "d8c33442-28a6-4273-8c48-f281c5853a58",
+    "expected_summary": {
+      "sales_count": 3,
+      "sales_total": "60.06",
+      "discount_total": "5.06",
+      "open_shifts": 1,
+      "low_stock": 3,
+      "expiring": 6,
+      "expired": 5
+    },
+    "fixture_note": "Sales/expired lots inserted as synthetic historical snapshots via ORM; not proof of historical checkout or validation. Integration probe separately uses services."
+  },
+  "writer_pid": 16924,
+  "limitations": [
+    "PostgreSQL18.4 Windows differs from intended PostgreSQL17; no production or PG17 certification",
+    "Synthetic local volume, 21 sequential timings per role, no operational SLA or p95 guarantee",
+    "Concurrent atomic writes are deliberate fixture updates, not a full checkout load test",
+    "No cache/index added on these measurements alone",
+    "Browser is covered separately by parent task"
+  ],
+  "port_closed": true,
+  "finished_utc": "2026-11-13T16:38:25.542486+00:00"
+}

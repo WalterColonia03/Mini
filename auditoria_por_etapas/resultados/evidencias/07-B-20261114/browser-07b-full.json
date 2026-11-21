@@ -1,0 +1,276 @@
+{
+  "phase": "full",
+  "checks": [
+    {
+      "name": "anon_redirect_/inventario/stock/",
+      "ok": true,
+      "actual": "http://127.0.0.1:57623/?next=/inventario/stock/",
+      "expected": "http://127.0.0.1:57623/?next=/inventario/stock/"
+    },
+    {
+      "name": "anon_redirect_/productos/vencimientos/",
+      "ok": true,
+      "actual": "http://127.0.0.1:57623/?next=/productos/vencimientos/",
+      "expected": "http://127.0.0.1:57623/?next=/productos/vencimientos/"
+    },
+    {
+      "name": "seller_nav_excludes_stock",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "seller_nav_excludes_expirations",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "seller_dashboard_no_resumen_general",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "seller_403_/inventario/stock/",
+      "ok": true,
+      "actual": 403,
+      "expected": 403
+    },
+    {
+      "name": "seller_403_/productos/vencimientos/",
+      "ok": true,
+      "actual": 403,
+      "expected": 403
+    },
+    {
+      "name": "seller_expected_403_console_count",
+      "ok": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "pos_shows_yogurt_sellable_8_not_15",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "pos_excludes_Producto E Vence Hoy",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "pos_excludes_Gaseosa Suspendida Cat",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "seller_zero_unexpected_browser_errors",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "admin_stock_new_heading_13B",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "admin_stock_agua_reactivated_alert",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "gaseosa_stays_inactivo_after_cat_reactivate",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "low_section_excludes_gaseosa_susp",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "low_section_excludes_prod_e",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "low_section_includes_yogurt_mixto",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "low_section_includes_sal_min_zero",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "catalog_H13_02_no_low_badge_prod_e",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "catalog_H13_02_no_low_badge_gaseosa",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "catalog_yogurt_sellable_8_low",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "wh_exp_topbar_h1",
+      "ok": true,
+      "actual": "Vencimientos de lotes",
+      "expected": "Vencimientos de lotes"
+    },
+    {
+      "name": "dec07_observed_still_unseparated_mixed_table",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "dias30_excludes_31d_and_zero_lot",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "dias31_includes_31d",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "dias0_error_msg",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "dias_abc_error_msg",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "adj_lot_shows_dash_supplier_and_writeoff",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "writeoff_redirects_to_receipt_14I",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "yt_exp_removed_from_expirations_after_full_writeoff",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "wh_stock_yogurt_physical_now_equals_8",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "admin_stock_synced_8",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "mobile_stock_no_body_overflow",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "mobile_exp_no_body_overflow",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "mobile_zero_errors",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "wh_stock_never_cache_header",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "wh_exp_never_cache_header",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "post_logout_protected_stock_redirects",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "wh_zero_browser_errors",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "admin_zero_browser_errors",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    }
+  ],
+  "details": {
+    "adminDashBefore": "ADMINISTRADOR\n\nPanel principal\nSesión activa\nAdministrador\n\n14/11/2026 · LIMA\n\nResumen general\n\nLas ventas y los descuentos corresponden al día indicado. Los turnos y las existencias muestran su estado actual. Actualiza la página para volver a consultar.\n\nVentas de hoy\n0\nTotal vendido hoy\nS/ 0,00\nDescuentos otorgados hoy\nS/ 0,00\nTurnos de caja abiertos\n1\nProductos con stock bajo\n4\nLotes por vencer (30 días)\n5\nLotes vencidos con stock\n3\nVer inventario y alertas\nVencimientos de lotes\nHistorial de ventas (todas las fechas)\n\nEl historial abre todas las fechas. Para comparar las ventas de este día, aplica Fecha exacta 14/11/2026 en el historial.\n\nOPERACIONES AUTORIZADAS\n\nOperaciones de tu puesto\n▦\nRegistrar un producto\n\nRegistra sus datos comerciales, precio y unidad de medida. El producto inicia con cero existencias.\n\nRegistrar producto →\n☰\nVer catálogo de productos\n\nConsulta todos los productos registrados, su precio, disponibilidad y stock mínimo.\n\nVer catálogo →\n☺\nGestionar empleados\n\nConsulta, crea y edita los empleados del sistema. También puedes desactivar cuentas.\n\nVer empleados →",
+    "dias7RowCount": 6,
+    "dias7Rows": [
+      "Yogurt Vencimiento Mixto\tLácteos\tYT-EXP\tDistribuidora Andina\t12 de noviembre de 2026\nVenció hace 2 días\n\t7\tVencido\nBloqueado para venta\n\tDar de baja",
+      "Arroz Ajustado Origen\tGranos\tAR-ADJ-HOY\t—\t14 de noviembre de 2026\nVence hoy\n\t2\tVencido\nBloqueado para venta\n\tDar de baja",
+      "Producto E Vence Hoy Producto inactivo\tLácteos\tLE-HOY\tDistribuidora Andina\t14 de noviembre de 2026\nVence hoy\n\t3\tVencido\nBloqueado para venta\n\tDar de baja",
+      "Arroz Ajustado Origen\tGranos\tAR-REC-1D\tDistribuidora Andina\t15 de noviembre de 2026\nEn 1 día\n\t5\tPróximo\t—",
+      "Yogurt Vencimiento Mixto\tLácteos\tYT-1D\tDistribuidora Andina\t15 de noviembre de 2026\nEn 1 día\n\t5\tPróximo\t—",
+      "Gaseosa Suspendida Cat Producto inactivo\tBebidas\tGAS-7D\tDistribuidora Andina\t21 de noviembre de 2026\nEn 7 días\n\t4\tPróximo\t—"
+    ],
+    "dec07SeparatedInDom": false,
+    "mobileStockMetrics": {
+      "innerWidth": 390,
+      "docScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "horizontalOverflowPx": 0
+    },
+    "mobileExpMetrics": {
+      "innerWidth": 390,
+      "docScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "horizontalOverflowPx": 0
+    }
+  }
+}

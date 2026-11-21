@@ -1,0 +1,90 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Confirmar cambio de estado · Empleados · Minimarket{% endblock %}
+
+{% block content %}
+<section class="panel form-panel">
+  <div class="section-header">
+    <div>
+      <span class="eyebrow">Personal · Confirmación de estado</span>
+      <h2>
+        {% if target_action == 'desactivar' %}
+          Confirmar desactivación de empleado
+        {% else %}
+          Confirmar reactivación de empleado
+        {% endif %}
+      </h2>
+    </div>
+    <a class="btn btn-outline-secondary" href="{% url 'employee-list' %}">Volver a empleados</a>
+  </div>
+
+  <dl class="summary-list">
+    <div>
+      <dt>Nombre completo</dt>
+      <dd>{{ account.display_name }}</dd>
+    </div>
+    <div>
+      <dt>Correo</dt>
+      <dd>{{ account.email }}</dd>
+    </div>
+    <div>
+      <dt>Rol</dt>
+      <dd>{{ account.role.name }}</dd>
+    </div>
+    <div>
+      <dt>Estado actual</dt>
+      <dd>{% if account.is_active %}Activo{% else %}Inactivo{% endif %}</dd>
+    </div>
+    <div>
+      <dt>Acción solicitada</dt>
+      <dd>{% if target_action == 'desactivar' %}Desactivar cuenta{% else %}Reactivar cuenta{% endif %}</dd>
+    </div>
+    <div>
+      <dt>Bloqueo temporal por intentos fallidos</dt>
+      <dd>{% if is_locked %}Vigente (se conserva hasta expirar o desbloqueo explícito){% else %}Sin bloqueo vigente{% endif %}</dd>
+    </div>
+  </dl>
+
+  {% if already_in_state %}
+    <div class="alert alert-info" role="status">
+      La cuenta de «{{ account.display_name }}» ya tiene el estado solicitado. No se aplicarán cambios.
+    </div>
+    <div class="form-actions">
+      <a class="btn btn-secondary" href="{% url 'employee-list' %}">Volver al listado</a>
+    </div>
+  {% else %}
+    <div class="alert {% if is_self or last_active_admin or has_open_shift or is_locked %}alert-warning{% else %}alert-info{% endif %}" role="note">
+      {% if target_action == 'desactivar' %}
+        {% if is_self or last_active_admin or has_open_shift %}
+          <p>La cuenta seguirá activa y conservará sus sesiones.</p>
+        {% else %}
+          <p>Al confirmar la desactivación, se cerrarán de inmediato todas las sesiones activas de esta cuenta y se impedirá cualquier nuevo ingreso. Los registros históricos (ventas, cierres de caja, actas y cargas) se conservarán intactos.</p>
+        {% endif %}
+        {% if is_self %}
+          <p><strong>Restricción:</strong> No puedes desactivar tu propia cuenta de administrador.</p>
+        {% endif %}
+        {% if last_active_admin %}
+          <p><strong>Restricción:</strong> Es el último administrador activo; el sistema rechazará dejar cero administradores activos.</p>
+        {% endif %}
+        {% if has_open_shift %}
+          <p><strong>Turno de caja abierto:</strong> El vendedor tiene un turno abierto actualmente; no se permitirá desactivar la cuenta hasta cerrar su turno.</p>
+        {% endif %}
+      {% else %}
+        <p>Al confirmar la reactivación, la cuenta volverá a quedar activa con su correo, rol y contraseña vigentes.</p>
+        {% if is_locked %}
+          <p><strong>Bloqueo temporal vigente:</strong> La reactivación no levanta el bloqueo por intentos fallidos; permanecerá vigente hasta vencer o ser desbloqueado explícitamente en «Editar».</p>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    <form method="post" action="{% url 'employee-deactivate' account.pk %}" class="form-actions">
+      {% csrf_token %}
+      <input type="hidden" name="action" value="{{ target_action }}">
+      <button type="submit" class="btn {% if target_action == 'desactivar' %}btn-danger{% else %}btn-primary{% endif %}">
+        {% if target_action == 'desactivar' %}Confirmar desactivación{% else %}Confirmar reactivación{% endif %}
+      </button>
+      <a class="btn btn-secondary" href="{% url 'employee-list' %}">Cancelar</a>
+    </form>
+  {% endif %}
+</section>
+{% endblock %}

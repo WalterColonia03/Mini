@@ -1,0 +1,112 @@
+{
+  "executed_utc": "2026-11-15T02:45:50.965337+00:00",
+  "prod_db_before": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58",
+  "build_before": {
+    "count": 214,
+    "sha256": "8c4ba720ad6fdeef159b87ad83e3f14f57a55c43ad9aac0df878fedb5ab69362",
+    "stage11_modules_sha256": "f9e193b45650c394492a5ebc8a2700332275cb81dfc14f9a30ddbb5f471781ac"
+  },
+  "steps": {
+    "check": {
+      "args": [
+        "check"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-11-15T02:45:50.965939+00:00",
+      "finished_utc": "2026-11-15T02:45:54.964640+00:00",
+      "duration_s": 4.0,
+      "tail": [
+        "System check identified no issues (0 silenced)."
+      ]
+    },
+    "makemigrations_check": {
+      "args": [
+        "makemigrations",
+        "--check",
+        "--dry-run"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-11-15T02:45:54.967944+00:00",
+      "finished_utc": "2026-11-15T02:45:57.675787+00:00",
+      "duration_s": 2.71,
+      "tail": [
+        "No changes detected"
+      ]
+    },
+    "stage11_tests": {
+      "args": [
+        "test",
+        "sales.test_audit11_checkout",
+        "sales.test_audit14f_allocations",
+        "sales.test_audit14closure_retry",
+        "cash.test_audit14closure_money",
+        "cash.test_audit09_cash",
+        "sales.tests",
+        "tests.test_audit14_integration",
+        "tests.test_audit14c_edge_cases",
+        "--verbosity=2"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-11-15T02:45:57.677306+00:00",
+      "finished_utc": "2026-11-15T02:46:46.090642+00:00",
+      "duration_s": 48.41,
+      "tail": [
+        "test_C01_checkout_fails_after_product_deactivation (tests.test_audit14c_edge_cases.PROP14_03_AdminDeactivatesProductWithDraftTest.test_C01_checkout_fails_after_product_deactivation)",
+        "Vendedor agrega producto al borrador. Admin lo desactiva. El cobro debe fallar. ... ok",
+        "test_C02_checkout_fails_after_category_deactivation (tests.test_audit14c_edge_cases.PROP14_03_AdminDeactivatesProductWithDraftTest.test_C02_checkout_fails_after_category_deactivation)",
+        "Admin desactiva la categoría del producto en el borrador. Cobro rechazado. ... ok",
+        "test_upgrade_preserves_unknown_history_without_fefo_backfill (sales.test_audit14f_allocations.LegacyAllocationMigrationTests.test_upgrade_preserves_unknown_history_without_fefo_backfill) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 138 tests in 36.439s",
+        "",
+        "OK",
+        "Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...",
+        ""
+      ]
+    },
+    "full_suite": {
+      "args": [
+        "test",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "started_utc": "2026-11-15T02:46:52.880839+00:00",
+      "finished_utc": "2026-11-15T02:50:50.903360+00:00",
+      "duration_s": 238.02,
+      "tail": [
+        "identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": \"5675e18d-a94e-4318-9747-bf3d043e025d\", \"actor_identifier\": \"vendedor.a.c2@pruebas.invalid\", \"metadata\": {\"actor_role\": \"VENDEDOR\", \"method\": \"GET\", \"reason\": \"role_denied\"}, \"occurred_at_utc\": \"2026-11-15T02:50:00.012409+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"6298fd5f11f84f4d9fc199d2dc8c7fe2\", \"target_id\": \"/inventario/stock/\", \"target_type\": \"Endpoint\"}",
+        "...identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"method\": \"GET\", \"reason\": \"unauthenticated\"}, \"occurred_at_utc\": \"2026-11-15T02:50:01.486324+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"c9bea886bca841fbb5fd60bed080e81b\", \"target_id\": \"/ventas/\", \"target_type\": \"Endpoint\"}",
+        "........................identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": \"e827f11d-c1ba-4412-8765-165edadc771e\", \"actor_identifier\": \"vendedor14be@pruebas.invalid\", \"metadata\": {\"actor_role\": \"VENDEDOR\", \"method\": \"GET\", \"reason\": \"role_denied\"}, \"occurred_at_utc\": \"2026-11-15T02:50:07.170253+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"6639b4bfeacf4d0b909ce15a1a22d783\", \"target_id\": \"/productos/categorias/\", \"target_type\": \"Endpoint\"}",
+        ".identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": \"be52e079-06bf-4a42-8278-2f5d87d8af48\", \"actor_identifier\": \"almacen14be@pruebas.invalid\", \"metadata\": {\"actor_role\": \"ALMACENERO\", \"method\": \"POST\", \"reason\": \"role_denied\"}, \"occurred_at_utc\": \"2026-11-15T02:50:07.320996+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"b409f5885c3f4a6f884f6a6a0c60b1c9\", \"target_id\": \"/caja/abrir/\", \"target_type\": \"Endpoint\"}",
+        ".identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": \"e827f11d-c1ba-4412-8765-165edadc771e\", \"actor_identifier\": \"vendedor14be@pruebas.invalid\", \"metadata\": {\"actor_role\": \"VENDEDOR\", \"method\": \"GET\", \"reason\": \"role_denied\"}, \"occurred_at_utc\": \"2026-11-15T02:50:07.458909+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"da929553d4904f638d1f8b146be2bd1b\", \"target_id\": \"/empleados/\", \"target_type\": \"Endpoint\"}",
+        ".................................................................",
+        "----------------------------------------------------------------------",
+        "Ran 652 tests in 229.028s",
+        "",
+        "OK",
+        "Destroying test database for alias 'default'...",
+        ""
+      ]
+    }
+  },
+  "stage11_diff_during_subset": {
+    "changed": [],
+    "added": [],
+    "removed": []
+  },
+  "prod_db_after": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58",
+  "prod_db_unchanged": true,
+  "build_after": {
+    "count": 214,
+    "sha256": "8c4ba720ad6fdeef159b87ad83e3f14f57a55c43ad9aac0df878fedb5ab69362",
+    "stage11_modules_sha256": "f9e193b45650c394492a5ebc8a2700332275cb81dfc14f9a30ddbb5f471781ac"
+  },
+  "sources_stable": true,
+  "stage11_modules_stable": true,
+  "full_diff": {
+    "changed": [],
+    "added": [],
+    "removed": []
+  }
+}

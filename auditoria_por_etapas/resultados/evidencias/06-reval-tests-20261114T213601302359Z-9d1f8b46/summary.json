@@ -1,0 +1,37 @@
+{
+  "stamp_utc": "20261114T213601302359Z-9d1f8b46",
+  "targets": [
+    "inventory.test_audit03aj_session"
+  ],
+  "exit_code": 0,
+  "duration_s": 11.516,
+  "evidence_txt": "auditoria_por_etapas\\resultados\\evidencias\\06-reval-tests-20261114T213601302359Z-9d1f8b46\\test_output.txt",
+  "protected_unchanged": true,
+  "tail": [
+    "  Applying sales.0006_sale_lot_traceability... OK",
+    "  Applying sales.0007_integration_money_limits... OK",
+    "  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK",
+    "  Applying sessions.0001_initial... OK",
+    "System check identified no issues (0 silenced).",
+    "test_receipt_routes_emit_no_store_and_detail_panel_layout_classes (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_receipt_routes_emit_no_store_and_detail_panel_layout_classes) ... ok",
+    "test_redirected_login_with_non_warehouse_role_denies_without_writes (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_redirected_login_with_non_warehouse_role_denies_without_writes) ... identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": \"a3bc7834-cf7d-41bb-9e75-558a93c0081b\", \"actor_identifier\": \"admin-aj@test.invalid\", \"metadata\": {\"actor_role\": \"ADMIN\", \"method\": \"GET\", \"reason\": \"role_denied\"}, \"occurred_at_utc\": \"2026-11-14T21:36:12.943430+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"5d6451335431417eb05a32f2fde5ffc1\", \"target_id\": \"/inventario/entrada/\", \"target_type\": \"Endpoint\"}",
+    "identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": \"a3bc7834-cf7d-41bb-9e75-558a93c0081b\", \"actor_identifier\": \"admin-aj@test.invalid\", \"metadata\": {\"actor_role\": \"ADMIN\", \"method\": \"POST\", \"reason\": \"role_denied\"}, \"occurred_at_utc\": \"2026-11-14T21:36:12.975515+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"9052d93574134af396b900a2f5dd6175\", \"target_id\": \"/inventario/entrada/\", \"target_type\": \"Endpoint\"}",
+    "ok",
+    "test_service_rejects_anonymous_inactive_and_stale_actor_instances (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_service_rejects_anonymous_inactive_and_stale_actor_instances) ... ok",
+    "test_surviving_inactive_session_is_logged_out_before_view_or_service (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_surviving_inactive_session_is_logged_out_before_view_or_service) ... identity_audit {\"action\": \"SESSION_REVOKED_INACTIVE\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"path\": \"/inventario/entrada/\", \"reason\": \"inactive_or_unaccepted_session\"}, \"occurred_at_utc\": \"2026-11-14T21:36:13.932490+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"5379e744b6f8485ca96729f75e41c992\", \"target_id\": \"16c475f9-fb74-4e92-8c87-7775458a43cc\", \"target_type\": \"Session\"}",
+    "identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"method\": \"GET\", \"reason\": \"unauthenticated\"}, \"occurred_at_utc\": \"2026-11-14T21:36:13.933511+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"5379e744b6f8485ca96729f75e41c992\", \"target_id\": \"/inventario/entrada/\", \"target_type\": \"Endpoint\"}",
+    "identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"method\": \"GET\", \"reason\": \"unauthenticated\"}, \"occurred_at_utc\": \"2026-11-14T21:36:13.937533+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"a8f307dc88c143158cf9f9101eaf34bf\", \"target_id\": \"/inventario/carga-inicial/\", \"target_type\": \"Endpoint\"}",
+    "identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"method\": \"GET\", \"reason\": \"unauthenticated\"}, \"occurred_at_utc\": \"2026-11-14T21:36:13.942591+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"2518e6e94a44453da7451cbf592023cb\", \"target_id\": \"/inventario/cargas/4531cd8d-5bb8-4139-806e-5c73aa277453/\", \"target_type\": \"Endpoint\"}",
+    "identity_audit {\"action\": \"SESSION_REVOKED_INACTIVE\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"path\": \"/inventario/entrada/\", \"reason\": \"inactive_or_unaccepted_session\"}, \"occurred_at_utc\": \"2026-11-14T21:36:14.068031+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"674bd4651b0f4410bbe4a35c1fe7b512\", \"target_id\": \"54765e90-e3d2-4070-8aae-22a009f692b3\", \"target_type\": \"Session\"}",
+    "identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"method\": \"POST\", \"reason\": \"unauthenticated\"}, \"occurred_at_utc\": \"2026-11-14T21:36:14.071059+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"674bd4651b0f4410bbe4a35c1fe7b512\", \"target_id\": \"/inventario/entrada/\", \"target_type\": \"Endpoint\"}",
+    "identity_audit {\"action\": \"SESSION_REVOKED_INACTIVE\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"path\": \"/inicio/\", \"reason\": \"inactive_or_unaccepted_session\"}, \"occurred_at_utc\": \"2026-11-14T21:36:14.102563+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"f09db2ffa7754785b61094f095cfbb31\", \"target_id\": \"16c475f9-fb74-4e92-8c87-7775458a43cc\", \"target_type\": \"Session\"}",
+    "identity_audit {\"action\": \"SESSION_REVOKED_INACTIVE\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"path\": \"/\", \"reason\": \"inactive_or_unaccepted_session\"}, \"occurred_at_utc\": \"2026-11-14T21:36:14.120856+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"dc69a0d7e3ec4dda99e98e5d15668ea7\", \"target_id\": \"16c475f9-fb74-4e92-8c87-7775458a43cc\", \"target_type\": \"Session\"}",
+    "ok",
+    "",
+    "----------------------------------------------------------------------",
+    "Ran 4 tests in 3.470s",
+    "",
+    "OK",
+    "Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')..."
+  ]
+}

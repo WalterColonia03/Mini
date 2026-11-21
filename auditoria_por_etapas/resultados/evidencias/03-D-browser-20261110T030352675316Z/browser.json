@@ -1,0 +1,374 @@
+{
+  "stage": "03-D",
+  "started": "2026-11-10T03:03:55.735Z",
+  "cases": [
+    {
+      "id": "D01-fields",
+      "ok": true,
+      "inputs": [
+        {
+          "name": "name",
+          "value": "AUD03 Bebida de prueba",
+          "disabled": false,
+          "max": "",
+          "min": "",
+          "required": true
+        },
+        {
+          "name": "barcode",
+          "value": "AUD03-BEBIDA",
+          "disabled": false,
+          "max": "",
+          "min": "",
+          "required": true
+        },
+        {
+          "name": "category",
+          "value": "33e6d633-0063-49c3-97d6-d555af2db692",
+          "disabled": false,
+          "required": false
+        },
+        {
+          "name": "sale_price",
+          "value": "8.50",
+          "disabled": false,
+          "max": "9999999.99",
+          "min": "0.01",
+          "required": true
+        },
+        {
+          "name": "minimum_stock",
+          "value": "10",
+          "disabled": false,
+          "max": "999999",
+          "min": "0",
+          "required": true
+        }
+      ],
+      "barcodeEditable": true,
+      "screenshot": "01-edicion.png"
+    },
+    {
+      "id": "D02-cancel",
+      "ok": true
+    },
+    {
+      "id": "D03-price-save",
+      "ok": true,
+      "screenshot": "03-precio.png"
+    },
+    {
+      "id": "D04-edit-only-product",
+      "ok": true
+    },
+    {
+      "id": "D05-warehouse-price",
+      "ok": true
+    },
+    {
+      "id": "D06-search-and-old-draft",
+      "ok": true,
+      "search": "AUD03 Bebida de prueba\tAUD03-BEBIDA\t19\tS/ 9,20\t\nCantidad de AUD03 Bebida de prueba\nAgregar",
+      "draft": "AUD03 Bebida de prueba\nS/ 8,50 por unidad\nCantidad de AUD03 Bebida de prueba\nActualizar\n2 und.\nS/ 17,00\nQuitar",
+      "screenshot": "06-borrador.png"
+    },
+    {
+      "id": "D07-price-warning",
+      "ok": true,
+      "message": [
+        "El precio de «AUD03 Bebida de prueba» cambió de S/ 8.50 a S/ 9.20. Verifica el nuevo total antes de confirmar el cobro."
+      ],
+      "screenshot": "07-aviso-precio.png"
+    },
+    {
+      "id": "D08-new-sale",
+      "ok": true,
+      "newSale": {
+        "id": "a03ae5ff-d213-41cc-a29c-25ba8e2f32a5",
+        "total_amount": "18.40",
+        "cash_received": "30.00",
+        "change_given": "11.60"
+      },
+      "screenshot": "08-nueva-venta.png"
+    },
+    {
+      "id": "D09-history-price",
+      "ok": true
+    },
+    {
+      "id": "D10-new-draft",
+      "ok": true
+    },
+    {
+      "id": "D11-minimum-17",
+      "ok": true,
+      "row": "AUD03 Bebida de prueba\tProductos enlatados\tAUD03-BEBIDA\t9,20\t17 Stock bajo\t17\tDisponible"
+    },
+    {
+      "id": "D11-minimum-16",
+      "ok": true,
+      "row": "AUD03 Bebida de prueba\tProductos enlatados\tAUD03-BEBIDA\t9,20\t17\t16\tDisponible"
+    },
+    {
+      "id": "D12-name-save",
+      "ok": true
+    },
+    {
+      "id": "D13-name-in-sale",
+      "ok": true
+    },
+    {
+      "id": "D14-name-history",
+      "ok": true
+    },
+    {
+      "id": "D15-code-edit",
+      "ok": true,
+      "classification": "CONFLICTO DE FUENTES; observed existing capability"
+    },
+    {
+      "id": "D16-code-history",
+      "ok": true
+    },
+    {
+      "id": "D17-category-save",
+      "ok": true
+    },
+    {
+      "id": "D18-empty",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "name": "Este campo es obligatorio.",
+        "barcode": "Este campo es obligatorio.",
+        "sale_price": "Este campo es obligatorio.",
+        "minimum_stock": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "D18-price-0",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "sale_price": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "D18-price-1",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "sale_price": "Asegúrese de que este valor es mayor o igual a 0.01."
+      }
+    },
+    {
+      "id": "D18-price-2",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "sale_price": "Asegúrese de que este valor es mayor o igual a 0.01."
+      }
+    },
+    {
+      "id": "D18-price-3",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "sale_price": "Asegúrese de que no haya más de 2 dígitos decimales."
+      }
+    },
+    {
+      "id": "D18-price-4",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "sale_price": "Introduzca un número decimal válido sin notación científica."
+      }
+    },
+    {
+      "id": "D18-price-5",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "sale_price": "El precio no puede superar S/ 9 999 999,99."
+      }
+    },
+    {
+      "id": "D18-price-6",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "sale_price": "Introduzca un número."
+      }
+    },
+    {
+      "id": "D18-minimum-0",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "minimum_stock": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "D18-minimum-1",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "minimum_stock": "Asegúrese de que este valor es mayor o igual a 0."
+      }
+    },
+    {
+      "id": "D18-minimum-2",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "minimum_stock": "Introduzca un número entero."
+      }
+    },
+    {
+      "id": "D18-minimum-3",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "minimum_stock": "Asegúrese de que este valor sea menor o igual a 999999."
+      }
+    },
+    {
+      "id": "D18-minimum-4",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "minimum_stock": "Introduzca un número entero."
+      }
+    },
+    {
+      "id": "D18-name-empty",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "name": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "D18-name-long",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "name": "El nombre admite hasta 160 caracteres."
+      }
+    },
+    {
+      "id": "D18-name-duplicate",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "name": "Ya existe un producto registrado con este nombre."
+      }
+    },
+    {
+      "id": "D18-barcode-empty",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "barcode": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "D18-barcode-long",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "barcode": "El código de barras admite hasta 64 caracteres."
+      }
+    },
+    {
+      "id": "D18-barcode-duplicate",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "barcode": "Ya existe un producto con este código de barras."
+      }
+    },
+    {
+      "id": "D18-category-inactive",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "category": "Escoja una opción válida. Esa opción no está entre las disponibles."
+      }
+    },
+    {
+      "id": "D18-category-absent",
+      "ok": true,
+      "status": 200,
+      "errors": {
+        "category": "Escoja una opción válida. Esa opción no está entre las disponibles."
+      }
+    },
+    {
+      "id": "D19-rejections-preserve",
+      "ok": true
+    },
+    {
+      "id": "D20-field-error",
+      "ok": true,
+      "invalid": "true",
+      "references": true,
+      "focused": true,
+      "screenshot": "20-error.png"
+    },
+    {
+      "id": "D21-empty-category-retains",
+      "ok": true
+    },
+    {
+      "id": "D22-role-warehouse",
+      "ok": true,
+      "statuses": [
+        403,
+        403
+      ]
+    },
+    {
+      "id": "D22-role-seller",
+      "ok": true,
+      "statuses": [
+        403,
+        403
+      ]
+    },
+    {
+      "id": "D23-visitor",
+      "ok": true
+    },
+    {
+      "id": "D24-missing",
+      "ok": true
+    },
+    {
+      "id": "D25-retain-inactive-category",
+      "ok": true,
+      "screenshot": "25-categoria-inactiva.png"
+    },
+    {
+      "id": "D26-reclassify-active",
+      "ok": true
+    },
+    {
+      "id": "D27-edit-bounds",
+      "ok": true
+    },
+    {
+      "id": "D28-mobile",
+      "ok": true,
+      "screenshot": "28-movil.png"
+    },
+    {
+      "id": "D29-final-history",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "browser": "157.0.8103.39",
+  "finished": "2026-11-10T03:04:51.349Z"
+}

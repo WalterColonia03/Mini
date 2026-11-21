@@ -1,0 +1,303 @@
+{
+  "id": "21-ventas-admin",
+  "rol": "ADMIN",
+  "utc": "2026-11-14T04:15:22.125275+00:00",
+  "ruta": "/ventas/historial/",
+  "texto_visible": "Saltar al contenido\nM\nMinimarket\nGestión de bodega\n\nOPERACIONES\n\n⌂\nInicio\n\nCATÁLOGO\n\n☰\nProductos\n▦\nRegistrar producto\n▮\nCategorías\n\nINVENTARIO\n\n✦\nProveedores\n☷\nVer inventario y alertas\n⏳\nVencimientos de lotes\n⏫\nAjuste físico\n\nPERSONAL\n\n☺\nEmpleados\n\nCAJA Y VENTAS\n\n☰\nHistorial de turnos\n☰\nHistorial de ventas\nA\nAdministración 14G\nAdministrador\n↪\nCerrar sesión\n\nMINIMARKET\n\nHistorial de ventas\nAdministración 14G\nAdministrador\n\nCAJA Y VENTAS\n\nHistorial de ventas\n\nConsulta las ventas confirmadas de toda la tienda por correlativo, fecha, vendedor o turno.\n\nVolver al inicio\nCorrelativo\nFecha exacta\nDesde\nHasta\nVendedor\nTodos\nVenta 14G\nTurno\nTodos\nCAJA-01 · 13/11/2026 23:15 · Venta 14G\nFiltrar\nLimpiar\nTotal vendido (filtrado): S/ 220,00 · Descuentos otorgados: S/ 0,00\nCORRELATIVO\tVENDEDOR\tFECHA/HORA\tCAJA\tPAGO\tDESCUENTO (S/)\tTOTAL (S/)\tEFECTIVO RECIBIDO\tVUELTO\nV-00000001\tVenta 14G\t13/11/2026 23:15\tCAJA-01\tEfectivo\t0,00\t220,00\t220,00\t0,00\nMinimarket · Gestión de bodega",
+  "controles": [
+    {
+      "campo": "correlativo",
+      "etiqueta": "Correlativo",
+      "tipo": "text",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "fecha",
+      "etiqueta": "Fecha exacta",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "fecha_desde",
+      "etiqueta": "Desde",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "fecha_hasta",
+      "etiqueta": "Hasta",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "vendedor",
+      "etiqueta": "Vendedor",
+      "tipo": "select-one",
+      "valor": "Todos",
+      "opciones": [
+        "Todos",
+        "Venta 14G"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "turno",
+      "etiqueta": "Turno",
+      "tipo": "select-one",
+      "valor": "Todos",
+      "opciones": [
+        "Todos",
+        "CAJA-01 · 13/11/2026 23:15 · Venta 14G"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    }
+  ],
+  "testigo": {
+    "sha256": "c021a7cbbf8b3956dc40103f869c95f8bf1ce0de6a312708e08de5b9757291f4",
+    "por_tabla": {
+      "cash_cashregister": "4d3e08b9115a5908fd55423964e1fb98b1d0126e624ace88e66e509195167e65",
+      "cash_cashshift": "9d7d06451612d78adf39bfed4d1e214528065217e6848b5fb8be9b33ae2dcd64",
+      "cash_cashshiftclose": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "catalog_category": "f2219af09bc829cb2e1867a35c3275da0ec3389b8efa8dd4cda5b03a040b215f",
+      "catalog_product": "9c85d78f5c63cc41630f1203fd64ec937d99f8c9595e036af0c2ac7d493c0e21",
+      "catalog_productbarcodekey": "a46046680fcc1b5d0fc2dd6bfb7dfbbbafa2693311d519bb6e086e6a074b4240",
+      "inventory_initialinventoryload": "46587b29968cc8fec9a9ccfe2dbc20d51ae87803fbfb03dc0106ebad4f65ddef",
+      "inventory_lot": "c0610100eb4b13d5efb5ff3a321f8315bea60f0fa302aaa2a2ae93a811b35744",
+      "inventory_physicaladjustment": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceipt": "24b4bbf52569d44153be0b1e5f99c8ff35bd7922c78b128f62351cbfb7e25d78",
+      "inventory_stockreceiptcounter": "7532940a757e8a752845454b9f206d77c0d469028346644c8f6ea37e6f6e746e",
+      "inventory_stockreceiptline": "21edec1c7cbb36e44757f63416615f8fd7b8842ba1679f375621ffab4ace786f",
+      "inventory_stockwriteoff": "a81dbc4859fd035c1af7d669b8fd588b8fa53ecb240803d987eb0d263d955689",
+      "inventory_supplier": "a10ccd501ea935359036d2685e8a13efcdc97be9019eb3bf13e50e87da2d1787",
+      "sales_sale": "5541040dea3930632cd82abdbd59177c5df3da22657801e6bfe4141c1f150fce",
+      "sales_salecounter": "0f99aed32426007c8506b83fccbdc38cffbf39d424ca937978c6d04e4c9273e7",
+      "sales_saledraft": "dde264c4101a886565d79700f0969c1a4fc58d65b2a52b0cc35188eb27856678",
+      "sales_saledraftline": "72961e4019972e146fabd3f149e57700bd2e18a96bc2d59c8523ecea517f341d",
+      "sales_saleline": "e7a7354c15919c2c158382f13e044a88a91915af596e657eefa95edf77a4d227",
+      "sales_salelotallocation": "e18520d4f1dcb66321a8d5767cbac6bb9a4da30a6363b4b0dc59728abcbd0f6b",
+      "identity_role_membership_active": "d37b310029ebc424529ed8f05e942d3784c3cd317f1be1ed3642343a98a18b73"
+    },
+    "filas": {
+      "cash_cashregister": 1,
+      "cash_cashshift": 1,
+      "cash_cashshiftclose": 0,
+      "catalog_category": 1,
+      "catalog_product": 1,
+      "catalog_productbarcodekey": 1,
+      "inventory_initialinventoryload": 1,
+      "inventory_lot": 3,
+      "inventory_physicaladjustment": 0,
+      "inventory_stockreceipt": 2,
+      "inventory_stockreceiptcounter": 1,
+      "inventory_stockreceiptline": 2,
+      "inventory_stockwriteoff": 1,
+      "inventory_supplier": 1,
+      "sales_sale": 1,
+      "sales_salecounter": 1,
+      "sales_saledraft": 1,
+      "sales_saledraftline": 1,
+      "sales_saleline": 1,
+      "sales_salelotallocation": 3
+    },
+    "cuentas_rol_activas": [
+      [
+        "ADMIN",
+        1
+      ],
+      [
+        "ALMACENERO",
+        1
+      ],
+      [
+        "VENDEDOR",
+        1
+      ]
+    ],
+    "categorias": [
+      {
+        "name": "Familia 14G",
+        "is_active": 1,
+        "state_version": 0
+      }
+    ],
+    "productos": [
+      {
+        "name": "Recepción 14G",
+        "barcode": "INT-14G",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 5.2,
+        "is_active": 1
+      }
+    ],
+    "proveedores": [
+      {
+        "name": "Proveedor renombrado 14G",
+        "ruc": "20000000014",
+        "is_active": 1
+      }
+    ],
+    "lotes": [
+      {
+        "number": "C",
+        "initial_quantity": 10,
+        "available_quantity": 0,
+        "unit_cost": 6,
+        "expiration_date": "2027-01-12",
+        "producto": "Recepción 14G",
+        "proveedor": "Proveedor renombrado 14G",
+        "autor_carga": "Almacén renombrado 14G"
+      },
+      {
+        "number": "C",
+        "initial_quantity": 5,
+        "available_quantity": 2,
+        "unit_cost": 8,
+        "expiration_date": "2027-01-12",
+        "producto": "Recepción 14G",
+        "proveedor": null,
+        "autor_carga": "Almacén renombrado 14G"
+      },
+      {
+        "number": "INICIAL",
+        "initial_quantity": 10,
+        "available_quantity": 0,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-13",
+        "producto": "Recepción 14G",
+        "proveedor": "Proveedor renombrado 14G",
+        "autor_carga": "Almacén renombrado 14G"
+      }
+    ],
+    "borrador": [
+      {
+        "status": "DISCARDED",
+        "quantity": 22,
+        "unit_price": 10
+      }
+    ],
+    "ventas": [
+      {
+        "correlative": "V-00000001",
+        "total_amount": 220,
+        "base_amount": 186.44,
+        "igv_amount": 33.56,
+        "discount_amount": 0,
+        "cash_received": 220,
+        "change_given": 0,
+        "vendedor": "Venta 14G",
+        "opening_amount": 100
+      }
+    ],
+    "lineas": [
+      {
+        "product_snapshot_name": "Recepción 14G",
+        "product_snapshot_barcode": "INT-14G",
+        "quantity": 22,
+        "unit_price": 10,
+        "amount": 220,
+        "unit_cost": 5.2
+      }
+    ],
+    "bajas": [
+      {
+        "correlativo": "B-00000001",
+        "number": "C",
+        "quantity": 1,
+        "reason": "ROBO",
+        "notes": "Faltante ficticio en recepción 14G",
+        "responsable": "Almacén renombrado 14G"
+      }
+    ],
+    "turnos": [
+      {
+        "status": "OPEN",
+        "opening_amount": 100,
+        "vendedor": "Venta 14G"
+      }
+    ],
+    "cierres": [],
+    "recepciones": [
+      {
+        "correlative": "R-00000001",
+        "product_snapshot_name": "Recepción 14G",
+        "responsible_snapshot_name": "Almacén 14G",
+        "supplier_snapshot_name": "Proveedor original 14G",
+        "average_cost_after": 4.5
+      },
+      {
+        "correlative": "R-00000002",
+        "product_snapshot_name": "Recepción 14G",
+        "responsible_snapshot_name": "Almacén 14G",
+        "supplier_snapshot_name": "",
+        "average_cost_after": 5.2
+      }
+    ],
+    "lineas_recepcion": [
+      {
+        "correlative": "R-00000001",
+        "number": "C",
+        "quantity": 10,
+        "unit_cost": 6,
+        "expiration_date": "2027-01-12"
+      },
+      {
+        "correlative": "R-00000002",
+        "number": "C",
+        "quantity": 5,
+        "unit_cost": 8,
+        "expiration_date": "2027-01-12"
+      }
+    ],
+    "asignaciones": [
+      {
+        "lot_snapshot_number": "INICIAL",
+        "quantity": 10,
+        "correlative": null
+      },
+      {
+        "lot_snapshot_number": "C",
+        "quantity": 10,
+        "correlative": "R-00000001"
+      },
+      {
+        "lot_snapshot_number": "C",
+        "quantity": 2,
+        "correlative": "R-00000002"
+      }
+    ]
+  },
+  "sin_mutacion_verificada": true
+}

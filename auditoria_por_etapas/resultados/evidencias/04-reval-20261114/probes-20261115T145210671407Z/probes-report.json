@@ -1,0 +1,702 @@
+{
+  "stamp_utc": "20261115T145210671407Z",
+  "build_before": {
+    "file_count": 215,
+    "sha256": "f99a3999a52a626d21fdf8bffaf6fa6623ea1d2062dc53b5b0f674e5c9a1cea2"
+  },
+  "build_after": {
+    "file_count": 215,
+    "sha256": "f99a3999a52a626d21fdf8bffaf6fa6623ea1d2062dc53b5b0f674e5c9a1cea2"
+  },
+  "build_unchanged": true,
+  "protected_core_unchanged": true,
+  "protected_core_changed": [],
+  "part_a_server_and_orm": {
+    "findings": [
+      {
+        "id": "OBS-04-ALNUM-SUPERSCRIPT-NAME",
+        "severity": "LOW",
+        "detail": "Python str.isalnum() treats Unicode superscript digits ('²³') as alphanumeric, so name='²³' passes SupplierForm/Supplier.clean/create_supplier despite lacking ordinary letters/ASCII digits.",
+        "data": null
+      },
+      {
+        "id": "OBS-04-TOGGLE-DUPLICATE-IS-ACTIVE-LAST-WINS",
+        "severity": "LOW",
+        "detail": "POST /inventario/proveedores/<uuid>/estado/ uses request.POST.get('is_active'), so duplicate conflicting params (is_active=true&is_active=false) silently obey the last value (302) instead of rejecting ambiguity like MovementFilterForm.",
+        "data": null
+      },
+      {
+        "id": "OBS-04-HEADERS-NO-STORE-ERROR-REDIRECT",
+        "severity": "LOW",
+        "detail": "Supplier routes apply @never_cache on 200 views, but 403/404/405/anonymous-302 responses lack Cache-Control: no-store: ['anon_list_302', 'admin_toggle_404', 'seller_list_403', 'wh_create_post_403', 'csrf_fail_403'].",
+        "data": {
+          "anon_list_302": {
+            "status": 302,
+            "cache_control": "",
+            "x_request_id": true
+          },
+          "admin_list_200": {
+            "status": 200,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_create_get_200": {
+            "status": 200,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_create_ok_302": {
+            "status": 302,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_toggle_quizas_302": {
+            "status": 302,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_toggle_get_405": {
+            "status": 405,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_toggle_404": {
+            "status": 404,
+            "cache_control": "",
+            "x_request_id": true
+          },
+          "seller_list_403": {
+            "status": 403,
+            "cache_control": "",
+            "x_request_id": true
+          },
+          "wh_create_post_403": {
+            "status": 403,
+            "cache_control": "",
+            "x_request_id": true
+          },
+          "csrf_fail_403": {
+            "status": 403,
+            "cache_control": "",
+            "x_request_id": true
+          }
+        }
+      }
+    ],
+    "probes": {
+      "validation_and_a11y": {
+        "outer_spaces_ruc_dup_status": 200,
+        "outer_spaces_ruc_dup_msg": true,
+        "outer_spaces_ruc_http_post_accepted": true,
+        "ruc_edge_results": {
+          "internal_space": {
+            "form_valid": false,
+            "error": [
+              "El RUC debe contener exactamente 11 dígitos numéricos."
+            ]
+          },
+          "fullwidth_digits": {
+            "form_valid": false,
+            "error": [
+              "El RUC debe contener exactamente 11 dígitos numéricos."
+            ]
+          },
+          "superscript_digits": {
+            "form_valid": false,
+            "error": [
+              "El RUC debe contener exactamente 11 dígitos numéricos."
+            ]
+          },
+          "arabic_indic": {
+            "form_valid": false,
+            "error": [
+              "El RUC debe contener exactamente 11 dígitos numéricos."
+            ]
+          }
+        },
+        "superscript_name_23_form_valid": true,
+        "emoji_name_form_valid": false,
+        "control_ws_collapsed": {
+          "name": "Empresa SAC",
+          "phone": "+51 999 111"
+        },
+        "arabic_phone_form_valid": false,
+        "symbol_phone_form_valid": false,
+        "name_form_rejects_raw165_norm156": true,
+        "name_service_accepts_raw165_norm156": true,
+        "phone_form_rejects_raw21_norm20": true,
+        "phone_service_accepts_raw21_norm20": true,
+        "multi3_err_shows_all_3": true,
+        "multi3_autofocus_on_name_only": false,
+        "phone_only_autofocus_moves_to_phone": true,
+        "phone_error_input_has_aria_invalid": true,
+        "phone_error_input_describedby_has_error_id": true,
+        "ph_tag_html": "<input type=\"text\" name=\"phone\" value=\"abc\" class=\"form-control\" inputmode=\"tel\" maxlength=\"20\" autocomplete=\"tel\" autofocus aria-invalid=\"true\" aria-describedby=\"id_phone_helptext id_phone_error\" id=\"id_phone\">"
+      },
+      "search_edge_cases": {
+        "percent": {
+          "status": 200,
+          "has_sol": false,
+          "has_lacteos": false,
+          "has_clear_btn": true
+        },
+        "underscore": {
+          "status": 200,
+          "has_sol": false,
+          "has_lacteos": false,
+          "has_clear_btn": true
+        },
+        "backslash": {
+          "status": 200,
+          "has_sol": false,
+          "has_lacteos": false,
+          "has_clear_btn": true
+        },
+        "spaces_only": {
+          "status": 200,
+          "has_sol": true,
+          "has_lacteos": true,
+          "has_clear_btn": false
+        },
+        "repeated_q": {
+          "status": 200,
+          "has_sol": true,
+          "has_lacteos": false,
+          "has_clear_btn": true
+        },
+        "huge_10k": {
+          "status": 200,
+          "has_sol": false,
+          "has_lacteos": false,
+          "has_clear_btn": true
+        }
+      },
+      "toggle_http_modes": {
+        "quizas_status": 302,
+        "quizas_location": "/inventario/proveedores/",
+        "empty_status": 302,
+        "dup_false_then_true_status": 302,
+        "dup_false_then_true_result_is_active": true,
+        "dup_true_then_false_status": 302,
+        "dup_true_then_false_result_is_active": false,
+        "padded_uppercase_true_restored": true,
+        "unknown_uuid_status": 404,
+        "invalid_uuid_status": 404,
+        "get_method_status": 405
+      },
+      "headers_and_identity_audit": {
+        "headers": {
+          "anon_list_302": {
+            "status": 302,
+            "cache_control": "",
+            "x_request_id": true
+          },
+          "admin_list_200": {
+            "status": 200,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_create_get_200": {
+            "status": 200,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_create_ok_302": {
+            "status": 302,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_toggle_quizas_302": {
+            "status": 302,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_toggle_get_405": {
+            "status": 405,
+            "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+            "x_request_id": true
+          },
+          "admin_toggle_404": {
+            "status": 404,
+            "cache_control": "",
+            "x_request_id": true
+          },
+          "seller_list_403": {
+            "status": 403,
+            "cache_control": "",
+            "x_request_id": true
+          },
+          "wh_create_post_403": {
+            "status": 403,
+            "cache_control": "",
+            "x_request_id": true
+          },
+          "csrf_fail_403": {
+            "status": 403,
+            "cache_control": "",
+            "x_request_id": true
+          }
+        },
+        "responses_without_no_store": [
+          "anon_list_302",
+          "admin_toggle_404",
+          "seller_list_403",
+          "wh_create_post_403",
+          "csrf_fail_403"
+        ],
+        "identity_audit_db_delta": 0,
+        "identity_audit_log_count": 3,
+        "identity_audit_log_samples": [
+          {
+            "level": "WARNING",
+            "name": "identity.audit",
+            "msg": "identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": null, \"actor_identifier\": null, \"metadata\": {\"method\": \"GET\", \"reason\": \"unauthenticated\"}, \"occurred_at_utc\": \"2026-11-15T14:52:37.423131+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"1fc9c68addfe4250b6d3ee9d831e7250\", \"target_id\": \"/inventario/proveedores/\", \"target_type\": \"Endpoint\"}"
+          },
+          {
+            "level": "WARNING",
+            "name": "identity.audit",
+            "msg": "identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": \"249f7cc7-59a8-46c6-987d-63f18ba83643\", \"actor_identifier\": \"seller@probes04.invalid\", \"metadata\": {\"actor_role\": \"VENDEDOR\", \"method\": \"GET\", \"reason\": \"role_denied\"}, \"occurred_at_utc\": \"2026-11-15T14:52:37.610609+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"fd25c94f46e74d58bc63bfa6f85b94a9\", \"target_id\": \"/inventario/proveedores/\", \"target_type\": \"Endpoint\"}"
+          },
+          {
+            "level": "WARNING",
+            "name": "identity.audit",
+            "msg": "identity_audit {\"action\": \"ACCESS_DENIED\", \"actor_id\": \"661dacf1-2860-4040-aa09-7713ce1dac8e\", \"actor_identifier\": \"wh@probes04.invalid\", \"metadata\": {\"actor_role\": \"ALMACENERO\", \"method\": \"POST\", \"reason\": \"role_denied\"}, \"occurred_at_utc\": \"2026-11-15T14:52:37.624370+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"29a6db79e0544179900af4e6b2b88af3\", \"target_id\": \"/inventario/proveedores/nuevo/\", \"target_type\": \"Endpoint\"}"
+          }
+        ]
+      },
+      "query_scaling_n_plus_1": {
+        "small_2_suppliers": {
+          "supplier_list": {
+            "status": 200,
+            "queries": 4,
+            "bytes": 6795
+          },
+          "expirations": {
+            "status": 200,
+            "queries": 4,
+            "bytes": 6749
+          },
+          "movements": {
+            "status": 200,
+            "queries": 8,
+            "bytes": 7821
+          }
+        },
+        "scaled_60_suppliers_11_lots": {
+          "supplier_list": {
+            "status": 200,
+            "queries": 4,
+            "bytes": 53369
+          },
+          "initial_load_created": {
+            "status": 200,
+            "queries": 12,
+            "bytes": 8037
+          },
+          "expirations": {
+            "status": 200,
+            "queries": 4,
+            "bytes": 14784
+          },
+          "movements": {
+            "status": 200,
+            "queries": 8,
+            "bytes": 13782
+          },
+          "stock_entry_form": {
+            "status": 200,
+            "queries": 5,
+            "bytes": 14060
+          }
+        },
+        "no_n_plus_1_supplier_queries": true
+      }
+    }
+  },
+  "part_b_chrome": {
+    "checks": [
+      {
+        "id": "desktop_keyboard_focus_paste_and_back_reload",
+        "ok": true,
+        "detail": {
+          "initial_focus": "id_name",
+          "focus_on_error": "id_ruc",
+          "preserved_name": "Teclado SAC",
+          "pasted_dom_val": " 2012345678",
+          "create_url_after": "/inventario/proveedores/",
+          "flash_after_create": "Proveedor «Teclado SAC» registrado.",
+          "back_from_list_url": "chrome-error://chromewebdata/",
+          "back_after_failed_post_err": "Page.go_back: net::ERR_CACHE_MISS",
+          "prg_back_url": "/inventario/proveedores/nuevo/",
+          "prg_count": 1,
+          "toggle_back_err": null,
+          "state_after_toggle": false,
+          "state_after_back_reload": false
+        }
+      },
+      {
+        "id": "media_print_visible_content",
+        "ok": true,
+        "detail": {
+          "supplier_list_print": {
+            "main_display": "block",
+            "sidebar_display": "block",
+            "text_len": 380
+          },
+          "stock_receipt_print": {
+            "main_display": "block",
+            "sidebar_display": "block",
+            "text_len": 582
+          }
+        }
+      },
+      {
+        "id": "mobile_390x844_main_and_doc_no_overflow",
+        "ok": false,
+        "detail": {
+          "supplier_list": {
+            "winW": 390,
+            "docW": 390,
+            "doc_overflow": false,
+            "nav_scrollW": 1737,
+            "nav_clientW": 390,
+            "nav_right": 390,
+            "clipped_nav_items_count": 9,
+            "clipped_nav_items": [
+              {
+                "text": "▦\nRegistrar producto",
+                "right": 412
+              },
+              {
+                "text": "▮\nCategorías",
+                "right": 542
+              },
+              {
+                "text": "✦\nProveedores",
+                "right": 683
+              },
+              {
+                "text": "☷\nVer inventario y alertas",
+                "right": 891
+              },
+              {
+                "text": "⏳\nVencimientos de lotes",
+                "right": 1093
+              }
+            ],
+            "clipped_main_elements": [
+              {
+                "tag": "BUTTON",
+                "text": "Desactivar",
+                "right": 511
+              },
+              {
+                "tag": "BUTTON",
+                "text": "Activar",
+                "right": 491
+              },
+              {
+                "tag": "BUTTON",
+                "text": "Desactivar",
+                "right": 511
+              },
+              {
+                "tag": "BUTTON",
+                "text": "Desactivar",
+                "right": 511
+              },
+              {
+                "tag": "BUTTON",
+                "text": "Activar",
+                "right": 491
+              }
+            ],
+            "table_scrollW": 507,
+            "table_clientW": 352
+          },
+          "supplier_create_errors": {
+            "winW": 390,
+            "docW": 390,
+            "doc_overflow": false,
+            "nav_scrollW": 1737,
+            "nav_clientW": 390,
+            "nav_right": 390,
+            "clipped_nav_items_count": 9,
+            "clipped_nav_items": [
+              {
+                "text": "▦\nRegistrar producto",
+                "right": 412
+              },
+              {
+                "text": "▮\nCategorías",
+                "right": 542
+              },
+              {
+                "text": "✦\nProveedores",
+                "right": 683
+              },
+              {
+                "text": "☷\nVer inventario y alertas",
+                "right": 891
+              },
+              {
+                "text": "⏳\nVencimientos de lotes",
+                "right": 1093
+              }
+            ],
+            "clipped_main_elements": [],
+            "table_scrollW": null,
+            "table_clientW": null
+          },
+          "initial_load_created": {
+            "winW": 390,
+            "docW": 390,
+            "doc_overflow": false,
+            "nav_scrollW": 1737,
+            "nav_clientW": 390,
+            "nav_right": 390,
+            "clipped_nav_items_count": 9,
+            "clipped_nav_items": [
+              {
+                "text": "▦\nRegistrar producto",
+                "right": 412
+              },
+              {
+                "text": "▮\nCategorías",
+                "right": 542
+              },
+              {
+                "text": "✦\nProveedores",
+                "right": 683
+              },
+              {
+                "text": "☷\nVer inventario y alertas",
+                "right": 891
+              },
+              {
+                "text": "⏳\nVencimientos de lotes",
+                "right": 1093
+              }
+            ],
+            "clipped_main_elements": [],
+            "table_scrollW": 860,
+            "table_clientW": 304
+          },
+          "stock_receipt": {
+            "winW": 390,
+            "docW": 390,
+            "doc_overflow": false,
+            "nav_scrollW": 1737,
+            "nav_clientW": 390,
+            "nav_right": 390,
+            "clipped_nav_items_count": 9,
+            "clipped_nav_items": [
+              {
+                "text": "▦\nRegistrar producto",
+                "right": 412
+              },
+              {
+                "text": "▮\nCategorías",
+                "right": 542
+              },
+              {
+                "text": "✦\nProveedores",
+                "right": 683
+              },
+              {
+                "text": "☷\nVer inventario y alertas",
+                "right": 891
+              },
+              {
+                "text": "⏳\nVencimientos de lotes",
+                "right": 1093
+              }
+            ],
+            "clipped_main_elements": [],
+            "table_scrollW": 632,
+            "table_clientW": 304
+          }
+        }
+      }
+    ],
+    "console_errors": [],
+    "page_errors": [],
+    "server_500s": [],
+    "layout_metrics": {
+      "supplier_list": {
+        "winW": 390,
+        "docW": 390,
+        "doc_overflow": false,
+        "nav_scrollW": 1737,
+        "nav_clientW": 390,
+        "nav_right": 390,
+        "clipped_nav_items_count": 9,
+        "clipped_nav_items": [
+          {
+            "text": "▦\nRegistrar producto",
+            "right": 412
+          },
+          {
+            "text": "▮\nCategorías",
+            "right": 542
+          },
+          {
+            "text": "✦\nProveedores",
+            "right": 683
+          },
+          {
+            "text": "☷\nVer inventario y alertas",
+            "right": 891
+          },
+          {
+            "text": "⏳\nVencimientos de lotes",
+            "right": 1093
+          }
+        ],
+        "clipped_main_elements": [
+          {
+            "tag": "BUTTON",
+            "text": "Desactivar",
+            "right": 511
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Activar",
+            "right": 491
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Desactivar",
+            "right": 511
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Desactivar",
+            "right": 511
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Activar",
+            "right": 491
+          }
+        ],
+        "table_scrollW": 507,
+        "table_clientW": 352
+      },
+      "supplier_create_errors": {
+        "winW": 390,
+        "docW": 390,
+        "doc_overflow": false,
+        "nav_scrollW": 1737,
+        "nav_clientW": 390,
+        "nav_right": 390,
+        "clipped_nav_items_count": 9,
+        "clipped_nav_items": [
+          {
+            "text": "▦\nRegistrar producto",
+            "right": 412
+          },
+          {
+            "text": "▮\nCategorías",
+            "right": 542
+          },
+          {
+            "text": "✦\nProveedores",
+            "right": 683
+          },
+          {
+            "text": "☷\nVer inventario y alertas",
+            "right": 891
+          },
+          {
+            "text": "⏳\nVencimientos de lotes",
+            "right": 1093
+          }
+        ],
+        "clipped_main_elements": [],
+        "table_scrollW": null,
+        "table_clientW": null
+      },
+      "initial_load_created": {
+        "winW": 390,
+        "docW": 390,
+        "doc_overflow": false,
+        "nav_scrollW": 1737,
+        "nav_clientW": 390,
+        "nav_right": 390,
+        "clipped_nav_items_count": 9,
+        "clipped_nav_items": [
+          {
+            "text": "▦\nRegistrar producto",
+            "right": 412
+          },
+          {
+            "text": "▮\nCategorías",
+            "right": 542
+          },
+          {
+            "text": "✦\nProveedores",
+            "right": 683
+          },
+          {
+            "text": "☷\nVer inventario y alertas",
+            "right": 891
+          },
+          {
+            "text": "⏳\nVencimientos de lotes",
+            "right": 1093
+          }
+        ],
+        "clipped_main_elements": [],
+        "table_scrollW": 860,
+        "table_clientW": 304
+      },
+      "stock_receipt": {
+        "winW": 390,
+        "docW": 390,
+        "doc_overflow": false,
+        "nav_scrollW": 1737,
+        "nav_clientW": 390,
+        "nav_right": 390,
+        "clipped_nav_items_count": 9,
+        "clipped_nav_items": [
+          {
+            "text": "▦\nRegistrar producto",
+            "right": 412
+          },
+          {
+            "text": "▮\nCategorías",
+            "right": 542
+          },
+          {
+            "text": "✦\nProveedores",
+            "right": 683
+          },
+          {
+            "text": "☷\nVer inventario y alertas",
+            "right": 891
+          },
+          {
+            "text": "⏳\nVencimientos de lotes",
+            "right": 1093
+          }
+        ],
+        "clipped_main_elements": [],
+        "table_scrollW": 632,
+        "table_clientW": 304
+      }
+    },
+    "print_metrics": {
+      "supplier_list_print": {
+        "main_display": "block",
+        "sidebar_display": "block",
+        "text_len": 380
+      },
+      "stock_receipt_print": {
+        "main_display": "block",
+        "sidebar_display": "block",
+        "text_len": 582
+      }
+    }
+  }
+}

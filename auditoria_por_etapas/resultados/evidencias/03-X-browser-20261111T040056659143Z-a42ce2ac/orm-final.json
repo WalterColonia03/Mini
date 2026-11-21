@@ -1,0 +1,95 @@
+{
+  "catalog.Category": [
+    {
+      "id": "1b9a7a08-1b11-4334-813b-75e8902d7937",
+      "name": "Suspendida",
+      "name_normalized": "suspendida",
+      "is_active": false
+    },
+    {
+      "id": "3b2a5e80-08e1-4eac-905f-78f0ca16f171",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    },
+    {
+      "id": "e78ba767-a158-49b5-8e5f-bce741636aa2",
+      "name": "Productos enlatados",
+      "name_normalized": "productos enlatados",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "a0de066b-5f3a-4f4f-923d-d642eaa5ad5e",
+      "name": "AUD03 X UPC",
+      "barcode": "012345678905",
+      "category_id": "3b2a5e80-08e1-4eac-905f-78f0ca16f171",
+      "sale_price": "4.50",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "fad0de4c-be86-4bd8-8b7d-17c6f1157519",
+      "name": "AUD03 X EAN",
+      "barcode": "0012345678905",
+      "category_id": "3b2a5e80-08e1-4eac-905f-78f0ca16f171",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "82d9b6fa-c4c3-4126-8319-e75bb543b88d",
+      "product_id": "a0de066b-5f3a-4f4f-923d-d642eaa5ad5e",
+      "available_quantity": 11,
+      "initial_quantity": 11
+    },
+    {
+      "id": "c668e17e-2223-448e-bd66-8e0651e0b6da",
+      "product_id": "fad0de4c-be86-4bd8-8b7d-17c6f1157519",
+      "available_quantity": 7,
+      "initial_quantity": 7
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "38b0a32e-f83c-46d0-8ad8-c4e427f72510",
+      "product_id": "a0de066b-5f3a-4f4f-923d-d642eaa5ad5e"
+    },
+    {
+      "id": "8d459c83-dcb4-4824-9db5-554c5042e67b",
+      "product_id": "fad0de4c-be86-4bd8-8b7d-17c6f1157519"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "cad61e68-4a1a-41e3-9678-eb51c9c84b4b",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [],
+  "sales.SaleLine": [],
+  "sales.SaleDraft": [],
+  "sales.SaleDraftLine": [],
+  "commerce": [
+    {
+      "id": "a0de066b-5f3a-4f4f-923d-d642eaa5ad5e",
+      "barcode_normalized": "012345678905",
+      "search_name": "aud03 x upc",
+      "average_cost": "1.0000"
+    },
+    {
+      "id": "fad0de4c-be86-4bd8-8b7d-17c6f1157519",
+      "barcode_normalized": "0012345678905",
+      "search_name": "aud03 x ean",
+      "average_cost": "1.0000"
+    }
+  ]
+}

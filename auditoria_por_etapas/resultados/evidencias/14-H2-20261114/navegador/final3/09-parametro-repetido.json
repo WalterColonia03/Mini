@@ -1,0 +1,257 @@
+{
+  "id": "09-parametro-repetido",
+  "rol": "ADMIN",
+  "utc": "2026-11-14T06:01:23.968214+00:00",
+  "ruta": "/inventario/productos/af65fe08-0faa-4de1-ba2a-241d140c4cc1/movimientos/",
+  "texto_visible": "Saltar al contenido\nM\nMinimarket\nGestión de bodega\n\nOPERACIONES\n\n⌂\nInicio\n\nCATÁLOGO\n\n☰\nProductos\n▦\nRegistrar producto\n▮\nCategorías\n\nINVENTARIO\n\n✦\nProveedores\n☷\nVer inventario y alertas\n⏳\nVencimientos de lotes\n⏫\nAjuste físico\n\nPERSONAL\n\n☺\nEmpleados\n\nCAJA Y VENTAS\n\n☰\nHistorial de turnos\n☰\nHistorial de ventas\nA\nAdministración 14H2\nAdministrador\n↪\nCerrar sesión\n\nMINIMARKET\n\nMovimientos del producto\nAdministración 14H2\nAdministrador\n\nSTOCK FÍSICO ACTUAL: 2 UNID. · STOCK VIGENTE: 2 UNID.\n\nMovimientos: Secuencia 14H2\n\nFechas y horas de Lima. Complete ambas fechas o deje ambas vacías para toda la historia. El minuto final está incluido.\n\nDesde (Lima):\nHasta (Lima):\nTipo:\nTodos\nEntradas\nVentas\nMermas\nAjustes\nTodas las salidas\nNo repita el parámetro tipo.\nAplicar filtros\nLimpiar filtros\n\nNo se realizó la consulta. Corrija los filtros indicados.\n\n← Volver al inventario\nMinimarket · Gestión de bodega",
+  "controles": [
+    {
+      "campo": "desde",
+      "etiqueta": "Desde (Lima):",
+      "tipo": "datetime-local",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": "60",
+      "longitud": "16"
+    },
+    {
+      "campo": "hasta",
+      "etiqueta": "Hasta (Lima):",
+      "tipo": "datetime-local",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": "60",
+      "longitud": "16"
+    },
+    {
+      "campo": "tipo",
+      "etiqueta": "Tipo:",
+      "tipo": "select-one",
+      "valor": "Mermas",
+      "opciones": [
+        "Todos",
+        "Entradas",
+        "Ventas",
+        "Mermas",
+        "Ajustes",
+        "Todas las salidas"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    }
+  ],
+  "testigo": {
+    "sha256": "b714360aafd7b3f8b40018c1b5b546716f1437cc493ca1f6e2ed659ba0bdb1ca",
+    "por_tabla": {
+      "cash_cashregister": "8367290aeb52abd33f901e3d32afdc1cc47d510c4160ea35f2df9fb0b2b941da",
+      "cash_cashshift": "ec390ffc6b93ccd0f91d0257bd75164fa2a73257128c32b2d791ee6c243521dd",
+      "cash_cashshiftclose": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "catalog_category": "d9b0b4be3500c9699b0dca9c09968cd2b999163f6ebd6697f09eda4896e6558d",
+      "catalog_product": "27699733ded31015ef496eb1cb588df6b38483f59e9bfae46ff695e43e63032a",
+      "catalog_productbarcodekey": "b9d71a29d6e85f03224d4918405a31970977a35de7d589f31ed3f93e23fd2776",
+      "inventory_initialinventoryload": "0f62bd5622efc54254d340bef1bdfb36f386bd9659b9e25a305231bd831c5bcf",
+      "inventory_initialloadline": "f9b3d5f8b394f2227aad236f3f2bf32e75e268365150c7f40a7204ff5970d0ce",
+      "inventory_lot": "41f363cce8c8e0e15b41b505376422c3c7db003176fb0622a23304d94fc9402c",
+      "inventory_physicaladjustment": "08e0cb728d5e7d04224cb416b72fe2cf4cfeddd5a750587a473f208ead8af499",
+      "inventory_stockreceipt": "31da0a4835229f8c558df22bf0f5a23025733990ff4e54518a68c58d1203944e",
+      "inventory_stockreceiptcounter": "7532940a757e8a752845454b9f206d77c0d469028346644c8f6ea37e6f6e746e",
+      "inventory_stockreceiptline": "0606fd075fefd70f245da7366ac3e9566b328c2394ce3a10541a67a5ebc96a45",
+      "inventory_stockwriteoff": "caef9cac6a25ee02e2630080ccf2d38e6f4846e64db8071f7d4d40a85cf36983",
+      "inventory_supplier": "c2e184e2b781cc15f7a1c5c84f63f5e5cdaaeb4b3ed3a6141388025c0b110f34",
+      "sales_sale": "699113973751086b0f99225209eca62870a41a208fd8fe5058bf8941dce166cd",
+      "sales_salecounter": "0f99aed32426007c8506b83fccbdc38cffbf39d424ca937978c6d04e4c9273e7",
+      "sales_saledraft": "afc0f52dd92e14aa5e272d986ecdc56883fd2edcae6f89e8eb1146e726248ee3",
+      "sales_saledraftline": "17df1289688ff6f5e2d2757167cf8528878c9c8f4cf5968942d6dc45f072e917",
+      "sales_saleline": "6fdf40f19f1f93dc04d475e1a3e88c93d6022b9bf93a29bd41d1bc96c8d0413a",
+      "sales_salelotallocation": "797a3f308f5f55680c7c8851e9a13c4affa9ce30053b217b0992ec995bfc9d97",
+      "identity_role_membership_active": "d37b310029ebc424529ed8f05e942d3784c3cd317f1be1ed3642343a98a18b73"
+    },
+    "filas": {
+      "cash_cashregister": 1,
+      "cash_cashshift": 1,
+      "cash_cashshiftclose": 0,
+      "catalog_category": 1,
+      "catalog_product": 3,
+      "catalog_productbarcodekey": 3,
+      "inventory_initialinventoryload": 3,
+      "inventory_initialloadline": 2,
+      "inventory_lot": 5,
+      "inventory_physicaladjustment": 26,
+      "inventory_stockreceipt": 2,
+      "inventory_stockreceiptcounter": 1,
+      "inventory_stockreceiptline": 2,
+      "inventory_stockwriteoff": 1,
+      "inventory_supplier": 1,
+      "sales_sale": 1,
+      "sales_salecounter": 1,
+      "sales_saledraft": 1,
+      "sales_saledraftline": 1,
+      "sales_saleline": 1,
+      "sales_salelotallocation": 3
+    },
+    "cuentas_rol_activas": [
+      [
+        "ADMIN",
+        1
+      ],
+      [
+        "ALMACENERO",
+        1
+      ],
+      [
+        "VENDEDOR",
+        1
+      ]
+    ],
+    "categorias": [
+      {
+        "name": "Familia 14H2",
+        "is_active": 1,
+        "state_version": 0
+      }
+    ],
+    "productos": [
+      {
+        "name": "Secuencia 14H2",
+        "barcode": "INT-H2-0",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 5.2,
+        "is_active": 1
+      },
+      {
+        "name": "Páginas 14H2",
+        "barcode": "INT-H2-1",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 2,
+        "is_active": 1
+      },
+      {
+        "name": "Legado 14H2",
+        "barcode": "INT-H2-2",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 0,
+        "is_active": 1
+      }
+    ],
+    "proveedores": [
+      {
+        "name": "Proveedor 14H2",
+        "ruc": "20000000014",
+        "is_active": 1
+      }
+    ],
+    "lotes": [
+      {
+        "number": "C",
+        "initial_quantity": 10,
+        "available_quantity": 0,
+        "unit_cost": 6,
+        "expiration_date": "2027-01-13",
+        "producto": "Secuencia 14H2",
+        "proveedor": "Proveedor 14H2",
+        "autor_carga": "Almacén 14H2"
+      },
+      {
+        "number": "C",
+        "initial_quantity": 5,
+        "available_quantity": 2,
+        "unit_cost": 8,
+        "expiration_date": "2027-01-13",
+        "producto": "Secuencia 14H2",
+        "proveedor": "Proveedor 14H2",
+        "autor_carga": "Almacén 14H2"
+      },
+      {
+        "number": "INICIAL",
+        "initial_quantity": 10,
+        "available_quantity": 0,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "Secuencia 14H2",
+        "proveedor": "Proveedor 14H2",
+        "autor_carga": "Almacén 14H2"
+      },
+      {
+        "number": "LEGADO",
+        "initial_quantity": 10,
+        "available_quantity": 5,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "Legado 14H2",
+        "proveedor": null,
+        "autor_carga": "Almacén 14H2"
+      },
+      {
+        "number": "PAGINA",
+        "initial_quantity": 76,
+        "available_quantity": 76,
+        "unit_cost": 2,
+        "expiration_date": "2026-12-14",
+        "producto": "Páginas 14H2",
+        "proveedor": null,
+        "autor_carga": "Almacén 14H2"
+      }
+    ],
+    "borrador": [
+      {
+        "status": "DISCARDED",
+        "quantity": 22,
+        "unit_price": 10
+      }
+    ],
+    "ventas": [
+      {
+        "correlative": "V-00000001",
+        "total_amount": 220,
+        "base_amount": 186.44,
+        "igv_amount": 33.56,
+        "discount_amount": 0,
+        "cash_received": 220,
+        "change_given": 0,
+        "vendedor": "Venta 14H2",
+        "opening_amount": 100
+      }
+    ],
+    "lineas": [
+      {
+        "product_snapshot_name": "Secuencia 14H2",
+        "product_snapshot_barcode": "INT-H2-0",
+        "quantity": 22,
+        "unit_price": 10,
+        "amount": 220,
+        "unit_cost": 5.2
+      }
+    ],
+    "bajas": [
+      {
+        "correlativo": "B-00000001",
+        "number": "C",
+        "quantity": 1,
+        "reason": "ROBO",
+        "notes": "Faltante ficticio 14H2",
+        "responsable": "Almacén 14H2"
+      }
+    ],
+    "turnos": [
+      {
+        "status": "OPEN",
+        "opening_amount": 100,
+        "vendedor": "Venta 14H2"
+      }
+    ],
+    "cierres": []
+  },
+  "sin_mutacion_verificada": true
+}

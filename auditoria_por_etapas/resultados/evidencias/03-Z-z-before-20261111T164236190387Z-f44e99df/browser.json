@@ -1,0 +1,33 @@
+{
+  "phase": "z-before",
+  "input": "Chrome keyboard; selection loss deliberately simulated",
+  "checks": [
+    "entorno aislado",
+    "históricos preparados",
+    "temporal Z01",
+    "sin copia implícita Z01",
+    "copia expresa Z01",
+    "cero envíos por captura Z01",
+    "temporal NUEVO02",
+    "sin copia implícita NUEVO02",
+    "copia expresa NUEVO02",
+    "cero envíos por captura NUEVO02",
+    "captura sin escritura",
+    "valor guardado",
+    "una ficha nueva",
+    "un POST explícito"
+  ],
+  "captures": [
+    {
+      "first": "Z01",
+      "second": "Z01",
+      "temporary": "Z01Z01"
+    },
+    {
+      "first": "Z01",
+      "second": "NUEVO02",
+      "temporary": "Z01NUEVO02"
+    }
+  ],
+  "chrome": "157.0.8103.39"
+}

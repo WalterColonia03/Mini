@@ -1,0 +1,165 @@
+{
+  "run": "auditoria_por_etapas/resultados/conciliacion_20261112/VERIFICACION/contrastes-20261113T031920Z-fead5b",
+  "started_utc": "2026-11-13T03:19:25.234545+00:00",
+  "engine": "SQLite",
+  "scope": "Servicios/ORM de datos ficticios; no navegador, no concurrencia",
+  "after_sale": {
+    "physical": 18,
+    "sellable_on_t2": 10,
+    "average": "3.0000",
+    "lots": [
+      {
+        "number": "A",
+        "available_quantity": 8,
+        "initial_quantity": 10,
+        "unit_cost": "2.0000",
+        "expiration_date": "2026-11-13"
+      },
+      {
+        "number": "B",
+        "available_quantity": 10,
+        "initial_quantity": 10,
+        "unit_cost": "4.0000",
+        "expiration_date": "2026-12-12"
+      }
+    ],
+    "sales_count": 1,
+    "writeoffs": 0
+  },
+  "sale_cost_snapshot": "3.0000",
+  "after_expiration_without_mutation": {
+    "physical": 18,
+    "sellable_on_t2": 10,
+    "average": "3.0000",
+    "lots": [
+      {
+        "number": "A",
+        "available_quantity": 8,
+        "initial_quantity": 10,
+        "unit_cost": "2.0000",
+        "expiration_date": "2026-11-13"
+      },
+      {
+        "number": "B",
+        "available_quantity": 10,
+        "initial_quantity": 10,
+        "unit_cost": "4.0000",
+        "expiration_date": "2026-12-12"
+      }
+    ],
+    "sales_count": 1,
+    "writeoffs": 0
+  },
+  "after_receipt": {
+    "physical": 28,
+    "sellable_on_t2": 20,
+    "average": "4.5000",
+    "lots": [
+      {
+        "number": "A",
+        "available_quantity": 8,
+        "initial_quantity": 10,
+        "unit_cost": "2.0000",
+        "expiration_date": "2026-11-13"
+      },
+      {
+        "number": "B",
+        "available_quantity": 10,
+        "initial_quantity": 10,
+        "unit_cost": "4.0000",
+        "expiration_date": "2026-12-12"
+      },
+      {
+        "number": "C",
+        "available_quantity": 10,
+        "initial_quantity": 10,
+        "unit_cost": "6.0000",
+        "expiration_date": "2026-12-22"
+      }
+    ],
+    "sales_count": 1,
+    "writeoffs": 0
+  },
+  "receipt_reuses_initial_load": true,
+  "repeat_result": {
+    "error": [
+      "El lote C ya existe para este producto."
+    ]
+  },
+  "repeat_rejection_without_mutation": true,
+  "expired_theft": {
+    "error": [
+      "El lote está vencido; el motivo debe ser «Vencimiento»."
+    ]
+  },
+  "expired_theft_rejection_without_mutation": true,
+  "admin_writeoff_allowed": true,
+  "after_writeoff_one_expired": {
+    "physical": 27,
+    "sellable_on_t2": 20,
+    "average": "5.0000",
+    "lots": [
+      {
+        "number": "A",
+        "available_quantity": 7,
+        "initial_quantity": 10,
+        "unit_cost": "2.0000",
+        "expiration_date": "2026-11-13"
+      },
+      {
+        "number": "B",
+        "available_quantity": 10,
+        "initial_quantity": 10,
+        "unit_cost": "4.0000",
+        "expiration_date": "2026-12-12"
+      },
+      {
+        "number": "C",
+        "available_quantity": 10,
+        "initial_quantity": 10,
+        "unit_cost": "6.0000",
+        "expiration_date": "2026-12-22"
+      }
+    ],
+    "sales_count": 1,
+    "writeoffs": 1
+  },
+  "sale_cost_after_changes": "3.0000",
+  "new_policy_expected_receipt_cost": "4.0714",
+  "sale_model_fields": [
+    "id",
+    "cash_shift",
+    "seller",
+    "draft",
+    "total_amount",
+    "base_amount",
+    "igv_amount",
+    "discount_amount",
+    "cash_received",
+    "change_given",
+    "correlative",
+    "idempotency_key",
+    "confirmed_at"
+  ],
+  "allocation_tables": [],
+  "sale_line_fields": [
+    "id",
+    "sale",
+    "product",
+    "product_snapshot_name",
+    "product_snapshot_barcode",
+    "quantity",
+    "unit_price",
+    "amount",
+    "unit_cost"
+  ],
+  "draft_quantity_constraints": [
+    "sale_draft_line_quantity_gt_zero",
+    "sale_draft_line_unit_price_gt_zero",
+    "sale_draft_line_one_product"
+  ],
+  "reproduced": true,
+  "changed_protected": [],
+  "operator_db_sha256": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+  "finished_utc": "2026-11-13T03:19:28.635275+00:00"
+}

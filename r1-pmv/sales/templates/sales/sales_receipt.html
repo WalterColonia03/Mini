@@ -1,0 +1,103 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Constancia interna · {{ sale.correlative }} · Minimarket{% endblock %}
+
+{% block content %}
+<section class="page-heading no-print">
+  <div>
+    <p class="eyebrow">Constancia interna</p>
+    <h2>{{ sale.correlative }}</h2>
+    <p class="lede">Venta confirmada y registrada correctamente.</p>
+  </div>
+  <div class="form-actions sticky-actions">
+    <button class="button button-secondary" type="button" onclick="window.print()">Imprimir</button>
+    {% if open_shift %}
+      <a class="button button-secondary" href="{% url 'sales-shift-history' %}">Ventas del turno</a>
+    {% endif %}
+    <a class="button button-secondary" href="{% url 'sales-history' %}">Volver al historial</a>
+    {% if user.role.code == 'VENDEDOR' %}
+      <a class="button button-primary" href="{% url 'sales-draft' %}">Nueva venta</a>
+    {% endif %}
+  </div>
+</section>
+
+<section class="panel" id="constancia-interna">
+  <div class="receipt-header">
+    <p class="eyebrow">Bodega Minimarket</p>
+    <h3>Constancia interna de venta</h3>
+    <div class="legal-notice" role="note">
+      <p class="legal-notice-title">CONTROL INTERNO — NO VÁLIDO COMO COMPROBANTE DE PAGO</p>
+      <p class="help">
+        Este documento es una constancia interna de la bodega. No tiene validez tributaria
+        ni es un comprobante de pago autorizado por SUNAT; la boleta o factura oficial se
+        entrega por el canal autorizado habitual.
+      </p>
+    </div>
+  </div>
+
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Nro. constancia</dt><dd><strong class="font-monospace">{{ sale.correlative }}</strong></dd></div>
+    <div><dt>Fecha y hora</dt><dd>{{ sale.confirmed_at|date:"d/m/Y H:i" }}</dd></div>
+    <div><dt>Vendedor</dt><dd>{{ sale.seller_snapshot_name|default:"No disponible (registro anterior)" }}</dd></div>
+    <div><dt>Caja</dt><dd>{{ sale.cash_register_snapshot_code|default:"No disponible (registro anterior)" }}</dd></div>
+    <div><dt>Medio de pago</dt><dd>Efectivo</dd></div>
+  </dl>
+
+  {% if not sale.has_original_line_order %}
+    <p class="help" role="note">El orden original de los productos no está disponible en este registro.</p>
+  {% endif %}
+  <div class="table-wrap" tabindex="0">
+    <table class="receipt-table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Código</th>
+          <th class="text-end">Cant.</th>
+          <th class="text-end">P. Unit.</th>
+          <th class="text-end">Importe</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for line in sale.lines.all %}
+          <tr>
+            <td>{{ line.product_snapshot_name }}</td>
+            <td class="font-monospace">{{ line.product_snapshot_barcode }}</td>
+            <td class="text-end">{{ line.quantity }}</td>
+            <td class="text-end">S/ {{ line.unit_price|floatformat:2 }}</td>
+            <td class="text-end">S/ {{ line.amount|floatformat:2 }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <dl class="summary-list sale-totals">
+    {% if sale.discount_amount %}
+      <div><dt>Subtotal</dt><dd>S/ {{ pre_discount_subtotal|floatformat:2 }}</dd></div>
+      <div><dt>Descuento</dt><dd>- S/ {{ sale.discount_amount|floatformat:2 }}</dd></div>
+    {% endif %}
+    <div><dt>Base imponible</dt><dd>S/ {{ sale.base_amount|floatformat:2 }}</dd></div>
+    <div><dt>IGV (18 %)</dt><dd>S/ {{ sale.igv_amount|floatformat:2 }}</dd></div>
+    <div class="total-row"><dt>Total</dt><dd>S/ {{ sale.total_amount|floatformat:2 }}</dd></div>
+    <div><dt>Efectivo recibido</dt><dd>S/ {{ sale.cash_received|floatformat:2 }}</dd></div>
+    <div><dt>Vuelto</dt><dd>S/ {{ sale.change_given|floatformat:2 }}</dd></div>
+  </dl>
+
+  <div class="legal-notice legal-notice-footer" role="note">
+    <p class="legal-notice-title">CONTROL INTERNO — NO VÁLIDO COMO COMPROBANTE DE PAGO</p>
+    <p class="help">
+      Constancia interna de uso operativo sin validez tributaria; no sustituye a un comprobante autorizado por SUNAT.
+    </p>
+  </div>
+</section>
+
+<style>
+@media print {
+  @page { margin: 12mm; }
+  .no-print, .flash-stack { display: none !important; }
+  nav, header, footer { display: none !important; }
+  #constancia-interna { box-shadow: none; border: 1px solid #000; padding: 18px; max-width: 100%; }
+}
+</style>
+{% endblock %}
+

@@ -1,0 +1,98 @@
+"""Chrome real: empty selectors, hidden-key errors, honest incomplete origins."""
+import argparse
+import importlib.util
+import json
+from concurrent.futures import ThreadPoolExecutor
+from datetime import timedelta
+from decimal import Decimal
+from pathlib import Path
+
+HERE=Path(__file__).resolve().parent
+spec=importlib.util.spec_from_file_location('audit14d',HERE.parent/'14-D-20261113/navegador/recorrido.py')
+base=importlib.util.module_from_spec(spec);spec.loader.exec_module(base)
+FIXTURE={}
+
+
+def add_fixtures():
+    """Technical data preparation on its own ORM thread, after empty selectors."""
+    import uuid
+    from django.db import connection
+    from django.utils import timezone
+    from catalog.models import Category,Product
+    from identity.models import Account
+    from inventory.models import InitialInventoryLoad,Lot,StockReceipt,StockReceiptLine
+    from inventory.services import confirm_initial_load,LotInput
+    try:
+        worker=Account.objects.get(email='almacenero@example.invalid')
+        cat=Category.objects.create(name='Complementos 14 cierre')
+        for index,name in enumerate(('Normal','Legado','Cabecera incompleta','Doble origen')):
+            product=Product.objects.create(name=name+' 14 cierre',barcode='INT-COMP-'+str(index),category=cat,sale_price=10)
+            if name=='Legado':
+                # Cost is controlled fixture input, not reconstructed legacy history.
+                product.average_cost=Decimal('3')
+                product.save(update_fields=['average_cost'])
+                load=InitialInventoryLoad.objects.create(product=product,responsible=worker)
+                lot=Lot.objects.create(product=product,initial_load=load,number='LEGADO',initial_quantity=10,available_quantity=10,unit_cost=3,expiration_date=timezone.localdate()+timedelta(days=30))
+            else:
+                load=confirm_initial_load(actor=worker,product=product,lots=[LotInput('A',10,Decimal('3'),timezone.localdate()+timedelta(days=30))])
+                lot=load.lots.get()
+            if name=='Cabecera incompleta':
+                InitialInventoryLoad.objects.filter(pk=load.pk).update(responsible_snapshot_name=None)
+            if name=='Doble origen':
+                receipt=StockReceipt.objects.create(product=product,responsible=worker,idempotency_key=uuid.uuid4(),content_signature='0'*64,
+                    correlative='R-00000001',product_snapshot_name=product.name,product_snapshot_barcode=product.barcode,
+                    responsible_snapshot_name=worker.display_name,average_cost_after=3)
+                StockReceiptLine.objects.create(receipt=receipt,lot=lot,number='A',quantity=10,unit_cost=3,expiration_date=lot.expiration_date)
+            FIXTURE[name]=dict(product=str(product.pk),lot=str(lot.pk))
+    finally:
+        connection.close()
+
+
+class Journey(base.Journey):
+    def run(self,browser,password):
+        a=self.connect(browser,'ADMIN',password);w=self.connect(browser,'ALMACENERO',password);v=self.connect(browser,'VENDEDOR',password)
+        empty=base.witness(self.db)
+        base.link(w,'/inventario/bajas/nueva/')
+        self.observe('C01-selector-merma-vacio','ALMACENERO',w,lambda s,t:'No hay lotes con existencias disponibles.' in t,same=empty,photo=True)
+        base.link(a,'/inventario/ajustes/nuevo/')
+        self.observe('C02-selector-ajuste-vacio','ADMIN',a,lambda s,t:'No hay lotes registrados.' in t and a.locator('#new-lot-product option').count()==1,same=empty,photo=True)
+        with ThreadPoolExecutor(max_workers=1) as pool:pool.submit(add_fixtures).result()
+        base.save(self.out/'fixture.json',dict(datos=FIXTURE,preparacion='Tras selector vacío se crean fixture nueva y tres inconsistencias conocidas por ORM controlado, solo base temporal. No representa operación por UI.'))
+        before=base.witness(self.db)
+        for name,page,role,path in [('merma',w,'ALMACENERO','/inventario/bajas/nueva/'),('ajuste',a,'ADMIN','/inventario/ajustes/nuevo/')]:
+            for keyvalue,case in [('', 'ausente'),('not-a-uuid','invalida')]:
+                page.goto(self.base+path+'?lote='+FIXTURE['Normal']['lot'])
+                if name=='merma':
+                    base.fill(page,'quantity','2');base.selector(page,'reason').select_option('ROBO');base.fill(page,'notes','Faltante ficticio')
+                else:
+                    base.fill(page,'delta','2');base.fill(page,'reason','Conteo ficticio')
+                page.locator('[name=idempotency_key]').evaluate('(element,value)=>element.value=value',keyvalue)
+                base.button(page,'Confirmar baja' if name=='merma' else 'Confirmar ajuste')
+                self.observe('C03-'+name+'-clave-'+case,role,page,lambda s,t:page.locator('.alert-danger').count()>0,same=before,photo=True)
+        w.goto(self.base+'/inventario/bajas/nueva/?lote='+FIXTURE['Legado']['lot'])
+        base.fill(w,'quantity','2');base.selector(w,'reason').select_option('ROBO');base.fill(w,'notes','Faltante de origen anterior documentado')
+        base.button(w,'Confirmar baja')
+        after=self.observe('C04-merma-nueva-origen-desconocido','ALMACENERO',w,lambda s,t:'Origen no disponible (registro anterior o incompleto)' in w.get_by_test_id('writeoff-receipt').inner_text(),photo=True)
+        changed=[table for table in before['por_tabla'] if before['por_tabla'][table]!=after['por_tabla'][table]]
+        assert set(changed)=={'inventory_lot','inventory_stockwriteoff'}
+        w.reload();self.observe('C05-recarga-origen-desconocido','ALMACENERO',w,same=after)
+        for name,case,message in [
+            ('Legado','C06-kardex-legado','Sin fotografía de entrada'),
+            ('Cabecera incompleta','C07-cabecera-incompleta','La cabecera de una carga está incompleta.'),
+            ('Doble origen','C08-doble-origen','Un lote tiene más de un origen registrado.')]:
+            a.goto(self.base+f"/inventario/productos/{FIXTURE[name]['product']}/movimientos/")
+            self.observe(case,'ADMIN',a,lambda s,t:message in t and a.get_by_test_id('closing-balance').inner_text()=='No disponible',same=after,photo=True)
+            a.reload();self.observe(case+'-recarga','ADMIN',a,same=after)
+        self.denied('C09-vendedor-origen-desconocido','VENDEDOR',v,w.url.removeprefix(self.base))
+        base.save(self.out/'resultado.json',dict(selector_vacio=True,claves_rechazadas=4,nueva_merma_origen_desconocido=True,
+            cabecera_incompleta_sin_saldo=True,doble_origen_sin_saldo=True,lecturas_rechazos_sin_mutacion=True))
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('salida',type=Path);args=parser.parse_args()
+    base.Journey=Journey
+    try:base.main(args.salida)
+    finally:
+        p=args.salida/'ejecucion.json'
+        if p.exists():
+            data=json.loads(p.read_text(encoding='utf-8'));data.update(sublote='14-CIERRE-estados-complementarios',runner_complementos_sha256=base.sha(Path(__file__).read_bytes()));base.save(p,data)

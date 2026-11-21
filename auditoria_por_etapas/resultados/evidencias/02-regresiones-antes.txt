@@ -1,0 +1,128 @@
+EXIT_FAILURES=8
+Found 8 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_fix_e02_01_employee_list_filters_by_name_or_email_and_orders_alphabetically (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_01_employee_list_filters_by_name_or_email_and_orders_alphabetically) ... FAIL
+test_fix_e02_02_empty_post_binds_forms_and_views_set_never_cache_and_sensitive_decorators (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_02_empty_post_binds_forms_and_views_set_never_cache_and_sensitive_decorators) ... FAIL
+test_fix_e02_03_deactivation_revokes_persisted_sessions_discards_draft_and_reactivation_clears_lockout (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_03_deactivation_revokes_persisted_sessions_discards_draft_and_reactivation_clears_lockout) ... FAIL
+test_fix_e02_03b_role_change_updates_active_session_role_code_and_preserves_display_name_on_error (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_03b_role_change_updates_active_session_role_code_and_preserves_display_name_on_error) ... FAIL
+test_fix_e02_04_duplicate_email_message_matches_hu_usr_02_ca_02_literal (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_04_duplicate_email_message_matches_hu_usr_02_ca_02_literal) ... FAIL
+test_fix_e02_05_rn24_password_policy_accepts_7_chars_and_rejects_missing_classes_in_form_and_service (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_05_rn24_password_policy_accepts_7_chars_and_rejects_missing_classes_in_form_and_service) ... FAIL
+test_fix_e02_06_logout_draft_warning_only_triggers_when_draft_has_lines (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_06_logout_draft_warning_only_triggers_when_draft_has_lines) ... FAIL
+test_fix_e02_07_email_fields_allow_up_to_254_chars (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_07_email_fields_allow_up_to_254_chars) ... FAIL
+
+======================================================================
+FAIL: test_fix_e02_01_employee_list_filters_by_name_or_email_and_orders_alphabetically (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_01_employee_list_filters_by_name_or_email_and_orders_alphabetically)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_etapa02_audit.py", line 112, in test_fix_e02_01_employee_list_filters_by_name_or_email_and_orders_alphabetically
+    self.assertIn('name="q"', response_all.content.decode("utf-8"), "Falta input de búsqueda name='q'")
+AssertionError: 'name="q"' not found in '\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Empleados</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicación">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n            <p class="sidebar-label">Cat&#225;logo</p>\n            <a class="nav-item" href="/productos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>\n            </a>\n            <a class="nav-item" href="/productos/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>\n            </a>\n            <a class="nav-item" href="/productos/categorias/">\n              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>\n            </a>\n            <p class="sidebar-label">Inventario</p>\n            <a class="nav-item" href="/inventario/proveedores/">\n              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>\n            </a>\n            <a class="nav-item" href="/inventario/stock/">\n              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>\n            </a>\n            <a class="nav-item" href="/productos/vencimientos/">\n              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>\n            </a>\n            <a class="nav-item" href="/inventario/ajustes/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>\n            </a>\n            <p class="sidebar-label">Personal</p>\n            <a class="nav-item is-active" href="/empleados/">\n              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>\n            </a>\n            <p class="sidebar-label">Caja y ventas</p>\n            <a class="nav-item" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>\n            </a>\n          \n          \n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">A</span>\n            <span><strong>Ana Administradora</strong><small>Administrador</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>\n              Empleados\n              \n            </h1>\n          </div>\n          <div class="topbar-user"><span>Ana Administradora</span><span class="role-pill">Administrador</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<div class="d-flex justify-content-between align-items-center mb-4">\n  <h2>Empleados</h2>\n  <a href="/empleados/nuevo/" class="btn btn-primary">+ Nuevo empleado</a>\n</div>\n\n\n<div class="table-responsive">\n  <table class="table table-bordered table-hover align-middle">\n    <thead class="table-dark">\n      <tr>\n        <th>Nombre</th>\n        <th>Correo</th>\n        <th>Rol</th>\n        <th>Estado</th>\n        <th>Acciones</th>\n      </tr>\n    </thead>\n    <tbody>\n      \n      <tr>\n        <td>Ana Administradora</td>\n        <td>admin@minimarket.local</td>\n        <td><span class="badge bg-secondary">Administrador</span></td>\n        <td>\n          \n            <span class="badge bg-success">Activo</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap">\n            <a href="/empleados/d35ec1d5-f5a6-4704-a37a-5c2556df1a75/editar/" class="btn btn-sm btn-outline-primary">Editar</a>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td>Bruno Almacenero</td>\n        <td>almacen@minimarket.local</td>\n        <td><span class="badge bg-secondary">Almacenero</span></td>\n        <td>\n          \n            <span class="badge bg-success">Activo</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap">\n            <a href="/empleados/e89d2c22-73d3-4547-b02f-89aec691952f/editar/" class="btn btn-sm btn-outline-primary">Editar</a>\n            \n            <form method="post" action="/empleados/e89d2c22-73d3-4547-b02f-89aec691952f/estado/">\n              <input type="hidden" name="csrfmiddlewaretoken" value="<REDACTED_CSRF_TOKEN>">\n              <button type="submit" class="btn btn-sm btn-outline-warning">\n                Desactivar\n              </button>\n            </form>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td>Carla Vendedora</td>\n        <td>ventas@minimarket.local</td>\n        <td><span class="badge bg-secondary">Vendedor</span></td>\n        <td>\n          \n            <span class="badge bg-success">Activo</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap">\n            <a href="/empleados/44ffb3cc-b558-4b6e-ab81-9f2db22c5514/editar/" class="btn btn-sm btn-outline-primary">Editar</a>\n            \n            <form method="post" action="/empleados/44ffb3cc-b558-4b6e-ab81-9f2db22c5514/estado/">\n              <input type="hidden" name="csrfmiddlewaretoken" value="<REDACTED_CSRF_TOKEN>">\n              <button type="submit" class="btn btn-sm btn-outline-warning">\n                Desactivar\n              </button>\n            </form>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td>Diego Vendedor</td>\n        <td>ventas2@minimarket.local</td>\n        <td><span class="badge bg-secondary">Vendedor</span></td>\n        <td>\n          \n            <span class="badge bg-success">Activo</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap">\n            <a href="/empleados/3ed1a1bb-d32f-4427-b78b-043a107b1033/editar/" class="btn btn-sm btn-outline-primary">Editar</a>\n            \n            <form method="post" action="/empleados/3ed1a1bb-d32f-4427-b78b-043a107b1033/estado/">\n              <input type="hidden" name="csrfmiddlewaretoken" value="<REDACTED_CSRF_TOKEN>">\n              <button type="submit" class="btn btn-sm btn-outline-warning">\n                Desactivar\n              </button>\n            </form>\n            \n          </div>\n        </td>\n      </tr>\n      \n      <tr>\n        <td>Elena Inactiva</td>\n        <td>inactivo@minimarket.local</td>\n        <td><span class="badge bg-secondary">Vendedor</span></td>\n        <td>\n          \n            <span class="badge bg-danger">Inactivo</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap">\n            <a href="/empleados/0ff30c9b-5f16-4e65-ac03-12dbc88087cb/editar/" class="btn btn-sm btn-outline-primary">Editar</a>\n            \n            <form method="post" action="/empleados/0ff30c9b-5f16-4e65-ac03-12dbc88087cb/estado/">\n              <input type="hidden" name="csrfmiddlewaretoken" value="<REDACTED_CSRF_TOKEN>">\n              <button type="submit" class="btn btn-sm btn-outline-success">\n                Reactivar\n              </button>\n            </form>\n            \n          </div>\n        </td>\n      </tr>\n      \n    </tbody>\n  </table>\n</div>\n\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  \n</body>\n</html>\n' : Falta input de búsqueda name='q'
+
+======================================================================
+FAIL: test_fix_e02_02_empty_post_binds_forms_and_views_set_never_cache_and_sensitive_decorators (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_02_empty_post_binds_forms_and_views_set_never_cache_and_sensitive_decorators)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_etapa02_audit.py", line 142, in test_fix_e02_02_empty_post_binds_forms_and_views_set_never_cache_and_sensitive_decorators
+    self.assertIn("no-store", res_list.headers.get("Cache-Control", ""))
+AssertionError: 'no-store' not found in ''
+
+======================================================================
+FAIL: test_fix_e02_03_deactivation_revokes_persisted_sessions_discards_draft_and_reactivation_clears_lockout (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_03_deactivation_revokes_persisted_sessions_discards_draft_and_reactivation_clears_lockout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_etapa02_audit.py", line 192, in test_fix_e02_03_deactivation_revokes_persisted_sessions_discards_draft_and_reactivation_clears_lockout
+    self.assertGreater(self.seller2.updated_at, old_updated_at)
+AssertionError: datetime.datetime(2026, 11, 9, 22, 38, 27, 120709, tzinfo=datetime.timezone.utc) not greater than datetime.datetime(2026, 11, 9, 22, 38, 27, 120709, tzinfo=datetime.timezone.utc)
+
+======================================================================
+FAIL: test_fix_e02_03b_role_change_updates_active_session_role_code_and_preserves_display_name_on_error (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_03b_role_change_updates_active_session_role_code_and_preserves_display_name_on_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_etapa02_audit.py", line 236, in test_fix_e02_03b_role_change_updates_active_session_role_code_and_preserves_display_name_on_error
+    self.assertEqual(session_obj.get_decoded().get("role_code"), Role.Code.WAREHOUSE)
+AssertionError: 'VENDEDOR' != Role.Code.WAREHOUSE
+
+======================================================================
+FAIL: test_fix_e02_04_duplicate_email_message_matches_hu_usr_02_ca_02_literal (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_04_duplicate_email_message_matches_hu_usr_02_ca_02_literal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_etapa02_audit.py", line 264, in test_fix_e02_04_duplicate_email_message_matches_hu_usr_02_ca_02_literal
+    self.assertEqual(
+AssertionError: ['Ya existe una cuenta con ese correo electrónico.'] != ['El correo ya está registrado.']
+
+======================================================================
+FAIL: test_fix_e02_05_rn24_password_policy_accepts_7_chars_and_rejects_missing_classes_in_form_and_service (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_05_rn24_password_policy_accepts_7_chars_and_rejects_missing_classes_in_form_and_service)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_etapa02_audit.py", line 308, in test_fix_e02_05_rn24_password_policy_accepts_7_chars_and_rejects_missing_classes_in_form_and_service
+    self.assertTrue(valid_form.is_valid(), valid_form.errors)
+AssertionError: False is not true : <ul class="errorlist"><li>password<ul class="errorlist" id="id_password_error"><li>La contraseña debe tener al menos 8 caracteres.</li></ul></li></ul>
+
+======================================================================
+FAIL: test_fix_e02_06_logout_draft_warning_only_triggers_when_draft_has_lines (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_06_logout_draft_warning_only_triggers_when_draft_has_lines)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_etapa02_audit.py", line 367, in test_fix_e02_06_logout_draft_warning_only_triggers_when_draft_has_lines
+    self.assertFalse(res_empty_draft.context["has_active_draft"])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_fix_e02_07_email_fields_allow_up_to_254_chars (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_07_email_fields_allow_up_to_254_chars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_etapa02_audit.py", line 391, in test_fix_e02_07_email_fields_allow_up_to_254_chars
+    self.assertEqual(EmployeeCreationForm.base_fields["email"].max_length, 254)
+AssertionError: 320 != 254
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.638s
+
+FAILED (failures=8)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+

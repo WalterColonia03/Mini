@@ -1,0 +1,988 @@
+Creating test database for alias 'default'...
+
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:49:55.226301+00:00", "outcome": "REJECTED", "request_id": "fe614209ba9c4727bc48f86f538ad718", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+...identity_audit {"action": "ACCESS_DENIED", "actor_id": "0fcdd64f-1aff-4468-916f-d6c38e88e550", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:55.305717+00:00", "outcome": "REJECTED", "request_id": "bb63944ecd4f4b1ba81a7ab32885ed11", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+.identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:49:55.325946+00:00", "outcome": "REJECTED", "request_id": "0dd37094df484925b6e9a1dd3a5675fc", "target_id": "/", "target_type": "Endpoint"}
+..Forbidden (CSRF cookie not set.): /
+...identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:49:55.626009+00:00", "outcome": "REJECTED", "request_id": "0ff4717f20a840ffad5ce32b73b35338", "target_id": "/ventas/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "0fcdd64f-1aff-4468-916f-d6c38e88e550", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:55.670757+00:00", "outcome": "REJECTED", "request_id": "03f708f1d4774e8c8e33c32effb20e89", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "03350146-4452-40fd-908a-e4382f8a0a74", "actor_identifier": "seller@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:55.677332+00:00", "outcome": "REJECTED", "request_id": "079bb18394424d15ab3eadc520365f31", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e4bde044-6d96-402e-9862-37be8112d98b", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:55.684660+00:00", "outcome": "REJECTED", "request_id": "80aa588000c64ff6846bf7ba824ff96d", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "03350146-4452-40fd-908a-e4382f8a0a74", "actor_identifier": "seller@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:55.716329+00:00", "outcome": "REJECTED", "request_id": "2ccf60edf7024ac8a5e090626c47b7ff", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e4bde044-6d96-402e-9862-37be8112d98b", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:55.722368+00:00", "outcome": "REJECTED", "request_id": "946559225ac042c9a38ea8f042edeb7a", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "0fcdd64f-1aff-4468-916f-d6c38e88e550", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:55.730710+00:00", "outcome": "REJECTED", "request_id": "89719f4b26bc4c8a8ebc5ed17917b2ac", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e4bde044-6d96-402e-9862-37be8112d98b", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:55.757809+00:00", "outcome": "REJECTED", "request_id": "c480afb49bf6400c8488acf2c6d10dee", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "0fcdd64f-1aff-4468-916f-d6c38e88e550", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:55.766798+00:00", "outcome": "REJECTED", "request_id": "d3620f8b9f7e49b6a915ee380f3d5eee", "target_id": "/ventas/", "target_type": "Endpoint"}
+.........identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1f3ba4af-5763-4ffb-bc32-5f3c104f9848", "actor_identifier": "admined@test.invalid", "metadata": {"fields": ["role"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:49:56.744590+00:00", "outcome": "REJECTED", "request_id": "66d6f2c252114866a619b954dd1f00ce", "target_id": "1f3ba4af-5763-4ffb-bc32-5f3c104f9848", "target_type": "Account"}
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1f3ba4af-5763-4ffb-bc32-5f3c104f9848", "actor_identifier": "admined@test.invalid", "metadata": {"action_requested": "desactivar", "reason": "No puedes desactivar tu propia cuenta."}, "occurred_at_utc": "2026-11-15T15:49:56.772522+00:00", "outcome": "REJECTED", "request_id": "0331d1050aee439a9058ce90500c97c6", "target_id": "1f3ba4af-5763-4ffb-bc32-5f3c104f9848", "target_type": "Account"}
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1f3ba4af-5763-4ffb-bc32-5f3c104f9848", "actor_identifier": "admined@test.invalid", "metadata": {"fields": ["role"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:49:56.804657+00:00", "outcome": "REJECTED", "request_id": "a53b5153c97b4dbeb392c7cfc8183d7f", "target_id": "9ae125ef-935f-4aef-9be6-d92f5ae3dbe5", "target_type": "Account"}
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1f3ba4af-5763-4ffb-bc32-5f3c104f9848", "actor_identifier": "admined@test.invalid", "metadata": {"action_requested": "desactivar", "reason": "No se puede desactivar a un vendedor con un turno de caja abierto. Cierre el turno primero."}, "occurred_at_utc": "2026-11-15T15:49:56.840904+00:00", "outcome": "REJECTED", "request_id": "b80b4e5c6ea24c34a326207db0867d6c", "target_id": "9ae125ef-935f-4aef-9be6-d92f5ae3dbe5", "target_type": "Account"}
+..identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1f3ba4af-5763-4ffb-bc32-5f3c104f9848", "actor_identifier": "admined@test.invalid", "metadata": {"fields": ["email"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:49:56.995378+00:00", "outcome": "REJECTED", "request_id": "b40db1dd60ec4bf384fc9e60d688ec14", "target_id": "9ae125ef-935f-4aef-9be6-d92f5ae3dbe5", "target_type": "Account"}
+......identity_audit {"action": "ACCESS_DENIED", "actor_id": "9ae125ef-935f-4aef-9be6-d92f5ae3dbe5", "actor_identifier": "sellered@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:58.075375+00:00", "outcome": "REJECTED", "request_id": "b9d0af8432df4ba7a47cb99576314318", "target_id": "/empleados/1f3ba4af-5763-4ffb-bc32-5f3c104f9848/estado/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "9ae125ef-935f-4aef-9be6-d92f5ae3dbe5", "actor_identifier": "sellered@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:58.100792+00:00", "outcome": "REJECTED", "request_id": "0a813f6335fb416299321fc44e0659c4", "target_id": "/empleados/9ae125ef-935f-4aef-9be6-d92f5ae3dbe5/editar/", "target_type": "Endpoint"}
+.....identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "b752cec0-bc21-435a-9865-f6b2dd83d814", "actor_identifier": "adminemp@test.invalid", "metadata": {"fields": ["email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:49:59.407734+00:00", "outcome": "REJECTED", "request_id": "59c130ad3bde444594f852cce13acf52", "target_id": null, "target_type": "Account"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "60e1ddd4-bb09-4b2b-bf2e-546af95e3068", "actor_identifier": "selleremp@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:59.445000+00:00", "outcome": "REJECTED", "request_id": "e1ac75e91f7642899bef1bfef17f15ef", "target_id": "/empleados/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "60e1ddd4-bb09-4b2b-bf2e-546af95e3068", "actor_identifier": "selleremp@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:59.480708+00:00", "outcome": "REJECTED", "request_id": "55ebe51c48b84afba6a93b8619e5a011", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "1b10eac5-7dec-497e-a50c-2c2e3d528acc", "actor_identifier": "super01i@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:49:59.905869+00:00", "outcome": "REJECTED", "request_id": "bf4738ec5e444b3db0d1d3ce551bf9eb", "target_id": "/empleados/", "target_type": "Endpoint"}
+..identity_audit {"action": "ACCESS_DENIED", "actor_id": "53df1094-5bc3-4b71-b369-9e9cd3700284", "actor_identifier": "warehouse01i@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:00.038644+00:00", "outcome": "REJECTED", "request_id": "6f98ff5aed53457f90a4825b00c721a5", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "53df1094-5bc3-4b71-b369-9e9cd3700284", "actor_identifier": "warehouse01i@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:00.048330+00:00", "outcome": "REJECTED", "request_id": "12852e987737441984462639314e5557", "target_id": "/empleados/e74e4f77-6f8c-4c6b-81a9-c3540313bb57/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "53df1094-5bc3-4b71-b369-9e9cd3700284", "actor_identifier": "warehouse01i@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:00.054865+00:00", "outcome": "REJECTED", "request_id": "eb7bad9b67a74db8a02c8f30bf502f53", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1b10eac5-7dec-497e-a50c-2c2e3d528acc", "actor_identifier": "super01i@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:00.173906+00:00", "outcome": "REJECTED", "request_id": "d1444a13a19041a4bde2f05335d5c8a9", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1b10eac5-7dec-497e-a50c-2c2e3d528acc", "actor_identifier": "super01i@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:00.178427+00:00", "outcome": "REJECTED", "request_id": "ba40a84bc5d343f9ac9b5ae39bcf514f", "target_id": "/empleados/e74e4f77-6f8c-4c6b-81a9-c3540313bb57/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1b10eac5-7dec-497e-a50c-2c2e3d528acc", "actor_identifier": "super01i@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:00.185928+00:00", "outcome": "REJECTED", "request_id": "d55b1d7fb8ce42b0aba7cb0f4732b205", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e74e4f77-6f8c-4c6b-81a9-c3540313bb57", "actor_identifier": "staff01i@example.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:00.298228+00:00", "outcome": "REJECTED", "request_id": "ff0787d5ed5d4bd59c89fa1f48ec45e6", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+.........identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["display_name", "email", "password", "role"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:00.936673+00:00", "outcome": "REJECTED", "request_id": "38f2846d891947ad9bf993c6138a973d", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["display_name", "email", "new_password", "role"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:00.948196+00:00", "outcome": "REJECTED", "request_id": "66f3f8c7454c4f02a0adeb776421e26b", "target_id": "18021f91-ee43-4251-a19c-a2bf7e086fb4", "target_type": "Account"}
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["display_name", "email", "password", "role"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:00.982004+00:00", "outcome": "REJECTED", "request_id": "f68d2e5f34104c1b942495426f1f20aa", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["display_name"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:00.990002+00:00", "outcome": "REJECTED", "request_id": "f57678bb58084436aa4adf482718fef1", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["display_name"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:01.000730+00:00", "outcome": "REJECTED", "request_id": "cc58d0677bdc4d3685152a5541a40ea7", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:01.009975+00:00", "outcome": "REJECTED", "request_id": "fe1e484714e24c25981d00b606359fa3", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["role"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:01.017492+00:00", "outcome": "REJECTED", "request_id": "4fc400230b944343a764e7fb88f55442", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["role"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:01.024026+00:00", "outcome": "REJECTED", "request_id": "4a08091d5a9b49beb0d192e90c9cc95d", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["password"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:01.033066+00:00", "outcome": "REJECTED", "request_id": "413702605b6b4d8e891987ef93de67b9", "target_id": null, "target_type": "Account"}
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["display_name"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:01.059844+00:00", "outcome": "REJECTED", "request_id": "b34ff074af0943cf95f0c4c2a707c887", "target_id": "18021f91-ee43-4251-a19c-a2bf7e086fb4", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["display_name"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:01.070731+00:00", "outcome": "REJECTED", "request_id": "a229fb7023784ee79dcedaddf733f6e4", "target_id": "18021f91-ee43-4251-a19c-a2bf7e086fb4", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["email"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:01.083901+00:00", "outcome": "REJECTED", "request_id": "d5f9c9e667ca422bb36903de745a786d", "target_id": "18021f91-ee43-4251-a19c-a2bf7e086fb4", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["role"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:01.097092+00:00", "outcome": "REJECTED", "request_id": "2d112daa626944799a51f981ded2ed72", "target_id": "18021f91-ee43-4251-a19c-a2bf7e086fb4", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["new_password"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:01.108597+00:00", "outcome": "REJECTED", "request_id": "e3ab960a806a4c68b01d1059de102d08", "target_id": "18021f91-ee43-4251-a19c-a2bf7e086fb4", "target_type": "Account"}
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:01.229572+00:00", "outcome": "REJECTED", "request_id": "6c357fd62d0e47a18dae265c76eead28", "target_id": null, "target_type": "Account"}
+..identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:01.285177+00:00", "outcome": "REJECTED", "request_id": "3b49e4af35b24c069e7c8ecad12ec6f8", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["email"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:01.297082+00:00", "outcome": "REJECTED", "request_id": "fb951d91fbda413cbc79fd405488676d", "target_id": "18021f91-ee43-4251-a19c-a2bf7e086fb4", "target_type": "Account"}
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "7830ba60-d571-4bcd-acc3-ac5480511466", "actor_identifier": "admin-fields@example.invalid", "metadata": {"fields": ["display_name"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:01.410651+00:00", "outcome": "REJECTED", "request_id": "db18f29d72d3462a93a7fcbe11398c16", "target_id": null, "target_type": "Account"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "18021f91-ee43-4251-a19c-a2bf7e086fb4", "actor_identifier": "seller-fields@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:01.463828+00:00", "outcome": "REJECTED", "request_id": "2836eb72f6bb42d3bba191465c9e8221", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "18021f91-ee43-4251-a19c-a2bf7e086fb4", "actor_identifier": "seller-fields@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:01.468847+00:00", "outcome": "REJECTED", "request_id": "87703cd274d541019c65067da67faef9", "target_id": "/empleados/18021f91-ee43-4251-a19c-a2bf7e086fb4/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "52099fc3-7b9b-47cf-b630-dd6e9200ac2b", "actor_identifier": "warehouse-fields@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:01.567900+00:00", "outcome": "REJECTED", "request_id": "5ae9e08156fe41b28613e55d53a9e936", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "52099fc3-7b9b-47cf-b630-dd6e9200ac2b", "actor_identifier": "warehouse-fields@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:01.571886+00:00", "outcome": "REJECTED", "request_id": "2aed4320861b4721917eb6541a34fe8b", "target_id": "/empleados/18021f91-ee43-4251-a19c-a2bf7e086fb4/editar/", "target_type": "Endpoint"}
+Forbidden (CSRF cookie not set.): /empleados/nuevo/
+....Internal Server Error: /salir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\views.py", line 115, in logout_view
+    logout(request)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit02_logout_atomic.py", line 42, in fail_after_logout
+    raise RuntimeError("simulated logout failure")
+RuntimeError: simulated logout failure
+..Internal Server Error: /salir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\views.py", line 115, in logout_view
+    logout(request)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit02e_contracts.py", line 143, in fail_logout
+    raise RuntimeError("simulated logout outage")
+RuntimeError: simulated logout outage
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "9ec4104b-986f-4e96-a63a-fb8293e7fe92", "actor_identifier": "admin02e@test.invalid", "metadata": {"reason": "invalid_state_action"}, "occurred_at_utc": "2026-11-15T15:50:02.990851+00:00", "outcome": "REJECTED", "request_id": "ddfe930e0501492398f42275974641cc", "target_id": "23095518-075d-4ad1-ac1d-d262b2df1f04", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "9ec4104b-986f-4e96-a63a-fb8293e7fe92", "actor_identifier": "admin02e@test.invalid", "metadata": {"reason": "invalid_state_action"}, "occurred_at_utc": "2026-11-15T15:50:02.995859+00:00", "outcome": "REJECTED", "request_id": "6587f92b6af540a89e2918c2e67ef856", "target_id": "23095518-075d-4ad1-ac1d-d262b2df1f04", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "9ec4104b-986f-4e96-a63a-fb8293e7fe92", "actor_identifier": "admin02e@test.invalid", "metadata": {"action_requested": "desactivar", "reason": "No se puede desactivar a un vendedor con un turno de caja abierto. Cierre el turno primero."}, "occurred_at_utc": "2026-11-15T15:50:03.147376+00:00", "outcome": "REJECTED", "request_id": "b9e9fe60393b46c5b639f9efccd6bc40", "target_id": "532b80b7-7809-459f-af22-6360ed04457c", "target_type": "Account"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "532b80b7-7809-459f-af22-6360ed04457c", "actor_identifier": "seller02e@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:03.165496+00:00", "outcome": "REJECTED", "request_id": "ff201b5740c4405bb17e012a1223eb7e", "target_id": "/empleados/23095518-075d-4ad1-ac1d-d262b2df1f04/estado/confirmar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "532b80b7-7809-459f-af22-6360ed04457c", "actor_identifier": "seller02e@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:03.169499+00:00", "outcome": "REJECTED", "request_id": "ed899d6049c54b40bb2b5f78e9c8c1d2", "target_id": "/empleados/23095518-075d-4ad1-ac1d-d262b2df1f04/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a43f4ca3-9e04-4412-9a06-c8205b2aa035", "actor_identifier": "warehouse02e@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:03.175359+00:00", "outcome": "REJECTED", "request_id": "589f4ee5729646b3a9d19f250514bbe6", "target_id": "/empleados/23095518-075d-4ad1-ac1d-d262b2df1f04/estado/confirmar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a43f4ca3-9e04-4412-9a06-c8205b2aa035", "actor_identifier": "warehouse02e@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:03.180864+00:00", "outcome": "REJECTED", "request_id": "29c96862024b417c8323343b91f49034", "target_id": "/empleados/23095518-075d-4ad1-ac1d-d262b2df1f04/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:03.183945+00:00", "outcome": "REJECTED", "request_id": "be8680d42c4e43328b7e5931ef2aa700", "target_id": "/empleados/23095518-075d-4ad1-ac1d-d262b2df1f04/estado/confirmar/", "target_type": "Endpoint"}
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "9ec4104b-986f-4e96-a63a-fb8293e7fe92", "actor_identifier": "admin02e@test.invalid", "metadata": {"fields": ["display_name"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:03.283077+00:00", "outcome": "REJECTED", "request_id": "daae3cd9351847eaa0d0206e402e5234", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "9ec4104b-986f-4e96-a63a-fb8293e7fe92", "actor_identifier": "admin02e@test.invalid", "metadata": {"fields": ["email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:03.375813+00:00", "outcome": "REJECTED", "request_id": "03b7603e52604f06b10531e3a97b3eaf", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "9ec4104b-986f-4e96-a63a-fb8293e7fe92", "actor_identifier": "admin02e@test.invalid", "metadata": {"fields": ["display_name", "email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:03.385838+00:00", "outcome": "REJECTED", "request_id": "7cd32e23fd0f43139dd8aa6f4f69c1ca", "target_id": null, "target_type": "Account"}
+...identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:04.349232+00:00", "outcome": "REJECTED", "request_id": "1a6dbcd888984b968af9131566ebea93", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+.Fallo en solicitud password=[[REDACTED]]] new_password=[[REDACTED]]] sessionid=[REDACTED]
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit02e_contracts.py", line 579, in test_h02e04_log_redaction_including_exc_info_and_resilient_logger_failure
+    raise ValueError(f"Error con clave=[[REDACTED]]]} y csrftoken=[REDACTED]")
+ValueError: Error con clave=[[REDACTED]]] y csrftoken=[REDACTED]
+Fallo en solicitud password=[[REDACTED]]] new_password=[[REDACTED]]] sessionid=[REDACTED]
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit02e_contracts.py", line 579, in test_h02e04_log_redaction_including_exc_info_and_resilient_logger_failure
+    raise ValueError(f"Error con clave=[[REDACTED]]]} y csrftoken=[REDACTED]")
+ValueError: Error con clave=[[REDACTED]]] y csrftoken=[REDACTED]
+........Forbidden (CSRF token missing.): /
+Forbidden (CSRF token from POST has incorrect length.): /
+Forbidden (Origin checking failed - https://outside.example.invalid does not match any trusted origins.): /
+.identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:06.424852+00:00", "outcome": "REJECTED", "request_id": "b98cd1a9d5c8436688ee70b5c398c445", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:06.427711+00:00", "outcome": "REJECTED", "request_id": "71fd1c81a9e44dfaac43b36582386aeb", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:06.434257+00:00", "outcome": "REJECTED", "request_id": "612f5f56233544b6812ab648a7dd2c8c", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:06.438252+00:00", "outcome": "REJECTED", "request_id": "d66e9ae93e63489aa4d53640bc528b5c", "target_id": "/", "target_type": "Endpoint"}
+.identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email", "password"]}, "occurred_at_utc": "2026-11-15T15:50:06.455906+00:00", "outcome": "REJECTED", "request_id": "6ac9f7796ed849688e5c73b3990a4b03", "target_id": "/", "target_type": "Endpoint"}
+........identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:08.015457+00:00", "outcome": "REJECTED", "request_id": "a072454b182a454eb70bd959fca121fd", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:08.029288+00:00", "outcome": "REJECTED", "request_id": "deab4295ffaa4cef8eaba2332b5cf425", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:08.044000+00:00", "outcome": "REJECTED", "request_id": "52497a2cf35f4eb0be8bb901f6f027a8", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:08.057756+00:00", "outcome": "REJECTED", "request_id": "37899312606140fe9c9d939871f37fc7", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:08.071624+00:00", "outcome": "REJECTED", "request_id": "f89d492991de4022bfc0f8af61aa6f7e", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:08.083879+00:00", "outcome": "REJECTED", "request_id": "c7d16034db99438aa69e157bfcaf7cb6", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "26bc8934-4346-4227-b66c-e2d9c6366f62", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.104656+00:00", "outcome": "REJECTED", "request_id": "66cd54ad58ac477e8438561345284b42", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "26bc8934-4346-4227-b66c-e2d9c6366f62", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.108902+00:00", "outcome": "REJECTED", "request_id": "af3da163839c46faafc84731350671fc", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "26bc8934-4346-4227-b66c-e2d9c6366f62", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.114132+00:00", "outcome": "REJECTED", "request_id": "3b45f9aa8b364d2d800b39c057bc58fb", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "26bc8934-4346-4227-b66c-e2d9c6366f62", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.118130+00:00", "outcome": "REJECTED", "request_id": "71f1b4f5d7f64ba99dc2a2a4ddb29155", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "26bc8934-4346-4227-b66c-e2d9c6366f62", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.122643+00:00", "outcome": "REJECTED", "request_id": "708e4cbb1bb74d9a9d58364f610eed08", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "26bc8934-4346-4227-b66c-e2d9c6366f62", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.125171+00:00", "outcome": "REJECTED", "request_id": "337993b3d0b045d5a95b35a5ab80137a", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "26bc8934-4346-4227-b66c-e2d9c6366f62", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.128686+00:00", "outcome": "REJECTED", "request_id": "1104478e2fb440aa8fa8dc773dee1ef7", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "acde92de-82d6-427d-a2cf-e0fca7954215", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.154608+00:00", "outcome": "REJECTED", "request_id": "4828fe65850d44e8887c3e5ca1970ab1", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "acde92de-82d6-427d-a2cf-e0fca7954215", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.157606+00:00", "outcome": "REJECTED", "request_id": "d807a37b2cca4d1fa8dd40bb937b97fa", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "acde92de-82d6-427d-a2cf-e0fca7954215", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.162777+00:00", "outcome": "REJECTED", "request_id": "1c59c663bc4f45879fd6f18cf6b3117c", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "acde92de-82d6-427d-a2cf-e0fca7954215", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.221329+00:00", "outcome": "REJECTED", "request_id": "9664bbc50b434199b29180dc27ebd4a1", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "acde92de-82d6-427d-a2cf-e0fca7954215", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.225887+00:00", "outcome": "REJECTED", "request_id": "bbd141452f5f492d87c44426c2bf97fb", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "acde92de-82d6-427d-a2cf-e0fca7954215", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.229389+00:00", "outcome": "REJECTED", "request_id": "ece3c805620644a9b36e842debdbaf32", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "acde92de-82d6-427d-a2cf-e0fca7954215", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:08.235003+00:00", "outcome": "REJECTED", "request_id": "520dbcece5c544c0a3fddd43d0288e5f", "target_id": "/empleados/acde92de-82d6-427d-a2cf-e0fca7954215/estado/", "target_type": "Endpoint"}
+..identity_audit {"action": "ACCESS_DENIED", "actor_id": "acde92de-82d6-427d-a2cf-e0fca7954215", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:09.175698+00:00", "outcome": "REJECTED", "request_id": "97250930d088432ea4b69999fc9c8645", "target_id": "/empleados/", "target_type": "Endpoint"}
+.identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:09.194312+00:00", "outcome": "REJECTED", "request_id": "3623a18e0aff4de2bfa3ca3c7a11a0ce", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:09.198315+00:00", "outcome": "REJECTED", "request_id": "b215e55986f64fa6b3f24ae31490eb9e", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["password"]}, "occurred_at_utc": "2026-11-15T15:50:09.203752+00:00", "outcome": "REJECTED", "request_id": "33e78c32c88849f38cdd6fc3f668235c", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:09.208382+00:00", "outcome": "REJECTED", "request_id": "ead2521a572d4210b5c18c60d0abfb2b", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["password"]}, "occurred_at_utc": "2026-11-15T15:50:09.212647+00:00", "outcome": "REJECTED", "request_id": "6d430702018448c0950f0626fd7c4b75", "target_id": "/", "target_type": "Endpoint"}
+..............identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:14.777106+00:00", "outcome": "REJECTED", "request_id": "35f6d465785141cfb0ba462a5d558766", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:14.793706+00:00", "outcome": "REJECTED", "request_id": "0c1286d1bbea410eaf9077c899f3609f", "target_id": "/", "target_type": "Endpoint"}
+...identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:50:15.961747+00:00", "outcome": "REJECTED", "request_id": "9cfab6ad27004c9097fc43f0042b0ffb", "target_id": "/", "target_type": "Endpoint"}
+....identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "2ac60419-2c94-4c6a-968c-b64f352936c6", "actor_identifier": "admin@minimarket.local", "metadata": {"fields": ["display_name", "email", "password", "role"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:17.425053+00:00", "outcome": "REJECTED", "request_id": "eb5230b671f546fd8e26a567f0961d38", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "2ac60419-2c94-4c6a-968c-b64f352936c6", "actor_identifier": "admin@minimarket.local", "metadata": {"fields": ["display_name", "email", "role"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:17.437880+00:00", "outcome": "REJECTED", "request_id": "baf797a9e02548369b42bd70e86c9694", "target_id": "8eb674e1-714b-4d2f-be29-8a427ad62bb0", "target_type": "Account"}
+..identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "2ac60419-2c94-4c6a-968c-b64f352936c6", "actor_identifier": "admin@minimarket.local", "metadata": {"fields": ["email"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:17.854316+00:00", "outcome": "REJECTED", "request_id": "70241e1fd5db46eebb923a19b196cc1b", "target_id": "0b6a0845-825c-41ce-8751-05bdc40c337c", "target_type": "Account"}
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "2ac60419-2c94-4c6a-968c-b64f352936c6", "actor_identifier": "admin@minimarket.local", "metadata": {"fields": ["email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:17.899082+00:00", "outcome": "REJECTED", "request_id": "6c50ce31c682454aa42cf52f4405a090", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "2ac60419-2c94-4c6a-968c-b64f352936c6", "actor_identifier": "admin@minimarket.local", "metadata": {"fields": ["email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:50:17.909134+00:00", "outcome": "REJECTED", "request_id": "79b4fc5892034c28924f831f80b864cb", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "2ac60419-2c94-4c6a-968c-b64f352936c6", "actor_identifier": "admin@minimarket.local", "metadata": {"fields": ["email"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:50:17.921802+00:00", "outcome": "REJECTED", "request_id": "16e88996067145cdb17d21ef45058632", "target_id": "8eb674e1-714b-4d2f-be29-8a427ad62bb0", "target_type": "Account"}
+....identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:18.400582+00:00", "outcome": "REJECTED", "request_id": "53f8f20a8c2a4af2b52c4a09ca035d7f", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:18.401589+00:00", "outcome": "REJECTED", "request_id": "8392000d9f5d49c0a08c77e285db74a3", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:18.402987+00:00", "outcome": "REJECTED", "request_id": "29a8a3d81b5f4cd58d831a9d37bbac56", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:18.589729+00:00", "outcome": "REJECTED", "request_id": "2112df09d5db41c9b9e8077cdd744d5e", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:18.592802+00:00", "outcome": "REJECTED", "request_id": "bb1a435767f54f77afb4110bb1794016", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:18.594001+00:00", "outcome": "REJECTED", "request_id": "5932bc7c43184f798d307ea4161b483b", "target_id": "/empleados/1065799a-a121-4c5f-b291-b0ec7aa92188/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:18.596029+00:00", "outcome": "REJECTED", "request_id": "29d346535651442d96ce5f6cf228aa3f", "target_id": "/empleados/1065799a-a121-4c5f-b291-b0ec7aa92188/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1065799a-a121-4c5f-b291-b0ec7aa92188", "actor_identifier": "ventas1@minimarket.local", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.614326+00:00", "outcome": "REJECTED", "request_id": "76285e383b3249b6af6637cd216dd9e5", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1065799a-a121-4c5f-b291-b0ec7aa92188", "actor_identifier": "ventas1@minimarket.local", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.618787+00:00", "outcome": "REJECTED", "request_id": "994ef7e299dd4be083feb5c7ac944bda", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1065799a-a121-4c5f-b291-b0ec7aa92188", "actor_identifier": "ventas1@minimarket.local", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.622299+00:00", "outcome": "REJECTED", "request_id": "2b1d9fd9e5ac4aed861c016deb256652", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1065799a-a121-4c5f-b291-b0ec7aa92188", "actor_identifier": "ventas1@minimarket.local", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.626310+00:00", "outcome": "REJECTED", "request_id": "d4354a003e31423883ec6cd180117e38", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1065799a-a121-4c5f-b291-b0ec7aa92188", "actor_identifier": "ventas1@minimarket.local", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.629308+00:00", "outcome": "REJECTED", "request_id": "f127393658054dbe8c858488e6189d4e", "target_id": "/empleados/1065799a-a121-4c5f-b291-b0ec7aa92188/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1065799a-a121-4c5f-b291-b0ec7aa92188", "actor_identifier": "ventas1@minimarket.local", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.636173+00:00", "outcome": "REJECTED", "request_id": "6f321bb5771046b78bfe197a22c19a9e", "target_id": "/empleados/1065799a-a121-4c5f-b291-b0ec7aa92188/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1065799a-a121-4c5f-b291-b0ec7aa92188", "actor_identifier": "ventas1@minimarket.local", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.640688+00:00", "outcome": "REJECTED", "request_id": "7844e966532643cb989e7449da12e9aa", "target_id": "/empleados/1065799a-a121-4c5f-b291-b0ec7aa92188/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "df15939c-702a-4773-b27e-291f506707d9", "actor_identifier": "almacen@minimarket.local", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.660760+00:00", "outcome": "REJECTED", "request_id": "76816e402dc549d0a3d466b002f2d46f", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "df15939c-702a-4773-b27e-291f506707d9", "actor_identifier": "almacen@minimarket.local", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.665843+00:00", "outcome": "REJECTED", "request_id": "acb0c3c23ed0462e80c006f39ff1fd2e", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "df15939c-702a-4773-b27e-291f506707d9", "actor_identifier": "almacen@minimarket.local", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.668842+00:00", "outcome": "REJECTED", "request_id": "4d26a24f545e4b84a17f91963be23211", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "df15939c-702a-4773-b27e-291f506707d9", "actor_identifier": "almacen@minimarket.local", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.673355+00:00", "outcome": "REJECTED", "request_id": "71fbd5d7c8ef4f389d88cc258dddf9ed", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "df15939c-702a-4773-b27e-291f506707d9", "actor_identifier": "almacen@minimarket.local", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.677361+00:00", "outcome": "REJECTED", "request_id": "d09003ed5ad648b885635d1dce061a9a", "target_id": "/empleados/1065799a-a121-4c5f-b291-b0ec7aa92188/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "df15939c-702a-4773-b27e-291f506707d9", "actor_identifier": "almacen@minimarket.local", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.682632+00:00", "outcome": "REJECTED", "request_id": "05378d96ea614dbeb8fa45b2549019cd", "target_id": "/empleados/1065799a-a121-4c5f-b291-b0ec7aa92188/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "df15939c-702a-4773-b27e-291f506707d9", "actor_identifier": "almacen@minimarket.local", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:18.686190+00:00", "outcome": "REJECTED", "request_id": "e17a239314ad481ea33ca2aee7ffa676", "target_id": "/empleados/1065799a-a121-4c5f-b291-b0ec7aa92188/estado/", "target_type": "Endpoint"}
+....Forbidden (CSRF cookie not set.): /empleados/d46ddbbb-c7f0-479d-8253-28f468bb7acd/estado/
+.identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "29f17162-150f-48a7-90ce-2b2c1f535332", "actor_identifier": "admin-state@example.invalid", "metadata": {"reason": "invalid_state_action"}, "occurred_at_utc": "2026-11-15T15:50:19.079101+00:00", "outcome": "REJECTED", "request_id": "1659c6a1c03145bb857fd08a106eb584", "target_id": "d46ddbbb-c7f0-479d-8253-28f468bb7acd", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "29f17162-150f-48a7-90ce-2b2c1f535332", "actor_identifier": "admin-state@example.invalid", "metadata": {"reason": "invalid_state_action"}, "occurred_at_utc": "2026-11-15T15:50:19.082616+00:00", "outcome": "REJECTED", "request_id": "c5f3beec1083498b953607bb1d3e1464", "target_id": "d46ddbbb-c7f0-479d-8253-28f468bb7acd", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "29f17162-150f-48a7-90ce-2b2c1f535332", "actor_identifier": "admin-state@example.invalid", "metadata": {"reason": "invalid_state_action"}, "occurred_at_utc": "2026-11-15T15:50:19.086319+00:00", "outcome": "REJECTED", "request_id": "8774de0b1c94412ea6ce07d24614e171", "target_id": "d46ddbbb-c7f0-479d-8253-28f468bb7acd", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "29f17162-150f-48a7-90ce-2b2c1f535332", "actor_identifier": "admin-state@example.invalid", "metadata": {"reason": "invalid_state_action"}, "occurred_at_utc": "2026-11-15T15:50:19.091682+00:00", "outcome": "REJECTED", "request_id": "0493782c1da7460982e48ea82edde580", "target_id": "d46ddbbb-c7f0-479d-8253-28f468bb7acd", "target_type": "Account"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "d46ddbbb-c7f0-479d-8253-28f468bb7acd", "actor_identifier": "seller-state@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:19.112358+00:00", "outcome": "REJECTED", "request_id": "c793e73705374afbac054118412afee7", "target_id": "/empleados/29f17162-150f-48a7-90ce-2b2c1f535332/estado/", "target_type": "Endpoint"}
+....identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:19.818662+00:00", "outcome": "REJECTED", "request_id": "a5606191423b427c920dcbed62062773", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:19.819660+00:00", "outcome": "REJECTED", "request_id": "ae98dfa895b34179a2cb2443dfe4eda1", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:19.821166+00:00", "outcome": "REJECTED", "request_id": "411d5309091d41c0813ecf8a43774fab", "target_id": "/caja/turnos/cfc3bbb2-7d65-415b-9438-8532a3efa152/abierto/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:19.822174+00:00", "outcome": "REJECTED", "request_id": "87623a1c0a744196b62d6ce74d3ae96d", "target_id": "/caja/turnos/cfc3bbb2-7d65-415b-9438-8532a3efa152/cerrado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:19.823169+00:00", "outcome": "REJECTED", "request_id": "73b11c3ab8d843a49d13bbe89c357159", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:19.824169+00:00", "outcome": "REJECTED", "request_id": "1fae97ad184e4d039e7b016e1aaf8f3b", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:19.825209+00:00", "outcome": "REJECTED", "request_id": "7bbe7709336043118628678be73abfa5", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+......identity_audit {"action": "ACCESS_DENIED", "actor_id": "37ed1938-3e9a-4281-877d-597d8a3029ae", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.393970+00:00", "outcome": "REJECTED", "request_id": "842e21f5195b413cb9b4e0464639c82a", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "37ed1938-3e9a-4281-877d-597d8a3029ae", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.397473+00:00", "outcome": "REJECTED", "request_id": "d89133e61798416aaa24f6bb6f2b4956", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "37ed1938-3e9a-4281-877d-597d8a3029ae", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.400990+00:00", "outcome": "REJECTED", "request_id": "75b0a1064bdf45fb8e993856bcf2a548", "target_id": "/caja/turnos/0895ec87-a497-434f-a3f9-f02431ea7efd/abierto/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "37ed1938-3e9a-4281-877d-597d8a3029ae", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.403998+00:00", "outcome": "REJECTED", "request_id": "11ac2a95b5644d3f88677554980bede8", "target_id": "/caja/turnos/0895ec87-a497-434f-a3f9-f02431ea7efd/cerrado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "37ed1938-3e9a-4281-877d-597d8a3029ae", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.407996+00:00", "outcome": "REJECTED", "request_id": "cb969437da8d4492a499fc4073afbb56", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "37ed1938-3e9a-4281-877d-597d8a3029ae", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.410996+00:00", "outcome": "REJECTED", "request_id": "8b3b4daae65842bcba8c4d1e703892fb", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "37ed1938-3e9a-4281-877d-597d8a3029ae", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.413508+00:00", "outcome": "REJECTED", "request_id": "39834872e55f4ca7b21c55d29bc6a495", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e8053fcf-eae7-45fb-a881-b02b0abca857", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.421610+00:00", "outcome": "REJECTED", "request_id": "8065a723e7b2465cb9d7d8d0bbcf8f38", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e8053fcf-eae7-45fb-a881-b02b0abca857", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.426594+00:00", "outcome": "REJECTED", "request_id": "4f4c9bb4718b401583ac3a84b8185b96", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e8053fcf-eae7-45fb-a881-b02b0abca857", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.430593+00:00", "outcome": "REJECTED", "request_id": "db6371f7f96049999f6988f8a9ef7d31", "target_id": "/caja/turnos/0895ec87-a497-434f-a3f9-f02431ea7efd/abierto/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e8053fcf-eae7-45fb-a881-b02b0abca857", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.433107+00:00", "outcome": "REJECTED", "request_id": "7498d32c5b7a43d3883244269a8ddf30", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e8053fcf-eae7-45fb-a881-b02b0abca857", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:20.436904+00:00", "outcome": "REJECTED", "request_id": "a2dfc04232654791999841ff4853f54b", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+...........identity_audit {"action": "ACCESS_DENIED", "actor_id": "9ef474a8-2ef3-481a-81f8-4b9c3916eef2", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:21.128133+00:00", "outcome": "REJECTED", "request_id": "31d639e51d244857a66ab2f2a610cf9e", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "7f4f3c68-1715-4ff0-93ca-0092e88e81d6", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:21.136685+00:00", "outcome": "REJECTED", "request_id": "15a3d89bf0284c8db59e966d44576f24", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+........identity_audit {"action": "ACCESS_DENIED", "actor_id": "ad481017-3a52-4680-8047-c1206e10e364", "actor_identifier": "whch@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:21.643779+00:00", "outcome": "REJECTED", "request_id": "bc13e0ad049a49ddbb94878ba4870f2e", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+...........................identity_audit {"action": "ACCESS_DENIED", "actor_id": "2c5ca08f-969b-4da3-a892-4059f3a7d474", "actor_identifier": "vendedor@audit03b.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:22.778635+00:00", "outcome": "REJECTED", "request_id": "125f7541062847c7b15f4874aa4966f1", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:22.792472+00:00", "outcome": "REJECTED", "request_id": "c04f4bbddb1642fb8088db34cd41d8e4", "target_id": "/productos/", "target_type": "Endpoint"}
+.......Forbidden (CSRF cookie not set.): /productos/categorias/cc312216-8cdc-4be1-9a70-ad946a20ed7b/estado/
+Forbidden (CSRF cookie not set.): /productos/categorias/nueva/
+...identity_audit {"action": "ACCESS_DENIED", "actor_id": "23eff7d8-4506-4661-bb4a-0d3ec3ef310f", "actor_identifier": "almacenero@audit03.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.073759+00:00", "outcome": "REJECTED", "request_id": "1ca687e255da405f971798028e10594b", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "23eff7d8-4506-4661-bb4a-0d3ec3ef310f", "actor_identifier": "almacenero@audit03.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.077760+00:00", "outcome": "REJECTED", "request_id": "8b2f7f81d56c4d109a934c4bb73102a7", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "23eff7d8-4506-4661-bb4a-0d3ec3ef310f", "actor_identifier": "almacenero@audit03.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.083430+00:00", "outcome": "REJECTED", "request_id": "49d272aacadd494ea4ef9289b6caba6b", "target_id": "/productos/categorias/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "23eff7d8-4506-4661-bb4a-0d3ec3ef310f", "actor_identifier": "almacenero@audit03.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.088559+00:00", "outcome": "REJECTED", "request_id": "a4a2e81bfc624463a83ebe4661ed0fad", "target_id": "/productos/categorias/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "23eff7d8-4506-4661-bb4a-0d3ec3ef310f", "actor_identifier": "almacenero@audit03.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.093892+00:00", "outcome": "REJECTED", "request_id": "e59bc8d3588442b0ab8ce82ec1cdc7d9", "target_id": "/productos/categorias/47b9e1e8-9eca-414d-b907-37a2a6c0b45b/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "23eff7d8-4506-4661-bb4a-0d3ec3ef310f", "actor_identifier": "almacenero@audit03.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.098409+00:00", "outcome": "REJECTED", "request_id": "63e1fdd7fff94d66bf76473380db8a58", "target_id": "/productos/categorias/47b9e1e8-9eca-414d-b907-37a2a6c0b45b/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "31bc0708-e2c8-43f8-8a62-c3f33692cbd2", "actor_identifier": "vendedor@audit03.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.119490+00:00", "outcome": "REJECTED", "request_id": "e97ee703c12c43c1a1e9cebbaca45412", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "31bc0708-e2c8-43f8-8a62-c3f33692cbd2", "actor_identifier": "vendedor@audit03.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.124010+00:00", "outcome": "REJECTED", "request_id": "0a81612de529412493460a31f24bd3ee", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "31bc0708-e2c8-43f8-8a62-c3f33692cbd2", "actor_identifier": "vendedor@audit03.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.129312+00:00", "outcome": "REJECTED", "request_id": "aa4b52172cca4f369eacc0e0ec46c508", "target_id": "/productos/categorias/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "31bc0708-e2c8-43f8-8a62-c3f33692cbd2", "actor_identifier": "vendedor@audit03.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.134251+00:00", "outcome": "REJECTED", "request_id": "1fefe989313c4bbd9b514bd21ec47b0f", "target_id": "/productos/categorias/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "31bc0708-e2c8-43f8-8a62-c3f33692cbd2", "actor_identifier": "vendedor@audit03.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.138250+00:00", "outcome": "REJECTED", "request_id": "1e442cc77bd44322b63ff690fa453714", "target_id": "/productos/categorias/47b9e1e8-9eca-414d-b907-37a2a6c0b45b/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "31bc0708-e2c8-43f8-8a62-c3f33692cbd2", "actor_identifier": "vendedor@audit03.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.141802+00:00", "outcome": "REJECTED", "request_id": "cce00bc9ee574bb1950d81d4724993d7", "target_id": "/productos/categorias/47b9e1e8-9eca-414d-b907-37a2a6c0b45b/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:23.158205+00:00", "outcome": "REJECTED", "request_id": "db4aa87c3ba94cd085a0a7b46587d82c", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:23.159204+00:00", "outcome": "REJECTED", "request_id": "8f115f7ed47549d8a928bc48f963a9b0", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:23.159204+00:00", "outcome": "REJECTED", "request_id": "cfba3cbf2b914d2c987c6a3298c4c32e", "target_id": "/productos/categorias/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:23.160708+00:00", "outcome": "REJECTED", "request_id": "9c1b8ad850294b6e9b4a5d3b90c9c40e", "target_id": "/productos/categorias/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:23.161714+00:00", "outcome": "REJECTED", "request_id": "4f1d6d1abdfc4c51aa63b8af679e551a", "target_id": "/productos/categorias/47b9e1e8-9eca-414d-b907-37a2a6c0b45b/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:23.163177+00:00", "outcome": "REJECTED", "request_id": "f4eaed5eb79d4048bb5be1e5b7b58cee", "target_id": "/productos/categorias/47b9e1e8-9eca-414d-b907-37a2a6c0b45b/estado/", "target_type": "Endpoint"}
+...........identity_audit {"action": "ACCESS_DENIED", "actor_id": "47c427f5-8e3d-4e8c-91e4-3798f2e46420", "actor_identifier": "warehouse@confirm.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.648528+00:00", "outcome": "REJECTED", "request_id": "7bc2238ff45a4e19ad0f8225730ae072", "target_id": "/productos/categorias/a8528d0b-4dfa-4133-97d5-5b1ed99d22c1/estado/confirmar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "47c427f5-8e3d-4e8c-91e4-3798f2e46420", "actor_identifier": "warehouse@confirm.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.653037+00:00", "outcome": "REJECTED", "request_id": "7d98178597ee410293f5293df1436c52", "target_id": "/productos/categorias/a8528d0b-4dfa-4133-97d5-5b1ed99d22c1/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "11ef73c9-e569-4edb-a102-18ee80f7f544", "actor_identifier": "seller@confirm.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.673459+00:00", "outcome": "REJECTED", "request_id": "998682d662e6430eb9f2742e24b51f1e", "target_id": "/productos/categorias/a8528d0b-4dfa-4133-97d5-5b1ed99d22c1/estado/confirmar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "11ef73c9-e569-4edb-a102-18ee80f7f544", "actor_identifier": "seller@confirm.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:23.678460+00:00", "outcome": "REJECTED", "request_id": "b9c0eb72d98d4dc2b42a042eff1f4699", "target_id": "/productos/categorias/a8528d0b-4dfa-4133-97d5-5b1ed99d22c1/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:23.693033+00:00", "outcome": "REJECTED", "request_id": "48a9a9e785b84ac7a38d0017ea6fd835", "target_id": "/productos/categorias/a8528d0b-4dfa-4133-97d5-5b1ed99d22c1/estado/confirmar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:23.694031+00:00", "outcome": "REJECTED", "request_id": "4e17a6ce4cec4084a489485ff04d725d", "target_id": "/productos/categorias/a8528d0b-4dfa-4133-97d5-5b1ed99d22c1/estado/", "target_type": "Endpoint"}
+Forbidden (CSRF cookie not set.): /productos/categorias/a8528d0b-4dfa-4133-97d5-5b1ed99d22c1/estado/
+..........................identity_audit {"action": "ACCESS_DENIED", "actor_id": "44c9c6d0-9547-4e4e-905f-2ff1cc5274f0", "actor_identifier": "warehouse@stale.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:24.851178+00:00", "outcome": "REJECTED", "request_id": "b54b4d38d2754e5a8d2ec2c8ed882460", "target_id": "/productos/81cea7e7-9d6c-4e55-afde-dd11874d007b/editar/", "target_type": "Endpoint"}
+.............identity_audit {"action": "ACCESS_DENIED", "actor_id": "5d321025-6939-4cae-9dfc-b984b2632fa6", "actor_identifier": "seller2@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:26.095974+00:00", "outcome": "REJECTED", "request_id": "ff06cf02e2924f9281fd7073e0339c9c", "target_id": "/productos/categorias/nueva/", "target_type": "Endpoint"}
+..identity_audit {"action": "ACCESS_DENIED", "actor_id": "82da7046-7949-41d6-bd44-65ebdac72c0a", "actor_identifier": "wh2@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:26.354142+00:00", "outcome": "REJECTED", "request_id": "33f1996f96bb4a1c9322cfdaca101371", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1b1227f3-28de-4df0-9495-a802bf5d292b", "actor_identifier": "seller2@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:26.363046+00:00", "outcome": "REJECTED", "request_id": "cdcfe63cdd0d4dc59e95315c69491fc4", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+....identity_audit {"action": "ACCESS_DENIED", "actor_id": "e58b94c4-a7a8-4f73-977e-b1c42d7e1004", "actor_identifier": "seller2@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:26.702231+00:00", "outcome": "REJECTED", "request_id": "a2544ef6ba434c21956dd2ec02ccf711", "target_id": "/productos/5ae0777c-9721-4a56-850b-7bdb5080d005/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e58b94c4-a7a8-4f73-977e-b1c42d7e1004", "actor_identifier": "seller2@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:26.705223+00:00", "outcome": "REJECTED", "request_id": "abd4473ae2a343239312195e8b29bbfc", "target_id": "/productos/5ae0777c-9721-4a56-850b-7bdb5080d005/editar/", "target_type": "Endpoint"}
+...........identity_audit {"action": "ACCESS_DENIED", "actor_id": "23a0a911-251d-4534-b936-eb7ac1437e40", "actor_identifier": "seller2@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:27.615122+00:00", "outcome": "REJECTED", "request_id": "4ff13261094c464f931216465604b5f9", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+.....identity_audit {"action": "ACCESS_DENIED", "actor_id": "8282ba54-5458-4389-9dd1-4ef214a5710d", "actor_identifier": "seller2@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:27.962231+00:00", "outcome": "REJECTED", "request_id": "066fe26cec36495895620aee9dbf972d", "target_id": "/productos/", "target_type": "Endpoint"}
+.......identity_audit {"action": "ACCESS_DENIED", "actor_id": "bfa1c210-b670-4673-98ed-b6b726776b35", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:28.434147+00:00", "outcome": "REJECTED", "request_id": "e0a56ac8d4ab4e07b30827248f81b47e", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "de64e7df-2baf-46da-907b-7ccbd04a58a4", "actor_identifier": "seller@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:28.440653+00:00", "outcome": "REJECTED", "request_id": "e247eab089984e90bcac88dd9322c305", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+....identity_audit {"action": "ACCESS_DENIED", "actor_id": "817555e5-d8b8-4c36-a5dd-457a89b936ef", "actor_identifier": "seller2@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:28.761664+00:00", "outcome": "REJECTED", "request_id": "80ba8b526ce847ee8374c9ea0851d4f8", "target_id": "/productos/5d87519c-31d9-42b4-956f-8ee65a901a27/disponibilidad/", "target_type": "Endpoint"}
+..identity_audit {"action": "ACCESS_DENIED", "actor_id": "1bd0d8ce-2af2-4664-8e55-86ca50ef714d", "actor_identifier": "admin-aj@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:29.192088+00:00", "outcome": "REJECTED", "request_id": "c2b46f2e92a34f739b814f94f7628546", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "1bd0d8ce-2af2-4664-8e55-86ca50ef714d", "actor_identifier": "admin-aj@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:29.199459+00:00", "outcome": "REJECTED", "request_id": "4d74360d1e2148fd95cab7d77f9eafb1", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+..identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/entrada/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:29.411026+00:00", "outcome": "REJECTED", "request_id": "d5ab9db86e9e4b4b9096ef991f538c94", "target_id": "2378c95b-4e40-4c2d-a08c-8a6118e4476c", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:29.412034+00:00", "outcome": "REJECTED", "request_id": "d5ab9db86e9e4b4b9096ef991f538c94", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:29.413035+00:00", "outcome": "REJECTED", "request_id": "6defa067594b4b1db93f41cb9bfa78a4", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:29.414032+00:00", "outcome": "REJECTED", "request_id": "23d05cc6d9a74657b8517a5fa0c8f20b", "target_id": "/inventario/cargas/79c482f0-7afb-41e9-9c71-7d4135c5ab72/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/entrada/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:29.433652+00:00", "outcome": "REJECTED", "request_id": "61f0dc8673304cb0b057434e7a0527f4", "target_id": "c044c2fc-6cc4-4073-8df3-6fa438ce0877", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:29.434650+00:00", "outcome": "REJECTED", "request_id": "61f0dc8673304cb0b057434e7a0527f4", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inicio/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:29.460823+00:00", "outcome": "REJECTED", "request_id": "9611351782444e678250c839d6407306", "target_id": "2378c95b-4e40-4c2d-a08c-8a6118e4476c", "target_type": "Session"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:29.465917+00:00", "outcome": "REJECTED", "request_id": "76c3bdee91694d349dde31048075c3c1", "target_id": "2378c95b-4e40-4c2d-a08c-8a6118e4476c", "target_type": "Session"}
+......identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.071529+00:00", "outcome": "REJECTED", "request_id": "de8ea90bdbb246c68badc051c1769e76", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.072541+00:00", "outcome": "REJECTED", "request_id": "50b7e555ad2b458497b27143595cc634", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.073532+00:00", "outcome": "REJECTED", "request_id": "4cb6c7972e214dccbe746d1228a0d5c6", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.075044+00:00", "outcome": "REJECTED", "request_id": "8b4708989d934adba59c3170c0419510", "target_id": "/inventario/proveedores/5fd78c5c-335b-43a5-a43c-9cffde70c667/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "749ffdcd-3da8-4f0c-ab54-456c96184791", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:30.083651+00:00", "outcome": "REJECTED", "request_id": "86b39e88ff314bcea92b7d062ab29ff3", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "749ffdcd-3da8-4f0c-ab54-456c96184791", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:30.087671+00:00", "outcome": "REJECTED", "request_id": "0799cdaf384a4a30b7c4abcae0b007a1", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "749ffdcd-3da8-4f0c-ab54-456c96184791", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:30.091872+00:00", "outcome": "REJECTED", "request_id": "f5687296194c4471b48bf635f019e6d0", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "749ffdcd-3da8-4f0c-ab54-456c96184791", "actor_identifier": "seller.audit04@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:30.095873+00:00", "outcome": "REJECTED", "request_id": "b8c9b66dc5ae4f178a53eda0945b73a0", "target_id": "/inventario/proveedores/5fd78c5c-335b-43a5-a43c-9cffde70c667/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "b602430e-1cbc-4075-8dbd-364cc5e63afc", "actor_identifier": "warehouse.audit04@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:30.113762+00:00", "outcome": "REJECTED", "request_id": "6a9c1d29228c4ea09c20d6b4a52de188", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "b602430e-1cbc-4075-8dbd-364cc5e63afc", "actor_identifier": "warehouse.audit04@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:30.116808+00:00", "outcome": "REJECTED", "request_id": "df8709bdf4f343ba9e2768bbd8e4dac8", "target_id": "/inventario/proveedores/5fd78c5c-335b-43a5-a43c-9cffde70c667/estado/", "target_type": "Endpoint"}
+.....identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.651983+00:00", "outcome": "REJECTED", "request_id": "db6180bbe5b147acb1ec7a38b8a943c3", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+.identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:30.809247+00:00", "outcome": "REJECTED", "request_id": "b7487cf1e44d4f9981eaa27b08b9d2cb", "target_id": "78e1ed88-c44a-4525-8887-658cff734d6b", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.809247+00:00", "outcome": "REJECTED", "request_id": "b7487cf1e44d4f9981eaa27b08b9d2cb", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.823888+00:00", "outcome": "REJECTED", "request_id": "d5324a9336cb45d4a2c549520f07cea5", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/nuevo/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:30.846247+00:00", "outcome": "REJECTED", "request_id": "a58ec1fb8b964f9aa0e3904cbe638878", "target_id": "78e1ed88-c44a-4525-8887-658cff734d6b", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.846247+00:00", "outcome": "REJECTED", "request_id": "a58ec1fb8b964f9aa0e3904cbe638878", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.873484+00:00", "outcome": "REJECTED", "request_id": "4f3dedd860ed4aea9f6b1dcae4e9c532", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/nuevo/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:30.899332+00:00", "outcome": "REJECTED", "request_id": "f6bb24c7f11c4432a5de09c3cfea4c92", "target_id": "78e1ed88-c44a-4525-8887-658cff734d6b", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.900848+00:00", "outcome": "REJECTED", "request_id": "f6bb24c7f11c4432a5de09c3cfea4c92", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.920804+00:00", "outcome": "REJECTED", "request_id": "098b9064dddd427491152da0ef4e314e", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/proveedores/b90bfb9c-2a39-4b9e-93ea-7ff5bb48b7c8/estado/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:30.947972+00:00", "outcome": "REJECTED", "request_id": "b05c5f6e1cc544d49cb459e1a073e6ad", "target_id": "78e1ed88-c44a-4525-8887-658cff734d6b", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.948972+00:00", "outcome": "REJECTED", "request_id": "b05c5f6e1cc544d49cb459e1a073e6ad", "target_id": "/inventario/proveedores/b90bfb9c-2a39-4b9e-93ea-7ff5bb48b7c8/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:30.972778+00:00", "outcome": "REJECTED", "request_id": "1c4838f6f169475f9e5f5ec1d03852fc", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:30.994663+00:00", "outcome": "REJECTED", "request_id": "ab3c875d0d73479897ff96545a641226", "target_id": "78e1ed88-c44a-4525-8887-658cff734d6b", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:31.088494+00:00", "outcome": "REJECTED", "request_id": "436f5942f8dd41d8a65b4db1d3012d9b", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inicio/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:31.112435+00:00", "outcome": "REJECTED", "request_id": "929a032efc4f4ac4a719b76a76625e51", "target_id": "78e1ed88-c44a-4525-8887-658cff734d6b", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:31.127725+00:00", "outcome": "REJECTED", "request_id": "dd52f1b0c27248c2bfa797b74cea5b78", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+........identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:35.437565+00:00", "outcome": "REJECTED", "request_id": "e6d89f00b2fe4a2095f218a58e86e75c", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:35.438567+00:00", "outcome": "REJECTED", "request_id": "c736486eca1947efa2ae6dfb3658b097", "target_id": "/inventario/cargas/9be7e42a-d8e4-4878-b029-1d2a5938a6c7/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:35.439572+00:00", "outcome": "REJECTED", "request_id": "06ac3599b3174eec87f931ced20c7f25", "target_id": "/inventario/carga-inicial/9be7e42a-d8e4-4878-b029-1d2a5938a6c7/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:35.440571+00:00", "outcome": "REJECTED", "request_id": "97f7f2c0a3b345aea79e2af3754a24c1", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:35.441653+00:00", "outcome": "REJECTED", "request_id": "8930b84afdf946d2bf88499178e2c2c8", "target_id": "/inventario/productos/0819bb13-1f54-4f46-a0b5-712bb72b5af7/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:35.443653+00:00", "outcome": "REJECTED", "request_id": "57808359e4b94fa3b119d91d9205d90e", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:35.443653+00:00", "outcome": "REJECTED", "request_id": "7e84e77dc6f6426c934cd3746bcb4f82", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2aaed4c7-28d7-46c4-b10c-c981b782fd10", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.463094+00:00", "outcome": "REJECTED", "request_id": "5db73d2d2a74490c983d9159df73a1e9", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2aaed4c7-28d7-46c4-b10c-c981b782fd10", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.467089+00:00", "outcome": "REJECTED", "request_id": "67c36626c76f489593885340c25ea9b6", "target_id": "/inventario/cargas/9be7e42a-d8e4-4878-b029-1d2a5938a6c7/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2aaed4c7-28d7-46c4-b10c-c981b782fd10", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.470597+00:00", "outcome": "REJECTED", "request_id": "43b3768ef6c44c14ba2a855490085f2a", "target_id": "/inventario/carga-inicial/9be7e42a-d8e4-4878-b029-1d2a5938a6c7/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2aaed4c7-28d7-46c4-b10c-c981b782fd10", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.474605+00:00", "outcome": "REJECTED", "request_id": "fd7c87c2693e4c30baa24d186b36c569", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2aaed4c7-28d7-46c4-b10c-c981b782fd10", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.477604+00:00", "outcome": "REJECTED", "request_id": "028a1daf5cd94024a32767bb2304e893", "target_id": "/inventario/productos/0819bb13-1f54-4f46-a0b5-712bb72b5af7/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2aaed4c7-28d7-46c4-b10c-c981b782fd10", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.480604+00:00", "outcome": "REJECTED", "request_id": "c4d17bb4e8cb4ddcbc8e90e72ca3b799", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2aaed4c7-28d7-46c4-b10c-c981b782fd10", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.483113+00:00", "outcome": "REJECTED", "request_id": "baabe763e5c54a70963e5a1cd7b0fa41", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2aaed4c7-28d7-46c4-b10c-c981b782fd10", "actor_identifier": "seller.audit05@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.487624+00:00", "outcome": "REJECTED", "request_id": "dc886c1b4d6f4f5e8797d085bb39edf0", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "41a332ae-ab0f-4636-a654-194e7966a4a7", "actor_identifier": "admin.audit05@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.494152+00:00", "outcome": "REJECTED", "request_id": "546e8ae65eb040fc84cdf791d1baa612", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "41a332ae-ab0f-4636-a654-194e7966a4a7", "actor_identifier": "admin.audit05@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:35.499364+00:00", "outcome": "REJECTED", "request_id": "0f4cfca885c94da5bbfffc797d0c0c24", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+.....identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:40.734867+00:00", "outcome": "REJECTED", "request_id": "04b5942578194ba3b3f49f613dededbd", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "089d86e4-e2f8-4225-b895-88680648ff33", "actor_identifier": "seller.audit06@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:40.753018+00:00", "outcome": "REJECTED", "request_id": "3798b442505145128b12f135044ac1ee", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "089d86e4-e2f8-4225-b895-88680648ff33", "actor_identifier": "seller.audit06@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:40.757031+00:00", "outcome": "REJECTED", "request_id": "657c47a67d0241c9892e8251f1cc74d0", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "baca6a0e-311b-42e2-9623-5fe6a0adbde5", "actor_identifier": "admin.audit06@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:40.762543+00:00", "outcome": "REJECTED", "request_id": "18ac4ae40a474ebfb56def45beba457e", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "baca6a0e-311b-42e2-9623-5fe6a0adbde5", "actor_identifier": "admin.audit06@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:40.766541+00:00", "outcome": "REJECTED", "request_id": "449278c1f5ab41c3a6a83d7c3c30cdf9", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+.......identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:41.867250+00:00", "outcome": "REJECTED", "request_id": "72297b60a0aa4dd8aed0a233821a9872", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:41.868401+00:00", "outcome": "REJECTED", "request_id": "108e5337920d49a887352f873146b3da", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e0503940-d7e4-4981-8498-a760e95ec493", "actor_identifier": "seller.audit07@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:41.877016+00:00", "outcome": "REJECTED", "request_id": "5bfb9d933bde461095b14a15e78560d9", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e0503940-d7e4-4981-8498-a760e95ec493", "actor_identifier": "seller.audit07@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:41.882533+00:00", "outcome": "REJECTED", "request_id": "75baddbc08ce4202af26a7368f58e4ac", "target_id": "/productos/vencimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e0503940-d7e4-4981-8498-a760e95ec493", "actor_identifier": "seller.audit07@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:41.886597+00:00", "outcome": "REJECTED", "request_id": "a589c23ae1d6453dbb23964f931aed95", "target_id": "/productos/", "target_type": "Endpoint"}
+........identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:43.086627+00:00", "outcome": "REJECTED", "request_id": "ab84dec5954546ec8b1e57e4b87e224e", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:43.087628+00:00", "outcome": "REJECTED", "request_id": "d732dd9b87a34ea3a0576cd8986d8ac4", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:43.088627+00:00", "outcome": "REJECTED", "request_id": "1a1a30b83d5e486f8ce5dfb03b98a98e", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:43.089629+00:00", "outcome": "REJECTED", "request_id": "b8bdaf4a90ea4158a42e076987aa8e90", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:43.090627+00:00", "outcome": "REJECTED", "request_id": "d32adaab912e459dbe9776bfeba1101c", "target_id": "/inventario/productos/929bc8ee-7a04-4b7b-b6b8-ce677d6ea49f/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:43.090627+00:00", "outcome": "REJECTED", "request_id": "a4bed4e44c2c4301b1f1789d92a33e12", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:43.091986+00:00", "outcome": "REJECTED", "request_id": "ce064eb686ef445a963f1d4a114eb7b0", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c486de77-8a8a-4bee-817f-f0250e9708b8", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.110529+00:00", "outcome": "REJECTED", "request_id": "378bf0df0f364232a2a16f81eb59f2ab", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c486de77-8a8a-4bee-817f-f0250e9708b8", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.114536+00:00", "outcome": "REJECTED", "request_id": "2f68f158c55c4722bd0ad1d65179f460", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c486de77-8a8a-4bee-817f-f0250e9708b8", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.119215+00:00", "outcome": "REJECTED", "request_id": "ac67f0b2fd894753b14e040195e5184f", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c486de77-8a8a-4bee-817f-f0250e9708b8", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.125683+00:00", "outcome": "REJECTED", "request_id": "603ad302c85a4cfebde836b47b3e768e", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c486de77-8a8a-4bee-817f-f0250e9708b8", "actor_identifier": "seller.audit08@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.130719+00:00", "outcome": "REJECTED", "request_id": "77ad00e77e7c40a98e88f927bbf70099", "target_id": "/inventario/productos/929bc8ee-7a04-4b7b-b6b8-ce677d6ea49f/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8a0fd856-4c96-4846-ac54-b5c3c1097457", "actor_identifier": "wh1.audit08@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.157466+00:00", "outcome": "REJECTED", "request_id": "4333a45c08534a29ac234f41be51896a", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8a0fd856-4c96-4846-ac54-b5c3c1097457", "actor_identifier": "wh1.audit08@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.162983+00:00", "outcome": "REJECTED", "request_id": "f249fd8766da4553b110ba802f73c19e", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+......identity_audit {"action": "ACCESS_DENIED", "actor_id": "e0216159-1fd0-408e-aa44-0ab06c2481d0", "actor_identifier": "admin@valuation.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.869821+00:00", "outcome": "REJECTED", "request_id": "f1f9720e75074d72bf0f5509eb591045", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e6a5bdb4-8b29-4077-847d-16423d83f017", "actor_identifier": "vendedor@valuation.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.891737+00:00", "outcome": "REJECTED", "request_id": "ee083badf39b42838d117433d2f4bbfa", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a41f8405-193e-4c82-85af-980038000080", "actor_identifier": "almacenero@valuation.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:43.917128+00:00", "outcome": "REJECTED", "request_id": "516641a2ccae46ae9a547f085818fb1d", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+.....Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 749, in register_stock_entry
+    counter.save(update_fields=["last_number"])
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 750, in register_stock_entry
+    receipt = StockReceipt.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 759, in register_stock_entry
+    created_lots = Lot.objects.bulk_create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 3, in bulk_create
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 777, in register_stock_entry
+    StockReceiptLine.objects.bulk_create([
+  File "<string>", line 3, in bulk_create
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+Internal Server Error: /inventario/entrada/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\views.py", line 200, in stock_entry_create
+    receipt = register_stock_entry(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\services.py", line 786, in register_stock_entry
+    locked_product.save(update_fields=('average_cost', 'updated_at'))
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14g_receipts.py", line 208, in write_then_fail
+    raise RuntimeError("Fallo postwrite14G")
+RuntimeError: Fallo postwrite14G
+...identity_audit {"action": "ACCESS_DENIED", "actor_id": "d6673a46-e5aa-4079-ab2e-66c7de6d2370", "actor_identifier": "admin@receipt14g.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:44.935943+00:00", "outcome": "REJECTED", "request_id": "f280ad8ae10a4b85a85bace7986b0bde", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "5267ff82-b16a-420e-9614-b4e845479967", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:44.952289+00:00", "outcome": "REJECTED", "request_id": "e9f98368117e407a88ee07a910588e01", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "5267ff82-b16a-420e-9614-b4e845479967", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:44.955316+00:00", "outcome": "REJECTED", "request_id": "19feacf600a643cb9eab6ebba4227366", "target_id": "/inventario/recepciones/6396e74e-6725-4eb4-9bb1-d30676cc33c2/", "target_type": "Endpoint"}
+............identity_audit {"action": "ACCESS_DENIED", "actor_id": "cd16a213-5ced-4378-a09e-4dfe7631c9ec", "actor_identifier": "vendedor@ledger14h2.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:46.519285+00:00", "outcome": "REJECTED", "request_id": "cb14dcdb6e424bb8abe040cee2167b47", "target_id": "/inventario/productos/60fea56a-73ea-4a56-b7e9-39f5fce1d990/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "cd16a213-5ced-4378-a09e-4dfe7631c9ec", "actor_identifier": "vendedor@ledger14h2.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:46.525305+00:00", "outcome": "REJECTED", "request_id": "b21d5ad72b80468f9da7394fe38680ca", "target_id": "/inventario/productos/60fea56a-73ea-4a56-b7e9-39f5fce1d990/movimientos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:46.530814+00:00", "outcome": "REJECTED", "request_id": "98a2b73c1c7c4da899bcb581b1d82534", "target_id": "/inventario/productos/60fea56a-73ea-4a56-b7e9-39f5fce1d990/movimientos/", "target_type": "Endpoint"}
+....identity_audit {"action": "ACCESS_DENIED", "actor_id": "32276382-f9b9-40e8-a437-5bf4a70056b5", "actor_identifier": "admin@history14h.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:47.110698+00:00", "outcome": "REJECTED", "request_id": "cd2f4c4f1a0740258b99f38fb1731c15", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2e70733e-ff7a-4662-9d0f-41a7730b8769", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:47.118075+00:00", "outcome": "REJECTED", "request_id": "bc055eef629b452883bb079818d2576f", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+......identity_audit {"action": "ACCESS_DENIED", "actor_id": "2e70733e-ff7a-4662-9d0f-41a7730b8769", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:47.490915+00:00", "outcome": "REJECTED", "request_id": "1b54c0ea4d0f492c9a9da7a67f32bcbf", "target_id": "/inventario/cargas/3dd82333-88a2-4a64-bf88-9d88a2d908d0/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2e70733e-ff7a-4662-9d0f-41a7730b8769", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:47.496434+00:00", "outcome": "REJECTED", "request_id": "37c222109dc24901aea19895bd165950", "target_id": "/inventario/cargas/3dd82333-88a2-4a64-bf88-9d88a2d908d0/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2e70733e-ff7a-4662-9d0f-41a7730b8769", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:47.500898+00:00", "outcome": "REJECTED", "request_id": "ff4e453e79a8477b82ac04159b509e65", "target_id": "/inventario/carga-inicial/3dd82333-88a2-4a64-bf88-9d88a2d908d0/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2e70733e-ff7a-4662-9d0f-41a7730b8769", "actor_identifier": "vendedor@history14h.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:47.506048+00:00", "outcome": "REJECTED", "request_id": "b475899b71a14331bfc4e7011daf4029", "target_id": "/inventario/carga-inicial/3dd82333-88a2-4a64-bf88-9d88a2d908d0/creada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:47.510558+00:00", "outcome": "REJECTED", "request_id": "73da5ce3aae141ff826d4f54115e5b22", "target_id": "/inventario/cargas/3dd82333-88a2-4a64-bf88-9d88a2d908d0/", "target_type": "Endpoint"}
+.....identity_audit {"action": "ACCESS_DENIED", "actor_id": "39d79fb2-156a-45b1-8216-c82e3f1bac0c", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:47.825537+00:00", "outcome": "REJECTED", "request_id": "8adfa0ba74664e01a3899e0469b9031c", "target_id": "/inventario/bajas/7c32abf9-6f58-4338-849f-7ec3569a87a6/", "target_type": "Endpoint"}
+.......identity_audit {"action": "ACCESS_DENIED", "actor_id": "94b62621-9157-4201-bd3c-9725738aaae6", "actor_identifier": "almacenero@receipt14g.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:48.198765+00:00", "outcome": "REJECTED", "request_id": "293e6fb4719a4e34a4db53f0d0a9cab2", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "64c50e30-dffc-46e2-b968-6d2e0615752e", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:48.212501+00:00", "outcome": "REJECTED", "request_id": "6a1160218b414c92bd7421febc1a7847", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "64c50e30-dffc-46e2-b968-6d2e0615752e", "actor_identifier": "vendedor@receipt14g.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:48.243699+00:00", "outcome": "REJECTED", "request_id": "5d2e68aff6544beca849a0adebc85689", "target_id": "/inventario/ajustes/53d3c6cb-8ea3-435b-b99f-12210360dfcb/", "target_type": "Endpoint"}
+.......................identity_audit {"action": "ACCESS_DENIED", "actor_id": "238a7950-524b-4162-a836-d9107533762f", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:49.650537+00:00", "outcome": "REJECTED", "request_id": "ae4a0b07d9cf4d45896c45ac37dafea9", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "38df0ef9-daa6-4112-9605-1441bd5d734f", "actor_identifier": "seller@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:49.659969+00:00", "outcome": "REJECTED", "request_id": "e16f9e3648ea49ab9fa8c2e5132669b4", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+.....................identity_audit {"action": "ACCESS_DENIED", "actor_id": "18fc04eb-a5a2-45b3-9cf4-16c010c19db7", "actor_identifier": "whadj@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:50.964908+00:00", "outcome": "REJECTED", "request_id": "58b372c63ab54eb49dab6fa84043c153", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+......identity_audit {"action": "ACCESS_DENIED", "actor_id": "83040ad0-f816-40cf-8ad0-8b4133d619ac", "actor_identifier": "sellerwo@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:51.317345+00:00", "outcome": "REJECTED", "request_id": "99e71144c63548c4b0722501f494099f", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+......identity_audit {"action": "ACCESS_DENIED", "actor_id": "3eb65424-b7f7-4e8d-8bad-66f4d55612a4", "actor_identifier": "whp@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:51.690832+00:00", "outcome": "REJECTED", "request_id": "2754463c58064dfbbeb0e81b8bdbd7f5", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "3eb65424-b7f7-4e8d-8bad-66f4d55612a4", "actor_identifier": "whp@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:51.711352+00:00", "outcome": "REJECTED", "request_id": "f5aba426b63b4214bfa9d4e930080a00", "target_id": "/inventario/proveedores/7266558f-92ce-4524-adab-5e83e82c0d0d/estado/", "target_type": "Endpoint"}
+..identity_audit {"action": "ACCESS_DENIED", "actor_id": "46f7a807-7450-4a20-afa4-2f2a8748dfaa", "actor_identifier": "sellerp@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:51.757787+00:00", "outcome": "REJECTED", "request_id": "12b2ae468901499388b473f038eb3b7d", "target_id": "/inventario/proveedores/", "target_type": "Endpoint"}
+............identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:53.638977+00:00", "outcome": "REJECTED", "request_id": "12704fe5b67a402bbe8efa921dba5813", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:53.640897+00:00", "outcome": "REJECTED", "request_id": "5ebd0e28b1784988af87ef407f71577a", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:53.642831+00:00", "outcome": "REJECTED", "request_id": "7331ea7576f646d1a34aacbca5b77823", "target_id": "/ventas/lineas/06d3613e-b300-4de1-a9fe-43b4bb2a3c37/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:53.643845+00:00", "outcome": "REJECTED", "request_id": "71d2bbc2185f43a19a6c46234b7bf201", "target_id": "/ventas/lineas/06d3613e-b300-4de1-a9fe-43b4bb2a3c37/quitar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:53.644843+00:00", "outcome": "REJECTED", "request_id": "42bcfa5e07364fbd905cefb4dcfdca61", "target_id": "/ventas/descartar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "9b77033c-3994-4ec4-a470-046f2e1a31cc", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.650944+00:00", "outcome": "REJECTED", "request_id": "63f7d8dfe62e4c1f9166a34c4366ee78", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "9b77033c-3994-4ec4-a470-046f2e1a31cc", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.655458+00:00", "outcome": "REJECTED", "request_id": "3e8d2602b4b1485f83b670110289de72", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "9b77033c-3994-4ec4-a470-046f2e1a31cc", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.661863+00:00", "outcome": "REJECTED", "request_id": "d776af0491f645b191f9f9ab7637398f", "target_id": "/ventas/lineas/06d3613e-b300-4de1-a9fe-43b4bb2a3c37/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "9b77033c-3994-4ec4-a470-046f2e1a31cc", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.666069+00:00", "outcome": "REJECTED", "request_id": "e424cc4393e749b790acb62b711464fd", "target_id": "/ventas/lineas/06d3613e-b300-4de1-a9fe-43b4bb2a3c37/quitar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "9b77033c-3994-4ec4-a470-046f2e1a31cc", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.672593+00:00", "outcome": "REJECTED", "request_id": "a301e71e98b04fb797e69b93626494e0", "target_id": "/ventas/descartar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f5d4ba12-ae18-4f8d-aae6-dea855aa6271", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.679612+00:00", "outcome": "REJECTED", "request_id": "05b03e743fb94ea89ea8935f75edd71f", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f5d4ba12-ae18-4f8d-aae6-dea855aa6271", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.685736+00:00", "outcome": "REJECTED", "request_id": "8ebc302072014947af69d6081544291b", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f5d4ba12-ae18-4f8d-aae6-dea855aa6271", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.689741+00:00", "outcome": "REJECTED", "request_id": "3f9dfb821de24c8d91bdac5b0e7faef2", "target_id": "/ventas/lineas/06d3613e-b300-4de1-a9fe-43b4bb2a3c37/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f5d4ba12-ae18-4f8d-aae6-dea855aa6271", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.694665+00:00", "outcome": "REJECTED", "request_id": "87baf64dfc074cf39a808bec1dc978de", "target_id": "/ventas/lineas/06d3613e-b300-4de1-a9fe-43b4bb2a3c37/quitar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f5d4ba12-ae18-4f8d-aae6-dea855aa6271", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:53.698730+00:00", "outcome": "REJECTED", "request_id": "5ac12079d8a24c6f84d4111cd6477f51", "target_id": "/ventas/descartar/", "target_type": "Endpoint"}
+.............identity_audit {"action": "ACCESS_DENIED", "actor_id": "a0562358-ca75-4411-8ce9-16f2838ed01a", "actor_identifier": "a11-wh@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:55.166002+00:00", "outcome": "REJECTED", "request_id": "4aaaa1802763492c9f444cafa2f62b72", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a0562358-ca75-4411-8ce9-16f2838ed01a", "actor_identifier": "a11-wh@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:55.169004+00:00", "outcome": "REJECTED", "request_id": "86cb361d2a8e41c3916311d9d5d57a4b", "target_id": "/ventas/constancia/a2517935-56d9-4962-8720-a9515f4bc2a1/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a0562358-ca75-4411-8ce9-16f2838ed01a", "actor_identifier": "a11-wh@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:55.173520+00:00", "outcome": "REJECTED", "request_id": "fa477ec2943f4a4fb12a7bc1b03efc39", "target_id": "/ventas/historial/turno/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a0562358-ca75-4411-8ce9-16f2838ed01a", "actor_identifier": "a11-wh@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:55.178018+00:00", "outcome": "REJECTED", "request_id": "bd3dd321f09942c3b3e8d97fae54167f", "target_id": "/ventas/historial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8a4f8840-dcc2-47cd-923c-9264b637d5d0", "actor_identifier": "a11-admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:55.216109+00:00", "outcome": "REJECTED", "request_id": "f84fe2f0f8ca41eaa10c704acc1b2e97", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8a4f8840-dcc2-47cd-923c-9264b637d5d0", "actor_identifier": "a11-admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:55.220612+00:00", "outcome": "REJECTED", "request_id": "c07c9ca74a204bd78c3363b65d2f15f9", "target_id": "/ventas/historial/turno/", "target_type": "Endpoint"}
+.......identity_audit {"action": "ACCESS_DENIED", "actor_id": "c5bf5570-1685-4d67-9fcb-2697393fd305", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:57.589724+00:00", "outcome": "REJECTED", "request_id": "1c40b7d4a729453e89e1fdfc91cd766f", "target_id": "/ventas/historial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c5bf5570-1685-4d67-9fcb-2697393fd305", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:57.598285+00:00", "outcome": "REJECTED", "request_id": "fc56eb25e18a4ef38f3cc17ebcf9b20f", "target_id": "/ventas/historial/turno/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c5bf5570-1685-4d67-9fcb-2697393fd305", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:57.606868+00:00", "outcome": "REJECTED", "request_id": "c868ed2ea3c04448ba548b09d5deb73e", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c5bf5570-1685-4d67-9fcb-2697393fd305", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:57.616228+00:00", "outcome": "REJECTED", "request_id": "b7eecc15a4f645ad95b00eb113bdb071", "target_id": "/caja/turnos/773541f7-017d-43a9-827f-ee2c0d94d57f/cerrado/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "c5bf5570-1685-4d67-9fcb-2697393fd305", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:57.929128+00:00", "outcome": "REJECTED", "request_id": "373ec317873f4563abdbc1fbdb0df020", "target_id": "/ventas/constancia/a433865c-963d-424c-8855-2264d7cef9fd/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c5bf5570-1685-4d67-9fcb-2697393fd305", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:57.935063+00:00", "outcome": "REJECTED", "request_id": "076f973dcae448da95f355e03e35d7ca", "target_id": "/ventas/constancia/a433865c-963d-424c-8855-2264d7cef9fd/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:57.945530+00:00", "outcome": "REJECTED", "request_id": "24d7f2d55bbd45adb95a5e6b93b43ed3", "target_id": "/ventas/constancia/a433865c-963d-424c-8855-2264d7cef9fd/", "target_type": "Endpoint"}
+..identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/ventas/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T15:50:58.246780+00:00", "outcome": "REJECTED", "request_id": "969d0a0e862a4a87a3c44965584ff922", "target_id": "bba6784a-233b-49fc-821e-fa927a78028e", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:58.246780+00:00", "outcome": "REJECTED", "request_id": "969d0a0e862a4a87a3c44965584ff922", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:58.249703+00:00", "outcome": "REJECTED", "request_id": "c6d0919338fc4d2398232494cb27ea04", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:58.250700+00:00", "outcome": "REJECTED", "request_id": "e08be08a9a064263ae5ddc88fcc49ef3", "target_id": "/ventas/constancia/b1c05eb0-6ba0-4a63-9308-9953bdb04442/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:58.252881+00:00", "outcome": "REJECTED", "request_id": "bd15cea62a684c50bbefe64bdcd34209", "target_id": "/ventas/historial/turno/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:58.254882+00:00", "outcome": "REJECTED", "request_id": "ae665c4ea92940a68eb8619cab19cffd", "target_id": "/ventas/historial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:58.256965+00:00", "outcome": "REJECTED", "request_id": "a85426d3eac24777ae73677e0e29ae01", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:58.257973+00:00", "outcome": "REJECTED", "request_id": "6d156add70934722b69cc2e35820ff14", "target_id": "/caja/turnos/d243247e-de14-4dd0-a320-b9160e435cb1/cerrado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:50:58.259958+00:00", "outcome": "REJECTED", "request_id": "d9ed0e5511104977941733b37f869714", "target_id": "/caja/turnos/d243247e-de14-4dd0-a320-b9160e435cb1/abierto/", "target_type": "Endpoint"}
+..Internal Server Error: /inicio/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\views.py", line 85, in dashboard
+    "summary": _dashboard_summary(role, today),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+django.db.utils.DatabaseError: private diagnostic
+.....identity_audit {"action": "ACCESS_DENIED", "actor_id": "aeee3f2b-1695-44ee-97a6-91526885be03", "actor_identifier": "admin.ficticio@allocations.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:50:59.994896+00:00", "outcome": "REJECTED", "request_id": "b67e9dbd39834d79a58e68c91cc2f6ae", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "43b05c73-9458-4c27-a3d0-86bd6443ee55", "actor_identifier": "almacen.ficticio@allocations.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:00.042499+00:00", "outcome": "REJECTED", "request_id": "63fbe4714dbb403abe988fa01fa461d0", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "43b05c73-9458-4c27-a3d0-86bd6443ee55", "actor_identifier": "almacen.ficticio@allocations.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:00.176177+00:00", "outcome": "REJECTED", "request_id": "5175fac3a3194a0694d6d3ea65bda3a2", "target_id": "/ventas/constancia/3dd3c0cb-1487-4328-949e-80491866c538/", "target_type": "Endpoint"}
+....Internal Server Error: /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\views.py", line 307, in sales_checkout
+    sale = checkout_sale(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\services.py", line 506, in checkout_sale
+    counter.save(update_fields=["next_value"])
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit14f_allocations.py", line 186, in save_then_fail
+    raise RuntimeError(f"Fallo después de guardar {model.__name__}")
+RuntimeError: Fallo después de guardar SaleCounter
+Internal Server Error: /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\views.py", line 307, in sales_checkout
+    sale = checkout_sale(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\services.py", line 509, in checkout_sale
+    sale = Sale.objects.create(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit14f_allocations.py", line 186, in save_then_fail
+    raise RuntimeError(f"Fallo después de guardar {model.__name__}")
+RuntimeError: Fallo después de guardar Sale
+Internal Server Error: /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\views.py", line 307, in sales_checkout
+    sale = checkout_sale(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\services.py", line 528, in checkout_sale
+    confirmed_lines[line.pk] = SaleLine.objects.create(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit14f_allocations.py", line 186, in save_then_fail
+    raise RuntimeError(f"Fallo después de guardar {model.__name__}")
+RuntimeError: Fallo después de guardar SaleLine
+Internal Server Error: /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\views.py", line 307, in sales_checkout
+    sale = checkout_sale(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\services.py", line 553, in checkout_sale
+    SaleLotAllocation.objects.create(
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit14f_allocations.py", line 186, in save_then_fail
+    raise RuntimeError(f"Fallo después de guardar {model.__name__}")
+RuntimeError: Fallo después de guardar SaleLotAllocation
+Internal Server Error: /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\views.py", line 307, in sales_checkout
+    sale = checkout_sale(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\services.py", line 560, in checkout_sale
+    lot.save(update_fields=["available_quantity"])
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit14f_allocations.py", line 186, in save_then_fail
+    raise RuntimeError(f"Fallo después de guardar {model.__name__}")
+RuntimeError: Fallo después de guardar Lot
+Internal Server Error: /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\views.py", line 307, in sales_checkout
+    sale = checkout_sale(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\services.py", line 553, in checkout_sale
+    SaleLotAllocation.objects.create(
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit14f_allocations.py", line 186, in save_then_fail
+    raise RuntimeError(f"Fallo después de guardar {model.__name__}")
+RuntimeError: Fallo después de guardar SaleLotAllocation
+Internal Server Error: /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\views.py", line 307, in sales_checkout
+    sale = checkout_sale(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\services.py", line 560, in checkout_sale
+    lot.save(update_fields=["available_quantity"])
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit14f_allocations.py", line 186, in save_then_fail
+    raise RuntimeError(f"Fallo después de guardar {model.__name__}")
+RuntimeError: Fallo después de guardar Lot
+Internal Server Error: /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 64, in wrapped
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\views.py", line 307, in sales_checkout
+    sale = checkout_sale(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\services.py", line 575, in checkout_sale
+    draft.save(update_fields=("status", "discarded_at", "updated_at"))
+  File "<string>", line 3, in save
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit14f_allocations.py", line 186, in save_then_fail
+    raise RuntimeError(f"Fallo después de guardar {model.__name__}")
+RuntimeError: Fallo después de guardar SaleDraft
+........identity_audit {"action": "ACCESS_DENIED", "actor_id": "6fb806c2-9f8b-4753-9cee-073cf1b894ee", "actor_identifier": "cl_admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:03.627197+00:00", "outcome": "REJECTED", "request_id": "b98a32f5b8c547e4a1ea95f5d7928904", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6a55994-1fdd-49dc-9169-de207bba6816", "actor_identifier": "cl_wh@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:03.640514+00:00", "outcome": "REJECTED", "request_id": "ea9f84625ef4495b9e844fcd76d40207", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+.....identity_audit {"action": "ACCESS_DENIED", "actor_id": "2f3e99b6-c075-4044-ad94-ef033283b043", "actor_identifier": "co_admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:04.587280+00:00", "outcome": "REJECTED", "request_id": "1e8be324f948489a8af31418af66f885", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2f3e99b6-c075-4044-ad94-ef033283b043", "actor_identifier": "co_admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:04.596506+00:00", "outcome": "REJECTED", "request_id": "142804dd1b7c4bdbb60383b2288ea67c", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8ecb4398-b589-4700-a493-8617edd15c56", "actor_identifier": "co_warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:04.608503+00:00", "outcome": "REJECTED", "request_id": "8f4ecdff0b97449185181235c705f8e5", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8ecb4398-b589-4700-a493-8617edd15c56", "actor_identifier": "co_warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:04.615558+00:00", "outcome": "REJECTED", "request_id": "1d26cc9465514d81b3fdf48ede9c8240", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+.............identity_audit {"action": "ACCESS_DENIED", "actor_id": "94d6c372-4198-4043-b0e4-48cc732966b7", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:05.906114+00:00", "outcome": "REJECTED", "request_id": "b94c0252b9484ba68ae2807496e1f528", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e28b87d9-5ccc-4156-89ad-afed9b766f63", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:05.913705+00:00", "outcome": "REJECTED", "request_id": "9fc979ef5fea488a9cf170527564b3e4", "target_id": "/ventas/", "target_type": "Endpoint"}
+...................identity_audit {"action": "ACCESS_DENIED", "actor_id": "bec71bed-0180-49d6-a61e-7e7f5cf6517e", "actor_identifier": "adminh@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:07.211627+00:00", "outcome": "REJECTED", "request_id": "6b7024da45f44f43b9a94ad9b51e6a97", "target_id": "/ventas/historial/turno/", "target_type": "Endpoint"}
+..............identity_audit {"action": "ACCESS_DENIED", "actor_id": "82f1129f-7c82-4f2f-9bcf-1a2f7e77310c", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:08.939001+00:00", "outcome": "REJECTED", "request_id": "44a8e875c4a947b2b5b40d5036ebc0dd", "target_id": "/productos/categorias/nueva/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "82f1129f-7c82-4f2f-9bcf-1a2f7e77310c", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:09.048939+00:00", "outcome": "REJECTED", "request_id": "98dbd4d8cd1b45ffb7a7b50b70f1ab02", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "82f1129f-7c82-4f2f-9bcf-1a2f7e77310c", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:09.177537+00:00", "outcome": "REJECTED", "request_id": "657a945a49a6470ca243cd21076b5ce3", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "e116d5bf-bea1-4116-9fa9-d47ca1612417", "actor_identifier": "almacen@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:09.296552+00:00", "outcome": "REJECTED", "request_id": "1fab85f6767840f7bbadf7658b3de601", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "e116d5bf-bea1-4116-9fa9-d47ca1612417", "actor_identifier": "almacen@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:09.416954+00:00", "outcome": "REJECTED", "request_id": "fa0eb57adc0745ef88454ec03d231713", "target_id": "/ventas/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "c423b956-5dd2-4615-9e78-9b67ad4a1be8", "actor_identifier": "admin@pruebas.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:09.534917+00:00", "outcome": "REJECTED", "request_id": "4ce05b9af7064d74a7fd109e55104d05", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "c423b956-5dd2-4615-9e78-9b67ad4a1be8", "actor_identifier": "admin@pruebas.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:09.637755+00:00", "outcome": "REJECTED", "request_id": "110ca93e495a46c88d35a7f2a4c8dd64", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "82f1129f-7c82-4f2f-9bcf-1a2f7e77310c", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:09.734769+00:00", "outcome": "REJECTED", "request_id": "461a2b2944d64b0da18099724468994f", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "e116d5bf-bea1-4116-9fa9-d47ca1612417", "actor_identifier": "almacen@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:09.851865+00:00", "outcome": "REJECTED", "request_id": "ad1fcb49e1dd40b5aa145709575e4902", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "82f1129f-7c82-4f2f-9bcf-1a2f7e77310c", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:09.976517+00:00", "outcome": "REJECTED", "request_id": "2b7134004d564ef081b120169807173e", "target_id": "/empleados/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "e116d5bf-bea1-4116-9fa9-d47ca1612417", "actor_identifier": "almacen@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:10.131888+00:00", "outcome": "REJECTED", "request_id": "5a1d77b4e7d44afb9d185a4193e4189c", "target_id": "/empleados/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "82f1129f-7c82-4f2f-9bcf-1a2f7e77310c", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:10.236097+00:00", "outcome": "REJECTED", "request_id": "07af6e47b7044f7eb4c274b67f3e8b65", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+..identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:51:10.395397+00:00", "outcome": "REJECTED", "request_id": "0fbff71d9b98458d80e6d30be82e175e", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:51:10.398450+00:00", "outcome": "REJECTED", "request_id": "15d1d85d668a414f93da94238f536894", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:51:10.400977+00:00", "outcome": "REJECTED", "request_id": "ddfbd41201434755880c70f43953cd83", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:51:10.402998+00:00", "outcome": "REJECTED", "request_id": "8ad0690f07e64d3fa830edab7a01919e", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:51:10.405501+00:00", "outcome": "REJECTED", "request_id": "4268982076f44a3298f76f0c1b412f4e", "target_id": "/ventas/historial/", "target_type": "Endpoint"}
+...................identity_audit {"action": "ACCESS_DENIED", "actor_id": "2f712f56-fd6e-463b-923f-f8de59f5920d", "actor_identifier": "vendedor.a.c2@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:13.283146+00:00", "outcome": "REJECTED", "request_id": "c06ebaad8be44de299ea52657c610545", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2f712f56-fd6e-463b-923f-f8de59f5920d", "actor_identifier": "vendedor.a.c2@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:13.288149+00:00", "outcome": "REJECTED", "request_id": "2ffa82fa73d942bfb7cbc41348cf0db2", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "2f712f56-fd6e-463b-923f-f8de59f5920d", "actor_identifier": "vendedor.a.c2@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:13.293681+00:00", "outcome": "REJECTED", "request_id": "af7986a72422449ab237724c288f6886", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+...identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:51:13.576922+00:00", "outcome": "REJECTED", "request_id": "4f67006bbcb24c9185bbdbd061d64202", "target_id": "/ventas/", "target_type": "Endpoint"}
+........................identity_audit {"action": "ACCESS_DENIED", "actor_id": "5492f30a-1f9d-44d8-bb0b-4925787169fe", "actor_identifier": "vendedor14be@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:16.397774+00:00", "outcome": "REJECTED", "request_id": "80ca2394ff984eaea7455448a02afa68", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "e04cab90-b02f-47d0-a4fb-c2e6442f557a", "actor_identifier": "almacen14be@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:16.487771+00:00", "outcome": "REJECTED", "request_id": "ae088164fe8842e583eed44782eaef6a", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+.identity_audit {"action": "ACCESS_DENIED", "actor_id": "5492f30a-1f9d-44d8-bb0b-4925787169fe", "actor_identifier": "vendedor14be@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:51:16.582433+00:00", "outcome": "REJECTED", "request_id": "50c575bc51e94726934a9688173e8223", "target_id": "/empleados/", "target_type": "Endpoint"}
+.................................................................
+----------------------------------------------------------------------
+Ran 657 tests in 101.733s
+
+OK
+Destroying test database for alias 'default'...
+
+Found 657 test(s).
+System check identified no issues (0 silenced).
+Productos demo creados: 4

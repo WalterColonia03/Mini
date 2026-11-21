@@ -1,0 +1,406 @@
+{
+  "fecha_lima": "2026-11-13",
+  "vencimiento_controlado": "2026-11-14",
+  "roles_login_HTTP": [
+    "ADMIN",
+    "ALMACENERO",
+    "VENDEDOR"
+  ],
+  "CSRF": true,
+  "tablas": [
+    "cash_cashregister",
+    "cash_cashshift",
+    "cash_cashshiftclose",
+    "catalog_category",
+    "catalog_product",
+    "catalog_productbarcodekey",
+    "identity_account",
+    "identity_account_groups",
+    "identity_account_user_permissions",
+    "identity_loginattempt",
+    "identity_role",
+    "inventory_initialinventoryload",
+    "inventory_lot",
+    "inventory_physicaladjustment",
+    "inventory_stockwriteoff",
+    "inventory_supplier",
+    "sales_sale",
+    "sales_salecounter",
+    "sales_saledraft",
+    "sales_saledraftline",
+    "sales_saleline"
+  ],
+  "tablas_excluidas": "sesiones técnicas Django, auth, admin, migrations",
+  "control_positivo": {
+    "cobros": 1,
+    "venta": "V-00000001",
+    "importe": "10.00",
+    "esperado_cierre": "20.00",
+    "diferencia": "0.00",
+    "saldo_lote": 7
+  },
+  "variantes": [
+    {
+      "id": "S01",
+      "rol": "ADMIN",
+      "caso": "carga inicial con producto válido",
+      "ruta": "/inventario/carga-inicial/",
+      "HTTP_esperado": 403,
+      "HTTP": 403,
+      "literal_buscado": "No tienes permiso para esta operación",
+      "errores_de_campo": [],
+      "huella_antes": "76c4aa29ffd4e2e0420f4978019f2137e1afb0f29a9f37dfbff12b3b12e795cd",
+      "huella_despues": "76c4aa29ffd4e2e0420f4978019f2137e1afb0f29a9f37dfbff12b3b12e795cd",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S02",
+      "rol": "ALMACENERO",
+      "caso": "apertura de caja",
+      "ruta": "/caja/abrir/",
+      "HTTP_esperado": 403,
+      "HTTP": 403,
+      "literal_buscado": "No tienes permiso para esta operación",
+      "errores_de_campo": [],
+      "huella_antes": "b2a7c8077e466bf2b5a6553f171f883dbd267153f9d2f4d663e1cc6eeefe4e94",
+      "huella_despues": "b2a7c8077e466bf2b5a6553f171f883dbd267153f9d2f4d663e1cc6eeefe4e94",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S03",
+      "rol": "VENDEDOR",
+      "caso": "baja real por daño",
+      "ruta": "/inventario/bajas/nueva/",
+      "HTTP_esperado": 403,
+      "HTTP": 403,
+      "literal_buscado": "No tienes permiso para esta operación",
+      "errores_de_campo": [],
+      "huella_antes": "b2a7c8077e466bf2b5a6553f171f883dbd267153f9d2f4d663e1cc6eeefe4e94",
+      "huella_despues": "b2a7c8077e466bf2b5a6553f171f883dbd267153f9d2f4d663e1cc6eeefe4e94",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S04",
+      "rol": "VENDEDOR",
+      "caso": "cambio de disponibilidad",
+      "ruta": "/productos/00fd5574-c714-4b9a-b600-eda7e6cc8752/disponibilidad/",
+      "HTTP_esperado": 403,
+      "HTTP": 403,
+      "literal_buscado": "No tienes permiso para esta operación",
+      "errores_de_campo": [],
+      "huella_antes": "b2a7c8077e466bf2b5a6553f171f883dbd267153f9d2f4d663e1cc6eeefe4e94",
+      "huella_despues": "b2a7c8077e466bf2b5a6553f171f883dbd267153f9d2f4d663e1cc6eeefe4e94",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S05",
+      "rol": "ALMACENERO",
+      "caso": "cobro reservado al vendedor",
+      "ruta": "/ventas/cobrar/",
+      "HTTP_esperado": 403,
+      "HTTP": 403,
+      "literal_buscado": "No tienes permiso para esta operación",
+      "errores_de_campo": [],
+      "huella_antes": "8bef461d5707b9182cd15f345acc6f826b737f87112090a60c5402daf62e2c91",
+      "huella_despues": "8bef461d5707b9182cd15f345acc6f826b737f87112090a60c5402daf62e2c91",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S06",
+      "rol": "VENDEDOR",
+      "caso": "efectivo 9.99 para dos unidades por 10.00",
+      "ruta": "/ventas/cobrar/",
+      "HTTP_esperado": 200,
+      "HTTP": 200,
+      "literal_buscado": "es insuficiente para cubrir el total",
+      "errores_de_campo": [],
+      "huella_antes": "8bef461d5707b9182cd15f345acc6f826b737f87112090a60c5402daf62e2c91",
+      "huella_despues": "8bef461d5707b9182cd15f345acc6f826b737f87112090a60c5402daf62e2c91",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S07",
+      "rol": "VENDEDOR",
+      "caso": "cierre bloqueado por dos unidades en borrador",
+      "ruta": "/caja/cerrar/",
+      "HTTP_esperado": 200,
+      "HTTP": 200,
+      "literal_buscado": "Hay una venta en preparación con productos",
+      "errores_de_campo": [],
+      "huella_antes": "8bef461d5707b9182cd15f345acc6f826b737f87112090a60c5402daf62e2c91",
+      "huella_despues": "8bef461d5707b9182cd15f345acc6f826b737f87112090a60c5402daf62e2c91",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S08",
+      "rol": "VENDEDOR",
+      "caso": "cobrar revisión anterior tras POST de desactivación de producto",
+      "ruta": "/ventas/cobrar/",
+      "HTTP_esperado": 200,
+      "HTTP": 200,
+      "literal_buscado": "ya no está disponible para la venta",
+      "errores_de_campo": [],
+      "huella_antes": "76cc140c1dcd4e5a0e99099f511f29f66ad2fe9da58ae229403b46978769aef7",
+      "huella_despues": "76cc140c1dcd4e5a0e99099f511f29f66ad2fe9da58ae229403b46978769aef7",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S09",
+      "rol": "VENDEDOR",
+      "caso": "cobrar revisión anterior tras confirmar desactivación de categoría",
+      "ruta": "/ventas/cobrar/",
+      "HTTP_esperado": 200,
+      "HTTP": 200,
+      "literal_buscado": "ya no está disponible para la venta",
+      "errores_de_campo": [],
+      "huella_antes": "f5f283e992df105d91913e7cd28b2b2544b0f4f7977f44879c225c4e0fc49782",
+      "huella_despues": "f5f283e992df105d91913e7cd28b2b2544b0f4f7977f44879c225c4e0fc49782",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S10",
+      "rol": "ADMIN",
+      "caso": "reenviar confirmación antigua de categoría",
+      "ruta": "/productos/categorias/296c1da0-9a47-4359-b7ca-53b393a505d1/estado/",
+      "HTTP_esperado": 409,
+      "HTTP": 409,
+      "literal_buscado": "La categoría cambió desde que abrió esta pantalla",
+      "errores_de_campo": [],
+      "huella_antes": "f5f283e992df105d91913e7cd28b2b2544b0f4f7977f44879c225c4e0fc49782",
+      "huella_despues": "f5f283e992df105d91913e7cd28b2b2544b0f4f7977f44879c225c4e0fc49782",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S11",
+      "rol": "ALMACENERO",
+      "caso": "merma de 11 para saldo 10",
+      "ruta": "/inventario/bajas/nueva/",
+      "HTTP_esperado": 200,
+      "HTTP": 200,
+      "literal_buscado": "La cantidad supera las existencias",
+      "errores_de_campo": [
+        "La cantidad supera las existencias disponibles del lote."
+      ],
+      "huella_antes": "77a28ab4be30f861bef58bd77ffebd2d125dee9348abbef7e06d7d6d154eb5ee",
+      "huella_despues": "77a28ab4be30f861bef58bd77ffebd2d125dee9348abbef7e06d7d6d154eb5ee",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S12",
+      "rol": "ALMACENERO",
+      "caso": "vencimiento prematuro, vence mañana",
+      "ruta": "/inventario/bajas/nueva/",
+      "HTTP_esperado": 200,
+      "HTTP": 302,
+      "literal_buscado": "El lote aún no ha vencido",
+      "errores_de_campo": [],
+      "huella_antes": "77a28ab4be30f861bef58bd77ffebd2d125dee9348abbef7e06d7d6d154eb5ee",
+      "huella_despues": "6dd3c333378aa49eec792e07e0855c2b087a3a83c63a18f131a0cfa8bce3e358",
+      "tablas_cambiadas": [
+        "catalog_product",
+        "inventory_lot",
+        "inventory_stockwriteoff"
+      ],
+      "comprobaciones": {
+        "HTTP": false,
+        "texto": false,
+        "tablas_permitidas": false
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "S13",
+      "rol": "VENDEDOR",
+      "caso": "venció hoy entre la revisión y el cobro",
+      "ruta": "/ventas/cobrar/",
+      "HTTP_esperado": 200,
+      "HTTP": 200,
+      "literal_buscado": "Disponible: 0, solicitado: 2.",
+      "errores_de_campo": [],
+      "huella_antes": "6dd3c333378aa49eec792e07e0855c2b087a3a83c63a18f131a0cfa8bce3e358",
+      "huella_despues": "6dd3c333378aa49eec792e07e0855c2b087a3a83c63a18f131a0cfa8bce3e358",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S14",
+      "rol": "ALMACENERO",
+      "caso": "daño de lote vencido",
+      "ruta": "/inventario/bajas/nueva/",
+      "HTTP_esperado": 200,
+      "HTTP": 200,
+      "literal_buscado": "El lote está vencido",
+      "errores_de_campo": [
+        "El lote está vencido; el motivo debe ser «Vencimiento»."
+      ],
+      "huella_antes": "6dd3c333378aa49eec792e07e0855c2b087a3a83c63a18f131a0cfa8bce3e358",
+      "huella_despues": "6dd3c333378aa49eec792e07e0855c2b087a3a83c63a18f131a0cfa8bce3e358",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S15",
+      "rol": "ALMACENERO",
+      "caso": "robo de lote vencido sin explicar",
+      "ruta": "/inventario/bajas/nueva/",
+      "HTTP_esperado": 200,
+      "HTTP": 200,
+      "literal_buscado": "Detalle obligatorio",
+      "errores_de_campo": [
+        "El lote está vencido; el motivo debe ser «Vencimiento»."
+      ],
+      "huella_antes": "6dd3c333378aa49eec792e07e0855c2b087a3a83c63a18f131a0cfa8bce3e358",
+      "huella_despues": "6dd3c333378aa49eec792e07e0855c2b087a3a83c63a18f131a0cfa8bce3e358",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": false,
+        "tablas_permitidas": true
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "S16",
+      "rol": "ALMACENERO",
+      "caso": "robo explicado de una unidad de lote vencido",
+      "ruta": "/inventario/bajas/nueva/",
+      "HTTP_esperado": 302,
+      "HTTP": 200,
+      "literal_buscado": null,
+      "errores_de_campo": [
+        "El lote está vencido; el motivo debe ser «Vencimiento»."
+      ],
+      "huella_antes": "6dd3c333378aa49eec792e07e0855c2b087a3a83c63a18f131a0cfa8bce3e358",
+      "huella_despues": "6dd3c333378aa49eec792e07e0855c2b087a3a83c63a18f131a0cfa8bce3e358",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": false,
+        "texto": true,
+        "tablas_permitidas": true,
+        "efecto": false
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "S17",
+      "rol": "VENDEDOR",
+      "caso": "reenvío idéntico al cobro confirmado",
+      "ruta": "/ventas/cobrar/",
+      "HTTP_esperado": 302,
+      "HTTP": 302,
+      "literal_buscado": null,
+      "errores_de_campo": [],
+      "huella_antes": "f49b8be8a18f97885552a9b9a99b690df7a81ce5b899c223e26f5d83280b5b5f",
+      "huella_despues": "f49b8be8a18f97885552a9b9a99b690df7a81ce5b899c223e26f5d83280b5b5f",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true,
+        "efecto": true
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "S18",
+      "rol": "VENDEDOR",
+      "caso": "segundo cierre del mismo turno",
+      "ruta": "/caja/cerrar/",
+      "HTTP_esperado": 200,
+      "HTTP": 200,
+      "literal_buscado": "No tienes un turno de caja abierto para cerrar.",
+      "errores_de_campo": [],
+      "huella_antes": "30d323d038e73c949bd643bf1600b1a9c638ad66748bf223f4a6cee95accf341",
+      "huella_despues": "30d323d038e73c949bd643bf1600b1a9c638ad66748bf223f4a6cee95accf341",
+      "tablas_cambiadas": [],
+      "comprobaciones": {
+        "HTTP": true,
+        "texto": true,
+        "tablas_permitidas": true
+      },
+      "resultado": "CUMPLE"
+    }
+  ],
+  "django": "5.2.18",
+  "python": "3.12.10",
+  "sqlite": "3.49.1",
+  "base": ":memory:",
+  "archivo_servicio_merma": "8348f07d2eb8413c8209f3f5c4644f5e4e906bda28f482a055fb1287faa4126b",
+  "herramienta": "Django Client (WSGI en proceso), Django ORM; sin navegador"
+}

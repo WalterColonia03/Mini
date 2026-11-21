@@ -1,0 +1,123 @@
+{
+  "checks": [
+    "aislamiento_proof",
+    "aislamiento_run",
+    "anon_get_/ventas/cobrar/_302",
+    "anon_get_/ventas/cobrar/_next",
+    "anon_get_/ventas/constancia/00000000-0000-4000-8000-000000000001/_302",
+    "anon_get_/ventas/constancia/00000000-0000-4000-8000-000000000001/_next",
+    "anon_get_/ventas/historial/turno/_302",
+    "anon_get_/ventas/historial/turno/_next",
+    "anon_get_/ventas/historial/_302",
+    "anon_get_/ventas/historial/_next",
+    "inactivo_login_bloqueado",
+    "admin_get_/ventas/cobrar/_403",
+    "admin_get_/ventas/historial/turno/_403",
+    "warehouse_get_/ventas/cobrar/_403",
+    "warehouse_get_/ventas/constancia/00000000-0000-4000-8000-000000000001/_403",
+    "warehouse_get_/ventas/historial/turno/_403",
+    "warehouse_get_/ventas/historial/_403",
+    "seller2_sin_turno_cobrar_302",
+    "seller2_sin_turno_cobrar_dest",
+    "producto_categoria_inactiva_oculto",
+    "checkout_no_store",
+    "advertencia_tributaria_visible",
+    "resumen_inicial_subtotal",
+    "resumen_inicial_descuento",
+    "resumen_inicial_base",
+    "resumen_inicial_igv",
+    "resumen_inicial_total",
+    "resumen_inicial_vuelto",
+    "js_recalc_descuento_valido",
+    "js_recalc_vuelto_exacto",
+    "js_recalc_vuelto_excedente",
+    "js_recalc_descuento_100pct_invalido",
+    "js_recalc_bad_input_disc",
+    "server_rechaza_descuento_100pct",
+    "server_rechaza_efectivo_insuficiente",
+    "server_rechaza_non_ascii_disc",
+    "server_rechaza_non_ascii_cash",
+    "receipt_no_store",
+    "doble_clic_envia_1_post_y_crea_1_venta",
+    "venta1_importes_exactos",
+    "layout_checkout_sin_desborde_horizontal",
+    "layout_receipt_sin_desborde_y_alineado",
+    "venta2_fefo_y_lotes_vencidos_intactos",
+    "otro_vendedor_constancia_404",
+    "stock_antes_merma_subtotal",
+    "colision_stock_rechaza_atomico",
+    "precio_antes_cambio",
+    "colision_precio_alerta_y_actualiza_sin_cobrar",
+    "historial_turno_muestra_3_ventas_y_descuento",
+    "cierre_caja_cuadra_con_ventas_descontadas",
+    "back_post_logout_redirige_login",
+    "admin_dashboard_refleja_ventas_netas_y_descuentos",
+    "admin_historial_cache_y_datos",
+    "admin_constancia_inmutable_y_sin_boton_nueva_venta",
+    "almacenero_stock_descontado_visible",
+    "almacenero_kardex_registra_venta",
+    "orm_final_resumen",
+    "cero_page_errors"
+  ],
+  "layout_metrics": {
+    "checkout": {
+      "docScrollWidth": 1366,
+      "windowInnerWidth": 1366,
+      "docOk": true,
+      "asideFits": true,
+      "asideScrollW": 309,
+      "asideClientW": 309,
+      "formFits": true
+    },
+    "receipt": {
+      "docScrollWidth": 1366,
+      "windowInnerWidth": 1366,
+      "docOk": true,
+      "wrapOk": true,
+      "wrapScrollW": 850,
+      "wrapClientW": 850,
+      "allHeadersVisible": true,
+      "aligns": [
+        {
+          "text": "Producto",
+          "textAlign": "left"
+        },
+        {
+          "text": "Código",
+          "textAlign": "left"
+        },
+        {
+          "text": "Cant.",
+          "textAlign": "right"
+        },
+        {
+          "text": "P. Unit.",
+          "textAlign": "right"
+        },
+        {
+          "text": "Importe",
+          "textAlign": "right"
+        }
+      ]
+    }
+  },
+  "cache_headers": {
+    "checkout": "max-age=0, no-cache, no-store, must-revalidate, private",
+    "receipt": "max-age=0, no-cache, no-store, must-revalidate, private",
+    "shift_history": "max-age=0, no-cache, no-store, must-revalidate, private",
+    "history": "max-age=0, no-cache, no-store, must-revalidate, private"
+  },
+  "page_errors": [],
+  "screenshots": [
+    "post-fix-receipt-tax.png",
+    "post-fix-checkout.png",
+    "post-fix-receipt.png",
+    "post-fix-shift-history.png",
+    "post-fix-cash-close.png",
+    "post-fix-admin-dashboard.png",
+    "post-fix-warehouse-stock.png",
+    "post-fix-kardex.png"
+  ],
+  "input": "Chrome 1366x900 es-PE Stage 11 audit (checkout, discounts, IGV HALF_UP, FEFO, double-submit, inter-role price change, receipt wrap, shift history, cash close, admin/warehouse integration)",
+  "chrome": "157.0.8103.78"
+}

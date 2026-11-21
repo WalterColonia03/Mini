@@ -1,0 +1,231 @@
+{
+  "timestamp": "2026-11-09T09:58:14.285024-05:00",
+  "tool": "Python urllib + HTTP real; no Django test client",
+  "base": "http://127.0.0.1:8765",
+  "database": "C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3",
+  "cases": [
+    {
+      "case": "VISITANTE: GET login",
+      "expected": 200,
+      "observed": 200,
+      "passed": true
+    },
+    {
+      "case": "VISITANTE: GET catalogo",
+      "expected": 302,
+      "observed": 302,
+      "passed": true
+    },
+    {
+      "case": "VISITANTE: redireccion protegida",
+      "expected": "/?next=/productos/",
+      "observed": "/?next=/productos/",
+      "passed": true
+    },
+    {
+      "case": "VISITANTE: GET alta",
+      "expected": 302,
+      "observed": 302,
+      "passed": true
+    },
+    {
+      "case": "VISITANTE: POST alta valido con CSRF",
+      "expected": 302,
+      "observed": 302,
+      "passed": true
+    },
+    {
+      "case": "ADMIN: GET login",
+      "expected": 200,
+      "observed": 200,
+      "passed": true
+    },
+    {
+      "case": "ADMIN: login real HTTP + CSRF",
+      "expected": [
+        302,
+        "/inicio/"
+      ],
+      "observed": [
+        302,
+        "/inicio/"
+      ],
+      "passed": true
+    },
+    {
+      "case": "ADMIN: GET catalogo",
+      "expected": 200,
+      "observed": 200,
+      "passed": true
+    },
+    {
+      "case": "ADMIN: producto creado por UI visible",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "case": "ADMIN: logout HTTP",
+      "expected": [
+        302,
+        "/"
+      ],
+      "observed": [
+        302,
+        "/"
+      ],
+      "passed": true
+    },
+    {
+      "case": "ALMACENERO: GET login",
+      "expected": 200,
+      "observed": 200,
+      "passed": true
+    },
+    {
+      "case": "ALMACENERO: login real HTTP + CSRF",
+      "expected": [
+        302,
+        "/inicio/"
+      ],
+      "observed": [
+        302,
+        "/inicio/"
+      ],
+      "passed": true
+    },
+    {
+      "case": "ALMACENERO: GET catalogo",
+      "expected": 200,
+      "observed": 200,
+      "passed": true
+    },
+    {
+      "case": "ALMACENERO: producto creado por UI visible",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "case": "ALMACENERO: GET alta",
+      "expected": 403,
+      "observed": 403,
+      "passed": true
+    },
+    {
+      "case": "ALMACENERO: POST alta valido con CSRF",
+      "expected": 403,
+      "observed": 403,
+      "passed": true
+    },
+    {
+      "case": "ALMACENERO: logout HTTP",
+      "expected": [
+        302,
+        "/"
+      ],
+      "observed": [
+        302,
+        "/"
+      ],
+      "passed": true
+    },
+    {
+      "case": "VENDEDOR: GET login",
+      "expected": 200,
+      "observed": 200,
+      "passed": true
+    },
+    {
+      "case": "VENDEDOR: login real HTTP + CSRF",
+      "expected": [
+        302,
+        "/inicio/"
+      ],
+      "observed": [
+        302,
+        "/inicio/"
+      ],
+      "passed": true
+    },
+    {
+      "case": "VENDEDOR: GET catalogo",
+      "expected": 403,
+      "observed": 403,
+      "passed": true
+    },
+    {
+      "case": "VENDEDOR: GET alta",
+      "expected": 403,
+      "observed": 403,
+      "passed": true
+    },
+    {
+      "case": "VENDEDOR: POST alta valido con CSRF",
+      "expected": 403,
+      "observed": 403,
+      "passed": true
+    },
+    {
+      "case": "VENDEDOR: logout HTTP",
+      "expected": [
+        302,
+        "/"
+      ],
+      "observed": [
+        302,
+        "/"
+      ],
+      "passed": true
+    },
+    {
+      "case": "Rechazos no alteran productos/lotes/turnos/ventas",
+      "expected": {
+        "products": [
+          {
+            "id": "c79c3f29-8603-4382-a61c-ba38675b09aa",
+            "name": "AUD00 Atún ficticio",
+            "barcode": "AUD00-001",
+            "sale_price": "6.50",
+            "minimum_stock": 10
+          }
+        ],
+        "lots": 0,
+        "shifts": 0,
+        "sales": 0
+      },
+      "observed": {
+        "products": [
+          {
+            "id": "c79c3f29-8603-4382-a61c-ba38675b09aa",
+            "name": "AUD00 Atún ficticio",
+            "barcode": "AUD00-001",
+            "sale_price": "6.50",
+            "minimum_stock": 10
+          }
+        ],
+        "lots": 0,
+        "shifts": 0,
+        "sales": 0
+      },
+      "passed": true
+    },
+    {
+      "case": "Base original conserva SHA256",
+      "expected": {
+        "file": "r1-pmv/r1_pmv.sqlite3",
+        "size": 483328,
+        "sha256": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95"
+      },
+      "observed": {
+        "file": "r1-pmv/r1_pmv.sqlite3",
+        "size": 483328,
+        "sha256": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95"
+      },
+      "passed": true
+    }
+  ],
+  "passed": 25,
+  "total": 25,
+  "scope": "Bootstrap y permisos de catalogo; no auditoria completa de HU ni suite del proyecto"
+}

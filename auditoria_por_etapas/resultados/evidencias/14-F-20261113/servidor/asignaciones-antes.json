@@ -1,0 +1,170 @@
+{
+  "fecha_lima": "2026-11-13",
+  "base": "C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\auditoria_por_etapas\\resultados\\evidencias\\14-F-20261113\\servidor\\asignaciones-antes.sqlite3",
+  "herramienta": "Django Client con CSRF y login HTTP, SQLite archivo nueva",
+  "casos": [
+    {
+      "id": "F01",
+      "caso": "FEFO A3 B7 vender4 conserva saldo A0 B6",
+      "esperado": [
+        [
+          "A",
+          0
+        ],
+        [
+          "B",
+          6
+        ]
+      ],
+      "observado": [
+        [
+          "A",
+          0
+        ],
+        [
+          "B",
+          6
+        ]
+      ],
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F02",
+      "caso": "Asignaciones durables venta4",
+      "esperado": [
+        [
+          "A",
+          3
+        ],
+        [
+          "B",
+          1
+        ]
+      ],
+      "observado": [],
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "F03",
+      "caso": "Constancia conserva identidad original al cambiar maestros",
+      "esperado": {
+        "vendedor": "Vendedor original ficticio",
+        "caja": "CAJA-01"
+      },
+      "observado": {
+        "vendedor": "Vendedor actualizado ficticio",
+        "caja": "CAJA-RENOMBRADA"
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "F04",
+      "caso": "Venta persiste snapshots vendedor y caja",
+      "esperado": {
+        "vendedor": "Vendedor original ficticio",
+        "caja": "CAJA-01"
+      },
+      "observado": {
+        "vendedor": null,
+        "caja": null
+      },
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "F05",
+      "caso": "Reenvío recupera misma venta sin modificar datos",
+      "esperado": true,
+      "observado": true,
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F06",
+      "caso": "ALMACENERO no cobra",
+      "esperado": true,
+      "observado": true,
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F07",
+      "caso": "Contrato A3 B2 vender5 tiene asignaciones3/2",
+      "esperado": [
+        [
+          "A",
+          3
+        ],
+        [
+          "B",
+          2
+        ]
+      ],
+      "observado": [],
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "F08",
+      "caso": "Agotar mantiene costo histórico3 y reinicia vigente0",
+      "esperado": {
+        "fisico": 0,
+        "promedio": "0.0000",
+        "snapshot": "3.0000"
+      },
+      "observado": {
+        "fisico": 0,
+        "promedio": "0.0000",
+        "snapshot": "3.0000"
+      },
+      "resultado": "CUMPLE"
+    },
+    {
+      "id": "F09",
+      "caso": "Constancia mantiene orden agregado independiente deUUID",
+      "esperado": [
+        "Orden-A",
+        "Orden-B",
+        "Orden-C"
+      ],
+      "observado": [
+        "Orden-B",
+        "Orden-C",
+        "Orden-A"
+      ],
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "F10",
+      "caso": "Posición de línea persistida",
+      "esperado": [
+        1,
+        2,
+        3
+      ],
+      "observado": [
+        null,
+        null,
+        null
+      ],
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "F11",
+      "caso": "Constancia avisa dato histórico no disponible",
+      "esperado": true,
+      "observado": false,
+      "resultado": "INCUMPLE"
+    },
+    {
+      "id": "F12",
+      "caso": "Consultar legado conservaNULL y asignaciones vacías",
+      "esperado": true,
+      "observado": true,
+      "resultado": "CUMPLE"
+    }
+  ],
+  "fuentes_sha256": {
+    "sales/models.py": "f74234d6fc8a3ad514ab22cc7524a6e2a85245a3fc9c5828691be51e4fefada3",
+    "sales/services.py": "615a75cc94822022770a911907c66015643e718a9f33c81ae3222f0da714a24e",
+    "sales/views.py": "db6e32ebd13c1a0d59e85b587931ddd229dee8d4e881c21a7614aec3210ec012",
+    "sales/templates/sales/sales_receipt.html": "16094ae2929fb645bf2232d80cfc64c914d15c7ff621b30a336c42a47711f2eb"
+  },
+  "08_sha256": "ddadb1091e8501a00c0ae9ff9da212bce65446000131f137cede389ebc5313ad"
+}

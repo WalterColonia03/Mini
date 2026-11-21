@@ -1,0 +1,293 @@
+{
+  "test": "03-P",
+  "inputSource": "operator with connected phone, operator attestation at each step",
+  "codeType": "Code 128",
+  "started": "2026-11-11T02:08:08.219Z",
+  "status": "waiting-for-operator",
+  "stages": [
+    {
+      "id": 1,
+      "expected": "00CAT03K-A",
+      "duplicate": true,
+      "minReads": 2,
+      "status": "verified",
+      "observed": {
+        "events": 90,
+        "trustedInputs": 90,
+        "exactReadings": 9,
+        "maxLength": 10,
+        "controlA": 9,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "message": "El código de barras ya está registrado",
+      "finished": "2026-11-11T02:08:24.581Z"
+    },
+    {
+      "id": 2,
+      "expected": "00CAT03K-B",
+      "duplicate": false,
+      "minReads": 1,
+      "status": "verified",
+      "observed": {
+        "events": 80,
+        "trustedInputs": 80,
+        "exactReadings": 8,
+        "maxLength": 10,
+        "controlA": 8,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "message": "Sin duplicados en esta consulta. Se volverá a comprobar al guardar.",
+      "finished": "2026-11-11T02:08:36.384Z"
+    },
+    {
+      "id": 3,
+      "expected": "00CAT03K-B",
+      "duplicate": true,
+      "minReads": 2,
+      "status": "verified",
+      "observed": {
+        "events": 70,
+        "trustedInputs": 70,
+        "exactReadings": 7,
+        "maxLength": 10,
+        "controlA": 7,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "message": "El código de barras ya está registrado",
+      "finished": "2026-11-11T02:08:46.829Z"
+    },
+    {
+      "id": 4,
+      "expected": "00CAT03K-A",
+      "duplicate": false,
+      "minReads": 1,
+      "status": "verified",
+      "observed": {
+        "events": 40,
+        "trustedInputs": 40,
+        "exactReadings": 4,
+        "maxLength": 10,
+        "controlA": 4,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "message": "Sin duplicados en esta consulta. Se volverá a comprobar al guardar.",
+      "finished": "2026-11-11T02:08:55.720Z"
+    },
+    {
+      "id": 5,
+      "expected": "00CAT03K-B",
+      "duplicate": true,
+      "minReads": 1,
+      "status": "verified",
+      "observed": {
+        "events": 60,
+        "trustedInputs": 60,
+        "exactReadings": 6,
+        "maxLength": 10,
+        "controlA": 6,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "message": "El código de barras ya está registrado",
+      "finished": "2026-11-11T02:09:02.329Z"
+    }
+  ],
+  "posts": [
+    {
+      "path": "/productos/nuevo/",
+      "time": "2026-11-11T02:08:36.456Z"
+    }
+  ],
+  "checks": [
+    {
+      "id": "isolated-instance",
+      "success": true
+    },
+    {
+      "id": "A-inactive-existing",
+      "success": true
+    },
+    {
+      "id": "B-available",
+      "success": true
+    },
+    {
+      "id": "P1-dialog",
+      "success": true
+    },
+    {
+      "id": "P1-physical-exact",
+      "success": true
+    },
+    {
+      "id": "P1-no-other-fields-or-post",
+      "success": true
+    },
+    {
+      "id": "P1-database-unchanged",
+      "success": true
+    },
+    {
+      "id": "P1-exact-message",
+      "success": true
+    },
+    {
+      "id": "P1-copy-state",
+      "success": true
+    },
+    {
+      "id": "P2-dialog",
+      "success": true
+    },
+    {
+      "id": "P2-physical-exact",
+      "success": true
+    },
+    {
+      "id": "P2-no-other-fields-or-post",
+      "success": true
+    },
+    {
+      "id": "P2-database-unchanged",
+      "success": true
+    },
+    {
+      "id": "P2-exact-message",
+      "success": true
+    },
+    {
+      "id": "P2-copy-state",
+      "success": true
+    },
+    {
+      "id": "B-copied-exact",
+      "success": true
+    },
+    {
+      "id": "one-explicit-create",
+      "success": true
+    },
+    {
+      "id": "existing-products-unchanged",
+      "success": true
+    },
+    {
+      "id": "P3-dialog",
+      "success": true
+    },
+    {
+      "id": "P3-physical-exact",
+      "success": true
+    },
+    {
+      "id": "P3-no-other-fields-or-post",
+      "success": true
+    },
+    {
+      "id": "P3-database-unchanged",
+      "success": true
+    },
+    {
+      "id": "P3-exact-message",
+      "success": true
+    },
+    {
+      "id": "P3-copy-state",
+      "success": true
+    },
+    {
+      "id": "P4-dialog",
+      "success": true
+    },
+    {
+      "id": "P4-physical-exact",
+      "success": true
+    },
+    {
+      "id": "P4-no-other-fields-or-post",
+      "success": true
+    },
+    {
+      "id": "P4-database-unchanged",
+      "success": true
+    },
+    {
+      "id": "P4-exact-message",
+      "success": true
+    },
+    {
+      "id": "P4-copy-state",
+      "success": true
+    },
+    {
+      "id": "P5-dialog",
+      "success": true
+    },
+    {
+      "id": "P5-physical-exact",
+      "success": true
+    },
+    {
+      "id": "P5-no-other-fields-or-post",
+      "success": true
+    },
+    {
+      "id": "P5-database-unchanged",
+      "success": true
+    },
+    {
+      "id": "P5-exact-message",
+      "success": true
+    },
+    {
+      "id": "P5-copy-state",
+      "success": true
+    }
+  ],
+  "browser": "157.0.8103.39",
+  "deadline": "2026-11-11T02:20:10.380Z"
+}

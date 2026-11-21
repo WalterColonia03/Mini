@@ -1,0 +1,147 @@
+{
+  "catalog.Category": [
+    {
+      "id": "5aca1711-d557-4227-8895-619c258c8a97",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "2bacc0c5-ce55-4e93-b2bf-0f4eb0f053b3",
+      "name": "AUD03 Sin carga",
+      "barcode": "AUD03-EMPTY",
+      "category_id": "5aca1711-d557-4227-8895-619c258c8a97",
+      "sale_price": "4.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "70c36ec4-8b3a-4bdc-add8-736b4c1964d7",
+      "name": "AUD03 O jabón",
+      "barcode": "AB12AB12",
+      "category_id": "5aca1711-d557-4227-8895-619c258c8a97",
+      "sale_price": "7.30",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "7f27c3ca-b5ea-4798-a8b1-121cf39e2df5",
+      "name": "AUD03 Bebida de prueba",
+      "barcode": "00-EDIT-O",
+      "category_id": "5aca1711-d557-4227-8895-619c258c8a97",
+      "sale_price": "8.50",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "fe0f939e-36e8-4f17-8d5c-69401acb2c90",
+      "name": "AUD03 O sin JS",
+      "barcode": "00-MANUAL-O",
+      "category_id": "5aca1711-d557-4227-8895-619c258c8a97",
+      "sale_price": "2.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "168c8e0a-f96f-41e4-90fa-08245df14a69",
+      "product_id": "7f27c3ca-b5ea-4798-a8b1-121cf39e2df5",
+      "available_quantity": 19,
+      "initial_quantity": 20
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "fdf8e19f-1f33-4f73-ae6f-c0bff276ce7d",
+      "product_id": "7f27c3ca-b5ea-4798-a8b1-121cf39e2df5"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "7f6ae113-921e-4a1c-8af5-aa4fbe52621f",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [
+    {
+      "id": "ec207a6a-f0dc-4269-8302-b21774f1b14c",
+      "total_amount": "8.50",
+      "cash_received": "10.00",
+      "change_given": "1.50"
+    }
+  ],
+  "sales.SaleLine": [
+    {
+      "id": "4d3d5ccb-26d5-43eb-a6df-77c76d76a134",
+      "product_id": "7f27c3ca-b5ea-4798-a8b1-121cf39e2df5",
+      "product_snapshot_name": "AUD03 Bebida de prueba",
+      "product_snapshot_barcode": "AUD03-BEBIDA",
+      "unit_price": "8.50",
+      "quantity": 1
+    }
+  ],
+  "sales.SaleDraft": [
+    {
+      "id": "25219ec2-1af5-4f07-bbeb-94ddce5a9b0c",
+      "status": "DISCARDED"
+    },
+    {
+      "id": "dd7b0765-370c-46b6-b87b-1505ebb174e1",
+      "status": "ACTIVE"
+    }
+  ],
+  "sales.SaleDraftLine": [
+    {
+      "id": "927e6c38-ac3a-4ec7-bf38-6fc3aed1701a",
+      "draft_id": "dd7b0765-370c-46b6-b87b-1505ebb174e1",
+      "product_id": "7f27c3ca-b5ea-4798-a8b1-121cf39e2df5",
+      "quantity": 2,
+      "unit_price": "8.50"
+    },
+    {
+      "id": "af7918ff-7263-42d7-860f-bac788b7dd01",
+      "draft_id": "25219ec2-1af5-4f07-bbeb-94ddce5a9b0c",
+      "product_id": "7f27c3ca-b5ea-4798-a8b1-121cf39e2df5",
+      "quantity": 1,
+      "unit_price": "8.50"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "2bacc0c5-ce55-4e93-b2bf-0f4eb0f053b3",
+      "barcode_normalized": "aud03-empty",
+      "search_name": "aud03 sin carga",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "70c36ec4-8b3a-4bdc-add8-736b4c1964d7",
+      "barcode_normalized": "ab12ab12",
+      "search_name": "aud03 o jabón",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "7f27c3ca-b5ea-4798-a8b1-121cf39e2df5",
+      "barcode_normalized": "00-edit-o",
+      "search_name": "aud03 bebida de prueba",
+      "average_cost": "5.0000"
+    },
+    {
+      "id": "fe0f939e-36e8-4f17-8d5c-69401acb2c90",
+      "barcode_normalized": "00-manual-o",
+      "search_name": "aud03 o sin js",
+      "average_cost": "0.0000"
+    }
+  ]
+}

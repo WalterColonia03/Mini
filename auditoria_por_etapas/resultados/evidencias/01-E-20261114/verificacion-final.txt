@@ -1,0 +1,57 @@
+{
+  "scope": "01-E against actual14Nov baseline, not historical12Nov no-product-change guard",
+  "primary_sha256": "ff85b85e07872a97fa2d2bef5b49730fb1a6238a3fe2c2867d8ef75e73d5b431",
+  "build_sha256": "f6b155a933bd3f57684ef1dd4a61a7ba44a2a30ded68a80a46bb4100748ed71a",
+  "source_files": 209,
+  "structural_errors": [],
+  "derived_mismatch": [],
+  "own_source_delta": [
+    "identity/forms.py",
+    "identity/test_auth_audit01.py"
+  ],
+  "source_stable_after_tests": true,
+  "protected_database_hashes_equal": true,
+  "business_tables_unchanged_between_UI_snapshots": true,
+  "business_scope": "empty fictional business tables; no proof for preexisting commercial records",
+  "valid_browser_checkpoints": [
+    "UI02-vacios-confirmado",
+    "UI03-formato",
+    "UI04-fallo1",
+    "UI-fallo2",
+    "UI-fallo3",
+    "UI-fallo4",
+    "UI-fallo5",
+    "UI05-clave-correcta-bloqueada",
+    "UI06-otra-sesion-bloqueada",
+    "UI09-admin",
+    "UI10-admin-recarga-tras-reinicio",
+    "UI11-admin-empleados",
+    "UI12-inexistente-confirmado",
+    "UI13-vendedor",
+    "UI14-vendedor-empleados-denegado",
+    "UI15-restante2-preparado",
+    "UI16-almacen-expirado-ingresa",
+    "UI17-almacen-recarga",
+    "UI18-almacen-denegado",
+    "UI19-visitante-redirigido",
+    "UI20-inactiva-clave-valida",
+    "UI21-next-empleados-no-evade",
+    "UI22-correo254-next-externo-descartado",
+    "UI24-final-validacion-visible"
+  ],
+  "count_valid_browser_checkpoints": 24,
+  "test_result": {
+    "labels": [
+      "identity",
+      "audit01e_probes"
+    ],
+    "exit_code": 0,
+    "database": "SQLite :memory:",
+    "tool": "Django Client/ORM, not browser; no PostgreSQL concurrency",
+    "summary": [
+      "Ran 120 tests in 33.359s"
+    ]
+  },
+  "historical_validator": "failed its no-product-change guard against12Nov; kept in validacion-documental.txt; not suppressed",
+  "passed": true
+}

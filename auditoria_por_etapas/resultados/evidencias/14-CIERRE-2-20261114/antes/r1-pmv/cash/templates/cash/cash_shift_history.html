@@ -1,0 +1,110 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Historial de turnos{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Caja</p>
+    <h2>Historial de turnos de caja</h2>
+    <p class="lede">Consulta las aperturas, cierres, montos esperados, contados y diferencias de la caja única.</p>
+  </div>
+  <a class="button button-secondary" href="{% url 'dashboard' %}">Volver al inicio</a>
+</section>
+
+<form method="get" class="panel form-panel history-filter-panel mb-4">
+  <div class="history-filter-grid">
+    <div>
+      <label for="shift-date-from" class="form-label fw-semibold">Desde</label>
+      <input id="shift-date-from" type="date" name="fecha_desde" value="{{ fecha_desde }}" class="form-control">
+    </div>
+    <div>
+      <label for="shift-date-to" class="form-label fw-semibold">Hasta</label>
+      <input id="shift-date-to" type="date" name="fecha_hasta" value="{{ fecha_hasta }}" class="form-control">
+    </div>
+    {% if is_admin_view %}
+    <div>
+      <label for="shift-seller" class="form-label fw-semibold">Vendedor</label>
+      <select id="shift-seller" name="vendedor" class="form-select">
+        <option value="">Todos</option>
+        {% for seller in sellers %}
+          <option value="{{ seller.pk }}" {% if vendedor == seller.pk|stringformat:"s" %}selected{% endif %}>{{ seller.display_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    {% endif %}
+  </div>
+  <div class="form-actions history-filter-actions">
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+    <a href="{% url 'cash-shift-history' %}" class="btn btn-outline-secondary">Limpiar</a>
+  </div>
+</form>
+
+{% if shifts %}
+<div class="table-responsive" tabindex="0">
+  <table class="table table-bordered table-hover align-middle cash-history-table">
+    <thead class="table-dark">
+      <tr>
+        <th>Caja</th>
+        <th>Vendedor</th>
+        <th>Apertura</th>
+        <th class="text-end">Monto inicial</th>
+        <th class="text-end">Total cobrado</th>
+        <th class="text-end">Monto esperado</th>
+        <th class="text-end">Monto contado</th>
+        <th class="text-end">Diferencia</th>
+        <th>Cierre</th>
+        <th>Estado</th>
+        <th>Acta</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for shift in shifts %}
+      <tr>
+        <td>{{ shift.cash_register }}</td>
+        <td>{{ shift.seller.display_name }}</td>
+        <td>{{ shift.opened_at|date:"d/m/Y H:i" }}</td>
+        <td class="text-end">S/ {{ shift.opening_amount|floatformat:2 }}</td>
+        <td class="text-end">S/ {{ shift.sales_collected|floatformat:2 }}</td>
+        <td class="text-end">{% if shift.close %}S/ {{ shift.close.expected_amount|floatformat:2 }}{% else %}—{% endif %}</td>
+        <td class="text-end">{% if shift.close %}S/ {{ shift.close.counted_amount|floatformat:2 }}{% else %}—{% endif %}</td>
+        <td class="text-end">
+          {% if shift.close %}
+            <span class="{% if shift.close.difference_type == 'SHORTAGE' %}text-danger fw-semibold{% elif shift.close.difference_type == 'SURPLUS' %}text-primary fw-semibold{% else %}text-success{% endif %}">
+              S/ {{ shift.close.difference_amount|floatformat:2 }} ({{ shift.close.get_difference_type_display }})
+            </span>
+          {% else %}
+            —
+          {% endif %}
+        </td>
+        <td>
+          {% if shift.close %}
+            {{ shift.close.closed_at|date:"d/m/Y H:i" }}
+          {% else %}
+            —
+          {% endif %}
+        </td>
+        <td>
+          {% if shift.status == "OPEN" %}
+            <span class="badge bg-success">Abierto</span>
+          {% else %}
+            <span class="badge bg-secondary">Cerrado</span>
+          {% endif %}
+        </td>
+        <td>
+          {% if shift.close %}
+            <a href="{% url 'cash-shift-closed' shift.pk %}" class="btn btn-sm btn-outline-primary">Ver acta</a>
+          {% else %}
+            —
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="alert alert-info">{% if is_filtered %}No se encontraron turnos con los filtros aplicados.{% else %}No hay turnos registrados.{% endif %}</div>
+{% endif %}
+{% endblock %}
+

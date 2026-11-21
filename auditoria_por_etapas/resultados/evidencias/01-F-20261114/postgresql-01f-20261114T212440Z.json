@@ -1,0 +1,178 @@
+{
+  "caso": "E01-PG-01-revalidacion-01F",
+  "inicio_utc": "2026-11-14T21:24:40.187440+00:00",
+  "herramienta": "PostgreSQL 18.4 nativo efímero / Django Client CSRF / conexiones por hilo",
+  "escenarios": [
+    {
+      "escenario": "primera-fila",
+      "inicio_utc": "2026-11-14T21:25:14.422816+00:00",
+      "fin_utc": "2026-11-14T21:25:15.815698+00:00",
+      "conexiones_distintas": 2,
+      "inicial_fallos": null,
+      "barrera_insert": 2,
+      "espera_fila_observada_pg": false,
+      "respuestas": [
+        {
+          "indice": 0,
+          "http": 200,
+          "mensaje": "credenciales",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 328.0
+        },
+        {
+          "indice": 1,
+          "http": 200,
+          "mensaje": "credenciales",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 750.0
+        }
+      ],
+      "persistencia": {
+        "filas": 1,
+        "fallos": 2,
+        "locked_until": null
+      },
+      "resultado": "PASS"
+    },
+    {
+      "escenario": "cinco-fallos",
+      "inicio_utc": "2026-11-14T21:25:16.059571+00:00",
+      "fin_utc": "2026-11-14T21:25:17.349427+00:00",
+      "conexiones_distintas": 5,
+      "inicial_fallos": 0,
+      "barrera_insert": 0,
+      "espera_fila_observada_pg": false,
+      "respuestas": [
+        {
+          "indice": 0,
+          "http": 200,
+          "mensaje": "credenciales",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 312.0
+        },
+        {
+          "indice": 1,
+          "http": 200,
+          "mensaje": "credenciales",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 578.0
+        },
+        {
+          "indice": 2,
+          "http": 200,
+          "mensaje": "bloqueo15",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 1078.0
+        },
+        {
+          "indice": 3,
+          "http": 200,
+          "mensaje": "credenciales",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 938.0
+        },
+        {
+          "indice": 4,
+          "http": 200,
+          "mensaje": "credenciales",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 828.0
+        }
+      ],
+      "persistencia": {
+        "filas": 1,
+        "fallos": 5,
+        "locked_until": "2026-11-14T21:40:17.258570+00:00"
+      },
+      "resultado": "PASS"
+    },
+    {
+      "escenario": "exito-antes-fallo",
+      "inicio_utc": "2026-11-14T21:25:17.442648+00:00",
+      "fin_utc": "2026-11-14T21:25:19.950185+00:00",
+      "conexiones_distintas": 2,
+      "inicial_fallos": 4,
+      "barrera_insert": 0,
+      "espera_fila_observada_pg": true,
+      "respuestas": [
+        {
+          "indice": 0,
+          "http": 302,
+          "mensaje": null,
+          "sesion_fixture": true,
+          "destino": "/inicio/",
+          "duracion_ms": 2406.0
+        },
+        {
+          "indice": 1,
+          "http": 200,
+          "mensaje": "credenciales",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 1875.0
+        }
+      ],
+      "persistencia": {
+        "filas": 1,
+        "fallos": 1,
+        "locked_until": null
+      },
+      "resultado": "PASS"
+    },
+    {
+      "escenario": "fallo-antes-exito",
+      "inicio_utc": "2026-11-14T21:25:20.212465+00:00",
+      "fin_utc": "2026-11-14T21:25:20.832122+00:00",
+      "conexiones_distintas": 2,
+      "inicial_fallos": 4,
+      "barrera_insert": 0,
+      "espera_fila_observada_pg": true,
+      "respuestas": [
+        {
+          "indice": 0,
+          "http": 200,
+          "mensaje": "bloqueo15",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 422.0
+        },
+        {
+          "indice": 1,
+          "http": 200,
+          "mensaje": "bloqueo15",
+          "sesion_fixture": false,
+          "destino": null,
+          "duracion_ms": 406.0
+        }
+      ],
+      "persistencia": {
+        "filas": 1,
+        "fallos": 5,
+        "locked_until": "2026-11-14T21:40:20.522467+00:00"
+      },
+      "resultado": "PASS"
+    }
+  ],
+  "limpieza": {
+    "puerto_cerrado": true,
+    "carpeta_propia_eliminada": true
+  },
+  "servidor": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "base_efimera": "audit01f_b52dc2dd0b",
+  "puerto_loopback": 51330,
+  "isolation": "read committed",
+  "django": "5.2.18",
+  "migraciones": "PASS",
+  "check": "PASS",
+  "resultado": "INCOMPLETO",
+  "fase": "admin-bypass-concurrente-con-bloqueo",
+  "error_tipo": "NameError",
+  "fin_utc": "2026-11-14T21:25:56.632870+00:00"
+}

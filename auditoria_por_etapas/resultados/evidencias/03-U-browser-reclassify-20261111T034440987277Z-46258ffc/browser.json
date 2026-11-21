@@ -1,0 +1,171 @@
+{
+  "mode": "03-U Chrome sequential reclassification, category suspension and checkout; no concurrency claim",
+  "cases": [
+    {
+      "id": "isolation",
+      "ok": true
+    },
+    {
+      "id": "fixture",
+      "ok": true
+    },
+    {
+      "id": "reclassified",
+      "ok": true
+    },
+    {
+      "id": "move-preserves-inventory.Lot",
+      "ok": true
+    },
+    {
+      "id": "move-preserves-sales.Sale",
+      "ok": true
+    },
+    {
+      "id": "move-preserves-sales.SaleLine",
+      "ok": true
+    },
+    {
+      "id": "move-preserves-sales.SaleDraft",
+      "ok": true
+    },
+    {
+      "id": "move-preserves-sales.SaleDraftLine",
+      "ok": true
+    },
+    {
+      "id": "move-preserves-cash.CashShift",
+      "ok": true
+    },
+    {
+      "id": "impact-displayed",
+      "ok": true
+    },
+    {
+      "id": "suspended",
+      "ok": true
+    },
+    {
+      "id": "suspend-preserves-catalog.Product",
+      "ok": true
+    },
+    {
+      "id": "suspend-preserves-inventory.Lot",
+      "ok": true
+    },
+    {
+      "id": "suspend-preserves-sales.Sale",
+      "ok": true
+    },
+    {
+      "id": "suspend-preserves-sales.SaleLine",
+      "ok": true
+    },
+    {
+      "id": "suspend-preserves-sales.SaleDraft",
+      "ok": true
+    },
+    {
+      "id": "suspend-preserves-sales.SaleDraftLine",
+      "ok": true
+    },
+    {
+      "id": "suspend-preserves-cash.CashShift",
+      "ok": true
+    },
+    {
+      "id": "warehouse-csrf",
+      "ok": true
+    },
+    {
+      "id": "warehouse-get-denied",
+      "ok": true
+    },
+    {
+      "id": "warehouse-post-denied",
+      "ok": true
+    },
+    {
+      "id": "seller-csrf",
+      "ok": true
+    },
+    {
+      "id": "seller-get-denied",
+      "ok": true
+    },
+    {
+      "id": "seller-post-denied",
+      "ok": true
+    },
+    {
+      "id": "denials-no-change",
+      "ok": true
+    },
+    {
+      "id": "warehouse-P-inactive",
+      "ok": true
+    },
+    {
+      "id": "warehouse-Q-available",
+      "ok": true
+    },
+    {
+      "id": "checkout-rejected",
+      "ok": true,
+      "alerts": [
+        "El producto «AUD03 Bebida de prueba» ya no está disponible para la venta. Quítalo de la venta en preparación para continuar."
+      ]
+    },
+    {
+      "id": "rejection-no-change",
+      "ok": true
+    },
+    {
+      "id": "history-after-suspend",
+      "ok": true
+    },
+    {
+      "id": "reactivated",
+      "ok": true
+    },
+    {
+      "id": "one-sale",
+      "ok": true
+    },
+    {
+      "id": "both-lines",
+      "ok": true
+    },
+    {
+      "id": "stock-once",
+      "ok": true
+    },
+    {
+      "id": "history-after-sale",
+      "ok": true
+    }
+  ],
+  "posts": [
+    {
+      "role": "admin",
+      "path": "/productos/6c42ea29-85b3-431d-ad2b-7954bc0b6f7f/editar/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/categorias/357527e0-4a2f-4bfc-84b2-1a473a505097/estado/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/categorias/357527e0-4a2f-4bfc-84b2-1a473a505097/estado/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    }
+  ],
+  "browser": "157.0.8103.39"
+}

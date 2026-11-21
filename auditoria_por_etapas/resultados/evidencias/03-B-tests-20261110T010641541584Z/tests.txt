@@ -1,0 +1,201 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 10 test(s).
+Found 10 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) ... 
+  test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S0M0') ... FAIL
+  test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S0M10') ... FAIL
+  test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S10M10') ... FAIL
+  test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S11M10') ... FAIL
+  test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S3M3') ... FAIL
+  test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S4M3') ... FAIL
+  test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S9M10') ... FAIL
+test_catalogue_reports_all_commercial_columns_and_current_stock (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_catalogue_reports_all_commercial_columns_and_current_stock) ... FAIL
+test_empty_and_no_match_messages_and_clear_link (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_empty_and_no_match_messages_and_clear_link) ... ok
+test_expiration_cutoff_uses_lima_not_utc_date (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_expiration_cutoff_uses_lima_not_utc_date) ... FAIL
+test_expired_today_and_exhausted_lots_do_not_inflate_stock (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_expired_today_and_exhausted_lots_do_not_inflate_stock) ... FAIL
+test_inactive_states_preserve_stock_and_are_not_available (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_inactive_states_preserve_stock_and_are_not_available) ... FAIL
+test_requests_do_not_write_and_non_get_methods_are_denied (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_requests_do_not_write_and_non_get_methods_are_denied) ... ok
+test_search_empty_spaces_missing_and_literal_wildcards (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_search_empty_spaces_missing_and_literal_wildcards) ... 
+  test_search_empty_spaces_missing_and_literal_wildcards (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_search_empty_spaces_missing_and_literal_wildcards) (query='\x00') ... FAIL
+test_search_name_code_case_partial_and_barcode_normalization (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_search_name_code_case_partial_and_barcode_normalization) ... ok
+test_warehouse_has_same_data_without_actions_and_seller_denied (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_warehouse_has_same_data_without_actions_and_seller_denied) ... ok
+
+======================================================================
+FAIL: test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S0M0')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 65, in test_alert_uses_configured_inclusive_threshold_and_zero
+    with self.subTest(code=code):self.assertEqual(row.get('Existencias vigentes (UND)'),expected)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '0 Stock bajo'
+
+======================================================================
+FAIL: test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S0M10')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 65, in test_alert_uses_configured_inclusive_threshold_and_zero
+    with self.subTest(code=code):self.assertEqual(row.get('Existencias vigentes (UND)'),expected)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '0 Stock bajo'
+
+======================================================================
+FAIL: test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S10M10')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 65, in test_alert_uses_configured_inclusive_threshold_and_zero
+    with self.subTest(code=code):self.assertEqual(row.get('Existencias vigentes (UND)'),expected)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '10 Stock bajo'
+
+======================================================================
+FAIL: test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S11M10')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 65, in test_alert_uses_configured_inclusive_threshold_and_zero
+    with self.subTest(code=code):self.assertEqual(row.get('Existencias vigentes (UND)'),expected)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '11'
+
+======================================================================
+FAIL: test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S3M3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 65, in test_alert_uses_configured_inclusive_threshold_and_zero
+    with self.subTest(code=code):self.assertEqual(row.get('Existencias vigentes (UND)'),expected)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '3 Stock bajo'
+
+======================================================================
+FAIL: test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S4M3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 65, in test_alert_uses_configured_inclusive_threshold_and_zero
+    with self.subTest(code=code):self.assertEqual(row.get('Existencias vigentes (UND)'),expected)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '4'
+
+======================================================================
+FAIL: test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) (code='S9M10')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 65, in test_alert_uses_configured_inclusive_threshold_and_zero
+    with self.subTest(code=code):self.assertEqual(row.get('Existencias vigentes (UND)'),expected)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '9 Stock bajo'
+
+======================================================================
+FAIL: test_catalogue_reports_all_commercial_columns_and_current_stock (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_catalogue_reports_all_commercial_columns_and_current_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 56, in test_catalogue_reports_all_commercial_columns_and_current_stock
+    self.assertEqual(row.get('Existencias vigentes (UND)'),'10 Stock bajo')
+AssertionError: None != '10 Stock bajo'
+
+======================================================================
+FAIL: test_expiration_cutoff_uses_lima_not_utc_date (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_expiration_cutoff_uses_lima_not_utc_date)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 74, in test_expiration_cutoff_uses_lima_not_utc_date
+    table,_=self.table();self.assertEqual(table.rows[0].get('Existencias vigentes (UND)'),'7 Stock bajo')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '7 Stock bajo'
+
+======================================================================
+FAIL: test_expired_today_and_exhausted_lots_do_not_inflate_stock (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_expired_today_and_exhausted_lots_do_not_inflate_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 69, in test_expired_today_and_exhausted_lots_do_not_inflate_stock
+    table,_=self.table();self.assertEqual(table.rows[0].get('Existencias vigentes (UND)'),'9 Stock bajo')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '9 Stock bajo'
+
+======================================================================
+FAIL: test_inactive_states_preserve_stock_and_are_not_available (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_inactive_states_preserve_stock_and_are_not_available)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 83, in test_inactive_states_preserve_stock_and_are_not_available
+    self.assertEqual(rows['OFF'].get('Existencias vigentes (UND)'),'11')
+AssertionError: None != '11'
+
+======================================================================
+FAIL: test_search_empty_spaces_missing_and_literal_wildcards (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_search_empty_spaces_missing_and_literal_wildcards) (query='\x00')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_catalogue.py", line 96, in test_search_empty_spaces_missing_and_literal_wildcards
+    table,response=self.table(q=query);self.assertEqual(table.rows,[])
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'Nombre': 'AUD03B Producto', 'Categoría'[366 chars]ar'}] != []
+
+First list contains 2 additional elements.
+First extra element 0:
+{'Nombre': 'AUD03B Producto', 'Categoría': 'AUD03B Conservas', 'Código de barras': 'CODE', 'Precio (S/)': '8,50', 'Stock mínimo': '10', 'Disponibilidad': 'Sin stock vigente', 'Acciones': 'Editar Deshabilitar'}
+
++ []
+- [{'Acciones': 'Editar Deshabilitar',
+-   'Categoría': 'AUD03B Conservas',
+-   'Código de barras': 'CODE',
+-   'Disponibilidad': 'Sin stock vigente',
+-   'Nombre': 'AUD03B Producto',
+-   'Precio (S/)': '8,50',
+-   'Stock mínimo': '10'},
+-  {'Acciones': 'Editar Deshabilitar',
+-   'Categoría': 'AUD03B Conservas',
+-   'Código de barras': 'SECOND',
+-   'Disponibilidad': 'Sin stock vigente',
+-   'Nombre': 'Otro',
+-   'Precio (S/)': '8,50',
+-   'Stock mínimo': '10'}]
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.354s
+
+FAILED (failures=12)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

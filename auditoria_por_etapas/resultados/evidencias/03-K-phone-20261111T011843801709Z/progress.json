@@ -1,0 +1,273 @@
+{
+  "test": "03-K9",
+  "inputSource": "operator with connected phone, operator attestation at each step",
+  "codeType": "Code 128",
+  "started": "2026-11-11T01:18:47.000Z",
+  "status": "waiting-for-operator",
+  "stages": [
+    {
+      "id": 1,
+      "expected": "00CAT03K-A",
+      "status": "confirmed-by-operator",
+      "beforePosts": 0,
+      "observed": {
+        "events": 60,
+        "trustedInputs": 60,
+        "exactReadings": 6,
+        "maxLength": 10,
+        "controlA": 6,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "confirmed": "2026-11-11T01:20:03.766Z"
+    },
+    {
+      "id": 2,
+      "expected": "00CAT03K-B",
+      "status": "confirmed-by-operator",
+      "beforePosts": 0,
+      "observed": {
+        "events": 70,
+        "trustedInputs": 70,
+        "exactReadings": 7,
+        "maxLength": 10,
+        "controlA": 7,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "confirmed": "2026-11-11T01:20:13.629Z"
+    },
+    {
+      "id": 3,
+      "expected": "00CAT03K-B",
+      "status": "confirmed-by-operator",
+      "beforePosts": 1,
+      "observed": {
+        "events": 70,
+        "trustedInputs": 70,
+        "exactReadings": 7,
+        "maxLength": 10,
+        "controlA": 7,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "confirmed": "2026-11-11T01:20:21.951Z"
+    },
+    {
+      "id": 4,
+      "expected": "00CAT03K-A",
+      "status": "confirmed-by-operator",
+      "beforePosts": 1,
+      "observed": {
+        "events": 60,
+        "trustedInputs": 60,
+        "exactReadings": 6,
+        "maxLength": 10,
+        "controlA": 6,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "confirmed": "2026-11-11T01:20:27.120Z"
+    },
+    {
+      "id": 5,
+      "expected": "00CAT03K-B",
+      "status": "confirmed-by-operator",
+      "beforePosts": 2,
+      "observed": {
+        "events": 70,
+        "trustedInputs": 70,
+        "exactReadings": 7,
+        "maxLength": 10,
+        "controlA": 7,
+        "enter": 0,
+        "tab": 0,
+        "otherFieldInputs": 0,
+        "confirmed": true,
+        "cancelled": false,
+        "exact": true,
+        "length": 10,
+        "focus": "outside-dialog",
+        "dialogOpen": true,
+        "documentFocused": true
+      },
+      "confirmed": "2026-11-11T01:20:33.787Z"
+    }
+  ],
+  "posts": [
+    {
+      "screen": "create",
+      "observed": "B",
+      "length": 10
+    },
+    {
+      "screen": "edit",
+      "observed": "A",
+      "length": 10
+    }
+  ],
+  "checks": [
+    {
+      "id": "isolated-instance",
+      "success": true
+    },
+    {
+      "id": "sold-product-and-history-exist",
+      "success": true
+    },
+    {
+      "id": "labels-available",
+      "success": true
+    },
+    {
+      "id": "stage-1-dialog",
+      "success": true
+    },
+    {
+      "id": "stage-1-exact-and-isolated",
+      "success": true
+    },
+    {
+      "id": "stage-2-dialog",
+      "success": true
+    },
+    {
+      "id": "stage-2-exact-and-isolated",
+      "success": true
+    },
+    {
+      "id": "create-unchanged-while-reading",
+      "success": true
+    },
+    {
+      "id": "create-only-code-transferred",
+      "success": true
+    },
+    {
+      "id": "create-one-explicit-post",
+      "success": true
+    },
+    {
+      "id": "created-http",
+      "success": true
+    },
+    {
+      "id": "created-one-B",
+      "success": true
+    },
+    {
+      "id": "stage-3-dialog",
+      "success": true
+    },
+    {
+      "id": "stage-3-exact-and-isolated",
+      "success": true
+    },
+    {
+      "id": "stage-4-dialog",
+      "success": true
+    },
+    {
+      "id": "stage-4-exact-and-isolated",
+      "success": true
+    },
+    {
+      "id": "edit-unchanged-while-reading",
+      "success": true
+    },
+    {
+      "id": "edit-only-code-transferred",
+      "success": true
+    },
+    {
+      "id": "edit-one-explicit-post",
+      "success": true
+    },
+    {
+      "id": "edited-http",
+      "success": true
+    },
+    {
+      "id": "sold-product-keeps-identity",
+      "success": true
+    },
+    {
+      "id": "other-products-unchanged",
+      "success": true
+    },
+    {
+      "id": "preserved-catalog.Category",
+      "success": true
+    },
+    {
+      "id": "preserved-inventory.Lot",
+      "success": true
+    },
+    {
+      "id": "preserved-inventory.InitialInventoryLoad",
+      "success": true
+    },
+    {
+      "id": "preserved-cash.CashShift",
+      "success": true
+    },
+    {
+      "id": "preserved-sales.Sale",
+      "success": true
+    },
+    {
+      "id": "preserved-sales.SaleLine",
+      "success": true
+    },
+    {
+      "id": "preserved-sales.SaleDraft",
+      "success": true
+    },
+    {
+      "id": "preserved-sales.SaleDraftLine",
+      "success": true
+    },
+    {
+      "id": "stage-5-dialog",
+      "success": true
+    },
+    {
+      "id": "stage-5-exact-and-isolated",
+      "success": true
+    }
+  ],
+  "browser": "157.0.8103.39",
+  "deadline": "2026-11-11T01:22:49.005Z"
+}

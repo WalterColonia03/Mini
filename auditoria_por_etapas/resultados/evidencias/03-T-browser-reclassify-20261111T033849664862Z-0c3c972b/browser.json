@@ -1,0 +1,132 @@
+{
+  "mode": "03-T sequential Chrome product rename/recode between visible checkout and submit, not concurrency",
+  "cases": [
+    {
+      "id": "isolation",
+      "ok": true
+    },
+    {
+      "id": "fixture-two-products",
+      "ok": true
+    },
+    {
+      "id": "seller-sees-original-name",
+      "ok": true
+    },
+    {
+      "id": "warehouse-csrf",
+      "ok": true
+    },
+    {
+      "id": "warehouse-get-denied",
+      "ok": true
+    },
+    {
+      "id": "warehouse-post-denied",
+      "ok": true
+    },
+    {
+      "id": "seller-csrf",
+      "ok": true
+    },
+    {
+      "id": "seller-get-denied",
+      "ok": true
+    },
+    {
+      "id": "seller-post-denied",
+      "ok": true
+    },
+    {
+      "id": "denials-no-changes",
+      "ok": true
+    },
+    {
+      "id": "admin-changes-name-code",
+      "ok": true
+    },
+    {
+      "id": "edit-preserves-inventory.Lot",
+      "ok": true
+    },
+    {
+      "id": "edit-preserves-sales.Sale",
+      "ok": true
+    },
+    {
+      "id": "edit-preserves-sales.SaleLine",
+      "ok": true
+    },
+    {
+      "id": "edit-preserves-sales.SaleDraft",
+      "ok": true
+    },
+    {
+      "id": "edit-preserves-sales.SaleDraftLine",
+      "ok": true
+    },
+    {
+      "id": "edit-preserves-cash.CashShift",
+      "ok": true
+    },
+    {
+      "id": "warehouse-sees-name-code-stock",
+      "ok": true
+    },
+    {
+      "id": "history-before-checkout",
+      "ok": true
+    },
+    {
+      "id": "stale-summary-rejected",
+      "ok": true
+    },
+    {
+      "id": "updated-name-shown",
+      "ok": true
+    },
+    {
+      "id": "subtotal-same",
+      "ok": true
+    },
+    {
+      "id": "signature-changed",
+      "ok": true
+    },
+    {
+      "id": "one-explicit-sale",
+      "ok": true
+    },
+    {
+      "id": "snapshot-current-name-code",
+      "ok": true
+    },
+    {
+      "id": "stock-once",
+      "ok": true
+    },
+    {
+      "id": "history-line-preserved",
+      "ok": true
+    },
+    {
+      "id": "history-receipt-after",
+      "ok": true
+    }
+  ],
+  "posts": [
+    {
+      "role": "admin",
+      "path": "/productos/db5e78d1-2791-4a0e-a96b-b88bd42c907e/editar/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    }
+  ],
+  "browser": "157.0.8103.39"
+}

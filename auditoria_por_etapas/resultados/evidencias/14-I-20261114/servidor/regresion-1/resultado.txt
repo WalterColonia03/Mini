@@ -1,0 +1,72 @@
+Found 614 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+........................................................................PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.
+.PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.
+..........................................................................................................................................Productos demo creados: 4
+.......................................................F............FF..................................................................E.............E.................................................................................................................................................................................................................................................F...........
+======================================================================
+ERROR: test_bug036_writeoff_and_adjustment_prioritize_posted_lot_id_and_render_hidden_field_errors (inventory.tests.PhysicalAdjustmentTests.test_bug036_writeoff_and_adjustment_prioritize_posted_lot_id_and_render_hidden_field_errors)
+BUG-036: Baja y ajuste priorizan request.POST['lot_id'] sobre ?lote= y muestran errores de campos ocultos.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\tests.py", line 814, in test_bug036_writeoff_and_adjustment_prioritize_posted_lot_id_and_render_hidden_field_errors
+    self.assertRedirects(resp, reverse("stock-writeoff-receipt", args=(StockWriteOff.objects.get(lot=lot_b).pk,)))
+                                                                       ^^^^^^^^^^^^^
+NameError: name 'StockWriteOff' is not defined. Did you mean: 'StockWriteOffTests'?
+
+======================================================================
+ERROR: test_admin_registers_writeoff (inventory.tests.StockWriteOffTests.test_admin_registers_writeoff)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\tests.py", line 291, in test_admin_registers_writeoff
+    self.assertRedirects(response, reverse("stock-writeoff-receipt", args=(StockWriteOff.objects.get(lot=self.lot).pk,)))
+                                                                           ^^^^^^^^^^^^^
+NameError: name 'StockWriteOff' is not defined. Did you mean: 'StockWriteOffTests'?
+
+======================================================================
+FAIL: test_expirations_writeoff_cross_role_lifecycle (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_expirations_writeoff_cross_role_lifecycle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit07_stock_expirations.py", line 554, in test_expirations_writeoff_cross_role_lifecycle
+    self.assertRedirects(post_resp, reverse("stock-writeoff"))
+AssertionError: 200 != 302 : Response didn't redirect as expected: Response code was 200 (expected 302)
+
+======================================================================
+FAIL: test_writeoff_http_date_and_real_cause_preserve_rejected_data (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_writeoff_http_date_and_real_cause_preserve_rejected_data) (role=Role.Code.ADMIN)
+RN-05 vigente: caducidad, daño y faltante por ambas funciones autorizadas.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit08_writeoffs_adjustments_movements.py", line 470, in test_writeoff_http_date_and_real_cause_preserve_rejected_data
+    self.assertRedirects(self.client.post(url, payload), url)
+AssertionError: '/inventario/bajas/314a33e9-5302-47d6-867f-5b0d4cdca323/' != '/inventario/bajas/nueva/'
+- /inventario/bajas/314a33e9-5302-47d6-867f-5b0d4cdca323/
++ /inventario/bajas/nueva/
+ : Response redirected to '/inventario/bajas/314a33e9-5302-47d6-867f-5b0d4cdca323/', expected '/inventario/bajas/nueva/': Expected '/inventario/bajas/314a33e9-5302-47d6-867f-5b0d4cdca323/' to equal '/inventario/bajas/nueva/'.
+
+======================================================================
+FAIL: test_writeoff_http_date_and_real_cause_preserve_rejected_data (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_writeoff_http_date_and_real_cause_preserve_rejected_data) (role=Role.Code.WAREHOUSE)
+RN-05 vigente: caducidad, daño y faltante por ambas funciones autorizadas.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit08_writeoffs_adjustments_movements.py", line 470, in test_writeoff_http_date_and_real_cause_preserve_rejected_data
+    self.assertRedirects(self.client.post(url, payload), url)
+AssertionError: '/inventario/bajas/7d4ba6f9-d90b-487c-9cf8-cb11ed6a9238/' != '/inventario/bajas/nueva/'
+- /inventario/bajas/7d4ba6f9-d90b-487c-9cf8-cb11ed6a9238/
++ /inventario/bajas/nueva/
+ : Response redirected to '/inventario/bajas/7d4ba6f9-d90b-487c-9cf8-cb11ed6a9238/', expected '/inventario/bajas/nueva/': Expected '/inventario/bajas/7d4ba6f9-d90b-487c-9cf8-cb11ed6a9238/' to equal '/inventario/bajas/nueva/'.
+
+======================================================================
+FAIL: test_upgrade_preserves_old_rows_with_unknown_cost (inventory.test_audit14e_valuation.LegacyOutputCostMigrationTests.test_upgrade_preserves_old_rows_with_unknown_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14e_valuation.py", line 278, in test_upgrade_preserves_old_rows_with_unknown_cost
+    self.assertEqual(migrated, originals[model.__name__])
+AssertionError: {'id'[44 chars]'), 'lot_id': UUID('568520c8-12fe-4b57-9d31-64[527 chars]None} != {'id'[44 chars]'), 'quantity': 1, 'reason': 'ROBO', 'notes': [260 chars]b6')}
+Diff is 923 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 614 tests in 77.895s
+
+FAILED (failures=4, errors=2)
+Destroying test database for alias 'default'...

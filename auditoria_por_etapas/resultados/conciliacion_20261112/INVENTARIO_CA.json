@@ -1,0 +1,1973 @@
+[
+  {
+    "id": "HU-AUTH-01/CA-01",
+    "hu": "HU-AUTH-01",
+    "title": "Ingresar con mi cuenta de trabajo",
+    "criterion": "Dado que tengo una cuenta activa con uno de los roles exclusivos `ADMIN`, `ALMACENERO` o `VENDEDOR`, cuando ingreso mi correo y contraseña correctos, entonces el sistema crea mi sesión y me conduce a las opciones autorizadas para ese único rol (RN-29).",
+    "line": 14,
+    "stage": "01",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-01/CA-02",
+    "hu": "HU-AUTH-01",
+    "title": "Ingresar con mi cuenta de trabajo",
+    "criterion": "Dado que ingreso una contraseña incorrecta o un correo no registrado, cuando el sistema lo valida, entonces muestra el mensaje general «Correo o contraseña incorrectos» sin indicar cuál de los dos datos falló.",
+    "line": 15,
+    "stage": "01",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-01/CA-03",
+    "hu": "HU-AUTH-01",
+    "title": "Ingresar con mi cuenta de trabajo",
+    "criterion": "Dado que mi cuenta de empleado está inactiva, cuando ingreso credenciales correctas, entonces el sistema rechaza el acceso con el mismo mensaje general «Correo o contraseña incorrectos» sin dar información sobre el estado de la cuenta.",
+    "line": 16,
+    "stage": "01",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-01/CA-04",
+    "hu": "HU-AUTH-01",
+    "title": "Ingresar con mi cuenta de trabajo",
+    "criterion": "Dado que inicié sesión, cuando intento abrir por URL o solicitud directa una operación que RN-29 no permite a mi rol, entonces el sistema deniega el acceso, no expone los datos de esa operación y no modifica información.",
+    "line": 17,
+    "stage": "01",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-02/CA-01",
+    "hu": "HU-AUTH-02",
+    "title": "Autenticación — Bloquear cuenta por intentos fallidos",
+    "criterion": "Dado que un usuario ingresa una contraseña incorrecta por quinta vez consecutiva, cuando se procesa el quinto intento fallido, entonces el sistema bloquea temporalmente la cuenta por 15 minutos conforme a la regla RN-17.",
+    "line": 26,
+    "stage": "01",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-02/CA-02",
+    "hu": "HU-AUTH-02",
+    "title": "Autenticación — Bloquear cuenta por intentos fallidos",
+    "criterion": "Dado que la cuenta se encuentra bajo bloqueo temporal, cuando se intenta ingresar nuevamente con cualquier clave, entonces el sistema impide el acceso y muestra en pantalla los minutos restantes del bloqueo.",
+    "line": 27,
+    "stage": "01",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-02/CA-03",
+    "hu": "HU-AUTH-02",
+    "title": "Autenticación — Bloquear cuenta por intentos fallidos",
+    "criterion": "Dado que transcurrió el tiempo de espera de 15 minutos, cuando el empleado ingresa sus credenciales válidas, entonces el sistema le permite ingresar exitosamente y restablece el contador de intentos a cero.",
+    "line": 28,
+    "stage": "01",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-03/CA-01",
+    "hu": "HU-AUTH-03",
+    "title": "Salir de mi cuenta al terminar",
+    "criterion": "Dado que tengo una sesión sin una venta en preparación, cuando elijo «Salir» y confirmo la advertencia de que un turno abierto seguirá ligado a mi usuario, entonces el sistema invalida la sesión y regresa a la pantalla de ingreso sin cerrar ese turno (RN-30).",
+    "line": 37,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-03/CA-02",
+    "hu": "HU-AUTH-03",
+    "title": "Salir de mi cuenta al terminar",
+    "criterion": "Dado que mi venta en preparación contiene al menos una línea, cuando elijo «Salir», entonces el sistema advierte que descartará la venta; si confirmo, elimina todas las líneas sin afectar caja ni existencias y cierra la sesión, y si cancelo, conserva tanto la sesión como la venta (RN-30).",
+    "line": 38,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-03/CA-03",
+    "hu": "HU-AUTH-03",
+    "title": "Salir de mi cuenta al terminar",
+    "criterion": "Dado que la salida fue confirmada, cuando se usa el botón Atrás o una URL anterior, entonces no se ve información del empleado ni se ejecutan operaciones sin autenticarse; si el mismo vendedor vuelve a ingresar, conserva su turno abierto pero no el borrador descartado, y otro vendedor no puede usar ni reemplazar ese turno.",
+    "line": 39,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-AUTH-04a/CA-01",
+    "hu": "HU-AUTH-04a",
+    "title": "Autenticación — Cerrar automáticamente la sesión previa",
+    "criterion": "Dado que tengo una sesión abierta en un equipo, cuando inicio sesión desde otro equipo con mis credenciales válidas, entonces la sesión previa se cierra de inmediato y solo queda habilitado el nuevo puesto.",
+    "line": 48,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-AUTH-04a/CA-02",
+    "hu": "HU-AUTH-04a",
+    "title": "Autenticación — Cerrar automáticamente la sesión previa",
+    "criterion": "Dado que mi sesión previa fue cerrada por inicio en otro equipo, cuando intento realizar cualquier acción desde ese puesto anterior, entonces la pantalla se bloquea y muestra «La sesión fue abierta en otro dispositivo».",
+    "line": 49,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-AUTH-04a/CA-03",
+    "hu": "HU-AUTH-04a",
+    "title": "Autenticación — Cerrar automáticamente la sesión previa",
+    "criterion": "Dado que la pantalla fue bloqueada, cuando intento interactuar con el puesto anterior, entonces el sistema me redirige a la pantalla de ingreso exigiendo escribir las credenciales.",
+    "line": 50,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-AUTH-04b/CA-01",
+    "hu": "HU-AUTH-04b",
+    "title": "Autenticación — Descartar venta sin confirmar al cerrarse la sesión",
+    "criterion": "Dado que tengo una venta en curso sin confirmar y mi sesión se cierra por inicio en otro equipo, cuando se procesa el cierre automático, entonces la venta incompleta se descarta y la lista de venta se libera.",
+    "line": 59,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-AUTH-04b/CA-02",
+    "hu": "HU-AUTH-04b",
+    "title": "Autenticación — Descartar venta sin confirmar al cerrarse la sesión",
+    "criterion": "Dado que se descarta una venta incompleta por cierre de sesión, cuando consulto las existencias de productos y el dinero en caja, entonces ambos permanecen iguales a su estado previo sin alteraciones.",
+    "line": 60,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-AUTH-05/CA-01",
+    "hu": "HU-AUTH-05",
+    "title": "Autenticación — Recuperar contraseña por correo",
+    "criterion": "Dado que olvidé mi contraseña, cuando ingreso mi correo registrado en el formulario de recuperación, entonces el sistema despacha un código numérico temporal de 4 dígitos con validez de 15 minutos (RN-18).",
+    "line": 69,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-AUTH-05/CA-02",
+    "hu": "HU-AUTH-05",
+    "title": "Autenticación — Recuperar contraseña por correo",
+    "criterion": "Dado que recibí el código temporal, cuando lo ingreso dentro del tiempo de validez, entonces el sistema me permite definir una nueva contraseña que cumpla con los requisitos de seguridad de al menos 7 caracteres con mayúscula, minúscula y número (RN-24).",
+    "line": 70,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-AUTH-05/CA-03",
+    "hu": "HU-AUTH-05",
+    "title": "Autenticación — Recuperar contraseña por correo",
+    "criterion": "Dado que el código temporal fue utilizado exitosamente para cambiar la contraseña, cuando se intenta utilizar nuevamente el mismo código, entonces el sistema lo rechaza por haber expirado su único uso permitido (RN-18).",
+    "line": 71,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-AUTH-05/CA-04",
+    "hu": "HU-AUTH-05",
+    "title": "Autenticación — Recuperar contraseña por correo",
+    "criterion": "Dado que han transcurrido más de 15 minutos desde su emisión, cuando ingreso el código, entonces el sistema muestra el mensaje «El código ha caducado» y solicita generar uno nuevo.",
+    "line": 72,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-AUTH-05/CA-05",
+    "hu": "HU-AUTH-05",
+    "title": "Autenticación — Recuperar contraseña por correo",
+    "criterion": "Dado que una recuperación acumula 5 códigos erróneos consecutivos, cuando se intenta otro código, entonces el sistema suspende ese flujo durante 15 minutos sin bloquear por ello una sesión ya autenticada ni revelar si el correo existe (RN-17).",
+    "line": 73,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-USR-01/CA-01",
+    "hu": "HU-USR-01",
+    "title": "Usuarios — Listar empleados del sistema",
+    "criterion": "Dado que accedo a la sección de empleados, cuando la lista carga, entonces veo el nombre, correo, rol y estado (activo/inactivo) de cada empleado registrado.",
+    "line": 82,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-01/CA-02",
+    "hu": "HU-USR-01",
+    "title": "Usuarios — Listar empleados del sistema",
+    "criterion": "Dado que la lista está cargada, cuando busco por nombre o correo, entonces el sistema filtra los resultados y muestra solo los empleados que coinciden.",
+    "line": 83,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-01/CA-03",
+    "hu": "HU-USR-01",
+    "title": "Usuarios — Listar empleados del sistema",
+    "criterion": "Dado que la lista tiene varios registros, cuando la exploro, entonces puedo distinguir claramente cuáles cuentas están activas y cuáles inactivas.",
+    "line": 84,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-02/CA-01",
+    "hu": "HU-USR-02",
+    "title": "Usuarios — Crear cuenta de nuevo empleado",
+    "criterion": "Dado que completo el formulario de nuevo empleado con nombre, correo, rol y contraseña inicial válida, cuando guardo el registro, entonces el empleado queda activo y puede iniciar sesión con esas credenciales.",
+    "line": 93,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-02/CA-02",
+    "hu": "HU-USR-02",
+    "title": "Usuarios — Crear cuenta de nuevo empleado",
+    "criterion": "Dado que ingreso un correo que ya existe en el sistema (activo o inactivo), cuando intento guardar, entonces el sistema muestra «El correo ya está registrado» y no permite duplicados (RN-12).",
+    "line": 94,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-02/CA-03",
+    "hu": "HU-USR-02",
+    "title": "Usuarios — Crear cuenta de nuevo empleado",
+    "criterion": "Dado que ingreso una contraseña inicial, cuando la valido, entonces el sistema verifica que tenga al menos 7 caracteres con mayúsculas, minúsculas y números, y rechaza la contraseña si no cumple ese criterio (RN-24).",
+    "line": 95,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-02/CA-04",
+    "hu": "HU-USR-02",
+    "title": "Usuarios — Crear cuenta de nuevo empleado",
+    "criterion": "Dado que el empleado fue creado, cuando finaliza el registro, entonces el sistema confirma su nombre, correo, estado activo y rol asignado.",
+    "line": 96,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-03/CA-01",
+    "hu": "HU-USR-03",
+    "title": "Usuarios — Editar datos y rol de un empleado",
+    "criterion": "Dado que selecciono un empleado registrado, cuando accedo al formulario de edición, entonces puedo modificar su Nombre completo (nombres y apellidos juntos, hasta 120 caracteres, no único), correo electrónico y su rol de trabajo en el sistema.",
+    "line": 105,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-03/CA-02",
+    "hu": "HU-USR-03",
+    "title": "Usuarios — Editar datos y rol de un empleado",
+    "criterion": "Dado que modifico el correo electrónico del empleado, cuando intento guardar, entonces el sistema valida que el nuevo correo no se encuentre registrado previamente por otro trabajador (RN-12).",
+    "line": 106,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-03/CA-03",
+    "hu": "HU-USR-03",
+    "title": "Usuarios — Editar datos y rol de un empleado",
+    "criterion": "Dado que cambio el rol del empleado, cuando confirmo la modificación, entonces el nuevo rol queda registrado y aplica de inmediato.",
+    "line": 107,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-04/CA-01",
+    "hu": "HU-USR-04",
+    "title": "Usuarios — Desactivar cuenta de empleado",
+    "criterion": "Dado que selecciono desactivar la cuenta de un empleado activo, cuando confirmo la acción, entonces el empleado queda con estado Inactivo y no puede ingresar al sistema.",
+    "line": 116,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-04/CA-02",
+    "hu": "HU-USR-04",
+    "title": "Usuarios — Desactivar cuenta de empleado",
+    "criterion": "Dado que una cuenta de empleado fue desactivada, cuando intenta ingresar al sistema, entonces el sistema muestra el mismo mensaje general «Correo o contraseña incorrectos» que en HU-AUTH-01, sin revelar el estado de la cuenta.",
+    "line": 117,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-04/CA-03",
+    "hu": "HU-USR-04",
+    "title": "Usuarios — Desactivar cuenta de empleado",
+    "criterion": "Dado que desactivé una cuenta, cuando la busco en la lista, entonces aparece con estado Inactivo y el historial de operaciones del empleado se conserva.",
+    "line": 118,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-05/CA-01",
+    "hu": "HU-USR-05",
+    "title": "Usuarios — Reactivar cuenta de empleado",
+    "criterion": "Dado que selecciono reactivar la cuenta de un empleado inactivo, cuando confirmo la acción, entonces la cuenta queda con estado Activo y puede ingresar con sus credenciales habituales.",
+    "line": 127,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-05/CA-02",
+    "hu": "HU-USR-05",
+    "title": "Usuarios — Reactivar cuenta de empleado",
+    "criterion": "Dado que reactivé una cuenta, cuando el empleado ingresa, entonces accede al sistema con el mismo rol y permisos que tenía antes de la desactivación.",
+    "line": 128,
+    "stage": "02",
+    "selected": true
+  },
+  {
+    "id": "HU-USR-06/CA-01",
+    "hu": "HU-USR-06",
+    "title": "Usuarios — Forzar cierre de sesión remoto",
+    "criterion": "Dado que un empleado tiene sesión abierta, cuando selecciono «Cerrar sesión» desde la pantalla de administración, entonces el empleado es desconectado de forma inmediata.",
+    "line": 137,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-USR-06/CA-02",
+    "hu": "HU-USR-06",
+    "title": "Usuarios — Forzar cierre de sesión remoto",
+    "criterion": "Dado que su sesión fue cerrada remotamente, cuando el empleado intenta continuar navegando, entonces el sistema le muestra la pantalla de ingreso con el mensaje «Tu sesión fue cerrada por el administrador».",
+    "line": 138,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-LOG-01/CA-01",
+    "hu": "HU-LOG-01",
+    "title": "Supervisión de accesos – Consultar registro de accesos",
+    "criterion": "Dado que accedo al registro de accesos, cuando la lista carga, entonces veo por cada evento: nombre del empleado, tipo de evento (ingreso o salida) y fecha con hora exacta.",
+    "line": 147,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-LOG-01/CA-02",
+    "hu": "HU-LOG-01",
+    "title": "Supervisión de accesos – Consultar registro de accesos",
+    "criterion": "Dado que consulto el registro, cuando filtro por empleado o por rango de fechas, entonces el sistema muestra únicamente los eventos que coinciden con el filtro.",
+    "line": 148,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-LOG-01/CA-03",
+    "hu": "HU-LOG-01",
+    "title": "Supervisión de accesos – Consultar registro de accesos",
+    "criterion": "Dado que ocurrió un bloqueo de cuenta por intentos fallidos, cuando lo busco en el registro, entonces aparece como un evento diferenciado.",
+    "line": 149,
+    "stage": "02",
+    "selected": false
+  },
+  {
+    "id": "HU-CAT-01/CA-01",
+    "hu": "HU-CAT-01",
+    "title": "Categorías — Ver lista de categorías de productos",
+    "criterion": "Dado que accedo a la sección de categorías, cuando la lista carga, entonces veo el nombre de cada categoría registrada.",
+    "line": 162,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-CAT-01/CA-02",
+    "hu": "HU-CAT-01",
+    "title": "Categorías — Ver lista de categorías de productos",
+    "criterion": "Dado que no hay ninguna categoría registrada, cuando accedo a la sección, entonces el sistema muestra un mensaje indicando que la lista está vacía.",
+    "line": 163,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-CAT-02/CA-01",
+    "hu": "HU-CAT-02",
+    "title": "Categorías — Crear nueva categoría de productos",
+    "criterion": "Dado que ingreso un nombre de categoría no vacío, cuando confirmo el registro, entonces el sistema retira espacios sobrantes, guarda la categoría con estado activo y la deja disponible para usos posteriores en el catálogo.",
+    "line": 172,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-CAT-02/CA-02",
+    "hu": "HU-CAT-02",
+    "title": "Categorías — Crear nueva categoría de productos",
+    "criterion": "Dado que ya existe una categoría registrada con el mismo nombre aunque cambien mayúsculas o espacios, cuando intento guardar, entonces el sistema muestra el mensaje «La categoría ya existe» y no crea un duplicado.",
+    "line": 173,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-CAT-02/CA-03",
+    "hu": "HU-CAT-02",
+    "title": "Categorías — Crear nueva categoría de productos",
+    "criterion": "Dado que el nombre queda vacío al retirar espacios, cuando intento guardar, entonces el sistema indica «El nombre es obligatorio» y no registra la categoría.",
+    "line": 174,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-CAT-03/CA-01",
+    "hu": "HU-CAT-03",
+    "title": "Categorías — Editar nombre de categoría",
+    "criterion": "Dado que edito el nombre de una categoría con un texto nuevo y único, cuando guardo, entonces el cambio se refleja en la lista y en todos los productos pertenecientes a ella.",
+    "line": 183,
+    "stage": "03",
+    "selected": false
+  },
+  {
+    "id": "HU-CAT-03/CA-02",
+    "hu": "HU-CAT-03",
+    "title": "Categorías — Editar nombre de categoría",
+    "criterion": "Dado que edito el nombre con una denominación que ya pertenece a otra categoría, cuando intento guardar, entonces el sistema muestra «La categoría ya existe» y no realiza el cambio.",
+    "line": 184,
+    "stage": "03",
+    "selected": false
+  },
+  {
+    "id": "HU-CAT-04/CA-01",
+    "hu": "HU-CAT-04",
+    "title": "Categorías — Eliminar categoría sin productos",
+    "criterion": "Dado que selecciono eliminar una categoría que no tiene productos asociados, cuando confirmo la acción, entonces la categoría desaparece de la lista.",
+    "line": 193,
+    "stage": "03",
+    "selected": false
+  },
+  {
+    "id": "HU-CAT-04/CA-02",
+    "hu": "HU-CAT-04",
+    "title": "Categorías — Eliminar categoría sin productos",
+    "criterion": "Dado que selecciono eliminar una categoría que tiene productos vinculados, cuando intento confirmar, entonces el sistema muestra «No se puede eliminar: esta categoría tiene productos registrados» y cancela la acción.",
+    "line": 194,
+    "stage": "03",
+    "selected": false
+  },
+  {
+    "id": "HU-PROD-01/CA-01",
+    "hu": "HU-PROD-01",
+    "title": "Productos — Ver catálogo completo de productos",
+    "criterion": "Dado que accedo al catálogo de productos, cuando la lista carga, entonces veo por cada artículo: nombre, código de barras, categoría, precio de venta y existencias disponibles.",
+    "line": 203,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-01/CA-02",
+    "hu": "HU-PROD-01",
+    "title": "Productos — Ver catálogo completo de productos",
+    "criterion": "Dado que consulto el catálogo, cuando busco por nombre o código de barras, entonces el sistema filtra los resultados y muestra solo los artículos coincidentes.",
+    "line": 204,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-01/CA-03",
+    "hu": "HU-PROD-01",
+    "title": "Productos — Ver catálogo completo de productos",
+    "criterion": "Dado que un producto tiene existencias iguales o inferiores al mínimo configurado (RN-06), cuando aparece en la lista, entonces muestra una señal visual de alerta.",
+    "line": 205,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-02/CA-01",
+    "hu": "HU-PROD-02",
+    "title": "Registrar un producto por unidad con vencimiento",
+    "criterion": "Dado que ingreso con rol `ADMIN` y existe una categoría activa, cuando la elijo y registro nombre único ignorando mayúsculas y espacios redundantes, código de barras, unidad `UND`, precio con IGV incluido y cantidad mínima válidos, entonces el producto queda asociado a esa categoría, sea o no de enlatados, y con control de vencimiento obligatorio; una categoría inactiva o inexistente se rechaza sin crear producto (RN-03, RN-29; DOC03-01, 09/11/2026).",
+    "line": 214,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-02/CA-02",
+    "hu": "HU-PROD-02",
+    "title": "Registrar un producto por unidad con vencimiento",
+    "criterion": "Dado que registro el precio de venta en soles, cuando el sistema lo valida, entonces exige un valor mayor que cero con máximo dos decimales y lo interpreta como precio final con IGV incluido (RN-27).",
+    "line": 215,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-02/CA-03",
+    "hu": "HU-PROD-02",
+    "title": "Registrar un producto por unidad con vencimiento",
+    "criterion": "Dado que indico un código de barras que ya pertenece a otro producto, cuando intento guardar, entonces el sistema rechaza el registro por ser un código irrepetible.",
+    "line": 216,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-02/CA-04",
+    "hu": "HU-PROD-02",
+    "title": "Registrar un producto por unidad con vencimiento",
+    "criterion": "Dado que indico la cantidad mínima de existencias, cuando guardo, entonces acepta un entero entre 0 y 999999 inclusive, tanto en formulario como en servidor; si no ingreso el campo al registrar, almacena 10. Un valor fuera del rango se rechaza sin guardar cambios, y el alcance vigente aplica alertas coherentes con RN-06 (PROP-03C-LIMITES ratificada por delegación el12/11/2026; la procedencia anterior se conserva en BASELINE).",
+    "line": 217,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-02/CA-05",
+    "hu": "HU-PROD-02",
+    "title": "Registrar un producto por unidad con vencimiento",
+    "criterion": "Dado que todos los datos son válidos, cuando se confirma el registro, entonces el producto se crea con cero existencias y no resulta vendible hasta recibir lotes; si un `ALMACENERO` o `VENDEDOR` intenta registrar por acceso directo, el sistema deniega la operación y no crea ningún producto (RN-29).",
+    "line": 218,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-03/CA-01",
+    "hu": "HU-PROD-03",
+    "title": "Productos — Escanear código de barras para registrar producto",
+    "criterion": "Dado que abro «Escanear código» en el alta de producto, cuando leo una etiqueta, entonces «Código leído» muestra automáticamente el valor temporal. Al pulsar «Usar código», se copia a la ficha para confirmarlo con «Registrar producto».",
+    "line": 227,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-03/CA-02",
+    "hu": "HU-PROD-03",
+    "title": "Productos — Escanear código de barras para registrar producto",
+    "criterion": "Dado que el código leído ya existe en el catálogo, cuando se detecta la lectura, entonces el sistema advierte «El código de barras ya está registrado» e impide duplicarlo.",
+    "line": 228,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-04/CA-01",
+    "hu": "HU-PROD-04",
+    "title": "Productos — Editar datos de un producto",
+    "criterion": "Dado que edito el precio de venta de un producto, cuando guardo, entonces el nuevo precio aplica a las ventas registradas a partir de ese momento; las ventas pasadas conservan el precio cobrado.",
+    "line": 237,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-04/CA-02",
+    "hu": "HU-PROD-04",
+    "title": "Productos — Editar datos de un producto",
+    "criterion": "Dado que edito la cantidad mínima de un producto, cuando guardo, entonces el umbral de alerta se actualiza de inmediato (RN-06).",
+    "line": 238,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-04/CA-03",
+    "hu": "HU-PROD-04",
+    "title": "Productos — Editar datos de un producto",
+    "criterion": "Dado que ingreso como `ADMIN`, cuando corrijo el código de barras de un producto, entonces se exige un código normalizado único, se conserva la identidad del producto y sus referencias, y las ventas pasadas mantienen sus datos históricos; un código duplicado o inválido se rechaza sin guardar cambios (DOC03-02, decisión del usuario del 09/11/2026; RN-28, RN-29).",
+    "line": 239,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-04/CA-04",
+    "hu": "HU-PROD-04",
+    "title": "Productos — Editar datos de un producto",
+    "criterion": "Dado que edito el nombre de un producto con una descripción válida, cuando guardo, entonces el nuevo nombre se actualiza en el catálogo y en la pantalla de venta; debe ser único entre productos activos e inactivos, ignorando mayúsculas y espacios redundantes, y conserva los datos de ventas pasadas. Un duplicado se rechaza sin guardar ningún cambio; marca, contenido o presentación distinguen productos diferentes (PROP-03C-NOMBRE aceptada, 10/11/2026).",
+    "line": 240,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-04/CA-05",
+    "hu": "HU-PROD-04",
+    "title": "Productos — Editar datos de un producto",
+    "criterion": "Dado que reasigno la categoría de un producto, cuando confirmo el cambio, entonces el producto queda reclasificado en la nueva categoría.",
+    "line": 241,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-05/CA-01",
+    "hu": "HU-PROD-05",
+    "title": "Productos — Gestionar estado de disponibilidad comercial",
+    "criterion": "Dado que cambio el estado de un producto a «Inactivo», cuando un vendedor intenta buscarlo en mostrador, entonces el producto queda excluido de la venta.",
+    "line": 250,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-05/CA-02",
+    "hu": "HU-PROD-05",
+    "title": "Productos — Gestionar estado de disponibilidad comercial",
+    "criterion": "Dado que el administrador reactiva un producto, cuando el vendedor con turno propio abierto lo busca en mostrador, entonces aparece con su precio de venta actual y la suma de unidades de lotes vigentes si la categoría está activa y esa suma es positiva. Solo cuentan los lotes que vencen después de hoy en Lima (RN-03). Con categoría desactivada o cero unidades vigentes, la ficha queda activa, el catálogo indica el motivo y el mostrador la excluye.",
+    "line": 251,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-05/CA-03",
+    "hu": "HU-PROD-05",
+    "title": "Productos — Gestionar estado de disponibilidad comercial",
+    "criterion": "Dado que un producto se encuentra inactivo, cuando el administrador revisa el catálogo, entonces se muestra con la etiqueta «Inactivo» y conserva todo su historial.",
+    "line": 252,
+    "stage": "03",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-06/CA-01",
+    "hu": "HU-PROD-06",
+    "title": "Productos — Consultar vencimientos de productos",
+    "criterion": "Dado que accedo a la consulta de vencimientos, cuando la lista carga, entonces veo los productos ordenados de menor a mayor días restantes de vida útil, mostrando nombre, número de lote y fecha de caducidad.",
+    "line": 261,
+    "stage": "07",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-06/CA-02",
+    "hu": "HU-PROD-06",
+    "title": "Productos — Consultar vencimientos de productos",
+    "criterion": "Dado que un lote ya venció por tener fecha igual o anterior a hoy según la hora de Lima, cuando aparece en la lista, entonces figura marcado como «Vencido» y bloqueado para venta (RN-03).",
+    "line": 262,
+    "stage": "07",
+    "selected": true
+  },
+  {
+    "id": "HU-PROD-06/CA-03",
+    "hu": "HU-PROD-06",
+    "title": "Productos — Consultar vencimientos de productos",
+    "criterion": "Dado que consulto la lista, cuando filtro por número de días (por ejemplo próximos 7 días), entonces solo aparecen los lotes cuyo vencimiento se ubica dentro de ese plazo.",
+    "line": 263,
+    "stage": "07",
+    "selected": true
+  },
+  {
+    "id": "HU-PROV-01/CA-01",
+    "hu": "HU-PROV-01",
+    "title": "Proveedores — Ver lista de proveedores",
+    "criterion": "Dado que accedo a la sección de proveedores, cuando la lista carga, entonces veo el nombre comercial, RUC y estado (activo/inactivo) de cada proveedor.",
+    "line": 272,
+    "stage": "04",
+    "selected": true
+  },
+  {
+    "id": "HU-PROV-01/CA-02",
+    "hu": "HU-PROV-01",
+    "title": "Proveedores — Ver lista de proveedores",
+    "criterion": "Dado que busco por nombre o RUC, cuando el sistema filtra, entonces muestra únicamente los proveedores que coinciden.",
+    "line": 273,
+    "stage": "04",
+    "selected": true
+  },
+  {
+    "id": "HU-PROV-02/CA-01",
+    "hu": "HU-PROV-02",
+    "title": "Proveedores — Registrar nuevo proveedor",
+    "criterion": "Dado que completo el formulario con nombre, RUC y datos de contacto del proveedor, cuando guardo, entonces el proveedor queda registrado con estado Activo y disponible para pedidos.",
+    "line": 282,
+    "stage": "04",
+    "selected": true
+  },
+  {
+    "id": "HU-PROV-02/CA-02",
+    "hu": "HU-PROV-02",
+    "title": "Proveedores — Registrar nuevo proveedor",
+    "criterion": "Dado que ingreso un RUC que ya pertenece a otro proveedor registrado, cuando intento guardar, entonces el sistema muestra «El RUC ya está registrado» y no crea el duplicado.",
+    "line": 283,
+    "stage": "04",
+    "selected": true
+  },
+  {
+    "id": "HU-PROV-02/CA-03",
+    "hu": "HU-PROV-02",
+    "title": "Proveedores — Registrar nuevo proveedor",
+    "criterion": "Dado que omito el RUC o el nombre, cuando intento guardar, entonces el sistema indica los campos obligatorios faltantes y no registra el proveedor.",
+    "line": 284,
+    "stage": "04",
+    "selected": true
+  },
+  {
+    "id": "HU-PROV-03/CA-01",
+    "hu": "HU-PROV-03",
+    "title": "Proveedores — Editar datos de un proveedor",
+    "criterion": "Dado que edito los datos de contacto de un proveedor, cuando guardo, entonces los cambios se reflejan de inmediato.",
+    "line": 293,
+    "stage": "04",
+    "selected": false
+  },
+  {
+    "id": "HU-PROV-03/CA-02",
+    "hu": "HU-PROV-03",
+    "title": "Proveedores — Editar datos de un proveedor",
+    "criterion": "Dado que edito el RUC de un proveedor con un valor que ya pertenece a otro, cuando intento guardar, entonces el sistema advierte que el RUC ya existe y no guarda el cambio.",
+    "line": 294,
+    "stage": "04",
+    "selected": false
+  },
+  {
+    "id": "HU-PROV-04/CA-01",
+    "hu": "HU-PROV-04",
+    "title": "Proveedores — Gestionar estado de vigencia del proveedor",
+    "criterion": "Dado que cambio el estado de un proveedor a «Inactivo», cuando se elabora una solicitud de reposición, entonces el proveedor queda excluido de la lista de selección.",
+    "line": 303,
+    "stage": "04",
+    "selected": true
+  },
+  {
+    "id": "HU-PROV-04/CA-02",
+    "hu": "HU-PROV-04",
+    "title": "Proveedores — Gestionar estado de vigencia del proveedor",
+    "criterion": "Dado que regreso a un proveedor al estado «Activo», cuando se crea una reposición, entonces vuelve a estar disponible para pedidos.",
+    "line": 304,
+    "stage": "04",
+    "selected": true
+  },
+  {
+    "id": "HU-PROV-04/CA-03",
+    "hu": "HU-PROV-04",
+    "title": "Proveedores — Gestionar estado de vigencia del proveedor",
+    "criterion": "Dado que un proveedor está inactivo, cuando consulto la lista general, entonces se visualiza claramente como «Inactivo» conservando su historial previo.",
+    "line": 305,
+    "stage": "04",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-01a/CA-01",
+    "hu": "HU-INV-01a",
+    "title": "Registrar las existencias iniciales por lotes",
+    "criterion": "Dado que ingreso con rol `ALMACENERO` y el producto aún no tiene una carga inicial confirmada, cuando envío uno o varios lotes válidos, entonces el sistema confirma una única carga directa sin pedido previo; cualquier otro rol recibe una denegación y no altera existencias (RN-01, RN-29).",
+    "line": 318,
+    "stage": "05",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-01a/CA-02",
+    "hu": "HU-INV-01a",
+    "title": "Registrar las existencias iniciales por lotes",
+    "criterion": "Dado que completo cada lote, cuando el sistema lo valida, entonces exige número comercial no vacío normalizado y no repetido dentro de la carga, cantidad entera positiva, costo unitario positivo con máximo cuatro decimales y vencimiento posterior a hoy en America/Lima (RN-03); límites y normalización siguen ENCARGOS/DEC-05-LOTE-ESPACIOS. Las recepciones posteriores conservan identidad propia conforme a DOC-03AI-01.",
+    "line": 319,
+    "stage": "05",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-01a/CA-03",
+    "hu": "HU-INV-01a",
+    "title": "Registrar las existencias iniciales por lotes",
+    "criterion": "Dado que algún lote es inválido o repetido, o que ya existe o compite simultáneamente otra carga inicial para el producto, cuando intento confirmar, entonces el sistema rechaza toda la operación y no guarda lotes, existencias ni costo; como máximo una carga concurrente puede resultar confirmada (RN-01).",
+    "line": 320,
+    "stage": "05",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-01a/CA-04",
+    "hu": "HU-INV-01a",
+    "title": "Registrar las existencias iniciales por lotes",
+    "criterion": "Dado que todos los lotes son válidos, cuando se confirma la carga, entonces las existencias del producto equivalen a la suma de sus cantidades, el producto queda vendible y su costo promedio inicial se obtiene ponderando cantidad por costo, almacenado con cuatro decimales `HALF_UP` y mostrado con dos (RN-14).",
+    "line": 321,
+    "stage": "05",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-01a/CA-05",
+    "hu": "HU-INV-01a",
+    "title": "Registrar las existencias iniciales por lotes",
+    "criterion": "Dado que los lotes quedaron guardados, cuando se revisan sus datos, entonces cada uno conserva su número comercial, cantidad disponible, costo, vencimiento, instante de ingreso inmutable y un identificador interno; la futura salida FEFO ordena por vencimiento, instante de ingreso e identificador interno (RN-19).",
+    "line": 322,
+    "stage": "05",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-01b/CA-01",
+    "hu": "HU-INV-01b",
+    "title": "Registrar recepción posterior y actualizar costo promedio",
+    "criterion": "Dado que un producto ya completó su carga inicial, tenga o no existencias remanentes, cuando ALMACENERO confirma una recepción posterior directa, con identidad propia, cantidad y costo de compra, entonces el sistema recalcula el costo promedio usando todas las unidades físicas registradas anteriores, incluidas las vencidas pendientes de baja, y las ingresadas conforme a RN-14; el reintento de la misma clave/contenido devuelve la recepción previa sin nuevos efectos.",
+    "line": 331,
+    "stage": "06",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-01b/CA-02",
+    "hu": "HU-INV-01b",
+    "title": "Registrar recepción posterior y actualizar costo promedio",
+    "criterion": "Dado que consulto el costo promedio después de la entrada, cuando lo comparo con el cálculo ponderado, entonces coincide con el valor almacenado a cuatro decimales y se muestra redondeado a dos, sin alterar costos históricos de ventas anteriores.",
+    "line": 332,
+    "stage": "06",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-02/CA-01",
+    "hu": "HU-INV-02",
+    "title": "Inventario — Registrar baja de inventario por merma",
+    "criterion": "Dado que selecciono un lote de producto, cuando indico la cantidad a retirar y la causa (Vencimiento, Daño o rotura, o Robo o faltante), entonces el sistema descuenta las unidades validando que no superen las existencias del lote (RN-04, RN-05).",
+    "line": 341,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-02/CA-02",
+    "hu": "HU-INV-02",
+    "title": "Inventario — Registrar baja de inventario por merma",
+    "criterion": "Dado que el lote ya alcanzó su fecha de vencimiento según la hora de Lima, cuando se intenta registrar una baja, entonces permite Vencimiento si la causa es caducidad o Robo o faltante con explicación si esa es la causa real, y rechaza Daño o rotura conforme a RN-05.",
+    "line": 342,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-02/CA-03",
+    "hu": "HU-INV-02",
+    "title": "Inventario — Registrar baja de inventario por merma",
+    "criterion": "Dado que la causa seleccionada es Daño o rotura o Robo o faltante, cuando se registra la baja, entonces el sistema exige obligatoriamente detallar lo ocurrido e identifica al empleado responsable (RN-20).",
+    "line": 343,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-02/CA-04",
+    "hu": "HU-INV-02",
+    "title": "Inventario — Registrar baja de inventario por merma",
+    "criterion": "Dado que se confirma la baja, cuando termina la operación, entonces el sistema genera una constancia interna de merma con número correlativo, producto, lote, fecha y motivo.",
+    "line": 344,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-03/CA-01",
+    "hu": "HU-INV-03",
+    "title": "Inventario – Realizar ajuste por conteo físico",
+    "criterion": "Dado que el conteo en mostrador revela unidades de más (ajuste positivo), cuando el administrador lo registra, entonces exige asociarlo a un lote o crear uno nuevo con fecha de vencimiento fiable, motivo y costo conforme a RN-14; un hallazgo vencido se registra solo como no vendible, nunca como recepción ordinaria.",
+    "line": 353,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-03/CA-02",
+    "hu": "HU-INV-03",
+    "title": "Inventario – Realizar ajuste por conteo físico",
+    "criterion": "Dado que el conteo revela unidades de menos (ajuste negativo), cuando el administrador lo registra, entonces el sistema exige indicar de qué lote específico se descuentan las unidades.",
+    "line": 354,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-03/CA-03",
+    "hu": "HU-INV-03",
+    "title": "Inventario – Realizar ajuste por conteo físico",
+    "criterion": "Dado que se confirma el ajuste físico, cuando el sistema lo guarda, entonces genera un registro con fecha, cantidad ajustada, empleado responsable y motivo obligatorio.",
+    "line": 355,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-04/CA-01",
+    "hu": "HU-INV-04",
+    "title": "Mercadería — Consultar movimientos de un producto",
+    "criterion": "Dado que selecciono un producto, cuando consulto sus movimientos, entonces el sistema muestra en orden cronológico todas las entradas, salidas y saldo resultante con fecha, tipo de operación, cantidad y lote.",
+    "line": 364,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-04/CA-02",
+    "hu": "HU-INV-04",
+    "title": "Mercadería — Consultar movimientos de un producto",
+    "criterion": "Dado que un movimiento nació de una recepción directa, cuando abro el detalle, entonces muestra su referencia propia, responsable y proveedor o ausencia declarada; si en el futuro nació de HU-SOL-05a, mostrará además la solicitud aprobada sin inventar esa relación para entradas actuales.",
+    "line": 365,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-04/CA-03",
+    "hu": "HU-INV-04",
+    "title": "Mercadería — Consultar movimientos de un producto",
+    "criterion": "Dado que una entrada provino de carga inicial o ajuste, cuando abro el detalle, entonces se etiqueta como carga directa o ajuste con su motivo y responsable.",
+    "line": 366,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-04/CA-04",
+    "hu": "HU-INV-04",
+    "title": "Mercadería — Consultar movimientos de un producto",
+    "criterion": "Dado que aplico filtros por fechas o tipo de movimiento, cuando ejecuto la búsqueda, entonces se visualizan solo las operaciones coincidentes.",
+    "line": 367,
+    "stage": "08",
+    "selected": true
+  },
+  {
+    "id": "HU-INV-05/CA-01",
+    "hu": "HU-INV-05",
+    "title": "Inventario — Consultar historial de bajas",
+    "criterion": "Dado que accedo al historial de bajas, cuando la lista carga, entonces veo por cada baja: producto, motivo, número de lote, cantidad, empleado que la registró y fecha.",
+    "line": 376,
+    "stage": "08",
+    "selected": false
+  },
+  {
+    "id": "HU-INV-05/CA-02",
+    "hu": "HU-INV-05",
+    "title": "Inventario — Consultar historial de bajas",
+    "criterion": "Dado que filtro por motivo o período de tiempo, cuando aplico el filtro, entonces el sistema muestra únicamente las bajas coincidentes.",
+    "line": 377,
+    "stage": "08",
+    "selected": false
+  },
+  {
+    "id": "HU-INV-06/CA-01",
+    "hu": "HU-INV-06",
+    "title": "Inventario — Consultar historial de ajustes",
+    "criterion": "Dado que accedo al historial de ajustes, cuando la lista carga, entonces veo por cada ajuste: producto, tipo (positivo o negativo), cantidad ajustada, responsable y fecha.",
+    "line": 386,
+    "stage": "08",
+    "selected": false
+  },
+  {
+    "id": "HU-INV-06/CA-02",
+    "hu": "HU-INV-06",
+    "title": "Inventario — Consultar historial de ajustes",
+    "criterion": "Dado que filtro por producto o rango de fechas, cuando aplico el filtro, entonces el sistema exhibe los registros correspondientes.",
+    "line": 387,
+    "stage": "08",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-01/CA-01",
+    "hu": "HU-SOL-01",
+    "title": "Reposición – Crear solicitud de reposición",
+    "criterion": "Dado que elaboro una nueva solicitud, cuando elijo un proveedor activo y agrego productos indicando las cantidades requeridas, entonces el sistema crea la solicitud en estado Pendiente.",
+    "line": 396,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-01/CA-02",
+    "hu": "HU-SOL-01",
+    "title": "Reposición – Crear solicitud de reposición",
+    "criterion": "Dado que agrego artículos con existencias iguales o inferiores a su mínimo configurado —10 solo cuando se conservó el valor predeterminado—, cuando el sistema carga la sugerencia, entonces propone dichos artículos para facilitar el pedido (RN-06).",
+    "line": 397,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-01/CA-03",
+    "hu": "HU-SOL-01",
+    "title": "Reposición – Crear solicitud de reposición",
+    "criterion": "Dado que intento registrar una solicitud sin productos o con cantidades menores o iguales a cero, cuando intento guardarla, entonces el sistema bloquea el envío y exige ingresar productos válidos.",
+    "line": 398,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-02/CA-01",
+    "hu": "HU-SOL-02",
+    "title": "Reposición — Listar solicitudes con filtro por estado",
+    "criterion": "Dado que ingreso a la sección de solicitudes, cuando filtro por estado (Pendiente, Aprobada, Rechazada, Parcialmente atendida o Completada), entonces el sistema muestra con exactitud las solicitudes coincidentes.",
+    "line": 407,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-02/CA-02",
+    "hu": "HU-SOL-02",
+    "title": "Reposición — Listar solicitudes con filtro por estado",
+    "criterion": "Dado que elijo una solicitud, cuando abro su detalle, entonces veo productos pedidos, cantidades, fecha, proveedor y observaciones.",
+    "line": 408,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-02/CA-03",
+    "hu": "HU-SOL-02",
+    "title": "Reposición — Listar solicitudes con filtro por estado",
+    "criterion": "Dado que no existen solicitudes con el estado elegido, cuando filtro, entonces la pantalla informa que no hay registros.",
+    "line": 409,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-03/CA-01",
+    "hu": "HU-SOL-03",
+    "title": "Reposición — Aprobar solicitud de reposición",
+    "criterion": "Dado que reviso una solicitud en estado Pendiente, cuando la apruebo manteniendo el proveedor sugerido, entonces la solicitud pasa a estado Aprobada con dicho proveedor (RN-16).",
+    "line": 418,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-03/CA-02",
+    "hu": "HU-SOL-03",
+    "title": "Reposición — Aprobar solicitud de reposición",
+    "criterion": "Dado que reviso una solicitud en estado Pendiente, cuando selecciono un proveedor alternativo antes de aprobar, entonces la solicitud pasa a estado Aprobada con el proveedor actualizado.",
+    "line": 419,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-03/CA-03",
+    "hu": "HU-SOL-03",
+    "title": "Reposición — Aprobar solicitud de reposición",
+    "criterion": "Dado que la solicitud queda aprobada, cuando el encargado del almacén la consulta, entonces visualiza su nuevo estado y el proveedor confirmado.",
+    "line": 420,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-04/CA-01",
+    "hu": "HU-SOL-04",
+    "title": "Reposición — Rechazar solicitud de reposición",
+    "criterion": "Dado que reviso una solicitud Pendiente, cuando intento rechazarla sin escribir un motivo, entonces el sistema muestra «El motivo del rechazo es obligatorio» y no cambia el estado.",
+    "line": 429,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-04/CA-02",
+    "hu": "HU-SOL-04",
+    "title": "Reposición — Rechazar solicitud de reposición",
+    "criterion": "Dado que ingreso el motivo y confirmo, cuando el sistema lo procesa, entonces la solicitud pasa a Rechazada y el motivo queda visible para el personal.",
+    "line": 430,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-05a/CA-01",
+    "hu": "HU-SOL-05a",
+    "title": "Reposición — Completar la recepción total de una solicitud",
+    "criterion": "Dado que recibo todos los artículos de una solicitud aprobada, cuando registro el lote, fecha de vencimiento y costo de compra de cada uno, entonces las existencias aumentan, entran a la rotación vendiendo primero lo que vence antes (RN-19) y la solicitud pasa a Completada.",
+    "line": 439,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-05a/CA-02",
+    "hu": "HU-SOL-05a",
+    "title": "Reposición — Completar la recepción total de una solicitud",
+    "criterion": "Dado que intento ingresar para un producto una cantidad mayor a la aprobada, cuando confirmo, entonces el sistema advierte el exceso y bloquea la operación.",
+    "line": 440,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-05a/CA-03",
+    "hu": "HU-SOL-05a",
+    "title": "Reposición — Completar la recepción total de una solicitud",
+    "criterion": "Dado que ingreso un lote cuya fecha de vencimiento ya se cumplió o vence hoy, cuando intento confirmar, entonces el sistema bloquea la recepción conforme a la regla RN-03.",
+    "line": 441,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-05a/CA-04",
+    "hu": "HU-SOL-05a",
+    "title": "Reposición — Completar la recepción total de una solicitud",
+    "criterion": "Dado que registro el costo de compra en la recepción, cuando se confirma la entrada, entonces el sistema recalcula automáticamente el costo promedio ponderado de cada producto (RN-14).",
+    "line": 442,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-05b/CA-01",
+    "hu": "HU-SOL-05b",
+    "title": "Reposición — Registrar una recepción parcial con saldo pendiente",
+    "criterion": "Dado que recibo solo una parte de los artículos aprobados, cuando registro las unidades recibidas con lote, vencimiento vigente posterior a hoy (RN-03) y costo de compra, entonces las existencias aumentan, el costo promedio se actualiza (RN-14) y la solicitud pasa a «Parcialmente atendida».",
+    "line": 451,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-05b/CA-02",
+    "hu": "HU-SOL-05b",
+    "title": "Reposición — Registrar una recepción parcial con saldo pendiente",
+    "criterion": "Dado que una solicitud está parcialmente atendida, cuando abro su detalle, entonces visualizo claramente las cantidades recibidas y el saldo pendiente de cada artículo.",
+    "line": 452,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-SOL-05b/CA-03",
+    "hu": "HU-SOL-05b",
+    "title": "Reposición — Registrar una recepción parcial con saldo pendiente",
+    "criterion": "Dado que llega el saldo restante de mercadería, cuando registro la segunda entrega cumpliendo fechas vigentes, entonces el sistema suma las existencias restantes con rotación de vencimiento (RN-19), pasa la solicitud a Completada y deja el saldo pendiente en cero.",
+    "line": 453,
+    "stage": "06",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-01/CA-01",
+    "hu": "HU-CAJA-01",
+    "title": "Abrir el turno de caja",
+    "criterion": "Dado que ingreso con rol `VENDEDOR` y no existe un turno abierto, cuando declaro un monto inicial válido en soles, igual o mayor que cero y con máximo dos decimales, entonces el sistema abre un turno ligado a mi usuario y habilita la preparación de ventas (RN-10, RN-29).",
+    "line": 466,
+    "stage": "09",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-01/CA-02",
+    "hu": "HU-CAJA-01",
+    "title": "Abrir el turno de caja",
+    "criterion": "Dado que ingreso un monto negativo, no numérico o con más de dos decimales, cuando intento confirmar, entonces el sistema explica la validación, no abre el turno y no registra movimiento de efectivo.",
+    "line": 467,
+    "stage": "09",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-01/CA-03",
+    "hu": "HU-CAJA-01",
+    "title": "Abrir el turno de caja",
+    "criterion": "Dado que ya existe un turno abierto o dos vendedores intentan abrirlo simultáneamente, cuando el sistema procesa las solicitudes, entonces exactamente una apertura como máximo queda confirmada y las demás se rechazan sin crear turnos paralelos (RN-10).",
+    "line": 468,
+    "stage": "09",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-01/CA-04",
+    "hu": "HU-CAJA-01",
+    "title": "Abrir el turno de caja",
+    "criterion": "Dado que la apertura se confirmó, cuando consulto el turno, entonces conserva vendedor responsable, caja única, dinero inicial e instante inequívoco mostrado con fecha y hora de Lima; un rol no autorizado no puede abrirlo por acceso directo (RN-29).",
+    "line": 469,
+    "stage": "09",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-02/CA-01",
+    "hu": "HU-CAJA-02",
+    "title": "Cerrar y cuadrar la caja",
+    "criterion": "Dado que ingreso como el `VENDEDOR` responsable del turno, cuando declaro el efectivo contado, entonces el sistema exige un valor numérico igual o mayor que cero con máximo dos decimales; ante un valor inválido o un rol distinto no cierra ni modifica el turno (RN-10, RN-29).",
+    "line": 478,
+    "stage": "09",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-02/CA-02",
+    "hu": "HU-CAJA-02",
+    "title": "Cerrar y cuadrar la caja",
+    "criterion": "Dado que el monto contado es válido, cuando se prepara el resumen, entonces calcula `esperado = inicial + ingresos confirmados de efectivo - salidas confirmadas de efectivo` y `diferencia = contado - esperado`, mostrando cuadre exacto, sobrante o faltante; en el alcance vigente los ingresos posteriores a la apertura son los totales de ventas en efectivo confirmadas (RN-10).",
+    "line": 479,
+    "stage": "09",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-02/CA-03",
+    "hu": "HU-CAJA-02",
+    "title": "Cerrar y cuadrar la caja",
+    "criterion": "Dado que confirmo un cierre válido, cuando se guarda, entonces registra vendedor, caja, importes e instante de cierre mostrado en Lima y deja el turno cerrado de forma irreversible; un segundo intento de cierre se rechaza sin alterar el acta original (RN-10).",
+    "line": 480,
+    "stage": "09",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-02/CA-04",
+    "hu": "HU-CAJA-02",
+    "title": "Cerrar y cuadrar la caja",
+    "criterion": "Dado que existe una venta en preparación con al menos una línea, cuando intento cerrar, entonces el sistema bloquea el cierre hasta cobrarla, quitar su última línea o descartarla; si un cobro y el cierre compiten, solo uno se confirma primero y la venta queda incluida en el esperado o es rechazada por turno cerrado, nunca confirmada fuera del cuadre (RN-10, RN-30).",
+    "line": 481,
+    "stage": "09",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-02/CA-05",
+    "hu": "HU-CAJA-02",
+    "title": "Cerrar y cuadrar la caja",
+    "criterion": "Dado que el turno quedó cerrado, cuando se intenta vender con él, entonces el sistema rechaza la operación y permite que después se abra otro turno con nuevo dinero inicial, sin coexistencia de dos turnos abiertos (RN-10).",
+    "line": 482,
+    "stage": "09",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-03/CA-01",
+    "hu": "HU-CAJA-03",
+    "title": "Caja — Registrar movimiento manual de efectivo",
+    "criterion": "Dado que registro un movimiento manual de efectivo, cuando indico el monto, entonces el sistema exige que sea mayor que cero y registrar obligatoriamente el motivo y el responsable de la operación (RN-11).",
+    "line": 491,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-03/CA-02",
+    "hu": "HU-CAJA-03",
+    "title": "Caja — Registrar movimiento manual de efectivo",
+    "criterion": "Dado que registro el movimiento en dinero en efectivo, cuando confirmo, entonces el sistema guarda la fecha, hora exacta y monto, reflejándolo en el resumen del turno.",
+    "line": 492,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-03/CA-03",
+    "hu": "HU-CAJA-03",
+    "title": "Caja — Registrar movimiento manual de efectivo",
+    "criterion": "Dado que los movimientos manuales son exclusivamente en efectivo, cuando intento seleccionar otra modalidad, entonces el sistema no lo permite (RN-15).",
+    "line": 493,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-03/CA-04",
+    "hu": "HU-CAJA-03",
+    "title": "Caja — Registrar movimiento manual de efectivo",
+    "criterion": "Dado que existen ingresos o salidas manuales confirmadas, cuando se calcula el dinero esperado al cerrar la caja, entonces se consideran sumando los ingresos manuales y restando las salidas manuales.",
+    "line": 494,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-04/CA-01",
+    "hu": "HU-CAJA-04",
+    "title": "Caja — Ver resumen del turno activo",
+    "criterion": "Dado que tengo un turno abierto, cuando abro el resumen, entonces veo el monto inicial, el total de ventas cobradas, los movimientos manuales y el saldo estimado en efectivo.",
+    "line": 503,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-04/CA-02",
+    "hu": "HU-CAJA-04",
+    "title": "Caja — Ver resumen del turno activo",
+    "criterion": "Dado que se cobra una nueva venta o movimiento, cuando se actualiza la pantalla, entonces los totales reflejan el estado vigente sin necesidad de cerrar el turno.",
+    "line": 504,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-05/CA-01",
+    "hu": "HU-CAJA-05",
+    "title": "Caja — Consultar historial de turnos de caja",
+    "criterion": "Dado que accedo al historial de turnos autorizado (ADMIN global, VENDEDOR solo propios), cuando la lista carga, entonces veo por cada turno: vendedor, fechas y horas de apertura y cierre, dinero inicial, total cobrado, dinero declarado y diferencia.",
+    "line": 513,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-05/CA-02",
+    "hu": "HU-CAJA-05",
+    "title": "Caja — Consultar historial de turnos de caja",
+    "criterion": "Dado que aplico rango de fechas y, solo como ADMIN, filtro por vendedor, cuando consulto, entonces muestra turnos correspondientes sin ampliar el conjunto autorizado ni permitir acceso directo a un turno ajeno.",
+    "line": 514,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-CAJA-06/CA-01",
+    "hu": "HU-CAJA-06",
+    "title": "Caja — Aprobar cierre de turno",
+    "criterion": "Dado que un turno se encuentra en estado Cerrado, cuando el administrador lo revisa y aprueba, entonces pasa a estado Aprobado y queda bloqueado ante modificaciones.",
+    "line": 523,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-06/CA-02",
+    "hu": "HU-CAJA-06",
+    "title": "Caja — Aprobar cierre de turno",
+    "criterion": "Dado que el turno registró sobrante o faltante, cuando el administrador lo aprueba, entonces el sistema guarda la observación con la diferencia detectada.",
+    "line": 524,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-07/CA-01",
+    "hu": "HU-CAJA-07",
+    "title": "Caja – Forzar cierre de turno de caja",
+    "criterion": "Dado que un turno de caja no registra ventas ni movimientos durante 2 horas consecutivas o más (RN-23), cuando el administrador consulta la caja, entonces el sistema habilita la opción de Cierre Forzado Administrativo.",
+    "line": 533,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-CAJA-07/CA-02",
+    "hu": "HU-CAJA-07",
+    "title": "Caja – Forzar cierre de turno de caja",
+    "criterion": "Dado que el administrador confirma el cierre forzado, cuando el sistema lo procesa, entonces cierra el turno bajo la condición de cierre por inactividad, genera el resumen con las ventas acumuladas y libera la caja para una nueva apertura.",
+    "line": 534,
+    "stage": "09",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-01a/CA-01",
+    "hu": "HU-VEN-01a",
+    "title": "Ventas — Bloquear la pantalla de venta por inactividad",
+    "criterion": "Dado que la pantalla de venta permanece sin uso durante 5 minutos continuos, cuando se cumple dicho tiempo, entonces se bloquea automáticamente protegiendo la caja (RN-22).",
+    "line": 543,
+    "stage": "10",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01a/CA-02",
+    "hu": "HU-VEN-01a",
+    "title": "Ventas — Bloquear la pantalla de venta por inactividad",
+    "criterion": "Dado que la pantalla está bloqueada, cuando intento cualquier acción, entonces el sistema me exige reingresar mi contraseña.",
+    "line": 544,
+    "stage": "10",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01a/CA-03",
+    "hu": "HU-VEN-01a",
+    "title": "Ventas — Bloquear la pantalla de venta por inactividad",
+    "criterion": "Dado que reingreso mi contraseña correcta, cuando el sistema la valida, entonces regreso a la pantalla de venta conservando la venta en curso sin pérdida de datos.",
+    "line": 545,
+    "stage": "10",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01b/CA-01",
+    "hu": "HU-VEN-01b",
+    "title": "Preparar una venta y revisar existencias",
+    "criterion": "Dado que ingreso con rol `VENDEDOR`, cuando inicio la preparación y agrego la primera línea válida, entonces el sistema exige un turno abierto ligado a mi propio usuario y crea la venta en preparación; cualquier otro rol o vendedor sin ese turno recibe una denegación (RN-10, RN-29, RN-30).",
+    "line": 554,
+    "stage": "10",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01b/CA-02",
+    "hu": "HU-VEN-01b",
+    "title": "Preparar una venta y revisar existencias",
+    "criterion": "Dado que preparo la venta, cuando busco un producto activo de cualquier categoría activa del alcanceUND/vencimiento, por nombre o digitando su código de barras, entonces puedo seleccionarlo si posee existencias vendibles, sin requerir lector físico para esta consultaPOS; el lector del altaPROD03 tiene su propio contrato.",
+    "line": 555,
+    "stage": "10",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01b/CA-03",
+    "hu": "HU-VEN-01b",
+    "title": "Preparar una venta y revisar existencias",
+    "criterion": "Dado que agrego o actualizo un producto, cuando indico la cantidad, entonces exige un entero mayor que cero, agrupa el mismo producto en una sola línea y rechaza un total superior a sus existencias vendibles.",
+    "line": 556,
+    "stage": "10",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01b/CA-04",
+    "hu": "HU-VEN-01b",
+    "title": "Preparar una venta y revisar existencias",
+    "criterion": "Dado que un lote vence hoy o ya venció según la fecha de `America/Lima`, cuando el sistema calcula las existencias vendibles, entonces excluye todas sus unidades y nunca las ofrece para completar la cantidad solicitada (RN-03).",
+    "line": 557,
+    "stage": "10",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01b/CA-05",
+    "hu": "HU-VEN-01b",
+    "title": "Preparar una venta y revisar existencias",
+    "criterion": "Dado que la lista contiene líneas, cuando reviso la venta, entonces se considera una venta en preparación que aún no reserva ni descuenta stock ni mueve efectivo; muestra precio unitario, cantidad, importe por línea, total y el desglose `base = HALF_UP(total / 1.18, 2)` e `IGV = total - base`. Si quito la última línea, el borrador se descarta y deja de bloquear el cierre; al descartarlo, caja y existencias quedan intactas (RN-27, RN-30).",
+    "line": 558,
+    "stage": "10",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01c/CA-01",
+    "hu": "HU-VEN-01c",
+    "title": "Cobrar en efectivo y descontar existencias",
+    "criterion": "Dado que una venta en preparación tiene líneas y el efectivo ingresado es no numérico, tiene más de dos decimales o resulta menor que el total, cuando intento cobrar, entonces el sistema rechaza la operación, informa el faltante cuando corresponda y no crea venta, correlativo o movimiento ni modifica existencias (RN-30).",
+    "line": 567,
+    "stage": "11",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01c/CA-02",
+    "hu": "HU-VEN-01c",
+    "title": "Cobrar en efectivo y descontar existencias",
+    "criterion": "Dado que ingreso un efectivo válido igual o mayor al total, cuando confirmo, entonces el sistema calcula `vuelto = efectivo recibido - total` con dos decimales y aumenta el efectivo esperado solo por el total vendido, no por el efectivo recibido antes del vuelto (RN-10, RN-27).",
+    "line": 568,
+    "stage": "11",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01c/CA-03",
+    "hu": "HU-VEN-01c",
+    "title": "Cobrar en efectivo y descontar existencias",
+    "criterion": "Dado que mi turno sigue abierto y existe stock suficiente al confirmar, cuando se descuentan unidades, entonces el sistema revalida las condiciones y aplica FEFO por vencimiento, instante de ingreso e identificador interno, continúa por los lotes vigentes necesarios y nunca deja existencias negativas (RN-03, RN-19, RN-29).",
+    "line": 569,
+    "stage": "11",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01c/CA-04",
+    "hu": "HU-VEN-01c",
+    "title": "Cobrar en efectivo y descontar existencias",
+    "criterion": "Dado que el cobro se procesa, cuando la operación termina, entonces venta, detalles históricos, asignaciones de lotes, movimiento de efectivo, descuento de existencias y correlativo global `V-00000001` se confirman juntos; ante cualquier fallo no se confirma ninguna parte (RN-25).",
+    "line": 570,
+    "stage": "11",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01c/CA-05",
+    "hu": "HU-VEN-01c",
+    "title": "Cobrar en efectivo y descontar existencias",
+    "criterion": "Dado que se produce doble clic, reenvío, reintento o competencia por las últimas unidades, cuando el sistema procesa las solicitudes, entonces un mismo intento lógico genera como máximo una venta, un movimiento, un correlativo y un descuento, y solo cobran las operaciones para las que existe stock confirmado (RN-25).",
+    "line": 571,
+    "stage": "11",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-01c/CA-06",
+    "hu": "HU-VEN-01c",
+    "title": "Cobrar en efectivo y descontar existencias",
+    "criterion": "Dado que la venta queda confirmada, cuando se guarda su fotografía histórica, entonces conserva nombre del producto, cantidad, precio con dos decimales, costo promedio con cuatro decimales, importes, efectivo y vuelto; cambios posteriores del catálogo o del costo no alteran esos valores (RN-28).",
+    "line": 572,
+    "stage": "11",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-02a/CA-01",
+    "hu": "HU-VEN-02a",
+    "title": "Generar una constancia interna de venta",
+    "criterion": "Dado que la venta fue confirmada con un correlativo global `V-00000001`, cuando se genera la constancia, entonces reutiliza exactamente ese número sin asignar otro y ofrece al vendedor verla en pantalla y abrir una vista preparada para la impresión del navegador (RN-26).",
+    "line": 581,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-02a/CA-02",
+    "hu": "HU-VEN-02a",
+    "title": "Generar una constancia interna de venta",
+    "criterion": "Dado que reviso la constancia, cuando carga su contenido histórico, entonces muestra fecha y hora de Lima, vendedor, caja, nombre de cada producto, cantidad, precio e importe, base, IGV, total, efectivo y vuelto, pero nunca muestra el costo de compra o costo promedio (RN-26, RN-27).",
+    "line": 582,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-02a/CA-03",
+    "hu": "HU-VEN-02a",
+    "title": "Generar una constancia interna de venta",
+    "criterion": "Dado que la constancia se visualiza o imprime, cuando se lee el documento, entonces exhibe de forma visible «CONTROL INTERNO — NO VÁLIDO COMO COMPROBANTE DE PAGO» e indica que la boleta o factura real se entrega por el canal autorizado habitual, sin logotipos ni leyendas que simulen aprobación de SUNAT (RN-26).",
+    "line": 583,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-02a/CA-04",
+    "hu": "HU-VEN-02a",
+    "title": "Generar una constancia interna de venta",
+    "criterion": "Dado que el vendedor usa «Última constancia» desde la pantalla de venta de su turno, cuando la vuelve a abrir, entonces recupera el mismo correlativo y los mismos datos históricos aunque el catálogo cambie; un rol no autorizado no puede consultarla mediante acceso directo (RN-26, RN-29).",
+    "line": 584,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-04/CA-01",
+    "hu": "HU-VEN-04",
+    "title": "Ventas – Buscar producto por código de barras",
+    "criterion": "Dado que paso el código de barras de un producto por el lector en la consulta rápida, cuando el sistema lo reconoce, entonces muestra nombre, precio vigente y existencias vendibles sin agregarlo a la lista de venta.",
+    "line": 593,
+    "stage": "10",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-04/CA-02",
+    "hu": "HU-VEN-04",
+    "title": "Ventas – Buscar producto por código de barras",
+    "criterion": "Dado que el código de barras leído no pertenece a ningún producto registrado, cuando se busca, entonces muestra «Producto no encontrado».",
+    "line": 594,
+    "stage": "10",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-05a/CA-01",
+    "hu": "HU-VEN-05a",
+    "title": "Ventas — Consultar las ventas de mi turno",
+    "criterion": "Dado que tengo un turno de caja abierto, cuando consulto las ventas, entonces veo únicamente las operaciones confirmadas por mi usuario en el turno en curso (RN-07).",
+    "line": 603,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-05a/CA-02",
+    "hu": "HU-VEN-05a",
+    "title": "Ventas — Consultar las ventas de mi turno",
+    "criterion": "Dado que reviso la lista de ventas del turno, cuando consulto los totales acumulados, entonces el total en efectivo coincide con los registros confirmados; los canales digitales no se presentan como disponibles hasta seleccionar e implementar HU-VEN-07.",
+    "line": 604,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-05b/CA-01",
+    "hu": "HU-VEN-05b",
+    "title": "Ventas — Consultar el historial de ventas con filtros",
+    "criterion": "Dado que ingreso como administrador o dueño, cuando abro el historial de ventas, entonces visualizo las ventas confirmadas registradas por todos los empleados (RN-07).",
+    "line": 613,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-05b/CA-02",
+    "hu": "HU-VEN-05b",
+    "title": "Ventas — Consultar el historial de ventas con filtros",
+    "criterion": "Dado que aplico filtros por rango de fechas, vendedor o turno, cuando consulto, entonces la pantalla muestra únicamente las operaciones que cumplen los criterios.",
+    "line": 614,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-05b/CA-03",
+    "hu": "HU-VEN-05b",
+    "title": "Ventas — Consultar el historial de ventas con filtros",
+    "criterion": "Dado que selecciono una venta de la lista, cuando abro su detalle completo, entonces veo productos, cantidades, precios, base imponible, IGV, total, medio de pago y constancia interna.",
+    "line": 615,
+    "stage": "12",
+    "selected": true
+  },
+  {
+    "id": "HU-VEN-06a/CA-01",
+    "hu": "HU-VEN-06a",
+    "title": "Ventas — Anular una venta cobrada en efectivo",
+    "criterion": "Dado que la venta pertenece a un turno de caja abierto, cuando el administrador autoriza la anulación indicando el motivo justificado, entonces la venta pasa a estado Anulada y se emite la constancia interna de anulación.",
+    "line": 624,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-06a/CA-02",
+    "hu": "HU-VEN-06a",
+    "title": "Ventas — Anular una venta cobrada en efectivo",
+    "criterion": "Dado que la venta fue cobrada en efectivo, cuando se confirma la anulación, entonces el sistema descuenta dicho monto del dinero esperado del turno activo.",
+    "line": 625,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-06a/CA-03",
+    "hu": "HU-VEN-06a",
+    "title": "Ventas — Anular una venta cobrada en efectivo",
+    "criterion": "Dado que el turno de caja ya se encuentra cerrado o con cierre forzado, cuando intento anular una venta de ese turno, entonces el sistema bloquea la operación conforme a la regla RN-08.",
+    "line": 626,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-06b/CA-01",
+    "hu": "HU-VEN-06b",
+    "title": "Ventas — Anular una venta cobrada con Yape",
+    "criterion": "Dado que la venta fue cobrada con Yape en un turno abierto, cuando el administrador confirma la anulación, entonces el sistema registra la anulación capturando el código de autorización original y el motivo.",
+    "line": 635,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-06b/CA-02",
+    "hu": "HU-VEN-06b",
+    "title": "Ventas — Anular una venta cobrada con Yape",
+    "criterion": "Dado que se finaliza la anulación de una venta digital, cuando el sistema la procesa, entonces emite la constancia interna de anulación indicando que no afecta el efectivo físico en gaveta.",
+    "line": 636,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-06c/CA-01",
+    "hu": "HU-VEN-06c",
+    "title": "Ventas — Definir el destino de la mercadería devuelta",
+    "criterion": "Dado que los productos devueltos están en óptimas condiciones, cuando se confirma la anulación, entonces regresan a las existencias disponibles dentro de su lote original (RN-09).",
+    "line": 645,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-06c/CA-02",
+    "hu": "HU-VEN-06c",
+    "title": "Ventas — Definir el destino de la mercadería devuelta",
+    "criterion": "Dado que los productos devueltos presentan daños, abolladuras o están abiertos, cuando se procesa la anulación, entonces se derivan directamente a baja por merma (RN-09).",
+    "line": 646,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-06c/CA-03",
+    "hu": "HU-VEN-06c",
+    "title": "Ventas — Definir el destino de la mercadería devuelta",
+    "criterion": "Dado que se define el destino de la mercadería, cuando consulto los movimientos del producto, entonces visualizo el reingreso o la baja con su responsable.",
+    "line": 647,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-07/CA-01",
+    "hu": "HU-VEN-07",
+    "title": "Cobrar con Yape y registrar el código de operación",
+    "criterion": "Dado que el cliente paga con Yape, cuando el vendedor revisa fuera del sistema en el teléfono o medio habitual de la bodega y declara haber comprobado que el dinero realmente llegó, entonces el sistema habilita el registro del cobro con Yape (RN-02).",
+    "line": 656,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-07/CA-02",
+    "hu": "HU-VEN-07",
+    "title": "Cobrar con Yape y registrar el código de operación",
+    "criterion": "Dado que el vendedor intenta confirmar el cobro sin declarar que comprobó el ingreso del dinero en Yape, cuando pulsa el botón de confirmar, entonces el sistema no confirma la venta y solicita verificar primero el abono en el teléfono del minimarket.",
+    "line": 657,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-07/CA-03",
+    "hu": "HU-VEN-07",
+    "title": "Cobrar con Yape y registrar el código de operación",
+    "criterion": "Dado que se procede al cobro con Yape, cuando el vendedor ingresa los datos, entonces el código de operación es obligatorio y debe escribirse completo tal como aparece en la operación de Yape, impidiendo guardar la venta si el campo queda vacío.",
+    "line": 658,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-07/CA-04",
+    "hu": "HU-VEN-07",
+    "title": "Cobrar con Yape y registrar el código de operación",
+    "criterion": "Dado que se ingresa un código de operación que ya fue utilizado en una venta anterior, cuando se intenta confirmar el cobro, entonces el sistema advierte que el código ya fue registrado e impide utilizarlo nuevamente (RN-02).",
+    "line": 659,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-07/CA-05",
+    "hu": "HU-VEN-07",
+    "title": "Cobrar con Yape y registrar el código de operación",
+    "criterion": "Dado que el vendedor declaró haber comprobado el ingreso y escribió un código de operación no utilizado previamente, cuando confirma la operación, entonces la venta queda registrada como pagada con Yape y se descuentan las existencias de mercadería.",
+    "line": 660,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-VEN-07/CA-06",
+    "hu": "HU-VEN-07",
+    "title": "Cobrar con Yape y registrar el código de operación",
+    "criterion": "Dado que la venta con Yape queda registrada como pagada, cuando concluye la transacción, entonces la venta conserva el código de operación junto con el registro y genera su constancia interna de venta para el cliente y el control del negocio.",
+    "line": 661,
+    "stage": "12",
+    "selected": false
+  },
+  {
+    "id": "HU-CONF-01/CA-01",
+    "hu": "HU-CONF-01",
+    "title": "Configuración — Ver configuración actual del negocio",
+    "criterion": "Dado que accedo a la sección de configuración, cuando la pantalla carga, entonces veo el nombre del minimarket, RUC, dirección, teléfono y logotipo propio que se usan en la constancia interna.",
+    "line": 674,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-CONF-01/CA-02",
+    "hu": "HU-CONF-01",
+    "title": "Configuración — Ver configuración actual del negocio",
+    "criterion": "Dado que faltan datos por registrar, cuando consulto la configuración, entonces el sistema señala con una advertencia visual los datos incompletos.",
+    "line": 675,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-CONF-02/CA-01",
+    "hu": "HU-CONF-02",
+    "title": "Configuración — Actualizar configuración del negocio",
+    "criterion": "Dado que actualizo el nombre comercial, RUC, dirección o teléfono y guardo, cuando se genera una nueva constancia interna de venta, entonces los datos actualizados aparecen en el encabezado.",
+    "line": 684,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-CONF-02/CA-02",
+    "hu": "HU-CONF-02",
+    "title": "Configuración — Actualizar configuración del negocio",
+    "criterion": "Dado que cargo una imagen con el logotipo propio de la bodega, cuando guardo, entonces el logo se muestra en la constancia interna y en la pantalla principal.",
+    "line": 685,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-CONF-02/CA-03",
+    "hu": "HU-CONF-02",
+    "title": "Configuración — Actualizar configuración del negocio",
+    "criterion": "Dado que el sistema emite únicamente constancias internas sin validez tributaria, cuando guardo la configuración, entonces no se definen series de facturas ni boletas oficiales.",
+    "line": 686,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-01/CA-01",
+    "hu": "HU-DASH-01",
+    "title": "Resumen del negocio — Ver indicadores de ventas en tiempo real",
+    "criterion": "Dado que ingreso al resumen del negocio, cuando carga la pantalla, entonces muestra los indicadores del día: Ventas Totales en soles, Número de Ventas y Ticket Promedio.",
+    "line": 695,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-01/CA-02",
+    "hu": "HU-DASH-01",
+    "title": "Resumen del negocio — Ver indicadores de ventas en tiempo real",
+    "criterion": "Dado que se cobra una nueva venta en mostrador, cuando se confirma la operación, entonces los indicadores del día se recalculan y muestran las cifras actualizadas.",
+    "line": 696,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-01/CA-03",
+    "hu": "HU-DASH-01",
+    "title": "Resumen del negocio — Ver indicadores de ventas en tiempo real",
+    "criterion": "Dado que selecciono un período (Hoy, Esta semana, Este mes), cuando aplico la opción, entonces los indicadores presentan las cifras correspondientes al rango.",
+    "line": 697,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-02/CA-01",
+    "hu": "HU-DASH-02",
+    "title": "Resumen del negocio — Ver gráfico de evolución de ventas por día",
+    "criterion": "Dado que accedo al resumen del negocio y existen ventas en el período, cuando el gráfico carga, entonces muestra el monto vendido por cada día del lapso elegido.",
+    "line": 706,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-02/CA-02",
+    "hu": "HU-DASH-02",
+    "title": "Resumen del negocio — Ver gráfico de evolución de ventas por día",
+    "criterion": "Dado que en un día determinado no hubo ventas, cuando se grafica, entonces dicho día se representa con valor cero sin errores.",
+    "line": 707,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-03/CA-01",
+    "hu": "HU-DASH-03",
+    "title": "Resumen del negocio – Ver alertas operativas (stock crítico, vencimientos y turnos)",
+    "criterion": "Dado que uno o más productos se encuentran en o por debajo de su cantidad mínima (10 unidades por defecto según RN-06), cuando abro el resumen, entonces muestra la alerta de existencias críticas indicando el producto y las unidades disponibles.",
+    "line": 716,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-03/CA-02",
+    "hu": "HU-DASH-03",
+    "title": "Resumen del negocio – Ver alertas operativas (stock crítico, vencimientos y turnos)",
+    "criterion": "Dado que existen lotes de mercadería cuya caducidad se cumplirá en los próximos 7 días, cuando consulto las alertas, entonces el sistema advierte el vencimiento inminente con el lote y los días restantes.",
+    "line": 717,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-03/CA-03",
+    "hu": "HU-DASH-03",
+    "title": "Resumen del negocio – Ver alertas operativas (stock crítico, vencimientos y turnos)",
+    "criterion": "Dado que un turno de caja permanece abierto sin operaciones durante 2 horas consecutivas o más (RN-23), cuando el sistema revisa los turnos, entonces muestra la alerta informativa de turno inactivo u olvidado.",
+    "line": 718,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-04/CA-01",
+    "hu": "HU-DASH-04",
+    "title": "Resumen del negocio – Ver ranking de productos más vendidos",
+    "criterion": "Dado que accedo al resumen del negocio, cuando carga el recuadro informativo, entonces muestra los 5 productos con mayor cantidad de unidades vendidas en el período.",
+    "line": 727,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-04/CA-02",
+    "hu": "HU-DASH-04",
+    "title": "Resumen del negocio – Ver ranking de productos más vendidos",
+    "criterion": "Dado que no existen ventas registradas en dicho período, cuando carga el recuadro, entonces informa «Sin ventas registradas en este período».",
+    "line": 728,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-05/CA-01",
+    "hu": "HU-DASH-05",
+    "title": "Resumen del negocio — Ver solicitudes de reposición pendientes",
+    "criterion": "Dado que existen solicitudes en estado Pendiente, cuando abro el resumen, entonces el recuadro muestra el producto sugerido, la cantidad, el empleado solicitante y la fecha.",
+    "line": 737,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-05/CA-02",
+    "hu": "HU-DASH-05",
+    "title": "Resumen del negocio — Ver solicitudes de reposición pendientes",
+    "criterion": "Dado que selecciono una solicitud en el recuadro, cuando hago clic, entonces me conduce a la pantalla para aprobar o rechazar dicha solicitud.",
+    "line": 738,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-DASH-05/CA-03",
+    "hu": "HU-DASH-05",
+    "title": "Resumen del negocio — Ver solicitudes de reposición pendientes",
+    "criterion": "Dado que no existen solicitudes pendientes, cuando abro la pantalla, entonces informa «Sin solicitudes pendientes».",
+    "line": 739,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-01/CA-01",
+    "hu": "HU-REP-01",
+    "title": "Reportes — Consultar reporte analítico de ventas totales por período",
+    "criterion": "Dado que ingreso al reporte analítico de ventas, cuando selecciono un rango de fechas, entonces el sistema lista las ventas con fecha, número interno, medio de pago, base imponible, IGV y total.",
+    "line": 748,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-01/CA-02",
+    "hu": "HU-REP-01",
+    "title": "Reportes — Consultar reporte analítico de ventas totales por período",
+    "criterion": "Dado que aplico el filtro por medio de pago (efectivo o Yape digital), cuando consulto, entonces muestra únicamente las operaciones cobradas por dicho canal y su suma acumulada.",
+    "line": 749,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-02/CA-01",
+    "hu": "HU-REP-02",
+    "title": "Reportes – Consultar reporte completo de ranking de productos más vendidos",
+    "criterion": "Dado que consulto el reporte de ranking en un rango de fechas, cuando se generan los resultados, entonces ordena los productos de mayor a menor según las unidades vendidas y el importe total cobrado.",
+    "line": 758,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-02/CA-02",
+    "hu": "HU-REP-02",
+    "title": "Reportes – Consultar reporte completo de ranking de productos más vendidos",
+    "criterion": "Dado que se calcula la participación sobre las ventas del período, cuando reviso cada fila, entonces muestra el porcentaje de participación de cada producto sobre el total vendido.",
+    "line": 759,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-02/CA-03",
+    "hu": "HU-REP-02",
+    "title": "Reportes – Consultar reporte completo de ranking de productos más vendidos",
+    "criterion": "Dado que deseo ordenar la tabla, cuando hago clic en los encabezados, entonces permite ordenar por unidades vendidas o por monto total.",
+    "line": 760,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-03/CA-01",
+    "hu": "HU-REP-03",
+    "title": "Reportes — Ver ventas desglosadas por día",
+    "criterion": "Dado que accedo al reporte de ventas por día, cuando el informe carga, entonces veo una fila por cada día del período con el total de dinero vendido y la cantidad de operaciones.",
+    "line": 769,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-03/CA-02",
+    "hu": "HU-REP-03",
+    "title": "Reportes — Ver ventas desglosadas por día",
+    "criterion": "Dado que un día del rango no registró ventas, cuando aparece en el reporte, entonces muestra cero sin omitir el día de la lista.",
+    "line": 770,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-04/CA-01",
+    "hu": "HU-REP-04",
+    "title": "Reportes — Ver ventas por método de pago",
+    "criterion": "Dado que accedo al reporte de medios de pago, cuando carga el informe, entonces veo el total recaudado en efectivo y el total recaudado por Yape en el período.",
+    "line": 779,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-04/CA-02",
+    "hu": "HU-REP-04",
+    "title": "Reportes — Ver ventas por método de pago",
+    "criterion": "Dado que aplico un filtro de fechas, cuando el informe se actualiza, entonces los montos reflejan exclusivamente las ventas del rango elegido.",
+    "line": 780,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-05/CA-01",
+    "hu": "HU-REP-05",
+    "title": "Reportes – Consultar reporte de productos bajo stock mínimo",
+    "criterion": "Dado que accedo al reporte de existencias críticas, cuando el sistema lo genera, entonces lista todos los artículos cuyo stock disponible actual es menor o igual al umbral mínimo configurado (10 unidades por defecto según RN-06).",
+    "line": 789,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-05/CA-02",
+    "hu": "HU-REP-05",
+    "title": "Reportes – Consultar reporte de productos bajo stock mínimo",
+    "criterion": "Dado que visualizo la lista, cuando consulto cada artículo, entonces muestra existencias actuales, cantidad mínima, categoría y unidad de medida.",
+    "line": 790,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-05/CA-03",
+    "hu": "HU-REP-05",
+    "title": "Reportes – Consultar reporte de productos bajo stock mínimo",
+    "criterion": "Dado que un producto tiene existencias en cero, cuando aparece en la lista, entonces se resalta con el estado «Agotado» para priorizar su reposición.",
+    "line": 791,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-06/CA-01",
+    "hu": "HU-REP-06",
+    "title": "Reportes — Ver resumen general del inventario",
+    "criterion": "Dado que abro el resumen de existencias, cuando el informe carga, entonces veo todos los productos con su stock actual, cantidad mínima y una indicación de estado normal o crítico.",
+    "line": 800,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-06/CA-02",
+    "hu": "HU-REP-06",
+    "title": "Reportes — Ver resumen general del inventario",
+    "criterion": "Dado que busco un producto por nombre, cuando el sistema filtra, entonces muestra solo los productos coincidentes.",
+    "line": 801,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-07/CA-01",
+    "hu": "HU-REP-07",
+    "title": "Reportes — Ver margen de ganancia por producto",
+    "criterion": "Dado que accedo al reporte de rentabilidad, cuando el sistema lo genera, entonces presenta para cada producto su precio de venta neto sin IGV (RN-27), el costo promedio que tenía el producto al momento de cada venta guardado históricamente (RN-28) y la ganancia unitaria en soles.",
+    "line": 810,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-07/CA-02",
+    "hu": "HU-REP-07",
+    "title": "Reportes — Ver margen de ganancia por producto",
+    "criterion": "Dado que se calcula el margen comercial, cuando se despliega la tabla, entonces muestra el porcentaje de margen bruto obtenido sobre las ventas.",
+    "line": 811,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-07/CA-03",
+    "hu": "HU-REP-07",
+    "title": "Reportes — Ver margen de ganancia por producto",
+    "criterion": "Dado que filtro por categoría o rango de fechas, cuando consulto, entonces el sistema lista los productos vendidos en ese lapso evaluando el margen porcentual y la ganancia total obtenida.",
+    "line": 812,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-08/CA-01",
+    "hu": "HU-REP-08",
+    "title": "Reportes — Ver mermas agrupadas por motivo",
+    "criterion": "Dado que accedo al reporte de mermas, cuando el informe carga, entonces veo las unidades dadas de baja agrupadas por causa reconocida (Vencimiento, Daño o rotura, y Robo o faltante) en el período seleccionado.",
+    "line": 821,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-08/CA-02",
+    "hu": "HU-REP-08",
+    "title": "Reportes — Ver mermas agrupadas por motivo",
+    "criterion": "Dado que aplico un filtro de fechas, cuando el informe se actualiza, entonces presenta únicamente las bajas registradas en ese rango.",
+    "line": 822,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-09/CA-01",
+    "hu": "HU-REP-09",
+    "title": "Reportes — Exportar reportes analíticos de gestión a PDF",
+    "criterion": "Dado que visualizo un reporte analítico de gestión en pantalla, cuando elijo la opción de exportar a PDF, entonces el sistema genera y descarga un archivo PDF con los datos y filtros consultados.",
+    "line": 832,
+    "stage": "13",
+    "selected": false
+  },
+  {
+    "id": "HU-REP-09/CA-02",
+    "hu": "HU-REP-09",
+    "title": "Reportes — Exportar reportes analíticos de gestión a PDF",
+    "criterion": "Dado que el reporte no contiene información en el período seleccionado, cuando intento descargarlo, entonces el archivo PDF se genera indicando que no hay datos registrados sin provocar errores.",
+    "line": 833,
+    "stage": "13",
+    "selected": false
+  }
+]

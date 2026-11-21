@@ -1,0 +1,43 @@
+{% extends "identity/base.html" %}
+
+{% block title %}{% if shift.status == "OPEN" %}Turno abierto{% else %}Registro de turno{% endif %} · Minimarket{% endblock %}
+
+{% block content %}
+<section class="success-panel panel" data-testid="cash-shift-opened">
+  {% if shift.status == "OPEN" %}
+    <div class="success-icon" aria-hidden="true">✓</div>
+    <p class="eyebrow">Apertura registrada</p>
+    <h2>{{ shift.cash_register.code }} está abierta</h2>
+    <p class="lede">El turno quedó ligado a tu cuenta y la caja única está disponible para tu operación.</p>
+  {% else %}
+    <p class="eyebrow">Registro de apertura</p>
+    <h2>Turno de {{ shift.cash_register.code }} cerrado</h2>
+    <p class="lede">Este turno ya fue cerrado y no está disponible para registrar nuevas ventas.</p>
+  {% endif %}
+
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Vendedor</dt><dd>{{ shift.seller.display_name }}</dd></div>
+    <div><dt>Monto inicial</dt><dd>S/ {{ shift.opening_amount|floatformat:2 }}</dd></div>
+    <div><dt>Apertura</dt><dd>{{ shift.opened_at|date:"d/m/Y H:i" }}</dd></div>
+    <div>
+      <dt>Estado</dt>
+      <dd>
+        {% if shift.status == "OPEN" %}
+          <span class="status status-progress">Abierto</span>
+        {% else %}
+          <span class="status status-zero">Cerrado</span>
+        {% endif %}
+      </dd>
+    </div>
+  </dl>
+
+  <div class="form-actions">
+    {% if shift.status == "OPEN" %}
+      <a class="button button-primary" href="{% url 'sales-draft' %}">Ir a preparar venta</a>
+    {% elif close %}
+      <a class="button button-primary" href="{% url 'cash-shift-closed' shift.pk %}">Ver acta de cierre</a>
+    {% endif %}
+    <a class="button button-secondary" href="{% url 'dashboard' %}">Volver al inicio</a>
+  </div>
+</section>
+{% endblock %}

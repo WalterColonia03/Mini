@@ -1,0 +1,551 @@
+{
+  "executed_utc": "2026-11-14T21:29:08.305944+00:00",
+  "playwright": "1.65.1",
+  "django": "5.2.18",
+  "console_errors": [
+    "[VENDEDOR] console.error: Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "[VENDEDOR] console.error: Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "[VENDEDOR] console.error: Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "[ALMACENERO] console.error: Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "[VENDEDOR] console.error: Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "[VENDEDOR] console.error: Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "[ADMIN] console.error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "[ADMIN] console.error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "server_5xx_errors": [],
+  "steps_count": 24,
+  "steps": [
+    {
+      "id": "01-merma-selector-almacenero",
+      "role": "ALMACENERO",
+      "path": "/inventario/bajas/nueva/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Registrar merma",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "fa568be321244be3d9dbc921ca79c3e937e3d108ef8ef06f6d79f61776151b21",
+      "extra": {}
+    },
+    {
+      "id": "02-merma-dano-lote-vencido-rechazo",
+      "role": "ALMACENERO",
+      "path": "/inventario/bajas/nueva/?lote=e920eabe-b1fd-45fa-b94e-a1216c87c3e3",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Registrar merma",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "fa568be321244be3d9dbc921ca79c3e937e3d108ef8ef06f6d79f61776151b21",
+      "extra": {}
+    },
+    {
+      "id": "03-constancia-merma-robo-vencido",
+      "role": "ALMACENERO",
+      "path": "/inventario/bajas/f24278b5-ad90-4a2e-9454-af27ffdc6c09/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Minimarket",
+        "pageHeading": "Constancia de merma B-00000015"
+      },
+      "non_mutation_verified": false,
+      "witness_sha256": "efabd7b842f555cb4819a381b7084a00327f0dd3e78bbc327427849a1118742e",
+      "extra": {
+        "correlativo": "B-00000015"
+      }
+    },
+    {
+      "id": "04a-vendedor-403-merma-form",
+      "role": "VENDEDOR",
+      "path": "/inventario/bajas/nueva/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Registrar merma",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "efabd7b842f555cb4819a381b7084a00327f0dd3e78bbc327427849a1118742e",
+      "extra": {}
+    },
+    {
+      "id": "04b-vendedor-403-constancia",
+      "role": "VENDEDOR",
+      "path": "/inventario/bajas/f24278b5-ad90-4a2e-9454-af27ffdc6c09/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Minimarket",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "efabd7b842f555cb4819a381b7084a00327f0dd3e78bbc327427849a1118742e",
+      "extra": {}
+    },
+    {
+      "id": "04c-vendedor-403-ajuste-form",
+      "role": "VENDEDOR",
+      "path": "/inventario/ajustes/nuevo/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Ajuste físico",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "efabd7b842f555cb4819a381b7084a00327f0dd3e78bbc327427849a1118742e",
+      "extra": {}
+    },
+    {
+      "id": "05-almacenero-403-ajuste-nuevo",
+      "role": "ALMACENERO",
+      "path": "/inventario/ajustes/nuevo/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Ajuste físico",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "efabd7b842f555cb4819a381b7084a00327f0dd3e78bbc327427849a1118742e",
+      "extra": {}
+    },
+    {
+      "id": "06-admin-lee-constancia-almacenero",
+      "role": "ADMIN",
+      "path": "/inventario/bajas/f24278b5-ad90-4a2e-9454-af27ffdc6c09/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Minimarket",
+        "pageHeading": "Constancia de merma B-00000015"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "efabd7b842f555cb4819a381b7084a00327f0dd3e78bbc327427849a1118742e",
+      "extra": {}
+    },
+    {
+      "id": "07-ajuste-selector-admin",
+      "role": "ADMIN",
+      "path": "/inventario/ajustes/nuevo/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Ajuste físico",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "efabd7b842f555cb4819a381b7084a00327f0dd3e78bbc327427849a1118742e",
+      "extra": {
+        "badge_inactivo_present": false
+      }
+    },
+    {
+      "id": "08-ajuste-negativo-inactivo",
+      "role": "ADMIN",
+      "path": "/inventario/ajustes/ac457592-0ab7-41c6-a96b-6d04da7c0737/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Minimarket",
+        "pageHeading": "Detalle del ajuste físico"
+      },
+      "non_mutation_verified": false,
+      "witness_sha256": "287534a1a68f4af79190b0cf075d9a696f9a7a8c762d57642755562258182a2b",
+      "extra": {}
+    },
+    {
+      "id": "09-almacenero-lee-ajuste",
+      "role": "ALMACENERO",
+      "path": "/inventario/ajustes/ac457592-0ab7-41c6-a96b-6d04da7c0737/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Minimarket",
+        "pageHeading": "Detalle del ajuste físico"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "287534a1a68f4af79190b0cf075d9a696f9a7a8c762d57642755562258182a2b",
+      "extra": {}
+    },
+    {
+      "id": "10-ajuste-q0-sin-costo-rechazo",
+      "role": "ADMIN",
+      "path": "/inventario/ajustes/nuevo/?producto=288ace4e-24ac-44e0-8e1e-f7ab40ad692b",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Ajuste físico",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "287534a1a68f4af79190b0cf075d9a696f9a7a8c762d57642755562258182a2b",
+      "extra": {}
+    },
+    {
+      "id": "11-ajuste-q0-lote-nuevo-ok",
+      "role": "ADMIN",
+      "path": "/inventario/ajustes/b50a485d-18a9-41e3-a812-0e98517d3b64/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Minimarket",
+        "pageHeading": "Detalle del ajuste físico"
+      },
+      "non_mutation_verified": false,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "12-kardex-admin-prod-activo",
+      "role": "ADMIN",
+      "path": "/inventario/productos/10410a7e-d260-4eaf-b9f2-f5c0b6b2d97d/movimientos/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Movimientos del producto",
+        "pageHeading": "Movimientos: Aceite Vegetal <Safe> 1L"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "13-kardex-vendedor-403-denegado",
+      "role": "VENDEDOR",
+      "path": "/inventario/productos/10410a7e-d260-4eaf-b9f2-f5c0b6b2d97d/movimientos/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Movimientos del producto",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "13b-kardex-almacenero-200",
+      "role": "ALMACENERO",
+      "path": "/inventario/productos/10410a7e-d260-4eaf-b9f2-f5c0b6b2d97d/movimientos/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Movimientos del producto",
+        "pageHeading": "Movimientos: Aceite Vegetal <Safe> 1L"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "14-kardex-paginacion-p1",
+      "role": "ADMIN",
+      "path": "/inventario/productos/995d7e8d-b865-4802-b9bd-82d6e9ddc55a/movimientos/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Movimientos del producto",
+        "pageHeading": "Movimientos: Galleta Soda Paginada"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "15-kardex-filtro-tipo-merma",
+      "role": "ADMIN",
+      "path": "/inventario/productos/995d7e8d-b865-4802-b9bd-82d6e9ddc55a/movimientos/?page=1&tipo=merma",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Movimientos del producto",
+        "pageHeading": "Movimientos: Galleta Soda Paginada"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "15b-kardex-pagina-fuera-rango",
+      "role": "ADMIN",
+      "path": "/inventario/productos/995d7e8d-b865-4802-b9bd-82d6e9ddc55a/movimientos/?page=2&tipo=merma",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Movimientos del producto",
+        "pageHeading": "Movimientos: Galleta Soda Paginada"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "16-kardex-paginacion-p2",
+      "role": "ADMIN",
+      "path": "/inventario/productos/995d7e8d-b865-4802-b9bd-82d6e9ddc55a/movimientos/?page=2",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Movimientos del producto",
+        "pageHeading": "Movimientos: Galleta Soda Paginada"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "17-rutas-futuras-404",
+      "role": "ADMIN",
+      "path": "/inventario/ajustes/",
+      "layout": {
+        "viewport": {
+          "w": 1366,
+          "h": 900
+        },
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Minimarket",
+        "pageHeading": ""
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "18-movil-390-constancia-merma",
+      "role": "ADMIN",
+      "path": "/inventario/bajas/f24278b5-ad90-4a2e-9454-af27ffdc6c09/",
+      "layout": {
+        "viewport": {
+          "w": 390,
+          "h": 844
+        },
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Minimarket",
+        "pageHeading": "Constancia de merma B-00000015"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "19-movil-390-detalle-ajuste",
+      "role": "ADMIN",
+      "path": "/inventario/ajustes/b50a485d-18a9-41e3-a812-0e98517d3b64/",
+      "layout": {
+        "viewport": {
+          "w": 390,
+          "h": 844
+        },
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Minimarket",
+        "pageHeading": "Detalle del ajuste físico"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    },
+    {
+      "id": "20-movil-390-kardex",
+      "role": "ADMIN",
+      "path": "/inventario/productos/10410a7e-d260-4eaf-b9f2-f5c0b6b2d97d/movimientos/",
+      "layout": {
+        "viewport": {
+          "w": 390,
+          "h": 844
+        },
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "horizontalOverflow": false,
+        "clippedCount": 0,
+        "clippedSample": [],
+        "activeMenu": [],
+        "topbarTitle": "Movimientos del producto",
+        "pageHeading": "Movimientos: Aceite Vegetal <Safe> 1L"
+      },
+      "non_mutation_verified": true,
+      "witness_sha256": "362d02f64f545ae0a3dccd63948e07edc14abe1dfc376589e8d8cb8855d87b90",
+      "extra": {}
+    }
+  ]
+}

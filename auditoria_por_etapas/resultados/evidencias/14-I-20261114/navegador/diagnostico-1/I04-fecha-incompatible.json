@@ -1,0 +1,156 @@
+{
+  "id": "I04-fecha-incompatible",
+  "rol": "ALMACENERO",
+  "utc": "2026-11-14T06:17:47.202830+00:00",
+  "ruta": "/inventario/bajas/nueva/",
+  "texto_visible": "Saltar al contenido\nM\nMinimarket\nGestión de bodega\n\nOPERACIONES\n\n⌂\nInicio\n☷\nVer inventario y alertas\n⏳\nVencimientos de lotes\n◫\nExistencias iniciales\n✚\nEntrada de mercadería\n☒\nRegistrar merma\n\nCONSULTA\n\n☰\nCatálogo de productos\n✦\nProveedores\nA\nAlmacén 14I\nAlmacenero\n↪\nCerrar sesión\n\nMINIMARKET\n\nRegistrar merma\nAlmacén 14I\nAlmacenero\nRegistrar baja de inventario\nLote seleccionado: Producto 14I · A — Disponible: 10 u. · Vence: 14 de diciembre de 2026 Sin constancia propia de recepción\nCantidad a dar de baja\nMotivo\nVencimiento\nDaño o rotura\nRobo o faltante\nEl lote aún no ha vencido; seleccione la causa real de la baja.\nDetalle (obligatorio para Daño y Robo)\nConfirmar baja\nCancelar\nMinimarket · Gestión de bodega",
+  "controles": [
+    {
+      "campo": "quantity",
+      "etiqueta": "Cantidad a dar de baja",
+      "tipo": "number",
+      "valor": "2",
+      "opciones": null,
+      "obligatorio": true,
+      "min": "1",
+      "max": "999999",
+      "paso": "1",
+      "longitud": null
+    },
+    {
+      "campo": "reason",
+      "etiqueta": "Motivo",
+      "tipo": "select-one",
+      "valor": "Vencimiento",
+      "opciones": [
+        "Vencimiento",
+        "Daño o rotura",
+        "Robo o faltante"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "notes",
+      "etiqueta": "Detalle (obligatorio para Daño y Robo)",
+      "tipo": "textarea",
+      "valor": "Frasco roto ficticio",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    }
+  ],
+  "testigo": {
+    "sha256": "03de9a1db3868e32cbec10dc542677ec5b63d2c8e99e16bd9d3531514ed6aa3b",
+    "por_tabla": {
+      "cash_cashregister": "694b075344504a58d8ecd4498b123a8a5c06f3e83ed1df2d2f18b98d12599396",
+      "cash_cashshift": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "cash_cashshiftclose": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "catalog_category": "ff506f2cd5bc1cb665d71b2306ff7580257f243c27be6377d0501f5cb3600986",
+      "catalog_product": "955e3e345bb2d56b4cd5529dd98ce910d9463ff710fa741e41929bbaba65fa1f",
+      "catalog_productbarcodekey": "45a450dd2e1215d7d6b4fc4c9cb10e38baef7d60ed0533dd10bd57c0353f9405",
+      "inventory_initialinventoryload": "777f626ff5f88946061c50048551554ae674b0ed84aea0392d1dd88ce5f31037",
+      "inventory_initialloadline": "7db66b563ac4369ebb449ecc346efa75120e4da0b1ea36e72e71c7363db8c321",
+      "inventory_lot": "d29dda748dcbd296931c0bb4e62dfb1b905513d77310b49c5c482bef36fd4121",
+      "inventory_physicaladjustment": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceipt": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptcounter": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockwriteoff": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_supplier": "dcbfd646981e998c1034ac9f51191a76f283074e855a5698baccad4ae21ec587",
+      "sales_sale": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_salecounter": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saledraft": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saledraftline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saleline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_salelotallocation": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "identity_role_membership_active": "d37b310029ebc424529ed8f05e942d3784c3cd317f1be1ed3642343a98a18b73"
+    },
+    "filas": {
+      "cash_cashregister": 1,
+      "cash_cashshift": 0,
+      "cash_cashshiftclose": 0,
+      "catalog_category": 1,
+      "catalog_product": 1,
+      "catalog_productbarcodekey": 1,
+      "inventory_initialinventoryload": 1,
+      "inventory_initialloadline": 1,
+      "inventory_lot": 1,
+      "inventory_physicaladjustment": 0,
+      "inventory_stockreceipt": 0,
+      "inventory_stockreceiptcounter": 0,
+      "inventory_stockreceiptline": 0,
+      "inventory_stockwriteoff": 0,
+      "inventory_supplier": 1,
+      "sales_sale": 0,
+      "sales_salecounter": 0,
+      "sales_saledraft": 0,
+      "sales_saledraftline": 0,
+      "sales_saleline": 0,
+      "sales_salelotallocation": 0
+    },
+    "cuentas_rol_activas": [
+      [
+        "ADMIN",
+        1
+      ],
+      [
+        "ALMACENERO",
+        1
+      ],
+      [
+        "VENDEDOR",
+        1
+      ]
+    ],
+    "categorias": [
+      {
+        "name": "Familia 14I",
+        "is_active": 1,
+        "state_version": 0
+      }
+    ],
+    "productos": [
+      {
+        "name": "Producto 14I",
+        "barcode": "INT-14I",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 3,
+        "is_active": 1
+      }
+    ],
+    "proveedores": [
+      {
+        "name": "Proveedor 14I",
+        "ruc": "20000000014",
+        "is_active": 1
+      }
+    ],
+    "lotes": [
+      {
+        "number": "A",
+        "initial_quantity": 10,
+        "available_quantity": 10,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "Producto 14I",
+        "proveedor": "Proveedor 14I",
+        "autor_carga": "Almacén 14I"
+      }
+    ],
+    "borrador": [],
+    "ventas": [],
+    "lineas": [],
+    "bajas": [],
+    "turnos": [],
+    "cierres": []
+  },
+  "sin_mutacion_verificada": true
+}

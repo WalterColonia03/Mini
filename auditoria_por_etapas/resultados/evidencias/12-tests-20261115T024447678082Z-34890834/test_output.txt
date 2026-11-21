@@ -1,0 +1,273 @@
+Found 85 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_checkout_retry_recovers_receipt_even_with_new_active_draft_without_touching_it (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_recovers_receipt_even_with_new_active_draft_without_touching_it) ... ok
+test_checkout_retry_recovers_receipt_when_no_active_draft (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_recovers_receipt_when_no_active_draft) ... ok
+test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected) ... ok
+test_histories_filters_nul_lima_dates_isolation_and_query_counts (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_histories_filters_nul_lima_dates_isolation_and_query_counts) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "00d4813f-0b8f-4fea-956a-2961d48bc31c", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:02.303722+00:00", "outcome": "REJECTED", "request_id": "1e52af47577b4af08e569b0e0fce9821", "target_id": "/ventas/historial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "00d4813f-0b8f-4fea-956a-2961d48bc31c", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:02.323265+00:00", "outcome": "REJECTED", "request_id": "c3aa831e7adb406b87559f7030b2b737", "target_id": "/ventas/historial/turno/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "00d4813f-0b8f-4fea-956a-2961d48bc31c", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:02.333503+00:00", "outcome": "REJECTED", "request_id": "8a530f18280f499e840702bd1779d516", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "00d4813f-0b8f-4fea-956a-2961d48bc31c", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:02.345568+00:00", "outcome": "REJECTED", "request_id": "81449c86463d4a13a678d78eb31cf022", "target_id": "/caja/turnos/f0ee09b8-d5d5-4aba-b3f1-38962cc72e6b/cerrado/", "target_type": "Endpoint"}
+ok
+test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "00d4813f-0b8f-4fea-956a-2961d48bc31c", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:02.901208+00:00", "outcome": "REJECTED", "request_id": "68c5975f98174bdfb0fd6c317d094f9d", "target_id": "/ventas/constancia/67f03fb4-30e7-46e2-8324-789ff23412fe/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "00d4813f-0b8f-4fea-956a-2961d48bc31c", "actor_identifier": "wh12@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:02.915771+00:00", "outcome": "REJECTED", "request_id": "0f885505ef17419c9d729496dd954876", "target_id": "/ventas/constancia/67f03fb4-30e7-46e2-8324-789ff23412fe/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:02.957762+00:00", "outcome": "REJECTED", "request_id": "8183ca11bde849dca545bfa25bd27e04", "target_id": "/ventas/constancia/67f03fb4-30e7-46e2-8324-789ff23412fe/", "target_type": "Endpoint"}
+ok
+test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback) ... ok
+test_seller_menu_closed_acta_title_last_sale_disappears_and_deactivated_cookie (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_seller_menu_closed_acta_title_last_sale_disappears_and_deactivated_cookie) ... identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/ventas/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:45:03.631704+00:00", "outcome": "REJECTED", "request_id": "7188e578259942e2b8819dd665d45a5b", "target_id": "cd19dcc6-6775-4bec-8d38-dd04bc3d015d", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:03.632743+00:00", "outcome": "REJECTED", "request_id": "7188e578259942e2b8819dd665d45a5b", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:03.638335+00:00", "outcome": "REJECTED", "request_id": "8497a462c7ca4aaaa0cfd13b5a8bd133", "target_id": "/ventas/cobrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:03.643859+00:00", "outcome": "REJECTED", "request_id": "a2c70ba8a9c94a34bf566e2ba622fe4a", "target_id": "/ventas/constancia/0b87ae66-86a9-4f00-94ef-8c1e1dab7c7d/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:03.652568+00:00", "outcome": "REJECTED", "request_id": "7d4818f3c381449398bececf292c7d17", "target_id": "/ventas/historial/turno/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:03.656605+00:00", "outcome": "REJECTED", "request_id": "f284491edf234f839d4990e7b7078922", "target_id": "/ventas/historial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:03.664712+00:00", "outcome": "REJECTED", "request_id": "564eb62df42649d09f11865b1d3848ce", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:03.671715+00:00", "outcome": "REJECTED", "request_id": "10122b97a391407087f7a0059312c7e0", "target_id": "/caja/turnos/9c8fd900-6529-41a8-ac91-72d78b2ad329/cerrado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:03.677790+00:00", "outcome": "REJECTED", "request_id": "d9034189166148579d6aadad6bbf3330", "target_id": "/caja/turnos/9c8fd900-6529-41a8-ac91-72d78b2ad329/abierto/", "target_type": "Endpoint"}
+ok
+test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe) ... ok
+test_dashboard_failure_has_no_false_zero_and_next_request_recovers (sales.test_audit13_history_boundaries.DashboardHistoryBoundaryTests.test_dashboard_failure_has_no_false_zero_and_next_request_recovers) ... Internal Server Error: /inicio/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\views.py", line 85, in dashboard
+    "summary": _dashboard_summary(role, today),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+django.db.utils.DatabaseError: private diagnostic
+ok
+test_exact_and_range_filters_preserve_lima_day_boundaries (sales.test_audit13_history_boundaries.DashboardHistoryBoundaryTests.test_exact_and_range_filters_preserve_lima_day_boundaries) ... ok
+test_invalid_calendar_and_date_range_limits_return_errors_without_rows (sales.test_audit13_history_boundaries.DashboardHistoryBoundaryTests.test_invalid_calendar_and_date_range_limits_return_errors_without_rows) ... ok
+test_anonymous_redirects_on_all_cash_urls (cash.test_audit09_cash.Audit09CashRegressionTests.test_anonymous_redirects_on_all_cash_urls) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:07.078095+00:00", "outcome": "REJECTED", "request_id": "76d6b25c4200481e9d92c97b1d4618ce", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:07.081453+00:00", "outcome": "REJECTED", "request_id": "76fcb71538f6458dbe4fcf6a02c61084", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:07.085989+00:00", "outcome": "REJECTED", "request_id": "5f3175e278e54848ab1051e6f2afe027", "target_id": "/caja/turnos/75a5dc5a-ec28-482d-afcc-bc4c25973d15/abierto/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:07.090530+00:00", "outcome": "REJECTED", "request_id": "bfd48b6a22a24ab39630d1243b0700ac", "target_id": "/caja/turnos/75a5dc5a-ec28-482d-afcc-bc4c25973d15/cerrado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:07.093040+00:00", "outcome": "REJECTED", "request_id": "e6ef66fe156f4eb79ed3d0ced9729864", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:07.096071+00:00", "outcome": "REJECTED", "request_id": "25886d96627241bb918d06bb40411b56", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:45:07.098615+00:00", "outcome": "REJECTED", "request_id": "2a0b04fcc8d24a28b9a9205217b78cd1", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+ok
+test_fix09_01_02_close_empty_post_no_open_shift_and_retry_show_visible_errors (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_02_close_empty_post_no_open_shift_and_retry_show_visible_errors) ... ok
+test_fix09_01_04_05_open_empty_post_boundaries_ascii_and_cache_headers (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_04_05_open_empty_post_boundaries_ascii_and_cache_headers) ... ok
+test_fix09_01_draft_with_and_without_lines_vs_cash_close (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_draft_with_and_without_lines_vs_cash_close) ... ok
+test_fix09_03_service_validation_boundaries_and_stale_actor_checks (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_03_service_validation_boundaries_and_stale_actor_checks) ... ok
+test_logout_discards_draft_and_preserves_open_shift (cash.test_audit09_cash.Audit09CashRegressionTests.test_logout_discards_draft_and_preserves_open_shift) ... ok
+test_role_matrix_permissions_and_http_methods (cash.test_audit09_cash.Audit09CashRegressionTests.test_role_matrix_permissions_and_http_methods) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "ba2ae3c3-1993-43d4-8903-939445516393", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.446311+00:00", "outcome": "REJECTED", "request_id": "8be54a8d85754f8380967a56aad9a041", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "ba2ae3c3-1993-43d4-8903-939445516393", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.462653+00:00", "outcome": "REJECTED", "request_id": "8630ad8465254b75b8488604296b047b", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "ba2ae3c3-1993-43d4-8903-939445516393", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.476062+00:00", "outcome": "REJECTED", "request_id": "198dcaf23b3c43c7ae53a71d182be8bb", "target_id": "/caja/turnos/78f45588-af7e-4e0c-83eb-899a9bacc40a/abierto/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "ba2ae3c3-1993-43d4-8903-939445516393", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.485620+00:00", "outcome": "REJECTED", "request_id": "63f4d409212043a88966ea45e5c2ff0e", "target_id": "/caja/turnos/78f45588-af7e-4e0c-83eb-899a9bacc40a/cerrado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "ba2ae3c3-1993-43d4-8903-939445516393", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.498276+00:00", "outcome": "REJECTED", "request_id": "cfd254481fb84d60a82331279e972357", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "ba2ae3c3-1993-43d4-8903-939445516393", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.525080+00:00", "outcome": "REJECTED", "request_id": "ed593eb4608b4303a82807fad07ca954", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "ba2ae3c3-1993-43d4-8903-939445516393", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.545814+00:00", "outcome": "REJECTED", "request_id": "09648ce7bba34b10942bd42b0da72d09", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a720e468-4a64-441c-9415-4148a0c667b7", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.576209+00:00", "outcome": "REJECTED", "request_id": "08f7217f5045439aaf63e440d33e7745", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a720e468-4a64-441c-9415-4148a0c667b7", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.595150+00:00", "outcome": "REJECTED", "request_id": "715d4efa98814e3f8f1ff5d59ebb7a8a", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a720e468-4a64-441c-9415-4148a0c667b7", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.611358+00:00", "outcome": "REJECTED", "request_id": "e15fab25398a4cd98a410114ce7a270b", "target_id": "/caja/turnos/78f45588-af7e-4e0c-83eb-899a9bacc40a/abierto/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a720e468-4a64-441c-9415-4148a0c667b7", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.625795+00:00", "outcome": "REJECTED", "request_id": "d5329d475ad64131a05a3e1b19267dcf", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a720e468-4a64-441c-9415-4148a0c667b7", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:09.642439+00:00", "outcome": "REJECTED", "request_id": "1f687ef4b7c6472ca4fd2a9725fc117c", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+ok
+test_shift_history_isolation_styles_and_constant_query_count (cash.test_audit09_cash.Audit09CashRegressionTests.test_shift_history_isolation_styles_and_constant_query_count) ... ok
+test_B80_skip_link_present (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B80_skip_link_present)
+La página tiene un skip-link 'Saltar al contenido'. ... ok
+test_B81_sidebar_aria_label (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B81_sidebar_aria_label)
+El sidebar tiene aria-label 'Navegación principal'. ... ok
+test_B82_main_content_id (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B82_main_content_id)
+El main tiene id='contenido' y tabindex para skip link. ... ok
+test_B83_html_lang_es (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B83_html_lang_es)
+El HTML usa lang='es-PE'. ... ok
+test_B84_brand_text (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B84_brand_text)
+El sidebar brand muestra 'Minimarket' y 'Gestión de bodega'. ... ok
+test_B85_footer_present (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B85_footer_present)
+La página tiene footer con 'Minimarket'. ... ok
+test_B86_login_page_no_sidebar (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B86_login_page_no_sidebar)
+La página de login no muestra sidebar (class=anonymous). ... ok
+test_B87_authenticated_has_sidebar (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B87_authenticated_has_sidebar)
+La página autenticada muestra sidebar. ... ok
+test_B01_admin_sidebar_has_catalog_section (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B01_admin_sidebar_has_catalog_section)
+ADMIN ve sección Catálogo con Productos, Registrar producto y Categorías. ... ok
+test_B02_admin_sidebar_has_inventory_section (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B02_admin_sidebar_has_inventory_section)
+ADMIN ve sección Inventario con Proveedores, Ver inventario, Vencimientos, Ajuste. ... ok
+test_B03_admin_sidebar_has_personnel_section (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B03_admin_sidebar_has_personnel_section)
+ADMIN ve sección Personal con Empleados. ... ok
+test_B04_admin_sidebar_has_cash_and_sales_section (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B04_admin_sidebar_has_cash_and_sales_section)
+ADMIN ve sección Caja y ventas con Historial de turnos e Historial de ventas. ... ok
+test_B05_admin_sidebar_does_not_have_seller_options (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B05_admin_sidebar_does_not_have_seller_options)
+ADMIN NO ve las opciones de vendedor (Apertura de caja, Preparar venta, Cerrar turno). ... ok
+test_B06_admin_sidebar_does_not_have_warehouse_operations (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B06_admin_sidebar_does_not_have_warehouse_operations)
+ADMIN NO ve las opciones de almacenero (Existencias iniciales, Entrada, Registrar merma). ... ok
+test_B07_admin_dashboard_shows_panel_principal (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B07_admin_dashboard_shows_panel_principal)
+ADMIN dashboard muestra 'Panel principal' y 'Administrador'. ... ok
+test_B08_admin_dashboard_shows_sales_summary (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B08_admin_dashboard_shows_sales_summary)
+ADMIN dashboard tiene métricas de ventas: Ventas de hoy, Total vendido. ... ok
+test_B09_admin_dashboard_shows_stock_alerts (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B09_admin_dashboard_shows_stock_alerts)
+ADMIN dashboard tiene alertas de inventario. ... ok
+test_B10_admin_dashboard_action_cards (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B10_admin_dashboard_action_cards)
+ADMIN dashboard tiene tarjetas de acción correctas. ... ok
+test_B11_admin_dashboard_no_warehouse_cards (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B11_admin_dashboard_no_warehouse_cards)
+ADMIN NO ve tarjetas de almacenero en el dashboard. ... ok
+test_B12_admin_dashboard_no_seller_cards (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B12_admin_dashboard_no_seller_cards)
+ADMIN NO ve tarjetas de vendedor en el dashboard. ... ok
+test_B13_admin_topbar_shows_role_pill (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B13_admin_topbar_shows_role_pill)
+ADMIN topbar muestra pill con nombre del rol. ... ok
+test_B14_admin_topbar_heading_inicio (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B14_admin_topbar_heading_inicio)
+Heading de /inicio/ muestra 'Inicio'. ... ok
+test_B15_admin_sidebar_shows_user_info (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B15_admin_sidebar_shows_user_info)
+Sidebar muestra nombre del usuario y enlace 'Cerrar sesión'. ... ok
+test_B50_seller_gets_403_page_on_admin_route (tests.test_audit14b_browser_content.BrowserContentErrorPagesTest.test_B50_seller_gets_403_page_on_admin_route)
+VENDEDOR en ruta de admin recibe 403 con contenido apropiado. ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "aa462c02-accb-4b07-961b-993d6d867c85", "actor_identifier": "vendedor14be@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:17.317129+00:00", "outcome": "REJECTED", "request_id": "c289a65ae1ab4dc29f8be3408bb81fd6", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+ok
+test_B51_warehouse_gets_403_on_cash_open (tests.test_audit14b_browser_content.BrowserContentErrorPagesTest.test_B51_warehouse_gets_403_on_cash_open)
+ALMACENERO en ruta de caja recibe 403. ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "fdfcdc41-e709-43c9-9d10-24eb06cfb246", "actor_identifier": "almacen14be@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:17.555407+00:00", "outcome": "REJECTED", "request_id": "0e66ad6d4d904edab837a4496620f6ec", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+ok
+test_B52_seller_gets_403_on_employees (tests.test_audit14b_browser_content.BrowserContentErrorPagesTest.test_B52_seller_gets_403_on_employees)
+VENDEDOR en /empleados/ recibe 403. ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "aa462c02-accb-4b07-961b-993d6d867c85", "actor_identifier": "vendedor14be@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:45:17.783576+00:00", "outcome": "REJECTED", "request_id": "79c390a3a03f489aa5f2d2a218cbfc4a", "target_id": "/empleados/", "target_type": "Endpoint"}
+ok
+test_B40_login_page_elements (tests.test_audit14b_browser_content.BrowserContentLoginTest.test_B40_login_page_elements)
+La página de login muestra título, formulario y roles del sistema. ... ok
+test_B41_login_form_fields (tests.test_audit14b_browser_content.BrowserContentLoginTest.test_B41_login_form_fields)
+El form de login tiene campos de email y contraseña y botón. ... ok
+test_B42_login_error_message_on_bad_credentials (tests.test_audit14b_browser_content.BrowserContentLoginTest.test_B42_login_error_message_on_bad_credentials)
+Credenciales inválidas muestran mensaje sin revelar existencia de cuenta. ... ok
+test_B43_login_role_descriptions (tests.test_audit14b_browser_content.BrowserContentLoginTest.test_B43_login_role_descriptions)
+La página de login describe cada rol correctamente. ... ok
+test_B60_admin_product_list_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B60_admin_product_list_heading) ... ok
+test_B61_admin_product_entry_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B61_admin_product_entry_heading) ... ok
+test_B62_admin_category_list_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B62_admin_category_list_heading) ... ok
+test_B63_admin_supplier_list_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B63_admin_supplier_list_heading) ... ok
+test_B64_admin_employee_list_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B64_admin_employee_list_heading) ... ok
+test_B65_admin_shift_history_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B65_admin_shift_history_heading) ... ok
+test_B66_admin_sales_history_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B66_admin_sales_history_heading) ... ok
+test_B67_admin_stock_overview_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B67_admin_stock_overview_heading) ... ok
+test_B68_admin_expirations_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B68_admin_expirations_heading) ... ok
+test_B69_admin_adjustment_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B69_admin_adjustment_heading) ... ok
+test_B70_warehouse_initial_load_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B70_warehouse_initial_load_heading) ... ok
+test_B71_warehouse_stock_entry_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B71_warehouse_stock_entry_heading) ... ok
+test_B72_warehouse_writeoff_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B72_warehouse_writeoff_heading) ... ok
+test_B73_seller_cash_close_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B73_seller_cash_close_heading) ... ok
+test_B74_seller_shift_history_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B74_seller_shift_history_heading) ... ok
+test_B30_seller_sidebar_has_cash_links (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B30_seller_sidebar_has_cash_links)
+VENDEDOR ve sus enlaces: Apertura de caja, Preparar venta, Cerrar turno, Mis ventas. ... ok
+test_B31_seller_sidebar_no_admin_sections (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B31_seller_sidebar_no_admin_sections)
+VENDEDOR NO ve secciones de admin. ... ok
+test_B32_seller_sidebar_no_warehouse_sections (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B32_seller_sidebar_no_warehouse_sections)
+VENDEDOR NO ve secciones de almacenero. ... ok
+test_B33_seller_sidebar_no_admin_links (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B33_seller_sidebar_no_admin_links)
+VENDEDOR NO ve enlaces exclusivos de admin. ... ok
+test_B34_seller_dashboard_shows_vendedor_role (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B34_seller_dashboard_shows_vendedor_role)
+Dashboard del vendedor muestra 'Vendedor'. ... ok
+test_B35_seller_dashboard_no_ventas_summary (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B35_seller_dashboard_no_ventas_summary)
+VENDEDOR NO ve las métricas de ventas del admin. ... ok
+test_B36_seller_dashboard_action_cards (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B36_seller_dashboard_action_cards)
+VENDEDOR ve tarjetas: Abrir turno, Preparar venta. ... ok
+test_B37_seller_dashboard_no_admin_warehouse_cards (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B37_seller_dashboard_no_admin_warehouse_cards)
+VENDEDOR NO ve tarjetas de admin ni almacenero. ... ok
+test_B38_seller_cash_open_page (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B38_seller_cash_open_page)
+GET /caja/abrir/ muestra heading 'Apertura de caja'. ... ok
+test_B39_seller_sales_draft_page (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B39_seller_sales_draft_page)
+GET /ventas/ muestra heading 'Preparar venta' con turno abierto. ... ok
+test_B20_warehouse_sidebar_has_inventory_links (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B20_warehouse_sidebar_has_inventory_links)
+ALMACENERO ve sus enlaces propios: Inventario, Existencias, Entrada, Merma. ... ok
+test_B21_warehouse_sidebar_has_product_consultation (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B21_warehouse_sidebar_has_product_consultation)
+ALMACENERO ve sección Consulta con Catálogo y Proveedores. ... ok
+test_B22_warehouse_sidebar_no_admin_sections (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B22_warehouse_sidebar_no_admin_sections)
+ALMACENERO NO ve secciones de admin: Personal, Empleados, Registrar producto, Categorías. ... ok
+test_B23_warehouse_sidebar_no_seller_sections (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B23_warehouse_sidebar_no_seller_sections)
+ALMACENERO NO ve opciones de vendedor. ... ok
+test_B24_warehouse_sidebar_no_caja_ventas (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B24_warehouse_sidebar_no_caja_ventas)
+ALMACENERO NO ve sección 'Caja y ventas'. ... ok
+test_B25_warehouse_dashboard_shows_almacenero_role (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B25_warehouse_dashboard_shows_almacenero_role)
+Dashboard del almacenero muestra 'Almacenero'. ... ok
+test_B26_warehouse_dashboard_shows_stock_alerts_only (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B26_warehouse_dashboard_shows_stock_alerts_only)
+ALMACENERO ve alertas de stock pero NO ve métricas de ventas. ... ok
+test_B27_warehouse_dashboard_action_cards (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B27_warehouse_dashboard_action_cards)
+ALMACENERO ve tarjetas de acción: Existencias, Entrada, Merma. ... ok
+test_B28_warehouse_dashboard_no_admin_cards (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B28_warehouse_dashboard_no_admin_cards)
+ALMACENERO NO ve tarjetas de admin. ... ok
+test_B29_warehouse_stock_overview_heading (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B29_warehouse_stock_overview_heading)
+GET /inventario/stock/ muestra heading 'Ver inventario'. ... ok
+test_stage12_migrations_round_trip_and_no_pending_migrations (sales.test_audit12_receipts_history.Stage12MigrationOrderingTests.test_stage12_migrations_round_trip_and_no_pending_migrations) ... ok
+
+----------------------------------------------------------------------
+Ran 85 tests in 41.745s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

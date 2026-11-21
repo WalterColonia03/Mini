@@ -1,0 +1,258 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - paragraph: Catálogo
+    - link "Productos":
+      - /url: /productos/
+      - generic: ☰
+      - generic: Productos
+    - link "Registrar producto":
+      - /url: /productos/nuevo/
+      - generic: ▦
+      - generic: Registrar producto
+    - link "Categorías":
+      - /url: /productos/categorias/
+      - generic: ▮
+      - generic: Categorías
+    - paragraph: Inventario
+    - link "Proveedores":
+      - /url: /inventario/proveedores/
+      - generic: ✦
+      - generic: Proveedores
+    - link "Ver inventario y alertas":
+      - /url: /inventario/stock/
+      - generic: ☷
+      - generic: Ver inventario y alertas
+    - link "Vencimientos de lotes":
+      - /url: /productos/vencimientos/
+      - generic: ⏳
+      - generic: Vencimientos de lotes
+    - link "Ajuste físico":
+      - /url: /inventario/ajustes/nuevo/
+      - generic: ⏫
+      - generic: Ajuste físico
+    - paragraph: Personal
+    - link "Empleados":
+      - /url: /empleados/
+      - generic: ☺
+      - generic: Empleados
+    - paragraph: Caja y ventas
+    - link "Historial de turnos":
+      - /url: /caja/turnos/
+      - generic: ☰
+      - generic: Historial de turnos
+    - link "Historial de ventas":
+      - /url: /ventas/historial/
+      - generic: ☰
+      - generic: Historial de ventas
+  - generic: A
+  - strong: Audit13 Administrador admin
+  - generic: Administrador
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Vencimientos de lotes" [level=1]
+  - generic: Audit13 Administrador admin
+  - generic: Administrador
+- main:
+  - generic: Ingrese un número entero válido de días. Se muestran 30 días por defecto.
+  - heading "Lotes vencidos y próximos a vencer" [level=2]
+  - generic: Mostrar lotes vencidos y los que vencen en los próximos
+  - spinbutton "Mostrar lotes vencidos y los que vencen en los próximos": "30"
+  - generic: días
+  - button "Filtrar"
+  - paragraph:
+    - text: "Fecha de corte:"
+    - strong: 13 de diciembre de 2026
+    - text: · El sistema considera vencido un lote desde su fecha de vencimiento y lo bloquea para la venta. Al vender, descuenta primero los lotes vigentes con vencimiento más próximo.
+  - paragraph:
+    - text: "Total en pantalla:"
+    - strong: "11"
+    - text: lotes (
+    - strong: "5"
+    - text: vencidos bloqueados para venta ·
+    - strong: "6"
+    - text: próximos dentro de 30 días).
+  - region "Vencimientos de lotes, tabla desplazable":
+    - table:
+      - rowgroup:
+        - row "Producto Categoría Lote / Nro. Proveedor Vence Cant. disponible Estado Acción":
+          - columnheader "Producto"
+          - columnheader "Categoría"
+          - columnheader "Lote / Nro."
+          - columnheader "Proveedor"
+          - columnheader "Vence"
+          - columnheader "Cant. disponible"
+          - columnheader "Estado"
+          - columnheader "Acción"
+      - rowgroup:
+        - row "Audit13 categoria-inactiva Audit13 categoría inactiva Categoría desactivada A13-CATEGORIA-INACTIVA-1 — 12 de noviembre de 2026 Venció ayer (hace 1 día) 6 Vencido Bloqueado para venta Dar de baja":
+          - cell "Audit13 categoria-inactiva"
+          - cell "Audit13 categoría inactiva Categoría desactivada":
+            - text: Audit13 categoría inactiva
+            - generic: Categoría desactivada
+          - cell "A13-CATEGORIA-INACTIVA-1"
+          - cell "—"
+          - cell "12 de noviembre de 2026 Venció ayer (hace 1 día)":
+            - text: 12 de noviembre de 2026
+            - generic: Venció ayer (hace 1 día)
+          - cell "6"
+          - cell "Vencido Bloqueado para venta":
+            - generic: Vencido
+            - generic: Bloqueado para venta
+          - cell "Dar de baja":
+            - link "Dar de baja":
+              - /url: /inventario/bajas/nueva/?lote=8a34fc18-1e3b-4e5a-885a-dd66b5d7fe5d
+        - row "Audit13 solo-vencido Audit13 activos A13-SOLO-VENCIDO-1 — 12 de noviembre de 2026 Venció ayer (hace 1 día) 2 Vencido Bloqueado para venta Dar de baja":
+          - cell "Audit13 solo-vencido"
+          - cell "Audit13 activos"
+          - cell "A13-SOLO-VENCIDO-1"
+          - cell "—"
+          - cell "12 de noviembre de 2026 Venció ayer (hace 1 día)":
+            - text: 12 de noviembre de 2026
+            - generic: Venció ayer (hace 1 día)
+          - cell "2"
+          - cell "Vencido Bloqueado para venta":
+            - generic: Vencido
+            - generic: Bloqueado para venta
+          - cell "Dar de baja":
+            - link "Dar de baja":
+              - /url: /inventario/bajas/nueva/?lote=21288a36-53fb-4b19-a3ba-bbfc2a524de4
+        - row "Audit13 mixto Audit13 activos A13-MIXTO-3 — 13 de noviembre de 2026 Vence hoy 4 Vencido Bloqueado para venta Dar de baja":
+          - cell "Audit13 mixto"
+          - cell "Audit13 activos"
+          - cell "A13-MIXTO-3"
+          - cell "—"
+          - cell "13 de noviembre de 2026 Vence hoy":
+            - text: 13 de noviembre de 2026
+            - generic: Vence hoy
+          - cell "4"
+          - cell "Vencido Bloqueado para venta":
+            - generic: Vencido
+            - generic: Bloqueado para venta
+          - cell "Dar de baja":
+            - link "Dar de baja":
+              - /url: /inventario/bajas/nueva/?lote=95d06783-cd1d-417c-8762-f2e2dc0d042b
+        - row "Audit13 producto-inactivo Producto inactivo Audit13 activos A13-PRODUCTO-INACTIVO-1 — 13 de noviembre de 2026 Vence hoy 3 Vencido Bloqueado para venta Dar de baja":
+          - cell "Audit13 producto-inactivo Producto inactivo":
+            - text: Audit13 producto-inactivo
+            - generic: Producto inactivo
+          - cell "Audit13 activos"
+          - cell "A13-PRODUCTO-INACTIVO-1"
+          - cell "—"
+          - cell "13 de noviembre de 2026 Vence hoy":
+            - text: 13 de noviembre de 2026
+            - generic: Vence hoy
+          - cell "3"
+          - cell "Vencido Bloqueado para venta":
+            - generic: Vencido
+            - generic: Bloqueado para venta
+          - cell "Dar de baja":
+            - link "Dar de baja":
+              - /url: /inventario/bajas/nueva/?lote=579e4053-c33b-4998-a553-3854f8c9041b
+        - row "Audit13 solo-vencido Audit13 activos A13-SOLO-VENCIDO-0 — 13 de noviembre de 2026 Vence hoy 7 Vencido Bloqueado para venta Dar de baja":
+          - cell "Audit13 solo-vencido"
+          - cell "Audit13 activos"
+          - cell "A13-SOLO-VENCIDO-0"
+          - cell "—"
+          - cell "13 de noviembre de 2026 Vence hoy":
+            - text: 13 de noviembre de 2026
+            - generic: Vence hoy
+          - cell "7"
+          - cell "Vencido Bloqueado para venta":
+            - generic: Vencido
+            - generic: Bloqueado para venta
+          - cell "Dar de baja":
+            - link "Dar de baja":
+              - /url: /inventario/bajas/nueva/?lote=3db8b5c5-7d9e-4884-8620-97206a3b5be5
+        - row "Audit13 mixto Audit13 activos A13-MIXTO-0 — 14 de noviembre de 2026 En 1 día 2 Próximo —":
+          - cell "Audit13 mixto"
+          - cell "Audit13 activos"
+          - cell "A13-MIXTO-0"
+          - cell "—"
+          - cell "14 de noviembre de 2026 En 1 día":
+            - text: 14 de noviembre de 2026
+            - generic: En 1 día
+          - cell "2"
+          - cell "Próximo":
+            - generic: Próximo
+          - cell "—"
+        - row "Audit13 producto-inactivo Producto inactivo Audit13 activos A13-PRODUCTO-INACTIVO-0 — 14 de noviembre de 2026 En 1 día 8 Próximo —":
+          - cell "Audit13 producto-inactivo Producto inactivo":
+            - text: Audit13 producto-inactivo
+            - generic: Producto inactivo
+          - cell "Audit13 activos"
+          - cell "A13-PRODUCTO-INACTIVO-0"
+          - cell "—"
+          - cell "14 de noviembre de 2026 En 1 día":
+            - text: 14 de noviembre de 2026
+            - generic: En 1 día
+          - cell "8"
+          - cell "Próximo":
+            - generic: Próximo
+          - cell "—"
+        - row "Audit13 venta-integracion Audit13 activos A13-VENTA-INTEGRACION-0 — 15 de noviembre de 2026 En 2 días 3 Próximo —":
+          - cell "Audit13 venta-integracion"
+          - cell "Audit13 activos"
+          - cell "A13-VENTA-INTEGRACION-0"
+          - cell "—"
+          - cell "15 de noviembre de 2026 En 2 días":
+            - text: 15 de noviembre de 2026
+            - generic: En 2 días
+          - cell "3"
+          - cell "Próximo":
+            - generic: Próximo
+          - cell "—"
+        - row "Audit13 categoria-inactiva Audit13 categoría inactiva Categoría desactivada A13-CATEGORIA-INACTIVA-0 — 13 de diciembre de 2026 En 30 días 4 Próximo —":
+          - cell "Audit13 categoria-inactiva"
+          - cell "Audit13 categoría inactiva Categoría desactivada":
+            - text: Audit13 categoría inactiva
+            - generic: Categoría desactivada
+          - cell "A13-CATEGORIA-INACTIVA-0"
+          - cell "—"
+          - cell "13 de diciembre de 2026 En 30 días":
+            - text: 13 de diciembre de 2026
+            - generic: En 30 días
+          - cell "4"
+          - cell "Próximo":
+            - generic: Próximo
+          - cell "—"
+        - row "Audit13 igual-minimo Audit13 activos A13-IGUAL-MINIMO-0 — 13 de diciembre de 2026 En 30 días 5 Próximo —":
+          - cell "Audit13 igual-minimo"
+          - cell "Audit13 activos"
+          - cell "A13-IGUAL-MINIMO-0"
+          - cell "—"
+          - cell "13 de diciembre de 2026 En 30 días":
+            - text: 13 de diciembre de 2026
+            - generic: En 30 días
+          - cell "5"
+          - cell "Próximo":
+            - generic: Próximo
+          - cell "—"
+        - row "Audit13 mixto Audit13 activos A13-MIXTO-1 — 13 de diciembre de 2026 En 30 días 2 Próximo —":
+          - cell "Audit13 mixto"
+          - cell "Audit13 activos"
+          - cell "A13-MIXTO-1"
+          - cell "—"
+          - cell "13 de diciembre de 2026 En 30 días":
+            - text: 13 de diciembre de 2026
+            - generic: En 30 días
+          - cell "2"
+          - cell "Próximo":
+            - generic: Próximo
+          - cell "—"
+- contentinfo: Minimarket · Gestión de bodega

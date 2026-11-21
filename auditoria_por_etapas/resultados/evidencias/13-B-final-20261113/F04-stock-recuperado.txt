@@ -1,0 +1,241 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - paragraph: Catálogo
+    - link "Productos":
+      - /url: /productos/
+      - generic: ☰
+      - generic: Productos
+    - link "Registrar producto":
+      - /url: /productos/nuevo/
+      - generic: ▦
+      - generic: Registrar producto
+    - link "Categorías":
+      - /url: /productos/categorias/
+      - generic: ▮
+      - generic: Categorías
+    - paragraph: Inventario
+    - link "Proveedores":
+      - /url: /inventario/proveedores/
+      - generic: ✦
+      - generic: Proveedores
+    - link "Ver inventario y alertas":
+      - /url: /inventario/stock/
+      - generic: ☷
+      - generic: Ver inventario y alertas
+    - link "Vencimientos de lotes":
+      - /url: /productos/vencimientos/
+      - generic: ⏳
+      - generic: Vencimientos de lotes
+    - link "Ajuste físico":
+      - /url: /inventario/ajustes/nuevo/
+      - generic: ⏫
+      - generic: Ajuste físico
+    - paragraph: Personal
+    - link "Empleados":
+      - /url: /empleados/
+      - generic: ☺
+      - generic: Empleados
+    - paragraph: Caja y ventas
+    - link "Historial de turnos":
+      - /url: /caja/turnos/
+      - generic: ☰
+      - generic: Historial de turnos
+    - link "Historial de ventas":
+      - /url: /ventas/historial/
+      - generic: ☰
+      - generic: Historial de ventas
+  - generic: A
+  - strong: Audit13 Administrador admin
+  - generic: Administrador
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Stock e inventario" [level=1]
+  - generic: Audit13 Administrador admin
+  - generic: Administrador
+- main:
+  - paragraph: Estado del stock al día de hoy — 13 de noviembre de 2026
+  - heading "Inventario actual" [level=2]
+  - paragraph: ⚠ Lotes VENCIDOS con unidades registradas (5)
+  - list:
+    - strong: Audit13 categoria-inactiva
+    - text: "(Categoría desactivada) — Lote A13-CATEGORIA-INACTIVA-1 — 6 unid. — Venció: 12 de noviembre de 2026"
+    - strong: Audit13 solo-vencido
+    - text: "— Lote A13-SOLO-VENCIDO-1 — 2 unid. — Venció: 12 de noviembre de 2026"
+    - strong: Audit13 mixto
+    - text: "— Lote A13-MIXTO-3 — 4 unid. — Venció: 13 de noviembre de 2026"
+    - strong: Audit13 producto-inactivo
+    - text: "(Inactivo) — Lote A13-PRODUCTO-INACTIVO-1 — 3 unid. — Venció: 13 de noviembre de 2026"
+    - strong: Audit13 solo-vencido
+    - text: "— Lote A13-SOLO-VENCIDO-0 — 7 unid. — Venció: 13 de noviembre de 2026"
+  - paragraph: ⏳ Lotes próximos a vencer (dentro de 30 días) — 6
+  - list:
+    - strong: Audit13 mixto
+    - text: "— Lote A13-MIXTO-0 — 2 unid. — Vence: 14 de noviembre de 2026"
+    - strong: Audit13 producto-inactivo
+    - text: "(Inactivo) — Lote A13-PRODUCTO-INACTIVO-0 — 8 unid. — Vence: 14 de noviembre de 2026"
+    - strong: Audit13 venta-integracion
+    - text: "— Lote A13-VENTA-INTEGRACION-0 — 1 unid. — Vence: 15 de noviembre de 2026"
+    - strong: Audit13 categoria-inactiva
+    - text: "(Categoría desactivada) — Lote A13-CATEGORIA-INACTIVA-0 — 4 unid. — Vence: 13 de diciembre de 2026"
+    - strong: Audit13 igual-minimo
+    - text: "— Lote A13-IGUAL-MINIMO-0 — 5 unid. — Vence: 13 de diciembre de 2026"
+    - strong: Audit13 mixto
+    - text: "— Lote A13-MIXTO-1 — 2 unid. — Vence: 13 de diciembre de 2026"
+  - paragraph: 🔶 Stock vigente en el mínimo o por debajo (4 productos)
+  - list:
+    - strong: Audit13 igual-minimo
+    - text: — 5 unid. vigentes (5 registradas) / mínimo 5
+    - strong: Audit13 sin-lotes
+    - text: — 0 unid. vigentes (0 registradas) / mínimo 0
+    - strong: Audit13 solo-vencido
+    - text: — 0 unid. vigentes (9 registradas) / mínimo 1
+    - strong: Audit13 venta-integracion
+    - text: — 1 unid. vigentes (1 registradas) / mínimo 1
+  - paragraph:
+    - strong: "Stock físico:"
+    - text: unidades registradas en el sistema (incluye lotes vencidos); debe contrastarse con el conteo físico.
+    - strong: "Stock vigente:"
+    - text: unidades de lotes no vencidos. Para venderlas, el producto y su categoría también deben estar habilitados. El sistema considera vencido un lote desde su fecha de vencimiento.
+  - region "Existencias y acciones, tabla desplazable":
+    - table:
+      - rowgroup:
+        - row "Producto Categoría Stock físico Stock vigente Mínimo Estado Acciones":
+          - columnheader "Producto"
+          - columnheader "Categoría"
+          - columnheader "Stock físico"
+          - columnheader "Stock vigente"
+          - columnheader "Mínimo"
+          - columnheader "Estado"
+          - columnheader "Acciones"
+      - rowgroup:
+        - row "Audit13 categoria-inactiva AUDIT13-categoria-inactiva Audit13 categoría inactiva 10 4 99 Categoría desactivada Ver movimientos Ver carga":
+          - cell "Audit13 categoria-inactiva AUDIT13-categoria-inactiva":
+            - strong: Audit13 categoria-inactiva
+            - text: AUDIT13-categoria-inactiva
+          - cell "Audit13 categoría inactiva"
+          - cell "10"
+          - cell "4"
+          - cell "99"
+          - cell "Categoría desactivada"
+          - cell "Ver movimientos Ver carga":
+            - link "Ver movimientos":
+              - /url: /inventario/productos/79380222-5257-4f58-88ac-d484bf5bbc01/movimientos/
+            - link "Ver carga":
+              - /url: /inventario/cargas/9f087670-08a7-49e0-8040-9cef017a7103/
+        - row "Audit13 igual-minimo AUDIT13-igual-minimo Audit13 activos 5 5 5 Stock bajo Ver movimientos Ver carga":
+          - cell "Audit13 igual-minimo AUDIT13-igual-minimo":
+            - strong: Audit13 igual-minimo
+            - text: AUDIT13-igual-minimo
+          - cell "Audit13 activos"
+          - cell "5"
+          - cell "5"
+          - cell "5"
+          - cell "Stock bajo"
+          - cell "Ver movimientos Ver carga":
+            - link "Ver movimientos":
+              - /url: /inventario/productos/86fc4d74-bc09-44ed-8dcb-3931656b74e0/movimientos/
+            - link "Ver carga":
+              - /url: /inventario/cargas/966a53cc-d13a-472e-8278-0c6bb287633b/
+        - row "Audit13 mixto AUDIT13-mixto Audit13 activos 17 13 3 OK Ver movimientos Ver carga":
+          - cell "Audit13 mixto AUDIT13-mixto":
+            - strong: Audit13 mixto
+            - text: AUDIT13-mixto
+          - cell "Audit13 activos"
+          - cell "17"
+          - cell "13"
+          - cell "3"
+          - cell "OK"
+          - cell "Ver movimientos Ver carga":
+            - link "Ver movimientos":
+              - /url: /inventario/productos/d46728cf-59ea-4bcc-b483-cffed8c2a4f5/movimientos/
+            - link "Ver carga":
+              - /url: /inventario/cargas/f431abf0-6845-441e-be7a-97e8bc58cb26/
+        - row "Audit13 producto-inactivo AUDIT13-producto-inactivo Audit13 activos 11 8 99 Inactivo Ver movimientos Ver carga":
+          - cell "Audit13 producto-inactivo AUDIT13-producto-inactivo":
+            - strong: Audit13 producto-inactivo
+            - text: AUDIT13-producto-inactivo
+          - cell "Audit13 activos"
+          - cell "11"
+          - cell "8"
+          - cell "99"
+          - cell "Inactivo"
+          - cell "Ver movimientos Ver carga":
+            - link "Ver movimientos":
+              - /url: /inventario/productos/ea08cde9-19e8-4c4f-90d3-bbfa72f83689/movimientos/
+            - link "Ver carga":
+              - /url: /inventario/cargas/32096894-3e5e-4f19-bf72-8b914c0ef7fe/
+        - row "Audit13 sin-lotes AUDIT13-sin-lotes Audit13 activos 0 0 0 Sin stock vendible Ver movimientos":
+          - cell "Audit13 sin-lotes AUDIT13-sin-lotes":
+            - strong: Audit13 sin-lotes
+            - text: AUDIT13-sin-lotes
+          - cell "Audit13 activos"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "Sin stock vendible"
+          - cell "Ver movimientos":
+            - link "Ver movimientos":
+              - /url: /inventario/productos/e07dffb3-37f7-4923-b03e-72bc6b708261/movimientos/
+        - row "Audit13 sobre-minimo AUDIT13-sobre-minimo Audit13 activos 6 6 5 OK Ver movimientos Ver carga":
+          - cell "Audit13 sobre-minimo AUDIT13-sobre-minimo":
+            - strong: Audit13 sobre-minimo
+            - text: AUDIT13-sobre-minimo
+          - cell "Audit13 activos"
+          - cell "6"
+          - cell "6"
+          - cell "5"
+          - cell "OK"
+          - cell "Ver movimientos Ver carga":
+            - link "Ver movimientos":
+              - /url: /inventario/productos/5e3d5d45-14c4-404c-9224-035af123426a/movimientos/
+            - link "Ver carga":
+              - /url: /inventario/cargas/179b5807-bff1-4f02-b559-7d98326e6b5b/
+        - row "Audit13 solo-vencido AUDIT13-solo-vencido Audit13 activos 9 0 1 Sin stock vendible Ver movimientos Ver carga":
+          - cell "Audit13 solo-vencido AUDIT13-solo-vencido":
+            - strong: Audit13 solo-vencido
+            - text: AUDIT13-solo-vencido
+          - cell "Audit13 activos"
+          - cell "9"
+          - cell "0"
+          - cell "1"
+          - cell "Sin stock vendible"
+          - cell "Ver movimientos Ver carga":
+            - link "Ver movimientos":
+              - /url: /inventario/productos/1fbef716-ae6b-44a6-88d3-ffcdb6a700e5/movimientos/
+            - link "Ver carga":
+              - /url: /inventario/cargas/17ed5478-2945-4b57-9d1a-c0551b030c11/
+        - row "Audit13 venta-integracion AUDIT13-venta-integracion Audit13 activos 1 1 1 Stock bajo Ver movimientos Ver carga":
+          - cell "Audit13 venta-integracion AUDIT13-venta-integracion":
+            - strong: Audit13 venta-integracion
+            - text: AUDIT13-venta-integracion
+          - cell "Audit13 activos"
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "Stock bajo"
+          - cell "Ver movimientos Ver carga":
+            - link "Ver movimientos":
+              - /url: /inventario/productos/d0188c74-2517-46c1-950a-eb603ad6fc69/movimientos/
+            - link "Ver carga":
+              - /url: /inventario/cargas/b817a678-2aaa-479b-8bdb-f0b16f826b3a/
+  - link "Ajuste físico":
+    - /url: /inventario/ajustes/nuevo/
+  - link "Registrar merma":
+    - /url: /inventario/bajas/nueva/
+- contentinfo: Minimarket · Gestión de bodega

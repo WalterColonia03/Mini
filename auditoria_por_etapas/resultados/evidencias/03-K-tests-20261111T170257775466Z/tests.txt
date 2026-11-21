@@ -1,0 +1,302 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 1 test(s).
+Found 1 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) ... 
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='fraction') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='boolean') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='quantity_over_limit') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='number_over_limit') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='cost_nan') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='cost_infinite') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='fraction') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='boolean') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='quantity_over_limit') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='number_over_limit') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='cost_nan') ... ERROR
+  test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='cost_infinite') ... ERROR
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='fraction')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='boolean')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='quantity_over_limit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='number_over_limit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='cost_nan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='confirm_initial_load', case='cost_infinite')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='fraction')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='boolean')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='quantity_over_limit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='number_over_limit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='cost_nan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+======================================================================
+ERROR: test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) (operation='register_stock_entry', case='cost_infinite')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_receipt_boundaries.py", line 35, in test_service_rejects_invalid_lot_without_partial_receipt
+    product = Product.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 180, in save
+    keys = reading_keys(code, kind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\barcodes.py", line 26, in reading_keys
+    raise ValidationError({"barcode": "Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones."})
+django.core.exceptions.ValidationError: {'barcode': ['Ingrese un código de hasta 64 caracteres con letras, números, espacios o guiones.']}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.267s
+
+FAILED (errors=12)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

@@ -1,0 +1,269 @@
+{
+  "fecha_lima": "2026-11-09T16:52:45.791403-05:00",
+  "alcance": "Cierre operativo y documental de 01-C",
+  "comprobaciones": [
+    {
+      "caso": "sha256:r1-pmv/r1_pmv.sqlite3",
+      "resultado": "CUMPLE",
+      "detalle": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95"
+    },
+    {
+      "caso": "sha256:auditoria_por_etapas/resultados/datos/etapa00-20261105/audit.sqlite3",
+      "resultado": "CUMPLE",
+      "detalle": "19546d1c77d5874c8d0d5061cba97be8abfe9f03435600ef40a6c9c9c9209b5e"
+    },
+    {
+      "caso": "cuentas ficticias",
+      "resultado": "CUMPLE",
+      "detalle": {
+        "total": 15,
+        "AUD01": 5,
+        "AUD01HTTP": 10,
+        "filas_de_intentos": 23,
+        "sesiones_almacenadas": 37
+      }
+    },
+    {
+      "caso": "tablas comerciales sin filas",
+      "resultado": "CUMPLE",
+      "detalle": {
+        "tablas": 15,
+        "filas_por_app": {
+          "inventory": 0,
+          "cash": 0,
+          "sales": 0,
+          "catalog": 0
+        }
+      }
+    },
+    {
+      "caso": "loopback rechaza conexión a 8766",
+      "resultado": "CUMPLE",
+      "detalle": 10061
+    },
+    {
+      "caso": "sin listener TCP 8766 IPv4/IPv6",
+      "resultado": "CUMPLE",
+      "detalle": 0
+    },
+    {
+      "caso": "sin proceso Python audit01.py serve",
+      "resultado": "CUMPLE",
+      "detalle": {
+        "coincidencias": 0,
+        "procesos_python_sin_linea_visible": 0
+      }
+    },
+    {
+      "caso": "fuentes cotejadas con manifiesto de suite 01-C",
+      "resultado": "CUMPLE",
+      "detalle": {
+        "archivos": 6,
+        "diferencias": []
+      }
+    },
+    {
+      "caso": "fuentes cotejadas con manifiesto de HTTP 01-B",
+      "resultado": "CUMPLE",
+      "detalle": {
+        "archivos": 4,
+        "diferencias": []
+      }
+    },
+    {
+      "caso": "enlaces locales:ETAPA-01.md",
+      "resultado": "CUMPLE",
+      "detalle": []
+    },
+    {
+      "caso": "referencia a evidencia 01-C:ETAPA-01.md",
+      "resultado": "CUMPLE",
+      "detalle": [
+        "evidencias/01-C-espera-20261109T205701803Z.json",
+        "evidencias/01-C-historial-2026-11-09T20-56-38-235Z/resultados.json",
+        "evidencias/01-C-historial-2026-11-09T20-57-15-663Z/resultados.json",
+        "evidencias/01-C-historial-2026-11-09T21-00-56-325Z/05-salto.png",
+        "evidencias/01-C-historial-2026-11-09T21-00-56-325Z/06-errores-campos.png",
+        "evidencias/01-C-historial-2026-11-09T21-00-56-325Z/resultados.json",
+        "evidencias/01-C-regresion-identity-20261109.json",
+        "evidencias/01-chrome-admin-failures-20261109T211121-168Z/observaciones.json",
+        "evidencias/01-chrome-admin-failures-20261109T211121-168Z/quinto-rechazo.png",
+        "evidencias/01-chrome-b02-20261109T205610-697Z/observaciones.json",
+        "evidencias/01-chrome-b02-20261109T205838-198Z/admin-rechazo.png",
+        "evidencias/01-chrome-b02-20261109T205838-198Z/admin-staff.png",
+        "evidencias/01-chrome-b02-20261109T205838-198Z/observaciones.json",
+        "evidencias/01-retencion-20261109T210100073850Z.json"
+      ]
+    },
+    {
+      "caso": "cursor declarado:ETAPA-01.md",
+      "resultado": "CUMPLE",
+      "detalle": "E01-B-03"
+    },
+    {
+      "caso": "enlaces locales:ESTADO_GENERAL.md",
+      "resultado": "CUMPLE",
+      "detalle": []
+    },
+    {
+      "caso": "referencia a evidencia 01-C:ESTADO_GENERAL.md",
+      "resultado": "CUMPLE",
+      "detalle": [
+        "evidencias/01-C-espera-20261109T205701803Z.json",
+        "evidencias/01-C-historial-2026-11-09T21-00-56-325Z/resultados.json",
+        "evidencias/01-C-regresion-identity-20261109.json",
+        "evidencias/01-chrome-admin-failures-20261109T211121-168Z/observaciones.json",
+        "evidencias/01-chrome-b02-20261109T205838-198Z/observaciones.json",
+        "evidencias/01-retencion-20261109T210100073850Z.json"
+      ]
+    },
+    {
+      "caso": "cursor declarado:ESTADO_GENERAL.md",
+      "resultado": "CUMPLE",
+      "detalle": "E01-B-03"
+    },
+    {
+      "caso": "barrido de credenciales conocidas en texto",
+      "resultado": "CUMPLE",
+      "detalle": {
+        "archivos": 17,
+        "archivos_con_coincidencias": [],
+        "alcance": "Correos y claves literales de los cinco fixtures persistentes y llave Django de ETAPA-01. Excluye binarios y claves efímeras de las dos corridas HTTP."
+      }
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-56-38-235Z/01-ingreso.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-56-38-235Z/02-rechazo.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-56-38-235Z/03-atras.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-56-38-235Z/04-recarga.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-56-38-235Z/05-salto.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-56-38-235Z/06-errores-campos.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-57-15-663Z/01-ingreso.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-57-15-663Z/02-rechazo.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-57-15-663Z/03-atras.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-57-15-663Z/04-recarga.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-57-15-663Z/05-salto.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-57-15-663Z/06-errores-campos.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-57-15-663Z/07-admin.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T20-57-15-663Z/07-almacen.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T21-00-56-325Z/01-ingreso.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T21-00-56-325Z/02-rechazo.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T21-00-56-325Z/03-atras.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T21-00-56-325Z/04-recarga.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T21-00-56-325Z/05-salto.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T21-00-56-325Z/06-errores-campos.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T21-00-56-325Z/07-admin.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    },
+    {
+      "caso": "integridad de captura:01-C-historial-2026-11-09T21-00-56-325Z/07-almacen.png",
+      "resultado": "CUMPLE",
+      "detalle": null
+    }
+  ],
+  "comprobaciones_cumplidas": 38,
+  "total": 38,
+  "sha256": {
+    "informes": {
+      "ETAPA-01.md": "5c8982f8fb39b778287d342293942000dabff4f936704d615b7778fa4eeefd2b",
+      "ESTADO_GENERAL.md": "56094ad46dbba50ee348af07f14c17114910604ea8181fb447f9761a8045ab14"
+    },
+    "evidencias_enlazadas": {
+      "evidencias/01-C-espera-20261109T205701803Z.json": "3082317b63953fb09e0f97a217ee513fd14b3580e68a11ade2c76405bd716457",
+      "evidencias/01-C-historial-2026-11-09T20-56-38-235Z/resultados.json": "4b47dfc0dfe4512f04195e072ec1a2b0906c2d106ae624671b3befaba26d32c8",
+      "evidencias/01-C-historial-2026-11-09T20-57-15-663Z/resultados.json": "e73f3d5edec47bd4ed5a67e0ed3f18d102402a5268313f7458e6806f85bbe6af",
+      "evidencias/01-C-historial-2026-11-09T21-00-56-325Z/05-salto.png": "baa032f51f854f82f7753f8bdf74118de630f9d2b47e7cdbfafa0c77277fda6c",
+      "evidencias/01-C-historial-2026-11-09T21-00-56-325Z/06-errores-campos.png": "203e3e74611e45a7deef55390029552cd97c5512ab2ff70af6d323f2d0baecb9",
+      "evidencias/01-C-historial-2026-11-09T21-00-56-325Z/resultados.json": "111ce633cac711268d2ba8cbc5775ce2cd595d9eb6efce949e0d81b3d7992480",
+      "evidencias/01-C-regresion-identity-20261109.json": "9c717dc33fc98af77265a80796fb0bf9b84014e762f325e2e46c943dd0381994",
+      "evidencias/01-chrome-admin-failures-20261109T211121-168Z/observaciones.json": "d74535b18511a657eba9ed1fe77b878ccac99fcf5d4201cf9c3e771c325ff2f2",
+      "evidencias/01-chrome-admin-failures-20261109T211121-168Z/quinto-rechazo.png": "da5ac8bef582183b3b7b4b61d023a05914d001d6e9761193753dc893533e1b84",
+      "evidencias/01-chrome-b02-20261109T205610-697Z/observaciones.json": "b41236c7f8b5df2f31161f93eb0e5ec7fb1d5f840c071f7fe569dded0f489ac8",
+      "evidencias/01-chrome-b02-20261109T205838-198Z/admin-rechazo.png": "da5ac8bef582183b3b7b4b61d023a05914d001d6e9761193753dc893533e1b84",
+      "evidencias/01-chrome-b02-20261109T205838-198Z/admin-staff.png": "a98ace1d46607e23f8f8ad7262a98c92a8f76b69161b87a35569f2374f2eb917",
+      "evidencias/01-chrome-b02-20261109T205838-198Z/observaciones.json": "7cb94ae7d7d0a9cd7ee8159f09392c69dfcd5f8a4c99750213244053fa9021a0",
+      "evidencias/01-retencion-20261109T210100073850Z.json": "555ffb77f9a0f6f7086fd332f4343789ba9f82ef227e6cb447855bb61a26a51a"
+    }
+  }
+}

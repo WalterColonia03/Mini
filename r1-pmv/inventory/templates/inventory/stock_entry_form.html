@@ -1,0 +1,73 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Entrada de mercadería · Minimarket{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Reposición de inventario</p>
+    <h2>Registrar entrada de mercadería por lotes</h2>
+    <p class="lede">Ingresa nuevos lotes de compra o reposición para un producto que ya cuenta con existencias iniciales y actualiza automáticamente su costo promedio ponderado.</p>
+  </div>
+  <a class="button button-secondary" href="{% url 'stock-overview' %}">Ver inventario</a>
+</section>
+
+<form method="post" class="stack" novalidate data-testid="stock-entry-form">
+  {% csrf_token %}
+  {% for hidden in product_form.hidden_fields %}
+    {{ hidden }}
+    {% if hidden.errors %}<div class="alert alert-error" role="alert">{{ hidden.errors }}</div>{% endif %}
+  {% endfor %}
+  <section class="panel form-panel">
+    <div class="section-heading">
+      <div><span class="step">1</span><h3>Producto y proveedor</h3></div>
+    </div>
+    {% if product_form.non_field_errors %}
+      <div class="alert alert-error" role="alert">{{ product_form.non_field_errors }}</div>
+    {% endif %}
+    <div class="field{% if product_form.product.errors %} field-error{% endif %}">
+      <label for="{{ product_form.product.id_for_label }}">{{ product_form.product.label }}</label>
+      {{ product_form.product }}
+      {% if product_form.product.errors %}<div class="error-list" role="alert">{{ product_form.product.errors }}</div>{% endif %}
+      <p class="help">Si el producto es nuevo y aún no tiene su primera carga inicial, regístralo primero en <a href="{% url 'inventory-load' %}" class="text-link">Existencias iniciales</a>.</p>
+    </div>
+    <div class="field{% if product_form.supplier.errors %} field-error{% endif %}">
+      <label for="{{ product_form.supplier.id_for_label }}">{{ product_form.supplier.label }}</label>
+      {{ product_form.supplier }}
+      {% if product_form.supplier.errors %}<div class="error-list" role="alert">{{ product_form.supplier.errors }}</div>{% endif %}
+    </div>
+  </section>
+
+  <section class="panel form-panel">
+    <div class="section-heading">
+      <div><span class="step">2</span><h3>Nuevos lotes recibidos</h3></div>
+      <span class="muted">Completa una o más filas</span>
+    </div>
+    {{ lot_formset.management_form }}
+    {% if lot_formset.non_form_errors %}
+      <div class="alert alert-error" role="alert">{{ lot_formset.non_form_errors }}</div>
+    {% endif %}
+    <div class="lot-grid" role="group" aria-label="Nuevos lotes de mercadería">
+      {% for lot_form in lot_formset %}
+        <fieldset class="lot-card">
+          <legend>Lote {{ forloop.counter }}</legend>
+          {% for hidden in lot_form.hidden_fields %}{{ hidden }}{% endfor %}
+          {% for field in lot_form.visible_fields %}
+            <div class="field{% if field.errors %} field-error{% endif %}">
+              <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+              {{ field }}
+              {% if field.errors %}<div class="error-list" role="alert">{{ field.errors }}</div>{% endif %}
+            </div>
+          {% endfor %}
+        </fieldset>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="form-actions sticky-actions">
+    <button class="button button-primary" type="submit">Confirmar entrada</button>
+    <a class="button button-ghost" href="{% url 'dashboard' %}">Cancelar</a>
+  </div>
+</form>
+{% endblock %}
+

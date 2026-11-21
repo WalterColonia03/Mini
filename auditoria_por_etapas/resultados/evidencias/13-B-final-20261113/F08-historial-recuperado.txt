@@ -1,0 +1,188 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - paragraph: Catálogo
+    - link "Productos":
+      - /url: /productos/
+      - generic: ☰
+      - generic: Productos
+    - link "Registrar producto":
+      - /url: /productos/nuevo/
+      - generic: ▦
+      - generic: Registrar producto
+    - link "Categorías":
+      - /url: /productos/categorias/
+      - generic: ▮
+      - generic: Categorías
+    - paragraph: Inventario
+    - link "Proveedores":
+      - /url: /inventario/proveedores/
+      - generic: ✦
+      - generic: Proveedores
+    - link "Ver inventario y alertas":
+      - /url: /inventario/stock/
+      - generic: ☷
+      - generic: Ver inventario y alertas
+    - link "Vencimientos de lotes":
+      - /url: /productos/vencimientos/
+      - generic: ⏳
+      - generic: Vencimientos de lotes
+    - link "Ajuste físico":
+      - /url: /inventario/ajustes/nuevo/
+      - generic: ⏫
+      - generic: Ajuste físico
+    - paragraph: Personal
+    - link "Empleados":
+      - /url: /empleados/
+      - generic: ☺
+      - generic: Empleados
+    - paragraph: Caja y ventas
+    - link "Historial de turnos":
+      - /url: /caja/turnos/
+      - generic: ☰
+      - generic: Historial de turnos
+    - link "Historial de ventas":
+      - /url: /ventas/historial/
+      - generic: ☰
+      - generic: Historial de ventas
+  - generic: A
+  - strong: Audit13 Administrador admin
+  - generic: Administrador
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Historial de ventas" [level=1]
+  - generic: Audit13 Administrador admin
+  - generic: Administrador
+- main:
+  - paragraph: Caja y ventas
+  - heading "Historial de ventas" [level=2]
+  - paragraph: Consulta las ventas confirmadas de toda la tienda por correlativo, fecha, vendedor o turno.
+  - link "Volver al inicio":
+    - /url: /inicio/
+  - generic: Correlativo
+  - textbox "Correlativo":
+    - /placeholder: V-00000001
+  - generic: Fecha exacta
+  - textbox "Fecha exacta"
+  - generic: Desde
+  - textbox "Desde"
+  - generic: Hasta
+  - textbox "Hasta"
+  - generic: Vendedor
+  - combobox "Vendedor":
+    - option "Todos" [selected]
+    - option "Audit13 Vendedor seller"
+    - option "Audit13 Vendedor seller2"
+  - generic: Turno
+  - combobox "Turno":
+    - option "Todos" [selected]
+    - option "CAJA-01 · 13/11/2026 12:01 · Audit13 Vendedor seller2"
+    - option "CAJA-01 · 12/11/2026 12:01 · Audit13 Vendedor seller"
+  - button "Filtrar"
+  - link "Limpiar":
+    - /url: /ventas/historial/
+  - strong: "Total vendido (filtrado):"
+  - text: S/ 250,49 ·
+  - strong: "Descuentos otorgados:"
+  - text: S/ 8,39
+  - table:
+    - rowgroup:
+      - row "Correlativo Vendedor Fecha/Hora Caja Pago Descuento (S/) Total (S/) Efectivo recibido Vuelto":
+        - columnheader "Correlativo"
+        - columnheader "Vendedor"
+        - columnheader "Fecha/Hora"
+        - columnheader "Caja"
+        - columnheader "Pago"
+        - columnheader "Descuento (S/)"
+        - columnheader "Total (S/)"
+        - columnheader "Efectivo recibido"
+        - columnheader "Vuelto"
+    - rowgroup:
+      - row "V-90000005 Audit13 Vendedor seller 14/11/2026 00:00 CAJA-01 Efectivo 2,22 92,22 102,22 10,00":
+        - cell "V-90000005":
+          - link "V-90000005":
+            - /url: /ventas/constancia/0c36883a-17b5-4984-8454-c093586ad01c/
+        - cell "Audit13 Vendedor seller"
+        - cell "14/11/2026 00:00"
+        - cell "CAJA-01"
+        - cell "Efectivo"
+        - cell "2,22"
+        - cell "92,22"
+        - cell "102,22"
+        - cell "10,00"
+      - row "V-90000004 Audit13 Vendedor seller 13/11/2026 23:59 CAJA-01 Efectivo 3,03 30,03 40,03 10,00":
+        - cell "V-90000004":
+          - link "V-90000004":
+            - /url: /ventas/constancia/2ae90050-e9fe-4ff7-9200-8287bce19194/
+        - cell "Audit13 Vendedor seller"
+        - cell "13/11/2026 23:59"
+        - cell "CAJA-01"
+        - cell "Efectivo"
+        - cell "3,03"
+        - cell "30,03"
+        - cell "40,03"
+        - cell "10,00"
+      - row "V-00000001 Audit13 Vendedor seller 13/11/2026 12:03 CAJA-01 Efectivo 0,00 7,10 10,00 2,90":
+        - cell "V-00000001":
+          - link "V-00000001":
+            - /url: /ventas/constancia/a53c4b4d-7be9-499d-9833-a524c67b20e2/
+        - cell "Audit13 Vendedor seller"
+        - cell "13/11/2026 12:03"
+        - cell "CAJA-01"
+        - cell "Efectivo"
+        - cell "0,00"
+        - cell "7,10"
+        - cell "10,00"
+        - cell "2,90"
+      - row "V-90000003 Audit13 Vendedor seller 13/11/2026 10:00 CAJA-01 Efectivo 2,02 20,02 30,02 10,00":
+        - cell "V-90000003":
+          - link "V-90000003":
+            - /url: /ventas/constancia/eb55757a-b101-4445-98e8-67482b1098a2/
+        - cell "Audit13 Vendedor seller"
+        - cell "13/11/2026 10:00"
+        - cell "CAJA-01"
+        - cell "Efectivo"
+        - cell "2,02"
+        - cell "20,02"
+        - cell "30,02"
+        - cell "10,00"
+      - row "V-90000002 Audit13 Vendedor seller2 13/11/2026 00:00 CAJA-01 Efectivo 0,01 10,01 20,01 10,00":
+        - cell "V-90000002":
+          - link "V-90000002":
+            - /url: /ventas/constancia/f6fa0f43-d5ec-4a08-a43c-6ba402604382/
+        - cell "Audit13 Vendedor seller2"
+        - cell "13/11/2026 00:00"
+        - cell "CAJA-01"
+        - cell "Efectivo"
+        - cell "0,01"
+        - cell "10,01"
+        - cell "20,01"
+        - cell "10,00"
+      - row "V-90000001 Audit13 Vendedor seller2 12/11/2026 23:59 CAJA-01 Efectivo 1,11 91,11 101,11 10,00":
+        - cell "V-90000001":
+          - link "V-90000001":
+            - /url: /ventas/constancia/e8ecd28b-d095-46bb-93f3-d51ad6094d79/
+        - cell "Audit13 Vendedor seller2"
+        - cell "12/11/2026 23:59"
+        - cell "CAJA-01"
+        - cell "Efectivo"
+        - cell "1,11"
+        - cell "91,11"
+        - cell "101,11"
+        - cell "10,00"
+- contentinfo: Minimarket · Gestión de bodega

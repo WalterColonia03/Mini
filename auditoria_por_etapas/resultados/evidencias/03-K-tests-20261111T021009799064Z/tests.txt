@@ -1,0 +1,78 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 18 test(s).
+Found 18 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_anonymous_redirect_and_worker_denials_without_lookup_disclosure (catalog.test_audit03_barcode_check.BarcodeCheckTests.test_anonymous_redirect_and_worker_denials_without_lookup_disclosure) ... ok
+test_edit_excludes_only_existing_current_product (catalog.test_audit03_barcode_check.BarcodeCheckTests.test_edit_excludes_only_existing_current_product) ... ok
+test_invalid_or_unknown_current_product_rejected (catalog.test_audit03_barcode_check.BarcodeCheckTests.test_invalid_or_unknown_current_product_rejected) ... ok
+test_length_boundary_accepted (catalog.test_audit03_barcode_check.BarcodeCheckTests.test_length_boundary_accepted) ... ok
+test_missing_empty_invalid_and_oversized_barcode_rejected (catalog.test_audit03_barcode_check.BarcodeCheckTests.test_missing_empty_invalid_and_oversized_barcode_rejected) ... ok
+test_new_code_returns_only_duplicate_false_without_writing (catalog.test_audit03_barcode_check.BarcodeCheckTests.test_new_code_returns_only_duplicate_false_without_writing) ... ok
+test_normalized_duplicate_includes_inactive_product_and_category (catalog.test_audit03_barcode_check.BarcodeCheckTests.test_normalized_duplicate_includes_inactive_product_and_category) ... ok
+test_post_is_not_a_write_api (catalog.test_audit03_barcode_check.BarcodeCheckTests.test_post_is_not_a_write_api) ... ok
+test_collision_aborts_before_any_key_changes (catalog.test_audit03_categories.CategoryMigrationAudit03Tests.test_collision_aborts_before_any_key_changes) ... ok
+test_legacy_key_normalizes_without_renaming_or_relinking (catalog.test_audit03_categories.CategoryMigrationAudit03Tests.test_legacy_key_normalizes_without_renaming_or_relinking) ... ok
+test_above_maximum_rejected_in_services_and_database (catalog.test_audit03_policy.ProductPolicyTests.test_above_maximum_rejected_in_services_and_database) ... ok
+test_database_unique_key_and_partial_save_stay_consistent (catalog.test_audit03_policy.ProductPolicyTests.test_database_unique_key_and_partial_save_stay_consistent) ... ok
+test_default_and_integer_boundaries_in_both_services (catalog.test_audit03_policy.ProductPolicyTests.test_default_and_integer_boundaries_in_both_services) ... ok
+test_edit_name_collision_rolls_back_other_fields_and_self_is_allowed (catalog.test_audit03_policy.ProductPolicyTests.test_edit_name_collision_rolls_back_other_fields_and_self_is_allowed) ... ok
+test_migration_collision_preflight_changes_nothing (catalog.test_audit03_policy.ProductPolicyTests.test_migration_collision_preflight_changes_nothing) ... ok
+test_name_unique_including_inactive_case_spaces_and_unicode (catalog.test_audit03_policy.ProductPolicyTests.test_name_unique_including_inactive_case_spaces_and_unicode) ... ok
+test_prevalidated_forms_cannot_bypass_name_uniqueness (catalog.test_audit03_policy.ProductPolicyTests.test_prevalidated_forms_cannot_bypass_name_uniqueness) ... ok
+test_unrelated_integrity_errors_are_not_reported_as_duplicates (catalog.test_audit03_policy.ProductPolicyTests.test_unrelated_integrity_errors_are_not_reported_as_duplicates) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.322s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

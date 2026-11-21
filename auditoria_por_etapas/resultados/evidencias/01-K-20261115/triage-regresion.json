@@ -1,0 +1,120 @@
+{
+  "capturado_utc": "2026-11-15T17:30:20.943755+00:00",
+  "entorno": "audit01k_settings; SQLite :memory: de DiscoverRunner; ninguna mutación de producto o bases existentes",
+  "objetivo": "Determinar fragilidad frente a empates temporales en tres fallos externos a identity; no convertir la suite roja en aprobada",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "reproduccion": {
+    "tests": [
+      "cash.test_audit09_cash.Audit09CashRegressionTests.test_shift_history_isolation_styles_and_constant_query_count",
+      "inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_sale_fefo_keeps_two_receipt_origins_and_average_snapshot",
+      "sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback"
+    ],
+    "patch_timezone_now": "2026-11-15T17:30:18.989475+00:00",
+    "patch_cashshift_uuid_int": [
+      1,
+      3,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "patch_lot_uuid_int": "1000..1 descendente",
+    "patch_saledraftline_uuid_int": "1000..1 descendente",
+    "mecanismo": "unittest.mock.patch(django.utils.timezone.now, return_value=fixed); patch.object(Model._meta.get_field(id), _get_default, lambda next UUID); DiscoverRunner.run_tests(labels)",
+    "fallos_esperados": 3,
+    "fallos_observados": 3,
+    "log": "Found 3 test(s).\nCreating test database for alias 'default'...\r\nSystem check identified no issues (0 silenced).\nFFF\n======================================================================\nFAIL: test_shift_history_isolation_styles_and_constant_query_count (cash.test_audit09_cash.Audit09CashRegressionTests.test_shift_history_isolation_styles_and_constant_query_count)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\cash\\test_audit09_cash.py\", line 365, in test_shift_history_isolation_styles_and_constant_query_count\n    self.assertEqual(list(r_admin.context[\"shifts\"]), [s1_b, s2_a, s1_a])\nAssertionError: Lists differ: [<Cas[22 chars]edor Dos Largo A09 · CLOSED>, <CashShift: CAJA[76 chars]SED>] != [<Cas[22 chars]edor Uno A09 · OPEN>, <CashShift: CAJA-01 · Ve[72 chars]PEN>]\n\nFirst differing element 0:\n<CashShift: CAJA-01 · Vendedor Dos Largo A09 · CLOSED>\n<CashShift: CAJA-01 · Vendedor Uno A09 · OPEN>\n\n- [<CashShift: CAJA-01 · Vendedor Dos Largo A09 · CLOSED>,\n-  <CashShift: CAJA-01 · Vendedor Uno A09 · OPEN>,\n? ^\n\n+ [<CashShift: CAJA-01 · Vendedor Uno A09 · OPEN>,\n? ^\n\n+  <CashShift: CAJA-01 · Vendedor Dos Largo A09 · OPEN>,\n-  <CashShift: CAJA-01 · Vendedor Uno A09 · CLOSED>]\n?                                           -- ^ ^\n\n+  <CashShift: CAJA-01 · Vendedor Uno A09 · OPEN>]\n?                                            ^ ^\n\n\n======================================================================\nFAIL: test_sale_fefo_keeps_two_receipt_origins_and_average_snapshot (inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_sale_fefo_keeps_two_receipt_origins_and_average_snapshot)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\inventory\\test_audit14g_receipts.py\", line 230, in test_sale_fefo_keeps_two_receipt_origins_and_average_snapshot\n    self.assertEqual(assigned[two.lines.get().lot_id],2)\nAssertionError: 5 != 2\n\n======================================================================\nFAIL: test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\sales\\test_audit12_receipts_history.py\", line 649, in test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback\n    self.assertEqual(\nAssertionError: Lists differ: [(1, 'Arroz Stage12 1kg'), (2, 'Leche Stage12 40[34 chars]kg')] != [(1, 'Azucar Blanca Stage12 1kg'), (2, 'Leche St[34 chars]kg')]\n\nFirst differing element 0:\n(1, 'Arroz Stage12 1kg')\n(1, 'Azucar Blanca Stage12 1kg')\n\n- [(1, 'Arroz Stage12 1kg'),\n?         ^^^\n\n+ [(1, 'Azucar Blanca Stage12 1kg'),\n?        ++++ ^^^^^^^\n\n   (2, 'Leche Stage12 400g'),\n-  (3, 'Azucar Blanca Stage12 1kg')]\n?         -----------\n\n+  (3, 'Arroz Stage12 1kg')]\n?        +++\n\n\n----------------------------------------------------------------------\nRan 3 tests in 0.623s\n\nFAILED (failures=3)\nDestroying test database for alias 'default'...\r\n"
+  },
+  "reloj_host_muestra": {
+    "llamadas_datetime_now_utc": 10000,
+    "instantes_distintos": 4,
+    "interpretacion": "Mide resolución observada, no prueba cuál fue el instante de los registros de la corrida inicial"
+  },
+  "fuentes_comparadas": [
+    {
+      "path": "cash/models.py",
+      "sha256": "b9d18c553c5548ff2bb7b876a092bc5cd1f45bb171ebad6ee4bc3d4ee41e47dd",
+      "igual_que_build_antes_K": true
+    },
+    {
+      "path": "cash/views.py",
+      "sha256": "339a5b42a0914e33726a11bd7046ba23c422c3d11f9cd47644c7afcc6cb341db",
+      "igual_que_build_antes_K": true
+    },
+    {
+      "path": "cash/services.py",
+      "sha256": "5da50fc65b915389223a24267d938a9ff64f414ad5e0ed2eb72e50ef08b07643",
+      "igual_que_build_antes_K": true
+    },
+    {
+      "path": "cash/test_audit09_cash.py",
+      "sha256": "68ce680d124abb9bc76241fbf0c3e88827042fb750d976d5ff8ce6b51b57b0e2",
+      "igual_que_build_antes_K": true
+    },
+    {
+      "path": "inventory/models.py",
+      "sha256": "2b0a7e69985dd4fc36caa6148c1f37379c4fbd6ca020593a3026ec37286fe62b",
+      "igual_que_build_antes_K": true
+    },
+    {
+      "path": "inventory/services.py",
+      "sha256": "e869fe93ddc2137c0770a2442b096848a03ce2673a17b0b8ad8df9f32b0743d7",
+      "igual_que_build_antes_K": true
+    },
+    {
+      "path": "inventory/test_audit14g_receipts.py",
+      "sha256": "bfedf62a85f1288034e4b4b48c0ffddf1d99a825f483f17e923f30b68bd92eea",
+      "igual_que_build_antes_K": true
+    },
+    {
+      "path": "sales/models.py",
+      "sha256": "f0954574ef3ab4454fef943a06b0a6e6c3f699f2455e0892c4009fc5b3f5cd73",
+      "igual_que_build_antes_K": true
+    },
+    {
+      "path": "sales/services.py",
+      "sha256": "5d059c83c0588363e101561e04b4f37a395a80c066d1ab3aa78708683a1c7ccd",
+      "igual_que_build_antes_K": true
+    },
+    {
+      "path": "sales/test_audit12_receipts_history.py",
+      "sha256": "8368634c2f03d0bf152755a737858daabe91edcf17447ba36b17660ed12831f9",
+      "igual_que_build_antes_K": true
+    }
+  ],
+  "clasificacion": [
+    {
+      "test": "cash.test_audit09_cash.Audit09CashRegressionTests.test_shift_history_isolation_styles_and_constant_query_count",
+      "causa_reproducida": "Tiempos opened_at idénticos; orden contractual (-opened_at,-id) difiere de orden de creación asumido por la prueba",
+      "referencias": [
+        "cash/views.py:172",
+        "cash/models.py:46",
+        "08 DEC-12-ORDEN-LINEAS-RECIBO"
+      ],
+      "disposicion": "Prueba frágil: fijar instantes distintos en el fixture para caso cronológico; mantener prueba separada del desempate porID. No cambiar producto para forzar inserción."
+    },
+    {
+      "test": "inventory.test_audit14g_receipts.ReceiptIntegrationTests.test_sale_fefo_keeps_two_receipt_origins_and_average_snapshot",
+      "causa_reproducida": "Mismo vencimiento y received_at; FEFO desempata porID tal como RN19; la prueba supone una precedencia temporal no fijada",
+      "referencias": [
+        "sales/services.py:547",
+        "inventory/models.py:99",
+        "08 RN-19 / HU-INV-01a CA05"
+      ],
+      "disposicion": "Prueba frágil: controlar timezone.now al crear entradas (sin editar received_at inmutable luego); incluir caso específico de empate. No cambiar RN19."
+    },
+    {
+      "test": "sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback",
+      "causa_reproducida": "SaleDraftLine ordena(created_at,id); bajo empate puede diferir de inserción. Checkout copia ese orden actual del borrador a SaleLine.position, por lo cual no pierde el orden entre revisión y recibo, pero el supuesto orden de captura A,B,C puede perderse antes de revisar",
+      "referencias": [
+        "sales/models.py:78",
+        "sales/services.py:527",
+        "08 DEC-12-ORDEN-LINEAS-RECIBO/C-01"
+      ],
+      "disposicion": "Revisar en Etapas10/12 la exigencia de orden de captura vs orden actual de borrador. No afirmar ausencia de defecto ni cambiar contrato para hacer pasar prueba. Si se exige captura estricta con empate, requiere secuencia persistente de borrador y migración probada; si el caso es cronología distinta, fijar tiempos y probar copia del orden del borrador en empate."
+    }
+  ],
+  "limite": "Reproduce mecanismo suficiente, no conserva timestamps de la corrida original. Los diez archivos relevantes son idénticos a build-antes K; no hay dependencia del mensaje max_length de LoginForm en estos servicios. Estos tres fallos no aprueban sus módulos; permanecen visibles y fuera del alcance de cierre AUTH01/02."
+}

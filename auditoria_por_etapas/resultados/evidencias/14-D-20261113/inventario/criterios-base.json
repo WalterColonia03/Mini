@@ -1,0 +1,653 @@
+{
+  "historias": 23,
+  "criterios_base": 80,
+  "criterios_con_muestra": 50,
+  "estado_por_criterio": {
+    "INCUMPLE": 2,
+    "NO EJECUTADO": 29,
+    "PARCIAL": 49
+  },
+  "leyenda": "B remite al prefijo del JSON en navegador/recorrido3. S remite al ID de servidor/variantes-despues.json. Un campo extraído no prueba su comportamiento.",
+  "criterios": [
+    {
+      "criterio": "HU-AUTH-01/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-AUTH-01-CA-01",
+      "texto": "Dado que tengo una cuenta activa con uno de los roles exclusivos `ADMIN`, `ALMACENERO` o `VENDEDOR`, cuando ingreso mi correo y contraseña correctos, entonces el sistema crea mi sesión y me conduce a las opciones autorizadas para ese único rol (RN-29).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B01/02/03",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-AUTH-01/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-AUTH-01-CA-02",
+      "texto": "Dado que ingreso una contraseña incorrecta o un correo no registrado, cuando el sistema lo valida, entonces muestra el mensaje general «Correo o contraseña incorrectos» sin indicar cuál de los dos datos falló.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-AUTH-01/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-AUTH-01-CA-03",
+      "texto": "Dado que mi cuenta de empleado está inactiva, cuando ingreso credenciales correctas, entonces el sistema rechaza el acceso con el mismo mensaje general «Correo o contraseña incorrectos» sin dar información sobre el estado de la cuenta.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-AUTH-01/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-AUTH-01-CA-04",
+      "texto": "Dado que inicié sesión, cuando intento abrir por URL o solicitud directa una operación que RN-29 no permite a mi rol, entonces el sistema deniega el acceso, no expone los datos de esa operación y no modifica información.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B04/05b/11/12b/15/20b; S01..05",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-AUTH-03/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-AUTH-03-CA-01",
+      "texto": "Dado que tengo una sesión sin una venta en preparación, cuando elijo «Salir» y confirmo la advertencia de que un turno abierto seguirá ligado a mi usuario, entonces el sistema invalida la sesión y regresa a la pantalla de ingreso sin cerrar ese turno (RN-30).",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-AUTH-03/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-AUTH-03-CA-02",
+      "texto": "Dado que mi venta en preparación contiene al menos una línea, cuando elijo «Salir», entonces el sistema advierte que descartará la venta; si confirmo, elimina todas las líneas sin afectar caja ni existencias y cierra la sesión, y si cancelo, conserva tanto la sesión como la venta (RN-30).",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-AUTH-03/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-AUTH-03-CA-03",
+      "texto": "Dado que la salida fue confirmada, cuando se usa el botón Atrás o una URL anterior, entonces no se ve información del empleado ni se ejecutan operaciones sin autenticarse; si el mismo vendedor vuelve a ingresar, conserva su turno abierto pero no el borrador descartado, y otro vendedor no puede usar ni reemplazar ese turno.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-CAT-01/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAT-01-CA-01",
+      "texto": "Dado que accedo a la sección de categorías, cuando la lista carga, entonces veo el nombre de cada categoría registrada.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B06/21/22/24",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-CAT-01/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAT-01-CA-02",
+      "texto": "Dado que no hay ninguna categoría registrada, cuando accedo a la sección, entonces el sistema muestra un mensaje indicando que la lista está vacía.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-CAT-02/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAT-02-CA-01",
+      "texto": "Dado que ingreso un nombre de categoría no vacío, cuando confirmo el registro, entonces el sistema retira espacios sobrantes, guarda la categoría con estado activo y la deja disponible para usos posteriores en el catálogo.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B05/06",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-CAT-02/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAT-02-CA-02",
+      "texto": "Dado que ya existe una categoría registrada con el mismo nombre aunque cambien mayúsculas o espacios, cuando intento guardar, entonces el sistema muestra el mensaje «La categoría ya existe» y no crea un duplicado.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-CAT-02/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAT-02-CA-03",
+      "texto": "Dado que el nombre queda vacío al retirar espacios, cuando intento guardar, entonces el sistema indica «El nombre es obligatorio» y no registra la categoría.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROD-01/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-01-CA-01",
+      "texto": "Dado que accedo al catálogo de productos, cuando la lista carga, entonces veo por cada artículo: nombre, código de barras, categoría, precio de venta y existencias disponibles.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B08 y consulta posterior",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROD-01/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-01-CA-02",
+      "texto": "Dado que consulto el catálogo, cuando busco por nombre o código de barras, entonces el sistema filtra los resultados y muestra solo los artículos coincidentes.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROD-01/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-01-CA-03",
+      "texto": "Dado que un producto tiene existencias iguales o inferiores al mínimo configurado (RN-06), cuando aparece en la lista, entonces muestra una señal visual de alerta.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B29/33, muestra de stock 6/5",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROD-02/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-02-CA-01",
+      "texto": "Dado que ingreso con rol `ADMIN` y existe una categoría activa, cuando la elijo y registro nombre único ignorando mayúsculas y espacios redundantes, código de barras, unidad `UND`, precio con IGV incluido y cantidad mínima válidos, entonces el producto queda asociado a esa categoría, sea o no de enlatados, y con control de vencimiento obligatorio; una categoría inactiva o inexistente se rechaza sin crear producto (RN-03, RN-29; DOC03-01, 09/11/2026).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B07/08",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROD-02/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-02-CA-02",
+      "texto": "Dado que registro el precio de venta en soles, cuando el sistema lo valida, entonces exige un valor mayor que cero con máximo dos decimales y lo interpreta como precio final con IGV incluido (RN-27).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B07/08, precio3.55",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROD-02/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-02-CA-03",
+      "texto": "Dado que indico un código de barras que ya pertenece a otro producto, cuando intento guardar, entonces el sistema rechaza el registro por ser un código irrepetible.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROD-02/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-02-CA-04",
+      "texto": "Dado que indico la cantidad mínima de existencias, cuando guardo, entonces acepta un entero entre 0 y 999999 inclusive, tanto en formulario como en servidor; si no ingreso el campo al registrar, almacena 10. Un valor fuera del rango se rechaza sin guardar cambios, y el alcance vigente aplica alertas coherentes con RN-06 (PROP-03C-LIMITES ratificada por delegación el12/11/2026; la procedencia anterior se conserva en BASELINE).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B07/08, mínimo de fixture",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROD-02/CA-05",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-02-CA-05",
+      "texto": "Dado que todos los datos son válidos, cuando se confirma el registro, entonces el producto se crea con cero existencias y no resulta vendible hasta recibir lotes; si un `ALMACENERO` o `VENDEDOR` intenta registrar por acceso directo, el sistema deniega la operación y no crea ningún producto (RN-29).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B08 y testigo DB",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROD-03/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-03-CA-01",
+      "texto": "Dado que abro «Escanear código» en el alta de producto, cuando leo una etiqueta, entonces «Código leído» muestra automáticamente el valor temporal. Al pulsar «Usar código», se copia a la ficha para confirmarlo con «Registrar producto».",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROD-03/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-03-CA-02",
+      "texto": "Dado que el código leído ya existe en el catálogo, cuando se detecta la lectura, entonces el sistema advierte «El código de barras ya está registrado» e impide duplicarlo.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROD-05/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-05-CA-01",
+      "texto": "Dado que cambio el estado de un producto a «Inactivo», cuando un vendedor intenta buscarlo en mostrador, entonces el producto queda excluido de la venta.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "S08, producto inactivado con borrador",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROD-05/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-05-CA-02",
+      "texto": "Dado que el administrador reactiva un producto, cuando el vendedor con turno propio abierto lo busca en mostrador, entonces aparece con su precio de venta actual y la suma de unidades de lotes vigentes si la categoría está activa y esa suma es positiva. Solo cuentan los lotes que vencen después de hoy en Lima (RN-03). Con categoría desactivada o cero unidades vigentes, la ficha queda activa, el catálogo indica el motivo y el mostrador la excluye.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROD-05/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-05-CA-03",
+      "texto": "Dado que un producto se encuentra inactivo, cuando el administrador revisa el catálogo, entonces se muestra con la etiqueta «Inactivo» y conserva todo su historial.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROD-06/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-06-CA-01",
+      "texto": "Dado que accedo a la consulta de vencimientos, cuando la lista carga, entonces veo los productos ordenados de menor a mayor días restantes de vida útil, mostrando nombre, número de lote y fecha de caducidad.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROD-06/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-06-CA-02",
+      "texto": "Dado que un lote ya venció por tener fecha igual o anterior a hoy según la hora de Lima, cuando aparece en la lista, entonces figura marcado como «Vencido» y bloqueado para venta (RN-03).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "S13, pasa a vencer hoy, bloqueo del cobro",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROD-06/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROD-06-CA-03",
+      "texto": "Dado que consulto la lista, cuando filtro por número de días (por ejemplo próximos 7 días), entonces solo aparecen los lotes cuyo vencimiento se ubica dentro de ese plazo.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROV-01/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROV-01-CA-01",
+      "texto": "Dado que accedo a la sección de proveedores, cuando la lista carga, entonces veo el nombre comercial, RUC y estado (activo/inactivo) de cada proveedor.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B10/12",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROV-01/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROV-01-CA-02",
+      "texto": "Dado que busco por nombre o RUC, cuando el sistema filtra, entonces muestra únicamente los proveedores que coinciden.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROV-02/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROV-02-CA-01",
+      "texto": "Dado que completo el formulario con nombre, RUC y datos de contacto del proveedor, cuando guardo, entonces el proveedor queda registrado con estado Activo y disponible para pedidos.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B09/10/12, proveedor utilizado en carga directa",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-PROV-02/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROV-02-CA-02",
+      "texto": "Dado que ingreso un RUC que ya pertenece a otro proveedor registrado, cuando intento guardar, entonces el sistema muestra «El RUC ya está registrado» y no crea el duplicado.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROV-02/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROV-02-CA-03",
+      "texto": "Dado que omito el RUC o el nombre, cuando intento guardar, entonces el sistema indica los campos obligatorios faltantes y no registra el proveedor.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROV-04/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROV-04-CA-01",
+      "texto": "Dado un proveedor activo, cuando ADMIN revisa y confirma su desactivación, entonces deja de estar disponible para nuevas recepciones directas; un formulario antiguo que aún lo seleccione se rechaza sin ingresar stock. La historia conserva su identidad y datos conocidos. La elegibilidad de solicitudes SOL se aplicará cuando esa función futura sea seleccionada.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROV-04/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROV-04-CA-02",
+      "texto": "Dado un proveedor inactivo, cuando ADMIN revisa y confirma su reactivación, entonces vuelve a estar disponible para nuevas recepciones sin alterar sus registros históricos ni otros proveedores. Las solicitudes SOL siguen futuras.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-PROV-04/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-PROV-04-CA-03",
+      "texto": "Dado que un proveedor está inactivo, cuando consulto la lista general, entonces se visualiza claramente como «Inactivo» conservando su historial previo.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-INV-01a/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-01a-CA-01",
+      "texto": "Dado que ingreso con rol `ALMACENERO` y el producto aún no tiene una carga inicial confirmada, cuando envío uno o varios lotes válidos, entonces el sistema confirma una única carga directa sin pedido previo; cualquier otro rol recibe una denegación y no altera existencias (RN-01, RN-29).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B14/05b; S01",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-01a/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-01a-CA-02",
+      "texto": "Dado que completo cada lote, cuando el sistema lo valida, entonces exige número comercial no vacío normalizado y no repetido dentro de la carga, cantidad entera positiva, costo unitario positivo con máximo cuatro decimales y vencimiento posterior a hoy en America/Lima (RN-03); límites y normalización siguen el contrato DEC-05-LOTE-ESPACIOS de este documento. Las recepciones posteriores conservan identidad propia conforme a DOC-03AI-01.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B12/13/14",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-01a/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-01a-CA-03",
+      "texto": "Dado que algún lote es inválido o repetido, o que ya existe o compite simultáneamente otra carga inicial para el producto, cuando intento confirmar, entonces el sistema rechaza toda la operación y no guarda lotes, existencias ni costo; como máximo una carga concurrente puede resultar confirmada (RN-01).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B13, fecha inválida sin mutación",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-01a/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-01a-CA-04",
+      "texto": "Dado que todos los lotes son válidos, cuando se confirma la carga, entonces las existencias del producto equivalen a la suma de sus cantidades, el producto queda vendible y su costo promedio inicial se obtiene ponderando cantidad por costo, almacenado con cuatro decimales `HALF_UP` y mostrado con dos (RN-14).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B14/18",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-01a/CA-05",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-01a-CA-05",
+      "texto": "Dado que los lotes quedaron guardados, cuando se revisan sus datos, entonces cada uno conserva su número comercial, cantidad disponible, costo, vencimiento, instante de ingreso inmutable y un identificador interno; la futura salida FEFO ordena por vencimiento, instante de ingreso e identificador interno (RN-19).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B14/27 y testigo DB",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-02/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-02-CA-01",
+      "texto": "Dado que selecciono un lote de producto, cuando indico la cantidad a retirar y la causa (Vencimiento, Daño o rotura, o Robo o faltante), entonces el sistema descuenta las unidades validando que no superen las existencias del lote (RN-04, RN-05).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B30/31/32; S11",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-02/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-02-CA-02",
+      "texto": "Dado que el lote ya alcanzó su fecha de vencimiento según la hora de Lima, cuando se intenta registrar una baja, entonces permite Vencimiento si la causa es caducidad o Robo o faltante con explicación si esa es la causa real, y rechaza Daño o rotura conforme a RN-05.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "S12/14/15/16; B30b",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-02/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-02-CA-03",
+      "texto": "Dado que la causa seleccionada es Daño o rotura o Robo o faltante, cuando se registra la baja, entonces el sistema exige obligatoriamente detallar lo ocurrido e identifica al empleado responsable (RN-20).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B32; S15/16",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-02/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-02-CA-04",
+      "texto": "Dado que se confirma la baja, cuando termina la operación, entonces el sistema genera una constancia interna de merma con número correlativo, producto, lote, fecha y motivo.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B32/34, correlativo sin constancia dedicada",
+      "limite": "Correlativo persistido, falta constancia dedicada RN-05/C-03."
+    },
+    {
+      "criterio": "HU-INV-04/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-04-CA-01",
+      "texto": "Dado que selecciono un producto, cuando consulto sus movimientos, entonces el sistema muestra en orden cronológico todas las entradas, salidas y saldo resultante con fecha, tipo de operación, cantidad y lote.",
+      "clasificacion": "INCUMPLE",
+      "evidencia_14D": "B34",
+      "limite": "Sin saldo resultante por fila ni lote de salida de la venta."
+    },
+    {
+      "criterio": "HU-INV-04/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-04-CA-02",
+      "texto": "Dado que un movimiento nació de una recepción directa, cuando abro el detalle, entonces muestra su referencia propia, responsable y proveedor o ausencia declarada; si en el futuro nació de HU-SOL-05a, mostrará además la solicitud aprobada sin inventar esa relación para entradas actuales.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B34, solo carga inicial",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-04/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-04-CA-03",
+      "texto": "Dado que una entrada provino de carga inicial o ajuste, cuando abro el detalle, entonces se etiqueta como carga directa o ajuste con su motivo y responsable.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B34, etiqueta carga inicial",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-INV-04/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-INV-04-CA-04",
+      "texto": "Dado que aplico filtros por fechas o tipo de movimiento, cuando ejecuto la búsqueda, entonces se visualizan solo las operaciones coincidentes.",
+      "clasificacion": "INCUMPLE",
+      "evidencia_14D": "",
+      "limite": "Vista product_movements sin filtros por fechas/tipo."
+    },
+    {
+      "criterio": "HU-CAJA-01/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-01-CA-01",
+      "texto": "Dado que ingreso con rol `VENDEDOR` y no existe un turno abierto, cuando declaro un monto inicial válido en soles, igual o mayor que cero y con máximo dos decimales, entonces el sistema abre un turno ligado a mi usuario y habilita la preparación de ventas (RN-10, RN-29).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B16/17",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-CAJA-01/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-01-CA-02",
+      "texto": "Dado que ingreso un monto negativo, no numérico o con más de dos decimales, cuando intento confirmar, entonces el sistema explica la validación, no abre el turno y no registra movimiento de efectivo.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-CAJA-01/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-01-CA-03",
+      "texto": "Dado que ya existe un turno abierto o dos vendedores intentan abrirlo simultáneamente, cuando el sistema procesa las solicitudes, entonces exactamente una apertura como máximo queda confirmada y las demás se rechazan sin crear turnos paralelos (RN-10).",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-CAJA-01/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-01-CA-04",
+      "texto": "Dado que la apertura se confirmó, cuando consulto el turno, entonces conserva vendedor responsable, caja única, dinero inicial e instante inequívoco mostrado con fecha y hora de Lima; un rol no autorizado no puede abrirlo por acceso directo (RN-29).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B17/04/12b; S02",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-02-CA-01",
+      "texto": "Dado que ingreso como el `VENDEDOR` responsable del turno, cuando declaro el efectivo contado, entonces el sistema exige un valor numérico igual o mayor que cero con máximo dos decimales; ante un valor inválido o un rol distinto no cierra ni modifica el turno (RN-10, RN-29).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B37/38",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-02-CA-02",
+      "texto": "Dado que el monto contado es válido, cuando se prepara el resumen, entonces calcula `esperado = inicial + ingresos confirmados de efectivo - salidas confirmadas de efectivo` y `diferencia = contado - esperado`, mostrando cuadre exacto, sobrante o faltante; en el alcance vigente los ingresos posteriores a la apertura son los totales de ventas en efectivo confirmadas (RN-10).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B38, cuadre exacto114.20",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-02-CA-03",
+      "texto": "Dado que confirmo un cierre válido, cuando se guarda, entonces registra vendedor, caja, importes e instante de cierre mostrado en Lima y deja el turno cerrado de forma irreversible; un segundo intento de cierre se rechaza sin alterar el acta original (RN-10).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B38/39; S18",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-02-CA-04",
+      "texto": "Dado que existe una venta en preparación con al menos una línea, cuando intento cerrar, entonces el sistema bloquea el cierre hasta cobrarla, quitar su última línea o descartarla; si un cobro y el cierre compiten, solo uno se confirma primero y la venta queda incluida en el esperado o es rechazada por turno cerrado, nunca confirmada fuera del cuadre (RN-10, RN-30).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "S07",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-05",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-02-CA-05",
+      "texto": "Dado que el turno quedó cerrado, cuando se intenta vender con él, entonces el sistema rechaza la operación y permite que después se abra otro turno con nuevo dinero inicial, sin coexistencia de dos turnos abiertos (RN-10).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B40",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-CAJA-05/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-05-CA-01",
+      "texto": "Dado que accedo al historial de turnos autorizado (ADMIN global, VENDEDOR solo propios), cuando la lista carga, entonces veo por cada turno: vendedor, fechas y horas de apertura y cierre, dinero inicial, total cobrado, dinero declarado y diferencia.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-CAJA-05/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-CAJA-05-CA-02",
+      "texto": "Dado que aplico rango de fechas y, solo como ADMIN, filtro por vendedor, cuando consulto, entonces muestra turnos correspondientes sin ampliar el conjunto autorizado ni permitir acceso directo a un turno ajeno.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01b-CA-01",
+      "texto": "Dado que ingreso con rol `VENDEDOR`, cuando inicio la preparación y agrego la primera línea válida, entonces el sistema exige un turno abierto ligado a mi propio usuario y crea la venta en preparación; cualquier otro rol o vendedor sin ese turno recibe una denegación (RN-10, RN-29, RN-30).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B17/19/40",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01b-CA-02",
+      "texto": "Dado que preparo la venta, cuando busco un producto activo de cualquier categoría activa del alcanceUND/vencimiento, por nombre o digitando su código de barras, entonces puedo seleccionarlo si posee existencias vendibles, sin requerir lector físico para esta consultaPOS; el lector del altaPROD03 tiene su propio contrato.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B18/19",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01b-CA-03",
+      "texto": "Dado que agrego o actualizo un producto, cuando indico la cantidad, entonces exige un entero mayor que cero, agrupa el mismo producto en una sola línea y rechaza un total superior a sus existencias vendibles.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B19, cantidad4",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01b-CA-04",
+      "texto": "Dado que un lote vence hoy o ya venció según la fecha de `America/Lima`, cuando el sistema calcula las existencias vendibles, entonces excluye todas sus unidades y nunca las ofrece para completar la cantidad solicitada (RN-03).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "S13",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-05",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01b-CA-05",
+      "texto": "Dado que la lista contiene líneas, cuando reviso la venta, entonces se considera una venta en preparación que aún no reserva ni descuenta stock ni mueve efectivo; muestra precio unitario, cantidad, importe por línea, total y el desglose `base = HALF_UP(total / 1.18, 2)` e `IGV = total - base`. Si quito la última línea, el borrador se descarta y deja de bloquear el cierre; al descartarlo, caja y existencias quedan intactas (RN-27, RN-30).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B19/20 y testigo BD",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01c-CA-01",
+      "texto": "Dado que una venta en preparación tiene líneas y el efectivo ingresado es no numérico, tiene más de dos decimales o resulta menor que el total, cuando intento cobrar, entonces el sistema rechaza la operación, informa el faltante cuando corresponda y no crea venta, correlativo o movimiento ni modifica existencias (RN-30).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B25; S06/08/09/13",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01c-CA-02",
+      "texto": "Dado que ingreso un efectivo válido igual o mayor al total, cuando confirmo, entonces el sistema calcula `vuelto = efectivo recibido - total` con dos decimales y aumenta el efectivo esperado solo por el total vendido, no por el efectivo recibido antes del vuelto (RN-10, RN-27).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B26/27/38",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01c-CA-03",
+      "texto": "Dado que mi turno sigue abierto y existe stock suficiente al confirmar, cuando se descuentan unidades, entonces el sistema revalida las condiciones y aplica FEFO por vencimiento, instante de ingreso e identificador interno, continúa por los lotes vigentes necesarios y nunca deja existencias negativas (RN-03, RN-19, RN-29).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B27/29, FEFO3+1; S13",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01c-CA-04",
+      "texto": "Dado que el cobro se procesa, cuando la operación termina, entonces venta, detalles históricos, asignaciones de lotes, movimiento de efectivo, descuento de existencias y correlativo global `V-00000001` se confirman juntos; ante cualquier fallo no se confirma ninguna parte (RN-25).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B27, asignaciones lote ausentes",
+      "limite": "Falta persistencia de asignaciones de lotes DEC-11-MODELO."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-05",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01c-CA-05",
+      "texto": "Dado que se produce doble clic, reenvío, reintento o competencia por las últimas unidades, cuando el sistema procesa las solicitudes, entonces un mismo intento lógico genera como máximo una venta, un movimiento, un correlativo y un descuento, y solo cobran las operaciones para las que existe stock confirmado (RN-25).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "S17",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-06",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-01c-CA-06",
+      "texto": "Dado que la venta queda confirmada, cuando se guarda su fotografía histórica, entonces conserva nombre del producto, cantidad, precio con dos decimales, costo promedio con cuatro decimales, importes, efectivo y vuelto; cambios posteriores del catálogo o del costo no alteran esos valores (RN-28).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B27/28, snapshot producto/precio/costo",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-02a-CA-01",
+      "texto": "Dado que la venta fue confirmada con un correlativo global `V-00000001`, cuando se genera la constancia, entonces reutiliza exactamente ese número sin asignar otro y ofrece al vendedor verla en pantalla y abrir una vista preparada para la impresión del navegador (RN-26).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B27/28",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-02a-CA-02",
+      "texto": "Dado que reviso la constancia, cuando carga su contenido histórico, entonces muestra fecha y hora de Lima, vendedor, caja, nombre de cada producto, cantidad, precio e importe, base, IGV, total, efectivo y vuelto, pero nunca muestra el costo de compra o costo promedio (RN-26, RN-27).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B27/28/36",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-02a-CA-03",
+      "texto": "Dado que la constancia se visualiza o imprime, cuando se lee, entonces exhibe «CONTROL INTERNO — NO VÁLIDO COMO COMPROBANTE DE PAGO», sin logotipos ni leyendas de aprobación SUNAT y sin afirmar que ya se emitió o entregó una boleta/factura externa. El canal autorizado real se debe confirmar antes del piloto (RN-26).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B27/28/36",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-04",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-02a-CA-04",
+      "texto": "Dado que el vendedor usa «Última constancia» desde la pantalla de venta de su turno, cuando la vuelve a abrir, entonces recupera el mismo correlativo y los mismos datos históricos aunque el catálogo cambie; un rol no autorizado no puede consultarla mediante acceso directo (RN-26, RN-29).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B28/36, misma constancia sin cambio de catálogo",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-05a/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-05a-CA-01",
+      "texto": "Dado que tengo un turno de caja abierto, cuando consulto las ventas, entonces veo únicamente las operaciones confirmadas por mi usuario en el turno en curso (RN-07).",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-VEN-05a/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-05a-CA-02",
+      "texto": "Dado que reviso la lista de ventas del turno, cuando consulto los totales acumulados, entonces el total en efectivo coincide con los registros confirmados; los canales digitales no se presentan como disponibles hasta seleccionar e implementar HU-VEN-07.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-VEN-05b/CA-01",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-05b-CA-01",
+      "texto": "Dado que ingreso como administrador o dueño, cuando abro el historial de ventas, entonces visualizo las ventas confirmadas registradas por todos los empleados (RN-07).",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B35",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    },
+    {
+      "criterio": "HU-VEN-05b/CA-02",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-05b-CA-02",
+      "texto": "Dado que aplico filtros por rango de fechas, vendedor o turno, cuando consulto, entonces la pantalla muestra únicamente las operaciones que cumplen los criterios.",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia_14D": "",
+      "limite": "Sin nueva ejecución particular del CA en 14-D. Antecedentes enlazados en el inventario."
+    },
+    {
+      "criterio": "HU-VEN-05b/CA-03",
+      "fuente": "08_Historias_de_Usuario.md#HU-VEN-05b-CA-03",
+      "texto": "Dado que selecciono una venta de la lista, cuando abro su detalle completo, entonces veo productos, cantidades, precios, base imponible, IGV, total, medio de pago y constancia interna.",
+      "clasificacion": "PARCIAL",
+      "evidencia_14D": "B36",
+      "limite": "Muestra de integración. Las restantes condiciones y fronteras del criterio requieren sus casos."
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "pasada": 1,
+  "sublote": "14-F",
+  "source08_sha256": "8d4a7cbede73eac5b09524363e35d4780dc91d8e25ba6fa8f62de32a66c9984c",
+  "criterios": [
+    {
+      "criterio": "HU-INV-04/CA-01",
+      "texto": "Dado que selecciono un producto, cuando consulto sus movimientos, entonces el sistema muestra en orden cronológico todas las entradas, salidas y saldo resultante con fecha, tipo de operación, cantidad y lote.",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-INV-04/CA-02",
+      "texto": "Dado que un movimiento nació de una recepción directa, cuando abro el detalle, entonces muestra su referencia propia, responsable y proveedor o ausencia declarada; si en el futuro nació de HU-SOL-05a, mostrará además la solicitud aprobada sin inventar esa relación para entradas actuales.",
+      "grupo": "CA base",
+      "clasificacion": "NO EJECUTADO",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-INV-04/CA-03",
+      "texto": "Dado que una entrada provino de carga inicial o ajuste, cuando abro el detalle, entonces se etiqueta como carga directa o ajuste con su motivo y responsable.",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-INV-04/CA-04",
+      "texto": "Dado que aplico filtros por fechas o tipo de movimiento, cuando ejecuto la búsqueda, entonces se visualizan solo las operaciones coincidentes.",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-01",
+      "texto": "Dado que una venta en preparación tiene líneas y el efectivo ingresado es no numérico, tiene más de dos decimales o resulta menor que el total, cuando intento cobrar, entonces el sistema rechaza la operación, informa el faltante cuando corresponda y no crea venta, correlativo o movimiento ni modifica existencias (RN-30).",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-02",
+      "texto": "Dado que ingreso un efectivo válido igual o mayor al total, cuando confirmo, entonces el sistema calcula `vuelto = efectivo recibido - total` con dos decimales y aumenta el efectivo esperado solo por el total vendido, no por el efectivo recibido antes del vuelto (RN-10, RN-27).",
+      "grupo": "CA base",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-03",
+      "texto": "Dado que mi turno sigue abierto y existe stock suficiente al confirmar, cuando se descuentan unidades, entonces el sistema revalida las condiciones y aplica FEFO por vencimiento, instante de ingreso e identificador interno, continúa por los lotes vigentes necesarios y nunca deja existencias negativas (RN-03, RN-19, RN-29).",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-04",
+      "texto": "Dado que el cobro se procesa, cuando la operación termina, entonces venta, detalles históricos, asignaciones de lotes, movimiento de efectivo, descuento de existencias y correlativo global `V-00000001` se confirman juntos; ante cualquier fallo no se confirma ninguna parte (RN-25).",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-05",
+      "texto": "Dado que se produce doble clic, reenvío, reintento o competencia por las últimas unidades, cuando el sistema procesa las solicitudes, entonces un mismo intento lógico genera como máximo una venta, un movimiento, un correlativo y un descuento, y solo cobran las operaciones para las que existe stock confirmado (RN-25).",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-06",
+      "texto": "Dado que la venta queda confirmada, cuando se guarda su fotografía histórica, entonces conserva nombre del producto, cantidad, precio con dos decimales, costo promedio con cuatro decimales, importes, efectivo y vuelto; cambios posteriores del catálogo o del costo no alteran esos valores (RN-28).",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-01",
+      "texto": "Dado que la venta fue confirmada con un correlativo global `V-00000001`, cuando se genera la constancia, entonces reutiliza exactamente ese número sin asignar otro y ofrece al vendedor verla en pantalla y abrir una vista preparada para la impresión del navegador (RN-26).",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-02",
+      "texto": "Dado que reviso la constancia, cuando carga su contenido histórico, entonces muestra fecha y hora de Lima, vendedor, caja, nombre de cada producto, cantidad, precio e importe, base, IGV, total, efectivo y vuelto, pero nunca muestra el costo de compra o costo promedio (RN-26, RN-27).",
+      "grupo": "CA base",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-03",
+      "texto": "Dado que la constancia se visualiza o imprime, cuando se lee, entonces exhibe «CONTROL INTERNO — NO VÁLIDO COMO COMPROBANTE DE PAGO», sin logotipos ni leyendas de aprobación SUNAT y sin afirmar que ya se emitió o entregó una boleta/factura externa. El canal autorizado real se debe confirmar antes del piloto (RN-26).",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-04",
+      "texto": "Dado que el vendedor usa «Última constancia» desde la pantalla de venta de su turno, cuando la vuelve a abrir, entonces recupera el mismo correlativo y los mismos datos históricos aunque el catálogo cambie; un rol no autorizado no puede consultarla mediante acceso directo (RN-26, RN-29).",
+      "grupo": "CA base",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "DEC-11-MODELO-AUDITORIA-VENTAS/C-01",
+      "texto": "Dada venta de 5 unidades con lotes3+2 elegibles, cuando confirma, entonces persisten dos asignaciones3/2, un movimiento efectivo por total, snapshots, costo, correlativo y descuento stock, atómicamente; sumaasignada=5.",
+      "grupo": "Criterio complementario",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "DEC-11-MODELO-AUDITORIA-VENTAS/C-02",
+      "texto": "Dado fallo al insertar cualquiera de esos elementos, cuando se revierte, entonces todas las tablas, contador y stock quedan como antes. Doble POST devuelve la misma venta.",
+      "grupo": "Criterio complementario",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "DEC-11-MODELO-AUDITORIA-VENTAS/C-03",
+      "texto": "Dados cambios posteriores de nombre, código, vendedor o caja, cuando se consulta constancia, entonces refleja la fotografía original y no el dato maestro actual; no muestra costos.",
+      "grupo": "Criterio complementario",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "DEC-11-MODELO-AUDITORIA-VENTAS/C-04",
+      "texto": "Dado legado sin asignaciones/snapshot/costo, cuando se consulta historia o margen, entonces identifica dato no disponible y no lo atribuye a un lote por aplicar FEFO al stock actual. Un backfill solo usa evidencia inequívoca y guarda procedencia.",
+      "grupo": "Criterio complementario",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "DEC-08-KARDEX-COMPRAS/C-02",
+      "texto": "Dada venta multilote, entonces su salida se puede atribuir a las asignaciones persistidas. Un lote legado no asignado se identifica como desconocido; no presentar asociación inferida como comprobada.",
+      "grupo": "Dependencia",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    },
+    {
+      "criterio": "DEC-12-ORDEN-LINEAS-RECIBO/C-01",
+      "texto": "Dadas líneasA,B,C con UUID aleatorios, cuando se confirma y reabre constancia, entonces conservaA,B,C y snapshots; igualdad de instante en dos turnos siempre produce mismo orden.",
+      "grupo": "Criterio complementario",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-f",
+      "alcance": "Muestra 14-F; detalle individual y pendientes en informe. No cierre de HU."
+    }
+  ]
+}

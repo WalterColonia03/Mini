@@ -1,0 +1,33 @@
+{% extends "identity/base.html" %}
+{% block title %}Merma {{ writeoff.correlativo }} · Minimarket{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div><p class="eyebrow">Baja confirmada</p><h2>Constancia de merma {{ writeoff.correlativo }}</h2>
+    <p class="lede">Datos conservados de la baja de mercadería.</p></div>
+</section>
+<section class="panel form-panel" data-testid="writeoff-receipt">
+  {% if not writeoff.has_snapshot %}<p class="alert alert-warning" role="status">Registro anterior o incompleto: la fotografía original de producto, lote, origen o responsable no está disponible. No se reconstruye con los maestros actuales.</p>{% endif %}
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Referencia</dt><dd>{{ writeoff.correlativo }}</dd></div>
+    <div><dt>Fecha y hora de Lima</dt><dd>{{ writeoff.created_at|date:"d/m/Y H:i:s" }}</dd></div>
+    <div><dt>Responsable original</dt><dd>{{ writeoff.responsible_snapshot_name|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Producto original</dt><dd>{{ writeoff.product_snapshot_name|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Código original</dt><dd>{{ writeoff.product_snapshot_barcode|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Lote original</dt><dd>{{ writeoff.lot_snapshot_number|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Vencimiento original</dt><dd>{% if writeoff.lot_snapshot_expiration_date %}{{ writeoff.lot_snapshot_expiration_date|date:"d/m/Y" }}{% else %}No disponible{% endif %}</dd></div>
+    <div><dt>Origen registrado</dt><dd>{{ writeoff.origin_snapshot|default_if_none:"No disponible" }}</dd></div>
+    <div><dt>Cantidad retirada</dt><dd>{{ writeoff.quantity }} {{ writeoff.unit_snapshot|default_if_none:"unidades" }}</dd></div>
+    <div><dt>Motivo</dt><dd>{{ writeoff.get_reason_display }}</dd></div>
+    <div><dt>Explicación</dt><dd style="white-space:pre-wrap;overflow-wrap:anywhere">{{ writeoff.notes|default:"Sin explicación registrada" }}</dd></div>
+    <div><dt>Costo unitario de salida</dt><dd>{% if writeoff.unit_cost != None %}S/ {{ writeoff.unit_cost|floatformat:4 }}{% else %}No disponible{% endif %}</dd></div>
+  </dl>
+  <p class="help">Constancia interna de merma. No es un comprobante de pago.</p>
+  <div class="form-actions no-print">
+    <button class="button button-secondary" type="button" onclick="window.print()">Imprimir</button>
+    <a class="button button-primary" href="{% url 'stock-writeoff' %}">Registrar otra baja</a>
+    <a class="button button-secondary" href="{% url 'product-movements' writeoff.lot.product_id %}">Ver movimientos</a>
+    <a class="button button-secondary" href="{% url 'stock-overview' %}">Ver inventario</a>
+  </div>
+</section>
+<style>@media print { .flash-stack { display:none !important; } .form-panel { max-width:none; box-shadow:none; border:0; } }</style>
+{% endblock %}

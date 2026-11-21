@@ -1,0 +1,164 @@
+{
+  "catalog.Category": [
+    {
+      "id": "5e84d8f2-7607-4621-9c5e-910e00d40648",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    },
+    {
+      "id": "dfa3803a-d7d5-498e-a0ec-ca92abdb8205",
+      "name": "Alimentos",
+      "name_normalized": "alimentos",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "6d5e27e9-d0f7-475e-8b8b-3e9defb362df",
+      "name": "AUD03 Sin carga",
+      "barcode": "AUD03-EMPTY",
+      "category_id": "dfa3803a-d7d5-498e-a0ec-ca92abdb8205",
+      "sale_price": "8.50",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "db5e78d1-2791-4a0e-a96b-b88bd42c907e",
+      "name": "AUD03 T Bebida nueva",
+      "barcode": "AUD03-T-NUEVO",
+      "category_id": "5e84d8f2-7607-4621-9c5e-910e00d40648",
+      "sale_price": "8.50",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "5915c4a3-21a8-4d34-9651-639f9321b341",
+      "product_id": "db5e78d1-2791-4a0e-a96b-b88bd42c907e",
+      "available_quantity": 1,
+      "initial_quantity": 1
+    },
+    {
+      "id": "75010876-7c97-4e4f-810f-b73b92aa6c8c",
+      "product_id": "db5e78d1-2791-4a0e-a96b-b88bd42c907e",
+      "available_quantity": 17,
+      "initial_quantity": 20
+    },
+    {
+      "id": "d3175e9f-3c1b-4d0b-a4f4-98854586851e",
+      "product_id": "6d5e27e9-d0f7-475e-8b8b-3e9defb362df",
+      "available_quantity": 5,
+      "initial_quantity": 6
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "b3e85ba0-4236-4ca9-8224-e2b9029a5d8a",
+      "product_id": "6d5e27e9-d0f7-475e-8b8b-3e9defb362df"
+    },
+    {
+      "id": "c19108b8-41b1-4cac-9cfe-8f035f117929",
+      "product_id": "db5e78d1-2791-4a0e-a96b-b88bd42c907e"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "fbee98a7-0bbe-4220-bd8e-3865dd55b39d",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [
+    {
+      "id": "a7ea5bb6-ff78-4c8c-8d75-377a310955f9",
+      "total_amount": "25.50",
+      "cash_received": "50.00",
+      "change_given": "24.50"
+    },
+    {
+      "id": "c1dd30c6-c299-49d0-8321-39550cfa3544",
+      "total_amount": "8.50",
+      "cash_received": "10.00",
+      "change_given": "1.50"
+    }
+  ],
+  "sales.SaleLine": [
+    {
+      "id": "8040cf1d-d29c-4b1e-acc5-4562e221246e",
+      "product_id": "db5e78d1-2791-4a0e-a96b-b88bd42c907e",
+      "product_snapshot_name": "AUD03 Bebida de prueba",
+      "product_snapshot_barcode": "AUD03-BEBIDA",
+      "unit_price": "8.50",
+      "quantity": 1
+    },
+    {
+      "id": "854cf7d6-8685-45f8-9f3b-c7112359cc2a",
+      "product_id": "db5e78d1-2791-4a0e-a96b-b88bd42c907e",
+      "product_snapshot_name": "AUD03 T Bebida nueva",
+      "product_snapshot_barcode": "AUD03-T-NUEVO",
+      "unit_price": "8.50",
+      "quantity": 2
+    },
+    {
+      "id": "c5e70784-7837-48a8-8bb9-63d9bc719a6d",
+      "product_id": "6d5e27e9-d0f7-475e-8b8b-3e9defb362df",
+      "product_snapshot_name": "AUD03 Sin carga",
+      "product_snapshot_barcode": "AUD03-EMPTY",
+      "unit_price": "8.50",
+      "quantity": 1
+    }
+  ],
+  "sales.SaleDraft": [
+    {
+      "id": "13191153-91e7-47ec-836c-9c4d9b0eb4bc",
+      "status": "DISCARDED"
+    },
+    {
+      "id": "d61b4647-f178-4c0c-a357-338e97421814",
+      "status": "DISCARDED"
+    }
+  ],
+  "sales.SaleDraftLine": [
+    {
+      "id": "095c3ce1-6575-4739-ae33-9a69a8a04657",
+      "draft_id": "d61b4647-f178-4c0c-a357-338e97421814",
+      "product_id": "db5e78d1-2791-4a0e-a96b-b88bd42c907e",
+      "quantity": 1,
+      "unit_price": "8.50"
+    },
+    {
+      "id": "2c006855-efcd-4fd3-a414-f13760239253",
+      "draft_id": "13191153-91e7-47ec-836c-9c4d9b0eb4bc",
+      "product_id": "db5e78d1-2791-4a0e-a96b-b88bd42c907e",
+      "quantity": 2,
+      "unit_price": "8.50"
+    },
+    {
+      "id": "5d03abcb-1b2c-4b35-944a-23c523b8228a",
+      "draft_id": "13191153-91e7-47ec-836c-9c4d9b0eb4bc",
+      "product_id": "6d5e27e9-d0f7-475e-8b8b-3e9defb362df",
+      "quantity": 1,
+      "unit_price": "8.50"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "6d5e27e9-d0f7-475e-8b8b-3e9defb362df",
+      "barcode_normalized": "aud03-empty",
+      "search_name": "aud03 sin carga",
+      "average_cost": "2.0000"
+    },
+    {
+      "id": "db5e78d1-2791-4a0e-a96b-b88bd42c907e",
+      "barcode_normalized": "aud03-t-nuevo",
+      "search_name": "aud03 t bebida nueva",
+      "average_cost": "5.0000"
+    }
+  ]
+}

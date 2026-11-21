@@ -1,0 +1,1170 @@
+{
+  "django": "5.2.18",
+  "patrones_totales": 106,
+  "patrones_admin": 65,
+  "resolver_igual_al_corte_5nov": true,
+  "sql": 0,
+  "peticiones_servidas": 0,
+  "metodo": "Metadatos de clases con objeto y actor transitorios sin persistencia.",
+  "modelos": {
+    "auth.group": {
+      "registro": "django.contrib.auth.admin.GroupAdmin:28",
+      "columnas": [
+        "__str__"
+      ],
+      "filtros": [],
+      "busqueda": [
+        "name"
+      ],
+      "acciones_si_autorizado": [
+        "delete_selected"
+      ],
+      "alta": [
+        {
+          "nombre": "name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "permissions",
+          "tipo": "ModelMultipleChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": false
+        }
+      ],
+      "edicion": [
+        {
+          "nombre": "name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "permissions",
+          "tipo": "ModelMultipleChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": false
+        }
+      ],
+      "solo_lectura": [],
+      "formularios_en_linea": []
+    },
+    "cash.cashregister": {
+      "registro": "cash.admin.CashRegisterAdmin:6",
+      "columnas": [
+        "code",
+        "is_active",
+        "created_at"
+      ],
+      "filtros": [],
+      "busqueda": [],
+      "acciones_si_autorizado": [
+        "delete_selected"
+      ],
+      "alta": [
+        {
+          "nombre": "code",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "is_active",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        }
+      ],
+      "edicion": [
+        {
+          "nombre": "code",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "is_active",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        }
+      ],
+      "solo_lectura": [],
+      "formularios_en_linea": []
+    },
+    "cash.cashshift": {
+      "registro": "cash.admin.CashShiftAdmin:11",
+      "columnas": [
+        "cash_register",
+        "seller",
+        "opening_amount",
+        "status",
+        "opened_at"
+      ],
+      "filtros": [
+        "status",
+        "cash_register"
+      ],
+      "busqueda": [
+        "seller__email",
+        "seller__display_name"
+      ],
+      "acciones_si_autorizado": [
+        "delete_selected"
+      ],
+      "alta": [
+        {
+          "nombre": "cash_register",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "seller",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "opening_amount",
+          "tipo": "DecimalField",
+          "widget": "NumberInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "status",
+          "tipo": "TypedChoiceField",
+          "widget": "Select",
+          "obligatorio": true
+        }
+      ],
+      "edicion": [
+        {
+          "nombre": "cash_register",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "seller",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "opening_amount",
+          "tipo": "DecimalField",
+          "widget": "NumberInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "status",
+          "tipo": "TypedChoiceField",
+          "widget": "Select",
+          "obligatorio": true
+        }
+      ],
+      "solo_lectura": [
+        "opened_at"
+      ],
+      "formularios_en_linea": []
+    },
+    "catalog.category": {
+      "registro": "catalog.admin.CategoryAdmin:6",
+      "columnas": [
+        "name",
+        "is_active"
+      ],
+      "filtros": [],
+      "busqueda": [
+        "name",
+        "name_normalized"
+      ],
+      "acciones_si_autorizado": [
+        "delete_selected"
+      ],
+      "alta": [
+        {
+          "nombre": "name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "is_active",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        }
+      ],
+      "edicion": [
+        {
+          "nombre": "name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "is_active",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        }
+      ],
+      "solo_lectura": [],
+      "formularios_en_linea": []
+    },
+    "catalog.product": {
+      "registro": "catalog.admin.ProductAdmin:12",
+      "columnas": [
+        "name",
+        "barcode",
+        "category",
+        "sale_price",
+        "minimum_stock",
+        "is_active"
+      ],
+      "filtros": [
+        "category",
+        "is_active",
+        "controls_expiration"
+      ],
+      "busqueda": [
+        "name",
+        "barcode",
+        "barcode_normalized"
+      ],
+      "acciones_si_autorizado": [
+        "delete_selected"
+      ],
+      "alta": [
+        {
+          "nombre": "category",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "barcode",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "unit",
+          "tipo": "TypedChoiceField",
+          "widget": "Select",
+          "obligatorio": true
+        },
+        {
+          "nombre": "sale_price",
+          "tipo": "DecimalField",
+          "widget": "NumberInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "minimum_stock",
+          "tipo": "IntegerField",
+          "widget": "AdminIntegerFieldWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "is_active",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        }
+      ],
+      "edicion": [
+        {
+          "nombre": "category",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "barcode",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "unit",
+          "tipo": "TypedChoiceField",
+          "widget": "Select",
+          "obligatorio": true
+        },
+        {
+          "nombre": "sale_price",
+          "tipo": "DecimalField",
+          "widget": "NumberInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "minimum_stock",
+          "tipo": "IntegerField",
+          "widget": "AdminIntegerFieldWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "is_active",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        }
+      ],
+      "solo_lectura": [
+        "barcode_normalized",
+        "controls_expiration",
+        "average_cost",
+        "created_at",
+        "updated_at"
+      ],
+      "formularios_en_linea": []
+    },
+    "identity.account": {
+      "registro": "identity.admin.AccountAdmin:13",
+      "columnas": [
+        "email",
+        "display_name",
+        "role",
+        "is_active"
+      ],
+      "filtros": [
+        "role",
+        "is_active"
+      ],
+      "busqueda": [
+        "email",
+        "display_name"
+      ],
+      "acciones_si_autorizado": [
+        "delete_selected"
+      ],
+      "alta": [
+        {
+          "nombre": "email",
+          "tipo": "EmailField",
+          "widget": "AdminEmailInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "display_name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "role",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "password1",
+          "tipo": "CharField",
+          "widget": "PasswordInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "password2",
+          "tipo": "CharField",
+          "widget": "PasswordInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "usable_password",
+          "tipo": "ChoiceField",
+          "widget": "RadioSelect",
+          "obligatorio": false
+        }
+      ],
+      "edicion": [
+        {
+          "nombre": "email",
+          "tipo": "EmailField",
+          "widget": "AdminEmailInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "password",
+          "tipo": "ReadOnlyPasswordHashField",
+          "widget": "ReadOnlyPasswordHashWidget",
+          "obligatorio": false
+        },
+        {
+          "nombre": "display_name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "role",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "is_active",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        },
+        {
+          "nombre": "is_staff",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        },
+        {
+          "nombre": "is_superuser",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        },
+        {
+          "nombre": "groups",
+          "tipo": "ModelMultipleChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": false
+        },
+        {
+          "nombre": "user_permissions",
+          "tipo": "ModelMultipleChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": false
+        },
+        {
+          "nombre": "last_login",
+          "tipo": "SplitDateTimeField",
+          "widget": "AdminSplitDateTime",
+          "obligatorio": false
+        }
+      ],
+      "solo_lectura": [
+        "created_at",
+        "updated_at"
+      ],
+      "formularios_en_linea": []
+    },
+    "identity.role": {
+      "registro": "identity.admin.RoleAdmin:7",
+      "columnas": [
+        "code",
+        "name"
+      ],
+      "filtros": [],
+      "busqueda": [
+        "code",
+        "name"
+      ],
+      "acciones_si_autorizado": [
+        "delete_selected"
+      ],
+      "alta": [
+        {
+          "nombre": "code",
+          "tipo": "TypedChoiceField",
+          "widget": "Select",
+          "obligatorio": true
+        },
+        {
+          "nombre": "name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        }
+      ],
+      "edicion": [
+        {
+          "nombre": "code",
+          "tipo": "TypedChoiceField",
+          "widget": "Select",
+          "obligatorio": true
+        },
+        {
+          "nombre": "name",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        }
+      ],
+      "solo_lectura": [],
+      "formularios_en_linea": []
+    },
+    "inventory.initialinventoryload": {
+      "registro": "inventory.admin.InitialInventoryLoadAdmin:22",
+      "columnas": [
+        "product",
+        "responsible",
+        "confirmed_at"
+      ],
+      "filtros": [],
+      "busqueda": [],
+      "acciones_si_autorizado": [
+        "delete_selected"
+      ],
+      "alta": [],
+      "edicion": [],
+      "solo_lectura": [
+        "product",
+        "responsible",
+        "confirmed_at"
+      ],
+      "formularios_en_linea": [
+        {
+          "modelo": "inventory.lot",
+          "clase": "inventory.admin.LotInline:6",
+          "campos": [
+            {
+              "nombre": "initial_load",
+              "tipo": "ModelChoiceField",
+              "widget": "RelatedFieldWidgetWrapper",
+              "obligatorio": true
+            },
+            {
+              "nombre": "supplier",
+              "tipo": "ModelChoiceField",
+              "widget": "RelatedFieldWidgetWrapper",
+              "obligatorio": false
+            },
+            {
+              "nombre": "responsible",
+              "tipo": "ModelChoiceField",
+              "widget": "RelatedFieldWidgetWrapper",
+              "obligatorio": false
+            },
+            {
+              "nombre": "is_initial",
+              "tipo": "BooleanField",
+              "widget": "CheckboxInput",
+              "obligatorio": false
+            }
+          ],
+          "solo_lectura": [
+            "product",
+            "number",
+            "number_normalized",
+            "initial_quantity",
+            "available_quantity",
+            "unit_cost",
+            "expiration_date",
+            "received_at"
+          ],
+          "can_delete": false
+        }
+      ]
+    },
+    "inventory.lot": {
+      "registro": "inventory.admin.LotAdmin:29",
+      "columnas": [
+        "product",
+        "number_normalized",
+        "available_quantity",
+        "unit_cost",
+        "expiration_date"
+      ],
+      "filtros": [
+        "expiration_date"
+      ],
+      "busqueda": [
+        "product__name",
+        "number",
+        "number_normalized"
+      ],
+      "acciones_si_autorizado": [
+        "delete_selected"
+      ],
+      "alta": [
+        {
+          "nombre": "product",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "initial_load",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "supplier",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": false
+        },
+        {
+          "nombre": "responsible",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": false
+        },
+        {
+          "nombre": "is_initial",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        },
+        {
+          "nombre": "number",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "initial_quantity",
+          "tipo": "IntegerField",
+          "widget": "AdminIntegerFieldWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "available_quantity",
+          "tipo": "IntegerField",
+          "widget": "AdminIntegerFieldWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "unit_cost",
+          "tipo": "DecimalField",
+          "widget": "NumberInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "expiration_date",
+          "tipo": "DateField",
+          "widget": "AdminDateWidget",
+          "obligatorio": true
+        }
+      ],
+      "edicion": [
+        {
+          "nombre": "product",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "initial_load",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": true
+        },
+        {
+          "nombre": "supplier",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": false
+        },
+        {
+          "nombre": "responsible",
+          "tipo": "ModelChoiceField",
+          "widget": "RelatedFieldWidgetWrapper",
+          "obligatorio": false
+        },
+        {
+          "nombre": "is_initial",
+          "tipo": "BooleanField",
+          "widget": "CheckboxInput",
+          "obligatorio": false
+        },
+        {
+          "nombre": "number",
+          "tipo": "CharField",
+          "widget": "AdminTextInputWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "initial_quantity",
+          "tipo": "IntegerField",
+          "widget": "AdminIntegerFieldWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "available_quantity",
+          "tipo": "IntegerField",
+          "widget": "AdminIntegerFieldWidget",
+          "obligatorio": true
+        },
+        {
+          "nombre": "unit_cost",
+          "tipo": "DecimalField",
+          "widget": "NumberInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "expiration_date",
+          "tipo": "DateField",
+          "widget": "AdminDateWidget",
+          "obligatorio": true
+        }
+      ],
+      "solo_lectura": [],
+      "formularios_en_linea": []
+    }
+  },
+  "formularios_tecnicos": {
+    "AdminAuthenticationForm": {
+      "origen": "django.contrib.admin.forms.AdminAuthenticationForm:6",
+      "campos": [
+        {
+          "nombre": "username",
+          "tipo": "UsernameField",
+          "widget": "TextInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "password",
+          "tipo": "CharField",
+          "widget": "PasswordInput",
+          "obligatorio": true
+        }
+      ]
+    },
+    "PasswordChangeForm": {
+      "origen": "django.contrib.auth.forms.PasswordChangeForm:531",
+      "campos": [
+        {
+          "nombre": "new_password1",
+          "tipo": "CharField",
+          "widget": "PasswordInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "new_password2",
+          "tipo": "CharField",
+          "widget": "PasswordInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "old_password",
+          "tipo": "CharField",
+          "widget": "PasswordInput",
+          "obligatorio": true
+        }
+      ]
+    },
+    "AdminPasswordChangeForm": {
+      "origen": "django.contrib.auth.forms.AdminPasswordChangeForm:567",
+      "campos": [
+        {
+          "nombre": "password1",
+          "tipo": "CharField",
+          "widget": "PasswordInput",
+          "obligatorio": true
+        },
+        {
+          "nombre": "password2",
+          "tipo": "CharField",
+          "widget": "PasswordInput",
+          "obligatorio": true
+        }
+      ]
+    }
+  },
+  "rutas_admin": [
+    {
+      "ruta": "/admin/",
+      "nombre": "admin:index",
+      "callback": "django.contrib.admin.sites.index",
+      "funcion": "Inicio administrativo"
+    },
+    {
+      "ruta": "/admin/login/",
+      "nombre": "admin:login",
+      "callback": "django.contrib.admin.sites.login",
+      "funcion": "Formulario de acceso administrativo"
+    },
+    {
+      "ruta": "/admin/logout/",
+      "nombre": "admin:logout",
+      "callback": "django.contrib.admin.sites.logout",
+      "funcion": "Cerrar sesión técnica"
+    },
+    {
+      "ruta": "/admin/password_change/",
+      "nombre": "admin:password_change",
+      "callback": "django.contrib.admin.sites.password_change",
+      "funcion": "Cambio de clave propia"
+    },
+    {
+      "ruta": "/admin/password_change/done/",
+      "nombre": "admin:password_change_done",
+      "callback": "django.contrib.admin.sites.password_change_done",
+      "funcion": "Confirmación de cambio"
+    },
+    {
+      "ruta": "/admin/autocomplete/",
+      "nombre": "admin:autocomplete",
+      "callback": "django.contrib.admin.sites.autocomplete_view",
+      "funcion": "Respuesta JSON de autocompletado"
+    },
+    {
+      "ruta": "/admin/jsi18n/",
+      "nombre": "admin:jsi18n",
+      "callback": "django.contrib.admin.sites.i18n_javascript",
+      "funcion": "Recurso de localización JavaScript"
+    },
+    {
+      "ruta": "/admin/r/<path:content_type_id>/<path:object_id>/",
+      "nombre": "admin:view_on_site",
+      "callback": "django.contrib.contenttypes.views.shortcut",
+      "funcion": "Redirección a objeto"
+    },
+    {
+      "ruta": "/admin/auth/group/",
+      "nombre": "admin:auth_group_changelist",
+      "callback": "django.contrib.admin.options.changelist_view",
+      "funcion": "Listado, búsqueda, filtros y acciones según registro"
+    },
+    {
+      "ruta": "/admin/auth/group/add/",
+      "nombre": "admin:auth_group_add",
+      "callback": "django.contrib.admin.options.add_view",
+      "funcion": "Formulario de alta"
+    },
+    {
+      "ruta": "/admin/auth/group/<path:object_id>/history/",
+      "nombre": "admin:auth_group_history",
+      "callback": "django.contrib.admin.options.history_view",
+      "funcion": "Historial administrativo del objeto"
+    },
+    {
+      "ruta": "/admin/auth/group/<path:object_id>/delete/",
+      "nombre": "admin:auth_group_delete",
+      "callback": "django.contrib.admin.options.delete_view",
+      "funcion": "Confirmación de borrado"
+    },
+    {
+      "ruta": "/admin/auth/group/<path:object_id>/change/",
+      "nombre": "admin:auth_group_change",
+      "callback": "django.contrib.admin.options.change_view",
+      "funcion": "Ficha y formulario del objeto"
+    },
+    {
+      "ruta": "/admin/auth/group/<path:object_id>/",
+      "nombre": "admin:",
+      "callback": "django.views.generic.base.view",
+      "funcion": "Redirección heredada a ficha"
+    },
+    {
+      "ruta": "/admin/identity/role/",
+      "nombre": "admin:identity_role_changelist",
+      "callback": "django.contrib.admin.options.changelist_view",
+      "funcion": "Listado, búsqueda, filtros y acciones según registro"
+    },
+    {
+      "ruta": "/admin/identity/role/add/",
+      "nombre": "admin:identity_role_add",
+      "callback": "django.contrib.admin.options.add_view",
+      "funcion": "Formulario de alta"
+    },
+    {
+      "ruta": "/admin/identity/role/<path:object_id>/history/",
+      "nombre": "admin:identity_role_history",
+      "callback": "django.contrib.admin.options.history_view",
+      "funcion": "Historial administrativo del objeto"
+    },
+    {
+      "ruta": "/admin/identity/role/<path:object_id>/delete/",
+      "nombre": "admin:identity_role_delete",
+      "callback": "django.contrib.admin.options.delete_view",
+      "funcion": "Confirmación de borrado"
+    },
+    {
+      "ruta": "/admin/identity/role/<path:object_id>/change/",
+      "nombre": "admin:identity_role_change",
+      "callback": "django.contrib.admin.options.change_view",
+      "funcion": "Ficha y formulario del objeto"
+    },
+    {
+      "ruta": "/admin/identity/role/<path:object_id>/",
+      "nombre": "admin:",
+      "callback": "django.views.generic.base.view",
+      "funcion": "Redirección heredada a ficha"
+    },
+    {
+      "ruta": "/admin/identity/account/<id>/password/",
+      "nombre": "admin:auth_user_password_change",
+      "callback": "django.contrib.auth.admin.user_change_password",
+      "funcion": "Formulario de clave de cuenta"
+    },
+    {
+      "ruta": "/admin/identity/account/",
+      "nombre": "admin:identity_account_changelist",
+      "callback": "django.contrib.admin.options.changelist_view",
+      "funcion": "Listado, búsqueda, filtros y acciones según registro"
+    },
+    {
+      "ruta": "/admin/identity/account/add/",
+      "nombre": "admin:identity_account_add",
+      "callback": "django.contrib.auth.admin.add_view",
+      "funcion": "Formulario de alta"
+    },
+    {
+      "ruta": "/admin/identity/account/<path:object_id>/history/",
+      "nombre": "admin:identity_account_history",
+      "callback": "django.contrib.admin.options.history_view",
+      "funcion": "Historial administrativo del objeto"
+    },
+    {
+      "ruta": "/admin/identity/account/<path:object_id>/delete/",
+      "nombre": "admin:identity_account_delete",
+      "callback": "django.contrib.admin.options.delete_view",
+      "funcion": "Confirmación de borrado"
+    },
+    {
+      "ruta": "/admin/identity/account/<path:object_id>/change/",
+      "nombre": "admin:identity_account_change",
+      "callback": "django.contrib.admin.options.change_view",
+      "funcion": "Ficha y formulario del objeto"
+    },
+    {
+      "ruta": "/admin/identity/account/<path:object_id>/",
+      "nombre": "admin:",
+      "callback": "django.views.generic.base.view",
+      "funcion": "Redirección heredada a ficha"
+    },
+    {
+      "ruta": "/admin/catalog/category/",
+      "nombre": "admin:catalog_category_changelist",
+      "callback": "django.contrib.admin.options.changelist_view",
+      "funcion": "Listado, búsqueda, filtros y acciones según registro"
+    },
+    {
+      "ruta": "/admin/catalog/category/add/",
+      "nombre": "admin:catalog_category_add",
+      "callback": "django.contrib.admin.options.add_view",
+      "funcion": "Formulario de alta"
+    },
+    {
+      "ruta": "/admin/catalog/category/<path:object_id>/history/",
+      "nombre": "admin:catalog_category_history",
+      "callback": "django.contrib.admin.options.history_view",
+      "funcion": "Historial administrativo del objeto"
+    },
+    {
+      "ruta": "/admin/catalog/category/<path:object_id>/delete/",
+      "nombre": "admin:catalog_category_delete",
+      "callback": "django.contrib.admin.options.delete_view",
+      "funcion": "Confirmación de borrado"
+    },
+    {
+      "ruta": "/admin/catalog/category/<path:object_id>/change/",
+      "nombre": "admin:catalog_category_change",
+      "callback": "django.contrib.admin.options.change_view",
+      "funcion": "Ficha y formulario del objeto"
+    },
+    {
+      "ruta": "/admin/catalog/category/<path:object_id>/",
+      "nombre": "admin:",
+      "callback": "django.views.generic.base.view",
+      "funcion": "Redirección heredada a ficha"
+    },
+    {
+      "ruta": "/admin/catalog/product/",
+      "nombre": "admin:catalog_product_changelist",
+      "callback": "django.contrib.admin.options.changelist_view",
+      "funcion": "Listado, búsqueda, filtros y acciones según registro"
+    },
+    {
+      "ruta": "/admin/catalog/product/add/",
+      "nombre": "admin:catalog_product_add",
+      "callback": "django.contrib.admin.options.add_view",
+      "funcion": "Formulario de alta"
+    },
+    {
+      "ruta": "/admin/catalog/product/<path:object_id>/history/",
+      "nombre": "admin:catalog_product_history",
+      "callback": "django.contrib.admin.options.history_view",
+      "funcion": "Historial administrativo del objeto"
+    },
+    {
+      "ruta": "/admin/catalog/product/<path:object_id>/delete/",
+      "nombre": "admin:catalog_product_delete",
+      "callback": "django.contrib.admin.options.delete_view",
+      "funcion": "Confirmación de borrado"
+    },
+    {
+      "ruta": "/admin/catalog/product/<path:object_id>/change/",
+      "nombre": "admin:catalog_product_change",
+      "callback": "django.contrib.admin.options.change_view",
+      "funcion": "Ficha y formulario del objeto"
+    },
+    {
+      "ruta": "/admin/catalog/product/<path:object_id>/",
+      "nombre": "admin:",
+      "callback": "django.views.generic.base.view",
+      "funcion": "Redirección heredada a ficha"
+    },
+    {
+      "ruta": "/admin/inventory/initialinventoryload/",
+      "nombre": "admin:inventory_initialinventoryload_changelist",
+      "callback": "django.contrib.admin.options.changelist_view",
+      "funcion": "Listado, búsqueda, filtros y acciones según registro"
+    },
+    {
+      "ruta": "/admin/inventory/initialinventoryload/add/",
+      "nombre": "admin:inventory_initialinventoryload_add",
+      "callback": "django.contrib.admin.options.add_view",
+      "funcion": "Formulario de alta"
+    },
+    {
+      "ruta": "/admin/inventory/initialinventoryload/<path:object_id>/history/",
+      "nombre": "admin:inventory_initialinventoryload_history",
+      "callback": "django.contrib.admin.options.history_view",
+      "funcion": "Historial administrativo del objeto"
+    },
+    {
+      "ruta": "/admin/inventory/initialinventoryload/<path:object_id>/delete/",
+      "nombre": "admin:inventory_initialinventoryload_delete",
+      "callback": "django.contrib.admin.options.delete_view",
+      "funcion": "Confirmación de borrado"
+    },
+    {
+      "ruta": "/admin/inventory/initialinventoryload/<path:object_id>/change/",
+      "nombre": "admin:inventory_initialinventoryload_change",
+      "callback": "django.contrib.admin.options.change_view",
+      "funcion": "Ficha y formulario del objeto"
+    },
+    {
+      "ruta": "/admin/inventory/initialinventoryload/<path:object_id>/",
+      "nombre": "admin:",
+      "callback": "django.views.generic.base.view",
+      "funcion": "Redirección heredada a ficha"
+    },
+    {
+      "ruta": "/admin/inventory/lot/",
+      "nombre": "admin:inventory_lot_changelist",
+      "callback": "django.contrib.admin.options.changelist_view",
+      "funcion": "Listado, búsqueda, filtros y acciones según registro"
+    },
+    {
+      "ruta": "/admin/inventory/lot/add/",
+      "nombre": "admin:inventory_lot_add",
+      "callback": "django.contrib.admin.options.add_view",
+      "funcion": "Formulario de alta"
+    },
+    {
+      "ruta": "/admin/inventory/lot/<path:object_id>/history/",
+      "nombre": "admin:inventory_lot_history",
+      "callback": "django.contrib.admin.options.history_view",
+      "funcion": "Historial administrativo del objeto"
+    },
+    {
+      "ruta": "/admin/inventory/lot/<path:object_id>/delete/",
+      "nombre": "admin:inventory_lot_delete",
+      "callback": "django.contrib.admin.options.delete_view",
+      "funcion": "Confirmación de borrado"
+    },
+    {
+      "ruta": "/admin/inventory/lot/<path:object_id>/change/",
+      "nombre": "admin:inventory_lot_change",
+      "callback": "django.contrib.admin.options.change_view",
+      "funcion": "Ficha y formulario del objeto"
+    },
+    {
+      "ruta": "/admin/inventory/lot/<path:object_id>/",
+      "nombre": "admin:",
+      "callback": "django.views.generic.base.view",
+      "funcion": "Redirección heredada a ficha"
+    },
+    {
+      "ruta": "/admin/cash/cashregister/",
+      "nombre": "admin:cash_cashregister_changelist",
+      "callback": "django.contrib.admin.options.changelist_view",
+      "funcion": "Listado, búsqueda, filtros y acciones según registro"
+    },
+    {
+      "ruta": "/admin/cash/cashregister/add/",
+      "nombre": "admin:cash_cashregister_add",
+      "callback": "django.contrib.admin.options.add_view",
+      "funcion": "Formulario de alta"
+    },
+    {
+      "ruta": "/admin/cash/cashregister/<path:object_id>/history/",
+      "nombre": "admin:cash_cashregister_history",
+      "callback": "django.contrib.admin.options.history_view",
+      "funcion": "Historial administrativo del objeto"
+    },
+    {
+      "ruta": "/admin/cash/cashregister/<path:object_id>/delete/",
+      "nombre": "admin:cash_cashregister_delete",
+      "callback": "django.contrib.admin.options.delete_view",
+      "funcion": "Confirmación de borrado"
+    },
+    {
+      "ruta": "/admin/cash/cashregister/<path:object_id>/change/",
+      "nombre": "admin:cash_cashregister_change",
+      "callback": "django.contrib.admin.options.change_view",
+      "funcion": "Ficha y formulario del objeto"
+    },
+    {
+      "ruta": "/admin/cash/cashregister/<path:object_id>/",
+      "nombre": "admin:",
+      "callback": "django.views.generic.base.view",
+      "funcion": "Redirección heredada a ficha"
+    },
+    {
+      "ruta": "/admin/cash/cashshift/",
+      "nombre": "admin:cash_cashshift_changelist",
+      "callback": "django.contrib.admin.options.changelist_view",
+      "funcion": "Listado, búsqueda, filtros y acciones según registro"
+    },
+    {
+      "ruta": "/admin/cash/cashshift/add/",
+      "nombre": "admin:cash_cashshift_add",
+      "callback": "django.contrib.admin.options.add_view",
+      "funcion": "Formulario de alta"
+    },
+    {
+      "ruta": "/admin/cash/cashshift/<path:object_id>/history/",
+      "nombre": "admin:cash_cashshift_history",
+      "callback": "django.contrib.admin.options.history_view",
+      "funcion": "Historial administrativo del objeto"
+    },
+    {
+      "ruta": "/admin/cash/cashshift/<path:object_id>/delete/",
+      "nombre": "admin:cash_cashshift_delete",
+      "callback": "django.contrib.admin.options.delete_view",
+      "funcion": "Confirmación de borrado"
+    },
+    {
+      "ruta": "/admin/cash/cashshift/<path:object_id>/change/",
+      "nombre": "admin:cash_cashshift_change",
+      "callback": "django.contrib.admin.options.change_view",
+      "funcion": "Ficha y formulario del objeto"
+    },
+    {
+      "ruta": "/admin/cash/cashshift/<path:object_id>/",
+      "nombre": "admin:",
+      "callback": "django.views.generic.base.view",
+      "funcion": "Redirección heredada a ficha"
+    },
+    {
+      "ruta": "/admin/^(?P<app_label>auth|identity|catalog|inventory|cash)/$",
+      "nombre": "admin:app_list",
+      "callback": "django.contrib.admin.sites.app_index",
+      "funcion": "Índice por aplicación"
+    },
+    {
+      "ruta": "/admin/(?P<url>.*)$",
+      "nombre": "admin:",
+      "callback": "django.contrib.admin.sites.catch_all_view",
+      "funcion": "Resolución final / error"
+    }
+  ]
+}

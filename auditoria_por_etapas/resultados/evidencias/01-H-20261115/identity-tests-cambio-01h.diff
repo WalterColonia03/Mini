@@ -1,0 +1,29 @@
+--- identity/tests.py antes
++++ identity/tests.py despues
+@@ -1,5 +1,6 @@
+ from __future__ import annotations
+ 
++from django.conf import settings
+ from django.contrib.auth.hashers import identify_hasher
+ from django.test import Client, TestCase
+ from django.urls import reverse
+@@ -76,7 +77,7 @@
+         self.assertNotIn("_auth_user_id", csrf_client.session)
+ 
+         form_response = csrf_client.get(reverse("login"))
+-        csrf_cookie = form_response.cookies["csrftoken"]
++        csrf_cookie = form_response.cookies[settings.CSRF_COOKIE_NAME]
+         accepted = csrf_client.post(
+             reverse("login"),
+             {
+@@ -89,8 +90,8 @@
+         self.assertRedirects(accepted, reverse("dashboard"))
+         self.assertTrue(csrf_cookie["httponly"])
+         self.assertEqual(csrf_cookie["samesite"], "Lax")
+-        self.assertTrue(accepted.cookies["sessionid"]["httponly"])
+-        self.assertEqual(accepted.cookies["sessionid"]["samesite"], "Lax")
++        self.assertTrue(accepted.cookies[settings.SESSION_COOKIE_NAME]["httponly"])
++        self.assertEqual(accepted.cookies[settings.SESSION_COOKIE_NAME]["samesite"], "Lax")
+ 
+     def test_login_does_not_show_internal_access_copy(self) -> None:
+         response = self.client.get(reverse("login"))

@@ -1,0 +1,1250 @@
+{
+  "pasada": 1,
+  "sublote": "13-B-03",
+  "at_utc": "2026-11-13T16:46:49.272616+00:00",
+  "date_lima": "2026-11-13",
+  "run": "etapa13-20261113T164633Z-52a24915",
+  "empty": true,
+  "engine": "sqlite",
+  "layer": "Django Client; not browser",
+  "sha256_08": "eee0807a618a8995b07b524c63e3c1cefecd71aa8a74cc504da7147dbf508d4f",
+  "sha256_files": {
+    "identity/views.py": "ea5c0771612547a3c2885f9ecef49b6c896f6f135e826dbb9c06a8674db28764",
+    "identity/templates/identity/dashboard.html": "e227dc4c0c9c36da8ff12e374d7bbf862ea7f4d47d80eabc80e82d70701695aa",
+    "inventory/templates/inventory/stock_overview.html": "40ac781ff8b2a9ee353a27fa93c9773c45e24502a29bec95c4e694772c6217dc",
+    "sales/views.py": "337c1528e7a21fa589b162e441e75366e4548c59f463cd7d2bcb1a26d91c6dea",
+    "templates/500.html": "ccf3fdeb8b89e56b9e7b49db35f13cdd63024728c2d85b0ed1d54116e387664b"
+  },
+  "results": [
+    {
+      "id": "D11-nul",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "correlativo": 3
+      }
+    },
+    {
+      "id": "D11-date-format",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha": 3
+      }
+    },
+    {
+      "id": "D11-date-impossible",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha": 10
+      }
+    },
+    {
+      "id": "D11-date-overflow",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha": 10
+      }
+    },
+    {
+      "id": "D11-date-noniso",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha": 8
+      }
+    },
+    {
+      "id": "D11-from-format",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha_desde": 3
+      }
+    },
+    {
+      "id": "D11-from-impossible",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha_desde": 10
+      }
+    },
+    {
+      "id": "D11-to-format",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha_hasta": 3
+      }
+    },
+    {
+      "id": "D11-to-impossible",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha_hasta": 10
+      }
+    },
+    {
+      "id": "D11-to-overflow",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha_hasta": 10
+      }
+    },
+    {
+      "id": "D11-range",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha_desde": 10,
+        "fecha_hasta": 10
+      }
+    },
+    {
+      "id": "D11-seller",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "vendedor": 3
+      }
+    },
+    {
+      "id": "D11-shift",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "turno": 3
+      }
+    },
+    {
+      "id": "D11-date-long",
+      "expected": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "message": true,
+        "rows": 0
+      },
+      "status": "CUMPLE",
+      "param_lengths": {
+        "fecha": 5000
+      }
+    },
+    {
+      "id": "D10-today",
+      "expected": {
+        "status": 200,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D10-today-range",
+      "expected": {
+        "status": 200,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D10-empty",
+      "expected": {
+        "status": 200,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D10-long-correlative",
+      "expected": {
+        "status": 200,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D10-unknown-seller",
+      "expected": {
+        "status": 200,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D10-unknown-shift",
+      "expected": {
+        "status": 200,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D10-first-day",
+      "expected": {
+        "status": 200,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D10-last-supported-day",
+      "expected": {
+        "status": 200,
+        "rows": 0
+      },
+      "observed": {
+        "status": 200,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-default",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 0
+    },
+    {
+      "id": "D07-default",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-empty",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 0
+    },
+    {
+      "id": "D07-empty",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-min",
+      "expected": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 1
+    },
+    {
+      "id": "D07-min",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-max",
+      "expected": {
+        "status": 200,
+        "days": 3650,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 3650,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 4
+    },
+    {
+      "id": "D07-max",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-zero",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 1
+    },
+    {
+      "id": "D07-zero",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-negative",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 2
+    },
+    {
+      "id": "D07-negative",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-above",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 4
+    },
+    {
+      "id": "D07-above",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-decimal",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 3
+    },
+    {
+      "id": "D07-decimal",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-plus",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 2
+    },
+    {
+      "id": "D07-plus",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-unicode",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 1
+    },
+    {
+      "id": "D07-unicode",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-repeat",
+      "expected": {
+        "status": 200,
+        "days": 3650,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 3650,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 2
+    },
+    {
+      "id": "D07-repeat",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-leadingzeros",
+      "expected": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 7
+    },
+    {
+      "id": "D07-leadingzeros",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-negativezeros",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 6
+    },
+    {
+      "id": "D07-negativezeros",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-giant",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 5000
+    },
+    {
+      "id": "D07-giant",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-giant-zeros",
+      "expected": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 1,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 5001
+    },
+    {
+      "id": "D07-giant-zeros",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-spaces",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": false
+      },
+      "status": "CUMPLE",
+      "request_length": 2
+    },
+    {
+      "id": "D07-spaces",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "D06-null",
+      "expected": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "observed": {
+        "status": 200,
+        "days": 30,
+        "message": true
+      },
+      "status": "CUMPLE",
+      "request_length": 1
+    },
+    {
+      "id": "D07-null",
+      "expected": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "observed": {
+        "expired": 0,
+        "upcoming": 0,
+        "rows": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-seller-get/inventario/stock/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-seller-post/inventario/stock/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-seller-get/productos/vencimientos/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-seller-post/productos/vencimientos/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-seller-get/productos/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-seller-post/productos/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-warehouse-get/ventas/historial/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-warehouse-post/ventas/historial/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-warehouse-get/caja/turnos/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-warehouse-post/caja/turnos/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-warehouse-get/empleados/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "DENY-warehouse-post/empleados/",
+      "expected": {
+        "status": 403,
+        "no_data": true
+      },
+      "observed": {
+        "status": 403,
+        "no_data": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "ACCOUNT-inactive",
+      "expected": {
+        "status": 302,
+        "no_summary": true
+      },
+      "observed": {
+        "status": 302,
+        "no_summary": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "ACCOUNT-revoked-session",
+      "expected": false,
+      "observed": false,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "ACCOUNT-invalid-role",
+      "expected": {
+        "status": 403,
+        "no_summary": true
+      },
+      "observed": {
+        "status": 403,
+        "no_summary": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "ACCOUNT-anonymous",
+      "expected": 302,
+      "observed": 302,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "ROLE-admin",
+      "expected": 7,
+      "observed": 7,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "METHOD-admin-post",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "METHOD-admin-head",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "ROLE-warehouse",
+      "expected": 3,
+      "observed": 3,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "METHOD-warehouse-post",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "METHOD-warehouse-head",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "ROLE-seller",
+      "expected": 0,
+      "observed": 0,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "METHOD-seller-post",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "METHOD-seller-head",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "ROLE-seller2",
+      "expected": 0,
+      "observed": 0,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "METHOD-seller2-post",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "METHOD-seller2-head",
+      "expected": 405,
+      "observed": 405,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "FAILURE-/inicio/",
+      "expected": {
+        "status": 500,
+        "no_zero": true,
+        "no_detail": true,
+        "action": true
+      },
+      "observed": {
+        "status": 500,
+        "no_zero": true,
+        "no_detail": true,
+        "action": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "RECOVERY-/inicio/",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "FAILURE-/inventario/stock/",
+      "expected": {
+        "status": 500,
+        "no_zero": true,
+        "no_detail": true,
+        "action": true
+      },
+      "observed": {
+        "status": 500,
+        "no_zero": true,
+        "no_detail": true,
+        "action": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "RECOVERY-/inventario/stock/",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "FAILURE-/productos/vencimientos/",
+      "expected": {
+        "status": 500,
+        "no_zero": true,
+        "no_detail": true,
+        "action": true
+      },
+      "observed": {
+        "status": 500,
+        "no_zero": true,
+        "no_detail": true,
+        "action": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "RECOVERY-/productos/vencimientos/",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "FAILURE-/ventas/historial/",
+      "expected": {
+        "status": 500,
+        "no_zero": true,
+        "no_detail": true,
+        "action": true
+      },
+      "observed": {
+        "status": 500,
+        "no_zero": true,
+        "no_detail": true,
+        "action": true
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "RECOVERY-/ventas/historial/",
+      "expected": 200,
+      "observed": 200,
+      "status": "CUMPLE"
+    },
+    {
+      "id": "EMPTY-summary",
+      "expected": {
+        "sales_count": 0,
+        "sales_total": "0",
+        "discount_total": "0",
+        "open_shifts": 0,
+        "low_stock": 0,
+        "expiring": 0,
+        "expired": 0
+      },
+      "observed": {
+        "expiring": 0,
+        "expired": 0,
+        "low_stock": 0,
+        "sales_count": 0,
+        "sales_total": "0",
+        "discount_total": "0",
+        "open_shifts": 0
+      },
+      "status": "CUMPLE"
+    },
+    {
+      "id": "EMPTY-/inventario/stock/",
+      "expected": [
+        true,
+        true
+      ],
+      "observed": [
+        true,
+        true
+      ],
+      "status": "CUMPLE"
+    },
+    {
+      "id": "EMPTY-/productos/vencimientos/",
+      "expected": [
+        true
+      ],
+      "observed": [
+        true
+      ],
+      "status": "CUMPLE"
+    },
+    {
+      "id": "EMPTY-/ventas/historial/",
+      "expected": [
+        true
+      ],
+      "observed": [
+        true
+      ],
+      "status": "CUMPLE"
+    },
+    {
+      "id": "NO-BUSINESS-MUTATION",
+      "expected": "292f9eebd5b74a712eaad7a35a988c3f75848a647cfcbe235694f48f19a82613",
+      "observed": "292f9eebd5b74a712eaad7a35a988c3f75848a647cfcbe235694f48f19a82613",
+      "status": "CUMPLE"
+    }
+  ],
+  "passed": 97,
+  "total": 97
+}

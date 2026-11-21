@@ -1,0 +1,102 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Inicio · Minimarket{% endblock %}
+
+{% block content %}
+<section class="dashboard-hero">
+  <div>
+    <p class="eyebrow">{{ user.role.name }}</p>
+    <h2>Panel principal</h2>
+  </div>
+  <div class="date-card"><span>Sesión activa</span><strong>{{ user.role.name }}</strong></div>
+</section>
+
+{% if summary %}
+<section class="panel form-panel" aria-labelledby="summary-title" style="margin-bottom:1.5rem;">
+  <p class="eyebrow">{{ summary_date|date:"d/m/Y" }} · Lima</p>
+  <h2 id="summary-title">Resumen general</h2>
+  <p>{% if user.role.code == 'ADMIN' %}Las ventas y los descuentos corresponden al día indicado. Los turnos y las existencias muestran su estado actual.{% else %}Las existencias muestran su estado actual.{% endif %} Actualiza la página para volver a consultar.</p>
+  <dl class="summary-list">
+    {% if user.role.code == 'ADMIN' %}
+    <div><dt>Ventas de hoy</dt><dd>{{ summary.sales_count }}</dd></div>
+    <div><dt>Total vendido hoy</dt><dd>S/ {{ summary.sales_total|floatformat:2 }}</dd></div>
+    <div><dt>Descuentos otorgados hoy</dt><dd>S/ {{ summary.discount_total|floatformat:2 }}</dd></div>
+    <div><dt>Turnos de caja abiertos</dt><dd>{{ summary.open_shifts }}</dd></div>
+    {% endif %}
+    <div><dt>Productos con stock bajo</dt><dd>{{ summary.low_stock }}</dd></div>
+    <div><dt>Lotes por vencer (30 d&iacute;as)</dt><dd>{{ summary.expiring }}</dd></div>
+    <div><dt>Lotes vencidos con stock</dt><dd>{{ summary.expired }}</dd></div>
+  </dl>
+  <div class="form-actions">
+    <a class="button button-primary" href="{% url 'stock-overview' %}">Ver inventario y alertas</a>
+    <a class="button button-secondary" href="{% url 'product-expirations' %}">Vencimientos de lotes</a>
+    {% if user.role.code == 'ADMIN' %}
+      <a class="button button-secondary" href="{% url 'sales-history' %}">Historial de ventas (todas las fechas)</a>
+    {% endif %}
+  </div>
+  {% if user.role.code == 'ADMIN' %}<p class="muted small">El historial abre todas las fechas. Para comparar las ventas de este día, aplica Fecha exacta {{ summary_date|date:"d/m/Y" }} en el historial.</p>{% endif %}
+</section>
+{% endif %}
+
+<section aria-labelledby="operations-title">
+  <div class="section-title"><div><p class="eyebrow">Operaciones autorizadas</p><h2 id="operations-title">Operaciones de tu puesto</h2></div></div>
+  <div class="action-grid">
+    {% if user.role.code == 'ADMIN' %}
+      <a class="action-card action-card-live" href="{% url 'product-entry' %}" data-testid="product-entry-link">
+        <span class="card-icon card-icon-teal" aria-hidden="true">▦</span>
+        <h3>Registrar un producto</h3>
+        <p>Registra sus datos comerciales, precio y unidad de medida. El producto inicia con cero existencias.</p>
+        <span class="card-link">Registrar producto <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="action-card action-card-live" href="{% url 'product-list' %}" data-testid="product-list-link">
+        <span class="card-icon card-icon-teal" aria-hidden="true">&#9776;</span>
+        <h3>Ver cat&#225;logo de productos</h3>
+        <p>Consulta todos los productos registrados, su precio, disponibilidad y stock m&#237;nimo.</p>
+        <span class="card-link">Ver cat&#225;logo <span aria-hidden="true">&#8594;</span></span>
+      </a>
+      <a class="action-card action-card-live" href="{% url 'employee-list' %}" data-testid="employee-list-link">
+        <span class="card-icon card-icon-teal" aria-hidden="true">&#9786;</span>
+        <h3>Gestionar empleados</h3>
+        <p>Consulta, crea y edita los empleados del sistema. Tambi&#233;n puedes desactivar cuentas.</p>
+        <span class="card-link">Ver empleados <span aria-hidden="true">&#8594;</span></span>
+      </a>
+    {% endif %}
+
+    {% if user.role.code == 'ALMACENERO' %}
+      <a class="action-card action-card-live" href="{% url 'inventory-load' %}" data-testid="inventory-load-link">
+        <span class="card-icon card-icon-amber" aria-hidden="true">▤</span>
+        <h3>Registrar existencias iniciales</h3>
+        <p>Ingresa uno o varios lotes iniciales con sus cantidades, costos y fechas de vencimiento.</p>
+        <span class="card-link">Registrar existencias <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="action-card action-card-live" href="{% url 'stock-entry' %}" data-testid="stock-entry-link">
+        <span class="card-icon card-icon-teal" aria-hidden="true">&#10010;</span>
+        <h3>Registrar entrada de mercader&#237;a</h3>
+        <p>Registra lotes de mercader&#237;a recibida para productos que ya tienen carga inicial.</p>
+        <span class="card-link">Registrar entrada <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="action-card action-card-live" href="{% url 'stock-writeoff' %}" data-testid="stock-writeoff-link">
+        <span class="card-icon card-icon-violet" aria-hidden="true">&#9746;</span>
+        <h3>Registrar merma</h3>
+        <p>Descuenta unidades da&#241;adas, vencidas o rotas de un lote espec&#237;fico.</p>
+        <span class="card-link">Registrar merma <span aria-hidden="true">→</span></span>
+      </a>
+    {% endif %}
+
+    {% if user.role.code == 'VENDEDOR' %}
+      <a class="action-card action-card-live" href="{% url 'cash-open' %}" data-testid="cash-open-link">
+        <span class="card-icon card-icon-violet" aria-hidden="true">▣</span>
+        <h3>Abrir el turno de caja</h3>
+        <p>Declara el dinero en efectivo disponible al comenzar tu turno.</p>
+        <span class="card-link">Abrir turno <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="action-card action-card-live" href="{% url 'sales-draft' %}" data-testid="sales-draft-link">
+        <span class="card-icon card-icon-teal" aria-hidden="true">▦</span>
+        <h3>Preparar una venta</h3>
+        <p>Busca productos y revisa las existencias disponibles antes de cobrar.</p>
+        <span class="card-link">Preparar venta <span aria-hidden="true">→</span></span>
+      </a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

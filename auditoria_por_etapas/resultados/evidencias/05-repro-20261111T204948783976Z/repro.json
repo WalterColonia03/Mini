@@ -1,0 +1,121 @@
+{
+  "stamp_utc": "20261111T204948783976Z",
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "empty_post": {
+    "status": 200,
+    "has_alert": true,
+    "is_bound_bug_reproduced": false
+  },
+  "management_form_tamper": {
+    "missing_management_form": {
+      "status": 200,
+      "raised": null
+    },
+    "negative_total_forms": {
+      "status": 200,
+      "raised": null
+    },
+    "alpha_total_forms": {
+      "status": 200,
+      "raised": null
+    },
+    "huge_total_forms_5000": {
+      "status": 200,
+      "raised": null
+    }
+  },
+  "lot_form_checks": {
+    "nul_byte_form_valid": false,
+    "arabic_digits_form_valid": true,
+    "arabic_digits_cleaned": {
+      "number": "LOT-AR",
+      "quantity": 5,
+      "unit_cost": "2.50",
+      "expiration_date": "2026-11-12"
+    },
+    "comma_decimal_form_valid": false,
+    "comma_decimal_errors": {
+      "unit_cost": [
+        "Introduzca un número."
+      ]
+    },
+    "today_expiration_form_valid": true
+  },
+  "combo_lot0_qty0_lot1_today": {
+    "status": 200,
+    "reports_today_error_on_first_submit": false
+  },
+  "all_blank_lots": {
+    "status": 200,
+    "has_alert": true,
+    "contains_al_menos_1": false
+  },
+  "lot_normalize_spaces": {
+    "single_space": "LOT 1",
+    "double_space": "LOT  1",
+    "collapses_internal_spaces": false
+  },
+  "nonexistent_product_service": "DoesNotExist: Product matching query does not exist.",
+  "cache_control_stage05_routes": {
+    "inventory-load (WH)": {
+      "status": 200,
+      "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+      "has_no_store": true
+    },
+    "inventory-load-created (WH)": {
+      "status": 200,
+      "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+      "has_no_store": true
+    },
+    "inventory-load-created-alias (ADMIN)": {
+      "status": 200,
+      "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+      "has_no_store": true
+    },
+    "stock-overview (WH)": {
+      "status": 200,
+      "cache_control": "",
+      "has_no_store": false
+    },
+    "product-movements (WH)": {
+      "status": 200,
+      "cache_control": "",
+      "has_no_store": false
+    },
+    "product-list (WH)": {
+      "status": 200,
+      "cache_control": "",
+      "has_no_store": false
+    },
+    "product-expirations (WH)": {
+      "status": 200,
+      "cache_control": "",
+      "has_no_store": false
+    }
+  },
+  "rn06_minimum_equal_10_discrepancy": {
+    "product_list_shows_stock_bajo": true,
+    "stock_overview_low_stock_ctx_count": 1,
+    "stock_overview_shows_stock_bajo": true,
+    "stock_overview_shows_OK": true
+  },
+  "inactive_session_probe": {
+    "model_backend_get_user_returns": null,
+    "dashboard_status": 302,
+    "dashboard_location": "/?next=/inicio/",
+    "auth_user_id_still_in_session": true
+  },
+  "postgresql_repro": {
+    "nul_lot_number_http": {
+      "status": 200
+    },
+    "nul_product_http": {
+      "status": 200
+    },
+    "nul_lot_number_service": "DataError: PostgreSQL text fields cannot contain NUL (0x00) bytes",
+    "port_closed": true
+  },
+  "protected_unchanged": true
+}

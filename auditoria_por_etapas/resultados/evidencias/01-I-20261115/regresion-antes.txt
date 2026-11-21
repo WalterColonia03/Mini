@@ -1,0 +1,204 @@
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+Found 7 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+test_authenticated_staff_has_no_admin_portal_or_role_escalation (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_authenticated_staff_has_no_admin_portal_or_role_escalation) ... 
+  test_authenticated_staff_has_no_admin_portal_or_role_escalation (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_authenticated_staff_has_no_admin_portal_or_role_escalation) (superuser=False) ... FAIL
+  test_authenticated_staff_has_no_admin_portal_or_role_escalation (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_authenticated_staff_has_no_admin_portal_or_role_escalation) (superuser=True) ... FAIL
+test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) ... 
+  test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) (path='/admin') ... FAIL
+  test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) (path='/admin/') ... FAIL
+  test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) (path='/admin/login/') ... FAIL
+  test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) (path='/admin/identity/account/') ... FAIL
+test_expired_lock_still_checks_password_and_resets_on_success (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_expired_lock_still_checks_password_and_resets_on_success) ... ok
+test_fifth_failure_gets_full_fifteen_minutes_after_password_check (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_fifth_failure_gets_full_fifteen_minutes_after_password_check) ... ok
+test_known_identifier_already_locked_does_not_hash_password (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_known_identifier_already_locked_does_not_hash_password) ... FAIL
+test_locked_staff_and_superuser_cannot_bypass_login_via_admin (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_locked_staff_and_superuser_cannot_bypass_login_via_admin) ... 
+  test_locked_staff_and_superuser_cannot_bypass_login_via_admin (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_locked_staff_and_superuser_cannot_bypass_login_via_admin) (superuser=False) ... FAIL
+  test_locked_staff_and_superuser_cannot_bypass_login_via_admin (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_locked_staff_and_superuser_cannot_bypass_login_via_admin) (superuser=True) ... FAIL
+test_unknown_identifier_already_locked_does_not_hash_password (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_unknown_identifier_already_locked_does_not_hash_password) ... FAIL
+
+======================================================================
+FAIL: test_authenticated_staff_has_no_admin_portal_or_role_escalation (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_authenticated_staff_has_no_admin_portal_or_role_escalation) (superuser=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 71, in test_authenticated_staff_has_no_admin_portal_or_role_escalation
+    self.assertEqual(client.get("/admin/").status_code, 404)
+AssertionError: 200 != 404
+
+======================================================================
+FAIL: test_authenticated_staff_has_no_admin_portal_or_role_escalation (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_authenticated_staff_has_no_admin_portal_or_role_escalation) (superuser=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 71, in test_authenticated_staff_has_no_admin_portal_or_role_escalation
+    self.assertEqual(client.get("/admin/").status_code, 404)
+AssertionError: 200 != 404
+
+======================================================================
+FAIL: test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) (path='/admin')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 44, in test_commercial_application_has_no_django_admin_endpoints
+    self.assertEqual(client.get(path).status_code, 404)
+AssertionError: 301 != 404
+
+======================================================================
+FAIL: test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) (path='/admin/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 44, in test_commercial_application_has_no_django_admin_endpoints
+    self.assertEqual(client.get(path).status_code, 404)
+AssertionError: 302 != 404
+
+======================================================================
+FAIL: test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) (path='/admin/login/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 44, in test_commercial_application_has_no_django_admin_endpoints
+    self.assertEqual(client.get(path).status_code, 404)
+AssertionError: 200 != 404
+
+======================================================================
+FAIL: test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) (path='/admin/identity/account/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 44, in test_commercial_application_has_no_django_admin_endpoints
+    self.assertEqual(client.get(path).status_code, 404)
+AssertionError: 302 != 404
+
+======================================================================
+FAIL: test_known_identifier_already_locked_does_not_hash_password (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_known_identifier_already_locked_does_not_hash_password)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 80, in test_known_identifier_already_locked_does_not_hash_password
+    result = authenticate_active_account(self.staff.email, self.password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\services.py", line 48, in authenticate_active_account
+    valid_password = check_password(password, account.password)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+AssertionError: Unexpected hash for locked known identity
+
+======================================================================
+FAIL: test_locked_staff_and_superuser_cannot_bypass_login_via_admin (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_locked_staff_and_superuser_cannot_bypass_login_via_admin) (superuser=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 57, in test_locked_staff_and_superuser_cannot_bypass_login_via_admin
+    self.assertEqual(response.status_code, 404)
+AssertionError: 302 != 404
+
+======================================================================
+FAIL: test_locked_staff_and_superuser_cannot_bypass_login_via_admin (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_locked_staff_and_superuser_cannot_bypass_login_via_admin) (superuser=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 57, in test_locked_staff_and_superuser_cannot_bypass_login_via_admin
+    self.assertEqual(response.status_code, 404)
+AssertionError: 302 != 404
+
+======================================================================
+FAIL: test_unknown_identifier_already_locked_does_not_hash_password (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_unknown_identifier_already_locked_does_not_hash_password)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit01i_security.py", line 91, in test_unknown_identifier_already_locked_does_not_hash_password
+    result = authenticate_active_account(email, self.password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\services.py", line 45, in authenticate_active_account
+    Account().set_password(password)
+  File "<string>", line 3, in set_password
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+AssertionError: Unexpected hash for locked unknown identity
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.875s
+
+FAILED (failures=10)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).

@@ -1,0 +1,1186 @@
+{
+  "started_utc": "20261111T033450703864Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit03t-pg-a2a832f755d8e82d197828d6",
+  "port": 52800,
+  "cases": [
+    {
+      "id": "PG-T-name",
+      "ok": true,
+      "checks": {
+        "view_reached_service": true,
+        "separate_connections": true,
+        "mutation_committed": true,
+        "history_preserved": true,
+        "draft_unchanged_by_edit": true,
+        "stock_unchanged_by_edit": true,
+        "shift_unchanged_by_edit": true,
+        "rejected_stale_summary": true,
+        "no_mutation_on_reject": true,
+        "explicit_retry": true,
+        "replay_idempotent": true,
+        "final_stock": true,
+        "final_history_preserved": true,
+        "current_product_snapshot": true,
+        "two_lines_correct": true,
+        "one_sale_total": true
+      },
+      "observed": {
+        "response": {
+          "status": 200,
+          "location": null,
+          "pid": 8508,
+          "review_message": true
+        },
+        "after": {
+          "draft": [
+            {
+              "id": "d18345b1-4363-4706-b6b7-e6db9c24e748",
+              "status": "ACTIVE"
+            }
+          ],
+          "draft_lines": [
+            {
+              "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+              "quantity": 2,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "products": [
+            {
+              "id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+              "category_id": "1f708618-39ab-41b1-95ac-97a758562929",
+              "name": "T nombre nuevo name",
+              "barcode": "TP-name",
+              "sale_price": "8.50"
+            },
+            {
+              "id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+              "category_id": "1f708618-39ab-41b1-95ac-97a758562929",
+              "name": "T Q name",
+              "barcode": "TQ-name",
+              "sale_price": "8.50"
+            }
+          ],
+          "lots": [
+            {
+              "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+              "available_quantity": 9
+            },
+            {
+              "product_id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+              "available_quantity": 10
+            }
+          ],
+          "sales": [],
+          "lines": [],
+          "historical": [
+            {
+              "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+              "product_snapshot_name": "T P name",
+              "product_snapshot_barcode": "TP-name",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "shift": [
+            {
+              "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+              "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+              "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+              "opening_amount": "50.00",
+              "status": "OPEN",
+              "opened_at": "2026-11-11 03:34:56.418444+00:00"
+            }
+          ],
+          "counter": [
+            {
+              "next_value": 2
+            }
+          ]
+        },
+        "final": {
+          "draft": [
+            {
+              "id": "d18345b1-4363-4706-b6b7-e6db9c24e748",
+              "status": "DISCARDED"
+            }
+          ],
+          "draft_lines": [
+            {
+              "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+              "quantity": 2,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "products": [
+            {
+              "id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+              "category_id": "1f708618-39ab-41b1-95ac-97a758562929",
+              "name": "T nombre nuevo name",
+              "barcode": "TP-name",
+              "sale_price": "8.50"
+            },
+            {
+              "id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+              "category_id": "1f708618-39ab-41b1-95ac-97a758562929",
+              "name": "T Q name",
+              "barcode": "TQ-name",
+              "sale_price": "8.50"
+            }
+          ],
+          "lots": [
+            {
+              "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+              "available_quantity": 7
+            },
+            {
+              "product_id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+              "available_quantity": 9
+            }
+          ],
+          "sales": [
+            {
+              "id": "0a0a8efc-0599-4952-9805-5430e498388e",
+              "total_amount": "25.50",
+              "cash_received": "100.00",
+              "change_given": "74.50",
+              "idempotency_key": "6cf01e51-7cb2-475e-af19-bbb0ae684d03"
+            }
+          ],
+          "lines": [
+            {
+              "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+              "product_snapshot_name": "T nombre nuevo name",
+              "product_snapshot_barcode": "TP-name",
+              "quantity": 2,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+              "product_snapshot_name": "T Q name",
+              "product_snapshot_barcode": "TQ-name",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "historical": [
+            {
+              "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+              "product_snapshot_name": "T P name",
+              "product_snapshot_barcode": "TP-name",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "shift": [
+            {
+              "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+              "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+              "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+              "opening_amount": "50.00",
+              "status": "OPEN",
+              "opened_at": "2026-11-11 03:34:56.418444+00:00"
+            }
+          ],
+          "counter": [
+            {
+              "next_value": 3
+            }
+          ]
+        }
+      },
+      "before": {
+        "draft": [
+          {
+            "id": "d18345b1-4363-4706-b6b7-e6db9c24e748",
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+            "quantity": 2,
+            "unit_price": "8.50"
+          },
+          {
+            "product_id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "products": [
+          {
+            "id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+            "category_id": "1f708618-39ab-41b1-95ac-97a758562929",
+            "name": "T P name",
+            "barcode": "TP-name",
+            "sale_price": "8.50"
+          },
+          {
+            "id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+            "category_id": "1f708618-39ab-41b1-95ac-97a758562929",
+            "name": "T Q name",
+            "barcode": "TQ-name",
+            "sale_price": "8.50"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+            "available_quantity": 9
+          },
+          {
+            "product_id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+            "available_quantity": 10
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "historical": [
+          {
+            "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+            "product_snapshot_name": "T P name",
+            "product_snapshot_barcode": "TP-name",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "shift": [
+          {
+            "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+            "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+            "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+            "opening_amount": "50.00",
+            "status": "OPEN",
+            "opened_at": "2026-11-11 03:34:56.418444+00:00"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 2
+          }
+        ]
+      },
+      "after_mutation": {
+        "draft": [
+          {
+            "id": "d18345b1-4363-4706-b6b7-e6db9c24e748",
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+            "quantity": 2,
+            "unit_price": "8.50"
+          },
+          {
+            "product_id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "products": [
+          {
+            "id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+            "category_id": "1f708618-39ab-41b1-95ac-97a758562929",
+            "name": "T nombre nuevo name",
+            "barcode": "TP-name",
+            "sale_price": "8.50"
+          },
+          {
+            "id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+            "category_id": "1f708618-39ab-41b1-95ac-97a758562929",
+            "name": "T Q name",
+            "barcode": "TQ-name",
+            "sale_price": "8.50"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+            "available_quantity": 9
+          },
+          {
+            "product_id": "dc2f5d9d-e2ba-4fab-9233-7ba8ea4a2902",
+            "available_quantity": 10
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "historical": [
+          {
+            "product_id": "9720f1e3-2595-44c8-845d-867ddf851adc",
+            "product_snapshot_name": "T P name",
+            "product_snapshot_barcode": "TP-name",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "shift": [
+          {
+            "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+            "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+            "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+            "opening_amount": "50.00",
+            "status": "OPEN",
+            "opened_at": "2026-11-11 03:34:56.418444+00:00"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 2
+          }
+        ]
+      },
+      "method": "Django test Client with CSRF and real administrator catalog service on independent PostgreSQL connection, paused before checkout service, no HTTP socket or extra row locks"
+    },
+    {
+      "id": "PG-T-barcode",
+      "ok": true,
+      "checks": {
+        "view_reached_service": true,
+        "separate_connections": true,
+        "mutation_committed": true,
+        "history_preserved": true,
+        "draft_unchanged_by_edit": true,
+        "stock_unchanged_by_edit": true,
+        "shift_unchanged_by_edit": true,
+        "rejected_stale_summary": true,
+        "no_mutation_on_reject": true,
+        "explicit_retry": true,
+        "replay_idempotent": true,
+        "final_stock": true,
+        "final_history_preserved": true,
+        "current_product_snapshot": true,
+        "two_lines_correct": true,
+        "one_sale_total": true
+      },
+      "observed": {
+        "response": {
+          "status": 200,
+          "location": null,
+          "pid": 17344,
+          "review_message": true
+        },
+        "after": {
+          "draft": [
+            {
+              "id": "c3ced7d7-fa9f-42de-8edf-29eb7e4d949c",
+              "status": "ACTIVE"
+            }
+          ],
+          "draft_lines": [
+            {
+              "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+              "quantity": 2,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "products": [
+            {
+              "id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+              "category_id": "c2151610-9df5-4c76-8b7e-343a12875f12",
+              "name": "T P barcode",
+              "barcode": "T-NUEVO-barcode",
+              "sale_price": "8.50"
+            },
+            {
+              "id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+              "category_id": "c2151610-9df5-4c76-8b7e-343a12875f12",
+              "name": "T Q barcode",
+              "barcode": "TQ-barcode",
+              "sale_price": "8.50"
+            }
+          ],
+          "lots": [
+            {
+              "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+              "available_quantity": 9
+            },
+            {
+              "product_id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+              "available_quantity": 10
+            }
+          ],
+          "sales": [],
+          "lines": [],
+          "historical": [
+            {
+              "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+              "product_snapshot_name": "T P barcode",
+              "product_snapshot_barcode": "TP-barcode",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "shift": [
+            {
+              "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+              "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+              "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+              "opening_amount": "50.00",
+              "status": "OPEN",
+              "opened_at": "2026-11-11 03:34:56.418444+00:00"
+            }
+          ],
+          "counter": [
+            {
+              "next_value": 4
+            }
+          ]
+        },
+        "final": {
+          "draft": [
+            {
+              "id": "c3ced7d7-fa9f-42de-8edf-29eb7e4d949c",
+              "status": "DISCARDED"
+            }
+          ],
+          "draft_lines": [
+            {
+              "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+              "quantity": 2,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "products": [
+            {
+              "id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+              "category_id": "c2151610-9df5-4c76-8b7e-343a12875f12",
+              "name": "T P barcode",
+              "barcode": "T-NUEVO-barcode",
+              "sale_price": "8.50"
+            },
+            {
+              "id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+              "category_id": "c2151610-9df5-4c76-8b7e-343a12875f12",
+              "name": "T Q barcode",
+              "barcode": "TQ-barcode",
+              "sale_price": "8.50"
+            }
+          ],
+          "lots": [
+            {
+              "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+              "available_quantity": 7
+            },
+            {
+              "product_id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+              "available_quantity": 9
+            }
+          ],
+          "sales": [
+            {
+              "id": "55cd7ef7-04b1-406c-819b-c0b318be99f0",
+              "total_amount": "25.50",
+              "cash_received": "100.00",
+              "change_given": "74.50",
+              "idempotency_key": "fb0857f9-a35a-43dd-900f-bd401a83eddf"
+            }
+          ],
+          "lines": [
+            {
+              "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+              "product_snapshot_name": "T P barcode",
+              "product_snapshot_barcode": "T-NUEVO-barcode",
+              "quantity": 2,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+              "product_snapshot_name": "T Q barcode",
+              "product_snapshot_barcode": "TQ-barcode",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "historical": [
+            {
+              "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+              "product_snapshot_name": "T P barcode",
+              "product_snapshot_barcode": "TP-barcode",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "shift": [
+            {
+              "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+              "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+              "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+              "opening_amount": "50.00",
+              "status": "OPEN",
+              "opened_at": "2026-11-11 03:34:56.418444+00:00"
+            }
+          ],
+          "counter": [
+            {
+              "next_value": 5
+            }
+          ]
+        }
+      },
+      "before": {
+        "draft": [
+          {
+            "id": "c3ced7d7-fa9f-42de-8edf-29eb7e4d949c",
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+            "quantity": 2,
+            "unit_price": "8.50"
+          },
+          {
+            "product_id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "products": [
+          {
+            "id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+            "category_id": "c2151610-9df5-4c76-8b7e-343a12875f12",
+            "name": "T P barcode",
+            "barcode": "TP-barcode",
+            "sale_price": "8.50"
+          },
+          {
+            "id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+            "category_id": "c2151610-9df5-4c76-8b7e-343a12875f12",
+            "name": "T Q barcode",
+            "barcode": "TQ-barcode",
+            "sale_price": "8.50"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+            "available_quantity": 9
+          },
+          {
+            "product_id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+            "available_quantity": 10
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "historical": [
+          {
+            "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+            "product_snapshot_name": "T P barcode",
+            "product_snapshot_barcode": "TP-barcode",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "shift": [
+          {
+            "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+            "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+            "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+            "opening_amount": "50.00",
+            "status": "OPEN",
+            "opened_at": "2026-11-11 03:34:56.418444+00:00"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 4
+          }
+        ]
+      },
+      "after_mutation": {
+        "draft": [
+          {
+            "id": "c3ced7d7-fa9f-42de-8edf-29eb7e4d949c",
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+            "quantity": 2,
+            "unit_price": "8.50"
+          },
+          {
+            "product_id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "products": [
+          {
+            "id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+            "category_id": "c2151610-9df5-4c76-8b7e-343a12875f12",
+            "name": "T P barcode",
+            "barcode": "T-NUEVO-barcode",
+            "sale_price": "8.50"
+          },
+          {
+            "id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+            "category_id": "c2151610-9df5-4c76-8b7e-343a12875f12",
+            "name": "T Q barcode",
+            "barcode": "TQ-barcode",
+            "sale_price": "8.50"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+            "available_quantity": 9
+          },
+          {
+            "product_id": "a128b414-2434-4bd3-945f-7dd944eecbfd",
+            "available_quantity": 10
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "historical": [
+          {
+            "product_id": "9f1fb696-9a56-4b53-9c3f-0f7bd66b823a",
+            "product_snapshot_name": "T P barcode",
+            "product_snapshot_barcode": "TP-barcode",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "shift": [
+          {
+            "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+            "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+            "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+            "opening_amount": "50.00",
+            "status": "OPEN",
+            "opened_at": "2026-11-11 03:34:56.418444+00:00"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 4
+          }
+        ]
+      },
+      "method": "Django test Client with CSRF and real administrator catalog service on independent PostgreSQL connection, paused before checkout service, no HTTP socket or extra row locks"
+    },
+    {
+      "id": "PG-T-category",
+      "ok": true,
+      "checks": {
+        "view_reached_service": true,
+        "separate_connections": true,
+        "mutation_committed": true,
+        "history_preserved": true,
+        "draft_unchanged_by_edit": true,
+        "stock_unchanged_by_edit": true,
+        "shift_unchanged_by_edit": true,
+        "sale_with_same_visible_summary": true,
+        "replay_idempotent": true,
+        "final_stock": true,
+        "final_history_preserved": true,
+        "current_product_snapshot": true,
+        "two_lines_correct": true,
+        "one_sale_total": true
+      },
+      "observed": {
+        "response": {
+          "status": 302,
+          "location": "/ventas/constancia/d168fd6e-be4c-4309-a1cb-31eb7253d34b/",
+          "pid": 23836,
+          "review_message": false
+        },
+        "after": {
+          "draft": [
+            {
+              "id": "a27b81ea-c3e8-43b5-a66a-463b3da48098",
+              "status": "DISCARDED"
+            }
+          ],
+          "draft_lines": [
+            {
+              "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+              "quantity": 1,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "quantity": 2,
+              "unit_price": "8.50"
+            }
+          ],
+          "products": [
+            {
+              "id": "3b98a65e-44b3-4578-b676-2882380d9097",
+              "category_id": "cea34cca-7e75-4f25-b9bd-a34571e1a227",
+              "name": "T Q category",
+              "barcode": "TQ-category",
+              "sale_price": "8.50"
+            },
+            {
+              "id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "category_id": "114c0ac4-21e7-4375-902a-62824bcdf45f",
+              "name": "T P category",
+              "barcode": "TP-category",
+              "sale_price": "8.50"
+            }
+          ],
+          "lots": [
+            {
+              "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+              "available_quantity": 9
+            },
+            {
+              "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "available_quantity": 7
+            }
+          ],
+          "sales": [
+            {
+              "id": "d168fd6e-be4c-4309-a1cb-31eb7253d34b",
+              "total_amount": "25.50",
+              "cash_received": "100.00",
+              "change_given": "74.50",
+              "idempotency_key": "6cb0dcf5-1324-4b43-9aa6-289dd06eb1ac"
+            }
+          ],
+          "lines": [
+            {
+              "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+              "product_snapshot_name": "T Q category",
+              "product_snapshot_barcode": "TQ-category",
+              "quantity": 1,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "product_snapshot_name": "T P category",
+              "product_snapshot_barcode": "TP-category",
+              "quantity": 2,
+              "unit_price": "8.50"
+            }
+          ],
+          "historical": [
+            {
+              "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "product_snapshot_name": "T P category",
+              "product_snapshot_barcode": "TP-category",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "shift": [
+            {
+              "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+              "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+              "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+              "opening_amount": "50.00",
+              "status": "OPEN",
+              "opened_at": "2026-11-11 03:34:56.418444+00:00"
+            }
+          ],
+          "counter": [
+            {
+              "next_value": 7
+            }
+          ]
+        },
+        "final": {
+          "draft": [
+            {
+              "id": "a27b81ea-c3e8-43b5-a66a-463b3da48098",
+              "status": "DISCARDED"
+            }
+          ],
+          "draft_lines": [
+            {
+              "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+              "quantity": 1,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "quantity": 2,
+              "unit_price": "8.50"
+            }
+          ],
+          "products": [
+            {
+              "id": "3b98a65e-44b3-4578-b676-2882380d9097",
+              "category_id": "cea34cca-7e75-4f25-b9bd-a34571e1a227",
+              "name": "T Q category",
+              "barcode": "TQ-category",
+              "sale_price": "8.50"
+            },
+            {
+              "id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "category_id": "114c0ac4-21e7-4375-902a-62824bcdf45f",
+              "name": "T P category",
+              "barcode": "TP-category",
+              "sale_price": "8.50"
+            }
+          ],
+          "lots": [
+            {
+              "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+              "available_quantity": 9
+            },
+            {
+              "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "available_quantity": 7
+            }
+          ],
+          "sales": [
+            {
+              "id": "d168fd6e-be4c-4309-a1cb-31eb7253d34b",
+              "total_amount": "25.50",
+              "cash_received": "100.00",
+              "change_given": "74.50",
+              "idempotency_key": "6cb0dcf5-1324-4b43-9aa6-289dd06eb1ac"
+            }
+          ],
+          "lines": [
+            {
+              "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+              "product_snapshot_name": "T Q category",
+              "product_snapshot_barcode": "TQ-category",
+              "quantity": 1,
+              "unit_price": "8.50"
+            },
+            {
+              "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "product_snapshot_name": "T P category",
+              "product_snapshot_barcode": "TP-category",
+              "quantity": 2,
+              "unit_price": "8.50"
+            }
+          ],
+          "historical": [
+            {
+              "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+              "product_snapshot_name": "T P category",
+              "product_snapshot_barcode": "TP-category",
+              "quantity": 1,
+              "unit_price": "8.50"
+            }
+          ],
+          "shift": [
+            {
+              "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+              "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+              "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+              "opening_amount": "50.00",
+              "status": "OPEN",
+              "opened_at": "2026-11-11 03:34:56.418444+00:00"
+            }
+          ],
+          "counter": [
+            {
+              "next_value": 7
+            }
+          ]
+        }
+      },
+      "before": {
+        "draft": [
+          {
+            "id": "a27b81ea-c3e8-43b5-a66a-463b3da48098",
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+            "quantity": 1,
+            "unit_price": "8.50"
+          },
+          {
+            "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "products": [
+          {
+            "id": "3b98a65e-44b3-4578-b676-2882380d9097",
+            "category_id": "cea34cca-7e75-4f25-b9bd-a34571e1a227",
+            "name": "T Q category",
+            "barcode": "TQ-category",
+            "sale_price": "8.50"
+          },
+          {
+            "id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+            "category_id": "cea34cca-7e75-4f25-b9bd-a34571e1a227",
+            "name": "T P category",
+            "barcode": "TP-category",
+            "sale_price": "8.50"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+            "available_quantity": 10
+          },
+          {
+            "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+            "available_quantity": 9
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "historical": [
+          {
+            "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+            "product_snapshot_name": "T P category",
+            "product_snapshot_barcode": "TP-category",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "shift": [
+          {
+            "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+            "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+            "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+            "opening_amount": "50.00",
+            "status": "OPEN",
+            "opened_at": "2026-11-11 03:34:56.418444+00:00"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 6
+          }
+        ]
+      },
+      "after_mutation": {
+        "draft": [
+          {
+            "id": "a27b81ea-c3e8-43b5-a66a-463b3da48098",
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+            "quantity": 1,
+            "unit_price": "8.50"
+          },
+          {
+            "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "products": [
+          {
+            "id": "3b98a65e-44b3-4578-b676-2882380d9097",
+            "category_id": "cea34cca-7e75-4f25-b9bd-a34571e1a227",
+            "name": "T Q category",
+            "barcode": "TQ-category",
+            "sale_price": "8.50"
+          },
+          {
+            "id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+            "category_id": "114c0ac4-21e7-4375-902a-62824bcdf45f",
+            "name": "T P category",
+            "barcode": "TP-category",
+            "sale_price": "8.50"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "3b98a65e-44b3-4578-b676-2882380d9097",
+            "available_quantity": 10
+          },
+          {
+            "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+            "available_quantity": 9
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "historical": [
+          {
+            "product_id": "ed2a9f8c-e4fd-4b75-9e04-44dc2e884e51",
+            "product_snapshot_name": "T P category",
+            "product_snapshot_barcode": "TP-category",
+            "quantity": 1,
+            "unit_price": "8.50"
+          }
+        ],
+        "shift": [
+          {
+            "id": "3bf855c5-8f12-4262-912c-3d59c57bb60c",
+            "cash_register_id": "2f684495-2261-4b23-820e-e452951eeadd",
+            "seller_id": "39db8142-b299-4208-b6c1-681370a811c8",
+            "opening_amount": "50.00",
+            "status": "OPEN",
+            "opened_at": "2026-11-11 03:34:56.418444+00:00"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 6
+          }
+        ]
+      },
+      "method": "Django test Client with CSRF and real administrator catalog service on independent PostgreSQL connection, paused before checkout service, no HTTP socket or extra row locks"
+    }
+  ],
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "database": "audit03_df15505f98",
+  "isolation": "read committed",
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa01-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T231223297870Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T235435476251Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235102894578Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235313324286Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T000927933696Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001124615788Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001235417602Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001320983361Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001337606973Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001427294717Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010641541584Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010857906402Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020054712835Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020104229903Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020324334766Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020335877235Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020505026105Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T023934536531Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024200044720Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024338422290Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024349330265Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024455907968Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024617290091Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024628699915Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024749832414Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024801097155Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030010177604Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030036511029Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030252413844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030314191882Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030339870193Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030352675316Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T031505677093Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032216300260Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032251838417Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032333068344Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032528496946Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032641479670Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T033002861512Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034307344201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034318782440Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041750658883Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041757169052Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041945048165Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042659237619Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042730963824Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042756100441Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042844036974Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042912719703Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T043008623021Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165543164740Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165640773189Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165730633729Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171321742969Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171341873895Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171546908471Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171905215655Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172006895618Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172054000837Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172105045406Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173453359047Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173526027077Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173808145023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173927046544Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174028204311Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174235672078Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T175820924988Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180229612612Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180807525819Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180914638365Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181416503086Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181948564537Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T182622655374Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T183956099863Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184821961380Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184947335287Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184949253446Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T185008205808Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010526631267Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010655936590Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010725864129Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010846464247Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011420365490Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011843801709Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T012116957301Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T013518362010Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014121377023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014226942611Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014304366278Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015423105806Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015529367360Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015549608567Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015623098100Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015703446000Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015739066270Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015806678855Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015848208296Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T020804804408Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021009799064Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021726658069Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021749298118Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022024345104Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022054827383Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022113097844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025217937214Z-6d2387e5\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025317671199Z-66b3aa8c\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025449334980Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025515269778Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025536057632Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025555676509Z-837d210a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025612323774Z-69c9c66e\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025641628831Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032441129639Z-0bdc8478\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032522908138Z-4bfa962a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032724611710Z-4f696853\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032808941201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-migrations-20261111T020942208035Z\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-11T03:34:59.975681+00:00"
+}

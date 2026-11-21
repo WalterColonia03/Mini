@@ -1,0 +1,913 @@
+{
+  "started_utc": "20261115T024702785539Z-479d2af3",
+  "build": {
+    "git_head": "",
+    "file_count": 215,
+    "sha256": "f99a3999a52a626d21fdf8bffaf6fa6623ea1d2062dc53b5b0f674e5c9a1cea2"
+  },
+  "sqlite": {
+    "admin_registry": {
+      "supplier_registered": false,
+      "stockreceipt_registered": false,
+      "lot_registered": true,
+      "initialload_registered": true,
+      "lot_admin_list_display": [
+        "product",
+        "number_normalized",
+        "available_quantity",
+        "unit_cost",
+        "expiration_date"
+      ],
+      "initialload_admin_list_display": [
+        "product",
+        "responsible",
+        "confirmed_at"
+      ]
+    },
+    "admin_access": {
+      "anonymous": {
+        "/admin/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/"
+        },
+        "/admin/login/": {
+          "status": 200,
+          "location": ""
+        },
+        "/admin/inventory/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/"
+        },
+        "/admin/inventory/supplier/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/supplier/"
+        },
+        "/admin/inventory/lot/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/lot/"
+        },
+        "/admin/inventory/stockreceipt/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/stockreceipt/"
+        },
+        "/admin/inventory/initialinventoryload/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/initialinventoryload/"
+        },
+        "/admin/inventory/initialinventoryload/341ac07a-d1d2-4f6d-b7e0-6ba5f6a6b145/change/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/initialinventoryload/341ac07a-d1d2-4f6d-b7e0-6ba5f6a6b145/change/"
+        }
+      },
+      "seller": {
+        "/admin/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/"
+        },
+        "/admin/login/": {
+          "status": 200,
+          "location": ""
+        },
+        "/admin/inventory/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/"
+        },
+        "/admin/inventory/supplier/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/supplier/"
+        },
+        "/admin/inventory/lot/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/lot/"
+        },
+        "/admin/inventory/stockreceipt/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/stockreceipt/"
+        },
+        "/admin/inventory/initialinventoryload/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/initialinventoryload/"
+        },
+        "/admin/inventory/initialinventoryload/341ac07a-d1d2-4f6d-b7e0-6ba5f6a6b145/change/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/initialinventoryload/341ac07a-d1d2-4f6d-b7e0-6ba5f6a6b145/change/"
+        }
+      },
+      "warehouse": {
+        "/admin/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/"
+        },
+        "/admin/login/": {
+          "status": 200,
+          "location": ""
+        },
+        "/admin/inventory/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/"
+        },
+        "/admin/inventory/supplier/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/supplier/"
+        },
+        "/admin/inventory/lot/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/lot/"
+        },
+        "/admin/inventory/stockreceipt/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/stockreceipt/"
+        },
+        "/admin/inventory/initialinventoryload/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/initialinventoryload/"
+        },
+        "/admin/inventory/initialinventoryload/341ac07a-d1d2-4f6d-b7e0-6ba5f6a6b145/change/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/initialinventoryload/341ac07a-d1d2-4f6d-b7e0-6ba5f6a6b145/change/"
+        }
+      },
+      "admin": {
+        "/admin/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/"
+        },
+        "/admin/login/": {
+          "status": 200,
+          "location": ""
+        },
+        "/admin/inventory/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/"
+        },
+        "/admin/inventory/supplier/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/supplier/"
+        },
+        "/admin/inventory/lot/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/lot/"
+        },
+        "/admin/inventory/stockreceipt/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/stockreceipt/"
+        },
+        "/admin/inventory/initialinventoryload/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/initialinventoryload/"
+        },
+        "/admin/inventory/initialinventoryload/341ac07a-d1d2-4f6d-b7e0-6ba5f6a6b145/change/": {
+          "status": 302,
+          "location": "/admin/login/?next=/admin/inventory/initialinventoryload/341ac07a-d1d2-4f6d-b7e0-6ba5f6a6b145/change/"
+        },
+        "POST_/admin/login/_commercial_admin": {
+          "status": 200,
+          "rejected_non_staff": true
+        }
+      },
+      "superuser": {
+        "/admin/": {
+          "status": 200,
+          "location": ""
+        },
+        "/admin/login/": {
+          "status": 302,
+          "location": "/admin/"
+        },
+        "/admin/inventory/": {
+          "status": 200,
+          "location": ""
+        },
+        "/admin/inventory/supplier/": {
+          "status": 404,
+          "location": ""
+        },
+        "/admin/inventory/lot/": {
+          "status": 200,
+          "location": ""
+        },
+        "/admin/inventory/stockreceipt/": {
+          "status": 404,
+          "location": ""
+        },
+        "/admin/inventory/initialinventoryload/": {
+          "status": 200,
+          "location": ""
+        },
+        "/admin/inventory/initialinventoryload/341ac07a-d1d2-4f6d-b7e0-6ba5f6a6b145/change/": {
+          "status": 200,
+          "location": ""
+        }
+      }
+    },
+    "admin_lot_has_supplier_col": false,
+    "admin_load_change_has_supplier": true,
+    "nav_checks": {
+      "admin": {
+        "dashboard_status": 200,
+        "sidebar_has_proveedores_link": true,
+        "sidebar_has_proveedores_nuevo_link": false,
+        "dashboard_main_has_proveedores_card": false,
+        "dashboard_main_has_proveedores_nuevo_card": false,
+        "sidebar_hrefs": [
+          "/inicio/",
+          "/inicio/",
+          "/productos/",
+          "/productos/nuevo/",
+          "/productos/categorias/",
+          "/inventario/proveedores/",
+          "/inventario/stock/",
+          "/productos/vencimientos/",
+          "/inventario/ajustes/nuevo/",
+          "/empleados/",
+          "/caja/turnos/",
+          "/ventas/historial/",
+          "/salir/"
+        ],
+        "dashboard_main_hrefs": [
+          "/inventario/stock/",
+          "/productos/vencimientos/",
+          "/ventas/historial/",
+          "/productos/nuevo/",
+          "/productos/",
+          "/empleados/"
+        ],
+        "has_proveedores_link": true,
+        "has_proveedores_nuevo_link": false,
+        "has_stock_link": true,
+        "has_entrada_link": false,
+        "has_carga_inicial_link": false,
+        "proveedores_link_count": 1
+      },
+      "warehouse": {
+        "dashboard_status": 200,
+        "sidebar_has_proveedores_link": true,
+        "sidebar_has_proveedores_nuevo_link": false,
+        "dashboard_main_has_proveedores_card": false,
+        "dashboard_main_has_proveedores_nuevo_card": false,
+        "sidebar_hrefs": [
+          "/inicio/",
+          "/inicio/",
+          "/inventario/stock/",
+          "/productos/vencimientos/",
+          "/inventario/carga-inicial/",
+          "/inventario/entrada/",
+          "/inventario/bajas/nueva/",
+          "/productos/",
+          "/inventario/proveedores/",
+          "/salir/"
+        ],
+        "dashboard_main_hrefs": [
+          "/inventario/stock/",
+          "/productos/vencimientos/",
+          "/inventario/carga-inicial/",
+          "/inventario/entrada/",
+          "/inventario/bajas/nueva/"
+        ],
+        "has_proveedores_link": true,
+        "has_proveedores_nuevo_link": false,
+        "has_stock_link": true,
+        "has_entrada_link": true,
+        "has_carga_inicial_link": true,
+        "proveedores_link_count": 1
+      },
+      "seller": {
+        "dashboard_status": 200,
+        "sidebar_has_proveedores_link": false,
+        "sidebar_has_proveedores_nuevo_link": false,
+        "dashboard_main_has_proveedores_card": false,
+        "dashboard_main_has_proveedores_nuevo_card": false,
+        "sidebar_hrefs": [
+          "/inicio/",
+          "/inicio/",
+          "/caja/abrir/",
+          "/ventas/",
+          "/caja/cerrar/",
+          "/ventas/historial/turno/",
+          "/ventas/historial/",
+          "/caja/turnos/",
+          "/salir/"
+        ],
+        "dashboard_main_hrefs": [
+          "/caja/abrir/",
+          "/ventas/"
+        ],
+        "has_proveedores_link": false,
+        "has_proveedores_nuevo_link": false,
+        "has_stock_link": false,
+        "has_entrada_link": false,
+        "has_carga_inicial_link": false,
+        "proveedores_link_count": 0
+      }
+    },
+    "auth_1633": {
+      "seller_list_status": 403,
+      "seller_list_msg": false,
+      "seller_list_body_preview": "\n<!doctype html>\n<html lang=\"es-PE\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"color-scheme\" content=\"light\">\n  <title>Acceso denegado · Minimarket</title>\n  <link rel=\"icon\" href=\"/static/identity/favicon.svg\" type=\"image/sv",
+      "seller_create_status": 403,
+      "warehouse_create_get_status": 403,
+      "warehouse_create_post_status": 403,
+      "warehouse_create_post_msg": false,
+      "warehouse_toggle_status": 403,
+      "inactive_admin_get_status": 302,
+      "inactive_admin_get_location": "/?next=/inventario/proveedores/",
+      "inactive_admin_post_status": 302,
+      "inactive_admin_post_location": "/?next=/inventario/proveedores/nuevo/",
+      "ghost_supplier_exists": false,
+      "demoted_admin_post_status": 403,
+      "demoted_admin_post_msg": false,
+      "demoted_supplier_exists": false
+    },
+    "idempotency_and_tamper": {
+      "first_entry_status": 302,
+      "first_entry_location": "/inventario/recepciones/f51db29c-cab6-4571-bb12-eaaa2caa0e67/",
+      "receipt_count_after_1": 1,
+      "replay_same_status": 302,
+      "replay_same_location": "/inventario/recepciones/f51db29c-cab6-4571-bb12-eaaa2caa0e67/",
+      "replay_redirects_to_same_receipt": true,
+      "receipt_count_after_replay": 1,
+      "lot_count_after_replay": 2,
+      "replay_divergent_status": 200,
+      "replay_divergent_msg": true,
+      "new_key_inactive_supplier_status": 200,
+      "new_key_inactive_sentinel_rendered": true,
+      "sentinel_resubmit_status": 200,
+      "sentinel_resubmit_still_rejected_and_preserved": true,
+      "missing_uuid_entry_status": 200,
+      "missing_uuid_entry_sentinel": true,
+      "invalid_str_entry_status": 200,
+      "invalid_str_entry_sentinel": true,
+      "missing_uuid_init_status": 200,
+      "missing_uuid_init_sentinel": true,
+      "ui_error_summary_initial_load_has_top_box": true,
+      "ui_error_summary_stock_entry_has_top_box": true,
+      "final_receipt_count": 1,
+      "final_initial_load_count": 1
+    },
+    "orm_checks": {
+      "orm_create_without_full_clean_succeeded": true,
+      "full_clean_rejected_fields": {
+        "bad_all": [
+          "name"
+        ],
+        "bad_ruc": [
+          "ruc"
+        ],
+        "bad_phone": [
+          "phone"
+        ]
+      },
+      "protected_error_on_linked_supplier_delete": true,
+      "s1_still_exists_after_delete_attempt": true
+    }
+  },
+  "postgres": {
+    "port": 61214,
+    "pg_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+    "constraints": [
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinv_product_id_d29e0526_fk_catalog_p",
+        "type": "f",
+        "definition": "FOREIGN KEY (product_id) REFERENCES catalog_product(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinv_responsible_id_02c004de_fk_identity_",
+        "type": "f",
+        "definition": "FOREIGN KEY (responsible_id) REFERENCES identity_account(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinventoryload_confirmed_at_not_null",
+        "type": "n",
+        "definition": "NOT NULL confirmed_at"
+      },
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinventoryload_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL id"
+      },
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinventoryload_product_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL product_id"
+      },
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinventoryload_responsible_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL responsible_id"
+      },
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinventoryload_pkey",
+        "type": "p",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinventoryload_product_id_key",
+        "type": "u",
+        "definition": "UNIQUE (product_id)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_available_quantity_check",
+        "type": "c",
+        "definition": "CHECK ((available_quantity >= 0))"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_initial_quantity_check",
+        "type": "c",
+        "definition": "CHECK ((initial_quantity >= 0))"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "lot_available_lte_initial",
+        "type": "c",
+        "definition": "CHECK ((available_quantity <= initial_quantity))"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "lot_available_quantity_gte_zero",
+        "type": "c",
+        "definition": "CHECK ((available_quantity >= 0))"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "lot_initial_quantity_gt_zero",
+        "type": "c",
+        "definition": "CHECK ((initial_quantity > 0))"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "lot_unit_cost_gt_zero",
+        "type": "c",
+        "definition": "CHECK ((unit_cost > (0)::numeric))"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_adjustment_origin_id_5b0998ac_fk_inventory",
+        "type": "f",
+        "definition": "FOREIGN KEY (adjustment_origin_id) REFERENCES inventory_physicaladjustment(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_initial_load_id_88eff400_fk_inventory",
+        "type": "f",
+        "definition": "FOREIGN KEY (initial_load_id) REFERENCES inventory_initialinventoryload(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_product_id_9db77706_fk_catalog_product_id",
+        "type": "f",
+        "definition": "FOREIGN KEY (product_id) REFERENCES catalog_product(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_responsible_id_461cfc77_fk_identity_account_id",
+        "type": "f",
+        "definition": "FOREIGN KEY (responsible_id) REFERENCES identity_account(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_supplier_id_d81b4d45_fk_inventory_supplier_id",
+        "type": "f",
+        "definition": "FOREIGN KEY (supplier_id) REFERENCES inventory_supplier(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_available_quantity_not_null",
+        "type": "n",
+        "definition": "NOT NULL available_quantity"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_expiration_date_not_null",
+        "type": "n",
+        "definition": "NOT NULL expiration_date"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL id"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_initial_load_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL initial_load_id"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_initial_quantity_not_null",
+        "type": "n",
+        "definition": "NOT NULL initial_quantity"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_is_initial_not_null",
+        "type": "n",
+        "definition": "NOT NULL is_initial"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_number_normalized_not_null",
+        "type": "n",
+        "definition": "NOT NULL number_normalized"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_number_not_null",
+        "type": "n",
+        "definition": "NOT NULL number"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_product_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL product_id"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_received_at_not_null",
+        "type": "n",
+        "definition": "NOT NULL received_at"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_unit_cost_not_null",
+        "type": "n",
+        "definition": "NOT NULL unit_cost"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_pkey",
+        "type": "p",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_adjustment_origin_id_key",
+        "type": "u",
+        "definition": "UNIQUE (adjustment_origin_id)"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "receipt_average_positive",
+        "type": "c",
+        "definition": "CHECK ((average_cost_after > (0)::numeric))"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockrecei_product_id_b0e99ce0_fk_catalog_p",
+        "type": "f",
+        "definition": "FOREIGN KEY (product_id) REFERENCES catalog_product(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockrecei_responsible_id_e7ce8514_fk_identity_",
+        "type": "f",
+        "definition": "FOREIGN KEY (responsible_id) REFERENCES identity_account(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockrecei_supplier_id_39f74c98_fk_inventory",
+        "type": "f",
+        "definition": "FOREIGN KEY (supplier_id) REFERENCES inventory_supplier(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_average_cost_after_not_null",
+        "type": "n",
+        "definition": "NOT NULL average_cost_after"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_confirmed_at_not_null",
+        "type": "n",
+        "definition": "NOT NULL confirmed_at"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_content_signature_not_null",
+        "type": "n",
+        "definition": "NOT NULL content_signature"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_correlative_not_null",
+        "type": "n",
+        "definition": "NOT NULL correlative"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL id"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_idempotency_key_not_null",
+        "type": "n",
+        "definition": "NOT NULL idempotency_key"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_product_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL product_id"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_product_snapshot_barcode_not_null",
+        "type": "n",
+        "definition": "NOT NULL product_snapshot_barcode"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_product_snapshot_name_not_null",
+        "type": "n",
+        "definition": "NOT NULL product_snapshot_name"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_responsible_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL responsible_id"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_responsible_snapshot_name_not_null",
+        "type": "n",
+        "definition": "NOT NULL responsible_snapshot_name"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_supplier_snapshot_name_not_null",
+        "type": "n",
+        "definition": "NOT NULL supplier_snapshot_name"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_supplier_snapshot_ruc_not_null",
+        "type": "n",
+        "definition": "NOT NULL supplier_snapshot_ruc"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_pkey",
+        "type": "p",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_correlative_key",
+        "type": "u",
+        "definition": "UNIQUE (correlative)"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_idempotency_key_key",
+        "type": "u",
+        "definition": "UNIQUE (idempotency_key)"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_created_at_not_null",
+        "type": "n",
+        "definition": "NOT NULL created_at"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_id_not_null",
+        "type": "n",
+        "definition": "NOT NULL id"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_is_active_not_null",
+        "type": "n",
+        "definition": "NOT NULL is_active"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_name_not_null",
+        "type": "n",
+        "definition": "NOT NULL name"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_phone_not_null",
+        "type": "n",
+        "definition": "NOT NULL phone"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_ruc_not_null",
+        "type": "n",
+        "definition": "NOT NULL ruc"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_updated_at_not_null",
+        "type": "n",
+        "definition": "NOT NULL updated_at"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_pkey",
+        "type": "p",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_ruc_key",
+        "type": "u",
+        "definition": "UNIQUE (ruc)"
+      }
+    ],
+    "indexes": [
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinventoryload_pkey",
+        "def": "CREATE UNIQUE INDEX inventory_initialinventoryload_pkey ON public.inventory_initialinventoryload USING btree (id)"
+      },
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinventoryload_product_id_key",
+        "def": "CREATE UNIQUE INDEX inventory_initialinventoryload_product_id_key ON public.inventory_initialinventoryload USING btree (product_id)"
+      },
+      {
+        "table": "inventory_initialinventoryload",
+        "name": "inventory_initialinventoryload_responsible_id_02c004de",
+        "def": "CREATE INDEX inventory_initialinventoryload_responsible_id_02c004de ON public.inventory_initialinventoryload USING btree (responsible_id)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_adjustment_origin_id_key",
+        "def": "CREATE UNIQUE INDEX inventory_lot_adjustment_origin_id_key ON public.inventory_lot USING btree (adjustment_origin_id)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_initial_load_id_88eff400",
+        "def": "CREATE INDEX inventory_lot_initial_load_id_88eff400 ON public.inventory_lot USING btree (initial_load_id)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_pkey",
+        "def": "CREATE UNIQUE INDEX inventory_lot_pkey ON public.inventory_lot USING btree (id)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_product_id_9db77706",
+        "def": "CREATE INDEX inventory_lot_product_id_9db77706 ON public.inventory_lot USING btree (product_id)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_responsible_id_461cfc77",
+        "def": "CREATE INDEX inventory_lot_responsible_id_461cfc77 ON public.inventory_lot USING btree (responsible_id)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "inventory_lot_supplier_id_d81b4d45",
+        "def": "CREATE INDEX inventory_lot_supplier_id_d81b4d45 ON public.inventory_lot USING btree (supplier_id)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "lot_fefo_idx",
+        "def": "CREATE INDEX lot_fefo_idx ON public.inventory_lot USING btree (product_id, expiration_date, received_at)"
+      },
+      {
+        "table": "inventory_lot",
+        "name": "lot_initial_number_unique",
+        "def": "CREATE UNIQUE INDEX lot_initial_number_unique ON public.inventory_lot USING btree (product_id, number_normalized) WHERE is_initial"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_correlative_a0c5f798_like",
+        "def": "CREATE INDEX inventory_stockreceipt_correlative_a0c5f798_like ON public.inventory_stockreceipt USING btree (correlative varchar_pattern_ops)"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_correlative_key",
+        "def": "CREATE UNIQUE INDEX inventory_stockreceipt_correlative_key ON public.inventory_stockreceipt USING btree (correlative)"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_idempotency_key_key",
+        "def": "CREATE UNIQUE INDEX inventory_stockreceipt_idempotency_key_key ON public.inventory_stockreceipt USING btree (idempotency_key)"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_pkey",
+        "def": "CREATE UNIQUE INDEX inventory_stockreceipt_pkey ON public.inventory_stockreceipt USING btree (id)"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_product_id_b0e99ce0",
+        "def": "CREATE INDEX inventory_stockreceipt_product_id_b0e99ce0 ON public.inventory_stockreceipt USING btree (product_id)"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_responsible_id_e7ce8514",
+        "def": "CREATE INDEX inventory_stockreceipt_responsible_id_e7ce8514 ON public.inventory_stockreceipt USING btree (responsible_id)"
+      },
+      {
+        "table": "inventory_stockreceipt",
+        "name": "inventory_stockreceipt_supplier_id_39f74c98",
+        "def": "CREATE INDEX inventory_stockreceipt_supplier_id_39f74c98 ON public.inventory_stockreceipt USING btree (supplier_id)"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_pkey",
+        "def": "CREATE UNIQUE INDEX inventory_supplier_pkey ON public.inventory_supplier USING btree (id)"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_ruc_2ad2d1a4_like",
+        "def": "CREATE INDEX inventory_supplier_ruc_2ad2d1a4_like ON public.inventory_supplier USING btree (ruc varchar_pattern_ops)"
+      },
+      {
+        "table": "inventory_supplier",
+        "name": "inventory_supplier_ruc_key",
+        "def": "CREATE UNIQUE INDEX inventory_supplier_ruc_key ON public.inventory_supplier USING btree (ruc)"
+      }
+    ],
+    "supplier_sql_check_constraints_count": 0,
+    "raw_sql_bad_format_insert_accepted": true,
+    "raw_sql_duplicate_ruc_blocked": true,
+    "raw_sql_fk_blocks_linked_supplier_delete": true,
+    "port_closed": true,
+    "cluster_cleaned": true
+  },
+  "protected_unchanged": false,
+  "protected_before": {
+    "r1-pmv/r1_pmv.sqlite3": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58",
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": null,
+    "08_Historias_de_Usuario.md": "f3f2763e898c67815b598fa64e77ca5694eb2ba3fff2ba5292b54cc6ad2f526a",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T193756061563Z-48e507d0/audit.sqlite3": "2f136f1a406ea3100c0aa68fa8f064158ac6a976992f1143f0e0b1b413685f4e",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T194231957239Z-a2c3da7f/audit.sqlite3": "e5b39ea0c72e94c75aefc7c1d2d9c5f19052acd683df43594695be2f519a8a88",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T194408061373Z-5af165c6/audit.sqlite3": "504306ad0d4ef01ce78be91c854799cd535ada473fd05fb5e4d60536447fa924",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T195319709052Z-5c0d2ef7/audit.sqlite3": "b72e03ebe037ea53eb96f32159c757bd608f5f20e33afd9a25dc0300b2cd649c",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T233846644803Z-a4242df7/audit.sqlite3": "8101374a52f857cc24f5d214fc2e295881a8d3841c877a0b3b3787ce0a76f87e",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234016065711Z-42670a33/audit.sqlite3": "4126ab21c32b692f6f4c9e0e9ae20d7d0cb6cac12568a13cf1d94454e7153a8c",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234712738891Z-676394a0/audit.sqlite3": "dc1e830854a5a848b32aecc07a9cb2457d539abc546f08bc8c9de0aae2c83498",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234739258666Z-31270a39/audit.sqlite3": "1e8911725d237eee42de2a8424d2be1ef593941b6f81b43ea79383c462292ca0",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234804756453Z-88b9644c/audit.sqlite3": "05cb83ab951efbd105b83cd5dc6ba992b5d1b7017ea127ad6ff2bc7571434497",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234840234835Z-a5b8f34e/audit.sqlite3": "d23b75219a748fb34006b98ca4d3f275aad0ec15e5d40cd34f2c7d55ae194211",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T235434438069Z-f0e079bc/audit.sqlite3": "ec64d19781e4d2194fe3cc095411dbc9806286b897fa2e78f244a91515be4fea",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T235539141538Z-60c972fe/audit.sqlite3": "226df0597d9900fc137e17c7124d07d7ed5df4edd400cb6c97e552e84eb03d2d",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T235644750007Z-93552e0b/audit.sqlite3": "988046b5d6d80bbaeec88280e8bdd30f73bc1c2ce21da885e21e2ca713465243",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261112T000043630104Z-44ea3bf6/audit.sqlite3": "123d644acf499dc61b9950d4df9e2d2d7ae2a5b06b03f916b09ee53c3f08447f",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261112T000240997123Z-b47f7d40/audit.sqlite3": "395f2d543c74c635cdfc2e43f5f82c6d25cbf6bb3ae770c13f2029c06465a8f1",
+    "auditoria_por_etapas/resultados/datos/etapa04-check-20261111T195012861836Z-adbaf3a9/audit.sqlite3": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "auditoria_por_etapas/resultados/datos/etapa04-deep-20261115T024411521240Z-e57ecb53/audit.sqlite3": "79dbd045c6d4e0f339f85fef038c2aefc6ee5497e01a4a7082daca8c37e755a4",
+    "auditoria_por_etapas/resultados/datos/etapa04-deep-20261115T024614764364Z-a5604bbc/audit.sqlite3": "b0651ec75d353cdf41b7fa9eb5d57ec26103c7c5f458cece615d5e9eb152b565",
+    "auditoria_por_etapas/resultados/datos/etapa04-repro-20261111T193121377508Z/audit.sqlite3": "b46f62fc94902d121eb4de5e3dd9f47eb8987056ec0a5e2eae5200bc16bd342b",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T161955404727Z/audit.sqlite3": "532caa89a1918da7b80229f4cf415d0d610fe9ca860bb69323c0b738dca43ebc",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T162105034508Z/audit.sqlite3": "036904c1a43116aadcb832d9dd14e27b951197e8bc6b3c4ff99f3d5c65daa6a9",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T162201402945Z/audit.sqlite3": "c7d208c3eb0e05f3cae9359a923799e5347bdece73857d143e7ea8725e2f5eb3",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T162437571545Z/audit.sqlite3": "3cc04043cd25f4e92afa74f833495fbe8a54b9a6aa3cfbac3160bd640a937df5",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T162544545998Z/audit.sqlite3": "673fa084534bb704e6ec268b836039133c9d84593fc4ea7789a91f756d212abd",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T212155280500Z/audit.sqlite3": "fb8d72a16530af950548c595cf54d55c019b76197e941b99a218a52466e111b9",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T212427329168Z/audit.sqlite3": "0bfdc3453c9e084e6618ed0ea1024f9720382a33f3ca65f9dae46a0b76ab29d0"
+  },
+  "protected_after": {
+    "r1-pmv/r1_pmv.sqlite3": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58",
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": null,
+    "08_Historias_de_Usuario.md": "05ddc66084bcc0ef1bcc51755c9605ed294a0504c3982d93196bf8e14f107451",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T193756061563Z-48e507d0/audit.sqlite3": "2f136f1a406ea3100c0aa68fa8f064158ac6a976992f1143f0e0b1b413685f4e",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T194231957239Z-a2c3da7f/audit.sqlite3": "e5b39ea0c72e94c75aefc7c1d2d9c5f19052acd683df43594695be2f519a8a88",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T194408061373Z-5af165c6/audit.sqlite3": "504306ad0d4ef01ce78be91c854799cd535ada473fd05fb5e4d60536447fa924",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T195319709052Z-5c0d2ef7/audit.sqlite3": "b72e03ebe037ea53eb96f32159c757bd608f5f20e33afd9a25dc0300b2cd649c",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T233846644803Z-a4242df7/audit.sqlite3": "8101374a52f857cc24f5d214fc2e295881a8d3841c877a0b3b3787ce0a76f87e",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234016065711Z-42670a33/audit.sqlite3": "4126ab21c32b692f6f4c9e0e9ae20d7d0cb6cac12568a13cf1d94454e7153a8c",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234712738891Z-676394a0/audit.sqlite3": "dc1e830854a5a848b32aecc07a9cb2457d539abc546f08bc8c9de0aae2c83498",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234739258666Z-31270a39/audit.sqlite3": "1e8911725d237eee42de2a8424d2be1ef593941b6f81b43ea79383c462292ca0",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234804756453Z-88b9644c/audit.sqlite3": "05cb83ab951efbd105b83cd5dc6ba992b5d1b7017ea127ad6ff2bc7571434497",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T234840234835Z-a5b8f34e/audit.sqlite3": "d23b75219a748fb34006b98ca4d3f275aad0ec15e5d40cd34f2c7d55ae194211",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T235434438069Z-f0e079bc/audit.sqlite3": "ec64d19781e4d2194fe3cc095411dbc9806286b897fa2e78f244a91515be4fea",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T235539141538Z-60c972fe/audit.sqlite3": "226df0597d9900fc137e17c7124d07d7ed5df4edd400cb6c97e552e84eb03d2d",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261111T235644750007Z-93552e0b/audit.sqlite3": "988046b5d6d80bbaeec88280e8bdd30f73bc1c2ce21da885e21e2ca713465243",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261112T000043630104Z-44ea3bf6/audit.sqlite3": "123d644acf499dc61b9950d4df9e2d2d7ae2a5b06b03f916b09ee53c3f08447f",
+    "auditoria_por_etapas/resultados/datos/etapa04-browser-20261112T000240997123Z-b47f7d40/audit.sqlite3": "395f2d543c74c635cdfc2e43f5f82c6d25cbf6bb3ae770c13f2029c06465a8f1",
+    "auditoria_por_etapas/resultados/datos/etapa04-check-20261111T195012861836Z-adbaf3a9/audit.sqlite3": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "auditoria_por_etapas/resultados/datos/etapa04-deep-20261115T024411521240Z-e57ecb53/audit.sqlite3": "79dbd045c6d4e0f339f85fef038c2aefc6ee5497e01a4a7082daca8c37e755a4",
+    "auditoria_por_etapas/resultados/datos/etapa04-deep-20261115T024614764364Z-a5604bbc/audit.sqlite3": "b0651ec75d353cdf41b7fa9eb5d57ec26103c7c5f458cece615d5e9eb152b565",
+    "auditoria_por_etapas/resultados/datos/etapa04-repro-20261111T193121377508Z/audit.sqlite3": "b46f62fc94902d121eb4de5e3dd9f47eb8987056ec0a5e2eae5200bc16bd342b",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T161955404727Z/audit.sqlite3": "532caa89a1918da7b80229f4cf415d0d610fe9ca860bb69323c0b738dca43ebc",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T162105034508Z/audit.sqlite3": "036904c1a43116aadcb832d9dd14e27b951197e8bc6b3c4ff99f3d5c65daa6a9",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T162201402945Z/audit.sqlite3": "c7d208c3eb0e05f3cae9359a923799e5347bdece73857d143e7ea8725e2f5eb3",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T162437571545Z/audit.sqlite3": "3cc04043cd25f4e92afa74f833495fbe8a54b9a6aa3cfbac3160bd640a937df5",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T162544545998Z/audit.sqlite3": "673fa084534bb704e6ec268b836039133c9d84593fc4ea7789a91f756d212abd",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T212155280500Z/audit.sqlite3": "fb8d72a16530af950548c595cf54d55c019b76197e941b99a218a52466e111b9",
+    "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T212427329168Z/audit.sqlite3": "0bfdc3453c9e084e6618ed0ea1024f9720382a33f3ca65f9dae46a0b76ab29d0"
+  },
+  "finished_utc": "2026-11-15T02:48:02.280827+00:00"
+}

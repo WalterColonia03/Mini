@@ -1,0 +1,167 @@
+{
+  "stamp_utc": "20261111T234400245551Z",
+  "findings": {
+    "def08_01_empty_post_unbound": {
+      "wo_with_lote_status": 200,
+      "wo_with_lote_has_error_ui": false,
+      "wo_no_lote_status": 500,
+      "adj_with_lote_status": 200,
+      "adj_with_lote_has_error_ui": false,
+      "adj_no_lote_status": 500
+    },
+    "def08_02_actor_and_lot_guards": {
+      "wo_anonymous": {
+        "ok": false,
+        "exc_type": "AttributeError",
+        "message": "'AnonymousUser' object has no attribute 'role'"
+      },
+      "adj_anonymous": {
+        "ok": false,
+        "exc_type": "AttributeError",
+        "message": "'AnonymousUser' object has no attribute 'role'"
+      },
+      "wo_stale_inactive_actor": {
+        "ok": true,
+        "res": "Baja B-00000001 · Producto Repro 08 · L-REPRO-1"
+      },
+      "adj_stale_demoted_inactive_actor": {
+        "ok": true,
+        "res": "Ajuste +1 · Producto Repro 08 · L-REPRO-1"
+      },
+      "wo_missing_lot": {
+        "ok": false,
+        "exc_type": "DoesNotExist",
+        "message": "Lot matching query does not exist."
+      },
+      "adj_missing_lot": {
+        "ok": false,
+        "exc_type": "DoesNotExist",
+        "message": "Lot matching query does not exist."
+      }
+    },
+    "def08_03_validation_gaps": {
+      "wo_bool_quantity_true": {
+        "ok": true,
+        "res": "Baja B-00000002 · Producto Repro 08 · L-REPRO-1"
+      },
+      "adj_bool_delta_true": {
+        "ok": true,
+        "res": "Ajuste +1 · Producto Repro 08 · L-REPRO-1"
+      },
+      "adj_reason_350_chars_in_service": {
+        "ok": true,
+        "res": "Ajuste +1 · Producto Repro 08 · L-REPRO-1"
+      },
+      "wo_nul_in_notes_service": {
+        "ok": true,
+        "res": "Baja B-00000003 · Producto Repro 08 · L-REPRO-1"
+      },
+      "adj_nul_in_reason_service": {
+        "ok": true,
+        "res": "Ajuste +1 · Producto Repro 08 · L-REPRO-1"
+      },
+      "form_wo_arabic_valid": true,
+      "form_wo_arabic_cleaned": 5,
+      "form_adj_arabic_valid": true,
+      "form_adj_arabic_cleaned": 5,
+      "form_adj_plus10_valid": true,
+      "form_wo_empty_errors": {
+        "quantity": [
+          "Este campo es obligatorio."
+        ],
+        "reason": [
+          "Escoja una opción válida. BAD no es una de las opciones disponibles."
+        ]
+      },
+      "form_adj_empty_errors": {
+        "delta": [
+          "Este campo es obligatorio."
+        ],
+        "reason": [
+          "Este campo es obligatorio."
+        ]
+      }
+    },
+    "def08_05_cross_payload_idempotency_reuse": {
+      "first_status": 302,
+      "second_tampered_final_status": 200,
+      "second_tampered_body_has_ya_registrada": true,
+      "lot_qty_before": 51,
+      "lot_qty_after": 50
+    },
+    "def08_06_cross_product_saleline_leak": {
+      "leaks_orig_sale_correlative": true,
+      "sale_correlative": "V-00000001"
+    },
+    "def08_04_and_05_pg_concurrency": {
+      "correlativo_8_threads_ok_count": 7,
+      "correlativo_8_threads_failed_count": 1,
+      "correlativo_8_threads_results": [
+        {
+          "status": "ok",
+          "correlativo": "B-00000002"
+        },
+        {
+          "status": "ok",
+          "correlativo": "B-00000007"
+        },
+        {
+          "status": "ok",
+          "correlativo": "B-00000006"
+        },
+        {
+          "status": "failed",
+          "messages": [
+            "No se pudo asignar el correlativo de la baja. Inténtalo nuevamente."
+          ]
+        },
+        {
+          "status": "ok",
+          "correlativo": "B-00000003"
+        },
+        {
+          "status": "ok",
+          "correlativo": "B-00000005"
+        },
+        {
+          "status": "ok",
+          "correlativo": "B-00000004"
+        },
+        {
+          "status": "ok",
+          "correlativo": "B-00000001"
+        }
+      ],
+      "concurrent_same_session_writeoffs_created": 2,
+      "concurrent_same_session_lot_remaining": 14,
+      "concurrent_http_results": [
+        {
+          "status": 302,
+          "location": "/inventario/bajas/nueva/"
+        },
+        {
+          "status": 302,
+          "location": "/inventario/bajas/nueva/"
+        }
+      ]
+    }
+  },
+  "planning_gaps": {
+    "writeoff_receipt_url_exists": false,
+    "writeoff_history_url_exists": false,
+    "adjustment_history_url_exists": false,
+    "all_inventory_routes": [
+      "inventory-load",
+      "physical-adjustment",
+      "product-movements",
+      "stock-entry",
+      "stock-overview",
+      "stock-writeoff",
+      "supplier-create",
+      "supplier-list"
+    ],
+    "movements_has_running_balance": false,
+    "movements_has_filters": false
+  },
+  "protected_unchanged": true
+}

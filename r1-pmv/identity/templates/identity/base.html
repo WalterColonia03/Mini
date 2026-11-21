@@ -1,0 +1,186 @@
+{% load static %}
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{% block title %}Minimarket · Sistema de gestión{% endblock %}</title>
+  <link rel="icon" href="{% static 'identity/favicon.svg' %}" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'identity/app.css' %}">
+</head>
+<body class="{% if not user.is_authenticated %}anonymous{% else %}legacy-workspace{% endif %} {% block body_class %}{% endblock %}">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  {% if user.is_authenticated %}
+    <div class="app-shell">
+      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">
+        <div class="sidebar-brand-row">
+          <a class="sidebar-brand" href="{% url 'dashboard' %}" aria-label="Inicio de la aplicación">
+            <span class="sidebar-brand-mark" aria-hidden="true">M</span>
+            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>
+          </a>
+
+        </div>
+
+        <nav class="sidebar-nav" id="sidebar-navigation">
+          <p class="sidebar-label">Operaciones</p>
+          <a class="nav-item{% if request.resolver_match.url_name == 'dashboard' %} is-active{% endif %}" href="{% url 'dashboard' %}">
+            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>
+          </a>
+          {% if user.role.code == 'ADMIN' %}
+            <p class="sidebar-label">Cat&#225;logo</p>
+            <a class="nav-item{% if request.resolver_match.url_name == 'product-list' %} is-active{% endif %}" href="{% url 'product-list' %}">
+              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'product-entry' or request.resolver_match.url_name == 'product-created' %} is-active{% endif %}" href="{% url 'product-entry' %}">
+              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'category-list' or request.resolver_match.url_name == 'category-create' or request.resolver_match.url_name == 'category-state-confirm' or request.resolver_match.url_name == 'category-toggle' %} is-active{% endif %}" href="{% url 'category-list' %}">
+              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>
+            </a>
+            <p class="sidebar-label">Inventario</p>
+            <a class="nav-item{% if request.resolver_match.url_name == 'supplier-list' or request.resolver_match.url_name == 'supplier-create' %} is-active{% endif %}" href="{% url 'supplier-list' %}">
+              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'stock-overview' or request.resolver_match.url_name == 'product-movements' %} is-active{% endif %}" href="{% url 'stock-overview' %}">
+              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'product-expirations' %} is-active{% endif %}" href="{% url 'product-expirations' %}">
+              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'physical-adjustment' %} is-active{% endif %}" href="{% url 'physical-adjustment' %}">
+              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>
+            </a>
+            <p class="sidebar-label">Personal</p>
+            <a class="nav-item{% if request.resolver_match.url_name == 'employee-list' or request.resolver_match.url_name == 'employee-create' or request.resolver_match.url_name == 'employee-edit' or request.resolver_match.url_name == 'employee-state-confirm' %} is-active{% endif %}" href="{% url 'employee-list' %}">
+              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>
+            </a>
+            <p class="sidebar-label">Caja y ventas</p>
+            <a class="nav-item{% if request.resolver_match.url_name == 'cash-shift-history' or request.resolver_match.url_name == 'cash-shift-closed' %} is-active{% endif %}" href="{% url 'cash-shift-history' %}">
+              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'sales-history' or request.resolver_match.url_name == 'sales-receipt' %} is-active{% endif %}" href="{% url 'sales-history' %}">
+              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>
+            </a>
+          {% endif %}
+          {% if user.role.code == 'ALMACENERO' %}
+            <a class="nav-item{% if request.resolver_match.url_name == 'stock-overview' or request.resolver_match.url_name == 'product-movements' %} is-active{% endif %}" href="{% url 'stock-overview' %}">
+              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'product-expirations' %} is-active{% endif %}" href="{% url 'product-expirations' %}">
+              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'inventory-load' or request.resolver_match.url_name == 'inventory-load-created' or request.resolver_match.url_name == 'inventory-load-created-alias' %} is-active{% endif %}" href="{% url 'inventory-load' %}">
+              <span class="nav-icon" aria-hidden="true">&#9707;</span><span>Existencias iniciales</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'stock-entry' %} is-active{% endif %}" href="{% url 'stock-entry' %}">
+              <span class="nav-icon" aria-hidden="true">&#10010;</span><span>Entrada de mercader&#237;a</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'stock-writeoff' %} is-active{% endif %}" href="{% url 'stock-writeoff' %}">
+              <span class="nav-icon" aria-hidden="true">&#9746;</span><span>Registrar merma</span>
+            </a>
+            <p class="sidebar-label">Consulta</p>
+            <a class="nav-item{% if request.resolver_match.url_name == 'product-list' %} is-active{% endif %}" href="{% url 'product-list' %}">
+              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Cat&#225;logo de productos</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'supplier-list' %} is-active{% endif %}" href="{% url 'supplier-list' %}">
+              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>
+            </a>
+          {% endif %}
+          {% if user.role.code == 'VENDEDOR' %}
+            <a class="nav-item{% if request.resolver_match.url_name == 'cash-open' or request.resolver_match.url_name == 'cash-shift-opened' %} is-active{% endif %}" href="{% url 'cash-open' %}">
+              <span class="nav-icon" aria-hidden="true">$</span><span>Apertura de caja</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'sales-draft' or request.resolver_match.url_name == 'sales-line-update' or request.resolver_match.url_name == 'sales-line-remove' %} is-active{% endif %}" href="{% url 'sales-draft' %}">
+              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Preparar venta</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'cash-close' %} is-active{% endif %}" href="{% url 'cash-close' %}">
+              <span class="nav-icon" aria-hidden="true">&#10006;</span><span>Cerrar turno</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'sales-shift-history' %} is-active{% endif %}" href="{% url 'sales-shift-history' %}">
+              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Mis ventas del turno</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'sales-history' or request.resolver_match.url_name == 'sales-receipt' %} is-active{% endif %}" href="{% url 'sales-history' %}">
+              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Mi historial de ventas</span>
+            </a>
+            <a class="nav-item{% if request.resolver_match.url_name == 'cash-shift-history' or request.resolver_match.url_name == 'cash-shift-closed' %} is-active{% endif %}" href="{% url 'cash-shift-history' %}">
+              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Mi historial de turnos</span>
+            </a>
+          {% endif %}
+        </nav>
+
+        <div class="sidebar-account" id="sidebar-account">
+          <div class="sidebar-user">
+            <span class="user-avatar" aria-hidden="true">{{ user.display_name|first|upper }}</span>
+            <span><strong>{{ user.display_name }}</strong><small>{{ user.role.name }}</small></span>
+          </div>
+          <a class="sidebar-logout" href="{% url 'logout' %}"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>
+        </div>
+      </aside>
+
+      <div class="app-main">
+        <header class="app-topbar">
+          <div>
+            <p class="topbar-kicker">{% block page_kicker %}Minimarket{% endblock %}</p>
+            <h1>{% block page_heading %}
+              {% if request.resolver_match.url_name == 'dashboard' %}Inicio
+              {% elif request.resolver_match.url_name == 'product-entry' or request.resolver_match.url_name == 'product-created' or request.resolver_match.url_name == 'product-created-alias' %}Registrar producto
+              {% elif request.resolver_match.url_name == 'product-edit' %}Editar producto
+              {% elif request.resolver_match.url_name == 'inventory-load' or request.resolver_match.url_name == 'inventory-load-created' or request.resolver_match.url_name == 'inventory-load-created-alias' %}Existencias iniciales
+              {% elif request.resolver_match.url_name == 'stock-entry' %}Entrada de mercader&#237;a
+              {% elif request.resolver_match.url_name == 'cash-open' or request.resolver_match.url_name == 'cash-shift-opened' %}Apertura de caja
+              {% elif request.resolver_match.url_name == 'cash-shift-history' %}Historial de turnos
+              {% elif request.resolver_match.url_name == 'sales-draft' or request.resolver_match.url_name == 'sales-line-update' or request.resolver_match.url_name == 'sales-line-remove' %}Preparar venta
+              {% elif request.resolver_match.url_name == 'logout' %}Cerrar sesi&oacute;n
+              {% elif request.resolver_match.url_name == 'product-list' %}Cat&#225;logo de productos
+              {% elif request.resolver_match.url_name == 'supplier-list' or request.resolver_match.url_name == 'supplier-create' %}Proveedores
+              {% elif request.resolver_match.url_name == 'stock-overview' %}Ver inventario{% elif request.resolver_match.url_name == 'product-movements' %}Movimientos del producto{% elif request.resolver_match.url_name == 'stock-writeoff' %}Registrar merma{% elif request.resolver_match.url_name == 'product-expirations' %}Vencimientos de lotes
+              {% elif request.resolver_match.url_name == 'cash-close' %}Cerrar turno
+              {% elif request.resolver_match.url_name == 'cash-shift-closed' %}Acta de cierre
+              {% elif request.resolver_match.url_name == 'employee-list' or request.resolver_match.url_name == 'employee-create' or request.resolver_match.url_name == 'employee-edit' or request.resolver_match.url_name == 'employee-state-confirm' %}Empleados
+              {% elif request.resolver_match.url_name == 'category-list' or request.resolver_match.url_name == 'category-create' %}Categor&#237;as
+              {% elif request.resolver_match.url_name == 'physical-adjustment' %}Ajuste f&#237;sico
+              {% elif request.resolver_match.url_name == 'sales-shift-history' %}Mis ventas del turno
+              {% elif request.resolver_match.url_name == 'sales-history' %}Historial de ventas
+              {% elif request.resolver_match.url_name == 'sales-checkout' %}Cobrar venta
+              {% elif request.resolver_match.url_name == 'sales-receipt' %}Constancia de venta
+              {% else %}Minimarket{% endif %}
+            {% endblock %}</h1>
+          </div>
+          <div class="topbar-user"><span>{{ user.display_name }}</span><span class="role-pill">{{ user.role.name }}</span></div>
+        </header>
+  {% else %}
+    <div class="public-shell">
+      <header class="site-header">
+        <div class="shell header-inner">
+          <a class="brand" href="{% url 'login' %}" aria-label="Minimarket, inicio">
+            <span class="brand-mark" aria-hidden="true">M</span>
+            <span><strong>Minimarket</strong><small>Sistema de gesti&oacute;n</small></span>
+          </a>
+        </div>
+      </header>
+  {% endif %}
+
+  <main id="contenido" class="{% if user.is_authenticated %}app-content{% else %}shell main-content{% endif %}" tabindex="-1">
+    {% if messages %}
+      <div class="flash-stack" aria-live="polite">
+        {% for message in messages %}<div class="alert {% if 'success' in message.tags %}alert-success{% elif 'error' in message.tags %}alert-error{% else %}alert-info{% endif %}">{{ message }}</div>{% endfor %}
+      </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+
+  {% if user.is_authenticated %}
+        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>
+      </div>
+    </div>
+  {% else %}
+      <footer class="site-footer">
+        <div class="shell"><span>Minimarket <span aria-hidden="true">&middot;</span> Sistema de gesti&oacute;n</span></div>
+      </footer>
+    </div>
+  {% endif %}
+  <script src="{% static 'identity/navigation.js' %}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

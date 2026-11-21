@@ -1,0 +1,344 @@
+{
+  "stamp_utc": "20261111T231556195803Z",
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "product_expirations_source": "@roles_required(Role.Code.ADMIN, Role.Code.WAREHOUSE)\n@never_cache\n@require_GET\ndef product_expirations(request):\n    from inventory.models import Lot\n    today = timezone.localdate()\n    raw_days = request.GET.get(\"dias\", \"30\").strip()\n    days = 30\n    if raw_days:\n        try:\n            parsed = int(raw_days)\n            if 1 <= parsed <= 3650:\n                days = parsed\n            else:\n                messages.error(request, \"Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto.\")\n        except ValueError:\n            messages.error(request, \"Ingrese un número entero válido de días. Se muestran 30 días por defecto.\")\n    cutoff = today + timezone.timedelta(days=days)\n    lots = (\n        Lot.objects.filter(available_quantity__gt=0, expiration_date__lte=cutoff)\n        .select_related(\"product__category\", \"supplier\")\n        .order_by(\"expiration_date\", \"product__name\")\n    )\n    return render(request, \"catalog/product_expirations.html\", {\n        \"lots\": lots,\n        \"today\": today,\n        \"days\": days,\n        \"cutoff\": cutoff,\n    })\n",
+  "stock_overview_source": "@roles_required(Role.Code.ADMIN, Role.Code.WAREHOUSE)\n@never_cache\n@require_GET\ndef stock_overview(request):\n    \"\"\"Vista consolidada del inventario actual con alertas integradas (HUECO-01 + HUECO-02).\"\"\"\n    from catalog.models import Product\n    from datetime import timedelta\n\n    today = timezone.localdate()\n    soon = today + timedelta(days=30)\n\n    products = (\n        Product.objects\n        .select_related(\"category\", \"initial_load\")\n        .prefetch_related(\"lots\")\n        .order_by(\"name\")\n    )\n\n    # Productos activos con stock vendible igual o inferior al umbral mínimo, o sin unidades vigentes\n    low_stock = [\n        p for p in products\n        if p.is_active and (p.sellable_stock <= p.minimum_stock or p.sellable_stock == 0)\n    ]\n\n    # Lotes próximos a vencer (en los próximos 30 días, sin incluir ya vencidos) con unidades disponibles\n    from .models import Lot as LotModel\n    expiring_lots = (\n        LotModel.objects\n        .filter(expiration_date__gt=today, expiration_date__lte=soon, available_quantity__gt=0)\n        .select_related(\"product\")\n        .order_by(\"expiration_date\")\n    )\n    expired_lots = (\n        LotModel.objects\n        .filter(expiration_date__lte=today, available_quantity__gt=0)\n        .select_related(\"product\")\n        .order_by(\"expiration_date\")\n    )\n\n    return render(request, \"inventory/stock_overview.html\", {\n        \"products\": products,\n        \"today\": today,\n        \"low_stock\": low_stock,\n        \"expiring_lots\": expiring_lots,\n        \"expired_lots\": expired_lots,\n    })\n",
+  "_admin_summary_source": "def _admin_summary() -> dict:\n    \"\"\"HUECO-08 / HU-REP-01: resumen del negocio para el administrador.\"\"\"\n    from datetime import timedelta\n\n    from django.db.models import Sum\n    from django.utils import timezone\n\n    from cash.models import CashShift\n    from catalog.models import Product\n    from inventory.models import Lot\n    from sales.models import Sale\n\n    today = timezone.localdate()\n    sales_today = Sale.objects.filter(confirmed_at__date=today)\n    agg = sales_today.aggregate(total=Sum(\"total_amount\"), discount=Sum(\"discount_amount\"))\n    return {\n        \"sales_count\": sales_today.count(),\n        \"sales_total\": agg[\"total\"] or 0,\n        \"discount_total\": agg[\"discount\"] or 0,\n        \"open_shifts\": CashShift.objects.filter(status=CashShift.Status.OPEN).count(),\n        \"low_stock\": sum(\n            1\n            for p in Product.objects.filter(is_active=True, category__is_active=True).prefetch_related(\"lots\")\n            if p.sellable_stock < p.minimum_stock or p.sellable_stock == 0\n        ),\n        \"expiring\": Lot.objects.filter(\n            expiration_date__gt=today,\n            expiration_date__lte=today + timedelta(days=30),\n            available_quantity__gt=0,\n        ).count(),\n        \"expired\": Lot.objects.filter(\n            expiration_date__lte=today,\n            available_quantity__gt=0,\n        ).count(),\n    }\n",
+  "product_expirations_template": "{% extends \"identity/base.html\" %}\n\n{% block title %}Vencimientos de productos{% endblock %}\n\n{% block content %}\n<div class=\"d-flex justify-content-between align-items-center mb-4\">\n  <h2>Lotes vencidos y próximos a vencer</h2>\n</div>\n\n<form method=\"get\" class=\"mb-4 d-flex align-items-center gap-3\">\n  <label for=\"expiration-days\" class=\"form-label mb-0 fw-semibold\">Mostrar lotes vencidos y los que vencen en los próximos</label>\n  <div class=\"input-group\" style=\"width:150px;\">\n    <input id=\"expiration-days\" type=\"number\" name=\"dias\" value=\"{{ days }}\" min=\"1\" max=\"3650\" class=\"form-control\">\n    <span class=\"input-group-text\">días</span>\n  </div>\n  <button type=\"submit\" class=\"btn btn-outline-primary\">Filtrar</button>\n</form>\n\n<p class=\"text-muted\">Fecha de corte: <strong>{{ cutoff }}</strong> · El sistema considera vencido un lote desde su fecha de vencimiento. Al vender, descuenta primero los lotes vigentes con vencimiento más próximo.</p>\n\n{% if lots %}\n<div class=\"table-responsive\">\n  <table class=\"table table-bordered table-hover align-middle\">\n    <thead class=\"table-dark\">\n      <tr>\n        <th>Producto</th>\n        <th>Categoría</th>\n        <th>Lote / Nro.</th>\n        <th>Proveedor</th>\n        <th>Vence</th>\n        <th class=\"text-end\">Cant. disponible</th>\n        <th>Estado</th>\n      </tr>\n    </thead>\n    <tbody>\n      {% for lot in lots %}\n      {% with days_left=lot.expiration_date|timeuntil %}\n      <tr>\n        <td>{{ lot.product.name }}</td>\n        <td>{{ lot.product.category.name }}</td>\n        <td class=\"font-monospace\">{{ lot.number_normalized|default:lot.number }}</td>\n        <td style=\"white-space:normal;overflow-wrap:anywhere;\">{% if lot.supplier %}{{ lot.supplier.name }}{% else %}&mdash;{% endif %}</td>\n        <td>{{ lot.expiration_date }}</td>\n        <td class=\"text-end\">{{ lot.available_quantity }}</td>\n        <td>\n          {% if lot.expiration_date <= today %}\n            <span class=\"badge bg-danger\">Vencido</span>\n          {% else %}\n            <span class=\"badge bg-warning text-dark\">Próximo</span>\n          {% endif %}\n        </td>\n      </tr>\n      {% endwith %}\n      {% endfor %}\n    </tbody>\n  </table>\n</div>\n{% else %}\n<div class=\"alert alert-success\">No hay lotes con unidades disponibles que estén vencidos o venzan en los próximos {{ days }} días.</div>\n{% endif %}\n{% endblock %}\n\n",
+  "parity_before_fix": {
+    "admin_summary": {
+      "sales_count": 1,
+      "sales_total": "3.5",
+      "discount_total": "0.5",
+      "open_shifts": 1,
+      "low_stock": 2,
+      "expiring": 7,
+      "expired": 4
+    },
+    "expected_summary_with_fixes": {
+      "sales_count": 1,
+      "sales_total": "3.50",
+      "discount_total": "0.50",
+      "open_shifts": 1,
+      "low_stock": 3,
+      "expiring": 7,
+      "expired": 4
+    },
+    "dashboard_counts_low_stock_with_lt_defect": true,
+    "stock_overview_low_stock_names": [
+      "Avena Sin Minimo Cero Stock",
+      "Conserva Solo Vencida 400g",
+      "Galletas Categoria Suspendida",
+      "Leche Mezcla Vencimientos 1L"
+    ],
+    "stock_overview_includes_cat_off_defect": true,
+    "stock_overview_expired_numbers": [
+      "MIX-VENC-PAST",
+      "INACT-VENC",
+      "MIX-VENCE-HOY",
+      "ONLY-VENC-HOY"
+    ],
+    "stock_overview_expiring_numbers": [
+      "MIX-TIE-Z-FIRST",
+      "MIX-TIE-A-SECOND",
+      "CATOFF-PROX",
+      "INACT-PROX",
+      "LXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "MIX-DAY07",
+      "D30-EXACT"
+    ],
+    "stock_overview_lowercase_lot_shown_raw": false,
+    "expirations_lot_numbers_default_30": [
+      "MIX-VENC-PAST",
+      "INACT-VENC",
+      "ONLY-VENC-HOY",
+      "MIX-VENCE-HOY",
+      "MIX-TIE-Z-FIRST",
+      "MIX-TIE-A-SECOND",
+      "CATOFF-PROX",
+      "INACT-PROX",
+      "LXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "MIX-DAY07",
+      "D30-EXACT"
+    ],
+    "expirations_query_count": 0,
+    "stock_overview_n_plus_1_query_count": 0,
+    "dashboard_query_count": 0,
+    "wh_sees_summary_without_sales": true,
+    "seller_summary_is_none": true
+  },
+  "dias_probes_before_fix": {
+    "''": {
+      "status": 200,
+      "resolved_days": 30,
+      "lots_count": 11,
+      "has_d30": true,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": []
+    },
+    "'1'": {
+      "status": 200,
+      "resolved_days": 1,
+      "lots_count": 6,
+      "has_d30": false,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": []
+    },
+    "'7'": {
+      "status": 200,
+      "resolved_days": 7,
+      "lots_count": 10,
+      "has_d30": false,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": []
+    },
+    "'29'": {
+      "status": 200,
+      "resolved_days": 29,
+      "lots_count": 10,
+      "has_d30": false,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": []
+    },
+    "'30'": {
+      "status": 200,
+      "resolved_days": 30,
+      "lots_count": 11,
+      "has_d30": true,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": []
+    },
+    "'31'": {
+      "status": 200,
+      "resolved_days": 31,
+      "lots_count": 12,
+      "has_d30": true,
+      "has_d31": true,
+      "has_zero_qty": false,
+      "msgs": []
+    },
+    "'3650'": {
+      "status": 200,
+      "resolved_days": 3650,
+      "lots_count": 13,
+      "has_d30": true,
+      "has_d31": true,
+      "has_zero_qty": false,
+      "msgs": []
+    },
+    "'0'": {
+      "status": 200,
+      "resolved_days": 30,
+      "lots_count": 11,
+      "has_d30": true,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": [
+        "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+      ]
+    },
+    "'-5'": {
+      "status": 200,
+      "resolved_days": 30,
+      "lots_count": 11,
+      "has_d30": true,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": [
+        "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+      ]
+    },
+    "'3651'": {
+      "status": 200,
+      "resolved_days": 30,
+      "lots_count": 11,
+      "has_d30": true,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": [
+        "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+      ]
+    },
+    "'999999999'": {
+      "status": 200,
+      "resolved_days": 30,
+      "lots_count": 11,
+      "has_d30": true,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": [
+        "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+      ]
+    },
+    "'abc'": {
+      "status": 200,
+      "resolved_days": 30,
+      "lots_count": 11,
+      "has_d30": true,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": [
+        "Ingrese un número entero válido de días. Se muestran 30 días por defecto."
+      ]
+    },
+    "'7.5'": {
+      "status": 200,
+      "resolved_days": 30,
+      "lots_count": 11,
+      "has_d30": true,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": [
+        "Ingrese un número entero válido de días. Se muestran 30 días por defecto."
+      ]
+    },
+    "'+7'": {
+      "status": 200,
+      "resolved_days": 7,
+      "lots_count": 10,
+      "has_d30": false,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": []
+    },
+    "'٥'": {
+      "status": 200,
+      "resolved_days": 5,
+      "lots_count": 9,
+      "has_d30": false,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": []
+    },
+    "'1\\x00'": {
+      "status": 200,
+      "resolved_days": 30,
+      "lots_count": 11,
+      "has_d30": true,
+      "has_d31": false,
+      "has_zero_qty": false,
+      "msgs": [
+        "Ingrese un número entero válido de días. Se muestran 30 días por defecto."
+      ]
+    }
+  },
+  "chrome_pre_fix": {
+    "returncode": 0,
+    "stdout": "{\"expMetrics\":{\"docScrollWidth\":1366,\"windowInnerWidth\":1366,\"tableWrapScrollWidth\":2692,\"tableWrapClientWidth\":1028,\"overflowPx\":1664,\"ths\":[{\"text\":\"Producto\",\"right\":1281,\"clipped\":false},{\"text\":\"Categoría\",\"right\":1906,\"clipped\":true},{\"text\":\"Lote / Nro.\",\"right\":2442,\"clipped\":true},{\"text\":\"Proveedor\",\"right\":2549,\"clipped\":true},{\"text\":\"Vence\",\"right\":2740,\"clipped\":true},{\"text\":\"Cant. disponible\",\"right\":2890,\"clipped\":true},{\"text\":\"Estado\",\"right\":2986,\"clipped\":true}],\"hasDaysLeftShown\":false,\"hasDirectWriteoffLink\":false},\"stockMetrics\":{\"docScrollWidth\":1481,\"windowInnerWidth\":1366,\"docOverflow\":true}}",
+    "stderr": "",
+    "parsed": {
+      "expMetrics": {
+        "docScrollWidth": 1366,
+        "windowInnerWidth": 1366,
+        "tableWrapScrollWidth": 2692,
+        "tableWrapClientWidth": 1028,
+        "overflowPx": 1664,
+        "ths": [
+          {
+            "text": "Producto",
+            "right": 1281,
+            "clipped": false
+          },
+          {
+            "text": "Categoría",
+            "right": 1906,
+            "clipped": true
+          },
+          {
+            "text": "Lote / Nro.",
+            "right": 2442,
+            "clipped": true
+          },
+          {
+            "text": "Proveedor",
+            "right": 2549,
+            "clipped": true
+          },
+          {
+            "text": "Vence",
+            "right": 2740,
+            "clipped": true
+          },
+          {
+            "text": "Cant. disponible",
+            "right": 2890,
+            "clipped": true
+          },
+          {
+            "text": "Estado",
+            "right": 2986,
+            "clipped": true
+          }
+        ],
+        "hasDaysLeftShown": false,
+        "hasDirectWriteoffLink": false
+      },
+      "stockMetrics": {
+        "docScrollWidth": 1481,
+        "windowInnerWidth": 1366,
+        "docOverflow": true
+      }
+    }
+  },
+  "lima_midnight_and_pos_sqlite": {
+    "p_mix_sellable_model": 10,
+    "p_mix_sellable_service": 10,
+    "p_mix_pos_search_qty_with_2_barcode_keys_and_4_lots": 10,
+    "p_all_expired_in_pos": false,
+    "p_cat_off_in_pos": false,
+    "p_inactive_in_pos": false,
+    "midnight_before_045959Z": {
+      "localdate": "2026-11-11",
+      "sellable_stock": 5,
+      "pos_sellable": 5,
+      "pos_found": true
+    },
+    "midnight_after_050000Z": {
+      "localdate": "2026-11-12",
+      "sellable_stock": 0,
+      "pos_sellable": 0,
+      "pos_found": false
+    }
+  },
+  "http_boundaries": {
+    "anon_stock_status": 302,
+    "anon_expirations_status": 302,
+    "seller_stock_status": 403,
+    "seller_expirations_status": 403,
+    "admin_post_stock_405": 403,
+    "admin_post_expirations_405": 403,
+    "stock_cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+    "exp_cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+    "dash_cache_control": "max-age=0, no-cache, no-store, must-revalidate, private"
+  },
+  "postgresql_repro": {
+    "summary_at_nov11_235959_lima": {
+      "sales_count": 1,
+      "sales_total": "10.00",
+      "discount_total": 0,
+      "open_shifts": 1,
+      "low_stock": 0,
+      "expiring": 0,
+      "expired": 0
+    },
+    "summary_at_nov12_000000_lima": {
+      "sales_count": 1,
+      "sales_total": "20.00",
+      "discount_total": 0,
+      "open_shifts": 1,
+      "low_stock": 0,
+      "expiring": 0,
+      "expired": 0
+    },
+    "nul_dias_status": 200,
+    "port_closed": true
+  },
+  "protected_unchanged": true
+}

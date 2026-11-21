@@ -1,0 +1,73 @@
+{
+  "checks": [
+    "aislamiento_proof",
+    "aislamiento_run",
+    "anonimo_stock_overview_302",
+    "anonimo_stock_overview_next",
+    "anonimo_expirations_302",
+    "anonimo_expirations_next",
+    "anonimo_dashboard_302",
+    "anonimo_dashboard_next",
+    "vendedor_sin_nav_/inventario/stock/",
+    "vendedor_/inventario/stock/_403",
+    "vendedor_sin_nav_/productos/vencimientos/",
+    "vendedor_/productos/vencimientos/_403",
+    "vendedor_sin_nav_/productos/",
+    "vendedor_/productos/_403",
+    "vendedor_inicio_sin_resumen_general",
+    "pos_muestra_vendible_10_y_no_fisico_17",
+    "pos_no_muestra_fisico_17",
+    "pos_excluye_Conserva Solo",
+    "pos_excluye_Galletas Categoria",
+    "pos_excluye_Jugo Producto",
+    "wh_inicio_muestra_resumen_sin_ventas",
+    "wh_inicio_low_stock_3",
+    "wh_inicio_expiring_7",
+    "wh_inicio_expired_4",
+    "stock_overview_sin_overflow_doc_ni_paneles",
+    "stock_banner_lote_normalizado_mayus",
+    "stock_banner_incluye_etiqueta_inactivo",
+    "stock_banner_incluye_etiqueta_cat_off",
+    "stock_bajo_excluye_cat_off_e_incluye_3",
+    "stock_fila_cat_off_sin_resaltado_rojo"
+  ],
+  "layout_metrics": {
+    "stock_overview": {
+      "docScrollWidth": 1366,
+      "windowInnerWidth": 1366,
+      "docOk": true,
+      "wrapOk": true,
+      "wrapScrollW": 1030,
+      "wrapClientW": 1030,
+      "panelsAllFit": true,
+      "panels": [
+        {
+          "right": 1324,
+          "fits": true,
+          "clientW": 1025,
+          "scrollW": 1025
+        },
+        {
+          "right": 1324,
+          "fits": true,
+          "clientW": 1025,
+          "scrollW": 1025
+        },
+        {
+          "right": 1324,
+          "fits": true,
+          "clientW": 1025,
+          "scrollW": 1025
+        }
+      ],
+      "statusNormalWrap": true
+    }
+  },
+  "page_errors": [],
+  "screenshots": [
+    "01-dashboard-almacenero.png"
+  ],
+  "input": "Chrome 1366x900 Stage 07 audit (stock_overview, product_expirations, dashboard parity, POS contrast, writeoff sync)",
+  "chrome": "157.0.8103.78",
+  "error": "wh_stock_footer_acciones\n+ actual - expected\n\n  [\n    1,\n    1,\n+   2,\n-   1,\n    0\n  ]\n"
+}

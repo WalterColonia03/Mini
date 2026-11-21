@@ -1,0 +1,237 @@
+--- antes/.dockerignore
++++ despues/.dockerignore
+@@ -4,4 +4,5 @@
+ __pycache__
+ *.pyc
+ *.sqlite3
++staticfiles
+ 
+--- antes/config/settings.py
++++ despues/config/settings.py
+@@ -35,6 +35,7 @@
+ ]
+ MIDDLEWARE = [
+     "django.middleware.security.SecurityMiddleware",
++    "whitenoise.middleware.WhiteNoiseMiddleware",
+     "identity.middleware.RequestIdMiddleware",
+     "django.contrib.sessions.middleware.SessionMiddleware",
+     "django.middleware.common.CommonMiddleware",
+--- antes/config/urls.py
++++ despues/config/urls.py
+@@ -1,8 +1,8 @@
+-from django.contrib import admin
+ from django.urls import include, path
+ 
+ urlpatterns = [
+-    path("admin/", admin.site.urls),
++    # The commercial application has no Django-admin endpoint. Maintenance
++    # requires a separately secured channel instead of another login path.
+     path("productos/", include("catalog.urls")),
+     path("inventario/", include("inventory.urls")),
+     path("caja/", include("cash.urls")),
+--- antes/Dockerfile
++++ despues/Dockerfile
+@@ -9,6 +9,9 @@
+ RUN pip install --requirement requirements.txt
+ COPY . ./
+ 
++RUN APP_ENV=test DJANGO_DEBUG=false DJANGO_SECRET_KEY=static-build-only \
++    python manage.py collectstatic --noinput
++
+ RUN useradd --create-home --uid 10001 pmv \
+     && chown -R pmv:pmv /app
+ USER pmv
+--- antes/identity/services.py
++++ despues/identity/services.py
+@@ -28,11 +28,38 @@
+         return self.account is not None
+ 
+ 
++def _record_login_rejection(*, account, normalized, action, outcome, metadata) -> None:
++    """Persist a rejection, with a sanitized diagnostic if persistence fails."""
++    from .audit import record_transactional_event, safe_record_rejection_event
++
++    event = {
++        "actor": account,
++        "actor_identifier": normalized,
++        "action": action,
++        "target_type": "Account",
++        "target_id": str(account.pk) if account is not None else "",
++        "outcome": outcome,
++    }
++    try:
++        # Isolate an audit insert failure from the lockout transaction.
++        with transaction.atomic():
++            record_transactional_event(**event, metadata=metadata)
++    except Exception as exc:
++        try:
++            safe_record_rejection_event(
++                **event,
++                metadata={**metadata, "audit_persist_error": type(exc).__name__},
++                persist_db=False,
++            )
++        except Exception:
++            # Logging must never grant access or discard the lockout decision.
++            pass
++
++
+ @sensitive_variables()
+ @transaction.atomic
+ def authenticate_active_account(email: str, password: str) -> AuthenticationResult:
+     """Apply the same persistent lockout to existing and unknown identifiers."""
+-    from .audit import record_transactional_event
+     from .models import IdentityAuditEvent
+ 
+     normalized = Account.normalize_email(email)
+@@ -40,32 +67,26 @@
+     LoginAttempt.objects.get_or_create(identifier=identifier)
+     attempt = LoginAttempt.objects.select_for_update().get(identifier=identifier)
+     account = Account.objects.select_related("role").filter(email_normalized=normalized).first()
++    now = timezone.now()
++    if attempt.locked_until and attempt.locked_until > now:
++        minutes = max(1, ceil((attempt.locked_until - now).total_seconds() / 60))
++        _record_login_rejection(
++            account=account, normalized=normalized, action="LOGIN_LOCKED",
++            outcome=IdentityAuditEvent.Outcome.LOCKED,
++            metadata={"locked_minutes": minutes, "failures": attempt.failures, "already_locked": True},
++        )
++        return AuthenticationResult(None, minutes)
++    if attempt.locked_until:
++        attempt.failures = 0
++        attempt.locked_until = None
+     if account is None:
+-        # Perform comparable password work without storing the submitted password.
++        # Match password work for unknown and known identities when unlocked.
+         Account().set_password(password)
+         valid_password = False
+     else:
+         valid_password = check_password(password, account.password)
++    # The fifth failure starts a full 15-minute block after password checking.
+     now = timezone.now()
+-    if attempt.locked_until and attempt.locked_until > now:
+-        minutes = max(1, ceil((attempt.locked_until - now).total_seconds() / 60))
+-        try:
+-            with transaction.atomic():
+-                record_transactional_event(
+-                    actor=account if account is not None else None,
+-                    actor_identifier=normalized,
+-                    action="LOGIN_LOCKED",
+-                    target_type="Account",
+-                    target_id=str(account.pk) if account is not None else "",
+-                    outcome=IdentityAuditEvent.Outcome.LOCKED,
+-                    metadata={"locked_minutes": minutes, "failures": attempt.failures, "already_locked": True},
+-                )
+-        except Exception:
+-            pass
+-        return AuthenticationResult(None, minutes)
+-    if attempt.locked_until:
+-        attempt.failures = 0
+-        attempt.locked_until = None
+     if account is not None and account.is_active and valid_password and account.role.code in Role.Code.values:
+         # Keep the row stable for concurrent requests that have just found it
+         # and are waiting to acquire its lock. Removing it here can make their
+@@ -78,24 +99,17 @@
+         attempt.locked_until = now + timedelta(minutes=15)
+     attempt.save()
+     locked_now = bool(attempt.locked_until)
+-    try:
+-        with transaction.atomic():
+-            record_transactional_event(
+-                actor=account if account is not None else None,
+-                actor_identifier=normalized,
+-                action="LOGIN_LOCKED" if locked_now else "LOGIN_FAILED",
+-                target_type="Account",
+-                target_id=str(account.pk) if account is not None else "",
+-                outcome=IdentityAuditEvent.Outcome.LOCKED if locked_now else IdentityAuditEvent.Outcome.REJECTED,
+-                metadata={
+-                    "failures": attempt.failures,
+-                    "locked_minutes": 15 if locked_now else 0,
+-                    "account_exists": account is not None,
+-                    "account_active": bool(account.is_active) if account is not None else False,
+-                },
+-            )
+-    except Exception:
+-        pass
++    _record_login_rejection(
++        account=account, normalized=normalized,
++        action="LOGIN_LOCKED" if locked_now else "LOGIN_FAILED",
++        outcome=IdentityAuditEvent.Outcome.LOCKED if locked_now else IdentityAuditEvent.Outcome.REJECTED,
++        metadata={
++            "failures": attempt.failures,
++            "locked_minutes": 15 if locked_now else 0,
++            "account_exists": account is not None,
++            "account_active": bool(account.is_active) if account is not None else False,
++        },
++    )
+     return AuthenticationResult(None, 15 if locked_now else 0)
+ 
+ 
+--- antes/identity/test_auth_audit01.py
++++ despues/identity/test_auth_audit01.py
+@@ -536,39 +536,30 @@
+         self.assertEqual(admin_client.get(deact_url).status_code, 405)
+         self.assertEqual(Client().delete(reverse("login")).status_code, 405)
+ 
+-    def test_admin_login_surface_rejects_nonstaff_rejects_unnormalized_email_and_shares_session(self):
++    def test_admin_login_surface_is_absent_from_commercial_application(self):
+         staff = Account.objects.create_user(
+             "staff.audit01@example.invalid", self.password,
+             display_name="AUD01 Staff", role=self.admin.role, is_staff=True,
+         )
+-        # Non-staff commercial roles and inactive account cannot authenticate on /admin/login/.
+-        for account in (*self.accounts.values(), self.inactive):
++        for account in (*self.accounts.values(), self.inactive, staff):
+             client = Client()
+             resp = client.post("/admin/login/?next=/admin/", {
+                 "username": account.email, "password": self.password, "next": "/admin/",
+             })
+-            self.assertEqual(resp.status_code, 200)
++            self.assertEqual(resp.status_code, 404)
+             self.assertNotIn("_auth_user_id", client.session)
+         self.assertEqual(LoginAttempt.objects.count(), 0)
+ 
+-        # ModelBackend does not normalize uppercase/whitespace email on /admin/login/.
+-        client_upper = Client()
+-        resp_upper = client_upper.post("/admin/login/?next=/admin/", {
+-            "username": f"  {staff.email.upper()}  ", "password": self.password, "next": "/admin/",
+-        })
+-        self.assertEqual(resp_upper.status_code, 200)
+-        self.assertNotIn("_auth_user_id", client_upper.session)
+-
+-        # Lock staff on public login `/`, then log in via `/admin/login/`; session also accesses `/inicio/`.
+         self.lock(email=staff.email, client=Client())
+         admin_client = Client()
+-        resp_ok = admin_client.post("/admin/login/?next=/admin/", {
++        with patch("identity.services.timezone.now", return_value=self.base_time + timedelta(seconds=30)):
++            self.assertContains(self.post(email=staff.email, client=admin_client), "15 minuto(s)")
++        resp = admin_client.post("/admin/login/?next=/admin/", {
+             "username": staff.email, "password": self.password, "next": "/admin/",
+         })
+-        self.assertEqual(resp_ok.status_code, 302)
+-        self.assertEqual(resp_ok.headers["Location"], "/admin/")
+-        self.assertRedirects(admin_client.get(reverse("login")), reverse("dashboard"))
+-        self.assertEqual(admin_client.get(reverse("dashboard")).status_code, 200)
++        self.assertEqual(resp.status_code, 404)
++        self.assertNotIn("_auth_user_id", admin_client.session)
++        self.assertEqual(admin_client.get(reverse("dashboard")).status_code, 302)
+ 
+     def test_logging_redact_filter_redacts_message_keys_and_documents_exc_info_boundary(self):
+         import logging
+--- antes/README.md
++++ despues/README.md
+@@ -34,6 +34,8 @@
+ 
+ Abra `http://127.0.0.1:8000/`. La opción `--insecure` sirve los archivos de estilo solo para esta demostración local; no se usa para un despliegue público. `seed_pmv` crea las cuentas ficticias `admin.demo@pmv.invalid`, `almacen.demo@pmv.invalid` y `vendedor.demo@pmv.invalid`, además de una cuenta inactiva de prueba. Las contraseñas de las cuentas existentes no se sustituyen si sus datos no cambiaron. Use estas semillas solo para demostración.
+ 
++El portal Django `/admin/` no está publicado en la aplicación comercial; el mantenimiento requiere un canal independiente. La imagen ejecuta `collectstatic` durante su construcción y WhiteNoise sirve los recursos recopilados con `DEBUG=false`. En otros métodos de despliegue, ejecute `python manage.py collectstatic --noinput` al preparar cada versión.
++
+ ## Verificación
+ 
+ ```powershell
+--- antes/requirements.txt
++++ despues/requirements.txt
+@@ -2,3 +2,4 @@
+ argon2-cffi==25.1.0
+ psycopg[binary]==3.2.13
+ gunicorn==25.1.0
++whitenoise==6.12.0

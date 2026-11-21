@@ -1,0 +1,103 @@
+EXIT: 0
+
+--- STDOUT ---
+Found 7 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+
+
+--- STDERR ---
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+test_anonymous_redirects_and_non_seller_forbidden_on_all_draft_routes (sales.test_audit10_draft.Stage10SaleDraftAuditTests.test_anonymous_redirects_and_non_seller_forbidden_on_all_draft_routes) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:52:50.252972+00:00", "outcome": "REJECTED", "request_id": "5649b906e1ef488685995995f454526b", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:52:50.253977+00:00", "outcome": "REJECTED", "request_id": "f5c83080d60b4e5aa596d4664188d49c", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:52:50.256983+00:00", "outcome": "REJECTED", "request_id": "7fbc6d02b3924a26bdad6a2ae6453090", "target_id": "/ventas/lineas/68f08f23-2444-4b94-a9bc-afc2d1457b6b/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:52:50.258891+00:00", "outcome": "REJECTED", "request_id": "e7ac740214f0452197929cce0bcf57d3", "target_id": "/ventas/lineas/68f08f23-2444-4b94-a9bc-afc2d1457b6b/quitar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:52:50.260976+00:00", "outcome": "REJECTED", "request_id": "f2ad3aef9c0b4b5682fa554cdf94c396", "target_id": "/ventas/descartar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "db75b64e-3f63-4aeb-9643-ce5c9d7f42df", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.279863+00:00", "outcome": "REJECTED", "request_id": "d44c580f1bf14123bb16d4b27296d91f", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "db75b64e-3f63-4aeb-9643-ce5c9d7f42df", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.319375+00:00", "outcome": "REJECTED", "request_id": "fa332bfcd7ff488daac2dffcbebb473d", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "db75b64e-3f63-4aeb-9643-ce5c9d7f42df", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.332668+00:00", "outcome": "REJECTED", "request_id": "2733bde6bf7e4dc7be3a368ba6981079", "target_id": "/ventas/lineas/68f08f23-2444-4b94-a9bc-afc2d1457b6b/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "db75b64e-3f63-4aeb-9643-ce5c9d7f42df", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.343861+00:00", "outcome": "REJECTED", "request_id": "6e951d7227cb4006ae2ddfb31f3f7929", "target_id": "/ventas/lineas/68f08f23-2444-4b94-a9bc-afc2d1457b6b/quitar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "db75b64e-3f63-4aeb-9643-ce5c9d7f42df", "actor_identifier": "admin.a10@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.361641+00:00", "outcome": "REJECTED", "request_id": "82f8001ccfa8459db910b538be56ce48", "target_id": "/ventas/descartar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "5a0590b6-9f29-4001-b895-023d34722492", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.382480+00:00", "outcome": "REJECTED", "request_id": "09c10fc8ec6040189a8dcfe4ef417ca6", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "5a0590b6-9f29-4001-b895-023d34722492", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.398815+00:00", "outcome": "REJECTED", "request_id": "96a0686e14274fb7aa8e931755ed90b0", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "5a0590b6-9f29-4001-b895-023d34722492", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.415355+00:00", "outcome": "REJECTED", "request_id": "d80a07d1919c4f0b863ee89b415e2b5b", "target_id": "/ventas/lineas/68f08f23-2444-4b94-a9bc-afc2d1457b6b/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "5a0590b6-9f29-4001-b895-023d34722492", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.432115+00:00", "outcome": "REJECTED", "request_id": "37935d06c7704bdca4b77dcc9462dbb2", "target_id": "/ventas/lineas/68f08f23-2444-4b94-a9bc-afc2d1457b6b/quitar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "5a0590b6-9f29-4001-b895-023d34722492", "actor_identifier": "wh.a10@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:52:50.446660+00:00", "outcome": "REJECTED", "request_id": "728e43c712f94effb09f9b06955efd65", "target_id": "/ventas/descartar/", "target_type": "Endpoint"}
+ok
+test_explicit_absence_of_hu_ven_01a_inactivity_screen_lock_and_hu_ven_04_gaps (sales.test_audit10_draft.Stage10SaleDraftAuditTests.test_explicit_absence_of_hu_ven_01a_inactivity_screen_lock_and_hu_ven_04_gaps)
+Evidence check: verify code reality honestly (no 5-min screen lock; /ventas/ hides lookup without shift). ... ok
+test_inactive_seller_denied_on_draft_services_and_atomic_draft_totals (sales.test_audit10_draft.Stage10SaleDraftAuditTests.test_inactive_seller_denied_on_draft_services_and_atomic_draft_totals) ... ok
+test_manual_discard_and_close_shift_lock_behavior (sales.test_audit10_draft.Stage10SaleDraftAuditTests.test_manual_discard_and_close_shift_lock_behavior) ... ok
+test_search_errors_and_redirect_encoding_and_empty_or_no_shift_post (sales.test_audit10_draft.Stage10SaleDraftAuditTests.test_search_errors_and_redirect_encoding_and_empty_or_no_shift_post) ... ok
+test_search_normalizes_accents_spaces_and_multi_gtin_without_inflating_stock (sales.test_audit10_draft.Stage10SaleDraftAuditTests.test_search_normalizes_accents_spaces_and_multi_gtin_without_inflating_stock) ... ok
+test_strict_ascii_integer_and_bounds_on_add_and_update_forms_and_services (sales.test_audit10_draft.Stage10SaleDraftAuditTests.test_strict_ascii_integer_and_bounds_on_add_and_update_forms_and_services) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.974s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+

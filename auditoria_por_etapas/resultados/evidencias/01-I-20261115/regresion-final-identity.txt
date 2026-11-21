@@ -1,0 +1,292 @@
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+Found 93 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+test_authenticated_staff_has_no_admin_portal_or_role_escalation (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_authenticated_staff_has_no_admin_portal_or_role_escalation) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "66266ee1-13b7-42b7-9cb3-f096bd4957ce", "actor_identifier": "super01i@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:19.169825+00:00", "outcome": "REJECTED", "request_id": "9157536aa3eb4dbd9d973084692fcab3", "target_id": "/empleados/", "target_type": "Endpoint"}
+ok
+test_commercial_application_has_no_django_admin_endpoints (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_commercial_application_has_no_django_admin_endpoints) ... ok
+test_denied_cross_role_requests_preserve_populated_business_data (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_denied_cross_role_requests_preserve_populated_business_data) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "259a7629-49f3-4bc7-8d83-7b2c43813619", "actor_identifier": "warehouse01i@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:19.288832+00:00", "outcome": "REJECTED", "request_id": "97da0ff5df36493b8b185b62a9549414", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "259a7629-49f3-4bc7-8d83-7b2c43813619", "actor_identifier": "warehouse01i@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:19.294366+00:00", "outcome": "REJECTED", "request_id": "6eddc3a0f8b8404f991ecd1cb51c9c33", "target_id": "/empleados/76173f7f-eebc-4069-889d-cb0baf511286/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "259a7629-49f3-4bc7-8d83-7b2c43813619", "actor_identifier": "warehouse01i@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:19.298408+00:00", "outcome": "REJECTED", "request_id": "3ff48c18f21246bb981f8c7b9d33eb34", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "66266ee1-13b7-42b7-9cb3-f096bd4957ce", "actor_identifier": "super01i@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:19.387433+00:00", "outcome": "REJECTED", "request_id": "2afe4fff61c74bc085d2c59e5f5f125f", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "66266ee1-13b7-42b7-9cb3-f096bd4957ce", "actor_identifier": "super01i@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:19.393378+00:00", "outcome": "REJECTED", "request_id": "0e819f4b7a11466e878819dd612044cb", "target_id": "/empleados/76173f7f-eebc-4069-889d-cb0baf511286/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "66266ee1-13b7-42b7-9cb3-f096bd4957ce", "actor_identifier": "super01i@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:19.399599+00:00", "outcome": "REJECTED", "request_id": "db12a6cace164a30be8243ef7b82f192", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "76173f7f-eebc-4069-889d-cb0baf511286", "actor_identifier": "staff01i@example.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:19.512205+00:00", "outcome": "REJECTED", "request_id": "b6e727f560344bd58d5fe80fc16d6cee", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+ok
+test_expired_lock_still_checks_password_and_resets_on_success (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_expired_lock_still_checks_password_and_resets_on_success) ... ok
+test_fifth_failure_gets_full_fifteen_minutes_after_password_check (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_fifth_failure_gets_full_fifteen_minutes_after_password_check) ... ok
+test_known_identifier_already_locked_does_not_hash_password (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_known_identifier_already_locked_does_not_hash_password) ... ok
+test_locked_staff_and_superuser_cannot_bypass_login_via_admin (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_locked_staff_and_superuser_cannot_bypass_login_via_admin) ... ok
+test_unknown_identifier_already_locked_does_not_hash_password (identity.test_audit01i_security.CommercialLoginPerimeterTests.test_unknown_identifier_already_locked_does_not_hash_password) ... ok
+test_admin_login_surface_is_absent_from_commercial_application (identity.test_auth_audit01.LoginAudit01Tests.test_admin_login_surface_is_absent_from_commercial_application) ... ok
+test_all_three_roles_accept_normalized_email_and_persist_identity (identity.test_auth_audit01.LoginAudit01Tests.test_all_three_roles_accept_normalized_email_and_persist_identity) ... ok
+test_already_authenticated_get_and_post_redirect_to_dashboard_ignoring_next (identity.test_auth_audit01.LoginAudit01Tests.test_already_authenticated_get_and_post_redirect_to_dashboard_ignoring_next) ... ok
+test_contradictory_post_and_get_next_and_nonexistent_local_target (identity.test_auth_audit01.LoginAudit01Tests.test_contradictory_post_and_get_next_and_nonexistent_local_target) ... ok
+test_csrf_absent_invalid_and_cross_origin_do_not_touch_attempts (identity.test_auth_audit01.LoginAudit01Tests.test_csrf_absent_invalid_and_cross_origin_do_not_touch_attempts) ... Forbidden (CSRF token missing.): /
+Forbidden (CSRF token from POST has incorrect length.): /
+Forbidden (Origin checking failed - https://outside.example.invalid does not match any trusted origins.): /
+ok
+test_email_length_boundaries_254_255_319_320_321 (identity.test_auth_audit01.LoginAudit01Tests.test_email_length_boundaries_254_255_319_320_321) ... identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:21.646615+00:00", "outcome": "REJECTED", "request_id": "1480c05243b949dc9e4173677ed6d1e9", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:21.651124+00:00", "outcome": "REJECTED", "request_id": "ce0c636720b1431ea6b7210f3d42fb3b", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:21.656593+00:00", "outcome": "REJECTED", "request_id": "00b3dc02af3142bc8e9eed8492908f9f", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:21.661097+00:00", "outcome": "REJECTED", "request_id": "1591bb6f53564563a5be5737039e1480", "target_id": "/", "target_type": "Endpoint"}
+ok
+test_empty_post_is_bound_and_reports_both_required_fields (identity.test_auth_audit01.LoginAudit01Tests.test_empty_post_is_bound_and_reports_both_required_fields) ... identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email", "password"]}, "occurred_at_utc": "2026-11-15T15:44:21.693991+00:00", "outcome": "REJECTED", "request_id": "2d91c17831444a6eb043cd9060a40844", "target_id": "/", "target_type": "Endpoint"}
+ok
+test_exact_expiration_permits_login_and_resets_stable_row (identity.test_auth_audit01.LoginAudit01Tests.test_exact_expiration_permits_login_and_resets_stable_row) ... ok
+test_exception_filter_redacts_submitted_credentials (identity.test_auth_audit01.LoginAudit01Tests.test_exception_filter_redacts_submitted_credentials) ... ok
+test_external_scheme_relative_and_javascript_next_fall_back (identity.test_auth_audit01.LoginAudit01Tests.test_external_scheme_relative_and_javascript_next_fall_back) ... ok
+test_fifth_failure_locks_for_exactly_fifteen_minutes (identity.test_auth_audit01.LoginAudit01Tests.test_fifth_failure_locks_for_exactly_fifteen_minutes) ... ok
+test_get_and_failed_post_are_not_cacheable (identity.test_auth_audit01.LoginAudit01Tests.test_get_and_failed_post_are_not_cacheable) ... ok
+test_get_credentials_are_ignored_and_put_is_rejected (identity.test_auth_audit01.LoginAudit01Tests.test_get_credentials_are_ignored_and_put_is_rejected) ... ok
+test_https_login_rejects_http_downgrade_next (identity.test_auth_audit01.LoginAudit01Tests.test_https_login_rejects_http_downgrade_next) ... ok
+test_identity_routes_authorization_and_method_boundaries (identity.test_auth_audit01.LoginAudit01Tests.test_identity_routes_authorization_and_method_boundaries) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:23.545044+00:00", "outcome": "REJECTED", "request_id": "d31c248abe8e4dabb0b2c1f26a874816", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:23.559150+00:00", "outcome": "REJECTED", "request_id": "69e01f9b017549d3b4acd86576909412", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:23.575179+00:00", "outcome": "REJECTED", "request_id": "fe3c65e9e91e475f8e864695f4727acb", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:23.587174+00:00", "outcome": "REJECTED", "request_id": "dee036da037e4181b7eb86276d8cdcc2", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:23.601502+00:00", "outcome": "REJECTED", "request_id": "446500f568664660978feee3365c9061", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:23.615746+00:00", "outcome": "REJECTED", "request_id": "407bd9e5c58f4793967d78090e0f1ad3", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6466d88-bcc6-43a5-be11-a9900f2e8dde", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.635361+00:00", "outcome": "REJECTED", "request_id": "b9b5b705621e451ab2724530bd9634c5", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6466d88-bcc6-43a5-be11-a9900f2e8dde", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.641515+00:00", "outcome": "REJECTED", "request_id": "1e0f34dbbc864816a9d0eca36c42eafe", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6466d88-bcc6-43a5-be11-a9900f2e8dde", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.647362+00:00", "outcome": "REJECTED", "request_id": "35478746563e483cbd81505985844eaa", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6466d88-bcc6-43a5-be11-a9900f2e8dde", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.651079+00:00", "outcome": "REJECTED", "request_id": "f3e7f1b667114c57b3a909ad7964f30d", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6466d88-bcc6-43a5-be11-a9900f2e8dde", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.656216+00:00", "outcome": "REJECTED", "request_id": "fe9fbc19b40e44338f6f37aa31a24d2d", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6466d88-bcc6-43a5-be11-a9900f2e8dde", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.660625+00:00", "outcome": "REJECTED", "request_id": "a7019574b5334cac80ea98cc14c59cd8", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "f6466d88-bcc6-43a5-be11-a9900f2e8dde", "actor_identifier": "almacenero.audit01@example.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.664158+00:00", "outcome": "REJECTED", "request_id": "80903861bae244c7bb429b7bd9850e06", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "869e0b30-2eae-4e0a-bfbe-a992adb8cc06", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.687295+00:00", "outcome": "REJECTED", "request_id": "5ed89f97ab7a42d2a6da1e048f26e6fa", "target_id": "/empleados/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "869e0b30-2eae-4e0a-bfbe-a992adb8cc06", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.691361+00:00", "outcome": "REJECTED", "request_id": "7323c5edc37141dc86cc92d019db8c21", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "869e0b30-2eae-4e0a-bfbe-a992adb8cc06", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.693881+00:00", "outcome": "REJECTED", "request_id": "7e20ece234d846cab2dd8c68160e77bc", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "869e0b30-2eae-4e0a-bfbe-a992adb8cc06", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.698035+00:00", "outcome": "REJECTED", "request_id": "c2c1f7a6d7354d05ae6d2975c5b70cce", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "869e0b30-2eae-4e0a-bfbe-a992adb8cc06", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.704883+00:00", "outcome": "REJECTED", "request_id": "c43a392075754443927af8f9a7efc950", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/editar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "869e0b30-2eae-4e0a-bfbe-a992adb8cc06", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.710341+00:00", "outcome": "REJECTED", "request_id": "e0acffa25677463c9f5481c17dfc4bf3", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "869e0b30-2eae-4e0a-bfbe-a992adb8cc06", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:23.714121+00:00", "outcome": "REJECTED", "request_id": "aaea97a9f327478aa731491eadf2be50", "target_id": "/empleados/869e0b30-2eae-4e0a-bfbe-a992adb8cc06/estado/", "target_type": "Endpoint"}
+ok
+test_inactive_and_unknown_share_fifth_failure_response (identity.test_auth_audit01.LoginAudit01Tests.test_inactive_and_unknown_share_fifth_failure_response) ... ok
+test_internal_next_is_followed_but_does_not_bypass_role_authorization (identity.test_auth_audit01.LoginAudit01Tests.test_internal_next_is_followed_but_does_not_bypass_role_authorization) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "869e0b30-2eae-4e0a-bfbe-a992adb8cc06", "actor_identifier": "vendedor.audit01@example.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:24.633592+00:00", "outcome": "REJECTED", "request_id": "dc1b34fbcb654113a55e8f88ea6cec54", "target_id": "/empleados/", "target_type": "Endpoint"}
+ok
+test_invalid_fields_do_not_increment_lock_counter (identity.test_auth_audit01.LoginAudit01Tests.test_invalid_fields_do_not_increment_lock_counter) ... identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:24.663522+00:00", "outcome": "REJECTED", "request_id": "2e2c7176a6ed47d68518b0669e7df814", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:24.671544+00:00", "outcome": "REJECTED", "request_id": "f2c78ed441674f3bb42fae370e5be26c", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["password"]}, "occurred_at_utc": "2026-11-15T15:44:24.679079+00:00", "outcome": "REJECTED", "request_id": "0b5430dbb6044c459f48463440299233", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:24.686047+00:00", "outcome": "REJECTED", "request_id": "ee2ca540a5c849e1981b254b61cfe9cf", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["password"]}, "occurred_at_utc": "2026-11-15T15:44:24.697253+00:00", "outcome": "REJECTED", "request_id": "49855bd3fe0c4c489ec26d32224ca718", "target_id": "/", "target_type": "Endpoint"}
+ok
+test_legacy_pbkdf2_account_accepts_normalized_login_after_failure (identity.test_auth_audit01.LoginAudit01Tests.test_legacy_pbkdf2_account_accepts_normalized_login_after_failure) ... ok
+test_lock_does_not_revoke_an_already_authenticated_session (identity.test_auth_audit01.LoginAudit01Tests.test_lock_does_not_revoke_an_already_authenticated_session) ... ok
+test_locked_state_shared_across_sessions_and_normalized_variants (identity.test_auth_audit01.LoginAudit01Tests.test_locked_state_shared_across_sessions_and_normalized_variants) ... ok
+test_logging_redact_filter_redacts_message_keys_and_documents_exc_info_boundary (identity.test_auth_audit01.LoginAudit01Tests.test_logging_redact_filter_redacts_message_keys_and_documents_exc_info_boundary) ... ok
+test_login_attempts_store_only_hmac_and_counter_state (identity.test_auth_audit01.LoginAudit01Tests.test_login_attempts_store_only_hmac_and_counter_state) ... ok
+test_maximum_length_registered_email_authenticates_and_widget_matches (identity.test_auth_audit01.LoginAudit01Tests.test_maximum_length_registered_email_authenticates_and_widget_matches) ... ok
+test_minutes_round_up_at_each_relevant_boundary (identity.test_auth_audit01.LoginAudit01Tests.test_minutes_round_up_at_each_relevant_boundary) ... ok
+test_one_identifier_lock_does_not_lock_another_role (identity.test_auth_audit01.LoginAudit01Tests.test_one_identifier_lock_does_not_lock_another_role) ... ok
+test_password_is_not_repopulated_and_next_is_html_escaped (identity.test_auth_audit01.LoginAudit01Tests.test_password_is_not_repopulated_and_next_is_html_escaped) ... ok
+test_password_whitespace_is_preserved (identity.test_auth_audit01.LoginAudit01Tests.test_password_whitespace_is_preserved) ... ok
+test_second_complete_lockout_cycle_after_expiration (identity.test_auth_audit01.LoginAudit01Tests.test_second_complete_lockout_cycle_after_expiration) ... ok
+test_service_exception_filter_redacts_credential_locals (identity.test_auth_audit01.LoginAudit01Tests.test_service_exception_filter_redacts_credential_locals) ... ok
+test_success_before_fifth_failure_resets_consecutive_count (identity.test_auth_audit01.LoginAudit01Tests.test_success_before_fifth_failure_resets_consecutive_count) ... ok
+test_unicode_casefold_and_idn_email_normalization_boundaries (identity.test_auth_audit01.LoginAudit01Tests.test_unicode_casefold_and_idn_email_normalization_boundaries) ... identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:30.388496+00:00", "outcome": "REJECTED", "request_id": "f7bdfdbcb5c9459681c7a54508b897bc", "target_id": "/", "target_type": "Endpoint"}
+identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:30.407747+00:00", "outcome": "REJECTED", "request_id": "812fe1534a3445f6a3ec48d327cb797c", "target_id": "/", "target_type": "Endpoint"}
+ok
+test_unusable_password_follows_uniform_five_failure_lockout (identity.test_auth_audit01.LoginAudit01Tests.test_unusable_password_follows_uniform_five_failure_lockout) ... ok
+test_valid_csrf_rotates_csrf_and_session_and_sets_cookie_flags (identity.test_auth_audit01.LoginAudit01Tests.test_valid_csrf_rotates_csrf_and_session_and_sets_cookie_flags) ... ok
+test_whitespace_only_email_vs_whitespace_only_password_and_long_password_no_truncation (identity.test_auth_audit01.LoginAudit01Tests.test_whitespace_only_email_vs_whitespace_only_password_and_long_password_no_truncation) ... identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:31.555103+00:00", "outcome": "REJECTED", "request_id": "a5e50fbbb82049d8b3bcc428600b8358", "target_id": "/", "target_type": "Endpoint"}
+ok
+test_wrong_password_after_expiration_starts_new_series (identity.test_auth_audit01.LoginAudit01Tests.test_wrong_password_after_expiration_starts_new_series) ... ok
+test_wrong_unknown_inactive_share_exact_message_and_no_identity (identity.test_auth_audit01.LoginAudit01Tests.test_wrong_unknown_inactive_share_exact_message_and_no_identity) ... ok
+test_active_account_creates_server_session (identity.tests.AuthenticationAndAuthorizationTests.test_active_account_creates_server_session) ... ok
+test_anonymous_protected_route_redirects_to_the_public_login (identity.tests.AuthenticationAndAuthorizationTests.test_anonymous_protected_route_redirects_to_the_public_login) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:33.185230+00:00", "outcome": "REJECTED", "request_id": "28e3e8585d7c48c59f0cd67bab9923ec", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+ok
+test_dashboard_does_not_expose_planning_identifiers (identity.tests.AuthenticationAndAuthorizationTests.test_dashboard_does_not_expose_planning_identifiers) ... ok
+test_dashboard_only_shows_authorized_navigation (identity.tests.AuthenticationAndAuthorizationTests.test_dashboard_only_shows_authorized_navigation) ... ok
+test_direct_operation_is_denied_without_mutating_data (identity.tests.AuthenticationAndAuthorizationTests.test_direct_operation_is_denied_without_mutating_data) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "e49e13cf-6bec-4eea-87f2-84f62dbe97df", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:33.262141+00:00", "outcome": "REJECTED", "request_id": "e0ebb5a116574bf9930b04e91f5c5a3a", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+ok
+test_invalid_email_is_rejected_before_authentication (identity.tests.AuthenticationAndAuthorizationTests.test_invalid_email_is_rejected_before_authentication) ... identity_audit {"action": "LOGIN_INVALID_INPUT", "actor_id": null, "actor_identifier": null, "metadata": {"fields": ["email"]}, "occurred_at_utc": "2026-11-15T15:44:33.281418+00:00", "outcome": "REJECTED", "request_id": "58933491395e4826a3049ad76adae6b6", "target_id": "/", "target_type": "Endpoint"}
+ok
+test_login_does_not_show_internal_access_copy (identity.tests.AuthenticationAndAuthorizationTests.test_login_does_not_show_internal_access_copy) ... ok
+test_login_post_requires_csrf_and_sets_protected_cookies (identity.tests.AuthenticationAndAuthorizationTests.test_login_post_requires_csrf_and_sets_protected_cookies) ... Forbidden (CSRF cookie not set.): /
+ok
+test_login_rotates_an_existing_anonymous_session_key (identity.tests.AuthenticationAndAuthorizationTests.test_login_rotates_an_existing_anonymous_session_key) ... ok
+test_password_uses_argon2_and_is_never_stored_in_plain_text (identity.tests.AuthenticationAndAuthorizationTests.test_password_uses_argon2_and_is_never_stored_in_plain_text) ... ok
+test_post_logout_invalidates_session_and_back_route_requires_login (identity.tests.AuthenticationAndAuthorizationTests.test_post_logout_invalidates_session_and_back_route_requires_login) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:33.547792+00:00", "outcome": "REJECTED", "request_id": "3d93bfb6e5364f02a169da18c36ed8b5", "target_id": "/ventas/", "target_type": "Endpoint"}
+ok
+test_role_matrix_is_enforced_on_direct_urls (identity.tests.AuthenticationAndAuthorizationTests.test_role_matrix_is_enforced_on_direct_urls) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "e49e13cf-6bec-4eea-87f2-84f62dbe97df", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:33.589783+00:00", "outcome": "REJECTED", "request_id": "77568e31e717498aa7d9e314c1ac7ea9", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "3aa3071e-a599-4c9c-98b7-4c156ee3feb7", "actor_identifier": "seller@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:33.598303+00:00", "outcome": "REJECTED", "request_id": "933d43dc12444d1987624c5938edb319", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8d47dc40-4800-4d89-a279-45ed66a62b0d", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:33.609187+00:00", "outcome": "REJECTED", "request_id": "d302348ab5864ac0bb76b9fc1b0d37d2", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "3aa3071e-a599-4c9c-98b7-4c156ee3feb7", "actor_identifier": "seller@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:33.643608+00:00", "outcome": "REJECTED", "request_id": "383a8f91b6aa4c80b6f9d16788ed79e2", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8d47dc40-4800-4d89-a279-45ed66a62b0d", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:33.655506+00:00", "outcome": "REJECTED", "request_id": "8754ae9a30fc4ce988d2fee871ae89e1", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e49e13cf-6bec-4eea-87f2-84f62dbe97df", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:33.662445+00:00", "outcome": "REJECTED", "request_id": "b8ce1e21cf964c39bad7fccf77613bfe", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8d47dc40-4800-4d89-a279-45ed66a62b0d", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:33.683115+00:00", "outcome": "REJECTED", "request_id": "ab567c5d9df74e00ab2e857b23059e91", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "e49e13cf-6bec-4eea-87f2-84f62dbe97df", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:33.689838+00:00", "outcome": "REJECTED", "request_id": "c02a9052509d4c908fbb91727be7047a", "target_id": "/ventas/", "target_type": "Endpoint"}
+ok
+test_sales_preparation_page_does_not_expose_planning_identifiers (identity.tests.AuthenticationAndAuthorizationTests.test_sales_preparation_page_does_not_expose_planning_identifiers) ... ok
+test_sidebar_limits_each_role_to_its_current_operation (identity.tests.AuthenticationAndAuthorizationTests.test_sidebar_limits_each_role_to_its_current_operation) ... ok
+test_unknown_email_wrong_password_and_inactive_account_share_message (identity.tests.AuthenticationAndAuthorizationTests.test_unknown_email_wrong_password_and_inactive_account_share_message) ... ok
+test_unknown_existing_role_cannot_log_in_or_access_dashboard (identity.tests.AuthenticationAndAuthorizationTests.test_unknown_existing_role_cannot_log_in_or_access_dashboard) ... ok
+test_admin_can_access_employee_edit_form (identity.tests.EmployeeEditDeactivateTests.test_admin_can_access_employee_edit_form) ... ok
+test_admin_can_deactivate_employee (identity.tests.EmployeeEditDeactivateTests.test_admin_can_deactivate_employee) ... ok
+test_admin_can_edit_employee_name (identity.tests.EmployeeEditDeactivateTests.test_admin_can_edit_employee_name) ... ok
+test_admin_can_reactivate_inactive_employee (identity.tests.EmployeeEditDeactivateTests.test_admin_can_reactivate_inactive_employee) ... ok
+test_admin_cannot_change_own_role (identity.tests.EmployeeEditDeactivateTests.test_admin_cannot_change_own_role) ... identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1c3c3789-6564-4b3f-adfd-76b683b77dca", "actor_identifier": "admined@test.invalid", "metadata": {"fields": ["role"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:44:34.648197+00:00", "outcome": "REJECTED", "request_id": "2a58af91e466479b8b2e3ad85ef9c671", "target_id": "1c3c3789-6564-4b3f-adfd-76b683b77dca", "target_type": "Account"}
+ok
+test_admin_cannot_deactivate_self (identity.tests.EmployeeEditDeactivateTests.test_admin_cannot_deactivate_self) ... identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1c3c3789-6564-4b3f-adfd-76b683b77dca", "actor_identifier": "admined@test.invalid", "metadata": {"action_requested": "desactivar", "reason": "No puedes desactivar tu propia cuenta."}, "occurred_at_utc": "2026-11-15T15:44:34.682068+00:00", "outcome": "REJECTED", "request_id": "c243e9e5ed564de3bbd2d7db5364292c", "target_id": "1c3c3789-6564-4b3f-adfd-76b683b77dca", "target_type": "Account"}
+ok
+test_cannot_change_role_of_seller_with_open_shift (identity.tests.EmployeeEditDeactivateTests.test_cannot_change_role_of_seller_with_open_shift)
+BUG-001: No se puede cambiar el rol de un vendedor con turno de caja abierto. ... identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1c3c3789-6564-4b3f-adfd-76b683b77dca", "actor_identifier": "admined@test.invalid", "metadata": {"fields": ["role"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:44:34.719165+00:00", "outcome": "REJECTED", "request_id": "992b3d6d484e4b179857388aebc03c88", "target_id": "304e94f5-56bb-495c-a730-7f9b7d563a66", "target_type": "Account"}
+ok
+test_cannot_deactivate_seller_with_open_shift (identity.tests.EmployeeEditDeactivateTests.test_cannot_deactivate_seller_with_open_shift) ... identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1c3c3789-6564-4b3f-adfd-76b683b77dca", "actor_identifier": "admined@test.invalid", "metadata": {"action_requested": "desactivar", "reason": "No se puede desactivar a un vendedor con un turno de caja abierto. Cierre el turno primero."}, "occurred_at_utc": "2026-11-15T15:44:34.765334+00:00", "outcome": "REJECTED", "request_id": "a5dc3a0ca3a84745919fa32ecec5e171", "target_id": "304e94f5-56bb-495c-a730-7f9b7d563a66", "target_type": "Account"}
+ok
+test_dashboard_for_admin_and_warehouse_includes_expired_lots_and_single_h1 (identity.tests.EmployeeEditDeactivateTests.test_dashboard_for_admin_and_warehouse_includes_expired_lots_and_single_h1)
+BUG-016 y BUG-023: /inicio/ muestra lotes vencidos a Admin y Almacenero y un único <h1>. ... ok
+test_duplicate_email_is_rejected_on_edit (identity.tests.EmployeeEditDeactivateTests.test_duplicate_email_is_rejected_on_edit) ... identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "1c3c3789-6564-4b3f-adfd-76b683b77dca", "actor_identifier": "admined@test.invalid", "metadata": {"fields": ["email"], "operation": "edit"}, "occurred_at_utc": "2026-11-15T15:44:34.921096+00:00", "outcome": "REJECTED", "request_id": "7bc8a1abe30942aca5d5ca7a54e7179d", "target_id": "304e94f5-56bb-495c-a730-7f9b7d563a66", "target_type": "Account"}
+ok
+test_employee_list_does_not_render_broken_bootstrap_dismiss_button (identity.tests.EmployeeEditDeactivateTests.test_employee_list_does_not_render_broken_bootstrap_dismiss_button)
+BUG-019: /empleados/ no renderiza botones huérfanos data-bs-dismiss. ... ok
+test_five_failed_login_attempts_block_further_attempts (identity.tests.EmployeeEditDeactivateTests.test_five_failed_login_attempts_block_further_attempts) ... ok
+test_login_honors_safe_next_parameter (identity.tests.EmployeeEditDeactivateTests.test_login_honors_safe_next_parameter) ... ok
+test_login_lock_expires_after_fifteen_minutes (identity.tests.EmployeeEditDeactivateTests.test_login_lock_expires_after_fifteen_minutes)
+El bloqueo afecta al correo, incluso si se cambia de navegador. ... ok
+test_logout_confirm_shows_minimarket_title_and_draft_warning_for_seller (identity.tests.EmployeeEditDeactivateTests.test_logout_confirm_shows_minimarket_title_and_draft_warning_for_seller)
+BUG-017 y BUG-020: /salir/ muestra marca Minimarket y advierte descarte de borrador. ... ok
+test_non_admin_gets_403_on_deactivate (identity.tests.EmployeeEditDeactivateTests.test_non_admin_gets_403_on_deactivate) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "304e94f5-56bb-495c-a730-7f9b7d563a66", "actor_identifier": "sellered@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:36.005347+00:00", "outcome": "REJECTED", "request_id": "a90ae24f4fad41a0afd67a73188759f3", "target_id": "/empleados/1c3c3789-6564-4b3f-adfd-76b683b77dca/estado/", "target_type": "Endpoint"}
+ok
+test_non_admin_gets_403_on_edit (identity.tests.EmployeeEditDeactivateTests.test_non_admin_gets_403_on_edit) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "304e94f5-56bb-495c-a730-7f9b7d563a66", "actor_identifier": "sellered@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:36.027547+00:00", "outcome": "REJECTED", "request_id": "a7625c4e7e804062bb9fb4ae79a01e65", "target_id": "/empleados/304e94f5-56bb-495c-a730-7f9b7d563a66/editar/", "target_type": "Endpoint"}
+ok
+test_success_resets_counter_without_deleting_throttle_row (identity.tests.EmployeeEditDeactivateTests.test_success_resets_counter_without_deleting_throttle_row) ... ok
+test_unknown_identifier_has_the_same_lock_response (identity.tests.EmployeeEditDeactivateTests.test_unknown_identifier_has_the_same_lock_response) ... ok
+test_admin_can_see_employee_list (identity.tests.EmployeeManagementTests.test_admin_can_see_employee_list) ... ok
+test_admin_creates_employee_successfully (identity.tests.EmployeeManagementTests.test_admin_creates_employee_successfully) ... ok
+test_duplicate_email_is_rejected (identity.tests.EmployeeManagementTests.test_duplicate_email_is_rejected) ... identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "82c497cc-5bb0-4f81-9aa8-6502e551652d", "actor_identifier": "adminemp@test.invalid", "metadata": {"fields": ["email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:44:37.391445+00:00", "outcome": "REJECTED", "request_id": "5662a2bb721f410dbd70b43dbcfa036a", "target_id": null, "target_type": "Account"}
+ok
+test_non_admin_gets_403_on_employee_list (identity.tests.EmployeeManagementTests.test_non_admin_gets_403_on_employee_list) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "991db268-12f1-46b9-bec1-a59ee973b31d", "actor_identifier": "selleremp@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:37.419589+00:00", "outcome": "REJECTED", "request_id": "617aa43f28cb417ea3693340659d782d", "target_id": "/empleados/", "target_type": "Endpoint"}
+ok
+test_non_admin_post_is_forbidden (identity.tests.EmployeeManagementTests.test_non_admin_post_is_forbidden) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "991db268-12f1-46b9-bec1-a59ee973b31d", "actor_identifier": "selleremp@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:37.441223+00:00", "outcome": "REJECTED", "request_id": "92b9e361d6b14c14ad5daad1455bd92b", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+ok
+test_h02e01_logout_messages_by_role_shift_and_draft (identity.test_audit02e_contracts.Sublot02EContractsTests.test_h02e01_logout_messages_by_role_shift_and_draft) ... ok
+test_h02e01_logout_rollback_drops_draft_and_audit_when_logout_fails (identity.test_audit02e_contracts.Sublot02EContractsTests.test_h02e01_logout_rollback_drops_draft_and_audit_when_logout_fails) ... Internal Server Error: /salir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\views.py", line 115, in logout_view
+    logout(request)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit02e_contracts.py", line 143, in fail_logout
+    raise RuntimeError("simulated logout outage")
+RuntimeError: simulated logout outage
+ok
+test_h02e02_state_confirm_get_cancel_confirm_idempotent_and_guards (identity.test_audit02e_contracts.Sublot02EContractsTests.test_h02e02_state_confirm_get_cancel_confirm_idempotent_and_guards) ... identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "4e6a76ac-3b77-4261-960c-e96f2154b8a0", "actor_identifier": "admin02e@test.invalid", "metadata": {"reason": "invalid_state_action"}, "occurred_at_utc": "2026-11-15T15:44:37.934933+00:00", "outcome": "REJECTED", "request_id": "0c0af56bc48b41ecbf53906161763c8d", "target_id": "2154b608-c569-4d17-aba4-c1e086cd2bd5", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "4e6a76ac-3b77-4261-960c-e96f2154b8a0", "actor_identifier": "admin02e@test.invalid", "metadata": {"reason": "invalid_state_action"}, "occurred_at_utc": "2026-11-15T15:44:37.937270+00:00", "outcome": "REJECTED", "request_id": "f4fe77c1876d456aa067478c017dba06", "target_id": "2154b608-c569-4d17-aba4-c1e086cd2bd5", "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "4e6a76ac-3b77-4261-960c-e96f2154b8a0", "actor_identifier": "admin02e@test.invalid", "metadata": {"action_requested": "desactivar", "reason": "No se puede desactivar a un vendedor con un turno de caja abierto. Cierre el turno primero."}, "occurred_at_utc": "2026-11-15T15:44:38.009374+00:00", "outcome": "REJECTED", "request_id": "5c848a19135b4582ae91adc7d0383afa", "target_id": "adb1c794-8cfa-4444-9a51-e972a5a0ac32", "target_type": "Account"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "adb1c794-8cfa-4444-9a51-e972a5a0ac32", "actor_identifier": "seller02e@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:38.020812+00:00", "outcome": "REJECTED", "request_id": "421381c40839485f81c781eb419f71c7", "target_id": "/empleados/2154b608-c569-4d17-aba4-c1e086cd2bd5/estado/confirmar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "adb1c794-8cfa-4444-9a51-e972a5a0ac32", "actor_identifier": "seller02e@test.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:38.025858+00:00", "outcome": "REJECTED", "request_id": "5efa5b6d7d5447e0b742084de1680085", "target_id": "/empleados/2154b608-c569-4d17-aba4-c1e086cd2bd5/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "7aba315d-5191-4677-b487-8c1e1060b07f", "actor_identifier": "warehouse02e@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:38.034314+00:00", "outcome": "REJECTED", "request_id": "6383740b69814414851919213e0cbc96", "target_id": "/empleados/2154b608-c569-4d17-aba4-c1e086cd2bd5/estado/confirmar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "7aba315d-5191-4677-b487-8c1e1060b07f", "actor_identifier": "warehouse02e@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T15:44:38.038347+00:00", "outcome": "REJECTED", "request_id": "0f543dbd83754e3d9d67fe8d6a1f0aea", "target_id": "/empleados/2154b608-c569-4d17-aba4-c1e086cd2bd5/estado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:38.042982+00:00", "outcome": "REJECTED", "request_id": "cb7788e9344f48d0b6f5a73044ceb130", "target_id": "/empleados/2154b608-c569-4d17-aba4-c1e086cd2bd5/estado/confirmar/", "target_type": "Endpoint"}
+ok
+test_h02e03_boundary_lengths_and_nul_byte_rejection (identity.test_audit02e_contracts.Sublot02EContractsTests.test_h02e03_boundary_lengths_and_nul_byte_rejection) ... identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "4e6a76ac-3b77-4261-960c-e96f2154b8a0", "actor_identifier": "admin02e@test.invalid", "metadata": {"fields": ["display_name"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:44:38.145028+00:00", "outcome": "REJECTED", "request_id": "330786b26be3454fa8eb980710d189ef", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "4e6a76ac-3b77-4261-960c-e96f2154b8a0", "actor_identifier": "admin02e@test.invalid", "metadata": {"fields": ["email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:44:38.233373+00:00", "outcome": "REJECTED", "request_id": "f8c9281b581a4201942a4d0a139ef4a5", "target_id": null, "target_type": "Account"}
+identity_audit {"action": "EMPLOYEE_MUTATION_REJECTED", "actor_id": "4e6a76ac-3b77-4261-960c-e96f2154b8a0", "actor_identifier": "admin02e@test.invalid", "metadata": {"fields": ["display_name", "email"], "operation": "create"}, "occurred_at_utc": "2026-11-15T15:44:38.245072+00:00", "outcome": "REJECTED", "request_id": "3052933ceb214f879f5677cbe769a761", "target_id": null, "target_type": "Account"}
+ok
+test_h02e03_lockout_preserved_across_email_rename_and_reactivate_until_explicit_unlock (identity.test_audit02e_contracts.Sublot02EContractsTests.test_h02e03_lockout_preserved_across_email_rename_and_reactivate_until_explicit_unlock) ... ok
+test_h02e03_password_reset_revokes_other_sessions_and_self_logs_out (identity.test_audit02e_contracts.Sublot02EContractsTests.test_h02e03_password_reset_revokes_other_sessions_and_self_logs_out) ... ok
+test_h02e04_audit_lifecycle_utc_request_id_and_zero_secrets_in_db (identity.test_audit02e_contracts.Sublot02EContractsTests.test_h02e04_audit_lifecycle_utc_request_id_and_zero_secrets_in_db) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T15:44:39.163884+00:00", "outcome": "REJECTED", "request_id": "693cb55d002b46c2b824599788083a47", "target_id": "/empleados/nuevo/", "target_type": "Endpoint"}
+ok
+test_h02e04_log_redaction_including_exc_info_and_resilient_logger_failure (identity.test_audit02e_contracts.Sublot02EContractsTests.test_h02e04_log_redaction_including_exc_info_and_resilient_logger_failure) ... Fallo en solicitud password=[[REDACTED]]] new_password=[[REDACTED]]] sessionid=[REDACTED]
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit02e_contracts.py", line 579, in test_h02e04_log_redaction_including_exc_info_and_resilient_logger_failure
+    raise ValueError(f"Error con clave=[[REDACTED]]]} y csrftoken=[REDACTED]")
+ValueError: Error con clave=[[REDACTED]]] y csrftoken=[REDACTED]
+Fallo en solicitud password=[[REDACTED]]] new_password=[[REDACTED]]] sessionid=[REDACTED]
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\test_audit02e_contracts.py", line 579, in test_h02e04_log_redaction_including_exc_info_and_resilient_logger_failure
+    raise ValueError(f"Error con clave=[[REDACTED]]]} y csrftoken=[REDACTED]")
+ValueError: Error con clave=[[REDACTED]]] y csrftoken=[REDACTED]
+ok
+
+----------------------------------------------------------------------
+Ran 93 tests in 20.645s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).

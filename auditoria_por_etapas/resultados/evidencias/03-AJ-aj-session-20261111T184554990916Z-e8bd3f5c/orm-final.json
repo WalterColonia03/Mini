@@ -1,0 +1,190 @@
+{
+  "catalog.Category": [
+    {
+      "id": "32e31a9f-51ea-43bd-a5c2-3dfa00c2c002",
+      "name": "Suspendida",
+      "name_normalized": "suspendida",
+      "is_active": false
+    },
+    {
+      "id": "7c2525d5-f79e-4d06-9030-5918402a75ad",
+      "name": "Productos enlatados",
+      "name_normalized": "productos enlatados",
+      "is_active": true
+    },
+    {
+      "id": "c6bfa86a-b2ec-4465-a925-8943cdcf5494",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "4d56e38d-8596-4495-9e7d-5c99dd99fc11",
+      "name": "Recepción C",
+      "barcode": "012345678905",
+      "category_id": "c6bfa86a-b2ec-4465-a925-8943cdcf5494",
+      "sale_price": "9.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "7e3ae33e-0ca6-4340-9ab6-ca84b6d278e9",
+      "name": "Recepción B",
+      "barcode": "00-REC-B",
+      "category_id": "c6bfa86a-b2ec-4465-a925-8943cdcf5494",
+      "sale_price": "9.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "name": "Recepción A",
+      "barcode": "4006381333931",
+      "category_id": "c6bfa86a-b2ec-4465-a925-8943cdcf5494",
+      "sale_price": "9.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "318ab416-e24c-4eb8-8188-3334a5d0f39c",
+      "product_id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "available_quantity": 2,
+      "initial_quantity": 2
+    },
+    {
+      "id": "345b1c14-f1c9-418e-b211-fef65d59e04c",
+      "product_id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "available_quantity": 10,
+      "initial_quantity": 10
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "24bf6fa8-002a-4867-8510-b0b19a82eb74",
+      "product_id": "a34da4ef-8972-4893-8d8b-775d55f4445f"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "22501ea1-df2f-41be-8f29-fb6bcfcb176b",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [],
+  "sales.SaleLine": [],
+  "sales.SaleDraft": [],
+  "sales.SaleDraftLine": [],
+  "commerce": [
+    {
+      "id": "4d56e38d-8596-4495-9e7d-5c99dd99fc11",
+      "barcode_normalized": "012345678905",
+      "search_name": "recepción c",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "7e3ae33e-0ca6-4340-9ab6-ca84b6d278e9",
+      "barcode_normalized": "00-rec-b",
+      "search_name": "recepción b",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "barcode_normalized": "4006381333931",
+      "search_name": "recepción a",
+      "average_cost": "2.5000"
+    }
+  ],
+  "writeoffs": [],
+  "adjustments": [],
+  "identity": [
+    {
+      "id": "4d56e38d-8596-4495-9e7d-5c99dd99fc11",
+      "barcode_type": "GTIN"
+    },
+    {
+      "id": "7e3ae33e-0ca6-4340-9ab6-ca84b6d278e9",
+      "barcode_type": "INTERNAL"
+    },
+    {
+      "id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "barcode_type": "GTIN"
+    }
+  ],
+  "catalog.ProductBarcodeKey": [
+    {
+      "product_id": "7e3ae33e-0ca6-4340-9ab6-ca84b6d278e9",
+      "reading_key": "00-rec-b"
+    },
+    {
+      "product_id": "4d56e38d-8596-4495-9e7d-5c99dd99fc11",
+      "reading_key": "00012345678905"
+    },
+    {
+      "product_id": "4d56e38d-8596-4495-9e7d-5c99dd99fc11",
+      "reading_key": "0012345678905"
+    },
+    {
+      "product_id": "4d56e38d-8596-4495-9e7d-5c99dd99fc11",
+      "reading_key": "012345678905"
+    },
+    {
+      "product_id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "reading_key": "04006381333931"
+    },
+    {
+      "product_id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "reading_key": "4006381333931"
+    }
+  ],
+  "receipt_lots": [
+    {
+      "id": "318ab416-e24c-4eb8-8188-3334a5d0f39c",
+      "product_id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "initial_load_id": "24bf6fa8-002a-4867-8510-b0b19a82eb74",
+      "supplier_id": "dbbf0147-846b-4881-9268-f1b5bff3fd3b",
+      "responsible_id": "7cc85981-7a1f-49ae-9458-16bd3a667454",
+      "is_initial": false,
+      "number": "AJ-R1",
+      "number_normalized": "AJ-R1",
+      "initial_quantity": 2,
+      "available_quantity": 2,
+      "unit_cost": "5.0000",
+      "expiration_date": "2027-01-10",
+      "received_at": "2026-11-11 18:46:15.447584+00:00"
+    },
+    {
+      "id": "345b1c14-f1c9-418e-b211-fef65d59e04c",
+      "product_id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "initial_load_id": "24bf6fa8-002a-4867-8510-b0b19a82eb74",
+      "supplier_id": "dbbf0147-846b-4881-9268-f1b5bff3fd3b",
+      "responsible_id": "7cc85981-7a1f-49ae-9458-16bd3a667454",
+      "is_initial": true,
+      "number": "AJ-BASE",
+      "number_normalized": "AJ-BASE",
+      "initial_quantity": 10,
+      "available_quantity": 10,
+      "unit_cost": "2.0000",
+      "expiration_date": "2027-01-10",
+      "received_at": "2026-11-11 18:46:04.304798+00:00"
+    }
+  ],
+  "receipt_loads": [
+    {
+      "id": "24bf6fa8-002a-4867-8510-b0b19a82eb74",
+      "product_id": "a34da4ef-8972-4893-8d8b-775d55f4445f",
+      "responsible_id": "7cc85981-7a1f-49ae-9458-16bd3a667454",
+      "confirmed_at": "2026-11-11 18:46:04.297657+00:00"
+    }
+  ]
+}

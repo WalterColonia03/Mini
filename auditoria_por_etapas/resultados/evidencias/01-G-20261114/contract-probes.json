@@ -1,0 +1,288 @@
+{
+  "deploy_and_proxy": {
+    "local": {
+      "app_env": "local",
+      "debug": false,
+      "static_url": "/static/",
+      "static_root_exists": false,
+      "secure_ssl_redirect": false,
+      "secure_hsts_seconds": 0,
+      "secure_proxy_ssl_header": null,
+      "session_cookie_secure_setting": false,
+      "csrf_cookie_secure_setting": false,
+      "check_deploy_warnings": [
+        "security.W004",
+        "security.W008",
+        "security.W012",
+        "security.W016"
+      ],
+      "check_deploy_output_lines": [
+        "System check identified some issues:",
+        "WARNINGS:",
+        "?: (security.W004) You have not set a value for the SECURE_HSTS_SECONDS setting. If your entire site is served only over SSL, you may want to consider setting a value and enabling HTTP Strict Transport Security. Be sure to read the documentation first; enabling HSTS carelessly can cause serious, irreversible problems.",
+        "?: (security.W008) Your SECURE_SSL_REDIRECT setting is not set to True. Unless your site should be available over both SSL and non-SSL connections, you may want to either set this setting True or configure a load balancer or reverse-proxy server to redirect all connections to HTTPS.",
+        "?: (security.W012) SESSION_COOKIE_SECURE is not set to True. Using a secure-only session cookie makes it more difficult for network traffic sniffers to hijack user sessions.",
+        "?: (security.W016) You have 'django.middleware.csrf.CsrfViewMiddleware' in your MIDDLEWARE, but you have not set CSRF_COOKIE_SECURE to True. Using a secure-only CSRF cookie makes it more difficult for network traffic sniffers to steal the CSRF token.",
+        "System check identified 4 issues (0 silenced)."
+      ],
+      "http_get_status": 200,
+      "http_get_location": null,
+      "x_forwarded_https_get_status": 200,
+      "x_forwarded_https_hsts": null,
+      "csrf_cookie_secure_attr": false,
+      "login_post_xfp_only_http_scheme_status": 302,
+      "login_post_https_status": 403,
+      "login_post_https_location": null,
+      "session_cookie_secure_attr": null,
+      "session_cookie_httponly_attr": null,
+      "session_cookie_samesite_attr": null
+    },
+    "production": {
+      "app_env": "production",
+      "debug": false,
+      "static_url": "/static/",
+      "static_root_exists": false,
+      "secure_ssl_redirect": true,
+      "secure_hsts_seconds": 31536000,
+      "secure_proxy_ssl_header": [
+        "HTTP_X_FORWARDED_PROTO",
+        "https"
+      ],
+      "session_cookie_secure_setting": true,
+      "csrf_cookie_secure_setting": true,
+      "check_deploy_warnings": [],
+      "check_deploy_output_lines": [
+        "System check identified no issues (0 silenced)."
+      ],
+      "http_get_status": 301,
+      "http_get_location": "https://testserver/",
+      "x_forwarded_https_get_status": 200,
+      "x_forwarded_https_hsts": "max-age=31536000; includeSubDomains; preload",
+      "csrf_cookie_secure_attr": true,
+      "login_post_xfp_only_http_scheme_status": 403,
+      "login_post_https_status": 403,
+      "login_post_https_location": null,
+      "session_cookie_secure_attr": null,
+      "session_cookie_httponly_attr": null,
+      "session_cookie_samesite_attr": null
+    }
+  },
+  "cookie_contract_tests": {
+    "default_cookie_names": {
+      "returncode": 0,
+      "passed": true,
+      "has_keyerror_csrftoken": false,
+      "csrf_cookie_line_match": [],
+      "output_tail": [
+        "System check identified no issues (0 silenced).",
+        "Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...",
+        "test_login_post_requires_csrf_and_sets_protected_cookies (identity.tests.AuthenticationAndAuthorizationTests.test_login_post_requires_csrf_and_sets_protected_cookies) ... Forbidden (CSRF cookie not set.): /",
+        "ok",
+        "----------------------------------------------------------------------",
+        "Ran 1 test in 0.553s",
+        "OK",
+        "Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')..."
+      ]
+    },
+    "custom_cookie_names": {
+      "returncode": 1,
+      "passed": false,
+      "has_keyerror_csrftoken": true,
+      "csrf_cookie_line_match": [
+        "    csrf_cookie = form_response.cookies[\"csrftoken\"]",
+        "KeyError: 'csrftoken'"
+      ],
+      "output_tail": [
+        "  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\identity\\tests.py\", line 79, in test_login_post_requires_csrf_and_sets_protected_cookies",
+        "    csrf_cookie = form_response.cookies[\"csrftoken\"]",
+        "                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^",
+        "KeyError: 'csrftoken'",
+        "----------------------------------------------------------------------",
+        "Ran 1 test in 0.489s",
+        "FAILED (errors=1)",
+        "Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')..."
+      ]
+    }
+  },
+  "argon2_timing_benchmark": {
+    "n_per_bucket": 20,
+    "hasher_algorithm": "Argon2PasswordHasher",
+    "spy_calls_for_1_known_locked_and_1_unknown_locked": [
+      "check_password",
+      "set_password"
+    ],
+    "service_ms": {
+      "known_unlocked_wrong": {
+        "n": 20,
+        "min_ms": 103.37,
+        "p50_ms": 141.23,
+        "mean_ms": 147.51,
+        "p95_ms": 196.61,
+        "max_ms": 214.54
+      },
+      "unknown_unlocked_wrong": {
+        "n": 20,
+        "min_ms": 93.21,
+        "p50_ms": 151.55,
+        "mean_ms": 154.35,
+        "p95_ms": 239.75,
+        "max_ms": 270.01
+      },
+      "known_locked": {
+        "n": 20,
+        "min_ms": 109.11,
+        "p50_ms": 140.54,
+        "mean_ms": 144.66,
+        "p95_ms": 185.73,
+        "max_ms": 190.73
+      },
+      "unknown_locked": {
+        "n": 20,
+        "min_ms": 100.64,
+        "p50_ms": 152.69,
+        "mean_ms": 166.04,
+        "p95_ms": 243.49,
+        "max_ms": 353.57
+      }
+    },
+    "http_client_ms": {
+      "post_known_wrong": {
+        "n": 20,
+        "min_ms": 100.22,
+        "p50_ms": 127.68,
+        "mean_ms": 129.3,
+        "p95_ms": 159.17,
+        "max_ms": 162.01
+      },
+      "post_known_locked": {
+        "n": 20,
+        "min_ms": 115.37,
+        "p50_ms": 192.6,
+        "mean_ms": 277.25,
+        "p95_ms": 713.5,
+        "max_ms": 765.16
+      },
+      "post_oversized_255_no_argon2": {
+        "n": 20,
+        "min_ms": 5.92,
+        "p50_ms": 7.11,
+        "mean_ms": 7.4,
+        "p95_ms": 9.74,
+        "max_ms": 10.13
+      }
+    },
+    "ratio_locked_mean_vs_unlocked_mean": 0.98,
+    "ratio_http_locked_mean_vs_oversized255_mean": 37.47,
+    "doc_01_04_verdict": "INCUMPLE (Argon2 ejecutado antes de verificar locked_until > now)"
+  },
+  "retention_and_admin_surface": {
+    "login_attempt_fields": [
+      "identifier",
+      "failures",
+      "locked_until",
+      "updated_at"
+    ],
+    "login_attempt_sqlite_indexes": [
+      [
+        0,
+        "sqlite_autoindex_identity_loginattempt_1",
+        1,
+        "pk",
+        0
+      ]
+    ],
+    "login_attempt_has_locked_until_or_updated_at_index": false,
+    "identity_audit_event_sqlite_indexes": [
+      [
+        0,
+        "id_audit_act_at_idx",
+        0,
+        "c",
+        0
+      ],
+      [
+        1,
+        "identity_identityauditevent_actor_id_2dfcc66b",
+        0,
+        "c",
+        0
+      ],
+      [
+        2,
+        "identity_identityauditevent_request_id_e4b5241f",
+        0,
+        "c",
+        0
+      ],
+      [
+        3,
+        "identity_identityauditevent_outcome_b58fe7b3",
+        0,
+        "c",
+        0
+      ],
+      [
+        4,
+        "identity_identityauditevent_action_8c7fd8b1",
+        0,
+        "c",
+        0
+      ],
+      [
+        5,
+        "identity_identityauditevent_occurred_at_17ff600d",
+        0,
+        "c",
+        0
+      ],
+      [
+        6,
+        "sqlite_autoindex_identity_identityauditevent_1",
+        1,
+        "pk",
+        0
+      ]
+    ],
+    "identity_management_commands": [
+      "reset_demo_db",
+      "seed_pmv"
+    ],
+    "has_purge_or_retention_command": false,
+    "admin_registered_models_count": 9,
+    "admin_registered_models": [
+      "auth.group",
+      "cash.cashregister",
+      "cash.cashshift",
+      "catalog.category",
+      "catalog.product",
+      "identity.account",
+      "identity.role",
+      "inventory.initialinventoryload",
+      "inventory.lot"
+    ],
+    "login_attempt_in_admin": false,
+    "identity_audit_event_in_admin": false,
+    "account_admin_exposed_fieldsets": [
+      [
+        "email",
+        "password"
+      ],
+      [
+        "display_name",
+        "role"
+      ],
+      [
+        "is_active",
+        "is_staff",
+        "is_superuser",
+        "groups",
+        "user_permissions"
+      ],
+      [
+        "last_login",
+        "created_at",
+        "updated_at"
+      ]
+    ]
+  }
+}

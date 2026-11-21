@@ -1,0 +1,141 @@
+{
+  "stamp_utc": "20261111T234920354139Z-2fdf4d5e",
+  "evidence": "auditoria_por_etapas\\resultados\\evidencias\\10-repro-20261111T234920354139Z-2fdf4d5e",
+  "pg_repro": {
+    "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit10-repro-pg-a82c2aab6343b7001ebf",
+    "port": 57666,
+    "findings": {
+      "pg_nul_query": {
+        "status": 200,
+        "raised": null
+      },
+      "pg_upper_accent": {
+        "status": 200,
+        "products_count": 0,
+        "empty_msg_present": true
+      },
+      "pg_multi_spaces": {
+        "status": 200,
+        "products_count": 0
+      }
+    },
+    "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+    "port_closed": true,
+    "cluster_removed": true
+  },
+  "sqlite_and_browser_repro": {
+    "hu_ven_01a_screen_lock": {
+      "session_cookie_age": 1209600,
+      "session_expire_at_browser_close": true,
+      "session_save_every_request": false,
+      "middleware": [
+        "audit10_settings.ProofMiddleware",
+        "django.middleware.security.SecurityMiddleware",
+        "django.contrib.sessions.middleware.SessionMiddleware",
+        "django.middleware.common.CommonMiddleware",
+        "django.middleware.csrf.CsrfViewMiddleware",
+        "django.contrib.auth.middleware.AuthenticationMiddleware",
+        "django.contrib.messages.middleware.MessageMiddleware",
+        "django.middleware.clickjacking.XFrameOptionsMiddleware"
+      ],
+      "lock_related_url_names": [],
+      "html_has_setTimeout_or_idle": false
+    },
+    "hu_ven_04_no_shift": {
+      "status": 200,
+      "search_form_rendered": false,
+      "has_not_found_literal": false
+    },
+    "defect_post_noshift_hides_error": {
+      "status": 200,
+      "form_errors": {
+        "__all__": [
+          "Necesitas un turno de caja abierto a tu nombre para preparar una venta."
+        ]
+      },
+      "alert_error_in_html": false,
+      "error_text_in_html": false
+    },
+    "hu_ven_01a_after_6min_status": 200,
+    "hu_ven_01a_still_shows_pos": true,
+    "hu_ven_04_open_shift_missing": {
+      "missing_has_producto_no_encontrado": false,
+      "missing_actual_msg": true,
+      "zero_stock_actual_msg": true
+    },
+    "defect_over160_silent_search": {
+      "status": 200,
+      "search_form_errors": {
+        "query": [
+          "Asegúrese de que este valor tenga menos de 160 caracteres (tiene 161)."
+        ]
+      },
+      "alert_error_in_html": false,
+      "shows_blank_prompt": true
+    },
+    "defect_empty_post_unbound": {
+      "status": 200,
+      "is_bound": false,
+      "errors": {}
+    },
+    "defect_redirect_unescaped_query": {
+      "status": 302,
+      "location": "/ventas/?query=Cafe%20&%20Pan",
+      "draft_lines_after": 1
+    },
+    "defect_arabic_digits_accepted": {
+      "status": 302,
+      "accepted_and_redirected": true,
+      "qty_persisted": 5
+    },
+    "defect_plus_sign_accepted": {
+      "status": 302,
+      "qty_persisted": 2
+    },
+    "defect_inactive_seller_allowed_in_service": true,
+    "stale_price_on_get": {
+      "draft_line_shows_old_5_50": false,
+      "draft_line_shows_new_6_25": false
+    },
+    "lot_stock_unchanged_after_draft_ops": {
+      "p_tuna_available": 10,
+      "p_amp_available": 8,
+      "p_long_available": 5
+    },
+    "chrome_layout": {
+      "1366x900": {
+        "docSW": 2310,
+        "winW": 1366,
+        "docOverflow": true,
+        "layoutRight": 1324,
+        "searchPanelW": 604,
+        "searchPanelSW": 602,
+        "searchPanelCW": 602,
+        "draftPanelRight": 1324,
+        "draftPanelSW": 813,
+        "draftPanelCW": 400,
+        "wrapSW": 2145,
+        "wrapCW": 534,
+        "maxDraftLineSW": 781,
+        "maxDraftLineCW": 781
+      },
+      "1366x768": {
+        "docSW": 2310,
+        "winW": 1366,
+        "docOverflow": true,
+        "layoutRight": 1324,
+        "searchPanelW": 604,
+        "searchPanelSW": 602,
+        "searchPanelCW": 602,
+        "draftPanelRight": 1324,
+        "draftPanelSW": 813,
+        "draftPanelCW": 400,
+        "wrapSW": 2145,
+        "wrapCW": 534,
+        "maxDraftLineSW": 781,
+        "maxDraftLineCW": 781
+      }
+    }
+  },
+  "protected_unchanged": true
+}

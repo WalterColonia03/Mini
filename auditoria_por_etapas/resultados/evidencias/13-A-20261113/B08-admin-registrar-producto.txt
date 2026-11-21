@@ -1,0 +1,120 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - paragraph: Catálogo
+    - link "Productos":
+      - /url: /productos/
+      - generic: ☰
+      - generic: Productos
+    - link "Registrar producto":
+      - /url: /productos/nuevo/
+      - generic: ▦
+      - generic: Registrar producto
+    - link "Categorías":
+      - /url: /productos/categorias/
+      - generic: ▮
+      - generic: Categorías
+    - paragraph: Inventario
+    - link "Proveedores":
+      - /url: /inventario/proveedores/
+      - generic: ✦
+      - generic: Proveedores
+    - link "Ver inventario y alertas":
+      - /url: /inventario/stock/
+      - generic: ☷
+      - generic: Ver inventario y alertas
+    - link "Vencimientos de lotes":
+      - /url: /productos/vencimientos/
+      - generic: ⏳
+      - generic: Vencimientos de lotes
+    - link "Ajuste físico":
+      - /url: /inventario/ajustes/nuevo/
+      - generic: ⏫
+      - generic: Ajuste físico
+    - paragraph: Personal
+    - link "Empleados":
+      - /url: /empleados/
+      - generic: ☺
+      - generic: Empleados
+    - paragraph: Caja y ventas
+    - link "Historial de turnos":
+      - /url: /caja/turnos/
+      - generic: ☰
+      - generic: Historial de turnos
+    - link "Historial de ventas":
+      - /url: /ventas/historial/
+      - generic: ☰
+      - generic: Historial de ventas
+  - generic: A
+  - strong: Audit13 Administrador admin
+  - generic: Administrador
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Registrar producto" [level=1]
+  - generic: Audit13 Administrador admin
+  - generic: Administrador
+- main:
+  - paragraph: Productos
+  - heading "Registrar producto" [level=2]
+  - paragraph: Elige una categoría activa y registra un producto por unidad, con control de vencimiento obligatorio. Inicia con cero existencias y no está disponible para venta hasta recibir lotes.
+  - link "Volver al inicio":
+    - /url: /inicio/
+  - button "Escanear código"
+  - paragraph: Seleccione el tipo de código y abra «Escanear código» para proteger los demás campos.
+  - generic: Nombre del producto
+  - textbox "Nombre del producto" [active]
+  - paragraph: Nombre único. Distinga marca, contenido o presentación; se ignoran mayúsculas y espacios redundantes.
+  - generic: Tipo de código
+  - combobox "Tipo de código":
+    - option "Seleccione el tipo" [selected]
+    - option "Código interno"
+    - option "Código de fabricante (GTIN)"
+  - paragraph: Use GTIN para etiquetas de fabricante EAN/UPC. Los códigos internos conservan su texto; no se convierten por su longitud.
+  - generic: Código de barras
+  - textbox "Código de barras"
+  - status
+  - paragraph: "Interno: letras, números, espacios y guiones, hasta 64 caracteres. GTIN: 12 o 13 dígitos, o representación de 14 con cero inicial, con dígito de control válido. No se convierten cajas en unidades."
+  - generic: Categoría
+  - combobox "Categoría":
+    - option "---------" [selected]
+    - option "Audit13 activos"
+  - generic: Unidad de medida
+  - combobox "Unidad de medida":
+    - option "Unidad (UND)" [selected]
+  - generic: Precio final con IGV (S/)
+  - spinbutton "Precio final con IGV (S/)"
+  - paragraph: De S/ 0,01 a S/ 9 999 999,99, con un máximo de dos decimales.
+  - generic: Existencia mínima
+  - spinbutton "Existencia mínima": "10"
+  - paragraph: Entero de 0 a 999 999. Si lo deja vacío, se guardará 10.
+  - button "Registrar producto"
+  - link "Cancelar":
+    - /url: /inicio/
+  - complementary "Condiciones del registro":
+    - generic: "Existencias iniciales: 0"
+    - heading "Control de vencimiento" [level=3]
+    - paragraph: Todos los productos registrados requieren fecha de vencimiento. La fecha, cantidad y costo se registran en las existencias por lotes.
+    - term: Unidad
+    - definition: UND
+    - term: Precio
+    - definition: Incluye IGV
+    - term: Existencia mínima
+    - definition: 10 por defecto
+    - term: Disponible para venta
+    - definition: "No"
+- contentinfo: Minimarket · Gestión de bodega

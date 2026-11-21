@@ -1,0 +1,300 @@
+Found 128 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_B80_skip_link_present (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B80_skip_link_present)
+La página tiene un skip-link 'Saltar al contenido'. ... ok
+test_B81_sidebar_aria_label (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B81_sidebar_aria_label)
+El sidebar tiene aria-label 'Navegación principal'. ... ok
+test_B82_main_content_id (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B82_main_content_id)
+El main tiene id='contenido' y tabindex para skip link. ... ok
+test_B83_html_lang_es (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B83_html_lang_es)
+El HTML usa lang='es-PE'. ... ok
+test_B84_brand_text (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B84_brand_text)
+El sidebar brand muestra 'Minimarket' y 'Gestión de bodega'. ... ok
+test_B85_footer_present (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B85_footer_present)
+La página tiene footer con 'Minimarket'. ... ok
+test_B86_login_page_no_sidebar (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B86_login_page_no_sidebar)
+La página de login no muestra sidebar (class=anonymous). ... ok
+test_B87_authenticated_has_sidebar (tests.test_audit14b_browser_content.BrowserContentAccessibilityTest.test_B87_authenticated_has_sidebar)
+La página autenticada muestra sidebar. ... ok
+test_B01_admin_sidebar_has_catalog_section (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B01_admin_sidebar_has_catalog_section)
+ADMIN ve sección Catálogo con Productos, Registrar producto y Categorías. ... ok
+test_B02_admin_sidebar_has_inventory_section (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B02_admin_sidebar_has_inventory_section)
+ADMIN ve sección Inventario con Proveedores, Ver inventario, Vencimientos, Ajuste. ... ok
+test_B03_admin_sidebar_has_personnel_section (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B03_admin_sidebar_has_personnel_section)
+ADMIN ve sección Personal con Empleados. ... ok
+test_B04_admin_sidebar_has_cash_and_sales_section (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B04_admin_sidebar_has_cash_and_sales_section)
+ADMIN ve sección Caja y ventas con Historial de turnos e Historial de ventas. ... ok
+test_B05_admin_sidebar_does_not_have_seller_options (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B05_admin_sidebar_does_not_have_seller_options)
+ADMIN NO ve las opciones de vendedor (Apertura de caja, Preparar venta, Cerrar turno). ... ok
+test_B06_admin_sidebar_does_not_have_warehouse_operations (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B06_admin_sidebar_does_not_have_warehouse_operations)
+ADMIN NO ve las opciones de almacenero (Existencias iniciales, Entrada, Registrar merma). ... ok
+test_B07_admin_dashboard_shows_panel_principal (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B07_admin_dashboard_shows_panel_principal)
+ADMIN dashboard muestra 'Panel principal' y 'Administrador'. ... ok
+test_B08_admin_dashboard_shows_sales_summary (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B08_admin_dashboard_shows_sales_summary)
+ADMIN dashboard tiene métricas de ventas: Ventas de hoy, Total vendido. ... ok
+test_B09_admin_dashboard_shows_stock_alerts (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B09_admin_dashboard_shows_stock_alerts)
+ADMIN dashboard tiene alertas de inventario. ... ok
+test_B10_admin_dashboard_action_cards (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B10_admin_dashboard_action_cards)
+ADMIN dashboard tiene tarjetas de acción correctas. ... ok
+test_B11_admin_dashboard_no_warehouse_cards (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B11_admin_dashboard_no_warehouse_cards)
+ADMIN NO ve tarjetas de almacenero en el dashboard. ... ok
+test_B12_admin_dashboard_no_seller_cards (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B12_admin_dashboard_no_seller_cards)
+ADMIN NO ve tarjetas de vendedor en el dashboard. ... ok
+test_B13_admin_topbar_shows_role_pill (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B13_admin_topbar_shows_role_pill)
+ADMIN topbar muestra pill con nombre del rol. ... ok
+test_B14_admin_topbar_heading_inicio (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B14_admin_topbar_heading_inicio)
+Heading de /inicio/ muestra 'Inicio'. ... ok
+test_B15_admin_sidebar_shows_user_info (tests.test_audit14b_browser_content.BrowserContentAdminTest.test_B15_admin_sidebar_shows_user_info)
+Sidebar muestra nombre del usuario y enlace 'Cerrar sesión'. ... ok
+test_B50_seller_gets_403_page_on_admin_route (tests.test_audit14b_browser_content.BrowserContentErrorPagesTest.test_B50_seller_gets_403_page_on_admin_route)
+VENDEDOR en ruta de admin recibe 403 con contenido apropiado. ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "9e19b2ab-8cff-4771-949d-f154a280a592", "actor_identifier": "vendedor14be@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:01.218791+00:00", "outcome": "REJECTED", "request_id": "51062cca58174bc79513562e484e6ba7", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+ok
+test_B51_warehouse_gets_403_on_cash_open (tests.test_audit14b_browser_content.BrowserContentErrorPagesTest.test_B51_warehouse_gets_403_on_cash_open)
+ALMACENERO en ruta de caja recibe 403. ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "2b25779c-849c-4a1f-986f-77a687355284", "actor_identifier": "almacen14be@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:01.309109+00:00", "outcome": "REJECTED", "request_id": "02c578084cb7436fa427dc3c835d7734", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+ok
+test_B52_seller_gets_403_on_employees (tests.test_audit14b_browser_content.BrowserContentErrorPagesTest.test_B52_seller_gets_403_on_employees)
+VENDEDOR en /empleados/ recibe 403. ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "9e19b2ab-8cff-4771-949d-f154a280a592", "actor_identifier": "vendedor14be@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:01.398722+00:00", "outcome": "REJECTED", "request_id": "f3dc9b7a333e47e6a4c0ff3f8535b33b", "target_id": "/empleados/", "target_type": "Endpoint"}
+ok
+test_B40_login_page_elements (tests.test_audit14b_browser_content.BrowserContentLoginTest.test_B40_login_page_elements)
+La página de login muestra título, formulario y roles del sistema. ... ok
+test_B41_login_form_fields (tests.test_audit14b_browser_content.BrowserContentLoginTest.test_B41_login_form_fields)
+El form de login tiene campos de email y contraseña y botón. ... ok
+test_B42_login_error_message_on_bad_credentials (tests.test_audit14b_browser_content.BrowserContentLoginTest.test_B42_login_error_message_on_bad_credentials)
+Credenciales inválidas muestran mensaje sin revelar existencia de cuenta. ... ok
+test_B43_login_role_descriptions (tests.test_audit14b_browser_content.BrowserContentLoginTest.test_B43_login_role_descriptions)
+La página de login describe cada rol correctamente. ... ok
+test_B60_admin_product_list_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B60_admin_product_list_heading) ... ok
+test_B61_admin_product_entry_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B61_admin_product_entry_heading) ... ok
+test_B62_admin_category_list_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B62_admin_category_list_heading) ... ok
+test_B63_admin_supplier_list_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B63_admin_supplier_list_heading) ... ok
+test_B64_admin_employee_list_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B64_admin_employee_list_heading) ... ok
+test_B65_admin_shift_history_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B65_admin_shift_history_heading) ... ok
+test_B66_admin_sales_history_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B66_admin_sales_history_heading) ... ok
+test_B67_admin_stock_overview_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B67_admin_stock_overview_heading) ... ok
+test_B68_admin_expirations_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B68_admin_expirations_heading) ... ok
+test_B69_admin_adjustment_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B69_admin_adjustment_heading) ... ok
+test_B70_warehouse_initial_load_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B70_warehouse_initial_load_heading) ... ok
+test_B71_warehouse_stock_entry_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B71_warehouse_stock_entry_heading) ... ok
+test_B72_warehouse_writeoff_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B72_warehouse_writeoff_heading) ... ok
+test_B73_seller_cash_close_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B73_seller_cash_close_heading) ... ok
+test_B74_seller_shift_history_heading (tests.test_audit14b_browser_content.BrowserContentPageHeadingsTest.test_B74_seller_shift_history_heading) ... ok
+test_B30_seller_sidebar_has_cash_links (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B30_seller_sidebar_has_cash_links)
+VENDEDOR ve sus enlaces: Apertura de caja, Preparar venta, Cerrar turno, Mis ventas. ... ok
+test_B31_seller_sidebar_no_admin_sections (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B31_seller_sidebar_no_admin_sections)
+VENDEDOR NO ve secciones de admin. ... ok
+test_B32_seller_sidebar_no_warehouse_sections (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B32_seller_sidebar_no_warehouse_sections)
+VENDEDOR NO ve secciones de almacenero. ... ok
+test_B33_seller_sidebar_no_admin_links (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B33_seller_sidebar_no_admin_links)
+VENDEDOR NO ve enlaces exclusivos de admin. ... ok
+test_B34_seller_dashboard_shows_vendedor_role (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B34_seller_dashboard_shows_vendedor_role)
+Dashboard del vendedor muestra 'Vendedor'. ... ok
+test_B35_seller_dashboard_no_ventas_summary (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B35_seller_dashboard_no_ventas_summary)
+VENDEDOR NO ve las métricas de ventas del admin. ... ok
+test_B36_seller_dashboard_action_cards (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B36_seller_dashboard_action_cards)
+VENDEDOR ve tarjetas: Abrir turno, Preparar venta. ... ok
+test_B37_seller_dashboard_no_admin_warehouse_cards (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B37_seller_dashboard_no_admin_warehouse_cards)
+VENDEDOR NO ve tarjetas de admin ni almacenero. ... ok
+test_B38_seller_cash_open_page (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B38_seller_cash_open_page)
+GET /caja/abrir/ muestra heading 'Apertura de caja'. ... ok
+test_B39_seller_sales_draft_page (tests.test_audit14b_browser_content.BrowserContentSellerTest.test_B39_seller_sales_draft_page)
+GET /ventas/ muestra heading 'Preparar venta' con turno abierto. ... ok
+test_B20_warehouse_sidebar_has_inventory_links (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B20_warehouse_sidebar_has_inventory_links)
+ALMACENERO ve sus enlaces propios: Inventario, Existencias, Entrada, Merma. ... ok
+test_B21_warehouse_sidebar_has_product_consultation (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B21_warehouse_sidebar_has_product_consultation)
+ALMACENERO ve sección Consulta con Catálogo y Proveedores. ... ok
+test_B22_warehouse_sidebar_no_admin_sections (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B22_warehouse_sidebar_no_admin_sections)
+ALMACENERO NO ve secciones de admin: Personal, Empleados, Registrar producto, Categorías. ... ok
+test_B23_warehouse_sidebar_no_seller_sections (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B23_warehouse_sidebar_no_seller_sections)
+ALMACENERO NO ve opciones de vendedor. ... ok
+test_B24_warehouse_sidebar_no_caja_ventas (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B24_warehouse_sidebar_no_caja_ventas)
+ALMACENERO NO ve sección 'Caja y ventas'. ... ok
+test_B25_warehouse_dashboard_shows_almacenero_role (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B25_warehouse_dashboard_shows_almacenero_role)
+Dashboard del almacenero muestra 'Almacenero'. ... ok
+test_B26_warehouse_dashboard_shows_stock_alerts_only (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B26_warehouse_dashboard_shows_stock_alerts_only)
+ALMACENERO ve alertas de stock pero NO ve métricas de ventas. ... ok
+test_B27_warehouse_dashboard_action_cards (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B27_warehouse_dashboard_action_cards)
+ALMACENERO ve tarjetas de acción: Existencias, Entrada, Merma. ... ok
+test_B28_warehouse_dashboard_no_admin_cards (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B28_warehouse_dashboard_no_admin_cards)
+ALMACENERO NO ve tarjetas de admin. ... ok
+test_B29_warehouse_stock_overview_heading (tests.test_audit14b_browser_content.BrowserContentWarehouseTest.test_B29_warehouse_stock_overview_heading)
+GET /inventario/stock/ muestra heading 'Ver inventario'. ... ok
+test_C10_search_products_active_only (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C10_search_products_active_only)
+La búsqueda solo retorna productos activos con categoría activa. ... ok
+test_C11_search_products_expired_lots_hidden (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C11_search_products_expired_lots_hidden)
+La búsqueda no muestra productos cuyo único lote está vencido. ... ok
+test_C12_discard_draft (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C12_discard_draft)
+El vendedor puede descartar un borrador activo sin afectar stock. ... ok
+test_C13_seller_sees_own_receipt (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C13_seller_sees_own_receipt)
+El vendedor ve la constancia de su propia venta. ... ok
+test_C14_admin_sees_any_receipt (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C14_admin_sees_any_receipt)
+El admin ve la constancia de cualquier venta. ... ok
+test_C15_cash_close_calculates_difference (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C15_cash_close_calculates_difference)
+Al cerrar caja, expected = opening + ventas; difference = counted - expected. ... ok
+test_C16_sale_correlative_sequential (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C16_sale_correlative_sequential)
+Las ventas reciben correlativos secuenciales V-00000001, V-00000002... ... ok
+test_C17_sale_line_has_product_snapshot (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C17_sale_line_has_product_snapshot)
+La línea de venta guarda snapshot del nombre y código del producto. ... ok
+test_C18_cannot_open_second_shift (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C18_cannot_open_second_shift)
+Un segundo vendedor no puede abrir turno si ya hay uno abierto. ... ok
+test_C19_igv_calculation (tests.test_audit14c_edge_cases.BehaviorToPlanningTest.test_C19_igv_calculation)
+La venta calcula base e IGV correctamente (factor 1.18). ... ok
+test_C01_checkout_fails_after_product_deactivation (tests.test_audit14c_edge_cases.PROP14_03_AdminDeactivatesProductWithDraftTest.test_C01_checkout_fails_after_product_deactivation)
+Vendedor agrega producto al borrador. Admin lo desactiva. El cobro debe fallar. ... ok
+test_C02_checkout_fails_after_category_deactivation (tests.test_audit14c_edge_cases.PROP14_03_AdminDeactivatesProductWithDraftTest.test_C02_checkout_fails_after_category_deactivation)
+Admin desactiva la categoría del producto en el borrador. Cobro rechazado. ... ok
+test_01_admin_creates_category (tests.test_audit14_integration.IntegrationE2ETest.test_01_admin_creates_category) ... ok
+test_02_admin_creates_product (tests.test_audit14_integration.IntegrationE2ETest.test_02_admin_creates_product) ... ok
+test_03_admin_creates_supplier (tests.test_audit14_integration.IntegrationE2ETest.test_03_admin_creates_supplier) ... ok
+test_04_warehouse_loads_stock (tests.test_audit14_integration.IntegrationE2ETest.test_04_warehouse_loads_stock) ... ok
+test_05_seller_opens_shift_and_sells (tests.test_audit14_integration.IntegrationE2ETest.test_05_seller_opens_shift_and_sells) ... ok
+test_06_warehouse_writeoff (tests.test_audit14_integration.IntegrationE2ETest.test_06_warehouse_writeoff) ... ok
+test_07_admin_views_sales_history (tests.test_audit14_integration.IntegrationE2ETest.test_07_admin_views_sales_history) ... ok
+test_08_admin_views_shift_history (tests.test_audit14_integration.IntegrationE2ETest.test_08_admin_views_shift_history) ... ok
+test_09_admin_views_stock_overview (tests.test_audit14_integration.IntegrationE2ETest.test_09_admin_views_stock_overview) ... ok
+test_10_admin_views_product_movements (tests.test_audit14_integration.IntegrationE2ETest.test_10_admin_views_product_movements) ... ok
+test_11_seller_closes_shift (tests.test_audit14_integration.IntegrationE2ETest.test_11_seller_closes_shift) ... ok
+test_20_seller_cannot_create_category (tests.test_audit14_integration.IntegrationE2ETest.test_20_seller_cannot_create_category) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "45703cd8-0c3a-4bd7-ac96-58edb41a9977", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:11.957812+00:00", "outcome": "REJECTED", "request_id": "b2c24e4e1b014e8cbd67e41bc4f46764", "target_id": "/productos/categorias/nueva/", "target_type": "Endpoint"}
+ok
+test_21_seller_cannot_create_product (tests.test_audit14_integration.IntegrationE2ETest.test_21_seller_cannot_create_product) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "45703cd8-0c3a-4bd7-ac96-58edb41a9977", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.051267+00:00", "outcome": "REJECTED", "request_id": "4a8a1c0db05949e3a72b1cce2e81a6d7", "target_id": "/productos/nuevo/", "target_type": "Endpoint"}
+ok
+test_22_seller_cannot_create_supplier (tests.test_audit14_integration.IntegrationE2ETest.test_22_seller_cannot_create_supplier) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "45703cd8-0c3a-4bd7-ac96-58edb41a9977", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.159620+00:00", "outcome": "REJECTED", "request_id": "18393974d7a645508bae879a8ea81f3e", "target_id": "/inventario/proveedores/nuevo/", "target_type": "Endpoint"}
+ok
+test_23_warehouse_cannot_open_cash (tests.test_audit14_integration.IntegrationE2ETest.test_23_warehouse_cannot_open_cash) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "b1b7b986-0f37-47dc-88d1-695fb8785186", "actor_identifier": "almacen@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.249543+00:00", "outcome": "REJECTED", "request_id": "c7b73c748de14ceaac26e3b0b62b1b1c", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+ok
+test_24_warehouse_cannot_sell (tests.test_audit14_integration.IntegrationE2ETest.test_24_warehouse_cannot_sell) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "b1b7b986-0f37-47dc-88d1-695fb8785186", "actor_identifier": "almacen@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.341499+00:00", "outcome": "REJECTED", "request_id": "17202c9d0e704f7f95ea708dc093238c", "target_id": "/ventas/", "target_type": "Endpoint"}
+ok
+test_25_admin_cannot_open_cash (tests.test_audit14_integration.IntegrationE2ETest.test_25_admin_cannot_open_cash) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3870f5a-ab42-4a73-82e3-1f4a3a104380", "actor_identifier": "admin@pruebas.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.432503+00:00", "outcome": "REJECTED", "request_id": "5d871a6930c240aca3832addcd444390", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+ok
+test_26_admin_cannot_load_stock (tests.test_audit14_integration.IntegrationE2ETest.test_26_admin_cannot_load_stock) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "d3870f5a-ab42-4a73-82e3-1f4a3a104380", "actor_identifier": "admin@pruebas.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.523293+00:00", "outcome": "REJECTED", "request_id": "cb656898a3b847678dad8e678eaa602d", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+ok
+test_27_seller_cannot_writeoff (tests.test_audit14_integration.IntegrationE2ETest.test_27_seller_cannot_writeoff) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "45703cd8-0c3a-4bd7-ac96-58edb41a9977", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.613649+00:00", "outcome": "REJECTED", "request_id": "0710abba6ed44c12b6c077c4b1983c19", "target_id": "/inventario/bajas/nueva/", "target_type": "Endpoint"}
+ok
+test_28_warehouse_cannot_adjust_physical (tests.test_audit14_integration.IntegrationE2ETest.test_28_warehouse_cannot_adjust_physical) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "b1b7b986-0f37-47dc-88d1-695fb8785186", "actor_identifier": "almacen@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.703636+00:00", "outcome": "REJECTED", "request_id": "513bec363dfd43afb508f2255d548618", "target_id": "/inventario/ajustes/nuevo/", "target_type": "Endpoint"}
+ok
+test_29_seller_cannot_view_employees (tests.test_audit14_integration.IntegrationE2ETest.test_29_seller_cannot_view_employees) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "45703cd8-0c3a-4bd7-ac96-58edb41a9977", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.794277+00:00", "outcome": "REJECTED", "request_id": "f922a56d7a9642e0a1b5099503cdd65c", "target_id": "/empleados/", "target_type": "Endpoint"}
+ok
+test_30_warehouse_cannot_view_employees (tests.test_audit14_integration.IntegrationE2ETest.test_30_warehouse_cannot_view_employees) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "b1b7b986-0f37-47dc-88d1-695fb8785186", "actor_identifier": "almacen@pruebas.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.883533+00:00", "outcome": "REJECTED", "request_id": "afea35abc3f1460b99ae33d60366875b", "target_id": "/empleados/", "target_type": "Endpoint"}
+ok
+test_31_seller_cannot_view_categories (tests.test_audit14_integration.IntegrationE2ETest.test_31_seller_cannot_view_categories) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "45703cd8-0c3a-4bd7-ac96-58edb41a9977", "actor_identifier": "vendedor.a@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:12.973536+00:00", "outcome": "REJECTED", "request_id": "333ca42762644b548ba24a57980f79a6", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+ok
+test_32_inactive_account_denied (tests.test_audit14_integration.IntegrationE2ETest.test_32_inactive_account_denied) ... ok
+test_33_anonymous_redirected (tests.test_audit14_integration.IntegrationE2ETest.test_33_anonymous_redirected) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:13.065767+00:00", "outcome": "REJECTED", "request_id": "fe9c5ad4ff01420a8f681168d04756f5", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:13.067783+00:00", "outcome": "REJECTED", "request_id": "0a127f0b19c24ec193805692cb3543f2", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:13.069097+00:00", "outcome": "REJECTED", "request_id": "a4a505f0c3b440469708ff82c5423ab0", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:13.071180+00:00", "outcome": "REJECTED", "request_id": "c102797d4cdc43269b5b26327f29a0ef", "target_id": "/ventas/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:13.072664+00:00", "outcome": "REJECTED", "request_id": "f5e55f74dbe44fc18bee57521ac753f9", "target_id": "/ventas/historial/", "target_type": "Endpoint"}
+ok
+test_40_inactive_product_not_sellable (tests.test_audit14_integration.IntegrationE2ETest.test_40_inactive_product_not_sellable)
+Un producto desactivado por admin no debe poder agregarse al borrador. ... ok
+test_41_inactive_category_not_sellable (tests.test_audit14_integration.IntegrationE2ETest.test_41_inactive_category_not_sellable)
+Un producto con categoría inactiva no debe poder venderse. ... ok
+test_42_expired_lot_not_sellable (tests.test_audit14_integration.IntegrationE2ETest.test_42_expired_lot_not_sellable) ... ok
+test_43_cannot_close_with_active_draft (tests.test_audit14_integration.IntegrationE2ETest.test_43_cannot_close_with_active_draft) ... ok
+test_44_admin_physical_adjustment (tests.test_audit14_integration.IntegrationE2ETest.test_44_admin_physical_adjustment) ... ok
+test_45_seller_views_shift_history (tests.test_audit14_integration.IntegrationE2ETest.test_45_seller_views_shift_history) ... ok
+test_46_seller_views_own_sale_history (tests.test_audit14_integration.IntegrationE2ETest.test_46_seller_views_own_sale_history) ... ok
+test_50_admin_dashboard (tests.test_audit14_integration.IntegrationE2ETest.test_50_admin_dashboard) ... ok
+test_51_warehouse_dashboard (tests.test_audit14_integration.IntegrationE2ETest.test_51_warehouse_dashboard) ... ok
+test_52_seller_dashboard (tests.test_audit14_integration.IntegrationE2ETest.test_52_seller_dashboard) ... ok
+test_53_admin_toggles_supplier (tests.test_audit14_integration.IntegrationE2ETest.test_53_admin_toggles_supplier) ... ok
+test_54_admin_toggles_category (tests.test_audit14_integration.IntegrationE2ETest.test_54_admin_toggles_category) ... ok
+test_55_warehouse_views_stock_overview (tests.test_audit14_integration.IntegrationE2ETest.test_55_warehouse_views_stock_overview) ... ok
+test_56_warehouse_views_supplier_list (tests.test_audit14_integration.IntegrationE2ETest.test_56_warehouse_views_supplier_list) ... ok
+test_60_sale_reduces_stock_seen_by_warehouse (tests.test_audit14_integration.IntegrationE2ETest.test_60_sale_reduces_stock_seen_by_warehouse)
+Tras una venta del vendedor, el almacenero ve stock actualizado. ... ok
+test_61_writeoff_reduces_sellable (tests.test_audit14_integration.IntegrationE2ETest.test_61_writeoff_reduces_sellable)
+Tras una merma del almacenero, el vendedor no puede vender más de lo disponible. ... ok
+test_62_checkout_idempotency (tests.test_audit14_integration.IntegrationE2ETest.test_62_checkout_idempotency)
+El mismo idempotency_key no debe generar dos ventas. ... ok
+test_80_cash_shift_history_ties_pagination_dates_and_seller_scope (tests.test_audit14_integration.Stage14Closing2HistoriesAndRolesTest.test_80_cash_shift_history_ties_pagination_dates_and_seller_scope) ... ok
+test_81_sales_history_and_shift_sales_ties_totals_and_role_boundaries (tests.test_audit14_integration.Stage14Closing2HistoriesAndRolesTest.test_81_sales_history_and_shift_sales_ties_totals_and_role_boundaries) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "c0894eed-f6cb-4145-a15f-563bd2edfa9f", "actor_identifier": "vendedor.a.c2@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:17.066622+00:00", "outcome": "REJECTED", "request_id": "2b935756b06f4e0fba2905791b6a7bef", "target_id": "/productos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c0894eed-f6cb-4145-a15f-563bd2edfa9f", "actor_identifier": "vendedor.a.c2@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:17.076678+00:00", "outcome": "REJECTED", "request_id": "3a1033d1930a4d39885d17dac722d0cb", "target_id": "/productos/categorias/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c0894eed-f6cb-4145-a15f-563bd2edfa9f", "actor_identifier": "vendedor.a.c2@pruebas.invalid", "metadata": {"actor_role": "VENDEDOR", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:17.086991+00:00", "outcome": "REJECTED", "request_id": "29f0f3d6ed16404c80b84cb79ff8498c", "target_id": "/inventario/stock/", "target_type": "Endpoint"}
+ok
+test_82_draft_grouping_update_remove_last_line_and_discard (tests.test_audit14_integration.Stage14Closing2HistoriesAndRolesTest.test_82_draft_grouping_update_remove_last_line_and_discard) ... ok
+test_83_admin_reclassifies_product_while_seller_has_open_draft (tests.test_audit14_integration.Stage14Closing2HistoriesAndRolesTest.test_83_admin_reclassifies_product_while_seller_has_open_draft) ... ok
+test_84_logout_warnings_and_cross_seller_shift_isolation (tests.test_audit14_integration.Stage14Closing2HistoriesAndRolesTest.test_84_logout_warnings_and_cross_seller_shift_isolation) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:17.693756+00:00", "outcome": "REJECTED", "request_id": "aad9ab57664e479ba04afd3a0f01035e", "target_id": "/ventas/", "target_type": "Endpoint"}
+ok
+test_receipt_routes_emit_no_store_and_detail_panel_layout_classes (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_receipt_routes_emit_no_store_and_detail_panel_layout_classes) ... ok
+test_redirected_login_with_non_warehouse_role_denies_without_writes (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_redirected_login_with_non_warehouse_role_denies_without_writes) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "4738e33d-b48a-4257-9613-08e17858802f", "actor_identifier": "admin-aj@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:18.502408+00:00", "outcome": "REJECTED", "request_id": "f64c4508af224892b259efa973b74809", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "4738e33d-b48a-4257-9613-08e17858802f", "actor_identifier": "admin-aj@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:58:18.509864+00:00", "outcome": "REJECTED", "request_id": "8148328ba6bb4e0ea7565bc6597f69fe", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+ok
+test_service_rejects_anonymous_inactive_and_stale_actor_instances (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_service_rejects_anonymous_inactive_and_stale_actor_instances) ... ok
+test_surviving_inactive_session_is_logged_out_before_view_or_service (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_surviving_inactive_session_is_logged_out_before_view_or_service) ... identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/entrada/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:58:18.871495+00:00", "outcome": "REJECTED", "request_id": "c5bc28a383154d209fe6d92238d20dea", "target_id": "74950a02-7558-417f-b805-929bdd6d5766", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:18.871495+00:00", "outcome": "REJECTED", "request_id": "c5bc28a383154d209fe6d92238d20dea", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:18.874034+00:00", "outcome": "REJECTED", "request_id": "003baad75ede476a8ca6012972e47ebb", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:18.875539+00:00", "outcome": "REJECTED", "request_id": "eb28823af58a4250bb689125d36572d5", "target_id": "/inventario/cargas/b84d9021-43c4-46ec-aa53-ae34a1f88041/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/entrada/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:58:18.945220+00:00", "outcome": "REJECTED", "request_id": "5b19c3a57d9340b380953ca6a85c0698", "target_id": "20931e25-6f54-4a3d-ac7d-231ace9af0e0", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:58:18.948300+00:00", "outcome": "REJECTED", "request_id": "5b19c3a57d9340b380953ca6a85c0698", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inicio/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:58:18.963545+00:00", "outcome": "REJECTED", "request_id": "d287017edb194d8caee288a98cb89d48", "target_id": "74950a02-7558-417f-b805-929bdd6d5766", "target_type": "Session"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:58:18.970625+00:00", "outcome": "REJECTED", "request_id": "e117cd3489ae4a71b70fb8d2240a982f", "target_id": "74950a02-7558-417f-b805-929bdd6d5766", "target_type": "Session"}
+ok
+
+----------------------------------------------------------------------
+Ran 128 tests in 20.478s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

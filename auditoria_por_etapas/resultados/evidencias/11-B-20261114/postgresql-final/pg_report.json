@@ -1,0 +1,190 @@
+{
+  "executed_utc": "2026-11-15T02:40:28.184180+00:00",
+  "pg_port": 51708,
+  "build_before": {
+    "count": 214,
+    "sha256": "6d3a762e62125a285139e9ccb69e2bf96d0a45004a4308a36c7d2f04dd7b94e8"
+  },
+  "checks": [
+    "01_pg_migrate_clean",
+    "02_CT_CONC_03_stock_contention",
+    "03_CT_CONC_04a_idempotent_same",
+    "04_CT_CONC_04b_idempotent_divergent",
+    "05_CT_CONC_05_checkout_vs_close",
+    "06_account_lock_deactivation",
+    "07_live_price_and_category_race",
+    "08_CT_ROLLBACK_02_pg_and_retry",
+    "09_pg_constraints_and_accumulated_cap",
+    "10_lima_midnight_utc_boundary"
+  ],
+  "scenarios": {
+    "02_CT_CONC_03_stock_contention": {
+      "writeoff": {
+        "ok": true,
+        "correlative": "B-00000001"
+      },
+      "checkout": {
+        "ok": false,
+        "type": "ValidationError",
+        "error": "[\"No hay suficiente stock para completar el cobro de 'PG Stock Conc 11B'.\"]"
+      },
+      "lot_after": 1,
+      "pg_blocking_pids": [
+        {
+          "pid": 13588,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            10024
+          ],
+          "query": "SELECT \"catalog_product\".\"id\", \"catalog_product\".\"category_id\", \"catalog_product\".\"name\", \"catalog_product\".\"search_name"
+        }
+      ]
+    },
+    "03_CT_CONC_04a_idempotent_same": {
+      "a": {
+        "ok": true,
+        "sale_id": "7a1daf64-ffea-42ad-abc5-7366ebd9dd61",
+        "correlative": "V-00000001"
+      },
+      "b": {
+        "ok": true,
+        "sale_id": "7a1daf64-ffea-42ad-abc5-7366ebd9dd61",
+        "correlative": "V-00000001"
+      },
+      "lot_after": 8,
+      "pg_blocking_pids": [
+        {
+          "pid": 23928,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            26896
+          ],
+          "query": "SELECT \"identity_account\".\"password\", \"identity_account\".\"last_login\", \"identity_account\".\"is_superuser\", \"identity_acco"
+        }
+      ]
+    },
+    "04_CT_CONC_04b_idempotent_divergent": {
+      "winner": {
+        "ok": true,
+        "sale_id": "97d18a7f-635e-421a-be25-29d7a5d5a783",
+        "correlative": "V-00000002"
+      },
+      "loser": {
+        "ok": false,
+        "type": "ValidationError",
+        "error": "['La clave de cobro ya fue usada con otros montos. Revisa e intenta nuevamente.']"
+      },
+      "pg_blocking_pids": [
+        {
+          "pid": 6552,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            28968
+          ],
+          "query": "SELECT \"identity_account\".\"password\", \"identity_account\".\"last_login\", \"identity_account\".\"is_superuser\", \"identity_acco"
+        }
+      ]
+    },
+    "05_CT_CONC_05_checkout_vs_close": {
+      "checkout": {
+        "ok": true,
+        "correlative": "V-00000003",
+        "total": "10.00"
+      },
+      "close": {
+        "ok": true,
+        "expected": "90.00",
+        "diff": "0.00"
+      },
+      "pg_blocking_pids": [
+        {
+          "pid": 29600,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            23416
+          ],
+          "query": "SELECT \"identity_account\".\"password\", \"identity_account\".\"last_login\", \"identity_account\".\"is_superuser\", \"identity_acco"
+        }
+      ]
+    },
+    "06_account_lock_deactivation": {
+      "admin": {
+        "ok": true
+      },
+      "checkout": {
+        "ok": false,
+        "type": "PermissionDenied",
+        "error": "No tiene permiso para cobrar ventas."
+      },
+      "pg_blocking_pids": [
+        {
+          "pid": 11760,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            1988
+          ],
+          "query": "SELECT \"identity_account\".\"password\", \"identity_account\".\"last_login\", \"identity_account\".\"is_superuser\", \"identity_acco"
+        }
+      ]
+    },
+    "07_live_price_and_category_race": {
+      "price_edit": {
+        "ok": true,
+        "new_price": "9.50"
+      },
+      "checkout": {
+        "ok": false,
+        "type": "ValidationError",
+        "error": "Un producto o precio cambió. Revisa la venta antes de confirmar el cobro."
+      },
+      "pg_blocking_pids": [
+        {
+          "pid": 25384,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            18712
+          ],
+          "query": "SELECT \"catalog_product\".\"id\", \"catalog_product\".\"category_id\", \"catalog_product\".\"name\", \"catalog_product\".\"search_name"
+        }
+      ],
+      "category_off_msg": "El producto «PG Cat Off Prod» ya no está disponible para la venta. Quítalo de la venta en preparación para continuar."
+    },
+    "08_CT_ROLLBACK_02_pg_and_retry": {
+      "rolled_back_all_tables": true,
+      "counter_preserved_during_rollback": 4,
+      "retry_same_key_sale": "V-00000004",
+      "retry_allocations": 2
+    },
+    "09_pg_constraints_and_accumulated_cap": {
+      "constraints": {
+        "draft_qty_gt_999999": true,
+        "alloc_qty_zero": true,
+        "sale_neg_total": true,
+        "dup_correlative": true,
+        "close_diff_mismatch": true
+      },
+      "accumulated_cap_blocked": true
+    },
+    "10_lima_midnight_utc_boundary": {
+      "sellable_045959Z": 3,
+      "sellable_050000Z": 0,
+      "midnight_rejected": true
+    }
+  },
+  "pg_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "transaction_isolation": "read committed",
+  "port_closed": true,
+  "build_after": {
+    "count": 214,
+    "sha256": "2f4e73494c75d369e5e06db15f43e0c374f7ded99b53953b54259d91e035deb1"
+  },
+  "sources_stable": false,
+  "prod_db_unchanged": true,
+  "prod_db_sha256": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58"
+}

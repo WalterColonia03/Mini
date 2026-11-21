@@ -1,0 +1,131 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - paragraph: Catálogo
+    - link "Productos":
+      - /url: /productos/
+      - generic: ☰
+      - generic: Productos
+    - link "Registrar producto":
+      - /url: /productos/nuevo/
+      - generic: ▦
+      - generic: Registrar producto
+    - link "Categorías":
+      - /url: /productos/categorias/
+      - generic: ▮
+      - generic: Categorías
+    - paragraph: Inventario
+    - link "Proveedores":
+      - /url: /inventario/proveedores/
+      - generic: ✦
+      - generic: Proveedores
+    - link "Ver inventario y alertas":
+      - /url: /inventario/stock/
+      - generic: ☷
+      - generic: Ver inventario y alertas
+    - link "Vencimientos de lotes":
+      - /url: /productos/vencimientos/
+      - generic: ⏳
+      - generic: Vencimientos de lotes
+    - link "Ajuste físico":
+      - /url: /inventario/ajustes/nuevo/
+      - generic: ⏫
+      - generic: Ajuste físico
+    - paragraph: Personal
+    - link "Empleados":
+      - /url: /empleados/
+      - generic: ☺
+      - generic: Empleados
+    - paragraph: Caja y ventas
+    - link "Historial de turnos":
+      - /url: /caja/turnos/
+      - generic: ☰
+      - generic: Historial de turnos
+    - link "Historial de ventas":
+      - /url: /ventas/historial/
+      - generic: ☰
+      - generic: Historial de ventas
+  - generic: A
+  - strong: AUD01E Administrador
+  - generic: Administrador
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Empleados" [level=1]
+  - generic: AUD01E Administrador
+  - generic: Administrador
+- main:
+  - heading "Empleados" [level=2]
+  - link "+ Nuevo empleado":
+    - /url: /empleados/nuevo/
+  - search:
+    - generic: Buscar por nombre o correo
+    - searchbox "Buscar por nombre o correo"
+    - button "Buscar"
+  - table:
+    - rowgroup:
+      - row "Nombre Correo Rol Estado Acciones":
+        - columnheader "Nombre"
+        - columnheader "Correo"
+        - columnheader "Rol"
+        - columnheader "Estado"
+        - columnheader "Acciones"
+    - rowgroup:
+      - row "AUD01E Administrador admin@audit01e.invalid Administrador Activo Editar":
+        - cell "AUD01E Administrador"
+        - cell "admin@audit01e.invalid"
+        - cell "Administrador":
+          - generic: Administrador
+        - cell "Activo":
+          - generic: Activo
+        - cell "Editar":
+          - link "Editar":
+            - /url: /empleados/9efa6579-4e44-423d-8e71-64ebd3478207/editar/
+      - row "AUD01E Almacenero almacenero@audit01e.invalid Almacenero Activo Editar Desactivar":
+        - cell "AUD01E Almacenero"
+        - cell "almacenero@audit01e.invalid"
+        - cell "Almacenero":
+          - generic: Almacenero
+        - cell "Activo":
+          - generic: Activo
+        - cell "Editar Desactivar":
+          - link "Editar":
+            - /url: /empleados/206f7517-e19a-4479-9e9d-9e9d9d2b5888/editar/
+          - button "Desactivar"
+      - row "AUD01E Inactiva inactiva@audit01e.invalid Vendedor Inactivo Editar Reactivar":
+        - cell "AUD01E Inactiva"
+        - cell "inactiva@audit01e.invalid"
+        - cell "Vendedor":
+          - generic: Vendedor
+        - cell "Inactivo":
+          - generic: Inactivo
+        - cell "Editar Reactivar":
+          - link "Editar":
+            - /url: /empleados/29f2f2ad-60b2-43c3-bfed-943343e5221c/editar/
+          - button "Reactivar"
+      - row "AUD01E Vendedor vendedor@audit01e.invalid Vendedor Activo Editar Desactivar":
+        - cell "AUD01E Vendedor"
+        - cell "vendedor@audit01e.invalid"
+        - cell "Vendedor":
+          - generic: Vendedor
+        - cell "Activo":
+          - generic: Activo
+        - cell "Editar Desactivar":
+          - link "Editar":
+            - /url: /empleados/3da01916-1daa-48f3-b6fe-05313d2bcb29/editar/
+          - button "Desactivar"
+- contentinfo: Minimarket · Gestión de bodega

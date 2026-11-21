@@ -1,0 +1,165 @@
+{
+  "stage": "03-E",
+  "started": "2026-11-10T03:23:37.421Z",
+  "cases": [
+    {
+      "id": "E01-active-visible",
+      "ok": true,
+      "screenshot": "01-activo.png"
+    },
+    {
+      "id": "E02-disabled",
+      "ok": true,
+      "screenshot": "02-inactivo.png"
+    },
+    {
+      "id": "E03-inactive-label",
+      "ok": true,
+      "row": "AUD03 Bebida de prueba\tProductos enlatados\tAUD03-BEBIDA\t8,50\t19\t10\tInactivo\t\nEditar\nHabilitar"
+    },
+    {
+      "id": "E04-replay-disable",
+      "ok": true,
+      "requestState": "false",
+      "status": 302,
+      "observed": false
+    },
+    {
+      "id": "E05-seller-search",
+      "ok": true,
+      "screenshot": "05-sin-venta.png"
+    },
+    {
+      "id": "E06-draft-reject",
+      "ok": true,
+      "message": [
+        "El producto seleccionado no está disponible para la venta."
+      ]
+    },
+    {
+      "id": "E07-checkout-reject",
+      "ok": true,
+      "screenshot": "07-cobro-denegado.png"
+    },
+    {
+      "id": "E08-warehouse-entry",
+      "ok": true
+    },
+    {
+      "id": "E09-warehouse-initial",
+      "ok": true
+    },
+    {
+      "id": "E10-warehouse-state",
+      "ok": true,
+      "row": "AUD03 Bebida de prueba\tProductos enlatados\tAUD03-BEBIDA\t8,50\t19\t10\tInactivo"
+    },
+    {
+      "id": "E11-receipts",
+      "ok": true
+    },
+    {
+      "id": "E12-reactivation",
+      "ok": true,
+      "row": "AUD03 Bebida de prueba\tAUD03-BEBIDA\t19\tS/ 8,50\t\nCantidad de AUD03 Bebida de prueba\nAgregar",
+      "screenshot": "12-reactivado.png"
+    },
+    {
+      "id": "E13-zero-stock-message",
+      "ok": true,
+      "screenshot": "13-activo-sin-stock.png"
+    },
+    {
+      "id": "E14-expired-only",
+      "ok": true
+    },
+    {
+      "id": "E15-active-inactive-category",
+      "ok": true
+    },
+    {
+      "id": "E16-both-inactive",
+      "ok": true
+    },
+    {
+      "id": "E17-reactivate-under-suspension",
+      "ok": true
+    },
+    {
+      "id": "E18-category-reactivation-keeps-product-off",
+      "ok": true
+    },
+    {
+      "id": "E19-both-active",
+      "ok": true
+    },
+    {
+      "id": "E20-role-warehouse",
+      "ok": true,
+      "statuses": [
+        403,
+        403
+      ]
+    },
+    {
+      "id": "E20-role-seller",
+      "ok": true,
+      "statuses": [
+        403,
+        403
+      ]
+    },
+    {
+      "id": "E21-visitor",
+      "ok": true
+    },
+    {
+      "id": "E22-methods",
+      "ok": true,
+      "statuses": [
+        405,
+        405
+      ]
+    },
+    {
+      "id": "E23-missing",
+      "ok": true
+    },
+    {
+      "id": "E23-csrf",
+      "ok": true
+    },
+    {
+      "id": "E24-invalid-\"\"",
+      "ok": true
+    },
+    {
+      "id": "E24-invalid-\"yes\"",
+      "ok": true
+    },
+    {
+      "id": "E24-invalid-\"2\"",
+      "ok": true
+    },
+    {
+      "id": "E25-mobile-button",
+      "ok": true,
+      "screenshot": "25-movil.png"
+    },
+    {
+      "id": "E26-refresh",
+      "ok": true
+    },
+    {
+      "id": "E27-back",
+      "ok": true
+    },
+    {
+      "id": "E28-final-conservation",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "browser": "157.0.8103.39",
+  "finished": "2026-11-10T03:24:16.844Z"
+}

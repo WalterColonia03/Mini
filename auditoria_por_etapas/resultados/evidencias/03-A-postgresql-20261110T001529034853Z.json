@@ -1,0 +1,69 @@
+{
+  "started_utc": "20261110T001529034853Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit03-pg-acc6425887c0f28874ae626c",
+  "port": 55398,
+  "cases": [
+    {
+      "id": "PG03-01-canonical-duplicate",
+      "ok": true,
+      "outcomes": [
+        {
+          "status": "rejected",
+          "errors": [
+            "La categoría ya existe"
+          ],
+          "synchronized": true
+        },
+        {
+          "status": "created",
+          "key": "aud03 bebidas pg",
+          "synchronized": true
+        }
+      ],
+      "new_rows": 1
+    },
+    {
+      "id": "PG03-02-independent-categories",
+      "ok": true,
+      "outcomes": [
+        {
+          "status": "created",
+          "key": "aud03 pg a",
+          "synchronized": true
+        },
+        {
+          "status": "created",
+          "key": "aud03 pg b",
+          "synchronized": true
+        }
+      ],
+      "new_rows": 2
+    },
+    {
+      "id": "PG03-03-casefold-limit",
+      "ok": true
+    }
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "database": "audit03_c52cef74d9",
+  "isolation": "read committed",
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa01-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T231223297870Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T235435476251Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235102894578Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235313324286Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T000927933696Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001124615788Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001235417602Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001320983361Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001337606973Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001427294717Z\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-10T00:15:35.206989+00:00"
+}

@@ -1,0 +1,180 @@
+{
+  "timestamp_utc": "2026-11-15T02:49:23.578Z",
+  "total_checks": 14,
+  "passed_checks": 14,
+  "failed_checks": 0,
+  "console_errors": [],
+  "expected_403_console_errors": [
+    {
+      "page": "admin",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "page": "admin",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "page": "almacenero",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    }
+  ],
+  "page_errors": [],
+  "server_500_errors": [],
+  "external_requests": [],
+  "checks": [
+    {
+      "id": "B00_hmac_and_isolation",
+      "ok": true,
+      "expected": "cb3bf6d2a46b",
+      "got": "cb3bf6d2a46b",
+      "cacheCtrlLogin": "max-age=0, no-cache, no-store, must-revalidate, private"
+    },
+    {
+      "id": "B01_anon_redirect_sales",
+      "ok": true,
+      "status": 200,
+      "finalPath": "/"
+    },
+    {
+      "id": "B02_seller_no_shift_gate",
+      "ok": true,
+      "hasSearch": false
+    },
+    {
+      "id": "B03_doc02_04_c04_seller_no_shift_logout",
+      "ok": true,
+      "doc02_c04_cumple": true,
+      "renderedLogoutText": "Sesión de trabajo ↪ ¿Deseas cerrar sesión? Volverás a la pantalla de ingreso. Cualquier venta en preparación abierta se descartará al confirmar; actualmente no tienes un turno de caja abierto. Cerrar sesión Cancelar"
+    },
+    {
+      "id": "B04_logout_cancel_keeps_session",
+      "ok": true,
+      "urlAfterCancel": "/inicio/"
+    },
+    {
+      "id": "B05_admin_denied_pos_and_nav_hidden",
+      "ok": true,
+      "admHidesPos": true,
+      "salesStatus": 403,
+      "checkoutStatus": 403,
+      "admLogoutText": "Sesión de trabajo ↪ ¿Deseas cerrar sesión? Volverás a la pantalla de ingreso. Tu cuenta no opera turnos de caja. Cerrar sesión Cancelar"
+    },
+    {
+      "id": "B06_almacenero_denied_and_writeoff_receipt_redirect",
+      "ok": true,
+      "whSalesStatus": 403,
+      "writeoffRedirectUrl": "/inventario/bajas/c48787f5-1b86-4ea6-862d-1d6336a3f59c/",
+      "whLogoutText": "Sesión de trabajo ↪ ¿Deseas cerrar sesión? Volverás a la pantalla de ingreso. Tu cuenta no opera turnos de caja. Cerrar sesión Cancelar"
+    },
+    {
+      "id": "B07_seller_empty_draft_screen",
+      "ok": true,
+      "cacheCtrlSales": "max-age=0, no-cache, no-store, must-revalidate, private"
+    },
+    {
+      "id": "B08_search_expired_exclusion_and_add_validation",
+      "ok": true,
+      "zeroMsg": "No se encontraron productos con existencias vendibles.",
+      "missingMsg": "No se encontraron productos con existencias vendibles.",
+      "specialFound": true,
+      "tunaRowText": "Atún Clásico 170g 7750001000013 15 S/ 6,50 Cantidad de Atún Clásico 170g Agregar",
+      "errQtyZero": "Asegúrese de que este valor es mayor o igual a 1.",
+      "errOverStock": "La cantidad supera las existencias vendibles disponibles."
+    },
+    {
+      "id": "B09_consolidate_zero_discount_viewports_and_keyboard",
+      "ok": true,
+      "draftTunaCount": 1,
+      "draftTunaText": "Atún Clásico 170g S/ 6,50 por unidad Cantidad de Atún Clásico 170g Actualizar 5 und. S/ 32,50 Quitar",
+      "overflow1366": {
+        "scrollW": 1366,
+        "innerW": 1366,
+        "overflow": false
+      },
+      "mobileMetrics": {
+        "scrollW": 390,
+        "innerW": 390,
+        "overflow": false,
+        "tableContainerScrollW": 352,
+        "tableContainerClientW": 352,
+        "tableInnerHorizontalScroll": false,
+        "agregarButtonClippedAt390": true,
+        "navScrollW": 1169,
+        "navClientW": 390,
+        "navInnerHorizontalScroll": true,
+        "cobrarRect": {
+          "x": 43,
+          "y": 2104.75,
+          "width": 304,
+          "height": 44,
+          "top": 2104.75,
+          "right": 347,
+          "bottom": 2148.75,
+          "left": 43
+        },
+        "discardRect": {
+          "x": 43,
+          "y": 2160.75,
+          "width": 151.921875,
+          "height": 44,
+          "top": 2160.75,
+          "right": 194.921875,
+          "bottom": 2204.75,
+          "left": 43
+        }
+      },
+      "focusedSample": [
+        "BUTTON:Buscar",
+        "INPUT:quantity",
+        "BUTTON:Agregar",
+        "INPUT:quantity",
+        "BUTTON:Actualizar",
+        "BUTTON:Quitar",
+        "INPUT:quantity",
+        "BUTTON:Actualizar",
+        "BUTTON:Quitar",
+        "A:Cobrar venta →"
+      ]
+    },
+    {
+      "id": "B10_dec12_price_freeze_stale_checkout_and_deactivation",
+      "ok": true,
+      "totals2x650": "Base imponible S/ 11,02 IGV S/ 1,98 Total S/ 13,00",
+      "tab2OldCheckoutTotals": "Subtotal S/ 24,00 Base imponible S/ 20,34 IGV (18 %) S/ 3,66 Total a cobrar S/ 24,00 Vuelto estimado —",
+      "tab1AfterGetReload": "Atún Clásico 170g S/ 6,50 por unidad Cantidad de Atún Clásico 170g Actualizar 2 und. S/ 13,00 Quitar",
+      "tab1HasPriceWarn": true,
+      "tab2AfterStaleUrl": "/ventas/cobrar/",
+      "tab2StaleErr": "El precio de «Atún Clásico 170g» cambió de S/ 8.00 a S/ 9.00. Verifica el nuevo total antes de confirmar el cobro.",
+      "deactErr": "El producto seleccionado no está disponible para la venta."
+    },
+    {
+      "id": "B11_rn30_close_blocked_by_active_draft",
+      "ok": true,
+      "closeBlockedErr": "Hay una venta en preparación con productos. Descártala o cóbrala antes de cerrar el turno.\n\nIr a la venta en preparación para cobrarla o descartarla"
+    },
+    {
+      "id": "B12_hu_ven_01a_browser_lock_absent",
+      "ok": true,
+      "hu_ven_01a_cumple": false,
+      "hasIdleUiLock": false,
+      "cookieNames": [
+        {
+          "name": "audit10b_csrftoken",
+          "httpOnly": true
+        },
+        {
+          "name": "audit10b_sessionid",
+          "httpOnly": true
+        }
+      ]
+    },
+    {
+      "id": "B13_logout_discard_back_relogin_and_clean_close",
+      "ok": true,
+      "logoutWithDraftText": "Sesión de trabajo ↪ ¿Deseas cerrar sesión? La venta en preparación se descartará. El turno abierto seguirá ligado a tu cuenta. Cerrar sesión Cancelar",
+      "pathAfterLogout": "/",
+      "pathAfterBack": "/",
+      "finalClosePath": "/caja/turnos/79a21696-42fa-43ac-ac15-48c7ad02f6d6/cerrado/"
+    }
+  ]
+}

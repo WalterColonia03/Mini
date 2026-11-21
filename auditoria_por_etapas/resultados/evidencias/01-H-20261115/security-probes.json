@@ -1,0 +1,152 @@
+{
+  "probes": [
+    {
+      "id": "DOC-01-06-C02-AUDIT-EVENTS",
+      "captured_log_lines_count": 8,
+      "captured_identity_audit_lines": [
+        "identity_audit {\"action\": \"LOGIN_SUCCESS\", \"actor_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"actor_identifier\": \"sec.seller@probe.invalid\", \"event_id\": \"0fd53235-c659-4d21-8297-8b30cc37cfcc\", \"metadata\": {\"role\": \"VENDEDOR\"}, \"occurred_at_utc\": \"2026-11-15T15:04:38.489225+00:00\", \"outcome\": \"SUCCESS\", \"request_id\": \"42d7fa1fd9b74d46affa24d8c088df69\", \"target_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"target_type\": \"Account\"}",
+        "identity_audit {\"action\": \"LOGIN_FAILED\", \"actor_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"actor_identifier\": \"sec.seller@probe.invalid\", \"event_id\": \"cdc1abc1-1ba1-44de-bb33-fd3cce031308\", \"metadata\": {\"account_active\": true, \"account_exists\": true, \"failures\": 1, \"locked_minutes\": 0}, \"occurred_at_utc\": \"2026-11-15T15:04:38.587995+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"svc-6c9d38b1e4ca436c9256e629\", \"target_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"target_type\": \"Account\"}",
+        "identity_audit {\"action\": \"LOGIN_FAILED\", \"actor_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"actor_identifier\": \"sec.seller@probe.invalid\", \"event_id\": \"582e3419-b011-4dc7-927d-5ee03f89f426\", \"metadata\": {\"account_active\": true, \"account_exists\": true, \"failures\": 2, \"locked_minutes\": 0}, \"occurred_at_utc\": \"2026-11-15T15:04:38.679256+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"svc-72f73eb8af3d4693b13ed020\", \"target_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"target_type\": \"Account\"}",
+        "identity_audit {\"action\": \"LOGIN_FAILED\", \"actor_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"actor_identifier\": \"sec.seller@probe.invalid\", \"event_id\": \"0c6e71b8-038d-4bd5-9e4e-f1769ddcdba5\", \"metadata\": {\"account_active\": true, \"account_exists\": true, \"failures\": 3, \"locked_minutes\": 0}, \"occurred_at_utc\": \"2026-11-15T15:04:38.772196+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"svc-f6890544a0cf42df81e8bbec\", \"target_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"target_type\": \"Account\"}",
+        "identity_audit {\"action\": \"LOGIN_FAILED\", \"actor_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"actor_identifier\": \"sec.seller@probe.invalid\", \"event_id\": \"fc20fe6a-f237-4ac8-b5df-3ff0e6597be4\", \"metadata\": {\"account_active\": true, \"account_exists\": true, \"failures\": 4, \"locked_minutes\": 0}, \"occurred_at_utc\": \"2026-11-15T15:04:38.865486+00:00\", \"outcome\": \"REJECTED\", \"request_id\": \"svc-8cc49f0979014de8b593c0b3\", \"target_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"target_type\": \"Account\"}",
+        "identity_audit {\"action\": \"LOGIN_LOCKED\", \"actor_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"actor_identifier\": \"sec.seller@probe.invalid\", \"event_id\": \"af9e1216-400c-4f3e-89d1-86ce0fd7ad37\", \"metadata\": {\"account_active\": true, \"account_exists\": true, \"failures\": 5, \"locked_minutes\": 15}, \"occurred_at_utc\": \"2026-11-15T15:04:38.953808+00:00\", \"outcome\": \"LOCKED\", \"request_id\": \"svc-0440792f6b1b46a880717a19\", \"target_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"target_type\": \"Account\"}",
+        "identity_audit {\"action\": \"LOGIN_LOCKED\", \"actor_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"actor_identifier\": \"sec.seller@probe.invalid\", \"event_id\": \"dc08c49c-ef4b-4aa2-83fa-b2aec4fc8f08\", \"metadata\": {\"already_locked\": true, \"failures\": 5, \"locked_minutes\": 15}, \"occurred_at_utc\": \"2026-11-15T15:04:39.043668+00:00\", \"outcome\": \"LOCKED\", \"request_id\": \"svc-2368da63e26b40b5812e8349\", \"target_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"target_type\": \"Account\"}",
+        "identity_audit {\"action\": \"LOGOUT_SUCCESS\", \"actor_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"actor_identifier\": \"sec.seller@probe.invalid\", \"event_id\": \"52bb339e-2751-4648-873a-6bed39c210ff\", \"metadata\": {\"discarded_draft_id\": \"\", \"had_open_shift\": false}, \"occurred_at_utc\": \"2026-11-15T15:04:39.079817+00:00\", \"outcome\": \"SUCCESS\", \"request_id\": \"eff17f0f2d4e40288701723c3861eea0\", \"target_id\": \"c52e670f-1a69-417e-9858-5fa2b8a41438\", \"target_type\": \"Session\"}"
+      ],
+      "identity_audit_events": [
+        {
+          "action": "LOGIN_SUCCESS",
+          "outcome": "SUCCESS",
+          "request_id": "42d7fa1fd9b74d46affa24d8c088df69"
+        },
+        {
+          "action": "LOGIN_FAILED",
+          "outcome": "REJECTED",
+          "request_id": "svc-6c9d38b1e4ca436c9256e629"
+        },
+        {
+          "action": "LOGIN_FAILED",
+          "outcome": "REJECTED",
+          "request_id": "svc-72f73eb8af3d4693b13ed020"
+        },
+        {
+          "action": "LOGIN_FAILED",
+          "outcome": "REJECTED",
+          "request_id": "svc-f6890544a0cf42df81e8bbec"
+        },
+        {
+          "action": "LOGIN_FAILED",
+          "outcome": "REJECTED",
+          "request_id": "svc-8cc49f0979014de8b593c0b3"
+        },
+        {
+          "action": "LOGIN_LOCKED",
+          "outcome": "LOCKED",
+          "request_id": "svc-0440792f6b1b46a880717a19"
+        },
+        {
+          "action": "LOGIN_LOCKED",
+          "outcome": "LOCKED",
+          "request_id": "svc-2368da63e26b40b5812e8349"
+        },
+        {
+          "action": "LOGOUT_SUCCESS",
+          "outcome": "SUCCESS",
+          "request_id": "eff17f0f2d4e40288701723c3861eea0"
+        }
+      ],
+      "has_login_success": true,
+      "has_login_failed": true,
+      "has_login_locked": true,
+      "has_logout_success": true,
+      "all_events_have_request_id": true,
+      "admin_login_events_emitted": 0,
+      "x_request_id_response_header_present": true,
+      "verdict": "PARCIAL (/admin/login/ sin evento)"
+    },
+    {
+      "id": "DOC-01-06-C03-EXC-INFO-CANARY",
+      "message_line_redacted": true,
+      "exc_info_canary_leaked": false,
+      "redaction_line_preview": "ERROR Fallo requestID=REQ-01H password=[REDACTED]",
+      "exc_info_redacted_preview_has_redacted": true,
+      "fail_closed_locked_status_during_broken_handler": 200,
+      "fail_closed_no_auth_session": true,
+      "audit_log_failure_fallback_stderr_preview": [
+        "identity_audit_log_failure action=LOGIN_LOCKED outcome=LOCKED request_id=e828e51d69db4e52b79876ee3c38ccd4 error=OSError"
+      ],
+      "verdict": "CUMPLE"
+    },
+    {
+      "id": "DOC-01-04-ARGON2-BEFORE-LOCK-CHECK",
+      "locked_known_minutes": 15,
+      "locked_unknown_minutes": 15,
+      "hash_calls_executed_on_already_locked_unknown": [
+        "set_password"
+      ],
+      "note": "Called check_password/set_password prior to attempt.locked_until > now",
+      "verdict": "INCUMPLE",
+      "hash_calls_executed_on_already_locked_known": [
+        "check_password"
+      ]
+    },
+    {
+      "id": "DOC-01-06-C01-ADMIN-SESSION-STRUCTURE",
+      "admin_login_status": 302,
+      "session_has_role_code_key": false,
+      "session_keys": [
+        "_auth_user_backend",
+        "_auth_user_hash",
+        "_auth_user_id"
+      ],
+      "dashboard_status": 200,
+      "commercial_empleados_status_as_seller_superuser": 403,
+      "admin_account_model_status_as_superuser": 200,
+      "verdict": "INCUMPLE"
+    },
+    {
+      "id": "DOC-02-04-C03-SILENT-LOCK-RESET",
+      "old_email_failures_after_rename": 0,
+      "active_email_failures_after_rename": 5,
+      "active_email_locked_after_rename": true,
+      "login_allowed_immediately_after_rename": false,
+      "deactivate_audit_events": [
+        {
+          "action": "EMPLOYEE_DEACTIVATED",
+          "outcome": "SUCCESS",
+          "metadata": {
+            "role": "VENDEDOR",
+            "sessions_revoked": true,
+            "lockout_preserved": true
+          }
+        }
+      ],
+      "sessions_revoked_not_redacted_bool": true,
+      "reactivate_preserved_failures": 5,
+      "reactivate_preserved_locked_until": "2026-11-15T15:19:38.951141+00:00",
+      "login_allowed_immediately_after_reactivation": false,
+      "reactivation_audit_events": [
+        {
+          "action": "EMPLOYEE_REACTIVATED",
+          "outcome": "SUCCESS",
+          "metadata": {
+            "lockout_preserved": true
+          }
+        }
+      ],
+      "explicit_unlock_failures": 0,
+      "explicit_unlock_locked_until": null,
+      "login_allowed_after_explicit_unlock": true,
+      "explicit_unlock_audit_events": [
+        {
+          "action": "ACCOUNT_UNLOCKED",
+          "outcome": "SUCCESS",
+          "metadata": {
+            "email_changed": false
+          }
+        }
+      ],
+      "verdict": "CUMPLE"
+    }
+  ]
+}

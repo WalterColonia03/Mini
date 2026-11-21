@@ -1,0 +1,64 @@
+{
+  "id": "OPDB-01",
+  "ok": true,
+  "sqlite_sha256_before": "f6d095e1bf8e30f08660f038cc4f632436f4d26f5a6645a49995677ef55a1a4d",
+  "sqlite_sha256_after": "f6d095e1bf8e30f08660f038cc4f632436f4d26f5a6645a49995677ef55a1a4d",
+  "read_only_intact": true,
+  "migrations_status": {
+    "cash": {
+      "disk_count": 5,
+      "applied_count": 5,
+      "pending": []
+    },
+    "catalog": {
+      "disk_count": 7,
+      "applied_count": 7,
+      "pending": []
+    },
+    "identity": {
+      "disk_count": 6,
+      "applied_count": 6,
+      "pending": []
+    },
+    "inventory": {
+      "disk_count": 11,
+      "applied_count": 11,
+      "pending": []
+    },
+    "sales": {
+      "disk_count": 8,
+      "applied_count": 8,
+      "pending": []
+    }
+  },
+  "table_counts": {
+    "inventory_supplier": 0,
+    "inventory_initialinventoryload": 5,
+    "inventory_initialloadline": 0,
+    "inventory_stockreceipt": 0,
+    "inventory_stockreceiptcounter": 0,
+    "inventory_stockreceiptline": 0,
+    "inventory_lot": 6,
+    "inventory_stockwriteoff": 0,
+    "inventory_physicaladjustment": 0
+  },
+  "lot_norm_collisions": [],
+  "lot_norm_mismatches": [],
+  "legacy_initial_loads_with_null_snapshot": 5,
+  "triggers_present": [
+    {
+      "name": "inventory_lot_received_at_immutable",
+      "table": "inventory_lot"
+    }
+  ],
+  "demo_data_anomalies": [
+    {
+      "product_id": "e94919b4d06e4ed3a6434c4b27b8ecba",
+      "name": "Arroz Integral 1kg",
+      "category": "Productos enlatados",
+      "average_cost": 1800,
+      "sale_price": 2500,
+      "note": "Demo/test seed data outside typical minimarket rice pricing/category."
+    }
+  ]
+}

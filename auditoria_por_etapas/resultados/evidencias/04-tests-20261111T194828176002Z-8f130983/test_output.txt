@@ -1,0 +1,277 @@
+Found 55 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_create_view_empty_post_shows_errors_shifts_autofocus_and_handles_two_tab_toggle (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_create_view_empty_post_shows_errors_shifts_autofocus_and_handles_two_tab_toggle) ... ok
+test_duplicate_ruc_rejected_even_when_existing_supplier_is_inactive (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_duplicate_ruc_rejected_even_when_existing_supplier_is_inactive) ... ok
+test_inactive_supplier_rejected_without_silent_none_and_history_preserved (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_inactive_supplier_rejected_without_silent_none_and_history_preserved) ... ok
+test_model_and_form_enforce_ascii_ruc_and_distinguish_sunat_disclaimer (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_model_and_form_enforce_ascii_ruc_and_distinguish_sunat_disclaimer) ... ok
+test_model_form_and_service_reject_bad_names_and_phones (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_model_form_and_service_reject_bad_names_and_phones) ... ok
+test_role_matrix_nav_headers_and_unimplemented_edit_routes (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_role_matrix_nav_headers_and_unimplemented_edit_routes) ... Forbidden (Permission denied): /inventario/proveedores/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /inventario/proveedores/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /inventario/proveedores/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /inventario/proveedores/b659c104-ad01-40f1-a5c2-8b73603eb238/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /inventario/proveedores/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /inventario/proveedores/b659c104-ad01-40f1-a5c2-8b73603eb238/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Method Not Allowed (GET): /inventario/proveedores/b659c104-ad01-40f1-a5c2-8b73603eb238/estado/
+Not Found: /inventario/proveedores/b659c104-ad01-40f1-a5c2-8b73603eb238/editar/
+Not Found: /inventario/proveedores/b659c104-ad01-40f1-a5c2-8b73603eb238/
+Not Found: /proveedores/b659c104-ad01-40f1-a5c2-8b73603eb238/editar/
+ok
+test_search_label_placement_whitespace_collapse_and_nul_guard (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_search_label_placement_whitespace_collapse_and_nul_guard) ... ok
+test_services_block_anonymous_non_admin_and_stale_revoked_admin (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_services_block_anonymous_non_admin_and_stale_revoked_admin) ... ok
+test_toggle_service_handles_idempotency_stale_instance_and_missing_supplier (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_toggle_service_handles_idempotency_stale_instance_and_missing_supplier) ... ok
+test_reactivated_supplier_uses_current_database_state (inventory.test_receipt_supplier.ReceiptSupplierTests.test_reactivated_supplier_uses_current_database_state) ... ok
+test_removed_supplier_is_rejected_without_writes (inventory.test_receipt_supplier.ReceiptSupplierTests.test_removed_supplier_is_rejected_without_writes) ... ok
+test_stale_active_supplier_is_rejected_atomically (inventory.test_receipt_supplier.ReceiptSupplierTests.test_stale_active_supplier_is_rejected_atomically) ... ok
+test_service_rejects_invalid_lot_without_partial_receipt (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_service_rejects_invalid_lot_without_partial_receipt) ... ok
+test_valid_boundary_values_are_preserved (inventory.test_receipt_boundaries.ReceiptBoundaryTests.test_valid_boundary_values_are_preserved) ... ok
+test_duplicate_numbers_in_same_request_leave_no_residue (inventory.tests.InitialInventoryLoadTests.test_duplicate_numbers_in_same_request_leave_no_residue) ... ok
+test_invalid_middle_lot_rolls_back_entire_load (inventory.tests.InitialInventoryLoadTests.test_invalid_middle_lot_rolls_back_entire_load) ... ok
+test_multiple_lots_are_confirmed_atomically_with_weighted_cost (inventory.tests.InitialInventoryLoadTests.test_multiple_lots_are_confirmed_atomically_with_weighted_cost) ... ok
+test_non_warehouse_post_is_forbidden_without_mutation (inventory.tests.InitialInventoryLoadTests.test_non_warehouse_post_is_forbidden_without_mutation) ... Forbidden (Permission denied): /inventario/carga-inicial/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /inventario/carga-inicial/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_second_initial_load_is_rejected (inventory.tests.InitialInventoryLoadTests.test_second_initial_load_is_rejected) ... ok
+test_absurd_future_expiration_year_9999_is_rejected (inventory.tests.PhysicalAdjustmentTests.test_absurd_future_expiration_year_9999_is_rejected)
+BUG-014: El año 9999 en fecha de vencimiento es rechazado. ... ok
+test_admin_registers_positive_adjustment (inventory.tests.PhysicalAdjustmentTests.test_admin_registers_positive_adjustment) ... ok
+test_barcode_change_preserves_sales_in_product_movements_kardex (inventory.tests.PhysicalAdjustmentTests.test_barcode_change_preserves_sales_in_product_movements_kardex)
+BUG-004: Editar el código de barras de un producto no oculta sus ventas históricas en el Kardex. ... ok
+test_bug005_register_stock_entry_excludes_expired_lots_from_average_cost (inventory.tests.PhysicalAdjustmentTests.test_bug005_register_stock_entry_excludes_expired_lots_from_average_cost)
+BUG-005: El recálculo de costo promedio excluye lotes ya vencidos. ... ok
+test_bug005_writeoff_and_physical_adjustment_recalculate_average_cost (inventory.tests.PhysicalAdjustmentTests.test_bug005_writeoff_and_physical_adjustment_recalculate_average_cost)
+BUG-005 residual: Dar de baja o ajustar físicamente un lote recalcula el costo promedio ponderado del producto. ... ok
+test_bug024_stock_entry_preserves_initial_load_lots_and_labels_subsequent_entries_in_kardex (inventory.tests.PhysicalAdjustmentTests.test_bug024_stock_entry_preserves_initial_load_lots_and_labels_subsequent_entries_in_kardex)
+BUG-024: Las entradas posteriores no alteran los lotes de la carga inicial y el Kardex las distingue. ... ok
+test_bug027_lot_unit_cost_rejects_scientific_notation_and_excessive_values (inventory.tests.PhysicalAdjustmentTests.test_bug027_lot_unit_cost_rejects_scientific_notation_and_excessive_values)
+BUG-027: LotInputForm y _validate_lots rechazan notación científica y costos desmesurados. ... ok
+test_bug032_subsequent_stock_entry_records_second_warehouse_worker_and_admin_can_view_load (inventory.tests.PhysicalAdjustmentTests.test_bug032_subsequent_stock_entry_records_second_warehouse_worker_and_admin_can_view_load)
+BUG-032: Entradas posteriores registran al almacenero real por lote, incluyen proveedor en carga inicial y permiten vista a Admin. ... ok
+test_bug033_inactive_category_excludes_products_from_initial_load_and_stock_entry_forms (inventory.tests.PhysicalAdjustmentTests.test_bug033_inactive_category_excludes_products_from_initial_load_and_stock_entry_forms)
+BUG-033: InitialLoadProductForm y StockEntryProductForm excluyen productos cuya categoría fue desactivada. ... ok
+test_bug036_writeoff_and_adjustment_prioritize_posted_lot_id_and_render_hidden_field_errors (inventory.tests.PhysicalAdjustmentTests.test_bug036_writeoff_and_adjustment_prioritize_posted_lot_id_and_render_hidden_field_errors)
+BUG-036: Baja y ajuste priorizan request.POST['lot_id'] sobre ?lote= y muestran errores de campos ocultos. ... ok
+test_duplicate_idempotency_key_is_ignored (inventory.tests.PhysicalAdjustmentTests.test_duplicate_idempotency_key_is_ignored) ... ok
+test_failed_validation_does_not_consume_idempotency_key_in_writeoff_or_adjustment (inventory.tests.PhysicalAdjustmentTests.test_failed_validation_does_not_consume_idempotency_key_in_writeoff_or_adjustment)
+BUG-003: Si falla la validación de negocio, la clave de idempotencia no se quema. ... ok
+test_huge_delta_is_rejected_without_overflow (inventory.tests.PhysicalAdjustmentTests.test_huge_delta_is_rejected_without_overflow) ... ok
+test_initial_load_created_preserves_original_quantity_and_alias_url (inventory.tests.PhysicalAdjustmentTests.test_initial_load_created_preserves_original_quantity_and_alias_url)
+BUG-012, BUG-022 y BUG-023: /inventario/carga-inicial/<id>/creada/ conserva cantidad inicial original. ... ok
+test_invalid_uuid_in_lote_param_returns_404 (inventory.tests.PhysicalAdjustmentTests.test_invalid_uuid_in_lote_param_returns_404) ... Not Found: /inventario/ajustes/nuevo/
+Not Found: /inventario/bajas/nueva/
+ok
+test_missing_idempotency_key_still_prevents_rapid_duplicate_adjustment (inventory.tests.PhysicalAdjustmentTests.test_missing_idempotency_key_still_prevents_rapid_duplicate_adjustment)
+BUG-010: Dos POST idénticos consecutivos sin idempotency_key no duplican el ajuste. ... ok
+test_negative_adjustment_exceeding_stock_is_rejected (inventory.tests.PhysicalAdjustmentTests.test_negative_adjustment_exceeding_stock_is_rejected) ... ok
+test_positive_adjustment_does_not_alter_initial_load_in_movements (inventory.tests.PhysicalAdjustmentTests.test_positive_adjustment_does_not_alter_initial_load_in_movements) ... ok
+test_stock_entry_view_registers_subsequent_lots_and_links_supplier (inventory.tests.PhysicalAdjustmentTests.test_stock_entry_view_registers_subsequent_lots_and_links_supplier)
+BUG-005 y BUG-011: La vista /inventario/entrada/ permite registrar lotes posteriores con proveedor. ... ok
+test_warehouse_gets_403 (inventory.tests.PhysicalAdjustmentTests.test_warehouse_gets_403) ... Forbidden (Permission denied): /inventario/ajustes/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_zero_delta_is_rejected_by_form (inventory.tests.PhysicalAdjustmentTests.test_zero_delta_is_rejected_by_form) ... ok
+test_admin_registers_writeoff (inventory.tests.StockWriteOffTests.test_admin_registers_writeoff) ... ok
+test_damage_reason_requires_notes (inventory.tests.StockWriteOffTests.test_damage_reason_requires_notes) ... ok
+test_invalid_writeoff_reason_is_rejected_by_service (inventory.tests.StockWriteOffTests.test_invalid_writeoff_reason_is_rejected_by_service) ... ok
+test_quantity_exceeding_stock_is_rejected (inventory.tests.StockWriteOffTests.test_quantity_exceeding_stock_is_rejected) ... ok
+test_seller_gets_403 (inventory.tests.StockWriteOffTests.test_seller_gets_403) ... Forbidden (Permission denied): /inventario/bajas/nueva/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_warehouse_accesses_writeoff_page (inventory.tests.StockWriteOffTests.test_warehouse_accesses_writeoff_page) ... ok
+test_admin_creates_supplier (inventory.tests.SupplierTests.test_admin_creates_supplier) ... ok
+test_admin_sees_supplier_list (inventory.tests.SupplierTests.test_admin_sees_supplier_list) ... ok
+test_admin_toggles_supplier_status (inventory.tests.SupplierTests.test_admin_toggles_supplier_status) ... ok
+test_duplicate_ruc_is_rejected (inventory.tests.SupplierTests.test_duplicate_ruc_is_rejected) ... ok
+test_non_admin_cannot_create_supplier (inventory.tests.SupplierTests.test_non_admin_cannot_create_supplier) ... Forbidden (Permission denied): /inventario/proveedores/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_non_admin_gets_403_on_toggle (inventory.tests.SupplierTests.test_non_admin_gets_403_on_toggle) ... Forbidden (Permission denied): /inventario/proveedores/949371d7-c508-41a7-ade8-8c451e10589f/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_search_filters_by_name (inventory.tests.SupplierTests.test_search_filters_by_name) ... ok
+test_seller_gets_403_on_supplier_list (inventory.tests.SupplierTests.test_seller_gets_403_on_supplier_list) ... Forbidden (Permission denied): /inventario/proveedores/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_warehouse_sees_supplier_list (inventory.tests.SupplierTests.test_warehouse_sees_supplier_list) ... ok
+
+----------------------------------------------------------------------
+Ran 55 tests in 4.159s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

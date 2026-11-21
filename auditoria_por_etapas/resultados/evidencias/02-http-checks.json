@@ -1,0 +1,65 @@
+{
+  "stage": "ETAPA-02",
+  "executed_at": "2026-11-09T17:58:58.664395",
+  "total_checks": 6,
+  "all_passed": true,
+  "checks": [
+    {
+      "id": "PROOF-LIVE-SERVER",
+      "ok": true,
+      "details": {
+        "status": 200,
+        "proof": "ETAPA-02:http-check-1794265137:audit.sqlite3",
+        "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private"
+      }
+    },
+    {
+      "id": "HU-AUTH-03-CA01-GET-NO-DRAFT",
+      "ok": true,
+      "details": {
+        "login_status": 302,
+        "salir_status": 200,
+        "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private"
+      }
+    },
+    {
+      "id": "HU-AUTH-03-CA02-GET-WITH-DRAFT",
+      "ok": true,
+      "details": {
+        "salir_status": 200,
+        "active_drafts_before_post": 1
+      }
+    },
+    {
+      "id": "HU-AUTH-03-CA02-CA03-POST-LOGOUT",
+      "ok": true,
+      "details": {
+        "post_logout_status": 302,
+        "post_logout_location": "/",
+        "active_drafts_after_post": 0,
+        "shift_status": "OPEN",
+        "lot_available_quantity": 20,
+        "protected_route_after_logout_status": 302
+      }
+    },
+    {
+      "id": "HU-USR-01-LIST-AND-SEARCH-AND-RBAC",
+      "ok": true,
+      "details": {
+        "anon_status": 302,
+        "seller_status": 403,
+        "warehouse_status": 403,
+        "admin_status": 200,
+        "admin_cache_control": "max-age=0, no-cache, no-store, must-revalidate, private"
+      }
+    },
+    {
+      "id": "HU-USR-02-DUPLICATE-AND-WEAK-PASSWORD",
+      "ok": true,
+      "details": {
+        "duplicate_status": 200,
+        "weak_password_status": 200
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+# views.py: category_create binds request.POST even for an empty POST; initial hash retained in manifest.
+--- r1-pmv/catalog/forms.py (antes03)
++++ r1-pmv/catalog/forms.py (03-A)
+@@ -15,11 +15,12 @@
+     name = forms.CharField(
+         label="Nombre de la categoría",
+         max_length=120,
++        error_messages={"required": "El nombre es obligatorio"},
+         widget=forms.TextInput(attrs={"autofocus": True, "autocomplete": "off"}),
+     )
+ 
+     def clean_name(self) -> str:
+-        value = self.cleaned_data["name"].strip()
++        value = Category.normalize_name(self.cleaned_data["name"])
+         if not any(ch.isalnum() for ch in value):
+             raise forms.ValidationError("El nombre de la categoría debe contener letras o números.")
+         return value
+--- r1-pmv/catalog/models.py (antes03)
++++ r1-pmv/catalog/models.py (03-A)
+@@ -23,9 +23,28 @@
+     class Meta:
+         ordering = ["name_normalized"]
+ 
++    @staticmethod
++    def normalize_name(value: str) -> str:
++        return " ".join((value or "").split())
++
++    def clean(self) -> None:
++        super().clean()
++        self.name = self.normalize_name(self.name)
++        self.name_normalized = self.name.casefold()
++        if not self.name:
++            raise ValidationError({"name": "El nombre es obligatorio"})
++        if not any(ch.isalnum() for ch in self.name):
++            raise ValidationError({"name": "El nombre de la categoría debe contener letras o números."})
++        # casefold can expand characters; the unique database key has the same
++        # bound as the display name. Report it on the editable field.
++        if len(self.name_normalized) > 120:
++            raise ValidationError({"name": "El nombre normalizado no puede superar 120 caracteres."})
++
+     def save(self, *args, **kwargs) -> None:
+-        self.name = self.name.strip()
++        self.name = self.normalize_name(self.name)
+         self.name_normalized = self.name.casefold()
++        if kwargs.get("update_fields") and "name" in kwargs["update_fields"]:
++            kwargs["update_fields"] = set(kwargs["update_fields"]) | {"name_normalized"}
+         super().save(*args, **kwargs)
+ 
+     def __str__(self) -> str:
+--- r1-pmv/catalog/services.py (antes03)
++++ r1-pmv/catalog/services.py (03-A)
+@@ -13,13 +13,24 @@
+     """Create a new active product category (ADMIN only)."""
+     if not actor.is_authenticated or actor.role.code != Role.Code.ADMIN:
+         raise PermissionDenied("No tiene permiso para crear categorías.")
+-    name = name.strip()
++    name = Category.normalize_name(name)
+     if not name:
+-        raise ValidationError({"name": "Ingrese el nombre de la categoría."})
++        raise ValidationError({"name": "El nombre es obligatorio"})
+     normalized = name.casefold()
+     if Category.objects.filter(name_normalized=normalized).exists():
+-        raise ValidationError({"name": "Ya existe una categoría con ese nombre."})
+-    return Category.objects.create(name=name)
++        raise ValidationError({"name": "La categoría ya existe"})
++    category = Category(name=name, name_normalized=normalized)
++    category.full_clean(validate_unique=False)
++    try:
++        # Recover outside a savepoint: a duplicate race must not leave the
++        # outer transaction broken or turn a validation failure into HTTP 500.
++        with transaction.atomic():
++            category.save()
++    except IntegrityError as exc:
++        if Category.objects.filter(name_normalized=normalized).exists():
++            raise ValidationError({"name": "La categoría ya existe"}) from exc
++        raise
++    return category
+ 
+ 
+ @transaction.atomic
+--- r1-pmv/catalog/templates/catalog/category_form.html (antes03)
++++ r1-pmv/catalog/templates/catalog/category_form.html (03-A)
+@@ -12,7 +12,7 @@
+     </div>
+ 
+     {% if form.non_field_errors %}
+-      <div class="alert alert-danger">
++      <div class="alert alert-danger" role="alert">
+         {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+       </div>
+     {% endif %}
+@@ -25,7 +25,7 @@
+         </label>
+         {{ form.name }}
+         {% if form.name.errors %}
+-          <div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>
++          <div id="{{ form.name.auto_id }}_error" class="text-danger small mt-1" role="alert">{{ form.name.errors.0 }}</div>
+         {% endif %}
+       </div>
+       <div class="d-flex gap-2">

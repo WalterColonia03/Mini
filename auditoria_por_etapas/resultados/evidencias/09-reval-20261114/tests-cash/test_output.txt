@@ -1,0 +1,122 @@
+Found 26 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_anonymous_redirects_on_all_cash_urls (cash.test_audit09_cash.Audit09CashRegressionTests.test_anonymous_redirects_on_all_cash_urls) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:56:09.670224+00:00", "outcome": "REJECTED", "request_id": "993cb2f42f604798bac2e6cce8ec8c27", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:56:09.673307+00:00", "outcome": "REJECTED", "request_id": "fff768295d6d4e0bab76d8aa22f827d5", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:56:09.674459+00:00", "outcome": "REJECTED", "request_id": "8ccd3a537c484d5994b50639ec9ed7b7", "target_id": "/caja/turnos/4dceafd7-7d27-426a-84b7-aa9ad5ef0ee7/abierto/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:56:09.675974+00:00", "outcome": "REJECTED", "request_id": "6a01946e5be04f9793fe3358be76a560", "target_id": "/caja/turnos/4dceafd7-7d27-426a-84b7-aa9ad5ef0ee7/cerrado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:56:09.676987+00:00", "outcome": "REJECTED", "request_id": "a1d3b4fa9f4647f6ae4e2c2dee2d6dc7", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:56:09.679511+00:00", "outcome": "REJECTED", "request_id": "60825e48a21a4f8aacd9da7facec71df", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:56:09.680999+00:00", "outcome": "REJECTED", "request_id": "aac0bb0a73154238870ebccf2ae3c9b5", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+ok
+test_fix09_01_02_close_empty_post_no_open_shift_and_retry_show_visible_errors (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_02_close_empty_post_no_open_shift_and_retry_show_visible_errors) ... ok
+test_fix09_01_04_05_open_empty_post_boundaries_ascii_and_cache_headers (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_04_05_open_empty_post_boundaries_ascii_and_cache_headers) ... ok
+test_fix09_01_draft_with_and_without_lines_vs_cash_close (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_01_draft_with_and_without_lines_vs_cash_close) ... ok
+test_fix09_03_service_validation_boundaries_and_stale_actor_checks (cash.test_audit09_cash.Audit09CashRegressionTests.test_fix09_03_service_validation_boundaries_and_stale_actor_checks) ... ok
+test_logout_discards_draft_and_preserves_open_shift (cash.test_audit09_cash.Audit09CashRegressionTests.test_logout_discards_draft_and_preserves_open_shift) ... ok
+test_role_matrix_permissions_and_http_methods (cash.test_audit09_cash.Audit09CashRegressionTests.test_role_matrix_permissions_and_http_methods) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "8eae1b74-3873-4694-9a02-6c6810f4f033", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.637033+00:00", "outcome": "REJECTED", "request_id": "69044ac3f072465ca9a8f05de7f583d7", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8eae1b74-3873-4694-9a02-6c6810f4f033", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.646703+00:00", "outcome": "REJECTED", "request_id": "852decd6ba1c4e59a87581f6d6c7e644", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8eae1b74-3873-4694-9a02-6c6810f4f033", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.655057+00:00", "outcome": "REJECTED", "request_id": "afe911e8c6e94c24849f8d564bcff699", "target_id": "/caja/turnos/5a53ea94-c1ea-4f2b-8b3b-7ff4fde3e1b1/abierto/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8eae1b74-3873-4694-9a02-6c6810f4f033", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.661563+00:00", "outcome": "REJECTED", "request_id": "0f84d7d7ada54ab5b3a7534c27cae6df", "target_id": "/caja/turnos/5a53ea94-c1ea-4f2b-8b3b-7ff4fde3e1b1/cerrado/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8eae1b74-3873-4694-9a02-6c6810f4f033", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.668824+00:00", "outcome": "REJECTED", "request_id": "ed34961f67f945d59ec40e69261dab80", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8eae1b74-3873-4694-9a02-6c6810f4f033", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.675201+00:00", "outcome": "REJECTED", "request_id": "288c008c2bd443018567e4db1a602af1", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "8eae1b74-3873-4694-9a02-6c6810f4f033", "actor_identifier": "wh.a09@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.684919+00:00", "outcome": "REJECTED", "request_id": "a6497a3096d948a78906a78756469ef9", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a638b434-79a9-40b6-b690-99547da880a5", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.697369+00:00", "outcome": "REJECTED", "request_id": "791017c10abb47358be30a8d5624e899", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a638b434-79a9-40b6-b690-99547da880a5", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.705814+00:00", "outcome": "REJECTED", "request_id": "c1173e5004d54a9699499ac07f99fe5a", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a638b434-79a9-40b6-b690-99547da880a5", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.714332+00:00", "outcome": "REJECTED", "request_id": "20c44e586fa24ccd8d93c026077f9535", "target_id": "/caja/turnos/5a53ea94-c1ea-4f2b-8b3b-7ff4fde3e1b1/abierto/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a638b434-79a9-40b6-b690-99547da880a5", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.719966+00:00", "outcome": "REJECTED", "request_id": "b43a4105b418433dbc4646eae95ba7cf", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "a638b434-79a9-40b6-b690-99547da880a5", "actor_identifier": "admin.a09@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:10.726532+00:00", "outcome": "REJECTED", "request_id": "b450a54df13445018a53ddb199879639", "target_id": "/caja/cerrar/", "target_type": "Endpoint"}
+ok
+test_shift_history_isolation_styles_and_constant_query_count (cash.test_audit09_cash.Audit09CashRegressionTests.test_shift_history_isolation_styles_and_constant_query_count) ... ok
+test_accumulated_capacity_is_checked_before_any_sale_write (cash.test_audit14closure_money.IntegrationMoneyTests.test_accumulated_capacity_is_checked_before_any_sale_write) ... ok
+test_accumulated_two_sales_can_close_over_single_operation_limit (cash.test_audit14closure_money.IntegrationMoneyTests.test_accumulated_two_sales_can_close_over_single_operation_limit) ... ok
+test_direct_database_constraints_and_negative_difference (cash.test_audit14closure_money.IntegrationMoneyTests.test_direct_database_constraints_and_negative_difference) ... ok
+test_form_limits_and_invalid_shapes (cash.test_audit14closure_money.IntegrationMoneyTests.test_form_limits_and_invalid_shapes) ... ok
+test_large_historical_sale_can_be_retrieved_without_new_policy_rewriting (cash.test_audit14closure_money.IntegrationMoneyTests.test_large_historical_sale_can_be_retrieved_without_new_policy_rewriting) ... ok
+test_new_sale_and_cash_cannot_exceed_operation_limit (cash.test_audit14closure_money.IntegrationMoneyTests.test_new_sale_and_cash_cannot_exceed_operation_limit) ... ok
+test_database_constraint_rejects_two_open_shifts_for_register (cash.tests.CashOpeningTests.test_database_constraint_rejects_two_open_shifts_for_register) ... ok
+test_existing_global_open_shift_blocks_another_seller (cash.tests.CashOpeningTests.test_existing_global_open_shift_blocks_another_seller) ... ok
+test_invalid_amounts_do_not_create_shift (cash.tests.CashOpeningTests.test_invalid_amounts_do_not_create_shift) ... ok
+test_other_roles_cannot_open_shift_by_direct_post (cash.tests.CashOpeningTests.test_other_roles_cannot_open_shift_by_direct_post) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "1fce4923-6820-440f-8fc4-9355d71c1c1e", "actor_identifier": "admin@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:11.734963+00:00", "outcome": "REJECTED", "request_id": "6f6232b6a93d4feaac4dd0c735a97fe0", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "c51f2cd1-cffc-4920-b656-618acc5f1d2b", "actor_identifier": "warehouse@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:11.745152+00:00", "outcome": "REJECTED", "request_id": "95b12e6328484347a85b2b8a796e9c82", "target_id": "/caja/abrir/", "target_type": "Endpoint"}
+ok
+test_seller_cannot_view_another_sellers_shift_detail (cash.tests.CashOpeningTests.test_seller_cannot_view_another_sellers_shift_detail) ... ok
+test_seller_opens_zero_amount_shift_linked_to_session (cash.tests.CashOpeningTests.test_seller_opens_zero_amount_shift_linked_to_session) ... ok
+test_admin_can_see_shift_history (cash.tests.CashShiftHistoryTests.test_admin_can_see_shift_history) ... ok
+test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link (cash.tests.CashShiftHistoryTests.test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link)
+BUG-023 y BUG-031: /caja/abrir/ informa quién ocupa la caja y /caja/turnos/<id>/abierto/ enlaza a preparar venta. ... ok
+test_cash_open_and_close_reject_scientific_notation_and_absurd_amounts (cash.tests.CashShiftHistoryTests.test_cash_open_and_close_reject_scientific_notation_and_absurd_amounts)
+BUG-009: Apertura y cierre de caja rechazan notación científica (1e5) y montos desmesurados. ... ok
+test_seller_can_see_shift_history (cash.tests.CashShiftHistoryTests.test_seller_can_see_shift_history) ... ok
+test_shift_history_renders_shortage_surplus_and_exact_labels_and_amounts (cash.tests.CashShiftHistoryTests.test_shift_history_renders_shortage_surplus_and_exact_labels_and_amounts)
+BUG-002: El historial de turnos muestra el monto y la etiqueta de la diferencia (Faltante/Sobrante/Exacto). ... ok
+test_warehouse_gets_403 (cash.tests.CashShiftHistoryTests.test_warehouse_gets_403) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "178072ee-864f-4b26-a2ee-0e34ff08e7bf", "actor_identifier": "whch@test.invalid", "metadata": {"actor_role": "ALMACENERO", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:56:12.375521+00:00", "outcome": "REJECTED", "request_id": "99782db417fd4ae49072c698c5a36213", "target_id": "/caja/turnos/", "target_type": "Endpoint"}
+ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 3.205s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

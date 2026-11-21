@@ -1,0 +1,239 @@
+{
+  "id": "I01-formulario",
+  "rol": "ALMACENERO",
+  "utc": "2026-11-14T06:28:30.733069+00:00",
+  "ruta": "/inventario/bajas/nueva/",
+  "texto_visible": "Saltar al contenido\nM\nMinimarket\nGestión de bodega\n\nOPERACIONES\n\n⌂\nInicio\n☷\nVer inventario y alertas\n⏳\nVencimientos de lotes\n◫\nExistencias iniciales\n✚\nEntrada de mercadería\n☒\nRegistrar merma\n\nCONSULTA\n\n☰\nCatálogo de productos\n✦\nProveedores\nA\nAlmacén 14I\nAlmacenero\n↪\nCerrar sesión\n\nMINIMARKET\n\nRegistrar merma\nAlmacén 14I\nAlmacenero\nRegistrar baja de inventario\nLote seleccionado: Producto 14I · A — Disponible: 10 u. · Vence: 14 de diciembre de 2026 Sin constancia propia de recepción\nCantidad a dar de baja\nMotivo\nVencimiento\nDaño o rotura\nRobo o faltante\nDetalle (obligatorio para Daño y Robo)\nConfirmar baja\nCancelar\nMinimarket · Gestión de bodega",
+  "controles": [
+    {
+      "campo": "quantity",
+      "etiqueta": "Cantidad a dar de baja",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": true,
+      "min": "1",
+      "max": "999999",
+      "paso": "1",
+      "longitud": null
+    },
+    {
+      "campo": "reason",
+      "etiqueta": "Motivo",
+      "tipo": "select-one",
+      "valor": "Vencimiento",
+      "opciones": [
+        "Vencimiento",
+        "Daño o rotura",
+        "Robo o faltante"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "notes",
+      "etiqueta": "Detalle (obligatorio para Daño y Robo)",
+      "tipo": "textarea",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    }
+  ],
+  "testigo": {
+    "sha256": "0f4abbc9eccf888b3663e48193b74545b32b7a6653728baa2e4ecc90a834e911",
+    "por_tabla": {
+      "cash_cashregister": "5cf6efec5751bd6188d0dc7e2cee068224c57d1eb8ff56d92c3f3d43139e44a0",
+      "cash_cashshift": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "cash_cashshiftclose": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "catalog_category": "4933a76fcbd87e9eb8bdfbb1b94194d5f68bc3c804512de134a80baf138dfbbc",
+      "catalog_product": "db294cab4776d028a41c4e8b6abae4839e3cf56599d1917113dfb3ebe2d8ff7e",
+      "catalog_productbarcodekey": "16f4ebd190ba436a666358e91f242fd600dbcdc03caa6b42d5aeeb16173c052d",
+      "inventory_initialinventoryload": "19b1ad0c622c8c8741d351b39e19c189da5bd4db06933a06dd905dfa4c0f198f",
+      "inventory_initialloadline": "692b1888ea86b2be2af28f03af4bba95d13c6d046ee60989008ef7abac9bb3fa",
+      "inventory_lot": "e49d0d583173db80eead152e2bb9c830196cc1bc1d831c986dd9334c099c291d",
+      "inventory_physicaladjustment": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceipt": "df30acec5d1ece8040d0ec39e96991968c14f46d1d21354ea9cb3c1c44c2adc9",
+      "inventory_stockreceiptcounter": "7532940a757e8a752845454b9f206d77c0d469028346644c8f6ea37e6f6e746e",
+      "inventory_stockreceiptline": "28580f7b6939cf4f207aac2c7b077a185912623a28dc4cdb832bd9c1e7a352bd",
+      "inventory_stockwriteoff": "f42bc93865c6d4709a5c08ecac73ffb2363cea4f2e58bd69f3329dc0a5875c46",
+      "inventory_supplier": "94b1d74773a4dff9e7e522b2a88092cd1870621613a067575fae3d2cd59bd845",
+      "sales_sale": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_salecounter": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saledraft": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saledraftline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saleline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_salelotallocation": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "identity_role_membership_active": "d37b310029ebc424529ed8f05e942d3784c3cd317f1be1ed3642343a98a18b73"
+    },
+    "filas": {
+      "cash_cashregister": 1,
+      "cash_cashshift": 0,
+      "cash_cashshiftclose": 0,
+      "catalog_category": 1,
+      "catalog_product": 4,
+      "catalog_productbarcodekey": 4,
+      "inventory_initialinventoryload": 4,
+      "inventory_initialloadline": 3,
+      "inventory_lot": 6,
+      "inventory_physicaladjustment": 0,
+      "inventory_stockreceipt": 2,
+      "inventory_stockreceiptcounter": 1,
+      "inventory_stockreceiptline": 2,
+      "inventory_stockwriteoff": 1,
+      "inventory_supplier": 1,
+      "sales_sale": 0,
+      "sales_salecounter": 0,
+      "sales_saledraft": 0,
+      "sales_saledraftline": 0,
+      "sales_saleline": 0,
+      "sales_salelotallocation": 0
+    },
+    "cuentas_rol_activas": [
+      [
+        "ADMIN",
+        1
+      ],
+      [
+        "ALMACENERO",
+        1
+      ],
+      [
+        "VENDEDOR",
+        1
+      ]
+    ],
+    "categorias": [
+      {
+        "name": "Familia 14I",
+        "is_active": 1,
+        "state_version": 0
+      }
+    ],
+    "productos": [
+      {
+        "name": "Producto 14I",
+        "barcode": "INT-14I",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 3,
+        "is_active": 1
+      },
+      {
+        "name": "Vencido 14I",
+        "barcode": "INT-14I-E",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 4,
+        "is_active": 1
+      },
+      {
+        "name": "Orígenes 14I",
+        "barcode": "INT-14I-O",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 5.2,
+        "is_active": 1
+      },
+      {
+        "name": "Legado actual 14I",
+        "barcode": "INT-14I-L",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 0,
+        "is_active": 1
+      }
+    ],
+    "proveedores": [
+      {
+        "name": "Proveedor 14I",
+        "ruc": "20000000014",
+        "is_active": 1
+      }
+    ],
+    "lotes": [
+      {
+        "number": "A",
+        "initial_quantity": 10,
+        "available_quantity": 10,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "Producto 14I",
+        "proveedor": "Proveedor 14I",
+        "autor_carga": "Almacén 14I"
+      },
+      {
+        "number": "C",
+        "initial_quantity": 10,
+        "available_quantity": 10,
+        "unit_cost": 6,
+        "expiration_date": "2027-01-13",
+        "producto": "Orígenes 14I",
+        "proveedor": null,
+        "autor_carga": "Almacén 14I"
+      },
+      {
+        "number": "C",
+        "initial_quantity": 5,
+        "available_quantity": 5,
+        "unit_cost": 8,
+        "expiration_date": "2027-01-13",
+        "producto": "Orígenes 14I",
+        "proveedor": null,
+        "autor_carga": "Almacén 14I"
+      },
+      {
+        "number": "E",
+        "initial_quantity": 3,
+        "available_quantity": 3,
+        "unit_cost": 4,
+        "expiration_date": "2026-11-14",
+        "producto": "Vencido 14I",
+        "proveedor": null,
+        "autor_carga": "Almacén 14I"
+      },
+      {
+        "number": "LEGADO",
+        "initial_quantity": 5,
+        "available_quantity": 4,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "Legado actual 14I",
+        "proveedor": null,
+        "autor_carga": "Almacén 14I"
+      },
+      {
+        "number": "O",
+        "initial_quantity": 10,
+        "available_quantity": 10,
+        "unit_cost": 3,
+        "expiration_date": "2027-01-13",
+        "producto": "Orígenes 14I",
+        "proveedor": null,
+        "autor_carga": "Almacén 14I"
+      }
+    ],
+    "borrador": [],
+    "ventas": [],
+    "lineas": [],
+    "bajas": [
+      {
+        "correlativo": "LEGADO-14I",
+        "number": "LEGADO",
+        "quantity": 1,
+        "reason": "ROBO",
+        "notes": "Dato antiguo conservado",
+        "responsable": "Almacén 14I"
+      }
+    ],
+    "turnos": [],
+    "cierres": []
+  },
+  "sin_mutacion_verificada": false
+}

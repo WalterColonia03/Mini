@@ -1,0 +1,114 @@
+Found 583 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+........................................................................PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.
+.PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.
+..........................................................................................................................................Productos demo creados: 4
+............................F..................F.F.F............F....F............F..................F.F............F.....................................F.........................................................................................................................................................................................................................
+======================================================================
+FAIL: test_inactive_supplier_rejected_without_silent_none_and_history_preserved (inventory.test_audit04_suppliers.Stage04SupplierAuditTests.test_inactive_supplier_rejected_without_silent_none_and_history_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit04_suppliers.py", line 433, in test_inactive_supplier_rejected_without_silent_none_and_history_preserved
+    self.assertRedirects(resp_sub_ok, reverse("inventory-load-created", args=(load_sub.pk,)))
+AssertionError: 200 != 302 : Response didn't redirect as expected: Response code was 200 (expected 302)
+
+======================================================================
+FAIL: test_eligible_products_and_suppliers_queryset_and_sentinels (inventory.test_audit06_stock_entry.Stage06StockEntryAuditTests.test_eligible_products_and_suppliers_queryset_and_sentinels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit06_stock_entry.py", line 216, in test_eligible_products_and_suppliers_queryset_and_sentinels
+    self.assertRedirects(
+AssertionError: 200 != 302 : Response didn't redirect as expected: Response code was 200 (expected 302)
+
+======================================================================
+FAIL: test_lot_preservation_kardex_constancia_received_at_and_rn28_pos_fefo (inventory.test_audit06_stock_entry.Stage06StockEntryAuditTests.test_lot_preservation_kardex_constancia_received_at_and_rn28_pos_fefo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit06_stock_entry.py", line 482, in test_lot_preservation_kardex_constancia_received_at_and_rn28_pos_fefo
+    self.assertRedirects(entry_resp, reverse("inventory-load-created", args=(load.pk,)))
+AssertionError: 200 != 302 : Response didn't redirect as expected: Response code was 200 (expected 302)
+
+======================================================================
+FAIL: test_weighted_cost_half_up_zero_prior_stock_atomic_and_fix06_02_savepoint (inventory.test_audit06_stock_entry.Stage06StockEntryAuditTests.test_weighted_cost_half_up_zero_prior_stock_atomic_and_fix06_02_savepoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit06_stock_entry.py", line 373, in test_weighted_cost_half_up_zero_prior_stock_atomic_and_fix06_02_savepoint
+    with self.assertRaises(ValidationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_product_movements_traceability_trailing_period_and_bounded_queries (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_product_movements_traceability_trailing_period_and_bounded_queries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit08_writeoffs_adjustments_movements.py", line 723, in test_product_movements_traceability_trailing_period_and_bounded_queries
+    self.assertLessEqual(len(q_ctx), 15)
+AssertionError: 16 not less than or equal to 15
+
+======================================================================
+FAIL: test_http_physical_cost_receipt_sale_writeoff_adjustment_and_history (inventory.test_audit14e_valuation.MovingAverageIntegrationTests.test_http_physical_cost_receipt_sale_writeoff_adjustment_and_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14e_valuation.py", line 88, in test_http_physical_cost_receipt_sale_writeoff_adjustment_and_history
+    self.assertEqual(response.status_code, 302)
+AssertionError: 200 != 302
+
+======================================================================
+FAIL: test_bulk_and_direct_updates_cannot_rewrite_timestamp (inventory.test_lot_receipt_time.LotReceiptTimeTests.test_bulk_and_direct_updates_cannot_rewrite_timestamp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_lot_receipt_time.py", line 49, in test_bulk_and_direct_updates_cannot_rewrite_timestamp
+    with self.assertRaises(IntegrityError), transaction.atomic():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_bug024_stock_entry_preserves_initial_load_lots_and_labels_subsequent_entries_in_kardex (inventory.tests.PhysicalAdjustmentTests.test_bug024_stock_entry_preserves_initial_load_lots_and_labels_subsequent_entries_in_kardex)
+BUG-024: Las entradas posteriores no alteran los lotes de la carga inicial y el Kardex las distingue.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\tests.py", line 637, in test_bug024_stock_entry_preserves_initial_load_lots_and_labels_subsequent_entries_in_kardex
+    self.assertEqual([l.number_normalized for l in cert_resp.context["subsequent_lots"]], ["L-POST-24"])
+AssertionError: Lists differ: [] != ['L-POST-24']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'L-POST-24'
+
+- []
++ ['L-POST-24']
+
+======================================================================
+FAIL: test_bug032_subsequent_stock_entry_records_second_warehouse_worker_and_admin_can_view_load (inventory.tests.PhysicalAdjustmentTests.test_bug032_subsequent_stock_entry_records_second_warehouse_worker_and_admin_can_view_load)
+BUG-032: Entradas posteriores registran al almacenero real por lote, incluyen proveedor en carga inicial y permiten vista a Admin.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\tests.py", line 742, in test_bug032_subsequent_stock_entry_records_second_warehouse_worker_and_admin_can_view_load
+    self.assertContains(mov_resp, "Entrada de mercadería — Lote L-PEDRO-2 (Importadora Posterior SRL)")
+AssertionError: False is not true : Couldn't find 'Entrada de mercadería — Lote L-PEDRO-2 (Importadora Posterior SRL)' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Movimientos \xc2\xb7 Minimarket</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n            <p class="sidebar-label">Cat&#225;logo</p>\n            <a class="nav-item" href="/productos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>\n            </a>\n            <a class="nav-item" href="/productos/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>\n            </a>\n            <a class="nav-item" href="/productos/categorias/">\n              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>\n            </a>\n            <p class="sidebar-label">Inventario</p>\n            <a class="nav-item" href="/inventario/proveedores/">\n              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>\n            </a>\n            <a class="nav-item is-active" href="/inventario/stock/">\n              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>\n            </a>\n            <a class="nav-item" href="/productos/vencimientos/">\n              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>\n            </a>\n            <a class="nav-item" href="/inventario/ajustes/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>\n            </a>\n            <p class="sidebar-label">Personal</p>\n            <a class="nav-item" href="/empleados/">\n              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>\n            </a>\n            <p class="sidebar-label">Caja y ventas</p>\n            <a class="nav-item" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>\n            </a>\n          \n          \n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">A</span>\n            <span><strong>Admin Adj</strong><small>Admin Adj</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>Movimientos del producto</h1>\n          </div>\n          <div class="topbar-user"><span>Admin Adj</span><span class="role-pill">Admin Adj</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<div class="page-heading">\n  <div>\n    <p class="eyebrow">Stock f&#237;sico actual: 15 unid. &middot; Stock vigente: 15 unid.</p>\n    <h2>Movimientos: Conserva Multi Almacenero</h2>\n  </div>\n</div>\n\n<div class="table-wrap">\n  <table class="movements-table">\n    <thead>\n      <tr>\n        <th>Fecha</th>\n        <th>Tipo</th>\n        <th>Detalle</th>\n        <th>Cantidad</th>\n        <th>Responsable</th>\n      </tr>\n    </thead>\n    <tbody>\n      \n      <tr>\n        <td>13/11/2026 23:09</td>\n        <td>\xe2\x96\xb2 Entrada</td>\n        <td class="col-wrap">\n          Recepci\xc3\xb3n R-00000001 \xe2\x80\x94 Lote L-PEDRO-2 (Importadora Posterior SRL)\n          <a href="/inventario/recepciones/8712b959-bd89-4b5e-b1e4-3b95a9456b5f/">Ver recepci\xc3\xb3n</a>\n          \n        </td>\n        <td><strong>+5</strong></td>\n        <td class="col-wrap">Pedro Almac\xc3\xa9n</td>\n      </tr>\n      \n      <tr>\n        <td>13/11/2026 23:09</td>\n        <td>\xe2\x96\xb2 Entrada</td>\n        <td class="col-wrap">\n          Carga inicial \xe2\x80\x94 Lote L-KEVIN-1 (Distribuidora Inicial SAC)\n          \n          \n        </td>\n        <td><strong>+10</strong></td>\n        <td class="col-wrap">WH Adj</td>\n      </tr>\n      \n    </tbody>\n  </table>\n</div>\n\n<div class="form-actions" style="margin-top:1.5rem;">\n  <a href="/inventario/stock/" class="button">&larr; Volver al inventario</a>\n</div>\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  <script src="/static/identity/navigation.js" defer></script>\n  \n</body>\n</html>\n'
+
+======================================================================
+FAIL: test_stock_entry_view_registers_subsequent_lots_and_links_supplier (inventory.tests.PhysicalAdjustmentTests.test_stock_entry_view_registers_subsequent_lots_and_links_supplier)
+BUG-005 y BUG-011: La vista /inventario/entrada/ permite registrar lotes posteriores con proveedor.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\tests.py", line 529, in test_stock_entry_view_registers_subsequent_lots_and_links_supplier
+    self.assertRedirects(response, reverse("inventory-load-created", args=(load.pk,)))
+AssertionError: 200 != 302 : Response didn't redirect as expected: Response code was 200 (expected 302)
+
+======================================================================
+FAIL: test_rejected_entry_preserves_cost_and_lots (sales.test_audit03ag_cost.HistoricalCostTests.test_rejected_entry_preserves_cost_and_lots)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit03ag_cost.py", line 73, in test_rejected_entry_preserves_cost_and_lots
+    with self.assertRaises(ValidationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+----------------------------------------------------------------------
+Ran 583 tests in 63.224s
+
+FAILED (failures=11)
+Destroying test database for alias 'default'...

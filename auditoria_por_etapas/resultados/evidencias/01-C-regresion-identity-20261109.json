@@ -1,0 +1,44 @@
+{
+  "etapa": "01-C",
+  "fecha_lima_inicio": "2026-11-09T15:52:02-05:00",
+  "duracion_segundos": 6.623,
+  "herramienta": "Django DiscoverRunner / Client / ORM",
+  "python": "3.12.10",
+  "django": "5.2.18",
+  "configuracion": "audit01_settings; ambas bases NAME y TEST.NAME en RAM antes de django.setup(); PRAGMA database_list exige que no exista archivo para cada conexion; sin servidor ni puerto",
+  "alcance": "Regresion secuencial de autenticacion; cuatro cuentas ficticias en las pruebas especificas y los fixtures propios en dos pruebas existentes. Valida estados y limites por reloj controlado. No acredita espera real, navegador, PostgreSQL ni otros modulos.",
+  "retorno_runner": 0,
+  "resultados": {
+    "identity.test_auth_audit01.LoginAudit01Tests.test_get_and_failed_post_are_not_cacheable": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_all_three_roles_accept_normalized_email_and_persist_identity": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_wrong_unknown_inactive_share_exact_message_and_no_identity": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_fifth_failure_locks_for_exactly_fifteen_minutes": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_inactive_and_unknown_share_fifth_failure_response": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_locked_state_shared_across_sessions_and_normalized_variants": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_minutes_round_up_at_each_relevant_boundary": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_exact_expiration_permits_login_and_resets_stable_row": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_wrong_password_after_expiration_starts_new_series": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_success_before_fifth_failure_resets_consecutive_count": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_one_identifier_lock_does_not_lock_another_role": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_lock_does_not_revoke_an_already_authenticated_session": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_password_whitespace_is_preserved": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_valid_csrf_rotates_csrf_and_session_and_sets_cookie_flags": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_login_attempts_store_only_hmac_and_counter_state": "PASS",
+    "identity.test_auth_audit01.LoginAudit01Tests.test_second_complete_lockout_cycle_after_expiration": "PASS",
+    "identity.tests.EmployeeEditDeactivateTests.test_login_honors_safe_next_parameter": "PASS",
+    "identity.tests.AuthenticationAndAuthorizationTests.test_invalid_email_is_rejected_before_authentication": "PASS"
+  },
+  "sha256_modulos": {
+    "identity/test_auth_audit01.py": "747e379b46f3111f4461a863876de3f9e3ed2b66cc7cc281ca7aded72919f100",
+    "identity/tests.py": "d80525e2203713d7fd54f30806534d79d08af654119a10310510569c55a775d2",
+    "identity/services.py": "e4f0e8c99fe304efd0c737d73cca75c3d8a4664fced1ae59a5a4449a98e480e1",
+    "identity/views.py": "0b963b2d952847ea47dad7f84dd429d7571f983d8e81335191cffcb51a23e741",
+    "identity/forms.py": "aea36b357104b556cc0b4ccf81c82ca07dc29b91da8ac374da170f9c38c5bda5",
+    "identity/models.py": "bdad1c4c70e1d17428d93eae1790fc8f573ffbba8456ebfbbd2b15080a5b8b3d"
+  },
+  "reproducir": {
+    "desde": "raiz de planificacion_limpia, PowerShell",
+    "primer_paso_powershell": "$casos = (Get-Content -Raw -Encoding UTF8 './auditoria_por_etapas/resultados/evidencias/01-C-regresion-identity-20261109.json' | ConvertFrom-Json).resultados.PSObject.Properties.Name",
+    "segundo_paso_powershell": "@'\nimport os, sys\nfrom pathlib import Path\nroot = Path.cwd()\nproject = root / \"r1-pmv\"\nsupport = root / \"auditoria_por_etapas/resultados/soporte\"\nsys.path[:0] = [str(support), str(project)]\nos.environ[\"DJANGO_SETTINGS_MODULE\"] = \"audit01_settings\"\nfrom django.conf import settings\nexpected = (support.parent / \"datos/etapa01-20261109/audit.sqlite3\").resolve()\nassert set(settings.DATABASES) == {\"default\"}\ndb = settings.DATABASES[\"default\"]\nassert db[\"ENGINE\"] == \"django.db.backends.sqlite3\" and Path(db[\"NAME\"]).resolve() == expected\ndb[\"NAME\"] = db[\"TEST\"][\"NAME\"] = \":memory:\"\nsettings.SESSION_COOKIE_NAME, settings.CSRF_COOKIE_NAME = \"sessionid\", \"csrftoken\"\nfrom django.db.backends.signals import connection_created\ndef assert_ram(sender, connection, **kwargs):\n    with connection.cursor() as cur:\n        cur.execute(\"PRAGMA database_list\")\n        assert all(row[2] == \"\" for row in cur.fetchall()), \"SQLite opened a file\"\nconnection_created.connect(assert_ram, weak=False)\nimport django\ndjango.setup()\nfrom django.core.management import call_command\ncall_command('test', *sys.argv[1:], verbosity=1, interactive=False)\n'@ | & './r1-pmv/.venv/Scripts/python.exe' - @casos"
+  }
+}

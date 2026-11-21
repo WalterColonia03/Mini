@@ -1,0 +1,85 @@
+Found 4 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying identity.0006_identityauditevent... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_receipt_routes_emit_no_store_and_detail_panel_layout_classes (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_receipt_routes_emit_no_store_and_detail_panel_layout_classes) ... ok
+test_redirected_login_with_non_warehouse_role_denies_without_writes (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_redirected_login_with_non_warehouse_role_denies_without_writes) ... identity_audit {"action": "ACCESS_DENIED", "actor_id": "4c549adc-2ee7-4924-9f4a-9307c9888fb9", "actor_identifier": "admin-aj@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "GET", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:46:46.295024+00:00", "outcome": "REJECTED", "request_id": "9a6326eb84bf480a94bd510a809c0940", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": "4c549adc-2ee7-4924-9f4a-9307c9888fb9", "actor_identifier": "admin-aj@test.invalid", "metadata": {"actor_role": "ADMIN", "method": "POST", "reason": "role_denied"}, "occurred_at_utc": "2026-11-15T02:46:46.314627+00:00", "outcome": "REJECTED", "request_id": "5804dc7377bc400095c7a2f94e9bcd8e", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+ok
+test_service_rejects_anonymous_inactive_and_stale_actor_instances (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_service_rejects_anonymous_inactive_and_stale_actor_instances) ... ok
+test_surviving_inactive_session_is_logged_out_before_view_or_service (inventory.test_audit03aj_session.ReceiptSessionAndRevocationTests.test_surviving_inactive_session_is_logged_out_before_view_or_service) ... identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/entrada/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:46:46.918849+00:00", "outcome": "REJECTED", "request_id": "7481ed66655b4189a72767dbf0d7c83e", "target_id": "435dca29-d5f0-4918-b537-23cbe8614084", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:46:46.920839+00:00", "outcome": "REJECTED", "request_id": "7481ed66655b4189a72767dbf0d7c83e", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:46:46.925367+00:00", "outcome": "REJECTED", "request_id": "a3ac19d5e10a40089f39418e43d592f5", "target_id": "/inventario/carga-inicial/", "target_type": "Endpoint"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "GET", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:46:46.929906+00:00", "outcome": "REJECTED", "request_id": "23b305815cc44de9bfa6c54fc3c1c560", "target_id": "/inventario/cargas/2d2654c1-ea6f-45ef-9536-c9fcbb9a94ee/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inventario/entrada/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:46:47.055894+00:00", "outcome": "REJECTED", "request_id": "cb352d9a8c774f468d13400b99e7373d", "target_id": "6e4589cf-2596-4a80-a549-5b2aaffa6444", "target_type": "Session"}
+identity_audit {"action": "ACCESS_DENIED", "actor_id": null, "actor_identifier": null, "metadata": {"method": "POST", "reason": "unauthenticated"}, "occurred_at_utc": "2026-11-15T02:46:47.059202+00:00", "outcome": "REJECTED", "request_id": "cb352d9a8c774f468d13400b99e7373d", "target_id": "/inventario/entrada/", "target_type": "Endpoint"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/inicio/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:46:47.087597+00:00", "outcome": "REJECTED", "request_id": "b1787c31f5764956aecc76fa6c0558d2", "target_id": "435dca29-d5f0-4918-b537-23cbe8614084", "target_type": "Session"}
+identity_audit {"action": "SESSION_REVOKED_INACTIVE", "actor_id": null, "actor_identifier": null, "metadata": {"path": "/", "reason": "inactive_or_unaccepted_session"}, "occurred_at_utc": "2026-11-15T02:46:47.104108+00:00", "outcome": "REJECTED", "request_id": "41ddea3a3ea547d5a8a8504c98d3c944", "target_id": "435dca29-d5f0-4918-b537-23cbe8614084", "target_type": "Session"}
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.236s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

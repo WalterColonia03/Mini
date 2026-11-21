@@ -1,0 +1,105 @@
+{
+  "mode": "Chrome separate tabs, same subtotal, stale and altered HTTP requests; sequential, no concurrency claim",
+  "cases": [
+    {
+      "id": "isolation",
+      "ok": true
+    },
+    {
+      "id": "fixture-equal-price",
+      "ok": true
+    },
+    {
+      "id": "warehouse-sees-both",
+      "ok": true
+    },
+    {
+      "id": "seller-csrf-present",
+      "ok": true
+    },
+    {
+      "id": "seller-get-403",
+      "ok": true
+    },
+    {
+      "id": "seller-post-403",
+      "ok": true
+    },
+    {
+      "id": "warehouse-csrf-present",
+      "ok": true
+    },
+    {
+      "id": "warehouse-get-403",
+      "ok": true
+    },
+    {
+      "id": "warehouse-post-403",
+      "ok": true
+    },
+    {
+      "id": "denials-no-changes",
+      "ok": true
+    },
+    {
+      "id": "second-tab-swapped-quantities",
+      "ok": true
+    },
+    {
+      "id": "same-total",
+      "ok": true
+    },
+    {
+      "id": "stocks-and-sales-unchanged",
+      "ok": true
+    },
+    {
+      "id": "signature-changed",
+      "ok": true
+    },
+    {
+      "id": "subtotal-still-equal",
+      "ok": true
+    },
+    {
+      "id": "intact-stale-same-subtotal-rejected",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "id": "omitted-signature-rejected",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "id": "signature-replaced",
+      "ok": true
+    },
+    {
+      "id": "subtotal-preserved",
+      "ok": true
+    },
+    {
+      "id": "explicit-retry-one-sale",
+      "ok": true
+    },
+    {
+      "id": "stock-matches-reviewed",
+      "ok": true
+    },
+    {
+      "id": "sale-lines-match-reviewed",
+      "ok": true
+    },
+    {
+      "id": "history-preserved",
+      "ok": true
+    }
+  ],
+  "posts": [
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    }
+  ]
+}

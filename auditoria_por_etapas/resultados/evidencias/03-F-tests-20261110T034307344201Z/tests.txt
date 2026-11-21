@@ -1,0 +1,79 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 20 test(s).
+Found 20 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_admin_registers_zero_stock_non_sellable_product (catalog.tests.ProductRegistrationTests.test_admin_registers_zero_stock_non_sellable_product) ... ok
+test_database_rejects_product_without_expiration_control (catalog.tests.ProductRegistrationTests.test_database_rejects_product_without_expiration_control) ... ok
+test_inactive_or_wrong_category_is_rejected (catalog.tests.ProductRegistrationTests.test_inactive_or_wrong_category_is_rejected) ... ok
+test_invalid_minimums_never_create_product (catalog.tests.ProductRegistrationTests.test_invalid_minimums_never_create_product) ... ok
+test_invalid_prices_never_create_product (catalog.tests.ProductRegistrationTests.test_invalid_prices_never_create_product) ... ok
+test_non_admin_post_is_forbidden_and_does_not_create_product (catalog.tests.ProductRegistrationTests.test_non_admin_post_is_forbidden_and_does_not_create_product) ... ok
+test_normalized_duplicate_barcode_is_rejected_without_second_row (catalog.tests.ProductRegistrationTests.test_normalized_duplicate_barcode_is_rejected_without_second_row) ... ok
+test_omitted_minimum_stock_defaults_to_ten (catalog.tests.ProductRegistrationTests.test_omitted_minimum_stock_defaults_to_ten) ... ok
+test_code_conflict_only_shows_the_relevant_field_error (catalog.test_audit03_registration.RegistrationBoundaryTests.test_code_conflict_only_shows_the_relevant_field_error) ... ok
+test_empty_post_is_bound_with_five_required_fields (catalog.test_audit03_registration.RegistrationBoundaryTests.test_empty_post_is_bound_with_five_required_fields) ... ok
+test_model_full_clean_rejects_whitespace_fields (catalog.test_audit03_registration.RegistrationBoundaryTests.test_model_full_clean_rejects_whitespace_fields) ... ok
+test_optional_minimum_can_be_omitted_and_zero_is_preserved (catalog.test_audit03_registration.RegistrationBoundaryTests.test_optional_minimum_can_be_omitted_and_zero_is_preserved) ... ok
+test_stale_or_removed_category_is_rejected_by_service (catalog.test_audit03_registration.RegistrationBoundaryTests.test_stale_or_removed_category_is_rejected_by_service) ... ok
+test_unicode_duplicate_names_rejected_with_a_single_message (catalog.test_audit03_registration.RegistrationBoundaryTests.test_unicode_duplicate_names_rejected_with_a_single_message) ... ok
+test_admin_sees_product_list (catalog.tests.ProductListTests.test_admin_sees_product_list) ... ok
+test_catalog_and_registration_page_show_current_sale_availability (catalog.tests.ProductListTests.test_catalog_and_registration_page_show_current_sale_availability) ... ok
+test_search_filters_by_name (catalog.tests.ProductListTests.test_search_filters_by_name) ... ok
+test_seller_gets_403 (catalog.tests.ProductListTests.test_seller_gets_403) ... ok
+test_warehouse_sees_product_list (catalog.tests.ProductListTests.test_warehouse_sees_product_list) ... ok
+test_active_custom_category_can_be_used_to_register_product (catalog.tests.ProductExpirationsTests.test_active_custom_category_can_be_used_to_register_product)
+BUG-021 / HU-CAT-02: Una categoría activa creada por el Admin puede usarse al registrar productos. ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.858s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

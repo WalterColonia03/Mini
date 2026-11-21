@@ -1,0 +1,138 @@
+{% extends "identity/base.html" %}
+{% block title %}Stock e inventario · Minimarket{% endblock %}
+{% block page_heading %}Stock e inventario{% endblock %}
+
+{% block content %}
+<div class="page-heading">
+  <div>
+    <p class="eyebrow">Estado del stock al d&#237;a de hoy &mdash; {{ today }}</p>
+    <h2>Inventario actual</h2>
+  </div>
+</div>
+
+{# ── Alertas de vencimiento HUECO-02 ─────────────────────────────── #}
+{% if expired_lots %}
+<div class="panel panel-danger stock-alert-panel" style="border-left:4px solid #c0392b;padding:1rem 1.25rem;margin-bottom:1.5rem;background:#fdf0ef;">
+  <p class="section-heading" style="color:#c0392b;margin-top:0;">&#9888; Lotes VENCIDOS con unidades registradas ({{ expired_lots|length }})</p>
+  <ul style="margin:0;padding-left:1.25rem;">
+    {% for lot in expired_lots %}
+    <li><strong>{{ lot.product.name }}</strong>{% if not lot.product.is_active %} (Inactivo){% elif not lot.product.category.is_active %} (Categor&#237;a desactivada){% endif %} &mdash; Lote {{ lot.number_normalized|default:lot.number }} &mdash; {{ lot.available_quantity }} unid. &mdash; Venci&#243;: {{ lot.expiration_date }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if expiring_lots %}
+<div class="panel panel-warning stock-alert-panel" style="border-left:4px solid #e67e22;padding:1rem 1.25rem;margin-bottom:1.5rem;background:#fef9ef;">
+  <p class="section-heading" style="color:#e67e22;margin-top:0;">&#9203; Lotes pr&#243;ximos a vencer (dentro de 30 d&#237;as) &mdash; {{ expiring_lots|length }}</p>
+  <ul style="margin:0;padding-left:1.25rem;">
+    {% for lot in expiring_lots %}
+    <li><strong>{{ lot.product.name }}</strong>{% if not lot.product.is_active %} (Inactivo){% elif not lot.product.category.is_active %} (Categor&#237;a desactivada){% endif %} &mdash; Lote {{ lot.number_normalized|default:lot.number }} &mdash; {{ lot.available_quantity }} unid. &mdash; Vence: {{ lot.expiration_date }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if low_stock %}
+<div class="panel panel-warning stock-alert-panel" style="border-left:4px solid #f39c12;padding:1rem 1.25rem;margin-bottom:1.5rem;background:#fffbf0;">
+  <p class="section-heading" style="color:#b7770d;margin-top:0;">&#128310; Stock vigente en el m&#237;nimo o por debajo ({{ low_stock|length }} producto{% if low_stock|length != 1 %}s{% endif %})</p>
+  <ul style="margin:0;padding-left:1.25rem;">
+    {% for p in low_stock %}
+    <li><strong>{{ p.name }}</strong> &mdash; {{ p.sellable_stock }} unid. vigentes ({{ p.physical_stock }} registradas) / m&#237;nimo {{ p.minimum_stock }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if not expired_lots and not expiring_lots and not low_stock %}
+<div class="panel stock-alert-panel" style="border-left:4px solid #27ae60;padding:1rem 1.25rem;margin-bottom:1.5rem;background:#edfaf1;">
+  <p style="margin:0;color:#1e8449;">&#10003; Sin alertas de stock bajo ni de vencimiento.</p>
+</div>
+{% endif %}
+
+<p class="muted small mb-2">
+  <strong>Stock f&#237;sico:</strong> unidades registradas en el sistema (incluye lotes vencidos); debe contrastarse con el conteo f&#237;sico.
+  <strong>Stock vigente:</strong> unidades de lotes no vencidos. Para venderlas, el producto y su categor&#237;a tambi&#233;n deben estar habilitados. El sistema considera vencido un lote desde su fecha de vencimiento.
+</p>
+
+{# ── Tabla de productos HUECO-01 ──────────────────────────────────── #}
+<div class="table-wrap" tabindex="0" role="region" aria-label="Existencias y acciones, tabla desplazable">
+  <table class="stock-overview-table">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Categor&#237;a</th>
+        <th>Stock f&#237;sico</th>
+        <th>Stock vigente</th>
+        <th>M&#237;nimo</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in products %}
+      <tr>
+        <td><strong>{{ product.name }}</strong>{% if product.barcode %}<br><small>{{ product.barcode }}</small>{% endif %}</td>
+        <td>{{ product.category.name }}</td>
+        <td>
+          {% if product.is_active and product.category.is_active and product.physical_stock <= product.minimum_stock %}
+            <span style="color:#c0392b;font-weight:600;">{{ product.physical_stock }}</span>
+          {% else %}
+            {{ product.physical_stock }}
+          {% endif %}
+        </td>
+        <td>
+          {% if product.is_active and product.category.is_active and product.sellable_stock <= product.minimum_stock %}
+            <span style="color:#c0392b;font-weight:600;">{{ product.sellable_stock }}</span>
+          {% else %}
+            {{ product.sellable_stock }}
+          {% endif %}
+        </td>
+        <td>{{ product.minimum_stock }}</td>
+        <td>
+          {% if not product.is_active %}
+            <span style="color:#95a5a6;">Inactivo</span>
+          {% elif not product.category.is_active %}
+            <span style="color:#95a5a6;">Categor&#237;a desactivada</span>
+          {% elif product.sellable_stock == 0 %}
+            <span style="color:#c0392b;font-weight:600;">Sin stock vendible</span>
+          {% elif product.sellable_stock <= product.minimum_stock %}
+            <span style="color:#e67e22;font-weight:600;">Stock bajo</span>
+          {% else %}
+            <span style="color:#27ae60;">OK</span>
+          {% endif %}
+        </td>
+        <td>
+          <div class="d-flex gap-2 flex-wrap stock-actions">
+            <a href="{% url 'product-movements' product.pk %}" class="button">
+              Ver movimientos
+            </a>
+            {% if product.initial_load %}
+              <a href="{% url 'inventory-load-created' product.initial_load.pk %}" class="button button-secondary">
+                Ver carga
+              </a>
+            {% endif %}
+          </div>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="7" class="empty-table">No hay productos registrados en el cat&#225;logo todav&#237;a.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="form-actions" style="margin-top:1.5rem;">
+  {% if user.role.code == "ALMACENERO" %}
+  <a href="{% url 'inventory-load' %}" class="button button-primary">&#43; Registrar existencias iniciales</a>
+  <a href="{% url 'stock-entry' %}" class="button button-secondary">&#43; Entrada de mercader&#237;a</a>
+  {% endif %}
+  {% if user.role.code == "ADMIN" %}
+  <a href="{% url 'physical-adjustment' %}" class="button">Ajuste f&#237;sico</a>
+  {% endif %}
+  <a href="{% url 'stock-writeoff' %}" class="button">Registrar merma</a>
+</div>
+{% endblock %}
+

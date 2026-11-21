@@ -1,0 +1,526 @@
+{
+  "stamp_utc": "20261111T235055739102Z",
+  "findings": {
+    "def09_form_inputs": {
+      "''": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Este campo es obligatorio."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Este campo es obligatorio."
+          ]
+        }
+      },
+      "'   '": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Introduzca un número."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Introduzca un número."
+          ]
+        }
+      },
+      "'-0.01'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Asegúrese de que este valor es mayor o igual a 0.00."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Asegúrese de que este valor es mayor o igual a 0.00."
+          ]
+        }
+      },
+      "'-0.00'": {
+        "open_valid": true,
+        "open_val": "Decimal('-0.00')",
+        "close_valid": true,
+        "close_val": "Decimal('-0.00')"
+      },
+      "'+10.00'": {
+        "open_valid": true,
+        "open_val": "Decimal('10.00')",
+        "close_valid": true,
+        "close_val": "Decimal('10.00')"
+      },
+      "'10,50'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Introduzca un número."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Introduzca un número."
+          ]
+        }
+      },
+      "'10.50'": {
+        "open_valid": true,
+        "open_val": "Decimal('10.50')",
+        "close_valid": true,
+        "close_val": "Decimal('10.50')"
+      },
+      "'10.5'": {
+        "open_valid": true,
+        "open_val": "Decimal('10.5')",
+        "close_valid": true,
+        "close_val": "Decimal('10.5')"
+      },
+      "'0'": {
+        "open_valid": true,
+        "open_val": "Decimal('0')",
+        "close_valid": true,
+        "close_val": "Decimal('0')"
+      },
+      "'0.00'": {
+        "open_valid": true,
+        "open_val": "Decimal('0.00')",
+        "close_valid": true,
+        "close_val": "Decimal('0.00')"
+      },
+      "'١٠'": {
+        "open_valid": true,
+        "open_val": "Decimal('10')",
+        "close_valid": true,
+        "close_val": "Decimal('10')"
+      },
+      "'١٠.٥٠'": {
+        "open_valid": true,
+        "open_val": "Decimal('10.50')",
+        "close_valid": true,
+        "close_val": "Decimal('10.50')"
+      },
+      "'1e5'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Introduzca un monto decimal válido sin notación científica."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Introduzca un monto decimal válido sin notación científica."
+          ]
+        }
+      },
+      "'1e-2'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Introduzca un monto decimal válido sin notación científica."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Introduzca un monto decimal válido sin notación científica."
+          ]
+        }
+      },
+      "'1e-3'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Asegúrese de que no haya más de 2 dígitos decimales."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Asegúrese de que no haya más de 2 dígitos decimales."
+          ]
+        }
+      },
+      "'NaN'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Introduzca un número."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Introduzca un número."
+          ]
+        }
+      },
+      "'Infinity'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Introduzca un número."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Introduzca un número."
+          ]
+        }
+      },
+      "'-Infinity'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Introduzca un número."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Introduzca un número."
+          ]
+        }
+      },
+      "'1.001'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Asegúrese de que no haya más de 2 dígitos decimales."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Asegúrese de que no haya más de 2 dígitos decimales."
+          ]
+        }
+      },
+      "'9999999.99'": {
+        "open_valid": true,
+        "open_val": "Decimal('9999999.99')",
+        "close_valid": true,
+        "close_val": "Decimal('9999999.99')"
+      },
+      "'10000000.00'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Asegúrese de que este valor es menor o igual a 9999999.99."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Asegúrese de que este valor es menor o igual a 9999999.99."
+          ]
+        }
+      },
+      "'texto'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Introduzca un número."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Introduzca un número."
+          ]
+        }
+      },
+      "'10\\x00'": {
+        "open_valid": false,
+        "open_val": {
+          "opening_amount": [
+            "Introduzca un número."
+          ]
+        },
+        "close_valid": false,
+        "close_val": {
+          "counted_amount": [
+            "Introduzca un número."
+          ]
+        }
+      }
+    },
+    "def09_01_empty_post_ignored": {
+      "open_empty_status": 200,
+      "open_empty_has_error": false,
+      "open_empty_shift_count": 1,
+      "close_empty_status": 200,
+      "close_empty_has_error": false,
+      "close_empty_shift_still_open": true
+    },
+    "def09_02_service_validation": {
+      "open": {
+        "negative": {
+          "ok": false,
+          "exc_type": "ValidationError",
+          "message": "{'opening_amount': ['Ingrese un monto no negativo con hasta dos decimales.']}",
+          "opened_amount": null
+        },
+        "neg_zero": {
+          "ok": true,
+          "result": "CAJA-01 · Vendedor Uno 09 · OPEN",
+          "opened_amount": "Decimal('0.00')"
+        },
+        "three_decimals": {
+          "ok": false,
+          "exc_type": "ValidationError",
+          "message": "{'opening_amount': ['Ingrese un monto no negativo con hasta dos decimales.']}",
+          "opened_amount": null
+        },
+        "nan": {
+          "ok": false,
+          "exc_type": "InvalidOperation",
+          "message": "[<class 'decimal.InvalidOperation'>]",
+          "opened_amount": null
+        },
+        "infinity": {
+          "ok": false,
+          "exc_type": "TypeError",
+          "message": "'<' not supported between instances of 'str' and 'int'",
+          "opened_amount": null
+        },
+        "over_max": {
+          "ok": true,
+          "result": "CAJA-01 · Vendedor Uno 09 · OPEN",
+          "opened_amount": "Decimal('10000000.00')"
+        },
+        "float": {
+          "ok": false,
+          "exc_type": "AttributeError",
+          "message": "'float' object has no attribute 'as_tuple'",
+          "opened_amount": null
+        },
+        "bool": {
+          "ok": false,
+          "exc_type": "AttributeError",
+          "message": "'bool' object has no attribute 'as_tuple'",
+          "opened_amount": null
+        },
+        "str": {
+          "ok": false,
+          "exc_type": "TypeError",
+          "message": "'<' not supported between instances of 'str' and 'int'",
+          "opened_amount": null
+        },
+        "anon": {
+          "ok": false,
+          "exc_type": "PermissionDenied",
+          "message": "No tiene permiso para abrir caja.",
+          "opened_amount": null
+        },
+        "stale_inactive": {
+          "ok": false,
+          "exc_type": "PermissionDenied",
+          "message": "No tiene permiso para abrir caja.",
+          "opened_amount": null
+        },
+        "stale_demoted": {
+          "ok": false,
+          "exc_type": "PermissionDenied",
+          "message": "No tiene permiso para abrir caja.",
+          "opened_amount": null
+        }
+      },
+      "close": {
+        "negative": {
+          "ok": true,
+          "result": "Cierre · CAJA-01 · Vendedor Uno 09 · CLOSED · 2026-11-11 23:50:58.367470+00:00",
+          "shift_status_after": "CLOSED",
+          "saved_counted": "Decimal('-10.00')",
+          "saved_diff": "Decimal('-60.00')"
+        },
+        "neg_zero": {
+          "ok": true,
+          "result": "Cierre · CAJA-01 · Vendedor Uno 09 · CLOSED · 2026-11-11 23:50:58.386191+00:00",
+          "shift_status_after": "CLOSED",
+          "saved_counted": "Decimal('0.00')",
+          "saved_diff": "Decimal('-50.00')"
+        },
+        "three_decimals": {
+          "ok": true,
+          "result": "Cierre · CAJA-01 · Vendedor Uno 09 · CLOSED · 2026-11-11 23:50:58.404766+00:00",
+          "shift_status_after": "CLOSED",
+          "saved_counted": "Decimal('1.00')",
+          "saved_diff": "Decimal('-49.00')"
+        },
+        "nan": {
+          "ok": false,
+          "exc_type": "ValidationError",
+          "message": "['“NaN”: el valor debe ser un número decimal.']",
+          "shift_status_after": "OPEN",
+          "saved_counted": null,
+          "saved_diff": null
+        },
+        "infinity": {
+          "ok": false,
+          "exc_type": "ValidationError",
+          "message": "['“Infinity”: el valor debe ser un número decimal.']",
+          "shift_status_after": "OPEN",
+          "saved_counted": null,
+          "saved_diff": null
+        },
+        "over_max": {
+          "ok": true,
+          "result": "Cierre · CAJA-01 · Vendedor Uno 09 · CLOSED · 2026-11-11 23:50:58.468264+00:00",
+          "shift_status_after": "CLOSED",
+          "saved_counted": "Decimal('10000000.00')",
+          "saved_diff": "Decimal('9999950.00')"
+        },
+        "float": {
+          "ok": false,
+          "exc_type": "TypeError",
+          "message": "unsupported operand type(s) for -: 'float' and 'decimal.Decimal'",
+          "shift_status_after": "OPEN",
+          "saved_counted": null,
+          "saved_diff": null
+        },
+        "bool": {
+          "ok": true,
+          "result": "Cierre · CAJA-01 · Vendedor Uno 09 · CLOSED · 2026-11-11 23:50:58.509597+00:00",
+          "shift_status_after": "CLOSED",
+          "saved_counted": "Decimal('1.00')",
+          "saved_diff": "Decimal('-49.00')"
+        },
+        "str": {
+          "ok": false,
+          "exc_type": "TypeError",
+          "message": "unsupported operand type(s) for -: 'str' and 'decimal.Decimal'",
+          "shift_status_after": "OPEN",
+          "saved_counted": null,
+          "saved_diff": null
+        },
+        "stale_inactive_actor": {
+          "ok": true,
+          "result": "Cierre · CAJA-01 · Vendedor Uno 09 · CLOSED · 2026-11-11 23:50:58.315575+00:00",
+          "s_inact_status": "CLOSED"
+        },
+        "stale_demoted_actor": {
+          "ok": true,
+          "result": "Cierre · CAJA-01 · Vendedor Dos 09 · CLOSED · 2026-11-11 23:50:58.342457+00:00",
+          "s_dem_status": "CLOSED"
+        }
+      }
+    },
+    "def09_03_close_no_shift_hidden_error": {
+      "status": 200,
+      "has_no_open_shift_msg": false,
+      "has_alert_error": false
+    },
+    "def09_04_empty_draft_banner_mismatch": {
+      "empty_draft_get_shows_warning": true,
+      "empty_draft_post_status": 302,
+      "empty_draft_shift_status_after_post": "CLOSED"
+    },
+    "def09_05_opened_page_after_close": {
+      "status": 200,
+      "claims_abierta": true,
+      "claims_Abierto": true,
+      "has_preparar_venta_btn": true
+    },
+    "def09_06_missing_status_error_css": {
+      "acta_has_status_error_class": true,
+      "app_css_defines_status_error": false
+    },
+    "def09_07_cache_headers": {
+      "/caja/abrir/": {
+        "status": 200,
+        "cache_control": "",
+        "has_no_store": false
+      },
+      "/caja/cerrar/": {
+        "status": 200,
+        "cache_control": "",
+        "has_no_store": false
+      },
+      "/caja/turnos/e6719e9f-6da9-4b6c-8c32-6d4d0c418daa/abierto/": {
+        "status": 200,
+        "cache_control": "",
+        "has_no_store": false
+      },
+      "/caja/turnos/e6719e9f-6da9-4b6c-8c32-6d4d0c418daa/cerrado/": {
+        "status": 200,
+        "cache_control": "",
+        "has_no_store": false
+      },
+      "/caja/turnos/": {
+        "status": 200,
+        "cache_control": "",
+        "has_no_store": false
+      },
+      "/ventas/recibo/a008045f-3024-406f-8702-09af6b7fb7df/": {
+        "status": 404,
+        "cache_control": "",
+        "has_no_store": false
+      },
+      "/ventas/historial/turno/": {
+        "status": 200,
+        "cache_control": "",
+        "has_no_store": false
+      },
+      "/ventas/historial/": {
+        "status": 200,
+        "cache_control": "",
+        "has_no_store": false
+      }
+    },
+    "sales_and_identity_link": {
+      "with_line_blocks_close": true,
+      "with_line_status": 200,
+      "remove_last_line_draft_status": "DISCARDED",
+      "discard_draft_status": "DISCARDED",
+      "sale_total": "8.00",
+      "sale_discount": "2.00",
+      "sale_cash_received": "20.00",
+      "close_expected_amount": "108.00",
+      "close_difference": "-3.00",
+      "close_redirect": "/caja/turnos/e6719e9f-6da9-4b6c-8c32-6d4d0c418daa/cerrado/",
+      "retry_close_status": 200,
+      "retry_close_shows_msg": false,
+      "logout_keeps_shift_open": true,
+      "logout_confirm_mentions_open_shift": false,
+      "logout_redirect": "/",
+      "identity_role_change_blocked_open_shift": {
+        "ok": false,
+        "exc_type": "ValidationError",
+        "message": "{'role': ['No se puede cambiar el rol de un empleado con un turno de caja abierto. Cierre el turno primero.']}"
+      },
+      "identity_deactivate_blocked_open_shift": {
+        "ok": false,
+        "exc_type": "ValidationError",
+        "message": "['No se puede desactivar a un vendedor con un turno de caja abierto. Cierre el turno primero.']"
+      }
+    },
+    "history_queries_and_ui": {
+      "queries_with_few_shifts": 0,
+      "queries_with_plus5_shifts": 0,
+      "seller_sidebar_has_cash_history": false,
+      "history_has_back_to_dashboard": false
+    }
+  },
+  "planning_gaps": {
+    "history_has_total_cobrado_col": false,
+    "history_has_filter_form": false,
+    "close_view_shows_sales_total": false,
+    "cash_url_names": [
+      "cash-close",
+      "cash-open",
+      "cash-shift-closed",
+      "cash-shift-history",
+      "cash-shift-opened"
+    ]
+  },
+  "protected_unchanged": true
+}

@@ -1,0 +1,229 @@
+{
+  "catalog.Category": [
+    {
+      "id": "331bfc22-145d-4093-b8a7-a15e46814c31",
+      "name": "Productos enlatados",
+      "name_normalized": "productos enlatados",
+      "is_active": true
+    },
+    {
+      "id": "80d86f95-3b04-4890-af93-592add29e154",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    },
+    {
+      "id": "83e1b2cb-b531-4e97-89bd-ef369a3a3404",
+      "name": "Suspendida",
+      "name_normalized": "suspendida",
+      "is_active": false
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "24c55180-eee5-4fdc-86f5-db4815d3fb04",
+      "name": "Anterior Z2",
+      "barcode": "0012345678905",
+      "category_id": "80d86f95-3b04-4890-af93-592add29e154",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "3110d6ab-ec46-4b8a-994a-340b6a5d387b",
+      "name": "Anterior Z1",
+      "barcode": "012345678905",
+      "category_id": "80d86f95-3b04-4890-af93-592add29e154",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "ac854774-0a1e-46d1-91ab-9778a31cda88",
+      "name": "Anterior Z3",
+      "barcode": "4006381333931",
+      "category_id": "80d86f95-3b04-4890-af93-592add29e154",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "321587c9-9e4a-4a41-945c-3ad1288ceeb7",
+      "product_id": "ac854774-0a1e-46d1-91ab-9778a31cda88",
+      "available_quantity": 6,
+      "initial_quantity": 7
+    },
+    {
+      "id": "5f235de0-b464-4022-833a-58ac2e3a72fe",
+      "product_id": "3110d6ab-ec46-4b8a-994a-340b6a5d387b",
+      "available_quantity": 4,
+      "initial_quantity": 5
+    },
+    {
+      "id": "b05c5641-2bd9-4e12-bdea-3a8055196257",
+      "product_id": "24c55180-eee5-4fdc-86f5-db4815d3fb04",
+      "available_quantity": 5,
+      "initial_quantity": 6
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "600801ec-1875-4e9b-a277-6fd1eff1db44",
+      "product_id": "ac854774-0a1e-46d1-91ab-9778a31cda88"
+    },
+    {
+      "id": "8ff6d434-ad78-4dfa-8c5e-ddf12e9dd29e",
+      "product_id": "24c55180-eee5-4fdc-86f5-db4815d3fb04"
+    },
+    {
+      "id": "9b7f15c6-6157-4169-b1b6-f764d8ee207e",
+      "product_id": "3110d6ab-ec46-4b8a-994a-340b6a5d387b"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "86358c0e-0af4-4684-90ea-01fbd1c38100",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [
+    {
+      "id": "00df31ca-3b07-4244-85d5-9806547f9411",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    },
+    {
+      "id": "53b6653d-1f44-4fcf-8339-f0bc6f36d2e8",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    },
+    {
+      "id": "5f4ae480-1942-4e4b-b352-2176f3d48651",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    }
+  ],
+  "sales.SaleLine": [
+    {
+      "id": "86dca35b-f304-4c8f-a7cc-0eae12942dab",
+      "product_id": "24c55180-eee5-4fdc-86f5-db4815d3fb04",
+      "product_snapshot_name": "Anterior Z2",
+      "product_snapshot_barcode": "0012345678905",
+      "unit_price": "3.00",
+      "quantity": 1
+    },
+    {
+      "id": "a7308de1-a980-464c-b295-d9cd13716d4a",
+      "product_id": "ac854774-0a1e-46d1-91ab-9778a31cda88",
+      "product_snapshot_name": "Anterior Z3",
+      "product_snapshot_barcode": "4006381333931",
+      "unit_price": "3.00",
+      "quantity": 1
+    },
+    {
+      "id": "db7fc7b6-2701-4563-bd48-d49f12316670",
+      "product_id": "3110d6ab-ec46-4b8a-994a-340b6a5d387b",
+      "product_snapshot_name": "Anterior Z1",
+      "product_snapshot_barcode": "012345678905",
+      "unit_price": "3.00",
+      "quantity": 1
+    }
+  ],
+  "sales.SaleDraft": [
+    {
+      "id": "149b9e86-122c-4fc1-839e-54ecf375f1e8",
+      "status": "DISCARDED"
+    },
+    {
+      "id": "cfc65579-e352-448e-8362-6263cc9eab26",
+      "status": "DISCARDED"
+    },
+    {
+      "id": "eddaa561-f784-4266-844d-de0a6ea34668",
+      "status": "DISCARDED"
+    }
+  ],
+  "sales.SaleDraftLine": [
+    {
+      "id": "0d5a8ecf-7e95-4335-bfd2-647f6335631d",
+      "draft_id": "149b9e86-122c-4fc1-839e-54ecf375f1e8",
+      "product_id": "24c55180-eee5-4fdc-86f5-db4815d3fb04",
+      "quantity": 1,
+      "unit_price": "3.00"
+    },
+    {
+      "id": "1db64888-bbbc-459d-82bf-204185d91e63",
+      "draft_id": "cfc65579-e352-448e-8362-6263cc9eab26",
+      "product_id": "3110d6ab-ec46-4b8a-994a-340b6a5d387b",
+      "quantity": 1,
+      "unit_price": "3.00"
+    },
+    {
+      "id": "a806909b-f7bf-4188-b4eb-44acfdc5763b",
+      "draft_id": "eddaa561-f784-4266-844d-de0a6ea34668",
+      "product_id": "ac854774-0a1e-46d1-91ab-9778a31cda88",
+      "quantity": 1,
+      "unit_price": "3.00"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "24c55180-eee5-4fdc-86f5-db4815d3fb04",
+      "barcode_normalized": "0012345678905",
+      "search_name": "anterior z2",
+      "average_cost": "1.0000"
+    },
+    {
+      "id": "3110d6ab-ec46-4b8a-994a-340b6a5d387b",
+      "barcode_normalized": "012345678905",
+      "search_name": "anterior z1",
+      "average_cost": "1.0000"
+    },
+    {
+      "id": "ac854774-0a1e-46d1-91ab-9778a31cda88",
+      "barcode_normalized": "4006381333931",
+      "search_name": "anterior z3",
+      "average_cost": "1.0000"
+    }
+  ],
+  "identity": [
+    {
+      "id": "24c55180-eee5-4fdc-86f5-db4815d3fb04",
+      "barcode_type": "UNCLASSIFIED"
+    },
+    {
+      "id": "3110d6ab-ec46-4b8a-994a-340b6a5d387b",
+      "barcode_type": "UNCLASSIFIED"
+    },
+    {
+      "id": "ac854774-0a1e-46d1-91ab-9778a31cda88",
+      "barcode_type": "UNCLASSIFIED"
+    }
+  ],
+  "catalog.ProductBarcodeKey": [
+    {
+      "product_id": "24c55180-eee5-4fdc-86f5-db4815d3fb04",
+      "reading_key": "0012345678905"
+    },
+    {
+      "product_id": "3110d6ab-ec46-4b8a-994a-340b6a5d387b",
+      "reading_key": "012345678905"
+    },
+    {
+      "product_id": "ac854774-0a1e-46d1-91ab-9778a31cda88",
+      "reading_key": "4006381333931"
+    }
+  ]
+}

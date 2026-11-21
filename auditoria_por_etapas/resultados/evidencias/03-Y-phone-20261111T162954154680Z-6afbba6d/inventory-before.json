@@ -1,0 +1,48 @@
+{
+  "scope": "03-Y explicit GTIN/internal identity selected by user",
+  "requirements": [
+    "PROD01/CA02",
+    "PROD02/CA03",
+    "PROD03/CA01-02",
+    "PROD04/CA03",
+    "RN29",
+    "DEC-03X-IDENTIDAD"
+  ],
+  "routes": [
+    "/productos/",
+    "/productos/nuevo/",
+    "/productos/codigos/comprobar/",
+    "/productos/<uuid>/editar/",
+    "/ventas/"
+  ],
+  "fields": [
+    "barcode",
+    "barcode_type",
+    "edit_snapshot",
+    "query",
+    "q"
+  ],
+  "outputs": [
+    "duplicate warning",
+    "explicit type",
+    "invalid GTIN warning",
+    "same product in searches",
+    "unchanged historic barcode"
+  ],
+  "planned": [
+    "GTIN creation with leading zeros",
+    "UPC/EAN/padded equivalence",
+    "cross-type collision rejection",
+    "invalid GTIN checksum",
+    "numeric internal creation",
+    "own GTIN edit and history",
+    "role denials"
+  ],
+  "not_executed": [
+    "phone",
+    "original database migration",
+    "inventory reception audit",
+    "PostgreSQL concurrency"
+  ],
+  "mode": "phone"
+}

@@ -1,0 +1,71 @@
+{
+  "pasada": 1,
+  "sublote": "14-G",
+  "source08_sha256": "fc69a8e9641f8c9c21c6356300fcd84bb3ad9e4ca62edc4c49ae90cd2832e59c",
+  "criterios": [
+    {
+      "criterio": "HU-INV-01b/CA-01",
+      "texto": "Dado que un producto ya completó su carga inicial, tenga o no existencias remanentes, cuando ALMACENERO confirma una recepción posterior directa, con identidad propia, cantidad y costo de compra, entonces el sistema recalcula el costo promedio usando todas las unidades físicas registradas anteriores, incluidas las vencidas pendientes de baja, y las ingresadas conforme a RN-14; el reintento de la misma clave/contenido devuelve la recepción previa sin nuevos efectos.",
+      "grupo": "CA principal",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-g",
+      "limite": "Muestra14-G; no cierre de HU, PostgreSQL y datos operativos pendientes."
+    },
+    {
+      "criterio": "HU-INV-01b/CA-02",
+      "texto": "Dado que consulto el costo promedio después de la entrada, cuando lo comparo con el cálculo ponderado, entonces coincide con el valor almacenado a cuatro decimales y se muestra redondeado a dos, sin alterar costos históricos de ventas anteriores.",
+      "grupo": "CA principal",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-g",
+      "limite": "Muestra14-G; no cierre de HU, PostgreSQL y datos operativos pendientes."
+    },
+    {
+      "criterio": "HU-INV-04/CA-02",
+      "texto": "Dado que un movimiento nació de una recepción directa, cuando abro el detalle, entonces muestra su referencia propia, responsable y proveedor o ausencia declarada; si en el futuro nació de HU-SOL-05a, mostrará además la solicitud aprobada sin inventar esa relación para entradas actuales.",
+      "grupo": "Dependencia",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-g",
+      "limite": "Muestra14-G; no cierre de HU, PostgreSQL y datos operativos pendientes."
+    },
+    {
+      "criterio": "DOC-03AI-01/C-01",
+      "texto": "Dada clave UUID nueva y entrada válida, cuando se confirma, entonces stock/costo/recepción/lotes/autor/correlativo se guardan en una transacción y se devuelve su constancia.",
+      "grupo": "Contrato principal",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-g",
+      "limite": "Muestra14-G; no cierre de HU, PostgreSQL y datos operativos pendientes."
+    },
+    {
+      "criterio": "DOC-03AI-01/C-02",
+      "texto": "Dada una clave confirmada y el mismo actor/contenido, cuando se repite incluso tras perder la respuesta, entonces se devuelve exactamente la recepción anterior sin nuevos efectos. Distinto contenido/actor no obtiene datos ajenos y rechaza sin mutación. La huella usa valores normalizados, no el orden incidental del HTML.",
+      "grupo": "Contrato principal",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-g",
+      "limite": "Muestra14-G; no cierre de HU, PostgreSQL y datos operativos pendientes."
+    },
+    {
+      "criterio": "DOC-03AI-01/C-03",
+      "texto": "Dado otro ingreso real del mismo lote comercial, cuando usa una clave nueva y datos coherentes, entonces se crea otra recepción conservando ambas procedencias. Dos conexiones con la misma clave producen una sola confirmación.",
+      "grupo": "Contrato principal",
+      "clasificacion": "PARCIAL",
+      "evidencia": "../../ETAPA-14.md#vigente-14-g",
+      "limite": "Muestra14-G; no cierre de HU, PostgreSQL y datos operativos pendientes."
+    },
+    {
+      "criterio": "DOC-03AI-01/C-04",
+      "texto": "Dada una entrada inválida, cuando se corrige antes de confirmar, entonces no queda clave consumida como éxito ni lote/stock parcial. No confundir duplicado comercial con reintento técnico.",
+      "grupo": "Contrato principal",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-g",
+      "limite": "Muestra14-G; no cierre de HU, PostgreSQL y datos operativos pendientes."
+    },
+    {
+      "criterio": "DEC-05-LOTE-ESPACIOS/C-01",
+      "texto": "Dadas variantes ` ab  12 ` y `AB 12`, cuando se comparan dentro de la misma recepción, entonces son el mismo identificador normalizado y la repetición se rechaza; `AB12` sigue distinta. Misma identidad comercial en otra recepción se rige por DOC03AI.",
+      "grupo": "Dependencia",
+      "clasificacion": "CUMPLE EN MUESTRA",
+      "evidencia": "../../ETAPA-14.md#vigente-14-g",
+      "limite": "Muestra14-G; no cierre de HU, PostgreSQL y datos operativos pendientes."
+    }
+  ]
+}

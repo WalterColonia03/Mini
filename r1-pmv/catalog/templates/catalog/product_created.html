@@ -1,0 +1,33 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Producto registrado · Minimarket{% endblock %}
+
+{% block content %}
+<section class="success-panel panel" data-testid="product-created">
+  <div class="success-icon" aria-hidden="true">✓</div>
+  <p class="eyebrow">Registro completado</p>
+  <h2>{{ product.name }}</h2>
+  <p class="lede">El producto se creó con cero existencias. Los datos siguientes muestran su estado actual.</p>
+
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Tipo de código</dt><dd>{{ product.get_barcode_type_display }}</dd></div>
+    <div><dt>Código</dt><dd>{{ product.barcode }}</dd></div>
+    <div><dt>Categoría</dt><dd>{{ product.category.name }}</dd></div>
+    <div><dt>Precio final con IGV (S/)</dt><dd>S/ {{ product.sale_price|floatformat:2 }}</dd></div>
+    <div><dt>Existencia mínima</dt><dd>{{ product.minimum_stock }} {{ product.unit }}</dd></div>
+    <div><dt>Existencias físicas</dt><dd data-testid="physical-stock">{{ product.physical_stock }} {{ product.unit }}</dd></div>
+    <div><dt>Disponibilidad actual</dt><dd>
+      {% if not product.is_active %}<span class="status status-pending">Inactivo</span>
+      {% elif not product.category.is_active %}<span class="status status-pending">Categoría desactivada</span>
+      {% elif product.is_sellable %}<span class="status">Disponible para venta</span>
+      {% else %}<span class="status status-pending">No disponible para venta: sin stock vigente</span>{% endif %}
+    </dd></div>
+  </dl>
+
+  <div class="form-actions">
+    <a class="button button-primary" href="{% url 'product-entry' %}">Registrar otro producto</a>
+    <a class="button button-secondary" href="{% url 'product-list' %}">Ver catálogo</a>
+    <a class="button button-secondary" href="{% url 'dashboard' %}">Ir al inicio</a>
+  </div>
+</section>
+{% endblock %}

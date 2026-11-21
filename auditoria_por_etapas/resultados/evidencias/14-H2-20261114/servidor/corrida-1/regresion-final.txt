@@ -1,0 +1,142 @@
+Found 603 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+........................................................................PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.
+.PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.
+..........................................................................................................................................Productos demo creados: 4
+...................................................................................EEEEE.EE..E..........................................................................................................................................................................................................................................................................................................
+======================================================================
+ERROR: test_compensating_discrepancy_between_lots_is_detected (inventory.test_audit14h2_ledger.LedgerTests.test_compensating_discrepancy_between_lots_is_detected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 173, in test_compensating_discrepancy_between_lots_is_detected
+    load,receipt=self.prepare()
+                 ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 70, in prepare
+    write_off_stock(actor=self.worker,lot=receipt.lines.get().lot if cursor else load.lots.get(),
+                                                                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 638, in get
+    raise self.model.MultipleObjectsReturned(
+inventory.models.Lot.MultipleObjectsReturned: get() returned more than one Lot -- it returned 2!
+
+======================================================================
+ERROR: test_empty_period_year_boundaries_and_minute_end (inventory.test_audit14h2_ledger.LedgerTests.test_empty_period_year_boundaries_and_minute_end)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 137, in test_empty_period_year_boundaries_and_minute_end
+    self.prepare()
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 70, in prepare
+    write_off_stock(actor=self.worker,lot=receipt.lines.get().lot if cursor else load.lots.get(),
+                                                                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 638, in get
+    raise self.model.MultipleObjectsReturned(
+inventory.models.Lot.MultipleObjectsReturned: get() returned more than one Lot -- it returned 2!
+
+======================================================================
+ERROR: test_incomplete_allocation_and_ambiguous_product_are_explicit (inventory.test_audit14h2_ledger.LedgerTests.test_incomplete_allocation_and_ambiguous_product_are_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 159, in test_incomplete_allocation_and_ambiguous_product_are_explicit
+    self.prepare()
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 70, in prepare
+    write_off_stock(actor=self.worker,lot=receipt.lines.get().lot if cursor else load.lots.get(),
+                                                                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 638, in get
+    raise self.model.MultipleObjectsReturned(
+inventory.models.Lot.MultipleObjectsReturned: get() returned more than one Lot -- it returned 2!
+
+======================================================================
+ERROR: test_inconsistent_origin_link_never_passes_by_coincidental_total (inventory.test_audit14h2_ledger.LedgerTests.test_inconsistent_origin_link_never_passes_by_coincidental_total)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 183, in test_inconsistent_origin_link_never_passes_by_coincidental_total
+    load,_=self.prepare()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 70, in prepare
+    write_off_stock(actor=self.worker,lot=receipt.lines.get().lot if cursor else load.lots.get(),
+                                                                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 638, in get
+    raise self.model.MultipleObjectsReturned(
+inventory.models.Lot.MultipleObjectsReturned: get() returned more than one Lot -- it returned 2!
+
+======================================================================
+ERROR: test_invalid_dates_types_pages_and_repeated_keys_never_mutate_or_render_results (inventory.test_audit14h2_ledger.LedgerTests.test_invalid_dates_types_pages_and_repeated_keys_never_mutate_or_render_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 119, in test_invalid_dates_types_pages_and_repeated_keys_never_mutate_or_render_results
+    self.prepare()
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 70, in prepare
+    write_off_stock(actor=self.worker,lot=receipt.lines.get().lot if cursor else load.lots.get(),
+                                                                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 638, in get
+    raise self.model.MultipleObjectsReturned(
+inventory.models.Lot.MultipleObjectsReturned: get() returned more than one Lot -- it returned 2!
+
+======================================================================
+ERROR: test_negative_sequence_is_not_presented_as_trustworthy (inventory.test_audit14h2_ledger.LedgerTests.test_negative_sequence_is_not_presented_as_trustworthy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 192, in test_negative_sequence_is_not_presented_as_trustworthy
+    self.prepare()
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 70, in prepare
+    write_off_stock(actor=self.worker,lot=receipt.lines.get().lot if cursor else load.lots.get(),
+                                                                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 638, in get
+    raise self.model.MultipleObjectsReturned(
+inventory.models.Lot.MultipleObjectsReturned: get() returned more than one Lot -- it returned 2!
+
+======================================================================
+ERROR: test_roles_methods_inactive_product_and_empty_product (inventory.test_audit14h2_ledger.LedgerTests.test_roles_methods_inactive_product_and_empty_product)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 203, in test_roles_methods_inactive_product_and_empty_product
+    self.prepare()
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 70, in prepare
+    write_off_stock(actor=self.worker,lot=receipt.lines.get().lot if cursor else load.lots.get(),
+                                                                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 638, in get
+    raise self.model.MultipleObjectsReturned(
+inventory.models.Lot.MultipleObjectsReturned: get() returned more than one Lot -- it returned 2!
+
+======================================================================
+ERROR: test_written_case_real_balances_and_outgoing_filter (inventory.test_audit14h2_ledger.LedgerTests.test_written_case_real_balances_and_outgoing_filter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 78, in test_written_case_real_balances_and_outgoing_filter
+    self.prepare()
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h2_ledger.py", line 70, in prepare
+    write_off_stock(actor=self.worker,lot=receipt.lines.get().lot if cursor else load.lots.get(),
+                                                                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 638, in get
+    raise self.model.MultipleObjectsReturned(
+inventory.models.Lot.MultipleObjectsReturned: get() returned more than one Lot -- it returned 2!
+
+----------------------------------------------------------------------
+Ran 603 tests in 84.154s
+
+FAILED (errors=8)
+Destroying test database for alias 'default'...

@@ -1,0 +1,97 @@
+{
+  "checks": [
+    "aislamiento_proof",
+    "aislamiento_run",
+    "anonimo_entrada_302",
+    "anonimo_entrada_next",
+    "vendedor_sin_nav_entrada",
+    "vendedor_get_entrada_403",
+    "vendedor_post_entrada_403",
+    "vendedor_denegado_sin_cambios",
+    "pos_pre_entrada_muestra_10",
+    "venta_previa_total_22_50",
+    "venta_previa_unit_cost_2_6000",
+    "admin_sin_nav_entrada",
+    "admin_get_entrada_403",
+    "admin_post_entrada_403",
+    "admin_denegado_sin_cambios",
+    "wh_nav_entrada",
+    "wh_card_entrada",
+    "wh_entrada_200",
+    "wh_entrada_never_cache",
+    "select_incluye_entry1",
+    "select_incluye_exhausted",
+    "select_incluye_expired_only",
+    "select_excluye_no_load",
+    "select_excluye_inactive",
+    "select_excluye_cat_off",
+    "fix06_post_vacio_header_csrf_200",
+    "fix06_post_vacio_header_csrf_con_alertas",
+    "errores_no_mutan_bd",
+    "errores_conserva_producto_seleccionado",
+    "errores_conserva_sentinel_inactivo",
+    "error_proveedor_inactivo_visible",
+    "error_cantidad_minima",
+    "error_notacion_cientifica",
+    "error_vencimiento_hoy_lima",
+    "error_vencimiento_20_anos",
+    "error_lote_duplicado_lote",
+    "form_errores_sin_overflow",
+    "lote_repetido_inicial_rechaza_todo",
+    "lote_repetido_inicial_mensaje",
+    "categoria_suspendida_rechaza_entrada_sin_escrituras",
+    "categoria_suspendida_alerta",
+    "entry1_costo_promedio_half_up_4dec",
+    "entry1_4_lotes_2ini_2post",
+    "entry1_is_initial_y_responsible_distintos",
+    "entry1_constancia_muestra_s_3_12",
+    "entry1_constancia_existencias_10_und",
+    "entry1_constancia_wrap_14_ths_normales",
+    "intercepcion_sin_error_false",
+    "fallo_conexion_detectado_false",
+    "estado_servidor_intercepcion_false",
+    "abort_antes_commit_entrada_sin_escrituras",
+    "intercepcion_sin_error_true",
+    "fallo_conexion_detectado_true",
+    "estado_servidor_intercepcion_true",
+    "exh_crea_exactamente_1_lote_pese_302_perdido",
+    "exh_costo_promedio_zero_prior_3_7500",
+    "reenvio_entrada_tras_302_perdido_200",
+    "reenvio_entrada_informa_lote_existe",
+    "reenvio_entrada_no_duplica"
+  ],
+  "page_errors": [],
+  "screenshots": [
+    "01-entrada-errores-y-sentinel.png",
+    "02-entrada-lote64-y-constancia.png"
+  ],
+  "transport": [
+    {
+      "afterCommit": false,
+      "forwardedStatus": null,
+      "browserFailure": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "afterCommit": true,
+      "forwardedStatus": 302,
+      "browserFailure": "net::ERR_CONNECTION_RESET"
+    }
+  ],
+  "layout_metrics": {
+    "constancia_posteriores": {
+      "docOk": true,
+      "thCount": 14,
+      "thWrapOk": true,
+      "shortCellSingleLine": true
+    },
+    "stock_overview": {
+      "docOk": true,
+      "thCount": 7,
+      "btnCount": 11,
+      "buttonsInsideWrap": false
+    }
+  },
+  "input": "Chrome 1366x900 Stage 06 audit (HU-INV-01b stock_entry, suppliers, lots, HALF_UP, RN-28, FEFO, cross-role)",
+  "chrome": "157.0.8103.78",
+  "error": "stock_overview_sin_overflow_y_botones_visibles\n\nfalse !== true\n"
+}

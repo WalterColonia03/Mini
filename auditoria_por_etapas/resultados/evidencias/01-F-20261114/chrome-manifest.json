@@ -1,0 +1,220 @@
+{
+  "base_url": "http://127.0.0.1:8782",
+  "executed_at_utc": "2026-11-15T02:38:27.306Z",
+  "checks": [
+    {
+      "id": "C01_HMAC_SERVER_PROOF",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "id": "C01B_DESKTOP_STYLESHEET_LOADED",
+      "ok": true,
+      "cssStatus": 200,
+      "contentType": "text/css",
+      "stylesheetsCount": 1,
+      "cardBorderRadius": "18px"
+    },
+    {
+      "id": "C02_LOGIN_DOM_ATTRIBUTES",
+      "ok": true,
+      "activeName": "email",
+      "maxlength": "254",
+      "autocompleteEmail": "username",
+      "autocompletePw": "current-password",
+      "overflow": false,
+      "csrfPresent": true,
+      "stylesheetsCount": 1,
+      "cardBorderRadius": "18px"
+    },
+    {
+      "id": "C03_LIVE_254_TRUNCATION_WITHOUT_REDACTION",
+      "ok": true,
+      "length": 254,
+      "endsWithInvalid": true
+    },
+    {
+      "id": "C04_KEYBOARD_TAB_ORDER",
+      "ok": true,
+      "pwFocused": true,
+      "btnFocused": true
+    },
+    {
+      "id": "C05_LOGIN_254_DASHBOARD",
+      "ok": true,
+      "url": "http://127.0.0.1:8782/inicio/",
+      "rolePill": "Almacenero"
+    },
+    {
+      "id": "C06_LOGOUT_RETURN_LOGIN",
+      "ok": true,
+      "url": "http://127.0.0.1:8782/"
+    },
+    {
+      "id": "C07_MOBILE_390_NO_OVERFLOW",
+      "ok": true,
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "anyClipped": false,
+      "cardCount": 7,
+      "stylesheetsCount": 1,
+      "cardBorderRadius": "18px"
+    },
+    {
+      "id": "C08_MOBILE_390_UNIFORM_ERROR_VISIBLE",
+      "ok": true,
+      "errorText": "Correo o contraseña incorrectos",
+      "clearedPwLen": 0,
+      "errBox": {
+        "x": 41,
+        "y": 817.921875,
+        "width": 308,
+        "height": 45.1875
+      },
+      "errOverflow": false
+    },
+    {
+      "id": "C09_MOBILE_390_SELLER_INICIO",
+      "ok": true,
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "heading": "Inicio"
+    },
+    {
+      "id": "C10_STAFF_FAIL_1",
+      "ok": true,
+      "i": 1
+    },
+    {
+      "id": "C10_STAFF_FAIL_2",
+      "ok": true,
+      "i": 2
+    },
+    {
+      "id": "C10_STAFF_FAIL_3",
+      "ok": true,
+      "i": 3
+    },
+    {
+      "id": "C10_STAFF_FAIL_4",
+      "ok": true,
+      "i": 4
+    },
+    {
+      "id": "C10_STAFF_LOCKED_5TH",
+      "ok": true,
+      "fifthMsg": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 15 minuto(s)."
+    },
+    {
+      "id": "C11_STAFF_GOOD_PASSWORD_BLOCKED_ON_PUBLIC",
+      "ok": true,
+      "url": "http://127.0.0.1:8782/",
+      "errorText": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 15 minuto(s)."
+    },
+    {
+      "id": "C12_STAFF_ADMIN_LOGIN_CSRF",
+      "ok": true,
+      "url": "http://127.0.0.1:8782/admin/login/?next=/admin/"
+    },
+    {
+      "id": "C13_STAFF_NO_MODEL_PERMS_403",
+      "ok": true,
+      "status": 403,
+      "adminBodySnippet": "Sitio administrativo\n          \n          \n\n  \n\n\n  No cuenta con permiso para ver ni editar nada.\n\n\n\n\n          \n\n    \n "
+    },
+    {
+      "id": "C14_STAFF_SHARED_SESSION_REACHS_INICIO",
+      "ok": true,
+      "status": 200,
+      "url": "http://127.0.0.1:8782/inicio/",
+      "staffNavHasEmp": true
+    },
+    {
+      "id": "C15_SUPERUSER_BLOCKED_ON_PUBLIC",
+      "ok": true,
+      "url": "http://127.0.0.1:8782/",
+      "errorText": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 15 minuto(s)."
+    },
+    {
+      "id": "C16_SUPERUSER_ADMIN_BYPASS",
+      "ok": true,
+      "url": "http://127.0.0.1:8782/admin/"
+    },
+    {
+      "id": "C17_SUPERUSER_ACCOUNT_ADMIN_200",
+      "ok": true,
+      "status": 200,
+      "rowCount": 10
+    },
+    {
+      "id": "C18_SUPERUSER_COMMERCIAL_RBAC_ENFORCED_403",
+      "ok": true,
+      "status": 403
+    },
+    {
+      "id": "C19_SUPERUSER_SHARED_SESSION_REACHS_INICIO",
+      "ok": true,
+      "status": 200,
+      "suRolePill": "Vendedor"
+    },
+    {
+      "id": "C20_ZERO_PAGE_AND_ASSET_ERRORS",
+      "ok": true,
+      "page_errors": [],
+      "unexpected_failed_responses": [],
+      "failed_responses_summary": [
+        {
+          "label": "staff-bypass",
+          "status": 403,
+          "path": "/admin/identity/account/"
+        },
+        {
+          "label": "superuser-bypass",
+          "status": 403,
+          "path": "/empleados/"
+        }
+      ],
+      "unexpected_console_errors": []
+    }
+  ],
+  "screenshots": [
+    "navegador/01-F-ui-254-inicio.png",
+    "navegador/01-F-mobile-390-login.png",
+    "navegador/01-F-mobile-390-error.png",
+    "navegador/01-F-mobile-390-inicio.png",
+    "navegador/01-F-staff-bloqueado-publico.png",
+    "navegador/01-F-staff-admin-landing.png",
+    "navegador/01-F-staff-inicio-compartido.png",
+    "navegador/01-F-superuser-admin-index.png",
+    "navegador/01-F-superuser-account-admin.png",
+    "navegador/01-F-superuser-inicio-compartido.png"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    {
+      "label": "staff-bypass",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "label": "staff-bypass",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "label": "superuser-bypass",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    }
+  ],
+  "failed_responses": [
+    {
+      "label": "staff-bypass",
+      "status": 403,
+      "path": "/admin/identity/account/"
+    },
+    {
+      "label": "superuser-bypass",
+      "status": 403,
+      "path": "/empleados/"
+    }
+  ],
+  "chrome_version": "157.0.8103.78"
+}

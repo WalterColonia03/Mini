@@ -1,0 +1,24 @@
+{
+  "criteria": [
+    "INV-01a/CA05",
+    "RN-19",
+    "VEN01c FEFO boundary"
+  ],
+  "routes": [
+    "/ventas/",
+    "/ventas/cobrar/",
+    "/inventario/stock/"
+  ],
+  "roles": [
+    "seller: prepare and confirm sales",
+    "warehouse: observe stock"
+  ],
+  "cases": [
+    "expiration priority",
+    "receipt timestamp tiebreak",
+    "UUID tiebreak",
+    "expired excluded",
+    "repeat checkout preserves lots",
+    "historical receipt times preserved"
+  ]
+}

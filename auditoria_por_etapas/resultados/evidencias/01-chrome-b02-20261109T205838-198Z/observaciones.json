@@ -1,0 +1,73 @@
+{
+  "date_utc": "2026-11-09T20:58:38.198Z",
+  "zone": "America/Lima",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "cases": {
+    "keyboard_maxlength": {
+      "maxLength": 320,
+      "after320": 320,
+      "after321": 320,
+      "postCount": 0
+    },
+    "next_missing": {
+      "role": "Almacenero",
+      "post": 302,
+      "document": 404,
+      "final": "/ruta-auditoria-01-inexistente/",
+      "heading": "Página no encontrada",
+      "returned": 200,
+      "returnPath": "/inicio/"
+    },
+    "next_external": {
+      "supplied": "https://example.invalid/",
+      "post": 302,
+      "document": 200,
+      "final": "/inicio/",
+      "location_local": true,
+      "location_path": "/inicio/",
+      "external_requests_blocked_during_submit": 0,
+      "role": "Almacenero"
+    },
+    "admin_nonstaff": {
+      "entry": "/admin/login/",
+      "post": 200,
+      "document": 200,
+      "final": "/admin/login/",
+      "sessionCookie": false,
+      "message": "Por favor introduzca el email y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas.",
+      "passwordEmpty": true
+    },
+    "admin_staff": {
+      "entry": "/admin/login/",
+      "post": 302,
+      "document": 200,
+      "final": "/admin/",
+      "sessionCookie": true,
+      "heading": "Sitio administrativo"
+    }
+  },
+  "database": "datos/etapa01-20261109/audit.sqlite3",
+  "loopback_proof_verified": true,
+  "tool": "Playwright Core / Google Chrome estable headless 157.0.8103.39 / Windows_NT 10.0.26200",
+  "commercial_counts_before_and_after": {
+    "cash_cashregister": 0,
+    "cash_cashshift": 0,
+    "cash_cashshiftclose": 0,
+    "catalog_category": 0,
+    "catalog_product": 0,
+    "inventory_initialinventoryload": 0,
+    "inventory_lot": 0,
+    "inventory_physicaladjustment": 0,
+    "inventory_stockwriteoff": 0,
+    "inventory_supplier": 0,
+    "sales_sale": 0,
+    "sales_salecounter": 0,
+    "sales_saledraft": 0,
+    "sales_saledraftline": 0,
+    "sales_saleline": 0
+  },
+  "status": "completado"
+}

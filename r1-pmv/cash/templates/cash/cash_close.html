@@ -1,0 +1,72 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Cierre de caja · Minimarket{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Caja</p>
+    <h2>Cerrar y cuadrar caja</h2>
+    <p class="lede">Cuenta el efectivo físico e ingresa el monto para cuadrar el turno.</p>
+  </div>
+  <a class="button button-secondary" href="{% url 'dashboard' %}">Volver al inicio</a>
+</section>
+
+{% if form.non_field_errors %}
+  <div class="alert alert-error" role="alert">
+    {{ form.non_field_errors }}
+    {% if current_shift and has_active_draft %}
+      <p class="mt-2 mb-0"><a class="button button-secondary" href="{% url 'sales-draft' %}">Ir a la venta en preparación para cobrarla o descartarla</a></p>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% if not current_shift %}
+  <section class="panel info-panel">
+    <h3>No tienes un turno abierto</h3>
+    <p class="muted">Debes tener un turno abierto a tu nombre para poder cerrarlo.</p>
+    <div class="form-actions">
+      <a class="button button-primary" href="{% url 'cash-open' %}">Ir a apertura de caja</a>
+    </div>
+  </section>
+{% else %}
+  <div class="content-grid content-grid-aside">
+    <form method="post" class="panel form-panel" novalidate>
+      {% csrf_token %}
+
+      {% if has_active_draft and not form.non_field_errors %}
+        <div class="alert alert-info" role="status">
+          Tienes una venta en preparación activa. Debes cobrarla o descartarla antes de cerrar el turno.
+          <p class="mt-2 mb-0"><a class="button button-secondary" href="{% url 'sales-draft' %}">Ir a la venta en preparación</a></p>
+        </div>
+      {% endif %}
+
+      <div class="field{% if form.counted_amount.errors %} field-error{% endif %}">
+        <label for="{{ form.counted_amount.id_for_label }}">{{ form.counted_amount.label }}</label>
+        <div class="money-input"><span>S/</span>{{ form.counted_amount }}</div>
+        <p class="help">Cuenta el efectivo físico de la caja y escribe el total.</p>
+        {% if form.counted_amount.errors %}
+          <div class="error-list" role="alert">{{ form.counted_amount.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="form-actions">
+        <button class="button button-primary" type="submit">Cerrar turno</button>
+        <a class="button button-ghost" href="{% url 'dashboard' %}">Cancelar</a>
+      </div>
+    </form>
+
+    <aside class="panel info-panel">
+      <span class="status status-progress">Turno activo</span>
+      <h3>Resumen del turno</h3>
+      <dl class="summary-list">
+        <div><dt>Caja</dt><dd>{{ current_shift.cash_register.code }}</dd></div>
+        <div><dt>Apertura</dt><dd>{{ current_shift.opened_at|date:"d/m/Y H:i" }}</dd></div>
+        <div><dt>Monto inicial</dt><dd>S/ {{ current_shift.opening_amount|floatformat:2 }}</dd></div>
+      </dl>
+      <p class="help">El cierre es irreversible. Verifica el efectivo antes de confirmar.</p>
+    </aside>
+  </div>
+{% endif %}
+{% endblock %}
+

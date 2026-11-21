@@ -1,0 +1,165 @@
+Found 4 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+FFFF.FFFFFFFFFFFFFFF
+======================================================================
+FAIL: test_create_and_edit_http_reject_noncanonical_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_create_and_edit_http_reject_noncanonical_prices_without_mutation) (url='/productos/nuevo/', price='+1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 50, in test_create_and_edit_http_reject_noncanonical_prices_without_mutation
+    self.assertEqual(response.status_code, 200)
+AssertionError: 302 != 200
+
+======================================================================
+FAIL: test_create_and_edit_http_reject_noncanonical_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_create_and_edit_http_reject_noncanonical_prices_without_mutation) (url='/productos/nuevo/', price='١٢')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 51, in test_create_and_edit_http_reject_noncanonical_prices_without_mutation
+    self.assertIn("sale_price", response.context["form"].errors)
+AssertionError: 'sale_price' not found in {'name': ['Ya existe un producto registrado con este nombre.'], 'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_create_and_edit_http_reject_noncanonical_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_create_and_edit_http_reject_noncanonical_prices_without_mutation) (url='/productos/1feb4dcd-7624-4af9-a08b-f58c27d3b3d1/editar/', price='+1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 51, in test_create_and_edit_http_reject_noncanonical_prices_without_mutation
+    self.assertIn("sale_price", response.context["form"].errors)
+AssertionError: 'sale_price' not found in {'name': ['Ya existe un producto registrado con este nombre.'], 'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_create_and_edit_http_reject_noncanonical_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_create_and_edit_http_reject_noncanonical_prices_without_mutation) (url='/productos/1feb4dcd-7624-4af9-a08b-f58c27d3b3d1/editar/', price='١٢')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 51, in test_create_and_edit_http_reject_noncanonical_prices_without_mutation
+    self.assertIn("sale_price", response.context["form"].errors)
+AssertionError: 'sale_price' not found in {'name': ['Ya existe un producto registrado con este nombre.'], 'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price=True, editing=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 64, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    with self.assertRaises(ValidationError) as error:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price=True, editing=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price=1.0, editing=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price=1.0, editing=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price='+1', editing=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price='+1', editing=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price='١٢', editing=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price='١٢', editing=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price='1e2', editing=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price='1e2', editing=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price=Decimal('1E+2'), editing=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price=Decimal('1E+2'), editing=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price=Decimal('10000000.00'), editing=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_services_reject_non_decimal_or_invalid_prices_without_mutation (catalog.test_audit14closure_price.IntegrationPriceBoundaryTests.test_services_reject_non_decimal_or_invalid_prices_without_mutation) (price=Decimal('10000000.00'), editing=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit14closure_price.py", line 69, in test_services_reject_non_decimal_or_invalid_prices_without_mutation
+    self.assertIn("sale_price", error.exception.message_dict)
+AssertionError: 'sale_price' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_http_retry_preserves_large_historical_discount_after_shift_close (sales.test_audit14closure_retry.HistoricalLargeDiscountRetryTests.test_http_retry_preserves_large_historical_discount_after_shift_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit14closure_retry.py", line 51, in test_http_retry_preserves_large_historical_discount_after_shift_close
+    self.assertRedirects(response, reverse("sales-receipt", args=[sale.pk]), fetch_redirect_response=False)
+AssertionError: '/ventas/' != '/ventas/constancia/91023e99-66cc-4c23-8c5f-2915607e1f98/'
+- /ventas/
++ /ventas/constancia/91023e99-66cc-4c23-8c5f-2915607e1f98/
+ : Response redirected to '/ventas/', expected '/ventas/constancia/91023e99-66cc-4c23-8c5f-2915607e1f98/': Expected '/ventas/' to equal '/ventas/constancia/91023e99-66cc-4c23-8c5f-2915607e1f98/'.
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.387s
+
+FAILED (failures=19)
+Destroying test database for alias 'default'...

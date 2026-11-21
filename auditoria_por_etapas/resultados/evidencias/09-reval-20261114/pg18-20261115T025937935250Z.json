@@ -1,0 +1,210 @@
+{
+  "started_utc": "20261115T025937935250Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit09-reval-pg-fbd5c717ce7fde09b2d308f5",
+  "port": 54336,
+  "cases": [
+    {
+      "id": "pg_cash_0001_0004_constraints",
+      "ok": true,
+      "checks": {
+        "neg_opening_rejected": true,
+        "cumulative_14_2_and_neg_diff_allowed": true,
+        "inconsistent_diff_rejected": true
+      }
+    },
+    {
+      "id": "pg_concurrent_open_shift",
+      "ok": true,
+      "checks": {
+        "outcomes": [
+          [
+            "rejected",
+            "Ya existe un turno abierto. Cierre ese turno antes de abrir otro.",
+            "9630c66a-9b65-411c-a1a1-4ed843f8dd68"
+          ],
+          [
+            "opened",
+            "d61a3c80-545f-4780-9f53-7a6a9ae636fe",
+            "cad412ac-a3ab-4a8e-a0bb-611ac80f528f"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pg_concurrent_double_close",
+      "ok": true,
+      "checks": {
+        "outcomes": [
+          [
+            "closed",
+            "aa02e667-ebde-4286-9dcd-e2f4ac68ac19"
+          ],
+          [
+            "rejected",
+            "No tienes un turno de caja abierto para cerrar."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pg_close_vs_checkout_both_directions",
+      "ok": true,
+      "checks": {
+        "dir_a_sale": [
+          "sale_ok",
+          "10.00"
+        ],
+        "dir_a_close": [
+          "close_ok",
+          "110.00",
+          "0.00"
+        ],
+        "pg_blocking_pids_count": 1,
+        "dir_b_sale": [
+          "rejected",
+          "No tienes un turno de caja abierto."
+        ]
+      }
+    },
+    {
+      "id": "pg_no_key_lock_and_sales_lock_observation",
+      "ok": true,
+      "checks": {
+        "cash_no_key_close": [
+          "close_ok",
+          "60.00"
+        ],
+        "cash_no_key_deact_tuple": [
+          "deactivated_after_close",
+          false,
+          true,
+          true
+        ],
+        "concurrent_close_vs_role_change": [
+          "close_ok",
+          "role_ok"
+        ],
+        "sales_lock_blocks_fk_key_share_nowait": true
+      }
+    },
+    {
+      "id": "pg_america_lima_midnight_and_filter",
+      "ok": true,
+      "checks": {
+        "open_lima_hist": true,
+        "close_lima_hist": true,
+        "included_in_nov11_lima_filter": true,
+        "excluded_from_nov12_lima_filter": true
+      }
+    },
+    {
+      "id": "pg_history_constant_queries_and_explain",
+      "ok": true,
+      "checks": {
+        "queries_before": 4,
+        "queries_after_plus30": 4,
+        "rendered_rows_total": 25,
+        "plan_nodes": [
+          {
+            "node_type": "Sort",
+            "relation": null,
+            "index": null
+          },
+          {
+            "node_type": "Hash Join",
+            "relation": null,
+            "index": null
+          },
+          {
+            "node_type": "Hash Join",
+            "relation": null,
+            "index": null
+          },
+          {
+            "node_type": "Hash Join",
+            "relation": null,
+            "index": null
+          },
+          {
+            "node_type": "Seq Scan",
+            "relation": "cash_cashshift",
+            "index": null
+          },
+          {
+            "node_type": "Hash",
+            "relation": null,
+            "index": null
+          },
+          {
+            "node_type": "Seq Scan",
+            "relation": "cash_cashregister",
+            "index": null
+          },
+          {
+            "node_type": "Hash",
+            "relation": null,
+            "index": null
+          },
+          {
+            "node_type": "Seq Scan",
+            "relation": "identity_account",
+            "index": null
+          },
+          {
+            "node_type": "Hash",
+            "relation": null,
+            "index": null
+          },
+          {
+            "node_type": "Seq Scan",
+            "relation": "cash_cashshiftclose",
+            "index": null
+          },
+          {
+            "node_type": "Limit",
+            "relation": null,
+            "index": null
+          },
+          {
+            "node_type": "Aggregate",
+            "relation": null,
+            "index": null
+          },
+          {
+            "node_type": "Index Scan",
+            "relation": "sales_sale",
+            "index": "sales_sale_cash_shift_id_609d1ae0"
+          }
+        ]
+      }
+    }
+  ],
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "db_verification": {
+    "current_database": "audit09_reval_074666d940",
+    "data_directory_matches": true,
+    "transaction_isolation": "read committed"
+  },
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-browser-20261111T235835090296Z-8a04f270\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-browser-20261111T235952664362Z-38d8ad75\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-browser-20261112T000714441673Z-f98d70f1\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261111T234939548515Z-43557097\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261111T235041606114Z-71ecc946\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261111T235616085859Z-a1cf1e46\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261112T000503938177Z-2b7897fb\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261112T000915886163Z-e74a9baf\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261114T161901946571Z-9eaaebe4\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261114T212157048019Z-899ad03c\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-repro-20261111T234944400656Z-b1185333\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-repro-20261111T235043286828Z-284769d4\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-repro-20261111T235055739102Z-db682b37\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-15T02:59:52.418402+00:00"
+}

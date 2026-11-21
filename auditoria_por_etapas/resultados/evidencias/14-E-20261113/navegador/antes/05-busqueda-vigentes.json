@@ -1,0 +1,180 @@
+{
+  "id": "05-busqueda-vigentes",
+  "rol": "VENDEDOR",
+  "utc": "2026-11-13T22:30:17.509687+00:00",
+  "ruta": "/ventas/",
+  "texto_visible": "Saltar al contenido\nM\nMinimarket\nGestión de bodega\n\nOPERACIONES\n\n⌂\nInicio\n$\nApertura de caja\n▦\nPreparar venta\n✖\nCerrar turno\n☰\nMis ventas del turno\nV\nVenta 14E\nVendedor\n↪\nCerrar sesión\n\nMINIMARKET\n\nPreparar venta\nVenta 14E\nVendedor\n\nMOSTRADOR\n\nPreparar venta\n\nBusca productos, indica las cantidades y revisa los importes antes del cobro.\n\nTurno abierto\n1\nBuscar producto\nBuscar producto:\nBuscar\nPRODUCTO\tCÓDIGO\tDISPONIBLE\tPRECIO\tAGREGAR\nF-COSTO 14E\tINT-F-COSTO-14E\t20\tS/ 8,00\t\nCantidad de F-COSTO 14E\nAgregar\n2\nVenta en preparación\n\nAún no agregaste productos a la venta.\n\nMinimarket · Gestión de bodega",
+  "controles": [
+    {
+      "campo": "query",
+      "etiqueta": "Buscar producto:",
+      "tipo": "search",
+      "valor": "INT-F-COSTO-14E",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": "160"
+    },
+    {
+      "campo": "quantity",
+      "etiqueta": "Cantidad de F-COSTO 14E",
+      "tipo": "number",
+      "valor": "1",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "1",
+      "max": "999999",
+      "paso": "1",
+      "longitud": null
+    }
+  ],
+  "testigo": {
+    "sha256": "5c10d2b3e91df377eeb1badbd05437747d803c221433c59ac5bf57a5974f685b",
+    "por_tabla": {
+      "cash_cashregister": "8c87fdbd232d9579dbba0a291e22daa96f0d9b533bfbae4f4f387600e4b8d052",
+      "cash_cashshift": "b8c77d7bebc9b04ddd53ece2eb01f347f053e851a93b3959fca9825d302a8e51",
+      "cash_cashshiftclose": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "catalog_category": "dbcb0c69e717b20019ec9729dac6f2ed75cc26283dede031a869655525c5a700",
+      "catalog_product": "77e2af712b6b79bcab799439ae1a23baa5edc5c84a321ca01c005d2b6ebbb1bd",
+      "catalog_productbarcodekey": "57189d0ccaeb648c2650fe65263e5d56b699d07c67b5cd5c91f9376e6cb05a44",
+      "inventory_initialinventoryload": "1263d7faf763f10e06282e66166bf5d30fee3cdd5b492fafac4010ab605864c3",
+      "inventory_lot": "68c669a6a7027f41bc75ad97e990530fac2a738f9037091dd65f0c8d568ac810",
+      "inventory_physicaladjustment": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockwriteoff": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_supplier": "62481f38d7c5422ea5e2d2923767cd08ec4785f828f49e93a36c26e6d1a5deab",
+      "sales_sale": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_salecounter": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saledraft": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saledraftline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saleline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "identity_role_membership_active": "d37b310029ebc424529ed8f05e942d3784c3cd317f1be1ed3642343a98a18b73"
+    },
+    "filas": {
+      "cash_cashregister": 1,
+      "cash_cashshift": 1,
+      "cash_cashshiftclose": 0,
+      "catalog_category": 1,
+      "catalog_product": 1,
+      "catalog_productbarcodekey": 1,
+      "inventory_initialinventoryload": 1,
+      "inventory_lot": 3,
+      "inventory_physicaladjustment": 0,
+      "inventory_stockwriteoff": 0,
+      "inventory_supplier": 1,
+      "sales_sale": 0,
+      "sales_salecounter": 0,
+      "sales_saledraft": 0,
+      "sales_saledraftline": 0,
+      "sales_saleline": 0
+    },
+    "cuentas_rol_activas": [
+      [
+        "ADMIN",
+        1
+      ],
+      [
+        "ALMACENERO",
+        1
+      ],
+      [
+        "VENDEDOR",
+        1
+      ]
+    ],
+    "categorias": [
+      {
+        "name": "Familia 14E",
+        "is_active": 1,
+        "state_version": 0
+      }
+    ],
+    "productos": [
+      {
+        "name": "F-COSTO 14E",
+        "barcode": "INT-F-COSTO-14E",
+        "sale_price": 8,
+        "minimum_stock": 5,
+        "average_cost": 4.5,
+        "is_active": 1
+      }
+    ],
+    "proveedores": [
+      {
+        "name": "Proveedor 14E",
+        "ruc": "20000000015",
+        "is_active": 1
+      }
+    ],
+    "lotes": [
+      {
+        "number": "14E-A-VENCIDO",
+        "initial_quantity": 8,
+        "available_quantity": 8,
+        "unit_cost": 3,
+        "expiration_date": "2026-11-12",
+        "producto": "F-COSTO 14E",
+        "proveedor": "Proveedor 14E",
+        "autor_carga": "Almacén 14E"
+      },
+      {
+        "number": "14E-B-VIGENTE",
+        "initial_quantity": 10,
+        "available_quantity": 10,
+        "unit_cost": 3,
+        "expiration_date": "2026-11-20",
+        "producto": "F-COSTO 14E",
+        "proveedor": "Proveedor 14E",
+        "autor_carga": "Almacén 14E"
+      },
+      {
+        "number": "14E-C-ENTRADA",
+        "initial_quantity": 10,
+        "available_quantity": 10,
+        "unit_cost": 6,
+        "expiration_date": "2026-12-13",
+        "producto": "F-COSTO 14E",
+        "proveedor": "Proveedor 14E",
+        "autor_carga": "Almacén 14E"
+      }
+    ],
+    "borrador": [],
+    "ventas": [],
+    "lineas": [],
+    "bajas": [],
+    "turnos": [
+      {
+        "status": "OPEN",
+        "opening_amount": 100,
+        "vendedor": "Venta 14E"
+      }
+    ],
+    "cierres": [],
+    "costos_baja": {
+      "columnas": [
+        "id",
+        "quantity",
+        "reason",
+        "notes",
+        "correlativo",
+        "created_at",
+        "lot_id",
+        "responsible_id"
+      ],
+      "filas": []
+    },
+    "costos_ajuste": {
+      "columnas": [
+        "id",
+        "delta",
+        "reason",
+        "created_at",
+        "lot_id",
+        "responsible_id"
+      ],
+      "filas": []
+    }
+  },
+  "sin_mutacion_verificada": false
+}

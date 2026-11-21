@@ -1,0 +1,83 @@
+{
+  "stage": "02-E",
+  "started_utc": "2026-11-15T02:45:42.600479+00:00",
+  "port": 61077,
+  "cases": [
+    {
+      "name": "last_admin_race",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "active_admins": 1,
+      "passed": true
+    },
+    {
+      "name": "duplicate_email_race",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "normalized_count": 1,
+      "passed": true
+    },
+    {
+      "name": "open_shift_vs_role_change",
+      "connections": 2,
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "op": 0,
+          "result": "success"
+        },
+        {
+          "op": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "role": "VENDEDOR",
+      "open_shifts": 1,
+      "passed": true
+    },
+    {
+      "name": "lockout_preservation_pg",
+      "lock_survives_reactivate_and_rename": true,
+      "passed": true
+    },
+    {
+      "name": "logout_atomic_pg",
+      "draft_kept_on_rollback": true,
+      "audit_unchanged_on_rollback": true,
+      "commit_status": 302,
+      "draft_deleted_on_commit": true,
+      "audit_created_on_commit": true,
+      "passed": true
+    }
+  ],
+  "postgres_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "db": "audit02e_98cfd23120",
+  "isolation": "read committed",
+  "migrations": "PASS",
+  "audit_events_total": 13,
+  "status": "COMPLETE",
+  "port_closed": true,
+  "prod_db_unchanged": true,
+  "prod_db_sha256": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58",
+  "finished_utc": "2026-11-15T02:46:30.350718+00:00"
+}

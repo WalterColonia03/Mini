@@ -1,0 +1,126 @@
+{
+  "started_at_utc": "2026-11-15T15:01:32.842Z",
+  "checks": [
+    {
+      "id": "R01_SERvidor_AISLADO",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "id": "R02_VISITANTE_REDIRIGIDO",
+      "ok": true,
+      "final_path": "/"
+    },
+    {
+      "id": "R03_ADMIN_INGRESA_Y_RECARGA",
+      "ok": true,
+      "role": "Administrador",
+      "post_status": 302,
+      "reload_status": 200
+    },
+    {
+      "id": "R04_ADMIN_PERMISO_DIRECTO",
+      "ok": true,
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "id": "R03_WAREHOUSE_INGRESA_Y_RECARGA",
+      "ok": true,
+      "role": "Almacenero",
+      "post_status": 302,
+      "reload_status": 200
+    },
+    {
+      "id": "R04_WAREHOUSE_PERMISO_DIRECTO",
+      "ok": true,
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "id": "R03_SELLER_INGRESA_Y_RECARGA",
+      "ok": true,
+      "role": "Vendedor",
+      "post_status": 302,
+      "reload_status": 200
+    },
+    {
+      "id": "R04_SELLER_PERMISO_DIRECTO",
+      "ok": true,
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "id": "R05_EXISTENTE_RECHAZO",
+      "ok": true,
+      "status": 200,
+      "emptyPassword": true,
+      "authenticatedCookie": false,
+      "message": "Correo o contraseña incorrectos"
+    },
+    {
+      "id": "R05_INEXISTENTE_RECHAZO",
+      "ok": true,
+      "status": 200,
+      "emptyPassword": true,
+      "authenticatedCookie": false,
+      "message": "Correo o contraseña incorrectos"
+    },
+    {
+      "id": "R05_INACTIVA_RECHAZO",
+      "ok": true,
+      "status": 200,
+      "emptyPassword": true,
+      "authenticatedCookie": false,
+      "message": "Correo o contraseña incorrectos"
+    },
+    {
+      "id": "R06_TEXTO_RECHAZO_UNIFORME",
+      "ok": true,
+      "equal": true
+    },
+    {
+      "id": "R07_FALLO_2",
+      "ok": true,
+      "status": 200,
+      "bloqueado": false
+    },
+    {
+      "id": "R07_FALLO_3",
+      "ok": true,
+      "status": 200,
+      "bloqueado": false
+    },
+    {
+      "id": "R07_FALLO_4",
+      "ok": true,
+      "status": 200,
+      "bloqueado": false
+    },
+    {
+      "id": "R07_FALLO_5",
+      "ok": true,
+      "status": 200,
+      "bloqueado": true
+    },
+    {
+      "id": "R08_BLOQUEO_OTRO_CONTEXTO_CLAVE_VALIDA",
+      "ok": true,
+      "status": 200,
+      "message": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 15 minuto(s).",
+      "authenticatedCookie": false
+    },
+    {
+      "id": "R09_SIN_ERROR_JS",
+      "ok": true,
+      "count": 0
+    }
+  ],
+  "screenshots": [
+    "navegador/01-H-rol-warehouse.png",
+    "navegador/01-H-rol-seller.png"
+  ],
+  "page_errors": [],
+  "chrome_version": "157.0.8103.78",
+  "finished_at_utc": "2026-11-15T15:01:39.265Z"
+}

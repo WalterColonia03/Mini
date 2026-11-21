@@ -1,0 +1,142 @@
+{
+  "mode": "Chrome sequential stale-price checkout with two products; no concurrency claim",
+  "cases": [
+    {
+      "id": "isolation",
+      "ok": true
+    },
+    {
+      "id": "two-products-stock",
+      "ok": true
+    },
+    {
+      "id": "warehouse-get-denied",
+      "ok": true
+    },
+    {
+      "id": "warehouse-post-denied",
+      "ok": true
+    },
+    {
+      "id": "seller-get-denied",
+      "ok": true
+    },
+    {
+      "id": "seller-post-denied",
+      "ok": true
+    },
+    {
+      "id": "denials-no-change",
+      "ok": true
+    },
+    {
+      "id": "edited-price",
+      "ok": true
+    },
+    {
+      "id": "price-edit-preserves-inventory.Lot",
+      "ok": true
+    },
+    {
+      "id": "price-edit-preserves-sales.Sale",
+      "ok": true
+    },
+    {
+      "id": "price-edit-preserves-sales.SaleLine",
+      "ok": true
+    },
+    {
+      "id": "price-edit-preserves-sales.SaleDraft",
+      "ok": true
+    },
+    {
+      "id": "price-edit-preserves-sales.SaleDraftLine",
+      "ok": true
+    },
+    {
+      "id": "price-edit-preserves-cash.CashShift",
+      "ok": true
+    },
+    {
+      "id": "warehouse-sees-new-price-and-stock",
+      "ok": true,
+      "cells": [
+        "AUD03 Bebida de prueba",
+        "Higiene",
+        "AUD03-BEBIDA",
+        "9,20",
+        "20",
+        "10",
+        "Disponible"
+      ]
+    },
+    {
+      "id": "historical-receipt-before-checkout",
+      "ok": true
+    },
+    {
+      "id": "warning-shown",
+      "ok": true,
+      "messages": [
+        "El precio de «AUD03 Bebida de prueba» cambió de S/ 8.50 a S/ 9.20. Verifica el nuevo total antes de confirmar el cobro."
+      ]
+    },
+    {
+      "id": "draft-refresh-one-product",
+      "ok": true
+    },
+    {
+      "id": "warning-no-mutation-inventory.Lot",
+      "ok": true
+    },
+    {
+      "id": "warning-no-mutation-sales.Sale",
+      "ok": true
+    },
+    {
+      "id": "warning-no-mutation-sales.SaleLine",
+      "ok": true
+    },
+    {
+      "id": "warning-no-mutation-cash.CashShift",
+      "ok": true
+    },
+    {
+      "id": "one-sale",
+      "ok": true
+    },
+    {
+      "id": "sale-amount-and-change",
+      "ok": true,
+      "total": "22.40",
+      "change": "7.60"
+    },
+    {
+      "id": "two-lines-and-prices",
+      "ok": true
+    },
+    {
+      "id": "stock-once",
+      "ok": true
+    },
+    {
+      "id": "historical-receipt-after-checkout",
+      "ok": true
+    }
+  ],
+  "posts": [
+    {
+      "role": "admin",
+      "path": "/productos/465aafb4-a7ff-4c97-91c2-5b2d2ff42e19/editar/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    }
+  ],
+  "browser": "157.0.8103.39"
+}

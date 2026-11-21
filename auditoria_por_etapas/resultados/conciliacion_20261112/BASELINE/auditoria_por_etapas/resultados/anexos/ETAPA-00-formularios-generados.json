@@ -1,0 +1,2204 @@
+{
+  "django": "5.2.18",
+  "idioma": "es-pe",
+  "alcance": "Metadatos sin SQL, formulario vacío por defecto, sin petición HTTP",
+  "formularios_por_modulo": {
+    "cash": 2,
+    "catalog": 3,
+    "identity": 3,
+    "inventory": 6,
+    "sales": 4
+  },
+  "formularios": [
+    {
+      "modulo": "cash",
+      "formulario": "CashOpeningForm",
+      "fuente": "r1-pmv/cash/forms.py:6",
+      "campos": [
+        {
+          "nombre": "opening_amount",
+          "etiqueta": "Monto inicial (S/)",
+          "fuente": "r1-pmv/cash/forms.py:7",
+          "clase": "DecimalField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:402",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": "0.00",
+            "max": "9999999.99",
+            "step": "0.01",
+            "inputmode": "decimal",
+            "autofocus": true,
+            "placeholder": "0.00"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": "0.00",
+            "max_value": "9999999.99",
+            "max_digits": 12,
+            "decimal_places": 2
+          },
+          "validadores": [
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "9999999.99",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor es menor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "0.00",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "DecimalValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:506"
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número."
+          },
+          "limpieza_adicional": "r1-pmv/cash/forms.py:25"
+        }
+      ]
+    },
+    {
+      "modulo": "cash",
+      "formulario": "CashCloseForm",
+      "fuente": "r1-pmv/cash/forms.py:32",
+      "campos": [
+        {
+          "nombre": "counted_amount",
+          "etiqueta": "Monto contado (S/)",
+          "fuente": "r1-pmv/cash/forms.py:33",
+          "clase": "DecimalField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:402",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": "0.00",
+            "max": "9999999.99",
+            "step": "0.01",
+            "inputmode": "decimal",
+            "autofocus": true,
+            "placeholder": "0.00"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": "0.00",
+            "max_value": "9999999.99",
+            "max_digits": 14,
+            "decimal_places": 2
+          },
+          "validadores": [
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "9999999.99",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor es menor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "0.00",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "DecimalValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:506"
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número."
+          },
+          "limpieza_adicional": "r1-pmv/cash/forms.py:51"
+        }
+      ]
+    },
+    {
+      "modulo": "catalog",
+      "formulario": "CategoryForm",
+      "fuente": "r1-pmv/catalog/forms.py:14",
+      "campos": [
+        {
+          "nombre": "name",
+          "etiqueta": "Nombre de la categoría",
+          "fuente": "r1-pmv/catalog/forms.py:15",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "autofocus": true,
+            "autocomplete": "off",
+            "maxlength": "120"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 120
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "120",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          },
+          "limpieza_adicional": "r1-pmv/catalog/forms.py:21"
+        }
+      ]
+    },
+    {
+      "modulo": "catalog",
+      "formulario": "ProductRegistrationForm",
+      "fuente": "r1-pmv/catalog/forms.py:28",
+      "campos": [
+        {
+          "nombre": "name",
+          "etiqueta": "Nombre del producto",
+          "fuente": "r1-pmv/catalog/models.py:47",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "autocomplete": "off",
+            "autofocus": true,
+            "maxlength": "160"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 160
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "160",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          },
+          "limpieza_adicional": "r1-pmv/catalog/forms.py:74"
+        },
+        {
+          "nombre": "barcode",
+          "etiqueta": "Código de barras",
+          "fuente": "r1-pmv/catalog/models.py:48",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "autocomplete": "off",
+            "inputmode": "numeric",
+            "maxlength": "64"
+          },
+          "ayuda": "Debe ser único. Se ignorarán espacios exteriores e internos al compararlo.",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 64
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "64",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          },
+          "limpieza_adicional": "r1-pmv/catalog/forms.py:92"
+        },
+        {
+          "nombre": "category",
+          "etiqueta": "Categoría",
+          "fuente": "r1-pmv/catalog/models.py:46",
+          "clase": "ModelChoiceField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/models.py:1444",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid_choice": "Seleccione una categoría válida de la lista."
+          },
+          "opciones": {
+            "modelo": "catalog.Category",
+            "vacía": "---------",
+            "selección": "QuerySet perezoso; ver origen de clase/__init__"
+          }
+        },
+        {
+          "nombre": "unit",
+          "etiqueta": "Unidad de medida",
+          "fuente": "r1-pmv/catalog/models.py:50",
+          "clase": "TypedChoiceField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:933",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": "UND",
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid_choice": "Escoja una opción válida. %(value)s no es una de las opciones disponibles."
+          },
+          "opciones": [
+            [
+              "UND",
+              "Unidad (UND)"
+            ]
+          ]
+        },
+        {
+          "nombre": "sale_price",
+          "etiqueta": "Precio final con IGV (S/)",
+          "fuente": "r1-pmv/catalog/models.py:51",
+          "clase": "DecimalField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:402",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": "0.01",
+            "step": "0.01",
+            "inputmode": "decimal"
+          },
+          "ayuda": "Mayor que cero y con un máximo de dos decimales.",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "max_digits": 12,
+            "decimal_places": 2
+          },
+          "validadores": [
+            {
+              "tipo": "DecimalValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:506"
+            },
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "9999999.99",
+              "code": "max_value",
+              "message": "El precio no puede superar S/ 9,999,999.99."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número."
+          },
+          "limpieza_adicional": "r1-pmv/catalog/forms.py:82"
+        },
+        {
+          "nombre": "minimum_stock",
+          "etiqueta": "Existencia mínima",
+          "fuente": "r1-pmv/catalog/models.py:56",
+          "clase": "IntegerField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": false,
+          "attrs_widget": {
+            "min": 0,
+            "max": "999999",
+            "step": "1",
+            "inputmode": "numeric"
+          },
+          "ayuda": "Entero mayor o igual que cero. Si lo deja vacío, se guardará 10.",
+          "inicial_sin_instancia": 10,
+          "limites": {
+            "min_value": 0
+          },
+          "validadores": [
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "0",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "999999",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor sea menor o igual a 999999."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número entero."
+          },
+          "limpieza_adicional": "r1-pmv/catalog/forms.py:88"
+        }
+      ]
+    },
+    {
+      "modulo": "catalog",
+      "formulario": "ProductEditForm",
+      "fuente": "r1-pmv/catalog/forms.py:104",
+      "campos": [
+        {
+          "nombre": "name",
+          "etiqueta": "Nombre del producto",
+          "fuente": "r1-pmv/catalog/models.py:47",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "autofocus": true,
+            "autocomplete": "off",
+            "maxlength": "160"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 160
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "160",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          },
+          "limpieza_adicional": "r1-pmv/catalog/forms.py:142"
+        },
+        {
+          "nombre": "barcode",
+          "etiqueta": "Código de barras",
+          "fuente": "r1-pmv/catalog/models.py:48",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "autocomplete": "off",
+            "inputmode": "numeric",
+            "maxlength": "64"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 64
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "64",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          },
+          "limpieza_adicional": "r1-pmv/catalog/forms.py:156"
+        },
+        {
+          "nombre": "category",
+          "etiqueta": "Categoría",
+          "fuente": "r1-pmv/catalog/models.py:46",
+          "clase": "ModelChoiceField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/models.py:1444",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": false,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid_choice": "Escoja una opción válida. Esa opción no está entre las disponibles."
+          },
+          "opciones": {
+            "modelo": "catalog.Category",
+            "vacía": "---------",
+            "selección": "QuerySet perezoso; ver origen de clase/__init__"
+          },
+          "limpieza_adicional": "r1-pmv/catalog/forms.py:139"
+        },
+        {
+          "nombre": "sale_price",
+          "etiqueta": "Precio final con IGV (S/)",
+          "fuente": "r1-pmv/catalog/models.py:51",
+          "clase": "DecimalField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:402",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": "0.01",
+            "step": "0.01",
+            "inputmode": "decimal"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "max_digits": 12,
+            "decimal_places": 2
+          },
+          "validadores": [
+            {
+              "tipo": "DecimalValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:506"
+            },
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "9999999.99",
+              "code": "max_value",
+              "message": "El precio no puede superar S/ 9,999,999.99."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número."
+          },
+          "limpieza_adicional": "r1-pmv/catalog/forms.py:150"
+        },
+        {
+          "nombre": "minimum_stock",
+          "etiqueta": "Existencia mínima",
+          "fuente": "r1-pmv/catalog/models.py:56",
+          "clase": "IntegerField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": 0,
+            "max": "999999",
+            "step": "1",
+            "inputmode": "numeric"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": 10,
+          "limites": {
+            "min_value": 0
+          },
+          "validadores": [
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "0",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "999999",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor sea menor o igual a 999999."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número entero."
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "identity",
+      "formulario": "LoginForm",
+      "fuente": "r1-pmv/identity/forms.py:6",
+      "campos": [
+        {
+          "nombre": "email",
+          "etiqueta": "Correo de trabajo",
+          "fuente": "r1-pmv/identity/forms.py:7",
+          "clase": "EmailField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:625",
+          "widget": "EmailInput",
+          "input_type": "email",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "autocomplete": "username",
+            "autofocus": true,
+            "placeholder": "nombre@empresa.com",
+            "maxlength": "320"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 320
+          },
+          "validadores": [
+            {
+              "tipo": "EmailValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:209",
+              "code": "invalid",
+              "message": "Introduzca una dirección de correo electrónico válida."
+            },
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "320",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        },
+        {
+          "nombre": "password",
+          "etiqueta": "Contraseña",
+          "fuente": "r1-pmv/identity/forms.py:17",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "PasswordInput",
+          "input_type": "password",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "autocomplete": "current-password",
+            "placeholder": "Ingrese su contraseña"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": false
+          },
+          "validadores": [
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "identity",
+      "formulario": "EmployeeCreationForm",
+      "fuente": "r1-pmv/identity/forms.py:46",
+      "campos": [
+        {
+          "nombre": "display_name",
+          "etiqueta": "Nombre completo",
+          "fuente": "r1-pmv/identity/forms.py:47",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-control",
+            "placeholder": "Ej.: Ana García",
+            "maxlength": "120"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 120
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "120",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        },
+        {
+          "nombre": "email",
+          "etiqueta": "Correo de trabajo",
+          "fuente": "r1-pmv/identity/forms.py:52",
+          "clase": "EmailField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:625",
+          "widget": "EmailInput",
+          "input_type": "email",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-control",
+            "placeholder": "ana@empresa.com",
+            "maxlength": "320"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 320
+          },
+          "validadores": [
+            {
+              "tipo": "EmailValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:209",
+              "code": "invalid",
+              "message": "Introduzca una dirección de correo electrónico válida."
+            },
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "320",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        },
+        {
+          "nombre": "password",
+          "etiqueta": "Contraseña inicial",
+          "fuente": "r1-pmv/identity/forms.py:56",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "PasswordInput",
+          "input_type": "password",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-control",
+            "minlength": "8"
+          },
+          "ayuda": "Mínimo 8 caracteres. Evite secuencias simples como 12345678.",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": false,
+            "min_length": 8
+          },
+          "validadores": [
+            {
+              "tipo": "MinLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:470",
+              "limit_value": "8",
+              "code": "min_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Ingrese una contraseña inicial.",
+            "min_length": "La contraseña debe tener al menos 8 caracteres."
+          },
+          "limpieza_adicional": "r1-pmv/identity/forms.py:78"
+        },
+        {
+          "nombre": "role",
+          "etiqueta": "Rol",
+          "fuente": "r1-pmv/identity/forms.py:67",
+          "clase": "RoleChoiceField",
+          "implementacion_campo": "r1-pmv/identity/forms.py:31",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-select"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Seleccione un rol para el empleado.",
+            "invalid_choice": "Seleccione un rol válido de la lista."
+          },
+          "opciones": {
+            "modelo": "identity.Role",
+            "vacía": "— Seleccionar rol —",
+            "selección": "QuerySet perezoso; ver origen de clase/__init__"
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "identity",
+      "formulario": "EmployeeEditForm",
+      "fuente": "r1-pmv/identity/forms.py:84",
+      "campos": [
+        {
+          "nombre": "display_name",
+          "etiqueta": "Nombre completo",
+          "fuente": "r1-pmv/identity/forms.py:85",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-control",
+            "maxlength": "120"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 120
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "120",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        },
+        {
+          "nombre": "email",
+          "etiqueta": "Correo de trabajo",
+          "fuente": "r1-pmv/identity/forms.py:90",
+          "clase": "EmailField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:625",
+          "widget": "EmailInput",
+          "input_type": "email",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-control",
+            "maxlength": "320"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 320
+          },
+          "validadores": [
+            {
+              "tipo": "EmailValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:209",
+              "code": "invalid",
+              "message": "Introduzca una dirección de correo electrónico válida."
+            },
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "320",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        },
+        {
+          "nombre": "role",
+          "etiqueta": "Rol",
+          "fuente": "r1-pmv/identity/forms.py:94",
+          "clase": "RoleChoiceField",
+          "implementacion_campo": "r1-pmv/identity/forms.py:31",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-select"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Seleccione un rol para el empleado.",
+            "invalid_choice": "Seleccione un rol válido de la lista."
+          },
+          "opciones": {
+            "modelo": "identity.Role",
+            "vacía": "— Seleccionar rol —",
+            "selección": "QuerySet perezoso; ver origen de clase/__init__"
+          }
+        },
+        {
+          "nombre": "new_password",
+          "etiqueta": "Nueva contraseña (opcional)",
+          "fuente": "r1-pmv/identity/forms.py:104",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "PasswordInput",
+          "input_type": "password",
+          "oculto": false,
+          "obligatorio_form": false,
+          "attrs_widget": {
+            "class": "form-control",
+            "autocomplete": "new-password",
+            "minlength": "8"
+          },
+          "ayuda": "Déjelo en blanco si no desea cambiar la contraseña actual.",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": false,
+            "min_length": 8
+          },
+          "validadores": [
+            {
+              "tipo": "MinLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:470",
+              "limit_value": "8",
+              "code": "min_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "min_length": "La nueva contraseña debe tener al menos 8 caracteres."
+          },
+          "limpieza_adicional": "r1-pmv/identity/forms.py:116"
+        }
+      ]
+    },
+    {
+      "modulo": "inventory",
+      "formulario": "InitialLoadProductForm",
+      "fuente": "r1-pmv/inventory/forms.py:14",
+      "campos": [
+        {
+          "nombre": "product",
+          "etiqueta": "Producto",
+          "fuente": "r1-pmv/inventory/forms.py:15",
+          "clase": "ModelChoiceField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/models.py:1444",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Seleccione un producto.",
+            "invalid_choice": "Este producto ya tiene una carga inicial registrada o no está disponible."
+          },
+          "opciones": {
+            "modelo": "catalog.Product",
+            "vacía": "Seleccione un producto",
+            "selección": "QuerySet perezoso; ver origen de clase/__init__"
+          }
+        },
+        {
+          "nombre": "supplier",
+          "etiqueta": "Proveedor (opcional)",
+          "fuente": "r1-pmv/inventory/forms.py:24",
+          "clase": "ModelChoiceField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/models.py:1444",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": false,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid_choice": "Escoja una opción válida. Esa opción no está entre las disponibles."
+          },
+          "opciones": {
+            "modelo": "inventory.Supplier",
+            "vacía": "Sin proveedor asignado",
+            "selección": "QuerySet perezoso; ver origen de clase/__init__"
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "inventory",
+      "formulario": "StockEntryProductForm",
+      "fuente": "r1-pmv/inventory/forms.py:42",
+      "campos": [
+        {
+          "nombre": "product",
+          "etiqueta": "Producto con carga inicial previa",
+          "fuente": "r1-pmv/inventory/forms.py:43",
+          "clase": "ModelChoiceField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/models.py:1444",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Seleccione un producto.",
+            "invalid_choice": "Seleccione un producto activo que ya tenga carga inicial."
+          },
+          "opciones": {
+            "modelo": "catalog.Product",
+            "vacía": "Seleccione un producto",
+            "selección": "QuerySet perezoso; ver origen de clase/__init__"
+          }
+        },
+        {
+          "nombre": "supplier",
+          "etiqueta": "Proveedor (opcional)",
+          "fuente": "r1-pmv/inventory/forms.py:52",
+          "clase": "ModelChoiceField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/models.py:1444",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": false,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid_choice": "Escoja una opción válida. Esa opción no está entre las disponibles."
+          },
+          "opciones": {
+            "modelo": "inventory.Supplier",
+            "vacía": "Sin proveedor asignado",
+            "selección": "QuerySet perezoso; ver origen de clase/__init__"
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "inventory",
+      "formulario": "LotInputForm",
+      "fuente": "r1-pmv/inventory/forms.py:70",
+      "campos": [
+        {
+          "nombre": "number",
+          "etiqueta": "Número de lote",
+          "fuente": "r1-pmv/inventory/forms.py:71",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "maxlength": "64"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 64
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "64",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        },
+        {
+          "nombre": "quantity",
+          "etiqueta": "Cantidad",
+          "fuente": "r1-pmv/inventory/forms.py:72",
+          "clase": "IntegerField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": 1,
+            "max": 999999,
+            "step": "1",
+            "inputmode": "numeric"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": 1,
+            "max_value": 999999
+          },
+          "validadores": [
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "999999",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor es menor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "1",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número entero."
+          }
+        },
+        {
+          "nombre": "unit_cost",
+          "etiqueta": "Costo unitario (S/)",
+          "fuente": "r1-pmv/inventory/forms.py:78",
+          "clase": "DecimalField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:402",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": "0.0001",
+            "max": "9999999.9999",
+            "step": "0.0001",
+            "inputmode": "decimal"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": "0.0001",
+            "max_value": "9999999.9999",
+            "max_digits": 14,
+            "decimal_places": 4
+          },
+          "validadores": [
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "9999999.9999",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor es menor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "0.0001",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "DecimalValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:506"
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número."
+          },
+          "limpieza_adicional": "r1-pmv/inventory/forms.py:93"
+        },
+        {
+          "nombre": "expiration_date",
+          "etiqueta": "Vencimiento",
+          "fuente": "r1-pmv/inventory/forms.py:88",
+          "clase": "DateField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:481",
+          "widget": "DateInput",
+          "input_type": "date",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "input_formats": [
+              "%d/%m/%Y",
+              "%d/%m/%y",
+              "%Y-%m-%d"
+            ]
+          },
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca una fecha válida."
+          },
+          "limpieza_adicional": "r1-pmv/inventory/forms.py:99"
+        }
+      ]
+    },
+    {
+      "modulo": "inventory",
+      "formulario": "SupplierForm",
+      "fuente": "r1-pmv/inventory/forms.py:112",
+      "campos": [
+        {
+          "nombre": "name",
+          "etiqueta": "Nombre comercial",
+          "fuente": "r1-pmv/inventory/forms.py:113",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-control",
+            "autofocus": true,
+            "maxlength": "160"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 160
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "160",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        },
+        {
+          "nombre": "ruc",
+          "etiqueta": "RUC",
+          "fuente": "r1-pmv/inventory/forms.py:118",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-control",
+            "inputmode": "numeric",
+            "maxlength": "11"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 11
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "11",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          },
+          "limpieza_adicional": "r1-pmv/inventory/forms.py:130"
+        },
+        {
+          "nombre": "phone",
+          "etiqueta": "Teléfono",
+          "fuente": "r1-pmv/inventory/forms.py:123",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "text",
+          "oculto": false,
+          "obligatorio_form": false,
+          "attrs_widget": {
+            "class": "form-control",
+            "inputmode": "tel",
+            "maxlength": "20"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 20
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "20",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          },
+          "limpieza_adicional": "r1-pmv/inventory/forms.py:136"
+        }
+      ]
+    },
+    {
+      "modulo": "inventory",
+      "formulario": "StockWriteOffForm",
+      "fuente": "r1-pmv/inventory/forms.py:145",
+      "campos": [
+        {
+          "nombre": "lot_id",
+          "etiqueta": "Lot id",
+          "fuente": "r1-pmv/inventory/forms.py:148",
+          "clase": "UUIDField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:1327",
+          "widget": "HiddenInput",
+          "input_type": "hidden",
+          "oculto": true,
+          "obligatorio_form": true,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true
+          },
+          "validadores": [
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un UUID válido."
+          }
+        },
+        {
+          "nombre": "idempotency_key",
+          "etiqueta": "Idempotency key",
+          "fuente": "r1-pmv/inventory/forms.py:149",
+          "clase": "UUIDField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:1327",
+          "widget": "HiddenInput",
+          "input_type": "hidden",
+          "oculto": true,
+          "obligatorio_form": false,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true
+          },
+          "validadores": [
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un UUID válido."
+          }
+        },
+        {
+          "nombre": "quantity",
+          "etiqueta": "Cantidad a dar de baja",
+          "fuente": "r1-pmv/inventory/forms.py:150",
+          "clase": "IntegerField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-control",
+            "min": 1,
+            "max": 999999,
+            "step": "1"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": 1,
+            "max_value": 999999
+          },
+          "validadores": [
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "999999",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor es menor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "1",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número entero."
+          }
+        },
+        {
+          "nombre": "reason",
+          "etiqueta": "Motivo",
+          "fuente": "r1-pmv/inventory/forms.py:156",
+          "clase": "ChoiceField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:875",
+          "widget": "Select",
+          "input_type": "select",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-select"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {},
+          "validadores": [],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid_choice": "Escoja una opción válida. %(value)s no es una de las opciones disponibles."
+          },
+          "opciones": [
+            [
+              "VENCIMIENTO",
+              "Vencimiento"
+            ],
+            [
+              "DAÑO",
+              "Daño o rotura"
+            ],
+            [
+              "ROBO",
+              "Robo o faltante"
+            ]
+          ]
+        },
+        {
+          "nombre": "notes",
+          "etiqueta": "Detalle (obligatorio para Daño y Robo)",
+          "fuente": "r1-pmv/inventory/forms.py:161",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "Textarea",
+          "input_type": null,
+          "oculto": false,
+          "obligatorio_form": false,
+          "attrs_widget": {
+            "cols": "40",
+            "rows": "3",
+            "class": "form-control"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true
+          },
+          "validadores": [
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "inventory",
+      "formulario": "PhysicalAdjustmentForm",
+      "fuente": "r1-pmv/inventory/forms.py:170",
+      "campos": [
+        {
+          "nombre": "lot_id",
+          "etiqueta": "Lot id",
+          "fuente": "r1-pmv/inventory/forms.py:171",
+          "clase": "UUIDField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:1327",
+          "widget": "HiddenInput",
+          "input_type": "hidden",
+          "oculto": true,
+          "obligatorio_form": true,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true
+          },
+          "validadores": [
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un UUID válido."
+          }
+        },
+        {
+          "nombre": "idempotency_key",
+          "etiqueta": "Idempotency key",
+          "fuente": "r1-pmv/inventory/forms.py:172",
+          "clase": "UUIDField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:1327",
+          "widget": "HiddenInput",
+          "input_type": "hidden",
+          "oculto": true,
+          "obligatorio_form": false,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true
+          },
+          "validadores": [
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un UUID válido."
+          }
+        },
+        {
+          "nombre": "delta",
+          "etiqueta": "Ajuste (positivo=entrada, negativo=faltante)",
+          "fuente": "r1-pmv/inventory/forms.py:173",
+          "clase": "IntegerField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "class": "form-control",
+            "min": -999999,
+            "max": 999999,
+            "step": "1"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": -999999,
+            "max_value": 999999
+          },
+          "validadores": [
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "999999",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor es menor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "-999999",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número entero."
+          },
+          "limpieza_adicional": "r1-pmv/inventory/forms.py:185"
+        },
+        {
+          "nombre": "reason",
+          "etiqueta": "Motivo del ajuste",
+          "fuente": "r1-pmv/inventory/forms.py:179",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "Textarea",
+          "input_type": null,
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "cols": "40",
+            "rows": "3",
+            "class": "form-control",
+            "maxlength": "300"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 300
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "300",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "sales",
+      "formulario": "ProductSearchForm",
+      "fuente": "r1-pmv/sales/forms.py:8",
+      "campos": [
+        {
+          "nombre": "query",
+          "etiqueta": "Buscar producto",
+          "fuente": "r1-pmv/sales/forms.py:9",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "TextInput",
+          "input_type": "search",
+          "oculto": false,
+          "obligatorio_form": false,
+          "attrs_widget": {
+            "autocomplete": "off",
+            "placeholder": "Nombre o código de barras",
+            "maxlength": "160"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true,
+            "max_length": 160
+          },
+          "validadores": [
+            {
+              "tipo": "MaxLengthValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:488",
+              "limit_value": "160",
+              "code": "max_length",
+              "message": "Plural en tiempo de validación (ver fuente)"
+            },
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "sales",
+      "formulario": "AddDraftLineForm",
+      "fuente": "r1-pmv/sales/forms.py:23",
+      "campos": [
+        {
+          "nombre": "product_id",
+          "etiqueta": "Product id",
+          "fuente": "r1-pmv/sales/forms.py:24",
+          "clase": "UUIDField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:1327",
+          "widget": "HiddenInput",
+          "input_type": "hidden",
+          "oculto": true,
+          "obligatorio_form": true,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true
+          },
+          "validadores": [
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un UUID válido."
+          }
+        },
+        {
+          "nombre": "quantity",
+          "etiqueta": "Cantidad",
+          "fuente": "r1-pmv/sales/forms.py:25",
+          "clase": "IntegerField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": 1,
+            "step": "1",
+            "inputmode": "numeric"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": 1
+          },
+          "validadores": [
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "1",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número entero."
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "sales",
+      "formulario": "UpdateDraftLineForm",
+      "fuente": "r1-pmv/sales/forms.py:32",
+      "campos": [
+        {
+          "nombre": "quantity",
+          "etiqueta": "Cantidad",
+          "fuente": "r1-pmv/sales/forms.py:33",
+          "clase": "IntegerField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": 1,
+            "step": "1",
+            "inputmode": "numeric"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": 1
+          },
+          "validadores": [
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "1",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número entero."
+          }
+        }
+      ]
+    },
+    {
+      "modulo": "sales",
+      "formulario": "CheckoutForm",
+      "fuente": "r1-pmv/sales/forms.py:40",
+      "campos": [
+        {
+          "nombre": "cash_received",
+          "etiqueta": "Efectivo recibido (S/)",
+          "fuente": "r1-pmv/sales/forms.py:41",
+          "clase": "DecimalField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:402",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": true,
+          "attrs_widget": {
+            "min": "0.01",
+            "max": "9999999.99",
+            "step": "0.01",
+            "inputmode": "decimal",
+            "autofocus": true,
+            "placeholder": "0.00"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": "0.01",
+            "max_value": "9999999.99",
+            "max_digits": 14,
+            "decimal_places": 2
+          },
+          "validadores": [
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "9999999.99",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor es menor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "0.01",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "DecimalValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:506"
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número."
+          },
+          "limpieza_adicional": "r1-pmv/sales/forms.py:79"
+        },
+        {
+          "nombre": "discount_amount",
+          "etiqueta": "Descuento (S/) - opcional",
+          "fuente": "r1-pmv/sales/forms.py:58",
+          "clase": "DecimalField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:402",
+          "widget": "NumberInput",
+          "input_type": "number",
+          "oculto": false,
+          "obligatorio_form": false,
+          "attrs_widget": {
+            "min": "0.00",
+            "max": "9999999.99",
+            "step": "0.01",
+            "inputmode": "decimal",
+            "placeholder": "0.00"
+          },
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "min_value": "0.00",
+            "max_value": "9999999.99",
+            "max_digits": 14,
+            "decimal_places": 2
+          },
+          "validadores": [
+            {
+              "tipo": "MaxValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:414",
+              "limit_value": "9999999.99",
+              "code": "max_value",
+              "message": "Asegúrese de que este valor es menor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "MinValueValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:423",
+              "limit_value": "0.00",
+              "code": "min_value",
+              "message": "Asegúrese de que este valor es mayor o igual a %(limit_value)s."
+            },
+            {
+              "tipo": "DecimalValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:506"
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número."
+          },
+          "limpieza_adicional": "r1-pmv/sales/forms.py:85"
+        },
+        {
+          "nombre": "idempotency_key",
+          "etiqueta": "Idempotency key",
+          "fuente": "r1-pmv/sales/forms.py:67",
+          "clase": "UUIDField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:1327",
+          "widget": "HiddenInput",
+          "input_type": "hidden",
+          "oculto": true,
+          "obligatorio_form": true,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true
+          },
+          "validadores": [
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un UUID válido."
+          }
+        },
+        {
+          "nombre": "expected_subtotal",
+          "etiqueta": "Expected subtotal",
+          "fuente": "r1-pmv/sales/forms.py:68",
+          "clase": "DecimalField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:402",
+          "widget": "HiddenInput",
+          "input_type": "hidden",
+          "oculto": true,
+          "obligatorio_form": false,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "max_digits": 14,
+            "decimal_places": 2
+          },
+          "validadores": [
+            {
+              "tipo": "DecimalValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:506"
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio.",
+            "invalid": "Introduzca un número."
+          }
+        },
+        {
+          "nombre": "draft_signature",
+          "etiqueta": "Draft signature",
+          "fuente": "r1-pmv/sales/forms.py:74",
+          "clase": "CharField",
+          "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:275",
+          "widget": "HiddenInput",
+          "input_type": "hidden",
+          "oculto": true,
+          "obligatorio_form": false,
+          "attrs_widget": {},
+          "ayuda": "",
+          "inicial_sin_instancia": null,
+          "limites": {
+            "strip": true
+          },
+          "validadores": [
+            {
+              "tipo": "ProhibitNullCharactersValidator",
+              "fuente": "r1-pmv/.venv/Lib/site-packages/django/core/validators.py:655",
+              "code": "null_characters_not_allowed",
+              "message": "Los caracteres nulos no están permitidos."
+            }
+          ],
+          "mensajes_de_campo": {
+            "required": "Este campo es obligatorio."
+          }
+        }
+      ]
+    }
+  ],
+  "LotInputFormSet": {
+    "prefix": "lots",
+    "extra": 3,
+    "min_num": 1,
+    "max_num": 1000,
+    "absolute_max": 2000,
+    "validate_min": true,
+    "validate_max": false,
+    "can_delete": false,
+    "can_order": false,
+    "filas_iniciales_sin_datos": 4,
+    "campos_gestion": [
+      {
+        "nombre": "TOTAL_FORMS",
+        "etiqueta": "Total forms",
+        "fuente": "r1-pmv/.venv/Lib/site-packages/django/forms/formsets.py:28",
+        "clase": "IntegerField",
+        "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+        "widget": "HiddenInput",
+        "input_type": "hidden",
+        "oculto": true,
+        "obligatorio_form": true,
+        "attrs_widget": {},
+        "ayuda": "",
+        "inicial_sin_instancia": null,
+        "limites": {},
+        "validadores": [],
+        "mensajes_de_campo": {
+          "required": "Este campo es obligatorio.",
+          "invalid": "Introduzca un número entero."
+        },
+        "inicial_gestion": 4,
+        "nombre_html": "lots-TOTAL_FORMS"
+      },
+      {
+        "nombre": "INITIAL_FORMS",
+        "etiqueta": "Initial forms",
+        "fuente": "r1-pmv/.venv/Lib/site-packages/django/forms/formsets.py:28",
+        "clase": "IntegerField",
+        "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+        "widget": "HiddenInput",
+        "input_type": "hidden",
+        "oculto": true,
+        "obligatorio_form": true,
+        "attrs_widget": {},
+        "ayuda": "",
+        "inicial_sin_instancia": null,
+        "limites": {},
+        "validadores": [],
+        "mensajes_de_campo": {
+          "required": "Este campo es obligatorio.",
+          "invalid": "Introduzca un número entero."
+        },
+        "inicial_gestion": 0,
+        "nombre_html": "lots-INITIAL_FORMS"
+      },
+      {
+        "nombre": "MIN_NUM_FORMS",
+        "etiqueta": "Min num forms",
+        "fuente": "r1-pmv/.venv/Lib/site-packages/django/forms/formsets.py:28",
+        "clase": "IntegerField",
+        "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+        "widget": "HiddenInput",
+        "input_type": "hidden",
+        "oculto": true,
+        "obligatorio_form": false,
+        "attrs_widget": {},
+        "ayuda": "",
+        "inicial_sin_instancia": null,
+        "limites": {},
+        "validadores": [],
+        "mensajes_de_campo": {
+          "required": "Este campo es obligatorio.",
+          "invalid": "Introduzca un número entero."
+        },
+        "inicial_gestion": 1,
+        "nombre_html": "lots-MIN_NUM_FORMS"
+      },
+      {
+        "nombre": "MAX_NUM_FORMS",
+        "etiqueta": "Max num forms",
+        "fuente": "r1-pmv/.venv/Lib/site-packages/django/forms/formsets.py:28",
+        "clase": "IntegerField",
+        "implementacion_campo": "r1-pmv/.venv/Lib/site-packages/django/forms/fields.py:311",
+        "widget": "HiddenInput",
+        "input_type": "hidden",
+        "oculto": true,
+        "obligatorio_form": false,
+        "attrs_widget": {},
+        "ayuda": "",
+        "inicial_sin_instancia": null,
+        "limites": {},
+        "validadores": [],
+        "mensajes_de_campo": {
+          "required": "Este campo es obligatorio.",
+          "invalid": "Introduzca un número entero."
+        },
+        "inicial_gestion": 1000,
+        "nombre_html": "lots-MAX_NUM_FORMS"
+      }
+    ],
+    "mensajes": {
+      "missing_management_form": "Los datos de ManagementForm faltan o han sido alterados. Campos que faltan: %(field_names)s. Es posible que deba presentar un informe de error si el problema persiste.",
+      "too_many_forms": "Plural según cantidad",
+      "too_few_forms": "Plural según cantidad"
+    }
+  },
+  "widgets_login_inicial": {
+    "email": "<input type=\"email\" name=\"email\" autocomplete=\"username\" autofocus placeholder=\"nombre@empresa.com\" maxlength=\"320\" required id=\"id_email\">",
+    "password": "<input type=\"password\" name=\"password\" autocomplete=\"current-password\" placeholder=\"Ingrese su contraseña\" required id=\"id_password\">"
+  }
+}

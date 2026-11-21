@@ -1,0 +1,102 @@
+{
+  "endpoint": "127.0.0.1:8782",
+  "results": [
+    {
+      "id": "HTTP-01-GET-ROOT",
+      "status": 200,
+      "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+      "x_frame_options": "DENY",
+      "x_content_type_options": "nosniff",
+      "referrer_policy": "same-origin",
+      "proof_verified": true
+    },
+    {
+      "id": "HTTP-02-CSRF-NEGATIVE",
+      "post_root_no_csrf": 403,
+      "post_root_bad_csrf": 403,
+      "post_admin_no_csrf": 403,
+      "attempts_delta": 0
+    },
+    {
+      "id": "HTTP-03-METHODS",
+      "put_status": 405,
+      "put_allow": "GET, POST",
+      "delete_status": 405
+    },
+    {
+      "id": "HTTP-04-BOUNDARIES-IDN",
+      "oversized": {
+        "255": {
+          "status": 200,
+          "shows_254_validation": true
+        },
+        "319": {
+          "status": 200,
+          "shows_254_validation": true
+        },
+        "320": {
+          "status": 200,
+          "shows_254_validation": true
+        },
+        "321": {
+          "status": 200,
+          "shows_254_validation": true
+        }
+      },
+      "null_byte_status": 200,
+      "oversized_created_rows": 0,
+      "idn_distinct_hmac_rows": true
+    },
+    {
+      "id": "HTTP-05-254-OPENREDIRECT-LOGOUT",
+      "login_254_normalized_status": 302,
+      "login_254_location": "/inicio/",
+      "dashboard_after_254": 200,
+      "logout_post_status": 302,
+      "logout_location": "/",
+      "replay_old_cookie_status": 302,
+      "replay_location": "/?next=/inicio/"
+    },
+    {
+      "id": "HTTP-06-DEACTIVATION-REVOKES-SESSION",
+      "login_before_deact": 302,
+      "get_inicio_after_deact_status": 302,
+      "get_inicio_after_deact_location": "/?next=/inicio/"
+    },
+    {
+      "id": "HTTP-07-XFF-BURST-NO-THROTTLE",
+      "requests": [
+        {
+          "index": 0,
+          "status": 200,
+          "uniform_error": true
+        },
+        {
+          "index": 1,
+          "status": 200,
+          "uniform_error": true
+        },
+        {
+          "index": 2,
+          "status": 200,
+          "uniform_error": true
+        },
+        {
+          "index": 3,
+          "status": 200,
+          "uniform_error": true
+        },
+        {
+          "index": 4,
+          "status": 200,
+          "uniform_error": true
+        },
+        {
+          "index": 5,
+          "status": 200,
+          "uniform_error": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+Found 28 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+..................F.F......F
+======================================================================
+FAIL: test_empty_post_no_500_and_strict_type_digit_null_validations (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_empty_post_no_500_and_strict_type_digit_null_validations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit08_writeoffs_adjustments_movements.py", line 287, in test_empty_post_no_500_and_strict_type_digit_null_validations
+    self.assertTrue(f_plus.is_valid())
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_idempotency_replay_vs_tampered_payload_rejection (inventory.test_audit08_writeoffs_adjustments_movements.Stage08WriteOffsAdjustmentsMovementsTests.test_idempotency_replay_vs_tampered_payload_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit08_writeoffs_adjustments_movements.py", line 540, in test_idempotency_replay_vs_tampered_payload_rejection
+    self.assertRedirects(ra1, reverse("physical-adjustment"))
+AssertionError: '/inventario/ajustes/680d138c-ec3c-46bc-b500-2795fda8914e/' != '/inventario/ajustes/nuevo/'
+- /inventario/ajustes/680d138c-ec3c-46bc-b500-2795fda8914e/
++ /inventario/ajustes/nuevo/
+ : Response redirected to '/inventario/ajustes/680d138c-ec3c-46bc-b500-2795fda8914e/', expected '/inventario/ajustes/nuevo/': Expected '/inventario/ajustes/680d138c-ec3c-46bc-b500-2795fda8914e/' to equal '/inventario/ajustes/nuevo/'.
+
+======================================================================
+FAIL: test_upgrade_preserves_old_rows_with_unknown_cost (inventory.test_audit14e_valuation.LegacyOutputCostMigrationTests.test_upgrade_preserves_old_rows_with_unknown_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14e_valuation.py", line 282, in test_upgrade_preserves_old_rows_with_unknown_cost
+    self.assertEqual(migrated, originals[model.__name__])
+AssertionError: {'id'[44 chars]'), 'lot_id': UUID('371642c5-51a5-4d4a-a398-62[500 chars]None} != {'id'[44 chars]'), 'delta': 1, 'reason': 'Registro anterior',[212 chars]35')}
+Diff is 961 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 28 tests in 13.155s
+
+FAILED (failures=3)
+Destroying test database for alias 'default'...

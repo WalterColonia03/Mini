@@ -1,0 +1,385 @@
+{
+  "stage": "02-B",
+  "started_utc": "2026-11-09T23:51:05.960Z",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "cases": [
+    {
+      "id": "B00-instance",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "id": "B01-USR01-tabla",
+      "ok": true,
+      "accounts": 5,
+      "matching": 5,
+      "headers": [
+        "Nombre",
+        "Correo",
+        "Rol",
+        "Estado",
+        "Acciones"
+      ],
+      "screenshot": "B01-lista.png"
+    },
+    {
+      "id": "B02-USR01-busquedas",
+      "ok": true,
+      "nameCount": 1,
+      "emailCount": 1,
+      "empty": true,
+      "cleared": 5
+    },
+    {
+      "id": "B03-RN29-denegacion",
+      "ok": true,
+      "anon": 302,
+      "statuses": [
+        {
+          "role": "seller",
+          "method": "GET",
+          "path": "/empleados/",
+          "status": 403
+        },
+        {
+          "role": "seller",
+          "method": "POST",
+          "path": "/empleados/",
+          "status": 403
+        },
+        {
+          "role": "seller",
+          "method": "GET",
+          "path": "/empleados/nuevo/",
+          "status": 403
+        },
+        {
+          "role": "seller",
+          "method": "POST",
+          "path": "/empleados/nuevo/",
+          "status": 403
+        },
+        {
+          "role": "seller",
+          "method": "GET",
+          "path": "/empleados/e4501d09-21ad-4f67-b41b-d45853a0db1e/editar/",
+          "status": 403
+        },
+        {
+          "role": "seller",
+          "method": "POST",
+          "path": "/empleados/e4501d09-21ad-4f67-b41b-d45853a0db1e/editar/",
+          "status": 403
+        },
+        {
+          "role": "seller",
+          "method": "POST",
+          "path": "/empleados/e4501d09-21ad-4f67-b41b-d45853a0db1e/estado/",
+          "status": 403
+        },
+        {
+          "role": "warehouse",
+          "method": "GET",
+          "path": "/empleados/",
+          "status": 403
+        },
+        {
+          "role": "warehouse",
+          "method": "POST",
+          "path": "/empleados/",
+          "status": 403
+        },
+        {
+          "role": "warehouse",
+          "method": "GET",
+          "path": "/empleados/nuevo/",
+          "status": 403
+        },
+        {
+          "role": "warehouse",
+          "method": "POST",
+          "path": "/empleados/nuevo/",
+          "status": 403
+        },
+        {
+          "role": "warehouse",
+          "method": "GET",
+          "path": "/empleados/e4501d09-21ad-4f67-b41b-d45853a0db1e/editar/",
+          "status": 403
+        },
+        {
+          "role": "warehouse",
+          "method": "POST",
+          "path": "/empleados/e4501d09-21ad-4f67-b41b-d45853a0db1e/editar/",
+          "status": 403
+        },
+        {
+          "role": "warehouse",
+          "method": "POST",
+          "path": "/empleados/e4501d09-21ad-4f67-b41b-d45853a0db1e/estado/",
+          "status": 403
+        }
+      ],
+      "accountMutation": false
+    },
+    {
+      "id": "B04-formulario-campos-vacios",
+      "ok": true,
+      "labels": [
+        "Nombre completo",
+        "Correo de trabajo",
+        "Contraseña inicial",
+        "Rol"
+      ],
+      "limits": [
+        {
+          "name": "display_name",
+          "type": "text",
+          "maxlength": 120,
+          "minlength": -1,
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "maxlength": 254,
+          "minlength": -1,
+          "required": true
+        },
+        {
+          "name": "password",
+          "type": "password",
+          "maxlength": -1,
+          "minlength": 7,
+          "required": true
+        }
+      ],
+      "roleOptions": [
+        "— Seleccionar rol —",
+        "Administrador",
+        "Almacenero",
+        "Vendedor"
+      ],
+      "screenshot": "B04-vacios.png"
+    },
+    {
+      "id": "B04A-observacion-accesibilidad",
+      "ok": true,
+      "assessment": "OBSERVACION: asociación y anuncio de errores por revisar según contrato de accesibilidad",
+      "fields": [
+        {
+          "field": "display_name",
+          "errorText": "Este campo es obligatorio.",
+          "ariaInvalid": "true",
+          "ariaDescribedby": "id_display_name_error",
+          "describedbyTargets": [
+            {
+              "id": "id_display_name_error",
+              "exists": false
+            }
+          ],
+          "errorRole": null
+        },
+        {
+          "field": "email",
+          "errorText": "Este campo es obligatorio.",
+          "ariaInvalid": "true",
+          "ariaDescribedby": "id_email_error",
+          "describedbyTargets": [
+            {
+              "id": "id_email_error",
+              "exists": false
+            }
+          ],
+          "errorRole": null
+        },
+        {
+          "field": "password",
+          "errorText": "Ingrese una contraseña inicial.",
+          "ariaInvalid": "true",
+          "ariaDescribedby": "id_password_helptext id_password_error",
+          "describedbyTargets": [
+            {
+              "id": "id_password_helptext",
+              "exists": false
+            },
+            {
+              "id": "id_password_error",
+              "exists": false
+            }
+          ],
+          "errorRole": null
+        },
+        {
+          "field": "role",
+          "errorText": "Seleccione un rol para el empleado.",
+          "ariaInvalid": "true",
+          "ariaDescribedby": "id_role_error",
+          "describedbyTargets": [
+            {
+              "id": "id_role_error",
+              "exists": false
+            }
+          ],
+          "errorRole": null
+        }
+      ],
+      "tabAfterName": "email"
+    },
+    {
+      "id": "B05-USR02-duplicados-y-clave",
+      "ok": true,
+      "activeDuplicate": true,
+      "inactiveDuplicate": true,
+      "weakRejected": true,
+      "unchangedCount": true,
+      "screenshot": "B05-invalido.png"
+    },
+    {
+      "id": "B06-fronteras-y-peticion-alterada",
+      "ok": true,
+      "fieldchecks": [
+        {
+          "id": "name121",
+          "status": 200,
+          "messageFound": true
+        },
+        {
+          "id": "bademail",
+          "status": 200,
+          "messageFound": true
+        },
+        {
+          "id": "roleforged",
+          "status": 200,
+          "messageFound": true
+        },
+        {
+          "id": "shortpw",
+          "status": 200,
+          "messageFound": true
+        }
+      ],
+      "accountCountUnchanged": true
+    },
+    {
+      "id": "B07-USR02-alta-confirmacion",
+      "ok": true,
+      "screenshot": "B07-alta.png",
+      "account": {
+        "id": "198a6058-472a-4660-b96f-a9273b8a5b70",
+        "email": "new@audit02b.invalid",
+        "name": "AUD02B Nueva",
+        "role": "VENDEDOR",
+        "active": true,
+        "sessions": 0
+      }
+    },
+    {
+      "id": "B08-USR02-login-empleado",
+      "ok": true,
+      "salesStatus": 200
+    },
+    {
+      "id": "B09-USR03-rol-sesion-abierta",
+      "ok": true,
+      "account": {
+        "id": "198a6058-472a-4660-b96f-a9273b8a5b70",
+        "email": "new@audit02b.invalid",
+        "name": "AUD02B Cambiada",
+        "role": "ALMACENERO",
+        "active": true,
+        "sessions": 1
+      },
+      "oldRoleStatus": 403,
+      "newRoleStatus": 200,
+      "screenshot": "B09-rol.png"
+    },
+    {
+      "id": "B10-USR03-colision-edicion",
+      "ok": true,
+      "duplicateRejected": true,
+      "screenshot": "B10-edicion-duplicada.png"
+    },
+    {
+      "id": "B11-estado-formulario-obsoleto",
+      "ok": true,
+      "afterFirstActive": false,
+      "afterStaleActive": false,
+      "screenshot": "B11-obsoleto.png"
+    },
+    {
+      "id": "B12-USR04-sesion-e-ingreso",
+      "ok": true,
+      "account": {
+        "id": "198a6058-472a-4660-b96f-a9273b8a5b70",
+        "email": "new@audit02b.invalid",
+        "name": "AUD02B Cambiada",
+        "role": "ALMACENERO",
+        "active": false,
+        "sessions": 0
+      },
+      "revokedStatus": 302,
+      "genericMessage": true,
+      "screenshot": "B12-inactivo.png"
+    },
+    {
+      "id": "B13-USR05-reactivacion",
+      "ok": true,
+      "account": {
+        "id": "198a6058-472a-4660-b96f-a9273b8a5b70",
+        "email": "new@audit02b.invalid",
+        "name": "AUD02B Cambiada",
+        "role": "ALMACENERO",
+        "active": true,
+        "sessions": 0
+      },
+      "oldCookieStatus": 302,
+      "warehouseStatus": 200,
+      "salesStatus": 403
+    },
+    {
+      "id": "B13A-clave-sesion-existente",
+      "ok": true,
+      "previousSessionStatus": 302,
+      "oldPassRejected": true,
+      "newPassWorks": true
+    },
+    {
+      "id": "B14-turno-abierto-bloqueos",
+      "ok": true,
+      "deactivationBlocked": true,
+      "roleChangeBlocked": true,
+      "shiftUnchanged": true
+    },
+    {
+      "id": "B15-USR04-historial-turno",
+      "ok": true,
+      "shifts": 1,
+      "closes": 1
+    },
+    {
+      "id": "B16-ultimo-admin-proteccion-propia",
+      "ok": true,
+      "ownRoleRejected": true,
+      "selfStatus": 302,
+      "selfMessage": true,
+      "admin": {
+        "id": "20f0c5f3-3b47-4eb1-a308-79b18fe03dfb",
+        "email": "admin@audit02a.invalid",
+        "name": "AUD02A Administrador",
+        "role": "ADMIN",
+        "active": true,
+        "sessions": 2
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "157.0.8103.39",
+  "finished_utc": "2026-11-09T23:51:37.981Z",
+  "pass": 19,
+  "failed": 0
+}

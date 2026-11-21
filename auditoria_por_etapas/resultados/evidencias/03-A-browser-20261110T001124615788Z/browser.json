@@ -1,0 +1,130 @@
+{
+  "stage": "03-A",
+  "started_utc": "2026-11-10T00:11:27.084Z",
+  "cases": [
+    {
+      "id": "B00-isolation",
+      "ok": true
+    },
+    {
+      "id": "B01-CAT01-empty",
+      "ok": true,
+      "screenshot": "B01-empty.png"
+    },
+    {
+      "id": "B02-field-default",
+      "ok": true,
+      "attributes": {
+        "label": "Nombre de la categoría",
+        "required": true,
+        "maxLength": 120,
+        "type": "text",
+        "autofocus": true
+      }
+    },
+    {
+      "id": "B03-create-normalized",
+      "ok": false,
+      "persisted": {
+        "id": "9a955761-d301-4d4f-b7a8-1bda949e071d",
+        "name": "AUD03   Bebidas   y jugos",
+        "name_normalized": "aud03   bebidas   y jugos",
+        "is_active": true
+      },
+      "screenshot": "B03-created.png"
+    },
+    {
+      "id": "B04-duplicate",
+      "ok": false,
+      "screenshot": "B04-duplicate.png"
+    },
+    {
+      "id": "B05-empty-message",
+      "ok": false,
+      "aria": {
+        "invalid": "true",
+        "describedby": "id_name_error",
+        "targets": [
+          {
+            "id": "id_name_error",
+            "exists": false
+          }
+        ]
+      },
+      "screenshot": "B05-empty-error.png"
+    },
+    {
+      "id": "B06-error-accessibility",
+      "ok": false
+    },
+    {
+      "id": "B07-length120",
+      "ok": true
+    },
+    {
+      "id": "B08-http121",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "id": "B09-http-missing",
+      "ok": false
+    },
+    {
+      "id": "B10-cancel-reload",
+      "ok": true
+    },
+    {
+      "id": "B11-escaped",
+      "ok": true
+    },
+    {
+      "id": "B12-denied-warehouse",
+      "ok": true,
+      "status": [
+        403,
+        403,
+        403,
+        403,
+        403,
+        403
+      ],
+      "screenshot": "B12-warehouse.png"
+    },
+    {
+      "id": "B12-denied-seller",
+      "ok": true,
+      "status": [
+        403,
+        403,
+        403,
+        403,
+        403,
+        403
+      ],
+      "screenshot": "B12-seller.png"
+    },
+    {
+      "id": "B12-denied-visitor",
+      "ok": true,
+      "status": [
+        302,
+        302,
+        302
+      ],
+      "screenshot": "B12-visitor.png"
+    }
+  ],
+  "errors": [
+    {
+      "name": "Error",
+      "message": "locator.click: Error: strict mode violation: locator('tbody tr').filter({ hasText: 'AUD03   Bebidas   y jugos' }).getByRole('button', { name: 'Desactivar', exact: true }) resolved to 2 elements:"
+    }
+  ],
+  "viewport": {
+    "width": 1366,
+    "height": 900
+  },
+  "browser": "157.0.8103.39",
+  "finished_utc": "2026-11-10T00:11:36.631Z"
+}

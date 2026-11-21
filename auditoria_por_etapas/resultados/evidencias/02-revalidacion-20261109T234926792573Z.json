@@ -1,0 +1,424 @@
+{
+  "stage": "ETAPA-02",
+  "execution": "02-A-revalidacion-servidor",
+  "started_utc": "2026-11-09T23:49:26.792573+00:00",
+  "timezone_for_user_dates": "America/Lima",
+  "engine": "django.db.backends.sqlite3",
+  "database": ":memory:",
+  "dotenv_loaded": false,
+  "labels": [
+    "identity.test_etapa02_audit",
+    "identity.tests",
+    "identity.test_auth_audit01",
+    "sales.tests.SalePreparationTests.test_logout_discards_active_draft_but_keeps_shift_and_stock",
+    "sales.tests.SalePreparationTests.test_canceling_logout_keeps_the_session_and_draft"
+  ],
+  "checks": [
+    {
+      "command": "check",
+      "options": {},
+      "status": "PASS"
+    },
+    {
+      "command": "makemigrations",
+      "options": {
+        "check": true,
+        "dry_run": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "methods": [
+    {
+      "id": "identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_01_employee_list_filters_by_name_or_email_and_orders_alphabetically",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_02_empty_post_binds_forms_and_views_set_never_cache_and_sensitive_decorators",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_03_deactivation_revokes_persisted_sessions_discards_draft_and_reactivation_clears_lockout",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_03b_role_change_updates_active_session_role_code_and_preserves_display_name_on_error",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_04_duplicate_email_message_matches_hu_usr_02_ca_02_literal",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_05_rn24_password_policy_accepts_7_chars_and_rejects_missing_classes_in_form_and_service",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_06_logout_draft_warning_only_triggers_when_draft_has_lines",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_07_email_fields_allow_up_to_254_chars",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02ComprehensiveCriteriaTests.test_hu_auth_03_ca01_ca02_ca03_and_rn29_rn30_with_two_sellers",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02ComprehensiveCriteriaTests.test_hu_usr_01_to_05_role_matrix_and_http_method_guards",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_etapa02_audit.Stage02ComprehensiveCriteriaTests.test_hu_usr_03_04_last_admin_protection_and_historical_integrity",
+      "status": "FAIL"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_active_account_creates_server_session",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_anonymous_protected_route_redirects_to_the_public_login",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_dashboard_does_not_expose_planning_identifiers",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_dashboard_only_shows_authorized_navigation",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_direct_operation_is_denied_without_mutating_data",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_invalid_email_is_rejected_before_authentication",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_login_does_not_show_internal_access_copy",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_login_post_requires_csrf_and_sets_protected_cookies",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_login_rotates_an_existing_anonymous_session_key",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_password_uses_argon2_and_is_never_stored_in_plain_text",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_post_logout_invalidates_session_and_back_route_requires_login",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_role_matrix_is_enforced_on_direct_urls",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_sales_preparation_page_does_not_expose_planning_identifiers",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_sidebar_limits_each_role_to_its_current_operation",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_unknown_email_wrong_password_and_inactive_account_share_message",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.AuthenticationAndAuthorizationTests.test_unknown_existing_role_cannot_log_in_or_access_dashboard",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_admin_can_access_employee_edit_form",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_admin_can_deactivate_employee",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_admin_can_edit_employee_name",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_admin_can_reactivate_inactive_employee",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_admin_cannot_change_own_role",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_admin_cannot_deactivate_self",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_cannot_change_role_of_seller_with_open_shift",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_cannot_deactivate_seller_with_open_shift",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_dashboard_for_admin_and_warehouse_includes_expired_lots_and_single_h1",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_duplicate_email_is_rejected_on_edit",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_employee_list_does_not_render_broken_bootstrap_dismiss_button",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_five_failed_login_attempts_block_further_attempts",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_login_honors_safe_next_parameter",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_login_lock_expires_after_fifteen_minutes",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_logout_confirm_shows_minimarket_title_and_draft_warning_for_seller",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_non_admin_gets_403_on_deactivate",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_non_admin_gets_403_on_edit",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_success_resets_counter_without_deleting_throttle_row",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeEditDeactivateTests.test_unknown_identifier_has_the_same_lock_response",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeManagementTests.test_admin_can_see_employee_list",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeManagementTests.test_admin_creates_employee_successfully",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeManagementTests.test_duplicate_email_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeManagementTests.test_non_admin_gets_403_on_employee_list",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.tests.EmployeeManagementTests.test_non_admin_post_is_forbidden",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_admin_login_surface_rejects_nonstaff_rejects_unnormalized_email_and_shares_session",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_all_three_roles_accept_normalized_email_and_persist_identity",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_already_authenticated_get_and_post_redirect_to_dashboard_ignoring_next",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_contradictory_post_and_get_next_and_nonexistent_local_target",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_csrf_absent_invalid_and_cross_origin_do_not_touch_attempts",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_email_length_boundaries_254_255_319_320_321",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_empty_post_is_bound_and_reports_both_required_fields",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_exact_expiration_permits_login_and_resets_stable_row",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_exception_filter_redacts_submitted_credentials",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_external_scheme_relative_and_javascript_next_fall_back",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_fifth_failure_locks_for_exactly_fifteen_minutes",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_get_and_failed_post_are_not_cacheable",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_get_credentials_are_ignored_and_put_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_https_login_rejects_http_downgrade_next",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_identity_routes_authorization_and_method_boundaries",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_inactive_and_unknown_share_fifth_failure_response",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_internal_next_is_followed_but_does_not_bypass_role_authorization",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_invalid_fields_do_not_increment_lock_counter",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_legacy_pbkdf2_account_accepts_normalized_login_after_failure",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_lock_does_not_revoke_an_already_authenticated_session",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_locked_state_shared_across_sessions_and_normalized_variants",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_logging_redact_filter_redacts_message_keys_and_documents_exc_info_boundary",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_login_attempts_store_only_hmac_and_counter_state",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_minutes_round_up_at_each_relevant_boundary",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_one_identifier_lock_does_not_lock_another_role",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_password_is_not_repopulated_and_next_is_html_escaped",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_password_whitespace_is_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_second_complete_lockout_cycle_after_expiration",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_service_exception_filter_redacts_credential_locals",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_success_before_fifth_failure_resets_consecutive_count",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_unicode_casefold_and_idn_email_normalization_boundaries",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_unusable_password_follows_uniform_five_failure_lockout",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_valid_csrf_rotates_csrf_and_session_and_sets_cookie_flags",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_whitespace_only_email_vs_whitespace_only_password_and_long_password_no_truncation",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_wrong_password_after_expiration_starts_new_series",
+      "status": "PASS"
+    },
+    {
+      "id": "identity.test_auth_audit01.LoginAudit01Tests.test_wrong_unknown_inactive_share_exact_message_and_no_identity",
+      "status": "PASS"
+    },
+    {
+      "id": "sales.tests.SalePreparationTests.test_logout_discards_active_draft_but_keeps_shift_and_stock",
+      "status": "PASS"
+    },
+    {
+      "id": "sales.tests.SalePreparationTests.test_canceling_logout_keeps_the_session_and_draft",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Django TestCase/client/service tests; not browser evidence.",
+    "Sequential SQLite does not demonstrate PostgreSQL row locks or concurrent last-admin safety.",
+    "Method titles/docstrings are not proof of every criterion they mention.",
+    "No recovery code, single-session or remote logout implementation is certified by this run."
+  ],
+  "django_version": "5.2.18",
+  "python_version": "3.12.10",
+  "elapsed_seconds": 15.438,
+  "finished_utc": "2026-11-09T23:49:42.239111+00:00",
+  "failure_count": 1,
+  "method_count": 89,
+  "protected_before": {
+    "r1-pmv/r1_pmv.sqlite3": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+    "auditoria_por_etapas/resultados/datos/etapa00-20261105/audit.sqlite3": "19546d1c77d5874c8d0d5061cba97be8abfe9f03435600ef40a6c9c9c9209b5e",
+    "auditoria_por_etapas/resultados/datos/etapa01-20261109/audit.sqlite3": "52dda9f78a76ee307d3cab3a4a989030a3ec15e0bea3320d128562d9300f9e75",
+    "auditoria_por_etapas/resultados/datos/etapa02-20261109/audit.sqlite3": "ceac9251fe80f171079dfc74af617818a1ae4725cff122acc5bf3e4730cd747f"
+  },
+  "protected_after": {
+    "r1-pmv/r1_pmv.sqlite3": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+    "auditoria_por_etapas/resultados/datos/etapa00-20261105/audit.sqlite3": "19546d1c77d5874c8d0d5061cba97be8abfe9f03435600ef40a6c9c9c9209b5e",
+    "auditoria_por_etapas/resultados/datos/etapa01-20261109/audit.sqlite3": "52dda9f78a76ee307d3cab3a4a989030a3ec15e0bea3320d128562d9300f9e75",
+    "auditoria_por_etapas/resultados/datos/etapa02-20261109/audit.sqlite3": "ceac9251fe80f171079dfc74af617818a1ae4725cff122acc5bf3e4730cd747f"
+  },
+  "protected_unchanged": true,
+  "source_sha256_after": {
+    "r1-pmv/identity/test_etapa02_audit.py": "66ad5d4b2013ebc853ea30bc97a5d8c086c0fd6d45eb36c6cec1cf49685ea739",
+    "r1-pmv/identity/tests.py": "e8b83841826bf18f3e35a17c75af8283f4af514f382c69e222540659abb1e4bf",
+    "r1-pmv/identity/test_auth_audit01.py": "4a5d1e340a08647c5589b2aa070fd7d9a7c4d66643035b60aec8964bafd35ee1",
+    "r1-pmv/sales/tests.py": "ca81ec3eecc210457a4e84ecd4350ac5fbb04c065cfeee36b10d9dd5ad9d29c1",
+    "r1-pmv/identity/services.py": "a4e9e542df36178f3b1190546cc1cc88fbeb7260b390bc55cf732965958baa75",
+    "r1-pmv/identity/models.py": "d7435d3325c60ab192fdb1bb5fd97c6104c7e3935077a52bad070134d0d678a1",
+    "r1-pmv/identity/forms.py": "52088bd643ad35de04e83c69bd63afb8b3bc320dd290169bf4c4036a38332e6d",
+    "r1-pmv/identity/views.py": "c0e7e03f21450e3d6c0da939e8dccc996ded6fa8d396cd52f53214b6df622b6b"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "admin": [
+    "SELECT COUNT(\"inventory_lot\".\"id\") FILTER (WHERE (\"inventory_lot\".\"expiration_date\" > '2026-11-13' AND \"inventory_lot\".\"expiration_date\" <= '2026-12-13')) AS \"expiring\", COUNT(\"inventory_lot\".\"id\") FILTER (WHERE \"inventory_lot\".\"expiration_date\" <= '2026-11-13') AS \"expired\" FROM \"inventory_lot\" WHERE \"inventory_lot\".\"available_quantity\" > 0",
+    "SELECT COUNT(*) FROM (SELECT \"catalog_product\".\"id\" AS \"col1\" FROM \"catalog_product\" INNER JOIN \"catalog_category\" ON (\"catalog_product\".\"category_id\" = \"catalog_category\".\"id\") LEFT OUTER JOIN \"inventory_lot\" ON (\"catalog_product\".\"id\" = \"inventory_lot\".\"product_id\") WHERE (\"catalog_category\".\"is_active\" AND \"catalog_product\".\"is_active\") GROUP BY 1, \"catalog_product\".\"minimum_stock\" HAVING COALESCE(SUM(\"inventory_lot\".\"available_quantity\") FILTER (WHERE (\"inventory_lot\".\"expiration_date\" > '2026-11-13')), 0) <= (\"catalog_product\".\"minimum_stock\")) subquery",
+    "SELECT COUNT(\"sales_sale\".\"id\") AS \"sales_count\", (CAST(COALESCE((CAST(SUM(\"sales_sale\".\"total_amount\") AS NUMERIC)), (CAST('0' AS NUMERIC))) AS NUMERIC)) AS \"sales_total\", (CAST(COALESCE((CAST(SUM(\"sales_sale\".\"discount_amount\") AS NUMERIC)), (CAST('0' AS NUMERIC))) AS NUMERIC)) AS \"discount_total\" FROM \"sales_sale\" WHERE django_datetime_cast_date(\"sales_sale\".\"confirmed_at\", 'America/Lima', 'UTC') = '2026-11-13'",
+    "SELECT COUNT(*) AS \"__count\" FROM \"cash_cashshift\" WHERE \"cash_cashshift\".\"status\" = 'OPEN'"
+  ],
+  "warehouse": [
+    "SELECT COUNT(\"inventory_lot\".\"id\") FILTER (WHERE (\"inventory_lot\".\"expiration_date\" > '2026-11-13' AND \"inventory_lot\".\"expiration_date\" <= '2026-12-13')) AS \"expiring\", COUNT(\"inventory_lot\".\"id\") FILTER (WHERE \"inventory_lot\".\"expiration_date\" <= '2026-11-13') AS \"expired\" FROM \"inventory_lot\" WHERE \"inventory_lot\".\"available_quantity\" > 0",
+    "SELECT COUNT(*) FROM (SELECT \"catalog_product\".\"id\" AS \"col1\" FROM \"catalog_product\" INNER JOIN \"catalog_category\" ON (\"catalog_product\".\"category_id\" = \"catalog_category\".\"id\") LEFT OUTER JOIN \"inventory_lot\" ON (\"catalog_product\".\"id\" = \"inventory_lot\".\"product_id\") WHERE (\"catalog_category\".\"is_active\" AND \"catalog_product\".\"is_active\") GROUP BY 1, \"catalog_product\".\"minimum_stock\" HAVING COALESCE(SUM(\"inventory_lot\".\"available_quantity\") FILTER (WHERE (\"inventory_lot\".\"expiration_date\" > '2026-11-13')), 0) <= (\"catalog_product\".\"minimum_stock\")) subquery"
+  ],
+  "seller": []
+}

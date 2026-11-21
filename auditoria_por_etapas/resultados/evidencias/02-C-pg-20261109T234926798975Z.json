@@ -1,0 +1,65 @@
+{
+  "started_utc": "2026-11-09T23:49:26.804917+00:00",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit02c-pg-527f61055fe011c351965164",
+  "port": 58548,
+  "mode": "verify",
+  "cases": [
+    {
+      "name": "last_admin",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "active_admins": 1
+    },
+    {
+      "name": "duplicate_email",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "results": [
+        {
+          "operation": 0,
+          "result": "ValidationError"
+        },
+        {
+          "operation": 1,
+          "result": "success"
+        }
+      ],
+      "normalized_count": 1
+    },
+    {
+      "name": "open_vs_deactivate",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "seller_active": true,
+      "open_shifts": 1
+    }
+  ],
+  "postgres_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "db": "audit02c_cf49d36009",
+  "isolation": "read committed",
+  "migrations": "PASS",
+  "status": "COMPLETE",
+  "port_closed": true,
+  "cluster_retained": true,
+  "finished_utc": "2026-11-09T23:49:36.810290+00:00"
+}

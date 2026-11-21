@@ -1,0 +1,110 @@
+{
+  "stage": "02-E",
+  "port_used": 49883,
+  "port_closed": true,
+  "prod_db_unchanged": true,
+  "prod_db_sha256": "83e79733798e2e00af2b8f11b7a23aac2b1727d16707d078873d5a36d441bb6c",
+  "checkpoints": {
+    "anon_redirected_to_login": true,
+    "salir_almacen_copy": true,
+    "almacen_empleados_403": true,
+    "salir_seller_no_shift": true,
+    "salir_seller_open_shift_no_draft": true,
+    "draft_created_before_logout": true,
+    "salir_seller_open_shift_with_draft": true,
+    "salir_cancel_keeps_draft": true,
+    "salir_confirm_discards_draft_keeps_shift": true,
+    "seller_empleados_403": true,
+    "lock_screen_message": true,
+    "employees_empty_search": true,
+    "employee_created_in_ui": true,
+    "role_change_open_shift_blocked_ui": true,
+    "password_reset_revokes_other_browser_session": true,
+    "edit_shows_lockout_banner": true,
+    "state_confirm_cancel_no_mutation": true,
+    "state_confirm_deactivates": true,
+    "deactivated_warehouse_kicked_out": true,
+    "confirm_warns_open_shift": true,
+    "deactivate_open_shift_rejected": true,
+    "reactivate_confirm_shows_lockout_warning": true,
+    "lockout_survived_rename_and_reactivate": true,
+    "explicit_unlock_allows_login": true,
+    "self_deactivate_warning_shown": true,
+    "self_deactivate_rejected": true,
+    "salir_admin_copy": true,
+    "salir_admin_redirected_to_login": true,
+    "audit_events_recorded": true,
+    "audit_actions_present": [
+      "ACCOUNT_UNLOCKED",
+      "EMPLOYEE_CREATED",
+      "EMPLOYEE_DEACTIVATED",
+      "EMPLOYEE_REACTIVATED",
+      "EMPLOYEE_UPDATED",
+      "LOGIN_FAILED",
+      "LOGIN_LOCKED",
+      "LOGIN_SUCCESS",
+      "LOGOUT_SUCCESS",
+      "PASSWORD_RESET"
+    ]
+  },
+  "layouts": {
+    "desktop_employees_list": {
+      "innerWidth": 1366,
+      "docScrollWidth": 1366,
+      "bodyScrollWidth": 1366,
+      "horizontalOverflow": false,
+      "scrollHeight": 790
+    },
+    "desktop_state_confirm": {
+      "innerWidth": 1366,
+      "docScrollWidth": 1366,
+      "bodyScrollWidth": 1366,
+      "horizontalOverflow": false,
+      "scrollHeight": 881
+    },
+    "mobile_employees_list": {
+      "innerWidth": 390,
+      "docScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "horizontalOverflow": false,
+      "scrollHeight": 1275
+    },
+    "mobile_state_confirm": {
+      "innerWidth": 390,
+      "docScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "horizontalOverflow": false,
+      "scrollHeight": 1279
+    }
+  },
+  "no_horizontal_overflow": true,
+  "cache_headers": {
+    "login_redirect_cache": "max-age=0, no-cache, no-store, must-revalidate, private",
+    "employees_list": "max-age=0, no-cache, no-store, must-revalidate, private"
+  },
+  "screenshots": [
+    "capturas/salir-vendedor-borrador.jpg",
+    "capturas/acceso-403-vendedor.jpg",
+    "capturas/login-locked.jpg",
+    "capturas/empleados-lista.jpg",
+    "capturas/empleados-editar-bloqueado.jpg",
+    "capturas/empleados-confirmar-desactivar.jpg",
+    "capturas/empleados-confirmar-bloqueo-reactivar.jpg",
+    "capturas/mobile-empleados-lista.jpg",
+    "capturas/mobile-confirmar-estado.jpg"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    {
+      "actor": "almacen_02e@example.invalid",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "actor": "vendedor2_02e@example.invalid",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    }
+  ],
+  "unexpected_console_errors": [],
+  "server_5xx": [],
+  "all_passed": true
+}

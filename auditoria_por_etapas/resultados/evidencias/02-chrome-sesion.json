@@ -1,0 +1,83 @@
+{
+  "stage": "ETAPA-02",
+  "sublot": "02-A-sesion-y-salida",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "executedAt": "2026-11-09T22:59:01.940Z",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "steps": [
+    {
+      "id": "LIVE-PROOF",
+      "ok": true,
+      "proof": {
+        "status": 200,
+        "proof": "ETAPA-02:chrome-02a-1794265143086:audit.sqlite3",
+        "stage": "ETAPA-02"
+      }
+    },
+    {
+      "id": "HU-AUTH-03-CA01-SIN-BORRADOR",
+      "ok": true,
+      "url": "http://127.0.0.1:8767/salir/",
+      "metrics": {
+        "title": "Cerrar sesión · Minimarket",
+        "h1Count": 1,
+        "h2Text": [
+          "¿Deseas cerrar sesión?"
+        ],
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false
+      },
+      "screenshot": "02-auth03-confirmar-sin-borrador.png"
+    },
+    {
+      "id": "HU-AUTH-03-CA02-ADVERTENCIA-Y-CANCELAR",
+      "ok": true,
+      "metrics": {
+        "title": "Cerrar sesión · Minimarket",
+        "h1Count": 1,
+        "h2Text": [
+          "¿Deseas cerrar sesión?"
+        ],
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "horizontalOverflow": false
+      },
+      "screenshot": "02-auth03-confirmar-con-borrador.png",
+      "draftPreservedOnCancel": true
+    },
+    {
+      "id": "HU-AUTH-03-CA02-CA03-CONFIRMAR-Y-BLOQUEO-POST-SALIDA",
+      "ok": true,
+      "loggedOutUrl": "http://127.0.0.1:8767/",
+      "redirectedFromSales": "http://127.0.0.1:8767/?next=/ventas/",
+      "redirectedFromHome": "http://127.0.0.1:8767/?next=/inicio/",
+      "screenshot": "02-auth03-post-salida.png"
+    },
+    {
+      "id": "RN-29-SEGUNDO-NAVEGADOR-VENDEDOR-2-AISLADO",
+      "ok": true,
+      "seller2SeesOwnerInOpenPage": true,
+      "seller2BlockedInSalesPreparation": true,
+      "seller2BlockedInCloseShift": true
+    },
+    {
+      "id": "RN-29-RN-30-RELOGIN-RECUPERA-TURNO-SIN-BORRADOR-Y-CIERRA-CAJA",
+      "ok": true,
+      "emptyDraftAfterRelogin": true,
+      "stockIntact20Units": true
+    },
+    {
+      "id": "OBS-HU-AUTH-04A-CONCURRENCIA-NO-IMPLEMENTADA",
+      "ok": true,
+      "classification": "PREVISTO/FUTURO — NO IMPLEMENTADO",
+      "contextAStatus": 200,
+      "contextBStatus": 200,
+      "bothSessionsRemainActive": true
+    }
+  ]
+}

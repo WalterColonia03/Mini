@@ -1,0 +1,74 @@
+{
+  "stage": "02-F-repro-pre-fix",
+  "started_utc": "2026-11-15T14:52:36.667809+00:00",
+  "port": 53554,
+  "cases": [
+    {
+      "case": "race1_login_vs_deactivate",
+      "login_post": {
+        "status": 302,
+        "location": "/inicio/"
+      },
+      "is_active_after": false,
+      "sessions_created_for_inactive": 1,
+      "reproduced_login_success_for_inactive": true,
+      "subsequent_get_inicio_status": 302,
+      "events": [
+        {
+          "action": "EMPLOYEE_CREATED",
+          "outcome": "SUCCESS",
+          "metadata": {
+            "role": "VENDEDOR"
+          }
+        },
+        {
+          "action": "EMPLOYEE_DEACTIVATED",
+          "outcome": "SUCCESS",
+          "metadata": {
+            "role": "VENDEDOR",
+            "sessions_revoked": true,
+            "lockout_preserved": false
+          }
+        },
+        {
+          "action": "LOGIN_SUCCESS",
+          "outcome": "SUCCESS",
+          "metadata": {
+            "role": "VENDEDOR"
+          }
+        }
+      ]
+    },
+    {
+      "case": "race2_login_vs_role_change",
+      "login_post": {
+        "status": 302,
+        "location": "/inicio/"
+      },
+      "account_role_after": "ALMACENERO",
+      "sessions_after": [
+        {
+          "session_key": "zgri9n9hzulknsqxf27j2othlly8nu9z",
+          "role_code": "VENDEDOR"
+        }
+      ],
+      "stale_session_role_reproduced": true
+    },
+    {
+      "case": "race3_login_vs_password_reset",
+      "login_post": {
+        "status": 302,
+        "location": "/inicio/"
+      },
+      "sessions_surviving_after_reset": 1,
+      "stale_session_still_gets_200_inicio": false,
+      "reproduced_defect": false
+    }
+  ],
+  "postgres_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "port_closed_after_stop": true,
+  "prod_db_sha256_before": "83e79733798e2e00af2b8f11b7a23aac2b1727d16707d078873d5a36d441bb6c",
+  "prod_db_sha256_after": "83e79733798e2e00af2b8f11b7a23aac2b1727d16707d078873d5a36d441bb6c",
+  "prod_db_unchanged": true,
+  "finished_utc": "2026-11-15T14:53:18.638040+00:00"
+}

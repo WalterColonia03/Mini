@@ -1,0 +1,47 @@
+{
+  "status": "PROBADO: cinco modelos aislados, no banco ni producto",
+  "network": false,
+  "database": false,
+  "django": false,
+  "results": [
+    {
+      "id": "AUTO-M01",
+      "case": "Dos QR con importes fijos pueden producir exceso",
+      "total": "15",
+      "recibido": "25",
+      "exceso": "10"
+    },
+    {
+      "id": "AUTO-M02",
+      "case": "Tarifa nominal antes de redondeo y condiciones de cuenta",
+      "base_total": "10",
+      "fees_by_payments": {
+        "1": "1.3490",
+        "2": "2.3490",
+        "6": "6.3490"
+      }
+    },
+    {
+      "id": "AUTO-M03",
+      "case": "Saldo neto no garantiza reembolso bruto",
+      "saldo_condicional": "8.6510",
+      "reembolso": "10",
+      "limite": "Hipótesis de comisión retenida, no comportamiento probado del proveedor"
+    },
+    {
+      "id": "AUTO-M04",
+      "case": "Mixto con QR de aporte y vuelto",
+      "total": "15",
+      "qr": "10",
+      "efectivo_entregado": "10",
+      "efectivo_aplicado": "5",
+      "vuelto": "5"
+    },
+    {
+      "id": "AUTO-M05",
+      "case": "Excluir reintegro incierto permite comprometer14 sobre10",
+      "naive_accepts": true,
+      "with_reservation_accepts": false
+    }
+  ]
+}

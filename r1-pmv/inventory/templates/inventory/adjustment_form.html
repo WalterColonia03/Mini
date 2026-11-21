@@ -1,0 +1,76 @@
+{% extends "identity/base.html" %}
+{% block title %}Ajuste físico{% endblock %}
+{% block content %}
+<h2 class="mb-4">Ajuste por conteo físico</h2>
+{% if form.errors %}
+<div class="alert alert-danger" role="alert" tabindex="-1" id="adjustment-errors" aria-labelledby="adjustment-errors-title">
+  <h3 id="adjustment-errors-title">Revise los datos del ajuste</h3>
+  <ul>{% for e in form.non_field_errors %}<li>{{ e }}</li>{% endfor %}
+  {% for field in form %}{% for e in field.errors %}<li>{% if not field.is_hidden %}<a href="#{{ field.id_for_label }}">{{ field.label }}: {{ e }}</a>{% else %}{{ field.label|default:field.name }}: {{ e }}{% endif %}</li>{% endfor %}{% endfor %}</ul>
+</div>
+<script>document.getElementById('adjustment-errors').focus();</script>
+{% endif %}
+{% if not selected_lot and not selected_product %}
+<section class="panel form-panel">
+  <h3>Registrar un lote encontrado</h3>
+  <p>Solo para productos con carga inicial confirmada. Debe conocer la fecha de vencimiento; un lote vencido no estará disponible para venta.</p>
+  <form method="get">
+    <label for="new-lot-product">Producto para lote nuevo</label>
+    <select name="producto" id="new-lot-product" required class="form-select">
+      <option value="">Seleccione un producto</option>
+      {% for product in products %}<option value="{{ product.pk }}">{{ product.name }}</option>{% endfor %}
+    </select>
+    <button type="submit" class="button button-secondary">Registrar lote nuevo por ajuste</button>
+  </form>
+</section>
+<p class="mb-3">Seleccione el lote a ajustar:</p>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover align-middle inventory-op-table">
+    <thead class="table-dark">
+      <tr><th>Producto</th><th>Lote</th><th>Vencimiento</th><th class="text-end">Disponible</th><th></th></tr>
+    </thead>
+    <tbody>
+      {% for lot in lots %}
+      <tr>
+        <td class="col-wrap">{{ lot.product.name }}</td>
+        <td class="font-monospace col-wrap">{{ lot.number_normalized }}{% include "inventory/_lot_origin.html" %}</td>
+        <td>{{ lot.expiration_date }}</td>
+        <td class="text-end">{{ lot.available_quantity }}</td>
+        <td><a href="?lote={{ lot.pk }}" class="btn btn-sm btn-outline-primary">Ajustar</a></td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="5" class="text-center">No hay lotes registrados.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="alert alert-info">
+  {% if new_mode %}
+  <strong>Lote nuevo por ajuste:</strong> {{ selected_product.name }}.
+  <p>Registre únicamente unidades encontradas con fecha fiable y motivo documentado. Esto no es una recepción de compra.</p>
+  {% else %}
+  <strong>Lote:</strong> {{ selected_lot.product.name }} · {{ selected_lot.number_normalized }} —
+  Disponible: {{ selected_lot.available_quantity }} u.
+  {% include "inventory/_lot_origin.html" with lot=selected_lot %}
+  {% endif %}
+  <br><small class="text-muted">Escriba la variación de unidades respecto al sistema (ej. <code>+10</code> para sumar 10 unidades o <code>-3</code> para restar 3 unidades por faltante).</small>
+</div>
+<form method="post" novalidate>{% csrf_token %}
+  {% for hidden in form.hidden_fields %}{{ hidden }}{% endfor %}
+  {% for field in form.visible_fields %}
+  <div class="mb-3">
+    <label for="{{ field.id_for_label }}" class="form-label fw-semibold">{{ field.label }}</label>
+    {{ field }}
+    {% if field.errors %}<div class="text-danger small mt-1">{{ field.errors.0 }}</div>{% endif %}
+    {% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+  </div>
+  {% endfor %}
+  <div class="d-flex gap-2">
+    <button type="submit" class="btn btn-primary">Confirmar ajuste</button>
+    <a href="{% url 'physical-adjustment' %}" class="btn btn-secondary">Cancelar</a>
+  </div>
+</form>
+{% endif %}
+{% endblock %}
+

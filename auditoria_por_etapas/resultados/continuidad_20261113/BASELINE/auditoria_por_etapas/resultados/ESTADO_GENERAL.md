@@ -1,0 +1,37 @@
+# Estado general vigente de auditorías · 12/11/2026
+
+> **Fuente funcional principal:** [08 · planificación unificada](../../08_Historias_de_Usuario.md). Las fichas, RN y contratos de08 definen lo esperado; este documento conserva su papel de contexto, diseño, ejecución o evidencia. Las vistas07/09/03 se derivan de08.
+
+
+Esta tabla sustituye como estado actual las notas anteriores. [Estado anterior íntegro](conciliacion_20261112/BASELINE/auditoria_por_etapas/resultados/ESTADO_GENERAL.md) · [Mapa consolidado](conciliacion_20261112/CONSOLIDACION.md) · [Encargos](conciliacion_20261112/ENCARGOS.md) · [Verificación nueva](conciliacion_20261112/VERIFICACION.md).
+
+Se identificaron13 informes originales00–12 y todos sus anexos pertinentes. Esta revisión agrega17 como conciliación documental parcial;13–16 no se declaran ejecutadas. Las decisiones adoptadas12/11 no demuestran implementación.434/434 tests integradosSQLite, check y dry-run aprobados; nueva muestraPG18.4 de consultas/idempotencia. No hay cierre integral ni autorización de código/DB/despliegue.
+
+| Etapa | Fecha del estado | Cobertura | Estado vigente | Bloqueos/decisiones | Próximo cursor |
+|---|---|---|---|---|---|
+| [00](ETAPA-00.md) Inventario y planificación | 12/11/2026 | Inventario y evidencia del informe/anexos originales | Inventario completo del corte, no aprobación funcional | DOC00-01/05/07/08/09/12/13; matriz219 y catálogo74+8 | Revisión17 de trazabilidad y semántica |
+| [01](ETAPA-01.md) Ingreso y bloqueo | 12/11/2026 | Inventario y evidencia del informe/anexos originales | Auditado en muestras; seguridad transversal abierta | Tráfico/admin/retención/logs; correo254/IDNA;5fallos/15min | SEC-15-TRAFICO-01 y SEC-15-OBS-01 |
+| [02](ETAPA-02.md) Sesión y personal | 12/11/2026 | Inventario y evidencia del informe/anexos originales | Auditado en muestras; contratos revisados pendientes | Reset/desbloqueo auditado, nombre120, confirmación y concurrencia | DOC-02-04 / SEC-15-CONC-02 |
+| [03](ETAPA-03.md) Categorías y productos | 12/11/2026 | Inventario y evidencia del informe/anexos originales | 03-AJ y anexos posteriores contrastados; sin cierre integral | Catálogo/lector aceptados; valoración/recepción/legacy/migraciones pendientes | DOC-03AH-01 / DOC-03AI-01 |
+| [04](ETAPA-04.md) Proveedores | 12/11/2026 | Inventario y evidencia del informe/anexos originales | 04-D reconocido; no queda detenido artificialmente en04-C | Revocación muestras04-D; RUC/formato y estado explícito; raw bypass pendiente | DEC-04B-ESTADO-OMITIDO / SEC-15-CONC-02 |
+| [05](ETAPA-05.md) Carga inicial | 12/11/2026 | Inventario y evidencia del informe/anexos originales | 05-L vigente; suite integrada elimina fallo heredado | PG17, recuperación postwrite, costos/recepción y despliegue | 05-M / CT-ROLLBACK-01-POST-ESCRITURA |
+| [06](ETAPA-06.md) Recepción posterior | 12/11/2026 | Inventario y evidencia del informe/anexos originales | 06-F auditado con conflictos hoy decididos documentalmente | Entrada directa aceptada; recepción propia/costo nuevo sin implementar | DOC-03AI-01 / DOC-03AH-01 |
+| [07](ETAPA-07.md) Stock y vencimientos | 12/11/2026 | Inventario y evidencia del informe/anexos originales | Muestras ejecutadas; políticas/volumen pendientes | Alertas activas vs vencidos físicos, filtros y panel mínimo | DEC-07-VENCIDOS-FILTRO / PT-SEARCH-01 |
+| [08](ETAPA-08.md) Bajas, ajustes y movimientos | 12/11/2026 | Inventario y evidencia del informe/anexos originales | Parcial frente a HU existentes y contratos revisados | Constancia, lote nuevo, costo/motivo y Kardex completo | RN-05 / DEC-08-KARDEX-COMPRAS |
+| [09](ETAPA-09.md) Caja | 12/11/2026 | Inventario y evidencia del informe/anexos originales | EJECUTADA; se rectifica NOEJECUTADO heredado en10–12 | 20 tests y6 casos PG históricos; Chrome67 funcionales+1control; checks/topes/orden pendientes | PROP-09-DB-01 / DEC-11-TOPE-EFECTIVO-FORM |
+| [10](ETAPA-10.md) Preparación y bloqueo de puesto | 12/11/2026 | Inventario y evidencia del informe/anexos originales | Borrador auditado; bloqueo300s no implementado | VEN01a seleccionado antes de piloto; GETprecio/concurrencia/UX | DEC-10-BLOQUEO-INACTIVIDAD / PROP-10-03 |
+| [11](ETAPA-11.md) Cobro y exactitud | 12/11/2026 | Inventario y evidencia del informe/anexos originales | Muestras ejecutadas; integridad y política nuevas pendientes | Lotes/snapshots, nuevos descuentos deshabilitados, límites y caída | DEC-11-MODELO-AUDITORIA-VENTAS |
+| [12](ETAPA-12.md) Constancias e historial | 12/11/2026 | Inventario y evidencia del informe/anexos originales | Muestras y nueva comprobación parcialPG; sin cierre integral | Permisos/orden/paginación/UX; filtrosCA02 y detalleCA03 conciliados | DEC-12-ORDEN-LINEAS-RECIBO / PROP-12-CAJA-HIST-CHROME-VENDEDOR |
+| 13 Paneles/reportes y futuro | 12/11/2026 | Prompt disponible, sin informe principal localizado | NO EJECUTADA como auditoría completa | No confundir ausencia de prueba con defecto | Inventariar HU-DASH/REP/CONF y extras actuales sin atribuir entrega completa |
+| 14 Integración y resiliencia | 12/11/2026 | Prompt disponible, sin informe principal localizado | NO EJECUTADA como auditoría completa | No confundir ausencia de prueba con defecto | CT-ROLLBACK-01-POST-ESCRITURA; E2E sobre build actual |
+| 15 Seguridad y datos | 12/11/2026 | Prompt disponible, sin informe principal localizado | NO EJECUTADA como auditoría completa | No confundir ausencia de prueba con defecto | SEC15TRAFICO/OBS/ADMIN/CONC/RETENCION y aplicabilidad |
+| 16 Despliegue y recuperación | 12/11/2026 | Prompt disponible, sin informe principal localizado | NO EJECUTADA como auditoría completa | No confundir ausencia de prueba con defecto | PG17; CI; S1-OPS-DB-01/02 y smoke |
+| [17](ETAPA-17.md) Conciliación | 12/11/2026 | Fuentes, decisiones, planning y criterios | DOCUMENTACIÓN ACTUALIZADA; revisión integral parcial | Implementación y pruebasC siguen abiertas | Validación documental de fuente única; implementaciónP0 y recorrido CT-COHERENCIA-UI pendientes |
+
+## Regla de continuidad
+
+El orden de resolución va por integridad/costo/recepción/venta, permisos/seguridad, consultas/UX y evidencia de despliegue. No es obligatorio reejecutar una etapa histórica completa para investigar un caso concreto; conservar su ID y alcance. Los futuros siguen futuros. No declarar cierre por aceptar políticas, generar documentos o aprobar una suite parcial.
+
+## Unificación documental de este corte
+
+[Revisión y registro](fuente_unica_20261112/REVISION.md) · [Validación estructural](fuente_unica_20261112/VALIDACION.json).08 reúne74fichas completas,219CA base,60contratos,4J-CA y4criterios de veracidad visible, con110casos escritos.07/09/03 se derivan de la misma fuente. Es trabajo documental, no110ejecuciones ni cierre de auditoría. El siguiente recorrido inverso debe registrar literal/ruta/rol/estado/requisito/evidencia.

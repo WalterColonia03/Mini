@@ -1,0 +1,43 @@
+{
+  "stamp_utc": "20261115T144643395432Z-87604a4f",
+  "targets": [
+    "inventory",
+    "sales",
+    "catalog",
+    "cash",
+    "identity",
+    "app_platform",
+    "tests"
+  ],
+  "exit_code": 0,
+  "duration_s": 148.437,
+  "evidence_txt": "auditoria_por_etapas\\resultados\\evidencias\\06-reval-tests-20261115T144643395432Z-87604a4f\\test_output.txt",
+  "protected_unchanged": true,
+  "tail": [
+    "test_C19_igv_calculation (test_audit14c_edge_cases.BehaviorToPlanningTest.test_C19_igv_calculation)",
+    "La venta calcula base e IGV correctamente (factor 1.18). ... ok",
+    "test_C01_checkout_fails_after_product_deactivation (test_audit14c_edge_cases.PROP14_03_AdminDeactivatesProductWithDraftTest.test_C01_checkout_fails_after_product_deactivation)",
+    "Vendedor agrega producto al borrador. Admin lo desactiva. El cobro debe fallar. ... ok",
+    "test_C02_checkout_fails_after_category_deactivation (test_audit14c_edge_cases.PROP14_03_AdminDeactivatesProductWithDraftTest.test_C02_checkout_fails_after_category_deactivation)",
+    "Admin desactiva la categoría del producto en el borrador. Cobro rechazado. ... ok",
+    "test_upgrade_preserves_old_rows_with_unknown_cost (inventory.test_audit14e_valuation.LegacyOutputCostMigrationTests.test_upgrade_preserves_old_rows_with_unknown_cost) ... ok",
+    "test_old_rows_remain_identical_without_receipt_backfill (inventory.test_audit14g_receipts.ReceiptMigrationTests.test_old_rows_remain_identical_without_receipt_backfill) ... ok",
+    "test_nullable_migration_preserves_old_rows_and_lot_instant_guard (inventory.test_audit14h_initial_history.InitialHistoryMigrationTests.test_nullable_migration_preserves_old_rows_and_lot_instant_guard) ... ok",
+    "test_stage12_migrations_round_trip_and_no_pending_migrations (sales.test_audit12_receipts_history.Stage12MigrationOrderingTests.test_stage12_migrations_round_trip_and_no_pending_migrations) ... ok",
+    "test_upgrade_preserves_unknown_history_without_fefo_backfill (sales.test_audit14f_allocations.LegacyAllocationMigrationTests.test_upgrade_preserves_unknown_history_without_fefo_backfill) ... ok",
+    "test_database_url_rejects_non_postgresql_scheme (app_platform.test_env.EnvironmentConfigurationTests.test_database_url_rejects_non_postgresql_scheme) ... ok",
+    "test_dotenv_does_not_override_process_environment (app_platform.test_env.EnvironmentConfigurationTests.test_dotenv_does_not_override_process_environment) ... ok",
+    "test_empty_database_url_uses_local_sqlite (app_platform.test_env.EnvironmentConfigurationTests.test_empty_database_url_uses_local_sqlite) ... ok",
+    "test_invalid_boolean_is_rejected (app_platform.test_env.EnvironmentConfigurationTests.test_invalid_boolean_is_rejected) ... ok",
+    "test_postgresql_url_decodes_percent_encoded_credentials (app_platform.test_env.EnvironmentConfigurationTests.test_postgresql_url_decodes_percent_encoded_credentials) ... ok",
+    "test_postgresql_url_is_parsed_without_logging_credentials (app_platform.test_env.EnvironmentConfigurationTests.test_postgresql_url_is_parsed_without_logging_credentials) ... ok",
+    "test_cookie_session_and_header_baseline_is_enabled (app_platform.test_security.SecurityConfigurationTests.test_cookie_session_and_header_baseline_is_enabled) ... ok",
+    "test_logging_filter_redacts_query_json_cookie_and_authorization_values (app_platform.test_security.SecurityConfigurationTests.test_logging_filter_redacts_query_json_cookie_and_authorization_values) ... ok",
+    "",
+    "----------------------------------------------------------------------",
+    "Ran 652 tests in 145.333s",
+    "",
+    "OK",
+    "Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')..."
+  ]
+}

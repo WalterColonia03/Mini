@@ -1,0 +1,41 @@
+{
+  "scope": "03-X / AUD03X-CODIGO-EAN-UPC01",
+  "physical": "NO EJECUTADO en browser",
+  "requirements": [
+    "PROD01/CA02 búsqueda",
+    "PROD02/CA03 unicidad",
+    "PROD03/CA01 captura",
+    "PROD03/CA02 aviso",
+    "PROD04/CA03 edición",
+    "RN29 permisos"
+  ],
+  "routes": [
+    "/productos/",
+    "/productos/nuevo/",
+    "/productos/codigos/comprobar/",
+    "/productos/<uuid>/editar/",
+    "/ventas/"
+  ],
+  "field": {
+    "barcode": "obligatorio, texto hasta64, ASCII letras/dígitos/espacios/guiones; NFKC/sin espacios/casefold; ceros preservados",
+    "capture": "campo temporal y Usar código expreso",
+    "q/query": "búsqueda parcial"
+  },
+  "outputs": [
+    "Sin duplicados en esta consulta.",
+    "El código de barras ya está registrado",
+    "Ya existe un producto con este código de barras.",
+    "403",
+    "lista coincidente"
+  ],
+  "classification": "caracterización del alcance vigente; equivalencia EAN/UPC PROPUESTA/PENDIENTE",
+  "planned": [
+    "alta de ambas cadenas",
+    "duplicados literales y con espacios",
+    "edición colisionante",
+    "búsqueda ADMIN/ALMACENERO/VENDEDOR",
+    "peticiones denegadas y ausencia de cambios",
+    "consulta vendedor antes/después de lotes ficticios",
+    "servicio y DB"
+  ]
+}

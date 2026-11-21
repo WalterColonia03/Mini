@@ -1,0 +1,650 @@
+{
+  "started_utc": "20261111T022145356888Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit03l-pg-9655d3210b35f53529a755f5",
+  "port": 52604,
+  "cases": [
+    {
+      "id": "PG-L-venta-primero-suspension",
+      "ok": true,
+      "checks": {
+        "wait_observed": true,
+        "first_committed": true,
+        "second_expected": true,
+        "category_inactive_once": true,
+        "stock": true,
+        "conserved": true,
+        "sale_count": true,
+        "details": true,
+        "draft_status": true,
+        "next_add_rejected": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "active": false,
+            "version": 1
+          }
+        },
+        "contender": {
+          "status": "rejected",
+          "messages": [
+            "Un producto o precio cambió. Revisa la venta antes de confirmar el cobro."
+          ]
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": true
+      },
+      "before": {
+        "category": [
+          {
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "lot": [
+          {
+            "number": "L-BASE",
+            "initial_quantity": 20,
+            "available_quantity": 20
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [],
+        "details": [],
+        "counter": []
+      },
+      "after": {
+        "category": [
+          {
+            "is_active": false,
+            "state_version": 1
+          }
+        ],
+        "lot": [
+          {
+            "number": "L-BASE",
+            "initial_quantity": 20,
+            "available_quantity": 20
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [],
+        "details": [],
+        "counter": []
+      },
+      "subsequent": {
+        "rejected": true,
+        "messages": [
+          "El producto seleccionado no está disponible para la venta."
+        ]
+      }
+    },
+    {
+      "id": "PG-L-venta-primero-venta",
+      "ok": true,
+      "checks": {
+        "wait_observed": true,
+        "first_committed": true,
+        "second_expected": true,
+        "category_inactive_once": true,
+        "stock": true,
+        "conserved": true,
+        "sale_count": true,
+        "details": true,
+        "draft_status": true,
+        "next_add_rejected": true,
+        "money": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "id": "9ea5a315-547d-4a83-b937-bf3ae7b80124",
+            "total": "17.00"
+          }
+        },
+        "contender": {
+          "status": "committed",
+          "value": {
+            "active": false,
+            "version": 1
+          }
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": true
+      },
+      "before": {
+        "category": [
+          {
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "lot": [
+          {
+            "number": "L-BASE",
+            "initial_quantity": 20,
+            "available_quantity": 20
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [],
+        "details": [],
+        "counter": []
+      },
+      "after": {
+        "category": [
+          {
+            "is_active": false,
+            "state_version": 1
+          }
+        ],
+        "lot": [
+          {
+            "number": "L-BASE",
+            "initial_quantity": 20,
+            "available_quantity": 18
+          }
+        ],
+        "shift": [
+          {
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ],
+        "draft": [
+          {
+            "status": "DISCARDED"
+          }
+        ],
+        "lines": [
+          {
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [
+          {
+            "total_amount": "17.00",
+            "cash_received": "20.00",
+            "change_given": "3.00",
+            "correlative": "V-00000001"
+          }
+        ],
+        "details": [
+          {
+            "product_snapshot_barcode": "L-SALE-venta",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 2
+          }
+        ]
+      },
+      "subsequent": {
+        "rejected": true,
+        "messages": [
+          "El producto seleccionado no está disponible para la venta."
+        ]
+      }
+    },
+    {
+      "id": "PG-L-entrada-primero-suspension",
+      "ok": true,
+      "checks": {
+        "conflict_observed": true,
+        "first_committed": true,
+        "second_expected": true,
+        "one_suspension": true,
+        "initial_lot_and_load_preserved": true,
+        "stock_and_cost": true,
+        "entry_attribution": true,
+        "next_entry_rejected": true,
+        "next_entry_unchanged": true,
+        "other_operations_unchanged": true
+      },
+      "date_lima": "2026-11-10",
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "active": false,
+            "version": 1
+          }
+        },
+        "contender": {
+          "status": "rejected",
+          "messages": [
+            "El producto no está disponible para registrar entradas."
+          ]
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": true
+      },
+      "before": {
+        "category_id": "3b095092-784a-438b-beb0-74d33eaa9074",
+        "active_category": true,
+        "category_version": 0,
+        "active_product": true,
+        "stock": 20,
+        "average_cost": "2.5000",
+        "loads": [
+          "b90fac60-b4dc-4a62-a371-aed3dd0dff49"
+        ],
+        "lots": [
+          {
+            "id": "22dacddb-bfc3-4570-982a-aeacd9d71252",
+            "number": "L-BASE",
+            "initial": true,
+            "quantity": 20,
+            "available": 20,
+            "cost": "2.5000",
+            "expires": "2027-02-08",
+            "supplier": "d5d29209-0744-4dd5-bbb1-52de5a50fac9",
+            "warehouse": "a43cd079-902d-4e6f-a384-8e1d88ba8694",
+            "load": "b90fac60-b4dc-4a62-a371-aed3dd0dff49"
+          }
+        ]
+      },
+      "after": {
+        "category_id": "3b095092-784a-438b-beb0-74d33eaa9074",
+        "active_category": false,
+        "category_version": 1,
+        "active_product": true,
+        "stock": 20,
+        "average_cost": "2.5000",
+        "loads": [
+          "b90fac60-b4dc-4a62-a371-aed3dd0dff49"
+        ],
+        "lots": [
+          {
+            "id": "22dacddb-bfc3-4570-982a-aeacd9d71252",
+            "number": "L-BASE",
+            "initial": true,
+            "quantity": 20,
+            "available": 20,
+            "cost": "2.5000",
+            "expires": "2027-02-08",
+            "supplier": "d5d29209-0744-4dd5-bbb1-52de5a50fac9",
+            "warehouse": "a43cd079-902d-4e6f-a384-8e1d88ba8694",
+            "load": "b90fac60-b4dc-4a62-a371-aed3dd0dff49"
+          }
+        ]
+      },
+      "followup_different_lot": {
+        "status": "rejected",
+        "messages": [
+          "El producto no está disponible para registrar entradas."
+        ]
+      },
+      "after_followup": {
+        "category_id": "3b095092-784a-438b-beb0-74d33eaa9074",
+        "active_category": false,
+        "category_version": 1,
+        "active_product": true,
+        "stock": 20,
+        "average_cost": "2.5000",
+        "loads": [
+          "b90fac60-b4dc-4a62-a371-aed3dd0dff49"
+        ],
+        "lots": [
+          {
+            "id": "22dacddb-bfc3-4570-982a-aeacd9d71252",
+            "number": "L-BASE",
+            "initial": true,
+            "quantity": 20,
+            "available": 20,
+            "cost": "2.5000",
+            "expires": "2027-02-08",
+            "supplier": "d5d29209-0744-4dd5-bbb1-52de5a50fac9",
+            "warehouse": "a43cd079-902d-4e6f-a384-8e1d88ba8694",
+            "load": "b90fac60-b4dc-4a62-a371-aed3dd0dff49"
+          }
+        ]
+      },
+      "other_rows_compared": {
+        "SaleCounter": 1,
+        "Sale": 1,
+        "SaleLine": 1,
+        "SaleDraft": 2,
+        "SaleDraftLine": 1,
+        "CashShift": 1,
+        "StockWriteOff": 0,
+        "PhysicalAdjustment": 0
+      }
+    },
+    {
+      "id": "PG-L-entrada-primero-entrada",
+      "ok": true,
+      "checks": {
+        "conflict_observed": true,
+        "first_committed": true,
+        "second_expected": true,
+        "one_suspension": true,
+        "initial_lot_and_load_preserved": true,
+        "stock_and_cost": true,
+        "entry_attribution": true,
+        "next_entry_rejected": true,
+        "next_entry_unchanged": true,
+        "other_operations_unchanged": true
+      },
+      "date_lima": "2026-11-10",
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "load": "de75e4ca-fbb4-4a7d-97b6-2e9f035277eb"
+          }
+        },
+        "contender": {
+          "status": "committed",
+          "value": {
+            "active": false,
+            "version": 1
+          }
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": true
+      },
+      "before": {
+        "category_id": "083e0bf1-a154-4269-982a-b5ce13731563",
+        "active_category": true,
+        "category_version": 0,
+        "active_product": true,
+        "stock": 20,
+        "average_cost": "2.5000",
+        "loads": [
+          "de75e4ca-fbb4-4a7d-97b6-2e9f035277eb"
+        ],
+        "lots": [
+          {
+            "id": "17efa4ce-4c4c-4745-95cf-b59089cf8b3f",
+            "number": "L-BASE",
+            "initial": true,
+            "quantity": 20,
+            "available": 20,
+            "cost": "2.5000",
+            "expires": "2027-02-08",
+            "supplier": "d5d29209-0744-4dd5-bbb1-52de5a50fac9",
+            "warehouse": "a43cd079-902d-4e6f-a384-8e1d88ba8694",
+            "load": "de75e4ca-fbb4-4a7d-97b6-2e9f035277eb"
+          }
+        ]
+      },
+      "after": {
+        "category_id": "083e0bf1-a154-4269-982a-b5ce13731563",
+        "active_category": false,
+        "category_version": 1,
+        "active_product": true,
+        "stock": 25,
+        "average_cost": "2.8000",
+        "loads": [
+          "de75e4ca-fbb4-4a7d-97b6-2e9f035277eb"
+        ],
+        "lots": [
+          {
+            "id": "17efa4ce-4c4c-4745-95cf-b59089cf8b3f",
+            "number": "L-BASE",
+            "initial": true,
+            "quantity": 20,
+            "available": 20,
+            "cost": "2.5000",
+            "expires": "2027-02-08",
+            "supplier": "d5d29209-0744-4dd5-bbb1-52de5a50fac9",
+            "warehouse": "a43cd079-902d-4e6f-a384-8e1d88ba8694",
+            "load": "de75e4ca-fbb4-4a7d-97b6-2e9f035277eb"
+          },
+          {
+            "id": "06e60edd-8787-4dbe-bdf7-d3944efc9434",
+            "number": "L-ENTRADA",
+            "initial": false,
+            "quantity": 5,
+            "available": 5,
+            "cost": "4.0000",
+            "expires": "2026-12-10",
+            "supplier": "dfb32d23-e119-4347-9a0f-858a4af634ba",
+            "warehouse": "b8f22b38-9d8e-43f3-b4bb-700e96230a7a",
+            "load": "de75e4ca-fbb4-4a7d-97b6-2e9f035277eb"
+          }
+        ]
+      },
+      "followup_different_lot": {
+        "status": "rejected",
+        "messages": [
+          "El producto no está disponible para registrar entradas."
+        ]
+      },
+      "after_followup": {
+        "category_id": "083e0bf1-a154-4269-982a-b5ce13731563",
+        "active_category": false,
+        "category_version": 1,
+        "active_product": true,
+        "stock": 25,
+        "average_cost": "2.8000",
+        "loads": [
+          "de75e4ca-fbb4-4a7d-97b6-2e9f035277eb"
+        ],
+        "lots": [
+          {
+            "id": "17efa4ce-4c4c-4745-95cf-b59089cf8b3f",
+            "number": "L-BASE",
+            "initial": true,
+            "quantity": 20,
+            "available": 20,
+            "cost": "2.5000",
+            "expires": "2027-02-08",
+            "supplier": "d5d29209-0744-4dd5-bbb1-52de5a50fac9",
+            "warehouse": "a43cd079-902d-4e6f-a384-8e1d88ba8694",
+            "load": "de75e4ca-fbb4-4a7d-97b6-2e9f035277eb"
+          },
+          {
+            "id": "06e60edd-8787-4dbe-bdf7-d3944efc9434",
+            "number": "L-ENTRADA",
+            "initial": false,
+            "quantity": 5,
+            "available": 5,
+            "cost": "4.0000",
+            "expires": "2026-12-10",
+            "supplier": "dfb32d23-e119-4347-9a0f-858a4af634ba",
+            "warehouse": "b8f22b38-9d8e-43f3-b4bb-700e96230a7a",
+            "load": "de75e4ca-fbb4-4a7d-97b6-2e9f035277eb"
+          }
+        ]
+      },
+      "other_rows_compared": {
+        "SaleCounter": 1,
+        "Sale": 1,
+        "SaleLine": 1,
+        "SaleDraft": 2,
+        "SaleDraftLine": 1,
+        "CashShift": 1,
+        "StockWriteOff": 0,
+        "PhysicalAdjustment": 0
+      }
+    }
+  ],
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "database": "audit03_d721afb4aa",
+  "isolation": "read committed",
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa01-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T231223297870Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T235435476251Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235102894578Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235313324286Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T000927933696Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001124615788Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001235417602Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001320983361Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001337606973Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001427294717Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010641541584Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010857906402Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020054712835Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020104229903Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020324334766Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020335877235Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020505026105Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T023934536531Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024200044720Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024338422290Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024349330265Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024455907968Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024617290091Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024628699915Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024749832414Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024801097155Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030010177604Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030036511029Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030252413844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030314191882Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030339870193Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030352675316Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T031505677093Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032216300260Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032251838417Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032333068344Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032528496946Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032641479670Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T033002861512Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034307344201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034318782440Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041750658883Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041757169052Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041945048165Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042659237619Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042730963824Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042756100441Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042844036974Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042912719703Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T043008623021Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165543164740Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165640773189Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165730633729Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171321742969Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171341873895Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171546908471Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171905215655Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172006895618Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172054000837Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172105045406Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173453359047Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173526027077Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173808145023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173927046544Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174028204311Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174235672078Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T175820924988Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180229612612Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180807525819Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180914638365Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181416503086Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181948564537Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T182622655374Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T183956099863Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184821961380Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184947335287Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184949253446Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T185008205808Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010526631267Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010655936590Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010725864129Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010846464247Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011420365490Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011843801709Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T012116957301Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T013518362010Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014121377023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014226942611Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014304366278Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015423105806Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015529367360Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015549608567Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015623098100Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015703446000Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015739066270Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015806678855Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015848208296Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T020804804408Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021009799064Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021726658069Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021749298118Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022024345104Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022054827383Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022113097844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-migrations-20261111T020942208035Z\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-11T02:21:58.447436+00:00"
+}

@@ -1,0 +1,54 @@
+Found 6 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+FFFF.F
+======================================================================
+FAIL: test_accumulated_capacity_is_checked_before_any_sale_write (cash.test_audit14closure_money.IntegrationMoneyTests.test_accumulated_capacity_is_checked_before_any_sale_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\cash\test_audit14closure_money.py", line 67, in test_accumulated_capacity_is_checked_before_any_sale_write
+    with self.assertRaisesMessage(ValidationError,'capacidad'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 144, in __exit__
+    next(self.gen)
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_accumulated_two_sales_can_close_over_single_operation_limit (cash.test_audit14closure_money.IntegrationMoneyTests.test_accumulated_two_sales_can_close_over_single_operation_limit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\cash\test_audit14closure_money.py", line 45, in test_accumulated_two_sales_can_close_over_single_operation_limit
+    self.assertEqual(reply.status_code,302)
+AssertionError: 200 != 302
+
+======================================================================
+FAIL: test_direct_database_constraints_and_negative_difference (cash.test_audit14closure_money.IntegrationMoneyTests.test_direct_database_constraints_and_negative_difference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\cash\test_audit14closure_money.py", line 86, in test_direct_database_constraints_and_negative_difference
+    with self.assertRaises(IntegrityError),transaction.atomic():SaleDraftLine.objects.filter(pk=line.pk).update(quantity=quantity)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_form_limits_and_invalid_shapes (cash.test_audit14closure_money.IntegrationMoneyTests.test_form_limits_and_invalid_shapes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\cash\test_audit14closure_money.py", line 79, in test_form_limits_and_invalid_shapes
+    self.assertFalse(form_class({field:value}).is_valid(),(field,value))
+AssertionError: True is not false : ('opening_amount', '+1')
+
+======================================================================
+FAIL: test_new_sale_and_cash_cannot_exceed_operation_limit (cash.test_audit14closure_money.IntegrationMoneyTests.test_new_sale_and_cash_cannot_exceed_operation_limit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\cash\test_audit14closure_money.py", line 55, in test_new_sale_and_cash_cannot_exceed_operation_limit
+    with self.assertRaises(ValidationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.502s
+
+FAILED (failures=5)
+Destroying test database for alias 'default'...

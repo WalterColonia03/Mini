@@ -1,0 +1,462 @@
+{
+  "stage": "03-C",
+  "started": "2026-11-10T02:48:05.222Z",
+  "cases": [
+    {
+      "id": "C01-initial",
+      "ok": true,
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nombre del producto",
+          "value": "",
+          "required": true,
+          "type": "text",
+          "max": "",
+          "min": "",
+          "maxLength": 160,
+          "mode": "",
+          "refs": [],
+          "linked": true
+        },
+        {
+          "name": "barcode",
+          "label": "Código de barras",
+          "value": "",
+          "required": true,
+          "type": "text",
+          "max": "",
+          "min": "",
+          "maxLength": 64,
+          "mode": "",
+          "refs": [
+            "id_barcode_helptext"
+          ],
+          "linked": true
+        },
+        {
+          "name": "category",
+          "label": "Categoría",
+          "value": "",
+          "required": true,
+          "type": "select-one",
+          "mode": "",
+          "refs": [],
+          "linked": true
+        },
+        {
+          "name": "unit",
+          "label": "Unidad de medida",
+          "value": "UND",
+          "required": false,
+          "type": "select-one",
+          "mode": "",
+          "refs": [],
+          "linked": true
+        },
+        {
+          "name": "sale_price",
+          "label": "Precio final con IGV (S/)",
+          "value": "",
+          "required": true,
+          "type": "number",
+          "max": "9999999.99",
+          "min": "0.01",
+          "maxLength": -1,
+          "mode": "decimal",
+          "refs": [
+            "id_sale_price_helptext"
+          ],
+          "linked": true
+        },
+        {
+          "name": "minimum_stock",
+          "label": "Existencia mínima",
+          "value": "10",
+          "required": false,
+          "type": "number",
+          "max": "999999",
+          "min": "0",
+          "maxLength": -1,
+          "mode": "numeric",
+          "refs": [
+            "id_minimum_stock_helptext"
+          ],
+          "linked": true
+        }
+      ],
+      "options": [
+        "---------",
+        "Higiene",
+        "Productos enlatados"
+      ],
+      "screenshot": "01-alta.png"
+    },
+    {
+      "id": "C02-help-links",
+      "ok": true
+    },
+    {
+      "id": "C03-cancel",
+      "ok": true
+    },
+    {
+      "id": "C04-persisted",
+      "ok": true,
+      "product": {
+        "id": "60c9c95d-a0a1-4e6f-a107-bc0f7313c117",
+        "name": "Atún de prueba",
+        "barcode": "Ac-12 34",
+        "category_id": "2f3b4a5f-bbbb-4926-b9a0-2aba868c05bd",
+        "sale_price": "8.50",
+        "minimum_stock": 10,
+        "unit": "UND",
+        "controls_expiration": true,
+        "is_active": true
+      },
+      "normalisedCode": "ac-1234"
+    },
+    {
+      "id": "C05-confirmation",
+      "ok": true,
+      "text": "✓\n\nREGISTRO COMPLETADO\n\nAtún de prueba\n\nEl producto se creó con cero existencias. Los datos siguientes muestran su estado actual.\n\nCódigo\nAc-12 34\nCategoría\nProductos enlatados\nPrecio de venta\nS/ 8,50\nExistencia mínima\n10 UND\nExistencias físicas\n0 UND\nDisponibilidad actual\nNo disponible para venta: sin stock vigente\nRegistrar otro producto\nVer catálogo\nIr al inicio",
+      "screenshot": "05-confirmacion.png"
+    },
+    {
+      "id": "C06-reload-alias",
+      "ok": true
+    },
+    {
+      "id": "C07-visible-errors",
+      "ok": true,
+      "errors": [
+        "\n        Código de barras\n        \n        Admite letras de la A a la Z, números, espacios y guiones. Debe ser único. Al comparar se ignoran los espacios y las mayúsculas.\n        Ya existe un producto con este código de barras.\n      ",
+        "\n        Precio final con IGV (S/)\n        \n        De S/ 0,01 a S/ 9 999 999,99, con un máximo de dos decimales.\n        Asegúrese de que este valor es mayor o igual a 0.01.\n      ",
+        "\n        Existencia mínima\n        \n        Entero de 0 a 999 999. Si lo deja vacío, se guardará 10.\n        Asegúrese de que este valor es mayor o igual a 0.\n      "
+      ],
+      "screenshot": "07-errores.png"
+    },
+    {
+      "id": "C08-errors-linked",
+      "ok": true
+    },
+    {
+      "id": "C08-first-error-focus",
+      "ok": true
+    },
+    {
+      "id": "C09-empty",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "Este campo es obligatorio.",
+        "barcode": "Este campo es obligatorio.",
+        "category": "Este campo es obligatorio.",
+        "unit": "Este campo es obligatorio.",
+        "sale_price": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "C09-name-empty",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "C09-name-punctuation",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "El nombre del producto debe contener letras o números."
+      }
+    },
+    {
+      "id": "C09-name-long",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "El nombre admite hasta 160 caracteres."
+      }
+    },
+    {
+      "id": "C09-barcode-empty",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "barcode": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "C09-barcode-long",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "barcode": "El código de barras admite hasta 64 caracteres."
+      }
+    },
+    {
+      "id": "C09-barcode-chars",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "barcode": "El código de barras solo puede contener letras, números, espacios o guiones."
+      }
+    },
+    {
+      "id": "C09-barcode-duplicate",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "barcode": "Ya existe un producto con este código de barras."
+      }
+    },
+    {
+      "id": "C09-category-empty",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "category": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "C09-category-inactive",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "category": "Seleccione una categoría válida de la lista."
+      }
+    },
+    {
+      "id": "C09-category-absent",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "category": "Seleccione una categoría válida de la lista."
+      }
+    },
+    {
+      "id": "C09-unit-wrong",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "unit": "Escoja una opción válida. KG no es una de las opciones disponibles."
+      }
+    },
+    {
+      "id": "C09-price-0",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "C09-price-1",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Asegúrese de que este valor es mayor o igual a 0.01."
+      }
+    },
+    {
+      "id": "C09-price-2",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Asegúrese de que este valor es mayor o igual a 0.01."
+      }
+    },
+    {
+      "id": "C09-price-3",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Asegúrese de que no haya más de 2 dígitos decimales."
+      }
+    },
+    {
+      "id": "C09-price-4",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Introduzca un número."
+      }
+    },
+    {
+      "id": "C09-price-5",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Introduzca un número decimal válido sin notación científica."
+      }
+    },
+    {
+      "id": "C09-price-6",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "El precio no puede superar S/ 9 999 999,99."
+      }
+    },
+    {
+      "id": "C09-price-7",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Introduzca un número."
+      }
+    },
+    {
+      "id": "C09-minimum-0",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "minimum_stock": "Asegúrese de que este valor es mayor o igual a 0."
+      }
+    },
+    {
+      "id": "C09-minimum-1",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "minimum_stock": "Introduzca un número entero."
+      }
+    },
+    {
+      "id": "C09-minimum-2",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "minimum_stock": "Introduzca un número entero."
+      }
+    },
+    {
+      "id": "C09-minimum-3",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "minimum_stock": "Asegúrese de que este valor sea menor o igual a 999999."
+      }
+    },
+    {
+      "id": "C09-name-duplicate",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "Ya existe un producto registrado con este nombre."
+      }
+    },
+    {
+      "id": "C09-name-uppercase",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "Ya existe un producto registrado con este nombre."
+      }
+    },
+    {
+      "id": "C10-rejections-persistence",
+      "ok": true
+    },
+    {
+      "id": "C11-warehouse-read",
+      "ok": true,
+      "screenshot": "11-consulta-almacen.png"
+    },
+    {
+      "id": "C12-sale-no-stock",
+      "ok": true,
+      "screenshot": "12-consulta-venta.png"
+    },
+    {
+      "id": "C13-almacenero",
+      "ok": true,
+      "statuses": [
+        403,
+        403,
+        403,
+        403
+      ]
+    },
+    {
+      "id": "C13-vendedor",
+      "ok": true,
+      "statuses": [
+        403,
+        403,
+        403,
+        403
+      ]
+    },
+    {
+      "id": "C14-visitor",
+      "ok": true,
+      "location": "/?next=/productos/nuevo/"
+    },
+    {
+      "id": "C15-role-persistence",
+      "ok": true
+    },
+    {
+      "id": "C16-other-category",
+      "ok": true,
+      "product": {
+        "id": "41f39666-6d48-4f76-b8b4-c65c18300310",
+        "name": "Jabón neutro",
+        "barcode": "HIG-01",
+        "category_id": "99c3f3c5-f814-4c57-9204-cfae78547202",
+        "sale_price": "0.01",
+        "minimum_stock": 0,
+        "unit": "UND",
+        "controls_expiration": true,
+        "is_active": true
+      },
+      "screenshot": "16-otra-categoria.png"
+    },
+    {
+      "id": "C17-bounds",
+      "ok": true,
+      "status": 302,
+      "product": {
+        "id": "2483a9b1-4ba3-4191-9534-89194ea58332",
+        "name": "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+        "barcode": "0000000000000000000000000000000000000000000000000000000000000000",
+        "category_id": "2f3b4a5f-bbbb-4926-b9a0-2aba868c05bd",
+        "sale_price": "9999999.99",
+        "minimum_stock": 999999,
+        "unit": "UND",
+        "controls_expiration": true,
+        "is_active": true
+      }
+    },
+    {
+      "id": "C18-replay",
+      "ok": true
+    },
+    {
+      "id": "C19-catalogue",
+      "ok": true
+    },
+    {
+      "id": "C20-mobile",
+      "ok": true,
+      "width": 390,
+      "page": 390,
+      "screenshot": "20-movil.png"
+    },
+    {
+      "id": "C21-stale-selection",
+      "ok": true,
+      "screenshot": "21-categoria-suspendida.png"
+    },
+    {
+      "id": "C22-dashboard-links",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "browser": "157.0.8103.39",
+  "finished": "2026-11-10T02:48:28.414Z"
+}

@@ -1,0 +1,820 @@
+{
+  "started_utc": "20261111T032953852373Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit03r-pg-3ff4ed965e816bc080a8c041",
+  "port": 49679,
+  "cases": [
+    {
+      "id": "PG-R-reclassify",
+      "ok": true,
+      "checks": {
+        "real_wait": true,
+        "refresh_rejected": true,
+        "message": true,
+        "refreshed_to_latest": true,
+        "no_sale_or_lot_change": true,
+        "draft_active": true,
+        "counter_unchanged": true,
+        "retry_success": true,
+        "idempotent": true,
+        "one_sale": true,
+        "correct_total": true,
+        "correct_stock": true,
+        "snapshot_correct": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "category": "7e371bfe-663c-4235-9f07-7cbcd61623dd",
+            "price": "6.00"
+          }
+        },
+        "contender": {
+          "status": "rejected",
+          "messages": [
+            "El precio de «R P reclassify» cambió de S/ 8.50 a S/ 9.00. Verifica el nuevo total antes de confirmar el cobro."
+          ]
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": false
+      },
+      "before": {
+        "products": [
+          {
+            "id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "category_id": "3aeb564e-6239-4c3c-8e81-95c769e179cf",
+            "name": "R Q reclassify",
+            "barcode": "RQ-reclassify",
+            "sale_price": "6.00"
+          },
+          {
+            "id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "category_id": "7e371bfe-663c-4235-9f07-7cbcd61623dd",
+            "name": "R P reclassify",
+            "barcode": "RP-reclassify",
+            "sale_price": "9.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          },
+          {
+            "product_id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "counter": []
+      },
+      "after_race": {
+        "products": [
+          {
+            "id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "category_id": "7e371bfe-663c-4235-9f07-7cbcd61623dd",
+            "name": "R Q reclassify",
+            "barcode": "RQ-reclassify",
+            "sale_price": "6.00"
+          },
+          {
+            "id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "category_id": "7e371bfe-663c-4235-9f07-7cbcd61623dd",
+            "name": "R P reclassify",
+            "barcode": "RP-reclassify",
+            "sale_price": "9.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          },
+          {
+            "product_id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "quantity": 2,
+            "unit_price": "9.00"
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "counter": []
+      },
+      "after_retry": {
+        "products": [
+          {
+            "id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "category_id": "7e371bfe-663c-4235-9f07-7cbcd61623dd",
+            "name": "R Q reclassify",
+            "barcode": "RQ-reclassify",
+            "sale_price": "6.00"
+          },
+          {
+            "id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "category_id": "7e371bfe-663c-4235-9f07-7cbcd61623dd",
+            "name": "R P reclassify",
+            "barcode": "RP-reclassify",
+            "sale_price": "9.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "available_quantity": 9,
+            "initial_quantity": 10
+          },
+          {
+            "product_id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "available_quantity": 8,
+            "initial_quantity": 10
+          }
+        ],
+        "draft": [
+          {
+            "status": "DISCARDED"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "quantity": 2,
+            "unit_price": "9.00"
+          }
+        ],
+        "sales": [
+          {
+            "id": "34b90c8e-eac6-44ae-8e62-0e5ca30c3ca4",
+            "total_amount": "24.00",
+            "cash_received": "40.00",
+            "change_given": "16.00"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "1bc273e8-c28c-40eb-bf02-af6bac62d038",
+            "product_snapshot_name": "R Q reclassify",
+            "product_snapshot_barcode": "RQ-reclassify",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "f5ad523e-eabe-4377-988b-628442e01361",
+            "product_snapshot_name": "R P reclassify",
+            "product_snapshot_barcode": "RP-reclassify",
+            "quantity": 2,
+            "unit_price": "9.00"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 2
+          }
+        ]
+      },
+      "retry": {
+        "sale": {
+          "id": "34b90c8e-eac6-44ae-8e62-0e5ca30c3ca4",
+          "total": "24.00"
+        },
+        "same_sale": true
+      }
+    },
+    {
+      "id": "PG-R-price-again",
+      "ok": true,
+      "checks": {
+        "real_wait": true,
+        "refresh_rejected": true,
+        "message": true,
+        "refreshed_to_latest": true,
+        "no_sale_or_lot_change": true,
+        "draft_active": true,
+        "counter_unchanged": true,
+        "retry_success": true,
+        "idempotent": true,
+        "one_sale": true,
+        "correct_total": true,
+        "correct_stock": true,
+        "snapshot_correct": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "category": "4351a5b4-a15f-407f-ac8e-97fd7531a895",
+            "price": "10.00"
+          }
+        },
+        "contender": {
+          "status": "rejected",
+          "messages": [
+            "El precio de «R P price-again» cambió de S/ 8.50 a S/ 10.00. Verifica el nuevo total antes de confirmar el cobro."
+          ]
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": false
+      },
+      "before": {
+        "products": [
+          {
+            "id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "category_id": "dfdee6fe-c233-459c-b76a-878f74c2e95f",
+            "name": "R Q price-again",
+            "barcode": "RQ-price-again",
+            "sale_price": "6.00"
+          },
+          {
+            "id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "category_id": "4351a5b4-a15f-407f-ac8e-97fd7531a895",
+            "name": "R P price-again",
+            "barcode": "RP-price-again",
+            "sale_price": "9.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          },
+          {
+            "product_id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "counter": [
+          {
+            "next_value": 2
+          }
+        ]
+      },
+      "after_race": {
+        "products": [
+          {
+            "id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "category_id": "dfdee6fe-c233-459c-b76a-878f74c2e95f",
+            "name": "R Q price-again",
+            "barcode": "RQ-price-again",
+            "sale_price": "6.00"
+          },
+          {
+            "id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "category_id": "4351a5b4-a15f-407f-ac8e-97fd7531a895",
+            "name": "R P price-again",
+            "barcode": "RP-price-again",
+            "sale_price": "10.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          },
+          {
+            "product_id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "quantity": 2,
+            "unit_price": "10.00"
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "counter": [
+          {
+            "next_value": 2
+          }
+        ]
+      },
+      "after_retry": {
+        "products": [
+          {
+            "id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "category_id": "dfdee6fe-c233-459c-b76a-878f74c2e95f",
+            "name": "R Q price-again",
+            "barcode": "RQ-price-again",
+            "sale_price": "6.00"
+          },
+          {
+            "id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "category_id": "4351a5b4-a15f-407f-ac8e-97fd7531a895",
+            "name": "R P price-again",
+            "barcode": "RP-price-again",
+            "sale_price": "10.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "available_quantity": 9,
+            "initial_quantity": 10
+          },
+          {
+            "product_id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "available_quantity": 8,
+            "initial_quantity": 10
+          }
+        ],
+        "draft": [
+          {
+            "status": "DISCARDED"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "quantity": 2,
+            "unit_price": "10.00"
+          }
+        ],
+        "sales": [
+          {
+            "id": "61bf8044-0018-43f7-87ac-f60ea0be676f",
+            "total_amount": "26.00",
+            "cash_received": "40.00",
+            "change_given": "14.00"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "67c72b54-4a1d-4fbc-b105-1291fec0c6a3",
+            "product_snapshot_name": "R Q price-again",
+            "product_snapshot_barcode": "RQ-price-again",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "ed1cea80-d4bf-4d6a-8110-c4406e7f2cc1",
+            "product_snapshot_name": "R P price-again",
+            "product_snapshot_barcode": "RP-price-again",
+            "quantity": 2,
+            "unit_price": "10.00"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 3
+          }
+        ]
+      },
+      "retry": {
+        "sale": {
+          "id": "61bf8044-0018-43f7-87ac-f60ea0be676f",
+          "total": "26.00"
+        },
+        "same_sale": true
+      }
+    },
+    {
+      "id": "PG-R-two-checkouts",
+      "ok": true,
+      "checks": {
+        "real_wait": true,
+        "refresh_rejected": true,
+        "message": true,
+        "refreshed_to_latest": true,
+        "no_sale_or_lot_change": true,
+        "draft_active": true,
+        "counter_unchanged": true,
+        "both_rejected": true,
+        "retry_success": true,
+        "idempotent": true,
+        "one_sale": true,
+        "correct_total": true,
+        "correct_stock": true,
+        "snapshot_correct": true
+      },
+      "race": {
+        "first": {
+          "status": "rejected",
+          "messages": [
+            "El precio de «R P two-checkouts» cambió de S/ 8.50 a S/ 9.00. Verifica el nuevo total antes de confirmar el cobro."
+          ]
+        },
+        "second": {
+          "status": "rejected",
+          "messages": [
+            "La venta cambió. Revisa el resumen antes de confirmar el cobro."
+          ]
+        },
+        "lock_observed": true,
+        "wait_event": "transactionid",
+        "distinct_connections": true,
+        "instrumentation": "pause after actual refresh draft-line FOR UPDATE, before product locks; no additional row locks"
+      },
+      "before": {
+        "products": [
+          {
+            "id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "category_id": "a4d96984-489f-469d-98bc-98331add8a9d",
+            "name": "R Q two-checkouts",
+            "barcode": "RQ-two-checkouts",
+            "sale_price": "6.00"
+          },
+          {
+            "id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "category_id": "102a6bcb-f3ee-4bdd-8cff-a94f07981cf9",
+            "name": "R P two-checkouts",
+            "barcode": "RP-two-checkouts",
+            "sale_price": "9.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          },
+          {
+            "product_id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "counter": [
+          {
+            "next_value": 3
+          }
+        ]
+      },
+      "after_race": {
+        "products": [
+          {
+            "id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "category_id": "a4d96984-489f-469d-98bc-98331add8a9d",
+            "name": "R Q two-checkouts",
+            "barcode": "RQ-two-checkouts",
+            "sale_price": "6.00"
+          },
+          {
+            "id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "category_id": "102a6bcb-f3ee-4bdd-8cff-a94f07981cf9",
+            "name": "R P two-checkouts",
+            "barcode": "RP-two-checkouts",
+            "sale_price": "9.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          },
+          {
+            "product_id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "available_quantity": 10,
+            "initial_quantity": 10
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "quantity": 2,
+            "unit_price": "9.00"
+          }
+        ],
+        "sales": [],
+        "lines": [],
+        "counter": [
+          {
+            "next_value": 3
+          }
+        ]
+      },
+      "after_retry": {
+        "products": [
+          {
+            "id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "category_id": "a4d96984-489f-469d-98bc-98331add8a9d",
+            "name": "R Q two-checkouts",
+            "barcode": "RQ-two-checkouts",
+            "sale_price": "6.00"
+          },
+          {
+            "id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "category_id": "102a6bcb-f3ee-4bdd-8cff-a94f07981cf9",
+            "name": "R P two-checkouts",
+            "barcode": "RP-two-checkouts",
+            "sale_price": "9.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "available_quantity": 9,
+            "initial_quantity": 10
+          },
+          {
+            "product_id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "available_quantity": 8,
+            "initial_quantity": 10
+          }
+        ],
+        "draft": [
+          {
+            "status": "DISCARDED"
+          }
+        ],
+        "draft_lines": [
+          {
+            "product_id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "quantity": 2,
+            "unit_price": "9.00"
+          }
+        ],
+        "sales": [
+          {
+            "id": "2a5880b9-a170-46c1-87f8-25b7fdebcb56",
+            "total_amount": "24.00",
+            "cash_received": "40.00",
+            "change_given": "16.00"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "47c30111-f679-4410-bef4-ae8a7d1f86e5",
+            "product_snapshot_name": "R Q two-checkouts",
+            "product_snapshot_barcode": "RQ-two-checkouts",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "54d2aa97-a048-44db-85d6-d3cb9d7d94a4",
+            "product_snapshot_name": "R P two-checkouts",
+            "product_snapshot_barcode": "RP-two-checkouts",
+            "quantity": 2,
+            "unit_price": "9.00"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 4
+          }
+        ]
+      },
+      "retry": {
+        "sale": {
+          "id": "2a5880b9-a170-46c1-87f8-25b7fdebcb56",
+          "total": "24.00"
+        },
+        "same_sale": true
+      }
+    }
+  ],
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "database": "audit03_be15d739ce",
+  "isolation": "read committed",
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa01-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T231223297870Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T235435476251Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235102894578Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235313324286Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T000927933696Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001124615788Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001235417602Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001320983361Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001337606973Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001427294717Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010641541584Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010857906402Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020054712835Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020104229903Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020324334766Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020335877235Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020505026105Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T023934536531Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024200044720Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024338422290Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024349330265Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024455907968Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024617290091Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024628699915Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024749832414Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024801097155Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030010177604Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030036511029Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030252413844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030314191882Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030339870193Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030352675316Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T031505677093Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032216300260Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032251838417Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032333068344Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032528496946Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032641479670Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T033002861512Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034307344201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034318782440Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041750658883Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041757169052Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041945048165Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042659237619Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042730963824Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042756100441Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042844036974Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042912719703Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T043008623021Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165543164740Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165640773189Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165730633729Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171321742969Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171341873895Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171546908471Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171905215655Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172006895618Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172054000837Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172105045406Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173453359047Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173526027077Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173808145023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173927046544Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174028204311Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174235672078Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T175820924988Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180229612612Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180807525819Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180914638365Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181416503086Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181948564537Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T182622655374Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T183956099863Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184821961380Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184947335287Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184949253446Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T185008205808Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010526631267Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010655936590Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010725864129Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010846464247Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011420365490Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011843801709Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T012116957301Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T013518362010Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014121377023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014226942611Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014304366278Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015423105806Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015529367360Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015549608567Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015623098100Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015703446000Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015739066270Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015806678855Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015848208296Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T020804804408Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021009799064Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021726658069Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021749298118Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022024345104Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022054827383Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022113097844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025217937214Z-6d2387e5\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025317671199Z-66b3aa8c\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025449334980Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025515269778Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025536057632Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025555676509Z-837d210a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025612323774Z-69c9c66e\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025641628831Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032441129639Z-0bdc8478\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032522908138Z-4bfa962a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032724611710Z-4f696853\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032808941201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-migrations-20261111T020942208035Z\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-11T03:30:03.063366+00:00"
+}

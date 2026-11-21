@@ -1,0 +1,197 @@
+{
+  "inicio_utc": "2026-11-09T20:57:01.803Z",
+  "base": "SQLite de etapa01-20261109",
+  "caso": "AUTH-02 CA01–03 / RN-17 con reloj real y fixture VENDEDOR",
+  "eventos": [
+    {
+      "caso": "Éxito normalizado antes de la serie",
+      "envio_ms": 4043,
+      "respuesta_ms": 4379,
+      "http_post": 302,
+      "http_date": "Mon, 09 Nov 2026 20:57:06 GMT",
+      "ruta_final": "/inicio/",
+      "bd": {
+        "observado_utc": "2026-11-09T20:57:06.878287+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": true,
+        "last_login": "2026-11-09T20:57:06.134504+00:00",
+        "fallos": 0,
+        "locked_until": null
+      },
+      "menu_visible": [
+        "Apertura de caja",
+        "Preparar venta",
+        "Cerrar turno"
+      ]
+    },
+    {
+      "caso": "Clave errónea 1",
+      "envio_ms": 5558,
+      "respuesta_ms": 5749,
+      "http_post": 200,
+      "http_date": "Mon, 09 Nov 2026 20:57:07 GMT",
+      "ruta_final": "/",
+      "bd": {
+        "observado_utc": "2026-11-09T20:57:08.224372+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": false,
+        "last_login": "2026-11-09T20:57:06.134504+00:00",
+        "fallos": 1,
+        "locked_until": null
+      },
+      "mensaje": "Correo o contraseña incorrectos"
+    },
+    {
+      "caso": "Clave errónea 2",
+      "envio_ms": 6548,
+      "respuesta_ms": 6719,
+      "http_post": 200,
+      "http_date": "Mon, 09 Nov 2026 20:57:08 GMT",
+      "ruta_final": "/",
+      "bd": {
+        "observado_utc": "2026-11-09T20:57:09.220553+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": false,
+        "last_login": "2026-11-09T20:57:06.134504+00:00",
+        "fallos": 2,
+        "locked_until": null
+      },
+      "mensaje": "Correo o contraseña incorrectos"
+    },
+    {
+      "caso": "Clave errónea 3",
+      "envio_ms": 7563,
+      "respuesta_ms": 7740,
+      "http_post": 200,
+      "http_date": "Mon, 09 Nov 2026 20:57:09 GMT",
+      "ruta_final": "/",
+      "bd": {
+        "observado_utc": "2026-11-09T20:57:10.225963+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": false,
+        "last_login": "2026-11-09T20:57:06.134504+00:00",
+        "fallos": 3,
+        "locked_until": null
+      },
+      "mensaje": "Correo o contraseña incorrectos"
+    },
+    {
+      "caso": "Clave errónea 4",
+      "envio_ms": 8568,
+      "respuesta_ms": 8735,
+      "http_post": 200,
+      "http_date": "Mon, 09 Nov 2026 20:57:10 GMT",
+      "ruta_final": "/",
+      "bd": {
+        "observado_utc": "2026-11-09T20:57:11.308311+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": false,
+        "last_login": "2026-11-09T20:57:06.134504+00:00",
+        "fallos": 4,
+        "locked_until": null
+      },
+      "mensaje": "Correo o contraseña incorrectos"
+    },
+    {
+      "caso": "Clave errónea 5",
+      "envio_ms": 9653,
+      "respuesta_ms": 9804,
+      "http_post": 200,
+      "http_date": "Mon, 09 Nov 2026 20:57:11 GMT",
+      "ruta_final": "/",
+      "bd": {
+        "observado_utc": "2026-11-09T20:57:12.300825+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": false,
+        "last_login": "2026-11-09T20:57:06.134504+00:00",
+        "fallos": 5,
+        "locked_until": "2026-11-09T21:12:11.579883+00:00"
+      },
+      "mensaje": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 15 minuto(s)."
+    },
+    {
+      "caso": "Otra sesión, clave correcta al comenzar",
+      "envio_ms": 14119,
+      "respuesta_ms": 14319,
+      "http_post": 200,
+      "http_date": "Mon, 09 Nov 2026 20:57:16 GMT",
+      "ruta_final": "/",
+      "bd": {
+        "observado_utc": "2026-11-09T20:57:17.022332+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": false,
+        "last_login": "2026-11-09T20:57:06.134504+00:00",
+        "fallos": 5,
+        "locked_until": "2026-11-09T21:12:11.579883+00:00"
+      },
+      "mensaje": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 15 minuto(s)."
+    },
+    {
+      "caso": "Otra sesión, faltan 2 minuto(s) mostrados",
+      "envio_ms": 812965,
+      "respuesta_ms": 813093,
+      "http_post": 200,
+      "http_date": "Mon, 09 Nov 2026 21:10:34 GMT",
+      "ruta_final": "/",
+      "bd": {
+        "observado_utc": "2026-11-09T21:10:35.471336+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": false,
+        "last_login": "2026-11-09T20:57:06.134504+00:00",
+        "fallos": 5,
+        "locked_until": "2026-11-09T21:12:11.579883+00:00"
+      },
+      "mensaje": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 2 minuto(s)."
+    },
+    {
+      "caso": "Otra sesión, faltan 1 minuto(s) mostrados",
+      "envio_ms": 867901,
+      "respuesta_ms": 868124,
+      "http_post": 200,
+      "http_date": "Mon, 09 Nov 2026 21:11:29 GMT",
+      "ruta_final": "/",
+      "bd": {
+        "observado_utc": "2026-11-09T21:11:31.005963+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": false,
+        "last_login": "2026-11-09T20:57:06.134504+00:00",
+        "fallos": 5,
+        "locked_until": "2026-11-09T21:12:11.579883+00:00"
+      },
+      "mensaje": "Demasiados intentos fallidos consecutivos. Inténtelo nuevamente en 1 minuto(s)."
+    },
+    {
+      "caso": "Éxito tras vencimiento real",
+      "envio_ms": 914316,
+      "respuesta_ms": 914511,
+      "http_post": 302,
+      "http_date": "Mon, 09 Nov 2026 21:12:16 GMT",
+      "ruta_final": "/inicio/",
+      "bd": {
+        "observado_utc": "2026-11-09T21:12:17.059764+00:00",
+        "rol_bd": "VENDEDOR",
+        "sesion_del_vendedor": true,
+        "last_login": "2026-11-09T21:12:16.260395+00:00",
+        "fallos": 0,
+        "locked_until": null
+      },
+      "menu_visible": [
+        "Apertura de caja",
+        "Preparar venta",
+        "Cerrar turno"
+      ]
+    }
+  ],
+  "navegador": "Google Chrome 157.0.8103.39 headless / 1366×768",
+  "inicial": {
+    "observado_utc": "2026-11-09T20:57:05.440229+00:00",
+    "rol_bd": "VENDEDOR",
+    "sesion_del_vendedor": false,
+    "last_login": "2026-11-09T16:55:04.157058+00:00",
+    "fallos": 0,
+    "locked_until": null
+  },
+  "desde_quinto_hasta_exito_monotonico_ms": 904663,
+  "resultado": "CUMPLE en esta ejecución",
+  "fin_utc": "2026-11-09T21:12:17.350Z"
+}

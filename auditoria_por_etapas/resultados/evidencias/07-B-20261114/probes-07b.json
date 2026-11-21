@@ -1,0 +1,1962 @@
+{
+  "run_utc": "2026-11-15T02:59:53.810957+00:00",
+  "cases": {
+    "empty_db": {
+      "stock": {
+        "h1": "Stock e inventario",
+        "h2": "Inventario actual",
+        "banners": [
+          {
+            "heading": null,
+            "summary_text": "✓ Sin alertas de stock bajo ni de vencimiento.",
+            "classes": [
+              "panel",
+              "stock-alert-panel"
+            ],
+            "items": []
+          }
+        ],
+        "products": []
+      },
+      "expirations": {
+        "title": "Vencimientos de productos",
+        "h1": "Vencimientos de lotes",
+        "h2": "Lotes vencidos y próximos a vencer",
+        "days_input_value": "30",
+        "alerts": [
+          "No hay lotes con unidades disponibles que estén vencidos o venzan en los próximos 30 días."
+        ],
+        "summary": null,
+        "row_count": 0,
+        "rows": [],
+        "has_separate_upcoming_section": false
+      },
+      "dashboard_admin": {
+        "status_code": 200,
+        "h1": "Inicio",
+        "h2": "Panel principal",
+        "context_summary": {
+          "expiring": 0,
+          "expired": 0,
+          "low_stock": 0,
+          "sales_count": 0,
+          "sales_total": "0",
+          "discount_total": "0",
+          "open_shifts": 0
+        },
+        "kpis": {
+          "Ventas de hoy": "0",
+          "Total vendido hoy": "S/ 0,00",
+          "Descuentos otorgados hoy": "S/ 0,00",
+          "Turnos de caja abiertos": "0",
+          "Productos con stock bajo": "0",
+          "Lotes por vencer (30 días)": "0",
+          "Lotes vencidos con stock": "0"
+        },
+        "has_resumen_general": true,
+        "nav_links": [
+          {
+            "text": "M MinimarketGestión de bodega",
+            "href": "/inicio/"
+          },
+          {
+            "text": "⌂Inicio",
+            "href": "/inicio/"
+          },
+          {
+            "text": "☰Productos",
+            "href": "/productos/"
+          },
+          {
+            "text": "▦Registrar producto",
+            "href": "/productos/nuevo/"
+          },
+          {
+            "text": "▮Categorías",
+            "href": "/productos/categorias/"
+          },
+          {
+            "text": "✦Proveedores",
+            "href": "/inventario/proveedores/"
+          },
+          {
+            "text": "☷Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "⏳Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "⏫Ajuste físico",
+            "href": "/inventario/ajustes/nuevo/"
+          },
+          {
+            "text": "☺Empleados",
+            "href": "/empleados/"
+          },
+          {
+            "text": "☰Historial de turnos",
+            "href": "/caja/turnos/"
+          },
+          {
+            "text": "☰Historial de ventas",
+            "href": "/ventas/historial/"
+          },
+          {
+            "text": "↪ Cerrar sesión",
+            "href": "/salir/"
+          },
+          {
+            "text": "Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "Historial de ventas (todas las fechas)",
+            "href": "/ventas/historial/"
+          },
+          {
+            "text": "▦ Registrar un producto Registra sus datos comerciales, precio y unidad de medida. El producto inicia con cero existencias. Registrar producto →",
+            "href": "/productos/nuevo/"
+          },
+          {
+            "text": "☰ Ver catálogo de productos Consulta todos los productos registrados, su precio, disponibilidad y stock mínimo. Ver catálogo →",
+            "href": "/productos/"
+          },
+          {
+            "text": "☺ Gestionar empleados Consulta, crea y edita los empleados del sistema. También puedes desactivar cuentas. Ver empleados →",
+            "href": "/empleados/"
+          }
+        ]
+      },
+      "dashboard_warehouse": {
+        "status_code": 200,
+        "h1": "Inicio",
+        "h2": "Panel principal",
+        "context_summary": {
+          "expiring": 0,
+          "expired": 0,
+          "low_stock": 0
+        },
+        "kpis": {
+          "Productos con stock bajo": "0",
+          "Lotes por vencer (30 días)": "0",
+          "Lotes vencidos con stock": "0"
+        },
+        "has_resumen_general": true,
+        "nav_links": [
+          {
+            "text": "M MinimarketGestión de bodega",
+            "href": "/inicio/"
+          },
+          {
+            "text": "⌂Inicio",
+            "href": "/inicio/"
+          },
+          {
+            "text": "☷Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "⏳Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "◫Existencias iniciales",
+            "href": "/inventario/carga-inicial/"
+          },
+          {
+            "text": "✚Entrada de mercadería",
+            "href": "/inventario/entrada/"
+          },
+          {
+            "text": "☒Registrar merma",
+            "href": "/inventario/bajas/nueva/"
+          },
+          {
+            "text": "☰Catálogo de productos",
+            "href": "/productos/"
+          },
+          {
+            "text": "✦Proveedores",
+            "href": "/inventario/proveedores/"
+          },
+          {
+            "text": "↪ Cerrar sesión",
+            "href": "/salir/"
+          },
+          {
+            "text": "Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "▤ Registrar existencias iniciales Ingresa uno o varios lotes iniciales con sus cantidades, costos y fechas de vencimiento. Registrar existencias →",
+            "href": "/inventario/carga-inicial/"
+          },
+          {
+            "text": "✚ Registrar entrada de mercadería Registra lotes de mercadería recibida para productos que ya tienen carga inicial. Registrar entrada →",
+            "href": "/inventario/entrada/"
+          },
+          {
+            "text": "☒ Registrar merma Descuenta unidades dañadas, vencidas o rotas de un lote específico. Registrar merma →",
+            "href": "/inventario/bajas/nueva/"
+          }
+        ]
+      },
+      "dashboard_seller": {
+        "status_code": 200,
+        "h1": "Inicio",
+        "h2": "Panel principal",
+        "context_summary": null,
+        "kpis": {},
+        "has_resumen_general": false,
+        "nav_links": [
+          {
+            "text": "M MinimarketGestión de bodega",
+            "href": "/inicio/"
+          },
+          {
+            "text": "⌂Inicio",
+            "href": "/inicio/"
+          },
+          {
+            "text": "$Apertura de caja",
+            "href": "/caja/abrir/"
+          },
+          {
+            "text": "▦Preparar venta",
+            "href": "/ventas/"
+          },
+          {
+            "text": "✖Cerrar turno",
+            "href": "/caja/cerrar/"
+          },
+          {
+            "text": "☰Mis ventas del turno",
+            "href": "/ventas/historial/turno/"
+          },
+          {
+            "text": "☰Mi historial de ventas",
+            "href": "/ventas/historial/"
+          },
+          {
+            "text": "☰Mi historial de turnos",
+            "href": "/caja/turnos/"
+          },
+          {
+            "text": "↪ Cerrar sesión",
+            "href": "/salir/"
+          },
+          {
+            "text": "▣ Abrir el turno de caja Declara el dinero en efectivo disponible al comenzar tu turno. Abrir turno →",
+            "href": "/caja/abrir/"
+          },
+          {
+            "text": "▦ Preparar una venta Busca productos y revisa las existencias disponibles antes de cobrar. Preparar venta →",
+            "href": "/ventas/"
+          }
+        ]
+      }
+    },
+    "cp_hu_prod_06_001": {
+      "midnight_transitions": {
+        "before_midnight_lima_235959": {
+          "lima_localdate": "2026-11-11",
+          "p_inact_physical": 3,
+          "p_inact_sellable_if_active": 3,
+          "summary": "Total en pantalla: 2 lotes (0 vencidos bloqueados para venta · 2 próximos dentro de 30 días).",
+          "rows": [
+            {
+              "cells": [
+                "Producto E Caducado Producto inactivo",
+                "Lácteos",
+                "LOTE-E",
+                "Distribuidora Lima",
+                "12 de noviembre de 2026 En 1 día",
+                "3",
+                "Próximo",
+                "—"
+              ],
+              "action_href": null,
+              "action_text": null
+            },
+            {
+              "cells": [
+                "Yogurt Natural 1L",
+                "Lácteos",
+                "LOTE-A",
+                "Distribuidora Lima",
+                "13 de noviembre de 2026 En 2 días",
+                "10",
+                "Próximo",
+                "—"
+              ],
+              "action_href": null,
+              "action_text": null
+            }
+          ]
+        },
+        "at_midnight_lima_000000": {
+          "lima_localdate": "2026-11-12",
+          "p_inact_physical": 3,
+          "p_inact_sellable_if_active": 0,
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "rows": [
+            {
+              "cells": [
+                "Producto E Caducado Producto inactivo",
+                "Lácteos",
+                "LOTE-E",
+                "Distribuidora Lima",
+                "12 de noviembre de 2026 Vence hoy",
+                "3",
+                "Vencido Bloqueado para venta",
+                "Dar de baja"
+              ],
+              "action_href": "/inventario/bajas/nueva/?lote=f78e7436-c9fc-4628-a0e7-7ceedde1ddcf",
+              "action_text": "Dar de baja"
+            },
+            {
+              "cells": [
+                "Yogurt Natural 1L",
+                "Lácteos",
+                "LOTE-A",
+                "Distribuidora Lima",
+                "13 de noviembre de 2026 En 1 día",
+                "10",
+                "Próximo",
+                "—"
+              ],
+              "action_href": null,
+              "action_text": null
+            },
+            {
+              "cells": [
+                "Yogurt Natural 1L",
+                "Lácteos",
+                "LOTE-B",
+                "Distribuidora Lima",
+                "12 de diciembre de 2026 En 30 días",
+                "10",
+                "Próximo",
+                "—"
+              ],
+              "action_href": null,
+              "action_text": null
+            }
+          ]
+        }
+      },
+      "filter_probes": {
+        "default_no_param": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "empty": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "spaces": {
+          "status_code": 200,
+          "days_input_value": "7",
+          "alerts": [],
+          "summary": "Total en pantalla: 2 lotes (1 vencido bloqueado para venta · 1 próximo dentro de 7 días).",
+          "row_count": 2,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A"
+          ],
+          "states": [
+            "3",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "leading_zeros_7": {
+          "status_code": 200,
+          "days_input_value": "7",
+          "alerts": [],
+          "summary": "Total en pantalla: 2 lotes (1 vencido bloqueado para venta · 1 próximo dentro de 7 días).",
+          "row_count": 2,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A"
+          ],
+          "states": [
+            "3",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_1": {
+          "status_code": 200,
+          "days_input_value": "1",
+          "alerts": [],
+          "summary": "Total en pantalla: 2 lotes (1 vencido bloqueado para venta · 1 próximo dentro de 1 día).",
+          "row_count": 2,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A"
+          ],
+          "states": [
+            "3",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_7": {
+          "status_code": 200,
+          "days_input_value": "7",
+          "alerts": [],
+          "summary": "Total en pantalla: 2 lotes (1 vencido bloqueado para venta · 1 próximo dentro de 7 días).",
+          "row_count": 2,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A"
+          ],
+          "states": [
+            "3",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_30": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_3650": {
+          "status_code": 200,
+          "days_input_value": "3650",
+          "alerts": [],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 3650 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_0": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_0000": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_neg0": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_neg5": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_3651": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_huge": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número de días entre 1 y 3650. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_abc": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número entero válido de días. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_plus7": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número entero válido de días. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_decimal": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número entero válido de días. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_arabic_digit": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número entero válido de días. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "dias_nul": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número entero válido de días. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "repeated_7_then_30": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        },
+        "repeated_7_then_abc": {
+          "status_code": 200,
+          "days_input_value": "30",
+          "alerts": [
+            "Ingrese un número entero válido de días. Se muestran 30 días por defecto."
+          ],
+          "summary": "Total en pantalla: 3 lotes (1 vencido bloqueado para venta · 2 próximos dentro de 30 días).",
+          "row_count": 3,
+          "lot_numbers": [
+            "LOTE-E",
+            "LOTE-A",
+            "LOTE-B"
+          ],
+          "states": [
+            "3",
+            "10",
+            "10"
+          ],
+          "has_separate_upcoming_section": false
+        }
+      },
+      "stock_overview_nov12": {
+        "h1": "Stock e inventario",
+        "h2": "Inventario actual",
+        "banners": [
+          {
+            "heading": null,
+            "summary_text": "⚠ Lotes VENCIDOS con unidades registradas (1) Producto E Caducado (Inactivo) — Lote LOTE-E — 3 unid. — Venció: 12 de noviembre de 2026",
+            "classes": [
+              "panel",
+              "panel-danger",
+              "stock-alert-panel"
+            ],
+            "items": [
+              "Producto E Caducado (Inactivo) — Lote LOTE-E — 3 unid. — Venció: 12 de noviembre de 2026"
+            ]
+          },
+          {
+            "heading": null,
+            "summary_text": "⏳ Lotes próximos a vencer (dentro de 30 días) — 2 Yogurt Natural 1L — Lote LOTE-A — 10 unid. — Vence: 13 de noviembre de 2026 Yogurt Natural 1L — Lote LOTE-B — 10 unid. — Vence: 12 de diciembre de 2026",
+            "classes": [
+              "panel",
+              "panel-warning",
+              "stock-alert-panel"
+            ],
+            "items": [
+              "Yogurt Natural 1L — Lote LOTE-A — 10 unid. — Vence: 13 de noviembre de 2026",
+              "Yogurt Natural 1L — Lote LOTE-B — 10 unid. — Vence: 12 de diciembre de 2026"
+            ]
+          }
+        ],
+        "products": [
+          {
+            "product": "Producto E Caducado7750006000028",
+            "category": "Lácteos",
+            "physical": "3",
+            "physical_is_low_class": false,
+            "sellable": "0",
+            "sellable_is_low_class": false,
+            "minimum": "2",
+            "status": "Inactivo",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/b38803fa-a611-4b17-a585-f19bfc26e035/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/f2714810-2e2a-4349-b9b3-36c11a0e0b15/"
+              }
+            ]
+          },
+          {
+            "product": "Yogurt Natural 1L7750006000011",
+            "category": "Lácteos",
+            "physical": "20",
+            "physical_is_low_class": false,
+            "sellable": "20",
+            "sellable_is_low_class": false,
+            "minimum": "5",
+            "status": "OK",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/a5048824-f2fa-4ce1-b23d-34b01a5d33c4/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/139e5d71-fc79-433d-84f4-7cedf24067b2/"
+              }
+            ]
+          }
+        ]
+      },
+      "product_list_nov12": [
+        {
+          "name": "Producto E Caducado",
+          "barcode": "Lácteos",
+          "category": "7750006000028",
+          "price": "5,00",
+          "stock_cell": "0",
+          "low_badge": null,
+          "minimum": "2",
+          "status": "Inactivo"
+        },
+        {
+          "name": "Yogurt Natural 1L",
+          "barcode": "Lácteos",
+          "category": "7750006000011",
+          "price": "8,50",
+          "stock_cell": "20",
+          "low_badge": null,
+          "minimum": "5",
+          "status": "Disponible"
+        }
+      ],
+      "dashboard_admin_nov12": {
+        "status_code": 200,
+        "h1": "Inicio",
+        "h2": "Panel principal",
+        "context_summary": {
+          "expiring": 2,
+          "expired": 1,
+          "low_stock": 0,
+          "sales_count": 0,
+          "sales_total": "0",
+          "discount_total": "0",
+          "open_shifts": 0
+        },
+        "kpis": {
+          "Ventas de hoy": "0",
+          "Total vendido hoy": "S/ 0,00",
+          "Descuentos otorgados hoy": "S/ 0,00",
+          "Turnos de caja abiertos": "0",
+          "Productos con stock bajo": "0",
+          "Lotes por vencer (30 días)": "2",
+          "Lotes vencidos con stock": "1"
+        },
+        "has_resumen_general": true,
+        "nav_links": [
+          {
+            "text": "M MinimarketGestión de bodega",
+            "href": "/inicio/"
+          },
+          {
+            "text": "⌂Inicio",
+            "href": "/inicio/"
+          },
+          {
+            "text": "☰Productos",
+            "href": "/productos/"
+          },
+          {
+            "text": "▦Registrar producto",
+            "href": "/productos/nuevo/"
+          },
+          {
+            "text": "▮Categorías",
+            "href": "/productos/categorias/"
+          },
+          {
+            "text": "✦Proveedores",
+            "href": "/inventario/proveedores/"
+          },
+          {
+            "text": "☷Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "⏳Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "⏫Ajuste físico",
+            "href": "/inventario/ajustes/nuevo/"
+          },
+          {
+            "text": "☺Empleados",
+            "href": "/empleados/"
+          },
+          {
+            "text": "☰Historial de turnos",
+            "href": "/caja/turnos/"
+          },
+          {
+            "text": "☰Historial de ventas",
+            "href": "/ventas/historial/"
+          },
+          {
+            "text": "↪ Cerrar sesión",
+            "href": "/salir/"
+          },
+          {
+            "text": "Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "Historial de ventas (todas las fechas)",
+            "href": "/ventas/historial/"
+          },
+          {
+            "text": "▦ Registrar un producto Registra sus datos comerciales, precio y unidad de medida. El producto inicia con cero existencias. Registrar producto →",
+            "href": "/productos/nuevo/"
+          },
+          {
+            "text": "☰ Ver catálogo de productos Consulta todos los productos registrados, su precio, disponibilidad y stock mínimo. Ver catálogo →",
+            "href": "/productos/"
+          },
+          {
+            "text": "☺ Gestionar empleados Consulta, crea y edita los empleados del sistema. También puedes desactivar cuentas. Ver empleados →",
+            "href": "/empleados/"
+          }
+        ]
+      },
+      "dashboard_warehouse_nov12": {
+        "status_code": 200,
+        "h1": "Inicio",
+        "h2": "Panel principal",
+        "context_summary": {
+          "expiring": 2,
+          "expired": 1,
+          "low_stock": 0
+        },
+        "kpis": {
+          "Productos con stock bajo": "0",
+          "Lotes por vencer (30 días)": "2",
+          "Lotes vencidos con stock": "1"
+        },
+        "has_resumen_general": true,
+        "nav_links": [
+          {
+            "text": "M MinimarketGestión de bodega",
+            "href": "/inicio/"
+          },
+          {
+            "text": "⌂Inicio",
+            "href": "/inicio/"
+          },
+          {
+            "text": "☷Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "⏳Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "◫Existencias iniciales",
+            "href": "/inventario/carga-inicial/"
+          },
+          {
+            "text": "✚Entrada de mercadería",
+            "href": "/inventario/entrada/"
+          },
+          {
+            "text": "☒Registrar merma",
+            "href": "/inventario/bajas/nueva/"
+          },
+          {
+            "text": "☰Catálogo de productos",
+            "href": "/productos/"
+          },
+          {
+            "text": "✦Proveedores",
+            "href": "/inventario/proveedores/"
+          },
+          {
+            "text": "↪ Cerrar sesión",
+            "href": "/salir/"
+          },
+          {
+            "text": "Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "▤ Registrar existencias iniciales Ingresa uno o varios lotes iniciales con sus cantidades, costos y fechas de vencimiento. Registrar existencias →",
+            "href": "/inventario/carga-inicial/"
+          },
+          {
+            "text": "✚ Registrar entrada de mercadería Registra lotes de mercadería recibida para productos que ya tienen carga inicial. Registrar entrada →",
+            "href": "/inventario/entrada/"
+          },
+          {
+            "text": "☒ Registrar merma Descuenta unidades dañadas, vencidas o rotas de un lote específico. Registrar merma →",
+            "href": "/inventario/bajas/nueva/"
+          }
+        ]
+      }
+    },
+    "cp_dec_07_and_edge_cases": {
+      "p_susp_indiv_is_active_after_cat_reactivate": false,
+      "p_beb_act_physical": 17,
+      "p_beb_act_sellable": 11,
+      "pos_agua_sellable_service": 11,
+      "pos_contains_agua_11": true,
+      "pos_excludes_gaseosa_susp": true,
+      "pos_excludes_producto_e": true,
+      "exp_dias_7": {
+        "title": "Vencimientos de productos",
+        "h1": "Vencimientos de lotes",
+        "h2": "Lotes vencidos y próximos a vencer",
+        "days_input_value": "7",
+        "alerts": [],
+        "summary": "Total en pantalla: 3 lotes (2 vencidos bloqueados para venta · 1 próximo dentro de 7 días).",
+        "row_count": 3,
+        "rows": [
+          {
+            "cells": [
+              "Agua Mineral Mixta",
+              "Bebidas",
+              "AG-ADJ-EXP",
+              "—",
+              "12 de noviembre de 2026 Vence hoy",
+              "6",
+              "Vencido Bloqueado para venta",
+              "Dar de baja"
+            ],
+            "action_href": "/inventario/bajas/nueva/?lote=419c4321-0f88-4832-8801-1e8c0dbc4efe",
+            "action_text": "Dar de baja"
+          },
+          {
+            "cells": [
+              "Producto E Vencido Inactivo Producto inactivo",
+              "Granos",
+              "PE-EXP",
+              "Proveedor Central",
+              "12 de noviembre de 2026 Vence hoy",
+              "3",
+              "Vencido Bloqueado para venta",
+              "Dar de baja"
+            ],
+            "action_href": "/inventario/bajas/nueva/?lote=a62f7fcf-a1a1-4a38-99b7-fd6d61ac5d65",
+            "action_text": "Dar de baja"
+          },
+          {
+            "cells": [
+              "Arroz Costeño",
+              "Granos",
+              "AR-1D",
+              "Proveedor Central",
+              "13 de noviembre de 2026 En 1 día",
+              "5",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          }
+        ],
+        "has_separate_upcoming_section": false
+      },
+      "exp_dias_30": {
+        "title": "Vencimientos de productos",
+        "h1": "Vencimientos de lotes",
+        "h2": "Lotes vencidos y próximos a vencer",
+        "days_input_value": "30",
+        "alerts": [],
+        "summary": "Total en pantalla: 6 lotes (2 vencidos bloqueados para venta · 4 próximos dentro de 30 días).",
+        "row_count": 6,
+        "rows": [
+          {
+            "cells": [
+              "Agua Mineral Mixta",
+              "Bebidas",
+              "AG-ADJ-EXP",
+              "—",
+              "12 de noviembre de 2026 Vence hoy",
+              "6",
+              "Vencido Bloqueado para venta",
+              "Dar de baja"
+            ],
+            "action_href": "/inventario/bajas/nueva/?lote=419c4321-0f88-4832-8801-1e8c0dbc4efe",
+            "action_text": "Dar de baja"
+          },
+          {
+            "cells": [
+              "Producto E Vencido Inactivo Producto inactivo",
+              "Granos",
+              "PE-EXP",
+              "Proveedor Central",
+              "12 de noviembre de 2026 Vence hoy",
+              "3",
+              "Vencido Bloqueado para venta",
+              "Dar de baja"
+            ],
+            "action_href": "/inventario/bajas/nueva/?lote=a62f7fcf-a1a1-4a38-99b7-fd6d61ac5d65",
+            "action_text": "Dar de baja"
+          },
+          {
+            "cells": [
+              "Arroz Costeño",
+              "Granos",
+              "AR-1D",
+              "Proveedor Central",
+              "13 de noviembre de 2026 En 1 día",
+              "5",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          },
+          {
+            "cells": [
+              "Agua Mineral Mixta",
+              "Bebidas",
+              "AG-REC-30D",
+              "Proveedor Central",
+              "12 de diciembre de 2026 En 30 días",
+              "1",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          },
+          {
+            "cells": [
+              "Agua Mineral Mixta",
+              "Bebidas",
+              "AG-30D",
+              "Proveedor Central",
+              "12 de diciembre de 2026 En 30 días",
+              "4",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          },
+          {
+            "cells": [
+              "Gaseosa Suspendida Previa Producto inactivo",
+              "Bebidas",
+              "GAS-30D",
+              "Proveedor Central",
+              "12 de diciembre de 2026 En 30 días",
+              "4",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          }
+        ],
+        "has_separate_upcoming_section": false
+      },
+      "exp_dias_31": {
+        "title": "Vencimientos de productos",
+        "h1": "Vencimientos de lotes",
+        "h2": "Lotes vencidos y próximos a vencer",
+        "days_input_value": "31",
+        "alerts": [],
+        "summary": "Total en pantalla: 7 lotes (2 vencidos bloqueados para venta · 5 próximos dentro de 31 días).",
+        "row_count": 7,
+        "rows": [
+          {
+            "cells": [
+              "Agua Mineral Mixta",
+              "Bebidas",
+              "AG-ADJ-EXP",
+              "—",
+              "12 de noviembre de 2026 Vence hoy",
+              "6",
+              "Vencido Bloqueado para venta",
+              "Dar de baja"
+            ],
+            "action_href": "/inventario/bajas/nueva/?lote=419c4321-0f88-4832-8801-1e8c0dbc4efe",
+            "action_text": "Dar de baja"
+          },
+          {
+            "cells": [
+              "Producto E Vencido Inactivo Producto inactivo",
+              "Granos",
+              "PE-EXP",
+              "Proveedor Central",
+              "12 de noviembre de 2026 Vence hoy",
+              "3",
+              "Vencido Bloqueado para venta",
+              "Dar de baja"
+            ],
+            "action_href": "/inventario/bajas/nueva/?lote=a62f7fcf-a1a1-4a38-99b7-fd6d61ac5d65",
+            "action_text": "Dar de baja"
+          },
+          {
+            "cells": [
+              "Arroz Costeño",
+              "Granos",
+              "AR-1D",
+              "Proveedor Central",
+              "13 de noviembre de 2026 En 1 día",
+              "5",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          },
+          {
+            "cells": [
+              "Agua Mineral Mixta",
+              "Bebidas",
+              "AG-REC-30D",
+              "Proveedor Central",
+              "12 de diciembre de 2026 En 30 días",
+              "1",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          },
+          {
+            "cells": [
+              "Agua Mineral Mixta",
+              "Bebidas",
+              "AG-30D",
+              "Proveedor Central",
+              "12 de diciembre de 2026 En 30 días",
+              "4",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          },
+          {
+            "cells": [
+              "Gaseosa Suspendida Previa Producto inactivo",
+              "Bebidas",
+              "GAS-30D",
+              "Proveedor Central",
+              "12 de diciembre de 2026 En 30 días",
+              "4",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          },
+          {
+            "cells": [
+              "Agua Mineral Mixta",
+              "Bebidas",
+              "AG-31D",
+              "Proveedor Central",
+              "13 de diciembre de 2026 En 31 días",
+              "6",
+              "Próximo",
+              "—"
+            ],
+            "action_href": null,
+            "action_text": null
+          }
+        ],
+        "has_separate_upcoming_section": false
+      },
+      "stock_overview_admin": {
+        "h1": "Stock e inventario",
+        "h2": "Inventario actual",
+        "banners": [
+          {
+            "heading": null,
+            "summary_text": "⚠ Lotes VENCIDOS con unidades registradas (2) Agua Mineral Mixta — Lote AG-ADJ-EXP — 6 unid. — Venció: 12 de noviembre de 2026 Producto E Vencido Inactivo (Inactivo) — Lote PE-EXP — 3 unid. — Venció: 12 de noviembre de 2026",
+            "classes": [
+              "panel",
+              "panel-danger",
+              "stock-alert-panel"
+            ],
+            "items": [
+              "Agua Mineral Mixta — Lote AG-ADJ-EXP — 6 unid. — Venció: 12 de noviembre de 2026",
+              "Producto E Vencido Inactivo (Inactivo) — Lote PE-EXP — 3 unid. — Venció: 12 de noviembre de 2026"
+            ]
+          },
+          {
+            "heading": null,
+            "summary_text": "⏳ Lotes próximos a vencer (dentro de 30 días) — 4 Arroz Costeño — Lote AR-1D — 5 unid. — Vence: 13 de noviembre de 2026 Agua Mineral Mixta — Lote AG-REC-30D — 1 unid. — Vence: 12 de diciembre de 2026 Agua Mineral Mixta — Lote AG-30D — 4 unid. — Vence: 12 de diciembre de 2026 Gaseosa Suspendida Previa (Inactivo) — Lote GAS-30D — 4 unid. — Vence: 12 de diciembre de 2026",
+            "classes": [
+              "panel",
+              "panel-warning",
+              "stock-alert-panel"
+            ],
+            "items": [
+              "Arroz Costeño — Lote AR-1D — 5 unid. — Vence: 13 de noviembre de 2026",
+              "Agua Mineral Mixta — Lote AG-REC-30D — 1 unid. — Vence: 12 de diciembre de 2026",
+              "Agua Mineral Mixta — Lote AG-30D — 4 unid. — Vence: 12 de diciembre de 2026",
+              "Gaseosa Suspendida Previa (Inactivo) — Lote GAS-30D — 4 unid. — Vence: 12 de diciembre de 2026"
+            ]
+          },
+          {
+            "heading": null,
+            "summary_text": "🔶 Stock vigente en el mínimo o por debajo (4 productos) Agua Mineral Mixta — 11 unid. vigentes (17 registradas) / mínimo 11 Arroz Costeño — 5 unid. vigentes (5 registradas) / mínimo 10 Fideos Lote Agotado — 0 unid. vigentes (0 registradas) / mínimo 2 Sal Sin Minimo Cero Stock — 0 unid. vigentes (0 registradas) / mínimo 0",
+            "classes": [
+              "panel",
+              "panel-warning",
+              "stock-alert-panel"
+            ],
+            "items": [
+              "Agua Mineral Mixta — 11 unid. vigentes (17 registradas) / mínimo 11",
+              "Arroz Costeño — 5 unid. vigentes (5 registradas) / mínimo 10",
+              "Fideos Lote Agotado — 0 unid. vigentes (0 registradas) / mínimo 2",
+              "Sal Sin Minimo Cero Stock — 0 unid. vigentes (0 registradas) / mínimo 0"
+            ]
+          }
+        ],
+        "products": [
+          {
+            "product": "Agua Mineral Mixta7750007000049",
+            "category": "Bebidas",
+            "physical": "17",
+            "physical_is_low_class": false,
+            "sellable": "11",
+            "sellable_is_low_class": false,
+            "minimum": "11",
+            "status": "Stock bajo",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/5593f6e7-f0fa-4ef0-bc6d-ad18c1b1533c/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/34db8142-7ce4-4309-b2cb-4c5fd398c451/"
+              }
+            ]
+          },
+          {
+            "product": "Arroz Costeño7750007000018",
+            "category": "Granos",
+            "physical": "5",
+            "physical_is_low_class": false,
+            "sellable": "5",
+            "sellable_is_low_class": false,
+            "minimum": "10",
+            "status": "Stock bajo",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/3281ff0e-bb56-466c-a6f1-42b82a2b286b/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/ea5e34fb-75d8-413a-bbdf-09fad7e8512a/"
+              }
+            ]
+          },
+          {
+            "product": "Fideos Lote Agotado7750007000063",
+            "category": "Granos",
+            "physical": "0",
+            "physical_is_low_class": false,
+            "sellable": "0",
+            "sellable_is_low_class": false,
+            "minimum": "2",
+            "status": "Sin stock vendible",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/78d13de3-8961-4a6c-975c-0aa1d5a13b09/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/ee0782ff-8725-443a-9496-5626d5113d23/"
+              }
+            ]
+          },
+          {
+            "product": "Gaseosa Suspendida Previa7750007000032",
+            "category": "Bebidas",
+            "physical": "4",
+            "physical_is_low_class": false,
+            "sellable": "4",
+            "sellable_is_low_class": false,
+            "minimum": "10",
+            "status": "Inactivo",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/498d88fd-a2c4-484a-9da8-ea9d68f9209f/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/0a2e515b-940d-4912-85a3-e81dc925e8b9/"
+              }
+            ]
+          },
+          {
+            "product": "Producto E Vencido Inactivo7750007000025",
+            "category": "Granos",
+            "physical": "3",
+            "physical_is_low_class": false,
+            "sellable": "0",
+            "sellable_is_low_class": false,
+            "minimum": "5",
+            "status": "Inactivo",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/64a3fd61-0e20-4941-9e5c-5698885327cb/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/4f517112-83bb-40eb-beba-b3869ee07ce6/"
+              }
+            ]
+          },
+          {
+            "product": "Sal Sin Minimo Cero Stock7750007000056",
+            "category": "Granos",
+            "physical": "0",
+            "physical_is_low_class": false,
+            "sellable": "0",
+            "sellable_is_low_class": false,
+            "minimum": "0",
+            "status": "Sin stock vendible",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/3926ceb4-50b9-4e53-a513-8bdd59e32fff/movimientos/"
+              }
+            ]
+          }
+        ]
+      },
+      "stock_overview_warehouse": {
+        "h1": "Stock e inventario",
+        "h2": "Inventario actual",
+        "banners": [
+          {
+            "heading": null,
+            "summary_text": "⚠ Lotes VENCIDOS con unidades registradas (2) Agua Mineral Mixta — Lote AG-ADJ-EXP — 6 unid. — Venció: 12 de noviembre de 2026 Producto E Vencido Inactivo (Inactivo) — Lote PE-EXP — 3 unid. — Venció: 12 de noviembre de 2026",
+            "classes": [
+              "panel",
+              "panel-danger",
+              "stock-alert-panel"
+            ],
+            "items": [
+              "Agua Mineral Mixta — Lote AG-ADJ-EXP — 6 unid. — Venció: 12 de noviembre de 2026",
+              "Producto E Vencido Inactivo (Inactivo) — Lote PE-EXP — 3 unid. — Venció: 12 de noviembre de 2026"
+            ]
+          },
+          {
+            "heading": null,
+            "summary_text": "⏳ Lotes próximos a vencer (dentro de 30 días) — 4 Arroz Costeño — Lote AR-1D — 5 unid. — Vence: 13 de noviembre de 2026 Agua Mineral Mixta — Lote AG-REC-30D — 1 unid. — Vence: 12 de diciembre de 2026 Agua Mineral Mixta — Lote AG-30D — 4 unid. — Vence: 12 de diciembre de 2026 Gaseosa Suspendida Previa (Inactivo) — Lote GAS-30D — 4 unid. — Vence: 12 de diciembre de 2026",
+            "classes": [
+              "panel",
+              "panel-warning",
+              "stock-alert-panel"
+            ],
+            "items": [
+              "Arroz Costeño — Lote AR-1D — 5 unid. — Vence: 13 de noviembre de 2026",
+              "Agua Mineral Mixta — Lote AG-REC-30D — 1 unid. — Vence: 12 de diciembre de 2026",
+              "Agua Mineral Mixta — Lote AG-30D — 4 unid. — Vence: 12 de diciembre de 2026",
+              "Gaseosa Suspendida Previa (Inactivo) — Lote GAS-30D — 4 unid. — Vence: 12 de diciembre de 2026"
+            ]
+          },
+          {
+            "heading": null,
+            "summary_text": "🔶 Stock vigente en el mínimo o por debajo (4 productos) Agua Mineral Mixta — 11 unid. vigentes (17 registradas) / mínimo 11 Arroz Costeño — 5 unid. vigentes (5 registradas) / mínimo 10 Fideos Lote Agotado — 0 unid. vigentes (0 registradas) / mínimo 2 Sal Sin Minimo Cero Stock — 0 unid. vigentes (0 registradas) / mínimo 0",
+            "classes": [
+              "panel",
+              "panel-warning",
+              "stock-alert-panel"
+            ],
+            "items": [
+              "Agua Mineral Mixta — 11 unid. vigentes (17 registradas) / mínimo 11",
+              "Arroz Costeño — 5 unid. vigentes (5 registradas) / mínimo 10",
+              "Fideos Lote Agotado — 0 unid. vigentes (0 registradas) / mínimo 2",
+              "Sal Sin Minimo Cero Stock — 0 unid. vigentes (0 registradas) / mínimo 0"
+            ]
+          }
+        ],
+        "products": [
+          {
+            "product": "Agua Mineral Mixta7750007000049",
+            "category": "Bebidas",
+            "physical": "17",
+            "physical_is_low_class": false,
+            "sellable": "11",
+            "sellable_is_low_class": false,
+            "minimum": "11",
+            "status": "Stock bajo",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/5593f6e7-f0fa-4ef0-bc6d-ad18c1b1533c/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/34db8142-7ce4-4309-b2cb-4c5fd398c451/"
+              }
+            ]
+          },
+          {
+            "product": "Arroz Costeño7750007000018",
+            "category": "Granos",
+            "physical": "5",
+            "physical_is_low_class": false,
+            "sellable": "5",
+            "sellable_is_low_class": false,
+            "minimum": "10",
+            "status": "Stock bajo",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/3281ff0e-bb56-466c-a6f1-42b82a2b286b/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/ea5e34fb-75d8-413a-bbdf-09fad7e8512a/"
+              }
+            ]
+          },
+          {
+            "product": "Fideos Lote Agotado7750007000063",
+            "category": "Granos",
+            "physical": "0",
+            "physical_is_low_class": false,
+            "sellable": "0",
+            "sellable_is_low_class": false,
+            "minimum": "2",
+            "status": "Sin stock vendible",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/78d13de3-8961-4a6c-975c-0aa1d5a13b09/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/ee0782ff-8725-443a-9496-5626d5113d23/"
+              }
+            ]
+          },
+          {
+            "product": "Gaseosa Suspendida Previa7750007000032",
+            "category": "Bebidas",
+            "physical": "4",
+            "physical_is_low_class": false,
+            "sellable": "4",
+            "sellable_is_low_class": false,
+            "minimum": "10",
+            "status": "Inactivo",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/498d88fd-a2c4-484a-9da8-ea9d68f9209f/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/0a2e515b-940d-4912-85a3-e81dc925e8b9/"
+              }
+            ]
+          },
+          {
+            "product": "Producto E Vencido Inactivo7750007000025",
+            "category": "Granos",
+            "physical": "3",
+            "physical_is_low_class": false,
+            "sellable": "0",
+            "sellable_is_low_class": false,
+            "minimum": "5",
+            "status": "Inactivo",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/64a3fd61-0e20-4941-9e5c-5698885327cb/movimientos/"
+              },
+              {
+                "text": "Ver carga",
+                "href": "/inventario/cargas/4f517112-83bb-40eb-beba-b3869ee07ce6/"
+              }
+            ]
+          },
+          {
+            "product": "Sal Sin Minimo Cero Stock7750007000056",
+            "category": "Granos",
+            "physical": "0",
+            "physical_is_low_class": false,
+            "sellable": "0",
+            "sellable_is_low_class": false,
+            "minimum": "0",
+            "status": "Sin stock vendible",
+            "links": [
+              {
+                "text": "Ver movimientos",
+                "href": "/inventario/productos/3926ceb4-50b9-4e53-a513-8bdd59e32fff/movimientos/"
+              }
+            ]
+          }
+        ]
+      },
+      "product_list_admin": [
+        {
+          "name": "Agua Mineral Mixta",
+          "barcode": "Bebidas",
+          "category": "7750007000049",
+          "price": "2,50",
+          "stock_cell": "11 Stock bajo",
+          "low_badge": "Stock bajo",
+          "minimum": "11",
+          "status": "Disponible"
+        },
+        {
+          "name": "Arroz Costeño",
+          "barcode": "Granos",
+          "category": "7750007000018",
+          "price": "4,20",
+          "stock_cell": "5 Stock bajo",
+          "low_badge": "Stock bajo",
+          "minimum": "10",
+          "status": "Disponible"
+        },
+        {
+          "name": "Fideos Lote Agotado",
+          "barcode": "Granos",
+          "category": "7750007000063",
+          "price": "3,80",
+          "stock_cell": "0 Stock bajo",
+          "low_badge": "Stock bajo",
+          "minimum": "2",
+          "status": "Sin stock vigente"
+        },
+        {
+          "name": "Gaseosa Suspendida Previa",
+          "barcode": "Bebidas",
+          "category": "7750007000032",
+          "price": "3,00",
+          "stock_cell": "4",
+          "low_badge": null,
+          "minimum": "10",
+          "status": "Inactivo"
+        },
+        {
+          "name": "Producto E Vencido Inactivo",
+          "barcode": "Granos",
+          "category": "7750007000025",
+          "price": "6,00",
+          "stock_cell": "0",
+          "low_badge": null,
+          "minimum": "5",
+          "status": "Inactivo"
+        },
+        {
+          "name": "Sal Sin Minimo Cero Stock",
+          "barcode": "Granos",
+          "category": "7750007000056",
+          "price": "1,50",
+          "stock_cell": "0 Stock bajo",
+          "low_badge": "Stock bajo",
+          "minimum": "0",
+          "status": "Sin stock vigente"
+        }
+      ],
+      "dashboard_admin": {
+        "status_code": 200,
+        "h1": "Inicio",
+        "h2": "Panel principal",
+        "context_summary": {
+          "expiring": 4,
+          "expired": 2,
+          "low_stock": 4,
+          "sales_count": 0,
+          "sales_total": "0",
+          "discount_total": "0",
+          "open_shifts": 0
+        },
+        "kpis": {
+          "Ventas de hoy": "0",
+          "Total vendido hoy": "S/ 0,00",
+          "Descuentos otorgados hoy": "S/ 0,00",
+          "Turnos de caja abiertos": "0",
+          "Productos con stock bajo": "4",
+          "Lotes por vencer (30 días)": "4",
+          "Lotes vencidos con stock": "2"
+        },
+        "has_resumen_general": true,
+        "nav_links": [
+          {
+            "text": "M MinimarketGestión de bodega",
+            "href": "/inicio/"
+          },
+          {
+            "text": "⌂Inicio",
+            "href": "/inicio/"
+          },
+          {
+            "text": "☰Productos",
+            "href": "/productos/"
+          },
+          {
+            "text": "▦Registrar producto",
+            "href": "/productos/nuevo/"
+          },
+          {
+            "text": "▮Categorías",
+            "href": "/productos/categorias/"
+          },
+          {
+            "text": "✦Proveedores",
+            "href": "/inventario/proveedores/"
+          },
+          {
+            "text": "☷Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "⏳Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "⏫Ajuste físico",
+            "href": "/inventario/ajustes/nuevo/"
+          },
+          {
+            "text": "☺Empleados",
+            "href": "/empleados/"
+          },
+          {
+            "text": "☰Historial de turnos",
+            "href": "/caja/turnos/"
+          },
+          {
+            "text": "☰Historial de ventas",
+            "href": "/ventas/historial/"
+          },
+          {
+            "text": "↪ Cerrar sesión",
+            "href": "/salir/"
+          },
+          {
+            "text": "Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "Historial de ventas (todas las fechas)",
+            "href": "/ventas/historial/"
+          },
+          {
+            "text": "▦ Registrar un producto Registra sus datos comerciales, precio y unidad de medida. El producto inicia con cero existencias. Registrar producto →",
+            "href": "/productos/nuevo/"
+          },
+          {
+            "text": "☰ Ver catálogo de productos Consulta todos los productos registrados, su precio, disponibilidad y stock mínimo. Ver catálogo →",
+            "href": "/productos/"
+          },
+          {
+            "text": "☺ Gestionar empleados Consulta, crea y edita los empleados del sistema. También puedes desactivar cuentas. Ver empleados →",
+            "href": "/empleados/"
+          }
+        ]
+      },
+      "dashboard_warehouse": {
+        "status_code": 200,
+        "h1": "Inicio",
+        "h2": "Panel principal",
+        "context_summary": {
+          "expiring": 4,
+          "expired": 2,
+          "low_stock": 4
+        },
+        "kpis": {
+          "Productos con stock bajo": "4",
+          "Lotes por vencer (30 días)": "4",
+          "Lotes vencidos con stock": "2"
+        },
+        "has_resumen_general": true,
+        "nav_links": [
+          {
+            "text": "M MinimarketGestión de bodega",
+            "href": "/inicio/"
+          },
+          {
+            "text": "⌂Inicio",
+            "href": "/inicio/"
+          },
+          {
+            "text": "☷Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "⏳Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "◫Existencias iniciales",
+            "href": "/inventario/carga-inicial/"
+          },
+          {
+            "text": "✚Entrada de mercadería",
+            "href": "/inventario/entrada/"
+          },
+          {
+            "text": "☒Registrar merma",
+            "href": "/inventario/bajas/nueva/"
+          },
+          {
+            "text": "☰Catálogo de productos",
+            "href": "/productos/"
+          },
+          {
+            "text": "✦Proveedores",
+            "href": "/inventario/proveedores/"
+          },
+          {
+            "text": "↪ Cerrar sesión",
+            "href": "/salir/"
+          },
+          {
+            "text": "Ver inventario y alertas",
+            "href": "/inventario/stock/"
+          },
+          {
+            "text": "Vencimientos de lotes",
+            "href": "/productos/vencimientos/"
+          },
+          {
+            "text": "▤ Registrar existencias iniciales Ingresa uno o varios lotes iniciales con sus cantidades, costos y fechas de vencimiento. Registrar existencias →",
+            "href": "/inventario/carga-inicial/"
+          },
+          {
+            "text": "✚ Registrar entrada de mercadería Registra lotes de mercadería recibida para productos que ya tienen carga inicial. Registrar entrada →",
+            "href": "/inventario/entrada/"
+          },
+          {
+            "text": "☒ Registrar merma Descuenta unidades dañadas, vencidas o rotas de un lote específico. Registrar merma →",
+            "href": "/inventario/bajas/nueva/"
+          }
+        ]
+      },
+      "dashboard_seller": {
+        "status_code": 200,
+        "h1": "Inicio",
+        "h2": "Panel principal",
+        "context_summary": null,
+        "kpis": {},
+        "has_resumen_general": false,
+        "nav_links": [
+          {
+            "text": "M MinimarketGestión de bodega",
+            "href": "/inicio/"
+          },
+          {
+            "text": "⌂Inicio",
+            "href": "/inicio/"
+          },
+          {
+            "text": "$Apertura de caja",
+            "href": "/caja/abrir/"
+          },
+          {
+            "text": "▦Preparar venta",
+            "href": "/ventas/"
+          },
+          {
+            "text": "✖Cerrar turno",
+            "href": "/caja/cerrar/"
+          },
+          {
+            "text": "☰Mis ventas del turno",
+            "href": "/ventas/historial/turno/"
+          },
+          {
+            "text": "☰Mi historial de ventas",
+            "href": "/ventas/historial/"
+          },
+          {
+            "text": "☰Mi historial de turnos",
+            "href": "/caja/turnos/"
+          },
+          {
+            "text": "↪ Cerrar sesión",
+            "href": "/salir/"
+          },
+          {
+            "text": "▣ Abrir el turno de caja Declara el dinero en efectivo disponible al comenzar tu turno. Abrir turno →",
+            "href": "/caja/abrir/"
+          },
+          {
+            "text": "▦ Preparar una venta Busca productos y revisa las existencias disponibles antes de cobrar. Preparar venta →",
+            "href": "/ventas/"
+          }
+        ]
+      },
+      "query_counts": {
+        "stock_before_5extra": 7,
+        "stock_after_5extra": 7,
+        "exp_before_5extra": 4,
+        "exp_after_5extra": 4,
+        "dash_before_5extra": 4,
+        "dash_after_5extra": 4
+      },
+      "auth_and_http_matrix": {
+        "/inventario/stock/": {
+          "anon_status": 302,
+          "anon_location": "/?next=/inventario/stock/",
+          "seller_status": 403,
+          "warehouse_get_status": 200,
+          "warehouse_cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+          "warehouse_post_status": 405,
+          "warehouse_put_status": 405,
+          "warehouse_delete_status": 405,
+          "admin_post_status": 405
+        },
+        "/productos/vencimientos/": {
+          "anon_status": 302,
+          "anon_location": "/?next=/productos/vencimientos/",
+          "seller_status": 403,
+          "warehouse_get_status": 200,
+          "warehouse_cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+          "warehouse_post_status": 405,
+          "warehouse_put_status": 405,
+          "warehouse_delete_status": 405,
+          "admin_post_status": 405
+        }
+      }
+    }
+  }
+}

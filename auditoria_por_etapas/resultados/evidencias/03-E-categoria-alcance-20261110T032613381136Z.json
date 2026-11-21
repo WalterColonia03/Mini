@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-11-10T03:26:13.381136+00:00",
+  "reason": "Reproducir el reintento de estado también en categoría como parte del ciclo de disponibilidad ya implementado",
+  "prior_proposal": "ETAPA-03 sección 6 PROP-E00-HU-02 y PROP-E03-T01",
+  "routes": [
+    "POST /productos/categorias/<uuid>/estado/"
+  ],
+  "fields": [
+    "UUID categoría",
+    "CSRF",
+    "is_active objetivo propuesto"
+  ],
+  "actions": [
+    "Activar",
+    "Desactivar",
+    "repetir misma solicitud"
+  ],
+  "status": "EXTRA SIN HU dedicada, respaldo QA 08:876; mantener propuestas de confirmación e información previa aparte",
+  "expected": "Repetir Desactivar conserva categoría inactiva y datos de productos",
+  "coverage": [
+    "navegador E15-category-replay",
+    "regresión de objetivo repetido y lectura actual",
+    "PostgreSQL de objetivos simultáneos"
+  ]
+}

@@ -1,0 +1,15 @@
+Migrations for 'cash':
+  cash\migrations\0004_integration_money_limits.py
+    + Create constraint cash_close_counted_bounds on model cashshiftclose
+    + Create constraint cash_close_expected_bounds on model cashshiftclose
+    + Create constraint cash_close_difference_bounds on model cashshiftclose
+    + Create constraint cash_close_difference_consistent on model cashshiftclose
+Migrations for 'sales':
+  sales\migrations\0007_integration_money_limits.py
+    + Create constraint sale_total_amount_bounds on model sale
+    + Create constraint sale_base_amount_bounds on model sale
+    + Create constraint sale_igv_amount_bounds on model sale
+    + Create constraint sale_discount_amount_bounds on model sale
+    + Create constraint sale_cash_received_bounds on model sale
+    + Create constraint sale_change_given_bounds on model sale
+    + Create constraint sale_draft_line_quantity_max on model saledraftline

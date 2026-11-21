@@ -1,0 +1,152 @@
+{
+  "stamp_utc": "20261112T001009181778Z-c378f6e2",
+  "evidence": "auditoria_por_etapas\\resultados\\evidencias\\11-pg-20261112T001009181778Z-c378f6e2\\pg_report.json",
+  "pg_port": 51000,
+  "checks": [
+    "pg_migrate_clean",
+    "CT_CONC_03_stock_contention",
+    "CT_CONC_04a_idempotent_same_payload",
+    "CT_CONC_04b_idempotent_divergent_payload",
+    "CT_CONC_05_checkout_vs_cash_close",
+    "account_lock_checkout_vs_deactivation",
+    "CT_ROLLBACK_02_pg",
+    "lima_midnight_utc_boundary"
+  ],
+  "scenarios": {
+    "CT_CONC_03_stock_contention": {
+      "writeoff": {
+        "ok": true,
+        "writeoff": "B-00000001"
+      },
+      "checkout": {
+        "ok": false,
+        "type": "ValidationError",
+        "error": "[\"No hay suficiente stock para completar el cobro de 'PG Stock Conc'.\"]"
+      },
+      "lot_after": 1,
+      "pg_blocking_pids": [
+        {
+          "pid": 29292,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            13988
+          ],
+          "query": "SELECT \"catalog_product\".\"id\", \"catalog_product\".\"category_id\", \"catalog_product\".\"name\", \"catalog_product\".\"search_name"
+        }
+      ]
+    },
+    "CT_CONC_04a_idempotent_same_payload": {
+      "worker_a": {
+        "ok": true,
+        "sale_id": "d45600c1-2761-4ce9-832f-4ec4706e0a8f",
+        "correlative": "V-00000001"
+      },
+      "worker_b": {
+        "ok": true,
+        "sale_id": "d45600c1-2761-4ce9-832f-4ec4706e0a8f",
+        "correlative": "V-00000001"
+      },
+      "pg_blocking_pids": [
+        {
+          "pid": 15192,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            27988
+          ],
+          "query": "SELECT \"identity_account\".\"password\", \"identity_account\".\"last_login\", \"identity_account\".\"is_superuser\", \"identity_acco"
+        }
+      ]
+    },
+    "CT_CONC_04b_idempotent_divergent_payload": {
+      "worker_a": {
+        "ok": true,
+        "sale_id": "48b02fcf-73d0-4de9-b887-22e05b99a5ff",
+        "correlative": "V-00000002"
+      },
+      "worker_b": {
+        "ok": false,
+        "type": "ValidationError",
+        "error": "['La clave de cobro ya fue usada con otros montos. Revisa e intenta nuevamente.']"
+      },
+      "pg_blocking_pids": [
+        {
+          "pid": 32396,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            26464
+          ],
+          "query": "SELECT \"identity_account\".\"password\", \"identity_account\".\"last_login\", \"identity_account\".\"is_superuser\", \"identity_acco"
+        }
+      ]
+    },
+    "CT_CONC_05_checkout_vs_cash_close": {
+      "checkout": {
+        "ok": true,
+        "sale_id": "863b6576-1635-4150-a9e4-26c7551a3831",
+        "total": "8.00"
+      },
+      "close": {
+        "ok": true,
+        "expected": "74.00",
+        "diff": "0.00"
+      },
+      "pg_blocking_pids": [
+        {
+          "pid": 11148,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            22116
+          ],
+          "query": "SELECT \"identity_account\".\"password\", \"identity_account\".\"last_login\", \"identity_account\".\"is_superuser\", \"identity_acco"
+        }
+      ]
+    },
+    "account_lock_checkout_vs_deactivation": {
+      "admin": {
+        "ok": true
+      },
+      "checkout": {
+        "ok": false,
+        "type": "PermissionDenied",
+        "error": "No tiene permiso para cobrar ventas."
+      },
+      "pg_blocking_pids": [
+        {
+          "pid": 30568,
+          "wait_type": "Lock",
+          "wait_event": "transactionid",
+          "blockers": [
+            9312
+          ],
+          "query": "SELECT \"identity_account\".\"password\", \"identity_account\".\"last_login\", \"identity_account\".\"is_superuser\", \"identity_acco"
+        }
+      ]
+    },
+    "CT_ROLLBACK_02_pg": {
+      "sales_unchanged": true,
+      "counter_unchanged": 4,
+      "lots_intact": [
+        1,
+        7
+      ],
+      "draft_still_active": true
+    },
+    "lima_midnight_utc_boundary": {
+      "sellable_at_04_59_59Z": 5,
+      "sellable_at_05_00_00Z": 0,
+      "nov11_lima_sales": 1,
+      "nov12_lima_sales": 1
+    }
+  },
+  "pg_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "transaction_isolation": "read committed",
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  }
+}

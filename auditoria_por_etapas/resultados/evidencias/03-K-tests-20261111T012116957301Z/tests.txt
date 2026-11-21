@@ -1,0 +1,175 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 106 test(s).
+Found 106 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_activation_message_describes_state_with_zero_stock (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_activation_message_describes_state_with_zero_stock) ... ok
+test_bad_state_input_does_not_change_product (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_bad_state_input_does_not_change_product) ... ok
+test_category_buttons_converge_on_the_requested_state (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_category_buttons_converge_on_the_requested_state) ... ok
+test_inactive_label_matches_criterion (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_inactive_label_matches_criterion) ... ok
+test_inactive_product_blocks_both_inventory_services_without_writes (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_inactive_product_blocks_both_inventory_services_without_writes) ... ok
+test_legacy_category_toggle_rechecks_the_current_state (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_legacy_category_toggle_rechecks_the_current_state) ... ok
+test_legacy_toggle_reads_current_state_even_with_stale_instance (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_legacy_toggle_reads_current_state_even_with_stale_instance) ... ok
+test_named_disable_and_enable_requests_are_repeatable (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_named_disable_and_enable_requests_are_repeatable) ... ok
+test_alert_uses_configured_inclusive_threshold_and_zero (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_alert_uses_configured_inclusive_threshold_and_zero) ... ok
+test_catalogue_reports_all_commercial_columns_and_current_stock (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_catalogue_reports_all_commercial_columns_and_current_stock) ... ok
+test_empty_and_no_match_messages_and_clear_link (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_empty_and_no_match_messages_and_clear_link) ... ok
+test_expiration_cutoff_uses_lima_not_utc_date (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_expiration_cutoff_uses_lima_not_utc_date) ... ok
+test_expired_today_and_exhausted_lots_do_not_inflate_stock (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_expired_today_and_exhausted_lots_do_not_inflate_stock) ... ok
+test_inactive_states_preserve_stock_and_are_not_available (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_inactive_states_preserve_stock_and_are_not_available) ... ok
+test_name_search_follows_partial_save_without_modifying_display_name (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_name_search_follows_partial_save_without_modifying_display_name) ... ok
+test_requests_do_not_write_and_non_get_methods_are_denied (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_requests_do_not_write_and_non_get_methods_are_denied) ... ok
+test_search_empty_spaces_missing_and_literal_wildcards (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_search_empty_spaces_missing_and_literal_wildcards) ... ok
+test_search_name_code_case_partial_and_barcode_normalization (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_search_name_code_case_partial_and_barcode_normalization) ... ok
+test_warehouse_has_same_data_without_actions_and_seller_denied (catalog.test_audit03_catalogue.CatalogueAudit03Tests.test_warehouse_has_same_data_without_actions_and_seller_denied) ... ok
+test_create_collapses_spaces_and_persists_active (catalog.test_audit03_categories.CategoryAudit03Tests.test_create_collapses_spaces_and_persists_active) ... ok
+test_duplicate_case_spaces_and_inactive_are_rejected (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_case_spaces_and_inactive_are_rejected) ... ok
+test_duplicate_insert_race_is_a_validation_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_insert_race_is_a_validation_error) ... ok
+test_empty_list_then_all_names_including_inactive (catalog.test_audit03_categories.CategoryAudit03Tests.test_empty_list_then_all_names_including_inactive) ... ok
+test_error_description_points_to_visible_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_error_description_points_to_visible_error) ... ok
+test_form_rejects_121_and_script_is_escaped (catalog.test_audit03_categories.CategoryAudit03Tests.test_form_rejects_121_and_script_is_escaped) ... ok
+test_methods_absent_uuid_and_csrf_do_not_mutate (catalog.test_audit03_categories.CategoryAudit03Tests.test_methods_absent_uuid_and_csrf_do_not_mutate) ... ok
+test_missing_empty_and_whitespace_show_required_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_missing_empty_and_whitespace_show_required_error) ... ok
+test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) ... ok
+test_other_roles_and_anonymous_cannot_read_or_write_categories (catalog.test_audit03_categories.CategoryAudit03Tests.test_other_roles_and_anonymous_cannot_read_or_write_categories) ... ok
+test_services_deny_warehouse_and_seller (catalog.test_audit03_categories.CategoryAudit03Tests.test_services_deny_warehouse_and_seller) ... ok
+test_unrelated_database_failure_is_not_hidden (catalog.test_audit03_categories.CategoryAudit03Tests.test_unrelated_database_failure_is_not_hidden) ... ok
+test_category_blocks_direct_services_preserving_draft_stock_and_history (catalog.test_audit03_categories.CategoryEffectsAudit03Tests.test_category_blocks_direct_services_preserving_draft_stock_and_history) ... ok
+test_collision_aborts_before_any_key_changes (catalog.test_audit03_categories.CategoryMigrationAudit03Tests.test_collision_aborts_before_any_key_changes) ... ok
+test_legacy_key_normalizes_without_renaming_or_relinking (catalog.test_audit03_categories.CategoryMigrationAudit03Tests.test_legacy_key_normalizes_without_renaming_or_relinking) ... ok
+test_commit_changes_only_category_state_and_version (catalog.test_audit03_category_confirmation.CategoryConfirmationTests.test_commit_changes_only_category_state_and_version) ... ok
+test_confirmation_get_explains_real_impact_without_writes_and_cancel_is_readonly (catalog.test_audit03_category_confirmation.CategoryConfirmationTests.test_confirmation_get_explains_real_impact_without_writes_and_cancel_is_readonly) ... ok
+test_missing_confirmation_version_and_invalid_inputs_never_mutate (catalog.test_audit03_category_confirmation.CategoryConfirmationTests.test_missing_confirmation_version_and_invalid_inputs_never_mutate) ... ok
+test_old_screen_rejected_after_two_changes_even_when_boolean_matches_again (catalog.test_audit03_category_confirmation.CategoryConfirmationTests.test_old_screen_rejected_after_two_changes_even_when_boolean_matches_again) ... ok
+test_replayed_confirmation_is_rejected_without_another_change (catalog.test_audit03_category_confirmation.CategoryConfirmationTests.test_replayed_confirmation_is_rejected_without_another_change) ... ok
+test_roles_methods_csrf_and_missing_uuid (catalog.test_audit03_category_confirmation.CategoryConfirmationTests.test_roles_methods_csrf_and_missing_uuid) ... ok
+test_service_checks_version_and_does_not_advance_on_noop (catalog.test_audit03_category_confirmation.CategoryConfirmationTests.test_service_checks_version_and_does_not_advance_on_noop) ... ok
+test_accented_duplicate_is_rejected_and_original_remains (catalog.test_audit03_edit.EditBoundaryTests.test_accented_duplicate_is_rejected_and_original_remains) ... ok
+test_current_inactive_category_may_be_preserved (catalog.test_audit03_edit.EditBoundaryTests.test_current_inactive_category_may_be_preserved) ... ok
+test_empty_edit_reports_required_fields_and_retains_product (catalog.test_audit03_edit.EditBoundaryTests.test_empty_edit_reports_required_fields_and_retains_product) ... ok
+test_http_code_change_relinks_legacy_detail_without_changing_snapshot (catalog.test_audit03_edit.EditBoundaryTests.test_http_code_change_relinks_legacy_detail_without_changing_snapshot) ... ok
+test_reclassification_revalidates_a_stale_category (catalog.test_audit03_edit.EditBoundaryTests.test_reclassification_revalidates_a_stale_category) ... ok
+test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) ... ok
+test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) ... ok
+test_above_maximum_rejected_in_services_and_database (catalog.test_audit03_policy.ProductPolicyTests.test_above_maximum_rejected_in_services_and_database) ... ok
+test_database_unique_key_and_partial_save_stay_consistent (catalog.test_audit03_policy.ProductPolicyTests.test_database_unique_key_and_partial_save_stay_consistent) ... ok
+test_default_and_integer_boundaries_in_both_services (catalog.test_audit03_policy.ProductPolicyTests.test_default_and_integer_boundaries_in_both_services) ... ok
+test_edit_name_collision_rolls_back_other_fields_and_self_is_allowed (catalog.test_audit03_policy.ProductPolicyTests.test_edit_name_collision_rolls_back_other_fields_and_self_is_allowed) ... ok
+test_migration_collision_preflight_changes_nothing (catalog.test_audit03_policy.ProductPolicyTests.test_migration_collision_preflight_changes_nothing) ... ok
+test_name_unique_including_inactive_case_spaces_and_unicode (catalog.test_audit03_policy.ProductPolicyTests.test_name_unique_including_inactive_case_spaces_and_unicode) ... ok
+test_prevalidated_forms_cannot_bypass_name_uniqueness (catalog.test_audit03_policy.ProductPolicyTests.test_prevalidated_forms_cannot_bypass_name_uniqueness) ... ok
+test_unrelated_integrity_errors_are_not_reported_as_duplicates (catalog.test_audit03_policy.ProductPolicyTests.test_unrelated_integrity_errors_are_not_reported_as_duplicates) ... ok
+test_code_conflict_only_shows_the_relevant_field_error (catalog.test_audit03_registration.RegistrationBoundaryTests.test_code_conflict_only_shows_the_relevant_field_error) ... ok
+test_empty_post_is_bound_with_five_required_fields (catalog.test_audit03_registration.RegistrationBoundaryTests.test_empty_post_is_bound_with_five_required_fields) ... ok
+test_model_full_clean_rejects_whitespace_fields (catalog.test_audit03_registration.RegistrationBoundaryTests.test_model_full_clean_rejects_whitespace_fields) ... ok
+test_optional_minimum_can_be_omitted_and_zero_is_preserved (catalog.test_audit03_registration.RegistrationBoundaryTests.test_optional_minimum_can_be_omitted_and_zero_is_preserved) ... ok
+test_stale_or_removed_category_is_rejected_by_service (catalog.test_audit03_registration.RegistrationBoundaryTests.test_stale_or_removed_category_is_rejected_by_service) ... ok
+test_unicode_duplicate_names_rejected_with_a_single_message (catalog.test_audit03_registration.RegistrationBoundaryTests.test_unicode_duplicate_names_rejected_with_a_single_message) ... ok
+test_authorization_still_precedes_form_processing (catalog.test_audit03_stale_edit.StaleProductEditTests.test_authorization_still_precedes_form_processing) ... ok
+test_missing_tampered_and_other_product_snapshots_cannot_save (catalog.test_audit03_stale_edit.StaleProductEditTests.test_missing_tampered_and_other_product_snapshots_cannot_save) ... ok
+test_rejected_field_keeps_opened_version_for_correction (catalog.test_audit03_stale_edit.StaleProductEditTests.test_rejected_field_keeps_opened_version_for_correction) ... ok
+test_repeated_identical_submission_is_not_reported_as_conflict (catalog.test_audit03_stale_edit.StaleProductEditTests.test_repeated_identical_submission_is_not_reported_as_conflict) ... ok
+test_service_rejects_malformed_snapshots_without_writing (catalog.test_audit03_stale_edit.StaleProductEditTests.test_service_rejects_malformed_snapshots_without_writing) ... ok
+test_stale_form_cannot_revert_commercial_changes (catalog.test_audit03_stale_edit.StaleProductEditTests.test_stale_form_cannot_revert_commercial_changes) ... ok
+test_status_change_rejects_stale_snapshot (catalog.test_audit03_stale_edit.StaleProductEditTests.test_status_change_rejects_stale_snapshot) ... ok
+test_version_check_is_the_first_product_statement (catalog.test_audit03_stale_edit.StaleProductEditTests.test_version_check_is_the_first_product_statement) ... ok
+test_admin_creates_category (catalog.tests.CategoryCreateTests.test_admin_creates_category) ... ok
+test_duplicate_name_is_rejected (catalog.tests.CategoryCreateTests.test_duplicate_name_is_rejected) ... ok
+test_non_admin_post_is_forbidden (catalog.tests.CategoryCreateTests.test_non_admin_post_is_forbidden) ... ok
+test_admin_can_see_category_list (catalog.tests.CategoryListTests.test_admin_can_see_category_list) ... ok
+test_non_admin_gets_403 (catalog.tests.CategoryListTests.test_non_admin_gets_403) ... ok
+test_name_normalization_is_persisted (catalog.tests.CategoryTests.test_name_normalization_is_persisted) ... ok
+test_admin_can_edit_product_name (catalog.tests.ProductEditTests.test_admin_can_edit_product_name) ... ok
+test_duplicate_barcode_is_rejected (catalog.tests.ProductEditTests.test_duplicate_barcode_is_rejected) ... ok
+test_non_admin_gets_403 (catalog.tests.ProductEditTests.test_non_admin_gets_403) ... ok
+test_active_custom_category_can_be_used_to_register_product (catalog.tests.ProductExpirationsTests.test_active_custom_category_can_be_used_to_register_product)
+BUG-021 / HU-CAT-02: Una categoría activa creada por el Admin puede usarse al registrar productos. ... ok
+test_admin_accesses_expirations_page (catalog.tests.ProductExpirationsTests.test_admin_accesses_expirations_page) ... ok
+test_barcode_rejects_xss_and_special_characters_on_create_and_edit (catalog.tests.ProductExpirationsTests.test_barcode_rejects_xss_and_special_characters_on_create_and_edit)
+BUG-013: El código de barras rechaza caracteres HTML/script en creación y edición. ... ok
+test_bug004_product_barcode_update_preserves_historical_sale_line_snapshot (catalog.tests.ProductExpirationsTests.test_bug004_product_barcode_update_preserves_historical_sale_line_snapshot)
+BUG-004: Editar el código de barras de un producto no altera product_snapshot_barcode en ventas históricas. ... ok
+test_bug028_category_toggle_and_product_edit_category_and_barcode_search (catalog.tests.ProductExpirationsTests.test_bug028_category_toggle_and_product_edit_category_and_barcode_search)
+BUG-028 y BUG-031: Categorías permiten activar/desactivar, editar categoría de producto y buscar por código de barras. ... ok
+test_bug030_seed_demo_populates_weighted_average_cost (catalog.tests.ProductExpirationsTests.test_bug030_seed_demo_populates_weighted_average_cost)
+BUG-030: El comando seed_demo calcula y persiste el average_cost ponderado de los productos demo. ... Productos demo creados: 4
+ok
+test_bug033_product_with_inactive_category_can_update_price_and_name (catalog.tests.ProductExpirationsTests.test_bug033_product_with_inactive_category_can_update_price_and_name)
+BUG-033: Si la categoría de un producto fue desactivada, Admin aún puede editar precio/nombre manteniendo su categoría actual. ... ok
+test_invalid_and_extreme_dias_parameters_fall_back_gracefully (catalog.tests.ProductExpirationsTests.test_invalid_and_extreme_dias_parameters_fall_back_gracefully) ... ok
+test_product_created_alias_url_and_catalog_link (catalog.tests.ProductExpirationsTests.test_product_created_alias_url_and_catalog_link)
+BUG-023: La ruta alias /productos/<id>/creado/ responde 200 e incluye enlace al catálogo. ... ok
+test_product_edit_rejects_scientific_notation_and_excessive_minimum_stock (catalog.tests.ProductExpirationsTests.test_product_edit_rejects_scientific_notation_and_excessive_minimum_stock)
+BUG-009: La edición de producto rechaza notación científica y topes absurdos. ... ok
+test_seller_gets_403 (catalog.tests.ProductExpirationsTests.test_seller_gets_403) ... ok
+test_warehouse_accesses_expirations_page (catalog.tests.ProductExpirationsTests.test_warehouse_accesses_expirations_page) ... ok
+test_admin_sees_product_list (catalog.tests.ProductListTests.test_admin_sees_product_list) ... ok
+test_catalog_and_registration_page_show_current_sale_availability (catalog.tests.ProductListTests.test_catalog_and_registration_page_show_current_sale_availability) ... ok
+test_search_filters_by_name (catalog.tests.ProductListTests.test_search_filters_by_name) ... ok
+test_seller_gets_403 (catalog.tests.ProductListTests.test_seller_gets_403) ... ok
+test_warehouse_sees_product_list (catalog.tests.ProductListTests.test_warehouse_sees_product_list) ... ok
+test_admin_registers_zero_stock_non_sellable_product (catalog.tests.ProductRegistrationTests.test_admin_registers_zero_stock_non_sellable_product) ... ok
+test_database_rejects_product_without_expiration_control (catalog.tests.ProductRegistrationTests.test_database_rejects_product_without_expiration_control) ... ok
+test_inactive_or_wrong_category_is_rejected (catalog.tests.ProductRegistrationTests.test_inactive_or_wrong_category_is_rejected) ... ok
+test_invalid_minimums_never_create_product (catalog.tests.ProductRegistrationTests.test_invalid_minimums_never_create_product) ... ok
+test_invalid_prices_never_create_product (catalog.tests.ProductRegistrationTests.test_invalid_prices_never_create_product) ... ok
+test_non_admin_post_is_forbidden_and_does_not_create_product (catalog.tests.ProductRegistrationTests.test_non_admin_post_is_forbidden_and_does_not_create_product) ... ok
+test_normalized_duplicate_barcode_is_rejected_without_second_row (catalog.tests.ProductRegistrationTests.test_normalized_duplicate_barcode_is_rejected_without_second_row) ... ok
+test_omitted_minimum_stock_defaults_to_ten (catalog.tests.ProductRegistrationTests.test_omitted_minimum_stock_defaults_to_ten) ... ok
+test_admin_toggles_availability (catalog.tests.ProductToggleTests.test_admin_toggles_availability) ... ok
+test_non_admin_gets_403 (catalog.tests.ProductToggleTests.test_non_admin_gets_403) ... ok
+
+----------------------------------------------------------------------
+Ran 106 tests in 3.919s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

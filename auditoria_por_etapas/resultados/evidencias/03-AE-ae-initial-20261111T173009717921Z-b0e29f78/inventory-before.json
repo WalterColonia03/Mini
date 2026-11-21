@@ -1,0 +1,33 @@
+{
+  "criteria": [
+    "INV01a/CA01-03",
+    "PROD05 boundary",
+    "CAT01 boundary",
+    "PROP-03-RET-T06"
+  ],
+  "routes": [
+    "/inventario/carga-inicial/",
+    "/productos/",
+    "/productos/categorias/",
+    "/ventas/"
+  ],
+  "fields": [
+    "product",
+    "supplier",
+    "lot number/quantity/cost/expiration",
+    "is_active",
+    "category state version"
+  ],
+  "roles": [
+    "warehouse fills old receipt",
+    "admin deactivates and reactivates",
+    "seller queries stock"
+  ],
+  "cases": [
+    "initial receipt rejected after product deactivation",
+    "initial receipt rejected after category deactivation",
+    "old POST rejected without inventory changes",
+    "reactivation permits receipt",
+    "neighbour preserved"
+  ]
+}

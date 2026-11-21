@@ -1,0 +1,74 @@
+{
+  "scope": "03-AJ / 06-E",
+  "date_lima": "2026-11-11",
+  "chrome_checks": 46,
+  "postgres_cases": 6,
+  "targeted_tests": {
+    "methods": 15,
+    "failures": 0,
+    "evidence": "auditoria_por_etapas\\resultados\\evidencias\\03-K-tests-20261111T184544851790Z"
+  },
+  "full_tests": {
+    "methods": 362,
+    "failures": 0,
+    "labels": [
+      "sales",
+      "inventory",
+      "catalog",
+      "cash",
+      "identity",
+      "app_platform"
+    ],
+    "env": {
+      "AUDIT03K_DEFAULT_COOKIES": "1"
+    },
+    "evidence": "auditoria_por_etapas\\resultados\\evidencias\\03-K-tests-20261111T185100171418Z"
+  },
+  "functional_code_changed": true,
+  "fixes": [
+    "H-03AJ-01: _lock_warehouse_actor row lock on Account in confirm_initial_load and register_stock_entry",
+    "H-03AJ-02: inactive user logout guard in roles_required, login_view, dashboard",
+    "H-03AJ-03: @never_cache on initial_load_create, initial_load_created, stock_entry_create and .load-detail-panel layout fix"
+  ],
+  "cursor": "**06-F / AUD06F-CONCILIACION-INV01b.** Conciliar HU-INV-01b/CA-01..02 y RN-01/14/28/29 frente a 03-AG..AJ; dejar trazadas las decisiones abiertas (DOC-03AB-01, DOC-03AH-01, DOC-03AI-01) o sus alternativas vigentes antes de pasar a Etapa 04 (HU-PROV-01/CA-01) o Etapa 07 (HU-PROD-06/CA-01). Despliegue, caída de servidor, multiproducto, cuarentena y retiro sanitario siguen pendientes.",
+  "original_sha256": "4406ecd5babab34f0bb264e82c134eb21563494f9faf50e462d50c30c9d2ea95",
+  "sources_sha256": {
+    "r1-pmv/inventory/services.py": "59af9294154bd4d5acf79ad39c57b13b5573f7a5fb9a7a0da8dad6dec56631a4",
+    "r1-pmv/identity/authorization.py": "89cd7878e73018e627b622a473d7a5812b56a71ac72ea7768adf4177da3d205a",
+    "r1-pmv/identity/views.py": "997f9a9c23e8706e37e6e21104ba7c2867c4a54eb1023707cdbed073df7f7d46",
+    "r1-pmv/inventory/views.py": "252d2e56a732e26c7d61f22c98593d7cd9a3c9b3bf4baaa4b039bfd704ff8043",
+    "r1-pmv/inventory/templates/inventory/initial_load_created.html": "1085822bee8fbbf19fd67d965764de222c28641527a4760716eae18ea8500740",
+    "r1-pmv/identity/static/identity/app.css": "7a4955d5c375b97b824e316d1b549af5560cec9fe1105e0fb7bd6cf2e4fec6b5",
+    "r1-pmv/inventory/test_audit03aj_session.py": "1610c34a84d41910b1d9dec7a9448ca29212b93f4cf72c2e26a1f723c1fb8ad1",
+    "auditoria_por_etapas/resultados/soporte/audit03aj_browser.cjs": "f12d87458f407855a9530c607a8ea726eb5a37c1bdc7c077cd057276521a054e",
+    "auditoria_por_etapas/resultados/soporte/audit03aj_pg.py": "6b6b1b6071ba7f5a14b826021c80dd95ccdfa663869c0e0488d987a412434fc1",
+    "auditoria_por_etapas/resultados/soporte/audit03aj_session.py": "f1ab42ccc7f7ab8c08adc998b5262e53062956fc6fc1a1d4559a462a3a9903ad",
+    "auditoria_por_etapas/resultados/soporte/audit03y_browser_run.py": "c29cad1204fc2c20de21d4ee8cd98f13b0aa09ab2ad57b25e7bda37fa68ad3f2"
+  },
+  "runs": {
+    "baseline_before_fixes": "auditoria_por_etapas\\resultados\\evidencias\\03-AJ-aj-session-20261111T180713948478Z-135b54cf",
+    "intermediate_failures": [
+      "auditoria_por_etapas\\resultados\\evidencias\\03-K-tests-20261111T184219155787Z",
+      "auditoria_por_etapas\\resultados\\evidencias\\03-AJ-aj-session-20261111T184554990916Z-e8bd3f5c",
+      "auditoria_por_etapas\\resultados\\evidencias\\03-AJ-aj-session-20261111T184709175625Z-b9cc3ea9"
+    ],
+    "final_browser": "auditoria_por_etapas\\resultados\\evidencias\\03-AJ-aj-session-20261111T184853885235Z-173a0ee4",
+    "final_postgres": "auditoria_por_etapas\\resultados\\evidencias\\03-AJ-postgresql-20261111T185001928420Z.json",
+    "final_targeted_tests": "auditoria_por_etapas\\resultados\\evidencias\\03-K-tests-20261111T184544851790Z",
+    "final_full_tests": "auditoria_por_etapas\\resultados\\evidencias\\03-K-tests-20261111T185100171418Z"
+  },
+  "evidence": "auditoria_por_etapas\\resultados\\evidencias\\03-AJ-aj-session-20261111T184853885235Z-173a0ee4",
+  "open_decisions": [
+    "DOC-03AB-01",
+    "DOC-03AH-01",
+    "DOC-03AI-01"
+  ],
+  "pending": [
+    "conciliación 06-F",
+    "frontera _lock_warehouse_actor en mermas/ajustes/ventas (Etapas 08/10/11)",
+    "despliegue de migraciones",
+    "caída de servidor/BD durante transacción",
+    "recepción multiproducto y cuarentena/retiro sanitario"
+  ]
+}
+

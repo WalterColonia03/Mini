@@ -1,0 +1,20 @@
+Found 592 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+........................................................................PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.
+.PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.
+..........................................................................................................................................Productos demo creados: 4
+........................................................................................F....................................................................................................................................................................................................................................................................................................
+======================================================================
+FAIL: test_originals_survive_master_renames_adjustment_receipt_sale_and_loss (inventory.test_audit14h_initial_history.InitialHistoryTests.test_originals_survive_master_renames_adjustment_receipt_sale_and_loss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit14h_initial_history.py", line 66, in test_originals_survive_master_renames_adjustment_receipt_sale_and_loss
+    self.assertEqual(first.available_quantity,1)
+AssertionError: 5 != 1
+
+----------------------------------------------------------------------
+Ran 592 tests in 99.743s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...

@@ -1,0 +1,81 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - link "Apertura de caja":
+      - /url: /caja/abrir/
+      - generic: $
+      - generic: Apertura de caja
+    - link "Preparar venta":
+      - /url: /ventas/
+      - generic: ▦
+      - generic: Preparar venta
+    - link "Cerrar turno":
+      - /url: /caja/cerrar/
+      - generic: ✖
+      - generic: Cerrar turno
+    - link "Mis ventas del turno":
+      - /url: /ventas/historial/turno/
+      - generic: ☰
+      - generic: Mis ventas del turno
+  - generic: A
+  - strong: Audit13 Vendedor seller
+  - generic: Vendedor
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Cobrar venta" [level=1]
+  - generic: Audit13 Vendedor seller
+  - generic: Vendedor
+- main:
+  - paragraph: Mostrador
+  - heading "Cobrar venta" [level=2]
+  - paragraph: Revisa el resumen e ingresa el efectivo recibido para confirmar el cobro.
+  - paragraph: Esta venta genera una constancia interna. No emite una boleta ni factura electrónica autorizada por SUNAT.
+  - link "Volver a preparación":
+    - /url: /ventas/
+  - heading "Efectivo recibido" [level=3]
+  - generic: Descuento (S/) - opcional
+  - generic: S/
+  - spinbutton "Descuento (S/) - opcional"
+  - paragraph: Deja en blanco si no hay descuento. El resumen de la derecha se actualiza automáticamente.
+  - generic: Efectivo recibido (S/)
+  - generic: S/
+  - spinbutton "Efectivo recibido (S/)" [active]: "10.00"
+  - paragraph: Debe ser igual o mayor al total de la venta.
+  - button "Confirmar cobro"
+  - link "Cancelar":
+    - /url: /ventas/
+  - complementary:
+    - heading "Resumen de la venta" [level=3]
+    - article:
+      - strong: Audit13 venta-integracion
+      - generic: 2 und. × S/ 3,55
+      - strong: S/ 7,10
+    - term: Subtotal
+    - definition: S/ 7,10
+    - term: Descuento
+    - definition: S/ 0,00
+    - term: Base imponible
+    - definition: S/ 6,02
+    - term: IGV (18 %)
+    - definition: S/ 1,08
+    - term: Total a cobrar
+    - definition: S/ 7,10
+    - term: Vuelto estimado
+    - definition: S/ 2,90
+    - paragraph: El cobro descuenta existencias y registra la constancia interna.
+- contentinfo: Minimarket · Gestión de bodega

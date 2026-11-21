@@ -1,0 +1,299 @@
+{
+  "protected_core_unchanged": true,
+  "must_hold_count": 330,
+  "concurrent_external_db_changes": [],
+  "empty_returncode": 0,
+  "full_returncode": 0,
+  "empty_checks": [
+    {
+      "name": "empty_dashboard_zero_alerts",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "empty_stock_h1",
+      "ok": true,
+      "actual": "Stock e inventario",
+      "expected": "Stock e inventario"
+    },
+    {
+      "name": "empty_stock_shows_zero_alerts_banner",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "empty_stock_shows_empty_row",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "empty_exp_h1",
+      "ok": true,
+      "actual": "Vencimientos de lotes",
+      "expected": "Vencimientos de lotes"
+    },
+    {
+      "name": "empty_exp_message",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "empty_zero_browser_errors",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    }
+  ],
+  "full_checks": [
+    {
+      "name": "anon_redirect_/inventario/stock/",
+      "ok": true,
+      "actual": "http://127.0.0.1:57623/?next=/inventario/stock/",
+      "expected": "http://127.0.0.1:57623/?next=/inventario/stock/"
+    },
+    {
+      "name": "anon_redirect_/productos/vencimientos/",
+      "ok": true,
+      "actual": "http://127.0.0.1:57623/?next=/productos/vencimientos/",
+      "expected": "http://127.0.0.1:57623/?next=/productos/vencimientos/"
+    },
+    {
+      "name": "seller_nav_excludes_stock",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "seller_nav_excludes_expirations",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "seller_dashboard_no_resumen_general",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "seller_403_/inventario/stock/",
+      "ok": true,
+      "actual": 403,
+      "expected": 403
+    },
+    {
+      "name": "seller_403_/productos/vencimientos/",
+      "ok": true,
+      "actual": 403,
+      "expected": 403
+    },
+    {
+      "name": "seller_expected_403_console_count",
+      "ok": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "pos_shows_yogurt_sellable_8_not_15",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "pos_excludes_Producto E Vence Hoy",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "pos_excludes_Gaseosa Suspendida Cat",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "seller_zero_unexpected_browser_errors",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "admin_stock_new_heading_13B",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "admin_stock_agua_reactivated_alert",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "gaseosa_stays_inactivo_after_cat_reactivate",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "low_section_excludes_gaseosa_susp",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "low_section_excludes_prod_e",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "low_section_includes_yogurt_mixto",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "low_section_includes_sal_min_zero",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "catalog_H13_02_no_low_badge_prod_e",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "catalog_H13_02_no_low_badge_gaseosa",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "catalog_yogurt_sellable_8_low",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "wh_exp_topbar_h1",
+      "ok": true,
+      "actual": "Vencimientos de lotes",
+      "expected": "Vencimientos de lotes"
+    },
+    {
+      "name": "dec07_observed_still_unseparated_mixed_table",
+      "ok": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "dias30_excludes_31d_and_zero_lot",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "dias31_includes_31d",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "dias0_error_msg",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "dias_abc_error_msg",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "adj_lot_shows_dash_supplier_and_writeoff",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "writeoff_redirects_to_receipt_14I",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "yt_exp_removed_from_expirations_after_full_writeoff",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "wh_stock_yogurt_physical_now_equals_8",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "admin_stock_synced_8",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "mobile_stock_no_body_overflow",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "mobile_exp_no_body_overflow",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "mobile_zero_errors",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "wh_stock_never_cache_header",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "wh_exp_never_cache_header",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "post_logout_protected_stock_redirects",
+      "ok": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "wh_zero_browser_errors",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "admin_zero_browser_errors",
+      "ok": true,
+      "actual": 0,
+      "expected": 0
+    }
+  ]
+}

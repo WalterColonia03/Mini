@@ -1,0 +1,103 @@
+{
+  "started_utc": "20261114T212701747352Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit09-reval-pg-f520ce9f89262eb706ed025d",
+  "port": 51450,
+  "cases": [
+    {
+      "id": "pg_cash_0001_0004_constraints",
+      "ok": true,
+      "checks": {
+        "neg_opening_rejected": true,
+        "cumulative_14_2_and_neg_diff_allowed": true,
+        "inconsistent_diff_rejected": true
+      }
+    },
+    {
+      "id": "pg_concurrent_open_shift",
+      "ok": true,
+      "checks": {
+        "outcomes": [
+          [
+            "rejected",
+            "Ya existe un turno abierto. Cierre ese turno antes de abrir otro.",
+            "5b569c9a-7a00-44a0-9060-c6fc69d73dbf"
+          ],
+          [
+            "opened",
+            "da6677e2-d1cf-4578-a8ed-43659c377d35",
+            "13d6158d-4d26-4cb6-b903-0ccab13db4f5"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pg_concurrent_double_close",
+      "ok": true,
+      "checks": {
+        "outcomes": [
+          [
+            "rejected",
+            "No tienes un turno de caja abierto para cerrar."
+          ],
+          [
+            "closed",
+            "082b6535-74b6-431a-a01d-29dfd22c3ee3"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pg_close_vs_checkout_both_directions",
+      "ok": true,
+      "checks": {
+        "dir_a_sale": [
+          "sale_ok",
+          "10.00"
+        ],
+        "dir_a_close": [
+          "close_ok",
+          "110.00",
+          "0.00"
+        ],
+        "pg_blocking_pids_count": 1,
+        "dir_b_sale": [
+          "rejected",
+          "No tienes un turno de caja abierto."
+        ]
+      }
+    }
+  ],
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "db_verification": {
+    "current_database": "audit09_reval_84d1613b7d",
+    "data_directory_matches": true,
+    "transaction_isolation": "read committed"
+  },
+  "error": {
+    "type": "AssertionError",
+    "message": "",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\auditoria_por_etapas\\resultados\\soporte\\audit09_reval_pg.py\", line 543, in <module>\n    assert sales_acct_evt.wait(timeout=8)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-browser-20261111T235835090296Z-8a04f270\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-browser-20261111T235952664362Z-38d8ad75\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-browser-20261112T000714441673Z-f98d70f1\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261111T234939548515Z-43557097\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261111T235041606114Z-71ecc946\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261111T235616085859Z-a1cf1e46\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261112T000503938177Z-2b7897fb\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261112T000915886163Z-e74a9baf\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261114T161901946571Z-9eaaebe4\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-checks-20261114T212157048019Z-899ad03c\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-repro-20261111T234944400656Z-b1185333\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-repro-20261111T235043286828Z-284769d4\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa09-repro-20261111T235055739102Z-db682b37\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-14T21:27:20.882333+00:00"
+}

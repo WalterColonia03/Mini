@@ -1,0 +1,79 @@
+{% extends "identity/base.html" %}
+{% block title %}Existencias confirmadas · Minimarket{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Existencias confirmadas</p>
+    <h2>{% if has_snapshot %}{{ load.product_snapshot_name }}{% else %}{{ load.product.name }}{% endif %}</h2>
+    <p class="lede">Consulta el registro de carga y las recepciones posteriores de este producto.</p>
+  </div>
+  <span class="status status-ready">Carga inicial confirmada</span>
+</section>
+<section class="panel form-panel load-detail-panel" data-testid="inventory-load-created">
+  {% if has_snapshot %}
+  <h3 class="section-heading">Datos originales de la carga inicial</h3>
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Código del producto al confirmar</dt><dd>{{ load.product_snapshot_barcode }}</dd></div>
+    <div><dt>Responsable de carga inicial</dt><dd>{{ load.responsible_snapshot_name }}</dd></div>
+    <div><dt>Carga inicial confirmada</dt><dd>{{ load.confirmed_at|date:"d/m/Y H:i" }} (Lima)</dd></div>
+    <div><dt>Costo promedio inicial</dt><dd>S/ {{ load.average_cost_snapshot|floatformat:2 }}</dd></div>
+    <div><dt>Proveedor al confirmar</dt><dd>{% if load.supplier_snapshot_name %}{{ load.supplier_snapshot_name }} · RUC {{ load.supplier_snapshot_ruc }}{% else %}Sin proveedor asignado{% endif %}</dd></div>
+  </dl>
+  <h3 class="section-heading">Lotes de la carga inicial</h3>
+  <p class="help">Las cantidades y los datos originales se conservan aunque cambien los maestros o las existencias.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Lotes de la carga inicial, tabla desplazable">
+    <table>
+      <thead><tr><th>Lote</th><th>Cantidad cargada</th><th>Disponible actual</th><th>Costo unitario original</th><th>Vencimiento original</th><th>Ingreso (Lima)</th></tr></thead>
+      <tbody>{% for line in lines %}<tr>
+        <td class="load-col-lot">{{ line.number }}</td>
+        <td>{{ line.quantity }} {{ load.unit_snapshot }}</td>
+        <td>{{ line.lot.available_quantity }} {{ load.product.unit }}</td>
+        <td>S/ {{ line.unit_cost|floatformat:4 }}</td>
+        <td>{{ line.expiration_date|date:"d/m/Y" }}</td>
+        <td>{{ line.received_at|date:"d/m/Y H:i" }}</td>
+      </tr>{% endfor %}</tbody>
+    </table>
+  </div>
+  {% else %}
+  <p class="help">Origen histórico incompleto. Cantidad original no disponible: esta carga no tiene una fotografía confirmada. Los datos actuales no acreditan sus valores originales.</p>
+  {% endif %}
+  <h3 class="section-heading">Datos actuales del producto</h3>
+  <dl class="summary-list summary-list-wide">
+    <div><dt>Producto actual</dt><dd>{{ load.product.name }} · {{ load.product.barcode }}</dd></div>
+    <div><dt>Existencias físicas actuales</dt><dd>{{ load.product.physical_stock }} {{ load.product.unit }}</dd></div>
+    <div><dt>Costo promedio actual</dt><dd>S/ {{ load.product.average_cost|floatformat:2 }}</dd></div>
+  </dl>
+  {% if legacy_lots %}
+  <h3 class="section-heading">Lotes vinculados sin fotografía original</h3>
+  <p class="help">Datos actuales. El vínculo a la carga no demuestra el origen de cada ingreso. Cantidad original no disponible; no se ha reconstruido una recepción.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Lotes sin fotografía, tabla desplazable">
+    <table>
+      <thead><tr><th>Lote actual</th><th>Disponible actual</th><th>Costo unitario actual</th><th>Vencimiento actual</th><th>Proveedor actual</th><th>Responsable registrado (nombre actual)</th></tr></thead>
+      <tbody>{% for lot in legacy_lots %}<tr>
+        <td class="load-col-lot">{{ lot.number_normalized }}</td>
+        <td>{{ lot.available_quantity }} {{ load.product.unit }}</td>
+        <td>S/ {{ lot.unit_cost|floatformat:4 }}</td>
+        <td>{{ lot.expiration_date|date:"d/m/Y" }}</td>
+        <td class="load-col-wrap">{% if lot.supplier %}{{ lot.supplier.name }}{% else %}Sin proveedor asignado{% endif %}</td>
+        <td class="load-col-wrap">{% if lot.responsible %}{{ lot.responsible.display_name }}{% else %}No disponible{% endif %}</td>
+      </tr>{% endfor %}</tbody>
+    </table>
+  </div>
+  {% endif %}
+  {% if receipts %}
+  <h3 class="section-heading">Recepciones con constancia propia</h3>
+  <ul>{% for receipt in receipts %}<li>
+    <a href="{% url 'stock-receipt' receipt.pk %}">{{ receipt.correlative }}</a> ·
+    {{ receipt.confirmed_at|date:"d/m/Y H:i" }} · {{ receipt.responsible_snapshot_name }}
+  </li>{% endfor %}</ul>
+  {% endif %}
+  <div class="form-actions">
+    {% if user.role.code == "ALMACENERO" %}
+    <a class="button button-primary" href="{% url 'inventory-load' %}">Cargar otro producto</a>
+    <a class="button button-secondary" href="{% url 'stock-entry' %}">Registrar entrada posterior</a>
+    {% endif %}
+    <a class="button button-secondary" href="{% url 'stock-overview' %}">Ver inventario</a>
+    <a class="button button-secondary" href="{% url 'dashboard' %}">Ir al inicio</a>
+  </div>
+</section>
+{% endblock %}

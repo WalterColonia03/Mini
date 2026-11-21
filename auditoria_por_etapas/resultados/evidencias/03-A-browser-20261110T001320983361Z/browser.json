@@ -1,0 +1,180 @@
+{
+  "stage": "03-A",
+  "started_utc": "2026-11-10T00:13:23.464Z",
+  "cases": [
+    {
+      "id": "B00-isolation",
+      "ok": true
+    },
+    {
+      "id": "B01-CAT01-empty",
+      "ok": true,
+      "screenshot": "B01-empty.png"
+    },
+    {
+      "id": "B02-field-default",
+      "ok": true,
+      "attributes": {
+        "label": "Nombre de la categoría",
+        "required": true,
+        "maxLength": 120,
+        "type": "text",
+        "autofocus": true
+      }
+    },
+    {
+      "id": "B03-create-normalized",
+      "ok": true,
+      "persisted": {
+        "id": "bf67892a-d2ff-4a15-b639-2b913912b85e",
+        "name": "AUD03 Bebidas y jugos",
+        "name_normalized": "aud03 bebidas y jugos",
+        "is_active": true
+      },
+      "screenshot": "B03-created.png"
+    },
+    {
+      "id": "B04-duplicate",
+      "ok": true,
+      "screenshot": "B04-duplicate.png"
+    },
+    {
+      "id": "B05-empty-message",
+      "ok": true,
+      "aria": {
+        "invalid": "true",
+        "describedby": "id_name_error",
+        "targets": [
+          {
+            "id": "id_name_error",
+            "exists": true,
+            "role": "alert"
+          }
+        ]
+      },
+      "screenshot": "B05-empty-error.png"
+    },
+    {
+      "id": "B06-error-accessibility",
+      "ok": true
+    },
+    {
+      "id": "B07-length120",
+      "ok": true
+    },
+    {
+      "id": "B08-http121",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "id": "B09-http-missing",
+      "ok": true
+    },
+    {
+      "id": "B10-cancel-reload",
+      "ok": true
+    },
+    {
+      "id": "B11-escaped",
+      "ok": true
+    },
+    {
+      "id": "B12-denied-warehouse",
+      "ok": true,
+      "status": [
+        403,
+        403,
+        403,
+        403,
+        403,
+        403
+      ],
+      "screenshot": "B12-warehouse.png"
+    },
+    {
+      "id": "B12-denied-seller",
+      "ok": true,
+      "status": [
+        403,
+        403,
+        403,
+        403,
+        403,
+        403
+      ],
+      "screenshot": "B12-seller.png"
+    },
+    {
+      "id": "B12-denied-visitor",
+      "ok": true,
+      "status": [
+        302,
+        302,
+        302
+      ],
+      "screenshot": "B12-visitor.png"
+    },
+    {
+      "id": "B13-inactive-visible",
+      "ok": true
+    },
+    {
+      "id": "B14-inactive-duplicate",
+      "ok": true
+    },
+    {
+      "id": "B15-sale-search-active",
+      "ok": true
+    },
+    {
+      "id": "B16-sale-search-inactive",
+      "ok": true,
+      "screenshot": "B16-inactive-sale.png"
+    },
+    {
+      "id": "B17-draft-reject",
+      "ok": true,
+      "message": [
+        "El producto seleccionado no está disponible para la venta."
+      ]
+    },
+    {
+      "id": "B18-checkout-no-mutation",
+      "ok": true,
+      "screenshot": "B18-checkout.png"
+    },
+    {
+      "id": "B19-inventory-selectors",
+      "ok": true,
+      "screenshot": "B19-entry.png"
+    },
+    {
+      "id": "B20-warehouse-state",
+      "ok": true,
+      "screenshot": "B20-catalog.png"
+    },
+    {
+      "id": "B21-historical-receipt",
+      "ok": true,
+      "screenshot": "B21-receipt.png"
+    },
+    {
+      "id": "B22-reactivation",
+      "ok": true
+    },
+    {
+      "id": "B23-mobile-observation",
+      "ok": true,
+      "horizontalOverflow": false,
+      "screenshot": "B23-mobile.png"
+    }
+  ],
+  "errors": [],
+  "viewport": {
+    "width": 1366,
+    "height": 900
+  },
+  "browser": "157.0.8103.39",
+  "finished_utc": "2026-11-10T00:13:38.303Z"
+}

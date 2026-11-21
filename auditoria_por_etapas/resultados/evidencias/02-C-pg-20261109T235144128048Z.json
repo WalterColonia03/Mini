@@ -1,0 +1,122 @@
+{
+  "started_utc": "2026-11-09T23:51:44.130554+00:00",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit02c-pg-6b332540750af83f27d70589",
+  "port": 56273,
+  "mode": "verify",
+  "cases": [
+    {
+      "name": "last_admin",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "active_admins": 1
+    },
+    {
+      "name": "duplicate_email",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "normalized_count": 1
+    },
+    {
+      "name": "open_vs_deactivate",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "seller_active": true,
+      "open_shifts": 1
+    },
+    {
+      "name": "deactivate_vs_open",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "PermissionDenied"
+        }
+      ],
+      "seller_active": false,
+      "open_shifts": 0
+    },
+    {
+      "name": "role_vs_open",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "PermissionDenied"
+        }
+      ],
+      "role": "ALMACENERO",
+      "open_shifts": 0
+    },
+    {
+      "name": "open_vs_role",
+      "connections": 2,
+      "synchronized_before_write": [],
+      "postgres_blocking_observed": true,
+      "results": [
+        {
+          "operation": 0,
+          "result": "success"
+        },
+        {
+          "operation": 1,
+          "result": "ValidationError"
+        }
+      ],
+      "role": "VENDEDOR",
+      "open_shifts": 1
+    }
+  ],
+  "postgres_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "db": "audit02c_7c384ee7b9",
+  "isolation": "read committed",
+  "migrations": "PASS",
+  "status": "COMPLETE",
+  "port_closed": true,
+  "cluster_retained": true,
+  "finished_utc": "2026-11-09T23:51:53.654416+00:00"
+}

@@ -1,0 +1,735 @@
+{
+  "started_utc": "20261111T021748118410Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit03q-pg-aaff54d29c6c5100598009bc",
+  "port": 63761,
+  "cases": [
+    {
+      "id": "PG-Q-edit-first",
+      "ok": true,
+      "checks": {
+        "distinct_connections": true,
+        "wait_observed": true,
+        "one_sale": true,
+        "amount": true,
+        "stock": true,
+        "details": true,
+        "category_updated": true,
+        "retry_idempotent": true,
+        "no_partial_sale": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "category": "8ba0b1d7-fb21-4896-8e3c-e86bb2f42a90"
+          }
+        },
+        "contender": {
+          "status": "rejected",
+          "messages": [
+            "La venta en preparación cambió. Revisa el resumen antes de confirmar el cobro."
+          ]
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": true
+      },
+      "before": {
+        "products": [
+          {
+            "id": "990dafe5-846d-4147-bb61-ab72148d7509",
+            "category_id": "569bd594-d477-4384-951e-3558b826f9f9",
+            "name": "Q Q edit-first",
+            "barcode": "QQ-edit-first",
+            "sale_price": "6.00",
+            "minimum_stock": 10,
+            "is_active": true
+          },
+          {
+            "id": "9eadcf9b-076c-4035-8ad4-074a70a7a88e",
+            "category_id": "8ba0b1d7-fb21-4896-8e3c-e86bb2f42a90",
+            "name": "Q P edit-first",
+            "barcode": "QP-edit-first",
+            "sale_price": "8.50",
+            "minimum_stock": 10,
+            "is_active": true
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "990dafe5-846d-4147-bb61-ab72148d7509",
+            "available_quantity": 10,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          },
+          {
+            "product_id": "9eadcf9b-076c-4035-8ad4-074a70a7a88e",
+            "available_quantity": 10,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "sales": [],
+        "lines": []
+      },
+      "after_race": {
+        "products": [
+          {
+            "id": "990dafe5-846d-4147-bb61-ab72148d7509",
+            "category_id": "8ba0b1d7-fb21-4896-8e3c-e86bb2f42a90",
+            "name": "Q Q edit-first",
+            "barcode": "QQ-edit-first",
+            "sale_price": "6.00",
+            "minimum_stock": 10,
+            "is_active": true
+          },
+          {
+            "id": "9eadcf9b-076c-4035-8ad4-074a70a7a88e",
+            "category_id": "8ba0b1d7-fb21-4896-8e3c-e86bb2f42a90",
+            "name": "Q P edit-first",
+            "barcode": "QP-edit-first",
+            "sale_price": "8.50",
+            "minimum_stock": 10,
+            "is_active": true
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "990dafe5-846d-4147-bb61-ab72148d7509",
+            "available_quantity": 10,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          },
+          {
+            "product_id": "9eadcf9b-076c-4035-8ad4-074a70a7a88e",
+            "available_quantity": 10,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "sales": [],
+        "lines": []
+      },
+      "after_retry": {
+        "products": [
+          {
+            "id": "990dafe5-846d-4147-bb61-ab72148d7509",
+            "category_id": "8ba0b1d7-fb21-4896-8e3c-e86bb2f42a90",
+            "name": "Q Q edit-first",
+            "barcode": "QQ-edit-first",
+            "sale_price": "6.00",
+            "minimum_stock": 10,
+            "is_active": true
+          },
+          {
+            "id": "9eadcf9b-076c-4035-8ad4-074a70a7a88e",
+            "category_id": "8ba0b1d7-fb21-4896-8e3c-e86bb2f42a90",
+            "name": "Q P edit-first",
+            "barcode": "QP-edit-first",
+            "sale_price": "8.50",
+            "minimum_stock": 10,
+            "is_active": true
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "990dafe5-846d-4147-bb61-ab72148d7509",
+            "available_quantity": 9,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          },
+          {
+            "product_id": "9eadcf9b-076c-4035-8ad4-074a70a7a88e",
+            "available_quantity": 8,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          }
+        ],
+        "draft": [
+          {
+            "status": "DISCARDED"
+          }
+        ],
+        "sales": [
+          {
+            "id": "d9be7ac0-c330-4244-a22e-40a0cd95f80b",
+            "total_amount": "23.00",
+            "cash_received": "30.00",
+            "change_given": "7.00"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "990dafe5-846d-4147-bb61-ab72148d7509",
+            "product_snapshot_name": "Q Q edit-first",
+            "product_snapshot_barcode": "QQ-edit-first",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "9eadcf9b-076c-4035-8ad4-074a70a7a88e",
+            "product_snapshot_name": "Q P edit-first",
+            "product_snapshot_barcode": "QP-edit-first",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ]
+      },
+      "retry": {
+        "pay": {
+          "id": "d9be7ac0-c330-4244-a22e-40a0cd95f80b",
+          "total": "23.00"
+        },
+        "same_idempotency": true
+      }
+    },
+    {
+      "id": "PG-Q-checkout-first",
+      "ok": true,
+      "checks": {
+        "distinct_connections": true,
+        "wait_observed": true,
+        "one_sale": true,
+        "amount": true,
+        "stock": true,
+        "details": true,
+        "category_updated": true,
+        "retry_idempotent": true,
+        "no_partial_sale": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "id": "6749f617-6eac-4d1a-bbb5-a9fb12bbb285",
+            "total": "23.00"
+          }
+        },
+        "contender": {
+          "status": "committed",
+          "value": {
+            "category": "f1f4839c-f147-48c1-a22c-e9e47d1fd2a8"
+          }
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": false
+      },
+      "before": {
+        "products": [
+          {
+            "id": "ab7b2b19-17da-4f24-91cf-8260859e22b2",
+            "category_id": "f7d4d906-a372-41fb-a5df-09c1de72470b",
+            "name": "Q Q checkout-first",
+            "barcode": "QQ-checkout-first",
+            "sale_price": "6.00",
+            "minimum_stock": 10,
+            "is_active": true
+          },
+          {
+            "id": "b00bb2d1-3ad7-4aa6-8e9b-f38c12dab2e2",
+            "category_id": "f1f4839c-f147-48c1-a22c-e9e47d1fd2a8",
+            "name": "Q P checkout-first",
+            "barcode": "QP-checkout-first",
+            "sale_price": "8.50",
+            "minimum_stock": 10,
+            "is_active": true
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "ab7b2b19-17da-4f24-91cf-8260859e22b2",
+            "available_quantity": 10,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          },
+          {
+            "product_id": "b00bb2d1-3ad7-4aa6-8e9b-f38c12dab2e2",
+            "available_quantity": 10,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "sales": [],
+        "lines": []
+      },
+      "after_race": {
+        "products": [
+          {
+            "id": "ab7b2b19-17da-4f24-91cf-8260859e22b2",
+            "category_id": "f1f4839c-f147-48c1-a22c-e9e47d1fd2a8",
+            "name": "Q Q checkout-first",
+            "barcode": "QQ-checkout-first",
+            "sale_price": "6.00",
+            "minimum_stock": 10,
+            "is_active": true
+          },
+          {
+            "id": "b00bb2d1-3ad7-4aa6-8e9b-f38c12dab2e2",
+            "category_id": "f1f4839c-f147-48c1-a22c-e9e47d1fd2a8",
+            "name": "Q P checkout-first",
+            "barcode": "QP-checkout-first",
+            "sale_price": "8.50",
+            "minimum_stock": 10,
+            "is_active": true
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "ab7b2b19-17da-4f24-91cf-8260859e22b2",
+            "available_quantity": 9,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          },
+          {
+            "product_id": "b00bb2d1-3ad7-4aa6-8e9b-f38c12dab2e2",
+            "available_quantity": 8,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          }
+        ],
+        "draft": [
+          {
+            "status": "DISCARDED"
+          }
+        ],
+        "sales": [
+          {
+            "id": "6749f617-6eac-4d1a-bbb5-a9fb12bbb285",
+            "total_amount": "23.00",
+            "cash_received": "30.00",
+            "change_given": "7.00"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "ab7b2b19-17da-4f24-91cf-8260859e22b2",
+            "product_snapshot_name": "Q Q checkout-first",
+            "product_snapshot_barcode": "QQ-checkout-first",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "b00bb2d1-3ad7-4aa6-8e9b-f38c12dab2e2",
+            "product_snapshot_name": "Q P checkout-first",
+            "product_snapshot_barcode": "QP-checkout-first",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ]
+      },
+      "after_retry": {
+        "products": [
+          {
+            "id": "ab7b2b19-17da-4f24-91cf-8260859e22b2",
+            "category_id": "f1f4839c-f147-48c1-a22c-e9e47d1fd2a8",
+            "name": "Q Q checkout-first",
+            "barcode": "QQ-checkout-first",
+            "sale_price": "6.00",
+            "minimum_stock": 10,
+            "is_active": true
+          },
+          {
+            "id": "b00bb2d1-3ad7-4aa6-8e9b-f38c12dab2e2",
+            "category_id": "f1f4839c-f147-48c1-a22c-e9e47d1fd2a8",
+            "name": "Q P checkout-first",
+            "barcode": "QP-checkout-first",
+            "sale_price": "8.50",
+            "minimum_stock": 10,
+            "is_active": true
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "ab7b2b19-17da-4f24-91cf-8260859e22b2",
+            "available_quantity": 9,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          },
+          {
+            "product_id": "b00bb2d1-3ad7-4aa6-8e9b-f38c12dab2e2",
+            "available_quantity": 8,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          }
+        ],
+        "draft": [
+          {
+            "status": "DISCARDED"
+          }
+        ],
+        "sales": [
+          {
+            "id": "6749f617-6eac-4d1a-bbb5-a9fb12bbb285",
+            "total_amount": "23.00",
+            "cash_received": "30.00",
+            "change_given": "7.00"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "ab7b2b19-17da-4f24-91cf-8260859e22b2",
+            "product_snapshot_name": "Q Q checkout-first",
+            "product_snapshot_barcode": "QQ-checkout-first",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "b00bb2d1-3ad7-4aa6-8e9b-f38c12dab2e2",
+            "product_snapshot_name": "Q P checkout-first",
+            "product_snapshot_barcode": "QP-checkout-first",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ]
+      },
+      "retry": {}
+    },
+    {
+      "id": "PG-Q-forced-cycle",
+      "ok": true,
+      "checks": {
+        "distinct_connections": true,
+        "wait_observed": true,
+        "one_sale": true,
+        "amount": true,
+        "stock": true,
+        "details": true,
+        "category_updated": true,
+        "retry_idempotent": true,
+        "no_partial_sale": true
+      },
+      "race": {
+        "checkout": {
+          "status": "committed",
+          "value": {
+            "id": "db88ee8a-dc37-4249-8753-05307d9cbbf4",
+            "total": "23.00"
+          }
+        },
+        "edit": {
+          "status": "database-error",
+          "type": "OperationalError",
+          "sqlstate": "40P01"
+        },
+        "edit_waited_for_checkout": true,
+        "wait_event": "transactionid",
+        "distinct_connections": true,
+        "auxiliary": "checkout transaction prelocks P and category A, then invokes checkout_sale"
+      },
+      "before": {
+        "products": [
+          {
+            "id": "1c166674-9892-4be3-83da-f6e378e69cd1",
+            "category_id": "fa106cae-55b4-4a6a-8909-1221ebe10cc5",
+            "name": "Q Q forced-cycle",
+            "barcode": "QQ-forced-cycle",
+            "sale_price": "6.00",
+            "minimum_stock": 10,
+            "is_active": true
+          },
+          {
+            "id": "6445e404-e771-4ccc-a722-ddd3ffee0335",
+            "category_id": "39a35ac7-ffde-4230-8a4b-0ff4b042294a",
+            "name": "Q P forced-cycle",
+            "barcode": "QP-forced-cycle",
+            "sale_price": "8.50",
+            "minimum_stock": 10,
+            "is_active": true
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "1c166674-9892-4be3-83da-f6e378e69cd1",
+            "available_quantity": 10,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          },
+          {
+            "product_id": "6445e404-e771-4ccc-a722-ddd3ffee0335",
+            "available_quantity": 10,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          }
+        ],
+        "draft": [
+          {
+            "status": "ACTIVE"
+          }
+        ],
+        "sales": [],
+        "lines": []
+      },
+      "after_race": {
+        "products": [
+          {
+            "id": "1c166674-9892-4be3-83da-f6e378e69cd1",
+            "category_id": "fa106cae-55b4-4a6a-8909-1221ebe10cc5",
+            "name": "Q Q forced-cycle",
+            "barcode": "QQ-forced-cycle",
+            "sale_price": "6.00",
+            "minimum_stock": 10,
+            "is_active": true
+          },
+          {
+            "id": "6445e404-e771-4ccc-a722-ddd3ffee0335",
+            "category_id": "39a35ac7-ffde-4230-8a4b-0ff4b042294a",
+            "name": "Q P forced-cycle",
+            "barcode": "QP-forced-cycle",
+            "sale_price": "8.50",
+            "minimum_stock": 10,
+            "is_active": true
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "1c166674-9892-4be3-83da-f6e378e69cd1",
+            "available_quantity": 9,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          },
+          {
+            "product_id": "6445e404-e771-4ccc-a722-ddd3ffee0335",
+            "available_quantity": 8,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          }
+        ],
+        "draft": [
+          {
+            "status": "DISCARDED"
+          }
+        ],
+        "sales": [
+          {
+            "id": "db88ee8a-dc37-4249-8753-05307d9cbbf4",
+            "total_amount": "23.00",
+            "cash_received": "30.00",
+            "change_given": "7.00"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "1c166674-9892-4be3-83da-f6e378e69cd1",
+            "product_snapshot_name": "Q Q forced-cycle",
+            "product_snapshot_barcode": "QQ-forced-cycle",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "6445e404-e771-4ccc-a722-ddd3ffee0335",
+            "product_snapshot_name": "Q P forced-cycle",
+            "product_snapshot_barcode": "QP-forced-cycle",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ]
+      },
+      "after_retry": {
+        "products": [
+          {
+            "id": "1c166674-9892-4be3-83da-f6e378e69cd1",
+            "category_id": "39a35ac7-ffde-4230-8a4b-0ff4b042294a",
+            "name": "Q Q forced-cycle",
+            "barcode": "QQ-forced-cycle",
+            "sale_price": "6.00",
+            "minimum_stock": 10,
+            "is_active": true
+          },
+          {
+            "id": "6445e404-e771-4ccc-a722-ddd3ffee0335",
+            "category_id": "39a35ac7-ffde-4230-8a4b-0ff4b042294a",
+            "name": "Q P forced-cycle",
+            "barcode": "QP-forced-cycle",
+            "sale_price": "8.50",
+            "minimum_stock": 10,
+            "is_active": true
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "1c166674-9892-4be3-83da-f6e378e69cd1",
+            "available_quantity": 9,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          },
+          {
+            "product_id": "6445e404-e771-4ccc-a722-ddd3ffee0335",
+            "available_quantity": 8,
+            "initial_quantity": 10,
+            "unit_cost": "2.5000"
+          }
+        ],
+        "draft": [
+          {
+            "status": "DISCARDED"
+          }
+        ],
+        "sales": [
+          {
+            "id": "db88ee8a-dc37-4249-8753-05307d9cbbf4",
+            "total_amount": "23.00",
+            "cash_received": "30.00",
+            "change_given": "7.00"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "1c166674-9892-4be3-83da-f6e378e69cd1",
+            "product_snapshot_name": "Q Q forced-cycle",
+            "product_snapshot_barcode": "QQ-forced-cycle",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "6445e404-e771-4ccc-a722-ddd3ffee0335",
+            "product_snapshot_name": "Q P forced-cycle",
+            "product_snapshot_barcode": "QP-forced-cycle",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ]
+      },
+      "retry": {
+        "edit": {
+          "category": "39a35ac7-ffde-4230-8a4b-0ff4b042294a"
+        }
+      }
+    }
+  ],
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "database": "audit03_9a8dd1d24b",
+  "isolation": "read committed",
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa01-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T231223297870Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T235435476251Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235102894578Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235313324286Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T000927933696Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001124615788Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001235417602Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001320983361Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001337606973Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001427294717Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010641541584Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010857906402Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020054712835Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020104229903Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020324334766Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020335877235Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020505026105Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T023934536531Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024200044720Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024338422290Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024349330265Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024455907968Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024617290091Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024628699915Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024749832414Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024801097155Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030010177604Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030036511029Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030252413844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030314191882Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030339870193Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030352675316Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T031505677093Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032216300260Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032251838417Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032333068344Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032528496946Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032641479670Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T033002861512Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034307344201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034318782440Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041750658883Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041757169052Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041945048165Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042659237619Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042730963824Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042756100441Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042844036974Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042912719703Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T043008623021Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165543164740Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165640773189Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165730633729Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171321742969Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171341873895Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171546908471Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171905215655Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172006895618Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172054000837Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172105045406Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173453359047Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173526027077Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173808145023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173927046544Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174028204311Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174235672078Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T175820924988Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180229612612Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180807525819Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180914638365Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181416503086Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181948564537Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T182622655374Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T183956099863Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184821961380Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184947335287Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184949253446Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T185008205808Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010526631267Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010655936590Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010725864129Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010846464247Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011420365490Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011843801709Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T012116957301Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T013518362010Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014121377023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014226942611Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014304366278Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015423105806Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015529367360Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015549608567Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015623098100Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015703446000Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015739066270Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015806678855Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015848208296Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T020804804408Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021009799064Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021726658069Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-migrations-20261111T020942208035Z\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-11T02:17:58.063658+00:00"
+}

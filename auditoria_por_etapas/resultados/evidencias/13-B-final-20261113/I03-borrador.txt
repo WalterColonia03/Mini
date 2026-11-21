@@ -1,0 +1,95 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - link "Apertura de caja":
+      - /url: /caja/abrir/
+      - generic: $
+      - generic: Apertura de caja
+    - link "Preparar venta":
+      - /url: /ventas/
+      - generic: ▦
+      - generic: Preparar venta
+    - link "Cerrar turno":
+      - /url: /caja/cerrar/
+      - generic: ✖
+      - generic: Cerrar turno
+    - link "Mis ventas del turno":
+      - /url: /ventas/historial/turno/
+      - generic: ☰
+      - generic: Mis ventas del turno
+  - generic: A
+  - strong: Audit13 Vendedor seller
+  - generic: Vendedor
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Preparar venta" [level=1]
+  - generic: Audit13 Vendedor seller
+  - generic: Vendedor
+- main:
+  - paragraph: Mostrador
+  - heading "Preparar venta" [level=2]
+  - paragraph: Busca productos, indica las cantidades y revisa los importes antes del cobro.
+  - link "Última constancia (V-90000005)":
+    - /url: /ventas/constancia/0c36883a-17b5-4984-8454-c093586ad01c/
+  - generic: Turno abierto
+  - generic: "1"
+  - heading "Buscar producto" [level=3]
+  - generic: "Buscar producto:"
+  - searchbox "Buscar producto:": AUDIT13-venta-integracion
+  - button "Buscar"
+  - table:
+    - rowgroup:
+      - row "Producto Código Disponible Precio Agregar":
+        - columnheader "Producto"
+        - columnheader "Código"
+        - columnheader "Disponible"
+        - columnheader "Precio"
+        - columnheader "Agregar"
+    - rowgroup:
+      - row "Audit13 venta-integracion AUDIT13-venta-integracion 3 S/ 3,55 Cantidad de Audit13 venta-integracion 1 Agregar":
+        - cell "Audit13 venta-integracion"
+        - cell "AUDIT13-venta-integracion"
+        - cell "3"
+        - cell "S/ 3,55"
+        - cell "Cantidad de Audit13 venta-integracion 1 Agregar":
+          - generic: Cantidad de Audit13 venta-integracion
+          - spinbutton "Cantidad de Audit13 venta-integracion": "1"
+          - button "Agregar"
+  - complementary:
+    - generic: "2"
+    - heading "Venta en preparación" [level=3]
+    - article:
+      - strong: Audit13 venta-integracion
+      - generic: S/ 3,55 por unidad
+      - generic: Cantidad de Audit13 venta-integracion
+      - spinbutton "Cantidad de Audit13 venta-integracion": "2"
+      - button "Actualizar"
+      - generic: 2 und.
+      - strong: S/ 7,10
+      - button "Quitar"
+    - term: Base imponible
+    - definition: S/ 6,02
+    - term: IGV
+    - definition: S/ 1,08
+    - term: Total
+    - definition: S/ 7,10
+    - link "Cobrar venta →":
+      - /url: /ventas/cobrar/
+    - button "Descartar venta"
+    - paragraph: Preparar la venta no descuenta existencias ni mueve efectivo; eso ocurre solo al confirmar el cobro (descontando primero el lote con vencimiento más próximo).
+- contentinfo: Minimarket · Gestión de bodega

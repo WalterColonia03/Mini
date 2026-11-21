@@ -1,0 +1,189 @@
+{
+  "catalog.Category": [
+    {
+      "id": "6d4db7bd-6f47-4190-b9f9-f72f994b7a1b",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    },
+    {
+      "id": "8f150e00-3a72-4cfd-b270-2d4b27e7011d",
+      "name": "Suspendida",
+      "name_normalized": "suspendida",
+      "is_active": false
+    },
+    {
+      "id": "ab7dcbe3-e94e-48f2-8583-909152273f01",
+      "name": "Productos enlatados",
+      "name_normalized": "productos enlatados",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "name": "Salida FEFO",
+      "barcode": "FEFO-AD",
+      "category_id": "6d4db7bd-6f47-4190-b9f9-f72f994b7a1b",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "00000000-0000-0000-0000-00000000000a",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "available_quantity": 5,
+      "initial_quantity": 5
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000014",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "available_quantity": 2,
+      "initial_quantity": 2
+    },
+    {
+      "id": "00000000-0000-0000-0000-00000000001e",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "available_quantity": 2,
+      "initial_quantity": 2
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000028",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "available_quantity": 2,
+      "initial_quantity": 2
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000032",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "available_quantity": 2,
+      "initial_quantity": 2
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "52379f72-7ae5-426f-bf6a-6b8ee2ca1735",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "dd38ce20-3a4f-4f11-8c0f-9bfe8d0ba307",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [],
+  "sales.SaleLine": [],
+  "sales.SaleDraft": [],
+  "sales.SaleDraftLine": [],
+  "commerce": [
+    {
+      "id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "barcode_normalized": "fefo-ad",
+      "search_name": "salida fefo",
+      "average_cost": "0.0000"
+    }
+  ],
+  "identity": [
+    {
+      "id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "barcode_type": "UNCLASSIFIED"
+    }
+  ],
+  "catalog.ProductBarcodeKey": [
+    {
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "reading_key": "fefo-ad"
+    }
+  ],
+  "receipt_lots": [
+    {
+      "id": "00000000-0000-0000-0000-00000000000a",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "initial_load_id": "52379f72-7ae5-426f-bf6a-6b8ee2ca1735",
+      "supplier_id": null,
+      "responsible_id": "e6902b63-b92d-4a01-82c2-6e59cb9667e0",
+      "is_initial": true,
+      "number": "VENCIDO",
+      "number_normalized": "VENCIDO",
+      "initial_quantity": 5,
+      "available_quantity": 5,
+      "unit_cost": "1.0000",
+      "expiration_date": "2026-11-11",
+      "received_at": "2026-11-07 17:24:39.365878+00:00"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000014",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "initial_load_id": "52379f72-7ae5-426f-bf6a-6b8ee2ca1735",
+      "supplier_id": null,
+      "responsible_id": "e6902b63-b92d-4a01-82c2-6e59cb9667e0",
+      "is_initial": true,
+      "number": "Z-UUID-MENOR",
+      "number_normalized": "Z-UUID-MENOR",
+      "initial_quantity": 2,
+      "available_quantity": 2,
+      "unit_cost": "1.0000",
+      "expiration_date": "2026-12-11",
+      "received_at": "2026-11-10 17:24:39.365878+00:00"
+    },
+    {
+      "id": "00000000-0000-0000-0000-00000000001e",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "initial_load_id": "52379f72-7ae5-426f-bf6a-6b8ee2ca1735",
+      "supplier_id": null,
+      "responsible_id": "e6902b63-b92d-4a01-82c2-6e59cb9667e0",
+      "is_initial": true,
+      "number": "A-UUID-MAYOR",
+      "number_normalized": "A-UUID-MAYOR",
+      "initial_quantity": 2,
+      "available_quantity": 2,
+      "unit_cost": "1.0000",
+      "expiration_date": "2026-12-11",
+      "received_at": "2026-11-10 17:24:39.365878+00:00"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000028",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "initial_load_id": "52379f72-7ae5-426f-bf6a-6b8ee2ca1735",
+      "supplier_id": null,
+      "responsible_id": "e6902b63-b92d-4a01-82c2-6e59cb9667e0",
+      "is_initial": true,
+      "number": "Z-INGRESO-ANTIGUO",
+      "number_normalized": "Z-INGRESO-ANTIGUO",
+      "initial_quantity": 2,
+      "available_quantity": 2,
+      "unit_cost": "1.0000",
+      "expiration_date": "2026-12-11",
+      "received_at": "2026-11-09 17:24:39.365878+00:00"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000032",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "initial_load_id": "52379f72-7ae5-426f-bf6a-6b8ee2ca1735",
+      "supplier_id": null,
+      "responsible_id": "e6902b63-b92d-4a01-82c2-6e59cb9667e0",
+      "is_initial": true,
+      "number": "A-TARDE",
+      "number_normalized": "A-TARDE",
+      "initial_quantity": 2,
+      "available_quantity": 2,
+      "unit_cost": "1.0000",
+      "expiration_date": "2027-01-10",
+      "received_at": "2026-11-08 17:24:39.365878+00:00"
+    }
+  ],
+  "receipt_loads": [
+    {
+      "id": "52379f72-7ae5-426f-bf6a-6b8ee2ca1735",
+      "product_id": "dbe13879-45ab-42db-8e70-5b4ddee8d767",
+      "responsible_id": "e6902b63-b92d-4a01-82c2-6e59cb9667e0",
+      "confirmed_at": "2026-11-11 17:24:39.384206+00:00"
+    }
+  ]
+}

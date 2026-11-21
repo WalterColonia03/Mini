@@ -1,0 +1,127 @@
+# Etapa 01 — Inventario documental de ingreso y bloqueo
+
+Fecha de revisión: **09/11/2026, America/Lima**. Se leyó completo `auditoria_por_etapas/PROTOCOLO_COMUN.md`. Este anexo identifica obligaciones, procedencia, conflictos y propuestas; **no contiene resultados de ejecución funcional**. Los resultados actuales corresponden a [ETAPA-01](../ETAPA-01.md). No se usó Jira, no se modificó el libro ni los registros históricos. No se encontraron archivos `AGENTS.md` en la raíz, sus directorios examinados ni sus ancestros hasta `C:/`.
+
+Las referencias `01`, `02`, `03`, `07`, `08`, `09`, `14`, `16` y `21` remiten a los documentos numerados de la raíz. Los números de línea corresponden al contenido leído el 09/11, antes de cualquier corrección de esta etapa. Las ubicaciones técnicas se dan también por símbolo para resistir desplazamientos de línea.
+
+## 1. Fuentes, papel y vigencia
+
+| Fuente y localización | Papel en esta etapa | Clasificación / límite |
+|---|---|---|
+| `21_Alcance_Actual_y_Diferencias.md:3–5,11–15,23,31,42` | Corte documental 05/11; describe permisos observados, bloqueo de 15 minutos y sus límites | Punto de partida actual; la declaración de 191 pruebas del 05/11 no es ejecución de la etapa 01. Reconoce PostgreSQL, tráfico y `/admin/` pendientes/separados. |
+| `01_Proyecto_y_Releases.md:91–103,116,120–134` | R1 de nueve HU; tres roles exclusivos; UTC/Lima; navegador de referencia; AUTH-01 seleccionada | Línea base de alcance, no aceptación funcional. AUTH-02 no integra las nueve HU de R1. |
+| `07_Reglas_de_Negocio.md:165–169,215–219,333–347` | RN-12, RN-17 y RN-29 | Requisitos de identificación, bloqueo y autorización que deben contrastarse con servidor y datos. |
+| `08_Historias_de_Usuario.md:13–32,877` | Dos HU, siete CA base y una afirmación histórica adicional pertinente | Los CA base conservan su ordinal. La fila histórica llamada «CA-3» en 877 **no sustituye** AUTH-01/CA-03 de la línea 20. |
+| `09_Product_Backlog.md:42–46,59–61,75` | Prioridad y selección de AUTH-01/02 | AUTH-01: seleccionada Sprint 1, 5 SP. AUTH-02: indispensable, 3 SP, posterior sin Sprint/versión, depende de AUTH-01. |
+| `02_Diseno_Tecnico_R1_PMV.md:3–9,252,265,269–280,321–325,355,358–361,412` | Diseño propuesto; controles técnicos; contrato lógico; observabilidad | Diseño histórico revisable. La defensa IP/sesión de 277 es **distinta** del bloqueo funcional excluido entonces de Sprint 1. `/login` en 252 es una ruta lógica, no exige ese literal si `/` cumple el contrato. |
+| `03_Matriz_de_Trazabilidad_y_Pruebas.md:3–9,56–63,302` | Cuatro CA AUTH-01 con casos previstos; registro histórico BUG-026 | Matriz histórica R1, sin sección AUTH-02. PASS y nombre de prueba de cinco minutos de 302 no acreditan la implementación actual. |
+| `14_Sprint_Planning.md:74,94` | AUTH-01 seleccionada y seis subtareas/16 h | Planificación histórica; no supone ejecución ni aceptación. No asigna AUTH-02 a este Sprint. |
+| `16_Task_Breakdown.md:57–67,77–87,326` | Tareas técnicas transversales, seis subtareas AUTH-01 y fix histórico | Inventario de trabajo previsto/declarado, no evidencia de funcionamiento. El fix histórico aún relata cinco minutos. |
+| `r1-pmv/CONTROL_SPRINTS.md:3,19,92` | Estado declarado de AUTH-01 y corrección histórica BUG-026 | AUTH-01 «registrada históricamente»; 202 tests y bloqueo de cinco minutos pertenecen a otro corte. |
+| `anexos/ETAPA-00-fuentes.md:56–72` y `evidencias/00-libro-cotejo.json` | Procedencia del XLSX, sin abrir ni editar sus hojas en esta etapa | Véase inventario abajo. No se usa el libro para decidir aceptación actual. |
+
+**Libro `PLANIFICACION_SCRUM_R1PMV.xlsx`.** El inventario previo registra 26.323 bytes, creación OOXML `2026-11-05T05:10:21Z`, modificación OOXML `2026-11-05T05:10:22Z` (00:10:22 Lima), cuatro hojas visibles y corte de tres sprints. En `4. Product Backlog Pendiente!A4` figura AUTH-02 pendiente. Su hash SHA-256 se volvió a calcular en esta revisión, sin acceder a las hojas, y coincide: `a9604b90d08dead7b815817f859004a802353aaf6f91f7e78a4467fa18406b49`. Es evidencia histórica de planificación, anterior a la descripción actual de 15 minutos; **no se actualizó ni se trasladó su estado a esta auditoría**. Fórmulas, formato y validez semántica completa de sus criterios no se examinaron aquí.
+
+## 2. Inventario de HU, criterios y reglas
+
+Clasificación de alcance y resultado funcional son ejes independientes. `Implementado adicionalmente (descrito/observado en fuente)` no significa `CUMPLE`; para eso hace falta evidencia de la ejecución principal.
+
+| ID / fuente | Actor | Obligación individual | Alcance documental | Evidencia que debe enlazar la etapa 01 |
+|---|---|---|---|---|
+| HU-AUTH-01 / `08:13–16`, `09:46` | Empleado con ADMIN, ALMACENERO o VENDEDOR; visitante antes de ingresar | Ingresar con cuenta de trabajo y acceder a las opciones del puesto | Seleccionada R1; ejecución por CA | Sesión, menús, servidor y persistencia por rol. |
+| AUTH-01/CA-01 / `08:18`; ampliación técnica `03:60`, `02:269–272` | Tres roles exclusivos | Cuenta activa + correo/clave correctos → sesión y destino autorizado | Seleccionado | Normalización, sesión rotada/persistida, tres roles, recarga y destino. |
+| AUTH-01/CA-02 / `08:19`, `03:61` | Visitante | Clave errónea o correo no registrado → «Correo o contraseña incorrectos», sin indicar dato fallido | Seleccionado | Comparar literal, estado HTTP, contenido y ausencia de sesión. Considerar interacción con quinto fallo de AUTH-02. |
+| AUTH-01/CA-03 / `08:20`, `03:62` | Cuenta inactiva | Credenciales correctas → mismo mensaje general, sin exponer inactividad | Seleccionado | Rechazo sin sesión; misma salida que cuenta inexistente/clave errónea en estado equivalente. |
+| AUTH-01/CA-04 / `08:21`, `03:63` | Usuario ya autenticado | URL/solicitud prohibida por RN-29 → denegación sin datos ni mutación | Seleccionado, transversal | GET/POST directo por roles y visitante; estado antes/después. Una muestra no cierra permisos de todos los módulos. |
+| HU-AUTH-02 / `08:25–28`, `09:75`, `21:23` | Empleado o administrador | Protección temporal frente a intentos fallidos | Planificada posterior en 09; implementada adicionalmente según 21 y servicio actual; conflicto de vigencia | Tres CA siguientes; aceptar selección actual y medir ejecución por separado. |
+| AUTH-02/CA-01 / `08:30` | Tres roles; atacante/visitante inicia los intentos | El quinto fallo consecutivo bloquea 15 minutos | Adicional descrito; requisito inequívoco de duración | Comprobar fallos 1–4, quinto, instante límite persistido y éxito previo que reinicia contador. |
+| AUTH-02/CA-02 / `08:31` | Cuenta bloqueada | Cualquier clave se rechaza y se muestran minutos restantes | Adicional descrito | Claves correcta/incorrecta, otra sesión y límites de redondeo; no extender plazo por repetir si esa es la política propuesta. |
+| AUTH-02/CA-03 / `08:32` | Cuenta cuyo bloqueo venció | Tras 15 minutos, credenciales válidas permiten ingreso y contador vuelve a cero | Adicional descrito | Antes, justo al vencer y después; persistencia de cero y bloqueo nulo; siguiente fallo inicia nuevo ciclo. |
+| RN-17 / `07:29,215–219` | Cuenta reconocida; recuperación es flujo separado | Cinco claves incorrectas consecutivas → 15 min; éxito reinicia solo su flujo; minutos restantes sin datos sensibles | Aplicable a login. Recuperación de clave pertenece a HU-AUTH-05/etapa 02 y permanece fuera de ejecución 01 | Estado de LoginAttempt, no compartir resultado con recuperación no ejecutada. |
+| RN-12 / `07:165–169`; uso técnico `16:82` | Empleado | Correo identifica cuenta sin duplicados | Identificación aplicable; creación/activación y unicidad son etapa 02 | Consulta normalizada; no declarar auditadas altas de empleados por comprobar solo login. |
+| RN-29 / `07:333–347` | Tres roles exclusivos | Un rol por cuenta; ingresar/salir todos; producto ADMIN; carga ALMACENERO; turno/venta VENDEDOR; autorización servidor | Seleccionada R1; ampliaciones actuales deben conservar trazabilidad propia | Menú y solicitudes denegadas; discrepancia sobre constancia ADMIN registrada en etapa 00 permanece para etapa 12. |
+| QA00-L877-a / `08:877`, anexo QA etapa 00 | Visitante/cuenta | Bloqueo por identificador, compartido entre sesiones, 15 min tras cinco fallos; reemplaza relato de cinco minutos | Afirmación histórica actualizada, no nuevo CA ni resultado | Otra sesión sin cookies y correo equivalente; correlación con CA AUTH-02 y RN-17. |
+
+**Fronteras expresas:** AUTH-03 (logout), AUTH-04a/b (revocación de sesión previa y borrador), AUTH-05 (recuperación), USR (altas/cambios), LOG (auditoría de accesos) y VEN-01a/RN-22 (pantalla de venta tras cinco minutos de inactividad) conservan sus etapas y selección real. «Otra sesión» en este tramo significa compartir el bloqueo de intentos; no demuestra cierre de una sesión ya autenticada. La expiración de bloqueo de 15 minutos no acredita expiración general de sesión ni inactividad de ventas.
+
+## 3. Tareas y pruebas planificadas
+
+| ID / fuente | Trabajo y condición de verificación | Clasificación para 01 |
+|---|---|---|
+| S1-AUTH01-UI / `16:81` | Formulario accesible, error general, navegación por puesto sin datos sensibles; capturas y teclado/foco | Seleccionada; contrastar por UI, no por existencia del HTML. |
+| S1-AUTH01-SVC / `16:82` | Normalización, hash, estado activo, sesión de servidor, rechazo general; servicio y sesión persistida | Seleccionada; base de AUTH-01/CA-01–03. |
+| S1-AUTH01-AUTHZ / `16:83` | Autorizar cada operación y ocultar rutas/menús según matriz | Seleccionada; cobertura global se reparte entre etapas 01–15. |
+| S1-AUTH01-AUTO / `16:84` | Automatizar ingreso válido, errores, cuenta inactiva y URL prohibida | Seleccionada; ejecución local no equivale a «suite verde en CI». |
+| S1-AUTH01-MAN / `16:85` | Cuatro CA con cuentas ficticias y pasos reales | Seleccionada; navegador requerido por protocolo. |
+| S1-AUTH01-REV / `16:86` | Revisión independiente por persona distinta | Seleccionada histórica; agentes o pruebas automáticas no acreditan aceptación humana independiente. |
+| S1-ARQ-01 / `16:57`, `03:35` | Contratos/decisiones/ambientes | Dependencia documental; esta auditoría no ratifica acta de arquitectura. |
+| S1-PLAT-01, S1-CI-01 / `16:58–59` | Reproducibilidad y CI | Dependencias técnicas; no cerrar por ejecutar tests locales. |
+| S1-DB-01/02/03 / `16:60–62` | Modelo, migraciones y restricciones | Relación con Account/Role/LoginAttempt; PostgreSQL y migración desde cero requieren evidencia específica. |
+| S1-DB-04/05 / `16:63–64` | Cuentas ficticias reproducibles y aislamiento de pruebas | Usar soporte aislado; no ejecutar semillas/reset generales del operador. |
+| S1-SEC-01/02 / `16:65–66`, `03:43–44` | Secretos/configuración; hash/sesiones/CSRF/validación/logs/autorización | Seleccionadas transversales; 01 comprueba solo segmento de ingreso. |
+| S1-ENV-01 / `16:67`, `03:45` | Entorno reproducible y Chrome Windows 1366×768 con teclado | Entorno acotado actual; no equivalencia automática de IAB a matriz Chrome prevista. |
+| QA-FIX-IDENT-01 / `16:326`, BUG-026 `03:302`, Control:92 | Relato histórico de expiración de cinco minutos y cookie al cerrar navegador | CONFLICTO DE FUENTES respecto al bloqueo actual; preservar evidencia antigua. |
+
+No se localizó una descomposición dedicada AUTH-02 en `14`, `16` ni una sección de CA AUTH-02 en `03`; es coherente con su selección posterior original. Hace falta un complemento actual, no alterar el alcance inmutable histórico de nueve HU/41 CA.
+
+Casos originales de la matriz AUTH-01: `AT-AUTH01-01..04`, `MT-AUTH01-01..04`; `ST-AUTH01-01` (error), `ST-AUTH01-02` (inactiva), `ST-AUTH01-03` (permisos); paquetes `EV-AUTH01-CA01..04` (`03:60–63`). `ST-BASE-01/02` son controles transversales (`03:43–44`). Son **objetivos de evidencia**, no resultados heredados. La etapa 01 debe enlazar sus pruebas actuales a esos IDs y añadir casos de bloqueo/fronteras sin afirmar que todas las pruebas de R1 fueron ejecutadas.
+
+## 4. Correspondencia inversa del tramo de ingreso
+
+| Elemento real identificado / ubicación al leer | Requisito que lo respalda / clasificación | Límite o decisión |
+|---|---|---|
+| GET/POST `/`, nombre `login`, `identity/urls.py:6`; `login_view` | AUTH-01, AUTH-02, contrato lógico `02:252` | No es defecto usar `/` en vez de `/login`; comprobar métodos no permitidos. |
+| `/inicio/` tras ingresar y GET `/` con sesión | AUTH-01/CA-01; destino de rol | Contenido analítico y tarjetas pertenecen a etapa 13; validar aquí acceso/identidad/menús y redirección. |
+| «Correo de trabajo», «Contraseña», «Iniciar sesión»; LoginForm, `login.html:21–27` | AUTH-01/CA-01–03; S1-AUTH01-UI | Campos, mensajes, límites y persistencia se inventarían en matriz técnica principal. Máximo de formulario de correo 320 vs cuenta 254 es una diferencia a ensayar, no requisito aprobado por omisión. |
+| `csrfmiddlewaretoken`, campo oculto `next`, autofoco/autocomplete, password no repoblada | `02:271–275`, NFR-06; controles técnicos de ingreso | `next` debe ser seguro y destino volver a autorizar; no convierte enlace recibido en permiso. |
+| Error «Correo o contraseña incorrectos» | AUTH-01/CA-02–03 | Literal exigido en estado no bloqueado; combinar con política uniforme del bloqueo. |
+| Error con «{minutos} minuto(s)» | AUTH-02/CA-02 y RN-17 | El requisito exige minutos restantes; no fija gramática, redondeo, actualización automática ni precisión de segundos. |
+| `LoginAttempt.identifier/failures/locked_until/updated_at`; `authenticate_active_account` | AUTH-02 y RN-17; identificador HMAC y fila estable son decisiones técnicas | Fila para correo inexistente y conservación tras éxito son extras técnicos de privacidad/concurrencia; requieren retención y defensa de volumen separadas. |
+| `Account.normalize_email` usa `strip().casefold()` | `02:269`, S1-AUTH01-SVC | Diseñado como minúsculas; `casefold` amplía equivalencia Unicode. Registrar y probar ejemplos pertinentes; no inferir política de internacionalización completa. |
+| «Cada persona ve solo las operaciones de su puesto» y «Tus permisos y acciones dependen del rol asignado», `login.html:10,29` | AUTH-01/CA-01/04, RN-29 | Promesa global: una muestra no permite cerrar autorización de todos los módulos. |
+| Tarjetas «Administrador: Productos, empleados, proveedores y reportes»; «Almacenero: Inventario, mermas y alertas de stock»; «Vendedor: Turno de caja y ventas», `login.html:12–14` | Descripción general de funciones ampliadas, guía21:11–13 | «Reportes» no prueba HU-REP-01. Mantener remisión a etapa 13 para decidir precisión de la promesa. |
+| «Acceso seguro», «Usa tu cuenta de trabajo para continuar», bienvenida, marca/título, `login.html:3,8–9,18–20` | Texto orientativo de UI, S1-AUTH01-UI | «Acceso seguro» no es certificación de seguridad; revisar que no se use como prueba de cumplimiento. |
+| Login Django `/admin/login/` y registros staff/superusuario | Superficie técnica independiente; `21:23`; inventario etapa 00 | EXTRA SIN REQUISITO comercial de estos dos HU; su disponibilidad no hereda bloqueo de `/`. Decisión y pruebas etapa 15. |
+
+## 5. Discrepancias y alternativas de alcance
+
+| ID | Evidencia y estado | Prioridad / tratamiento |
+|---|---|---|
+| DOC-00-05, continuado en 01 | `03:302`, `16:326`, Control:92 describen cinco minutos y bloqueo en sesión; RN-17/CA AUTH-02/`08:877`/21:23 describen quince minutos compartidos. **CONFLICTO DE FUENTES** resuelto para expectativa actual por las fuentes explícitas de requisito, sin borrar historia. | P1 trazabilidad: enlazar resultados actuales de 15 minutos. No reescribir PASS histórico como si hubiese probado el código actual. |
+| DOC-01-01 | AUTH-02 sigue posterior sin Sprint en `09:75` y pendiente en XLSX, mientras `21:23` describe implementación adicional. **CONFLICTO DE FUENTES de selección/vigencia**, no prueba de defecto funcional. | P2: alternativa A registrar ampliación actual AUTH-02 con revisión fechada en backlog; B conservar selección histórica y registrar estado adicional en un apéndice. Ambas preservan R1 original. Decisión pendiente. |
+| DOC-01-02 | RN-17 habla de cuenta reconocida; servicio y `21:23` bloquean identificador también inexistente, dando mensajes uniformes. **EXTRA SIN REQUISITO explícito en CA base**, apoyado por no enumeración de AUTH-01 y diseño. | P2: alternativa A ampliar CA de AUTH-02 para equivalencia reconocida/inexistente (recomendada por coherencia); B otro control opaco para inexistentes, con nueva evaluación de enumeración. No eliminar uniformidad automáticamente. |
+| DOC-01-03 | RN-17 cuenta fallos de clave; cuentas inactivas con clave correcta se rechazan y pueden contribuir al contador. CA base no fija explícitamente ese detalle. | P2: documentar equivalencia de intentos rechazados por privacidad, o política alternativa que demuestre no revelar estado. No cambiar reglas silenciosamente. |
+| DOC-01-04 | Límite de solicitudes IP/sesión `02:277` no se sustituye con bloqueo por identificador; puede enviarse un identificador nuevo por petición. | P1 seguridad/operación: resultado de inspección y ensayos debe registrarse separado. Umbral, ventana, IP tras proxy y tratamiento de red compartida requieren decisión. |
+| DOC-01-05 | `LoginAttempt` conserva filas incluso tras éxito; RN-17/CA no establecen retención ni límites de cardinalidad. | P2 operación/privacidad: decidir retención y limpieza que preserve bloqueos vivos/contadores consecutivos, o cambio explícito de política de ventana. No borrar filas por una antigüedad inventada. |
+| DOC-01-06 | Staff/superusuario del admin técnico no equivale a rol comercial ADMIN; bloqueo de `/` no cubre `/admin/`. | P1 superficie separada: decidir deshabilitación/restricción de red o protección propia y acceso autorizado; no cerrar etapa15 por inventariarlo. |
+| DOC-01-07 | La matriz exige comparación temporal (`02:269`) y logs sin secretos/correlacionables (`02:279,321–325`, NFR-09); mensajes idénticos no prueban tiempos equivalentes ni auditoría operativa. | P2: ensayos temporales controlados y revisión de observabilidad quedan con resultado propio; no declarar ausencia total de filtración por inspección del HTML. |
+
+## 6. Propuestas trazables, sin aceptación implícita
+
+No se crean nuevos IDs canónicos `HU-AUTH-*` ni se duplican historias existentes. Las siguientes claves son propuestas locales de auditoría; estado inicial **PROPUESTO**, con implementación/verificación que deberá registrar el informe principal cuando exista evidencia.
+
+**PROP-E01-CA-01 — Ampliar AUTH-01: contrato de entradas y destino.** Actor: visitante que quiere ingresar con su cuenta sin ambigüedad. Precondición: cuenta ficticia con un rol admitido y `next` opcional. Dado un correo con espacios exteriores/cambio de mayúsculas, cuando las credenciales son correctas, entonces se identifica la misma cuenta; la contraseña conserva sus espacios. Dado correo/clave vacíos o formato inválido, cuando se envía incluso por petición directa, entonces aparece error de campo y no se crea sesión ni se avanza el contador de autenticación. Dado `next` externo o de esquema no permitido, entonces se usa el inicio local; si el destino es local pero de otro rol, su servidor lo deniega sin efectos. Entradas/límites: decidir máximo de correo coherente entre formulario 320 y cuenta 254, y máximo técnico de contraseña sin truncarla. Dependencias: AUTH-01, S1-SEC-02. Añadir a complemento actual de 08/03, no renumerar CA históricos.
+
+**PROP-E01-CA-02 — Ampliar AUTH-02: identificador, equivalencia y reloj.** Actor: empleado que necesita un bloqueo coherente en todos sus navegadores. Precondición: fila de intentos del identificador normalizado; reloj controlado. Dado cuatro fallos y otro navegador, cuando ocurre el quinto con correo equivalente, entonces persiste un único bloqueo de 900 segundos y la UI muestra 15 minutos. Dado bloqueo vigente, cuando se envía cualquier clave desde cualquier sesión, entonces no autentica y el plazo no se prolonga; los minutos se calculan por redondeo hacia arriba, mínimo uno. Dado `now >= locked_until`, cuando ingresa correctamente, entonces queda contador cero/bloqueo nulo; un fallo posterior cuenta uno. Dado un identificador inexistente o cuenta inactiva, cuando se recorren estados equivalentes, entonces las respuestas no permiten distinguir su existencia/estado. La equivalencia de inactividad y retención es una **decisión propuesta** DOC-01-02/03, no un cambio de CA ya aceptado. Dependencias: RN-17, AUTH-01; reloj UTC y comprobación PostgreSQL.
+
+**PROP-E01-T-TRAFICO — Defensa de tráfico de ingreso.** Tarea técnica, no HU. Elegir y documentar umbral/ventana por origen y agregado, IP fiable detrás de proxy, respuesta/cooldown y observabilidad sin secretos. Criterio propuesto: dado un origen que supera el presupuesto acordado usando distintos correos, cuando envía otra petición, entonces se rechaza antes del trabajo costoso de hash y no crece el estado por identificador; otros orígenes legítimos siguen política acordada. Incluir recuperación de capacidad y redes compartidas. Estado PROPUESTO; no seleccionar números sin decisión. Vincular a `02:277`, S1-SEC-02 y etapa15.
+
+**PROP-E01-T-RETENCION — Ciclo de vida de LoginAttempt.** Tarea técnica. Inventariar tasa/cardinalidad/índices; acordar período de retención y preservar bloqueos/contadores activos; limpieza por lotes con concurrencia y métricas sin correo/clave. Criterio propuesto: dado un conjunto vencido conforme a la política aceptada, cuando se limpia, entonces disminuye su cardinalidad y los bloqueos vivos siguen imponiéndose desde otra sesión. Dependencias: decisión de ventana de intentos consecutivos y PROP-E01-T-TRAFICO. Estado PROPUESTO; no ejecutar borrado de datos del operador.
+
+**PROP-E01-T-ADMIN — Perímetro del admin técnico.** Tarea técnica, no nuevo rol comercial. Acordar si `/admin/` se deshabilita, limita por red o mantiene con control propio; probar staff/no staff, autenticación directa y CSRF. Si se mantiene, la protección de intentos y tráfico debe especificarse aparte y comprobarse incluso con cuenta bloqueada en `/`. Estado PROPUESTO, etapa15; no inventar permisos comerciales.
+
+**PROP-E01-HU-01 — Refinamiento propuesto de HU-LOG-01, sin crear otra HU.** `08:146–153` ya define consultar ingresos/salidas y un evento diferenciado de bloqueo; `09:124` la mantiene posterior sin Sprint, dependiente de AUTH-01/02. Actor: ADMIN según la matriz de roles (el texto histórico «dueño» no crea un cuarto rol); necesidad existente: detectar accesos inusuales. Precondiciones propuestas: autorización explícita y retención aprobada. CA complementarios propuestos: Dado un evento de acceso, cuando ADMIN consulta el registro, entonces conserva los campos exigidos por LOG-01 y distingue fecha UTC/presentación Lima y resultado sin mostrar clave/cookie/CSRF; dado otro rol o visitante, la petición directa se deniega sin datos; dada retención vencida, la limpieza acordada no elimina bloqueos activos. Para identificadores inexistentes, decidir referencia opaca y evitar almacenar correo sin necesidad. Errores/permisos/efectos: denegación sin datos, lectura sin mutar cuentas; el desbloqueo manual exigiría criterio aparte. Estado PROPUESTO para etapa02; no se modifica selección, no se presume pantalla implementada ni se duplican sus tres CA existentes.
+
+**PROP-E01-PR-01 — Suite de entradas/autenticación.** Casos automáticos y navegador: tres roles activos; correo equivalente; inactiva/inexistente/error; vacío/formato/longitudes/fronteras; contraseña con espacios, no repoblada ni registrada; CSRF ausente/incorrecto; sesión rotada; redirección segura y permisos del destino. Relacionar resultados a `AT/MT/ST-AUTH01-*`. No atribuir prueba visual a Django Client.
+
+**PROP-E01-PR-02 — Suite temporal/persistencia.** Casos: fallo 1–5, clave correcta antes del quinto, estados equivalentes, otra sesión, 900/899/61/60/1/0 segundos, bloqueo no prolongado, expiración y reinicio; rechazo no modifica cuentas ni datos comerciales. Reloj simulado y reloj real se etiquetan por separado; no decir «esperó quince minutos» cuando se cambió un instante o se usó mock.
+
+**PROP-E01-PR-03 — Concurrencia PostgreSQL.** Dos conexiones reales y barrera para crear primer identificador simultáneamente, incrementar cerca del quinto y autenticación concurrente con bloqueo/limpieza. Medir integridad, ausencia de 500 y resultado serializable de política. SQLite no sirve como evidencia de `select_for_update`; estado inicial NO EJECUTADO.
+
+**PROP-E01-PR-04 — Perímetro y exposición.** Tráfico controlado solo en entorno aislado, acumulación de identificadores, admin separado, comparación temporal con muestra/configuración declaradas y logs de acceso/cookies/CSRF redactados. Aceptación de PROP-E01-T-TRAFICO/RETENCION/ADMIN pendiente. No es prueba de carga de producción ni certificación de ausencia total de canales de información.
+
+## 7. Continuidad de este anexo
+
+Inventario documental completado para las dos HU y siete CA del tramo; reglas, tareas, superficies técnicas y conflicto histórico 5/15 minutos identificados. **No se promueve ningún CA a CUMPLE en este anexo.** Los resultados, cambios y cursor de ejecución se mantienen exclusivamente en `../ETAPA-01.md` y `../ESTADO_GENERAL.md`. Pendiente documental posterior: decidir DOC-01-01..06, enlazar casos/artefactos actuales sin alterar estados históricos y revisar el refinamiento PROP-E01-HU-01 de HU-LOG-01 durante etapa02.
+
+

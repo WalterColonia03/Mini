@@ -1,0 +1,825 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 145 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_fix_e02_01_employee_list_filters_by_name_or_email_and_orders_alphabetically (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_01_employee_list_filters_by_name_or_email_and_orders_alphabetically) ... ok
+test_fix_e02_02_empty_post_binds_forms_and_views_set_never_cache_and_sensitive_decorators (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_02_empty_post_binds_forms_and_views_set_never_cache_and_sensitive_decorators) ... ok
+test_fix_e02_03_deactivation_revokes_persisted_sessions_discards_draft_and_reactivation_clears_lockout (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_03_deactivation_revokes_persisted_sessions_discards_draft_and_reactivation_clears_lockout) ... ok
+test_fix_e02_03b_role_change_updates_active_session_role_code_and_preserves_display_name_on_error (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_03b_role_change_updates_active_session_role_code_and_preserves_display_name_on_error) ... ok
+test_fix_e02_04_duplicate_email_message_matches_hu_usr_02_ca_02_literal (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_04_duplicate_email_message_matches_hu_usr_02_ca_02_literal) ... ok
+test_fix_e02_05_rn24_password_policy_accepts_7_chars_and_rejects_missing_classes_in_form_and_service (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_05_rn24_password_policy_accepts_7_chars_and_rejects_missing_classes_in_form_and_service) ... ok
+test_fix_e02_06_logout_draft_warning_only_triggers_when_draft_has_lines (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_06_logout_draft_warning_only_triggers_when_draft_has_lines) ... ok
+test_fix_e02_07_email_fields_allow_up_to_254_chars (identity.test_etapa02_audit.Stage02AuditRegressionTests.test_fix_e02_07_email_fields_allow_up_to_254_chars) ... ok
+test_hu_auth_03_ca01_ca02_ca03_and_rn29_rn30_with_two_sellers (identity.test_etapa02_audit.Stage02ComprehensiveCriteriaTests.test_hu_auth_03_ca01_ca02_ca03_and_rn29_rn30_with_two_sellers) ... ok
+test_hu_usr_01_to_05_role_matrix_and_http_method_guards (identity.test_etapa02_audit.Stage02ComprehensiveCriteriaTests.test_hu_usr_01_to_05_role_matrix_and_http_method_guards) ... Forbidden (Permission denied): /empleados/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/5a41d563-e261-40b8-8230-4f2370f80e52/editar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/5a41d563-e261-40b8-8230-4f2370f80e52/editar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/5a41d563-e261-40b8-8230-4f2370f80e52/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/5a41d563-e261-40b8-8230-4f2370f80e52/editar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/5a41d563-e261-40b8-8230-4f2370f80e52/editar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/5a41d563-e261-40b8-8230-4f2370f80e52/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Method Not Allowed (GET): /empleados/5a41d563-e261-40b8-8230-4f2370f80e52/estado/
+Method Not Allowed (POST): /empleados/
+ok
+test_hu_usr_03_04_last_admin_protection_and_historical_integrity (identity.test_etapa02_audit.Stage02ComprehensiveCriteriaTests.test_hu_usr_03_04_last_admin_protection_and_historical_integrity) ... ok
+test_active_account_creates_server_session (identity.tests.AuthenticationAndAuthorizationTests.test_active_account_creates_server_session) ... ok
+test_anonymous_protected_route_redirects_to_the_public_login (identity.tests.AuthenticationAndAuthorizationTests.test_anonymous_protected_route_redirects_to_the_public_login) ... ok
+test_dashboard_does_not_expose_planning_identifiers (identity.tests.AuthenticationAndAuthorizationTests.test_dashboard_does_not_expose_planning_identifiers) ... ok
+test_dashboard_only_shows_authorized_navigation (identity.tests.AuthenticationAndAuthorizationTests.test_dashboard_only_shows_authorized_navigation) ... ok
+test_direct_operation_is_denied_without_mutating_data (identity.tests.AuthenticationAndAuthorizationTests.test_direct_operation_is_denied_without_mutating_data) ... Forbidden (Permission denied): /productos/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_invalid_email_is_rejected_before_authentication (identity.tests.AuthenticationAndAuthorizationTests.test_invalid_email_is_rejected_before_authentication) ... ok
+test_login_does_not_show_internal_access_copy (identity.tests.AuthenticationAndAuthorizationTests.test_login_does_not_show_internal_access_copy) ... ok
+test_login_post_requires_csrf_and_sets_protected_cookies (identity.tests.AuthenticationAndAuthorizationTests.test_login_post_requires_csrf_and_sets_protected_cookies) ... Forbidden (CSRF cookie not set.): /
+ok
+test_login_rotates_an_existing_anonymous_session_key (identity.tests.AuthenticationAndAuthorizationTests.test_login_rotates_an_existing_anonymous_session_key) ... ok
+test_password_uses_argon2_and_is_never_stored_in_plain_text (identity.tests.AuthenticationAndAuthorizationTests.test_password_uses_argon2_and_is_never_stored_in_plain_text) ... ok
+test_post_logout_invalidates_session_and_back_route_requires_login (identity.tests.AuthenticationAndAuthorizationTests.test_post_logout_invalidates_session_and_back_route_requires_login) ... ok
+test_role_matrix_is_enforced_on_direct_urls (identity.tests.AuthenticationAndAuthorizationTests.test_role_matrix_is_enforced_on_direct_urls) ... Forbidden (Permission denied): /productos/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /productos/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /inventario/carga-inicial/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /inventario/carga-inicial/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /ventas/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /ventas/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_sales_preparation_page_does_not_expose_planning_identifiers (identity.tests.AuthenticationAndAuthorizationTests.test_sales_preparation_page_does_not_expose_planning_identifiers) ... ok
+test_sidebar_limits_each_role_to_its_current_operation (identity.tests.AuthenticationAndAuthorizationTests.test_sidebar_limits_each_role_to_its_current_operation) ... ok
+test_unknown_email_wrong_password_and_inactive_account_share_message (identity.tests.AuthenticationAndAuthorizationTests.test_unknown_email_wrong_password_and_inactive_account_share_message) ... ok
+test_unknown_existing_role_cannot_log_in_or_access_dashboard (identity.tests.AuthenticationAndAuthorizationTests.test_unknown_existing_role_cannot_log_in_or_access_dashboard) ... Forbidden (Permission denied): /inicio/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\views.py", line 64, in dashboard
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+Not Found: /empleados/7b81aaa6-9017-46e6-a178-43c4c0bfcdff/editar/
+ok
+test_admin_can_access_employee_edit_form (identity.tests.EmployeeEditDeactivateTests.test_admin_can_access_employee_edit_form) ... ok
+test_admin_can_deactivate_employee (identity.tests.EmployeeEditDeactivateTests.test_admin_can_deactivate_employee) ... ok
+test_admin_can_edit_employee_name (identity.tests.EmployeeEditDeactivateTests.test_admin_can_edit_employee_name) ... ok
+test_admin_can_reactivate_inactive_employee (identity.tests.EmployeeEditDeactivateTests.test_admin_can_reactivate_inactive_employee) ... ok
+test_admin_cannot_change_own_role (identity.tests.EmployeeEditDeactivateTests.test_admin_cannot_change_own_role) ... ok
+test_admin_cannot_deactivate_self (identity.tests.EmployeeEditDeactivateTests.test_admin_cannot_deactivate_self) ... ok
+test_cannot_change_role_of_seller_with_open_shift (identity.tests.EmployeeEditDeactivateTests.test_cannot_change_role_of_seller_with_open_shift)
+BUG-001: No se puede cambiar el rol de un vendedor con turno de caja abierto. ... ok
+test_cannot_deactivate_seller_with_open_shift (identity.tests.EmployeeEditDeactivateTests.test_cannot_deactivate_seller_with_open_shift) ... ok
+test_dashboard_for_admin_and_warehouse_includes_expired_lots_and_single_h1 (identity.tests.EmployeeEditDeactivateTests.test_dashboard_for_admin_and_warehouse_includes_expired_lots_and_single_h1)
+BUG-016 y BUG-023: /inicio/ muestra lotes vencidos a Admin y Almacenero y un único <h1>. ... ok
+test_duplicate_email_is_rejected_on_edit (identity.tests.EmployeeEditDeactivateTests.test_duplicate_email_is_rejected_on_edit) ... ok
+test_employee_list_does_not_render_broken_bootstrap_dismiss_button (identity.tests.EmployeeEditDeactivateTests.test_employee_list_does_not_render_broken_bootstrap_dismiss_button)
+BUG-019: /empleados/ no renderiza botones huérfanos data-bs-dismiss. ... ok
+test_five_failed_login_attempts_block_further_attempts (identity.tests.EmployeeEditDeactivateTests.test_five_failed_login_attempts_block_further_attempts) ... ok
+test_login_honors_safe_next_parameter (identity.tests.EmployeeEditDeactivateTests.test_login_honors_safe_next_parameter) ... ok
+test_login_lock_expires_after_fifteen_minutes (identity.tests.EmployeeEditDeactivateTests.test_login_lock_expires_after_fifteen_minutes)
+El bloqueo afecta al correo, incluso si se cambia de navegador. ... ok
+test_logout_confirm_shows_minimarket_title_and_draft_warning_for_seller (identity.tests.EmployeeEditDeactivateTests.test_logout_confirm_shows_minimarket_title_and_draft_warning_for_seller)
+BUG-017 y BUG-020: /salir/ muestra marca Minimarket y advierte descarte de borrador. ... ok
+test_non_admin_gets_403_on_deactivate (identity.tests.EmployeeEditDeactivateTests.test_non_admin_gets_403_on_deactivate) ... Forbidden (Permission denied): /empleados/ac7190ee-9655-4873-b457-14cb5e59cc31/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_non_admin_gets_403_on_edit (identity.tests.EmployeeEditDeactivateTests.test_non_admin_gets_403_on_edit) ... Forbidden (Permission denied): /empleados/034820f3-88cf-4cbb-a91d-bbf363736dbf/editar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_success_resets_counter_without_deleting_throttle_row (identity.tests.EmployeeEditDeactivateTests.test_success_resets_counter_without_deleting_throttle_row) ... ok
+test_unknown_identifier_has_the_same_lock_response (identity.tests.EmployeeEditDeactivateTests.test_unknown_identifier_has_the_same_lock_response) ... ok
+test_admin_can_see_employee_list (identity.tests.EmployeeManagementTests.test_admin_can_see_employee_list) ... ok
+test_admin_creates_employee_successfully (identity.tests.EmployeeManagementTests.test_admin_creates_employee_successfully) ... ok
+test_duplicate_email_is_rejected (identity.tests.EmployeeManagementTests.test_duplicate_email_is_rejected) ... ok
+test_non_admin_gets_403_on_employee_list (identity.tests.EmployeeManagementTests.test_non_admin_gets_403_on_employee_list) ... Forbidden (Permission denied): /empleados/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_non_admin_post_is_forbidden (identity.tests.EmployeeManagementTests.test_non_admin_post_is_forbidden) ... Forbidden (Permission denied): /empleados/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_admin_login_surface_rejects_nonstaff_rejects_unnormalized_email_and_shares_session (identity.test_auth_audit01.LoginAudit01Tests.test_admin_login_surface_rejects_nonstaff_rejects_unnormalized_email_and_shares_session) ... ok
+test_all_three_roles_accept_normalized_email_and_persist_identity (identity.test_auth_audit01.LoginAudit01Tests.test_all_three_roles_accept_normalized_email_and_persist_identity) ... ok
+test_already_authenticated_get_and_post_redirect_to_dashboard_ignoring_next (identity.test_auth_audit01.LoginAudit01Tests.test_already_authenticated_get_and_post_redirect_to_dashboard_ignoring_next) ... ok
+test_contradictory_post_and_get_next_and_nonexistent_local_target (identity.test_auth_audit01.LoginAudit01Tests.test_contradictory_post_and_get_next_and_nonexistent_local_target) ... Not Found: /ruta-inexistente-aud01/
+ok
+test_csrf_absent_invalid_and_cross_origin_do_not_touch_attempts (identity.test_auth_audit01.LoginAudit01Tests.test_csrf_absent_invalid_and_cross_origin_do_not_touch_attempts) ... Forbidden (CSRF token missing.): /
+Forbidden (CSRF token from POST has incorrect length.): /
+Forbidden (Origin checking failed - https://outside.example.invalid does not match any trusted origins.): /
+ok
+test_email_length_boundaries_254_255_319_320_321 (identity.test_auth_audit01.LoginAudit01Tests.test_email_length_boundaries_254_255_319_320_321) ... ok
+test_empty_post_is_bound_and_reports_both_required_fields (identity.test_auth_audit01.LoginAudit01Tests.test_empty_post_is_bound_and_reports_both_required_fields) ... ok
+test_exact_expiration_permits_login_and_resets_stable_row (identity.test_auth_audit01.LoginAudit01Tests.test_exact_expiration_permits_login_and_resets_stable_row) ... ok
+test_exception_filter_redacts_submitted_credentials (identity.test_auth_audit01.LoginAudit01Tests.test_exception_filter_redacts_submitted_credentials) ... ok
+test_external_scheme_relative_and_javascript_next_fall_back (identity.test_auth_audit01.LoginAudit01Tests.test_external_scheme_relative_and_javascript_next_fall_back) ... ok
+test_fifth_failure_locks_for_exactly_fifteen_minutes (identity.test_auth_audit01.LoginAudit01Tests.test_fifth_failure_locks_for_exactly_fifteen_minutes) ... ok
+test_get_and_failed_post_are_not_cacheable (identity.test_auth_audit01.LoginAudit01Tests.test_get_and_failed_post_are_not_cacheable) ... ok
+test_get_credentials_are_ignored_and_put_is_rejected (identity.test_auth_audit01.LoginAudit01Tests.test_get_credentials_are_ignored_and_put_is_rejected) ... Method Not Allowed (PUT): /
+ok
+test_https_login_rejects_http_downgrade_next (identity.test_auth_audit01.LoginAudit01Tests.test_https_login_rejects_http_downgrade_next) ... ok
+test_identity_routes_authorization_and_method_boundaries (identity.test_auth_audit01.LoginAudit01Tests.test_identity_routes_authorization_and_method_boundaries) ... Forbidden (Permission denied): /empleados/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/ee12eb47-0143-4e19-9371-b60e7fb127de/editar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/ee12eb47-0143-4e19-9371-b60e7fb127de/editar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/ee12eb47-0143-4e19-9371-b60e7fb127de/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/ee12eb47-0143-4e19-9371-b60e7fb127de/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/nuevo/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/ee12eb47-0143-4e19-9371-b60e7fb127de/editar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/ee12eb47-0143-4e19-9371-b60e7fb127de/editar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/ee12eb47-0143-4e19-9371-b60e7fb127de/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /empleados/ee12eb47-0143-4e19-9371-b60e7fb127de/estado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Method Not Allowed (POST): /inicio/
+Method Not Allowed (PUT): /salir/
+Method Not Allowed (POST): /empleados/
+Method Not Allowed (GET): /empleados/ee12eb47-0143-4e19-9371-b60e7fb127de/estado/
+Method Not Allowed (DELETE): /
+ok
+test_inactive_and_unknown_share_fifth_failure_response (identity.test_auth_audit01.LoginAudit01Tests.test_inactive_and_unknown_share_fifth_failure_response) ... ok
+test_internal_next_is_followed_but_does_not_bypass_role_authorization (identity.test_auth_audit01.LoginAudit01Tests.test_internal_next_is_followed_but_does_not_bypass_role_authorization) ... Forbidden (Permission denied): /empleados/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_invalid_fields_do_not_increment_lock_counter (identity.test_auth_audit01.LoginAudit01Tests.test_invalid_fields_do_not_increment_lock_counter) ... ok
+test_legacy_pbkdf2_account_accepts_normalized_login_after_failure (identity.test_auth_audit01.LoginAudit01Tests.test_legacy_pbkdf2_account_accepts_normalized_login_after_failure) ... ok
+test_lock_does_not_revoke_an_already_authenticated_session (identity.test_auth_audit01.LoginAudit01Tests.test_lock_does_not_revoke_an_already_authenticated_session) ... ok
+test_locked_state_shared_across_sessions_and_normalized_variants (identity.test_auth_audit01.LoginAudit01Tests.test_locked_state_shared_across_sessions_and_normalized_variants) ... ok
+test_logging_redact_filter_redacts_message_keys_and_documents_exc_info_boundary (identity.test_auth_audit01.LoginAudit01Tests.test_logging_redact_filter_redacts_message_keys_and_documents_exc_info_boundary) ... ok
+test_login_attempts_store_only_hmac_and_counter_state (identity.test_auth_audit01.LoginAudit01Tests.test_login_attempts_store_only_hmac_and_counter_state) ... ok
+test_minutes_round_up_at_each_relevant_boundary (identity.test_auth_audit01.LoginAudit01Tests.test_minutes_round_up_at_each_relevant_boundary) ... ok
+test_one_identifier_lock_does_not_lock_another_role (identity.test_auth_audit01.LoginAudit01Tests.test_one_identifier_lock_does_not_lock_another_role) ... ok
+test_password_is_not_repopulated_and_next_is_html_escaped (identity.test_auth_audit01.LoginAudit01Tests.test_password_is_not_repopulated_and_next_is_html_escaped) ... ok
+test_password_whitespace_is_preserved (identity.test_auth_audit01.LoginAudit01Tests.test_password_whitespace_is_preserved) ... ok
+test_second_complete_lockout_cycle_after_expiration (identity.test_auth_audit01.LoginAudit01Tests.test_second_complete_lockout_cycle_after_expiration) ... ok
+test_service_exception_filter_redacts_credential_locals (identity.test_auth_audit01.LoginAudit01Tests.test_service_exception_filter_redacts_credential_locals) ... ok
+test_success_before_fifth_failure_resets_consecutive_count (identity.test_auth_audit01.LoginAudit01Tests.test_success_before_fifth_failure_resets_consecutive_count) ... ok
+test_unicode_casefold_and_idn_email_normalization_boundaries (identity.test_auth_audit01.LoginAudit01Tests.test_unicode_casefold_and_idn_email_normalization_boundaries) ... ok
+test_unusable_password_follows_uniform_five_failure_lockout (identity.test_auth_audit01.LoginAudit01Tests.test_unusable_password_follows_uniform_five_failure_lockout) ... ok
+test_valid_csrf_rotates_csrf_and_session_and_sets_cookie_flags (identity.test_auth_audit01.LoginAudit01Tests.test_valid_csrf_rotates_csrf_and_session_and_sets_cookie_flags) ... ok
+test_whitespace_only_email_vs_whitespace_only_password_and_long_password_no_truncation (identity.test_auth_audit01.LoginAudit01Tests.test_whitespace_only_email_vs_whitespace_only_password_and_long_password_no_truncation) ... ok
+test_wrong_password_after_expiration_starts_new_series (identity.test_auth_audit01.LoginAudit01Tests.test_wrong_password_after_expiration_starts_new_series) ... ok
+test_wrong_unknown_inactive_share_exact_message_and_no_identity (identity.test_auth_audit01.LoginAudit01Tests.test_wrong_unknown_inactive_share_exact_message_and_no_identity) ... ok
+test_database_constraint_rejects_two_open_shifts_for_register (cash.tests.CashOpeningTests.test_database_constraint_rejects_two_open_shifts_for_register) ... ok
+test_existing_global_open_shift_blocks_another_seller (cash.tests.CashOpeningTests.test_existing_global_open_shift_blocks_another_seller) ... ok
+test_invalid_amounts_do_not_create_shift (cash.tests.CashOpeningTests.test_invalid_amounts_do_not_create_shift) ... ok
+test_other_roles_cannot_open_shift_by_direct_post (cash.tests.CashOpeningTests.test_other_roles_cannot_open_shift_by_direct_post) ... Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/abrir/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_seller_cannot_view_another_sellers_shift_detail (cash.tests.CashOpeningTests.test_seller_cannot_view_another_sellers_shift_detail) ... Not Found: /caja/turnos/a361d6bb-ea18-408f-974c-8218a7947e27/abierto/
+ok
+test_seller_opens_zero_amount_shift_linked_to_session (cash.tests.CashOpeningTests.test_seller_opens_zero_amount_shift_linked_to_session) ... ok
+test_admin_can_see_shift_history (cash.tests.CashShiftHistoryTests.test_admin_can_see_shift_history) ... ok
+test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link (cash.tests.CashShiftHistoryTests.test_bug023_and_bug031_cash_open_shows_owner_and_shift_opened_has_sales_draft_link)
+BUG-023 y BUG-031: /caja/abrir/ informa quién ocupa la caja y /caja/turnos/<id>/abierto/ enlaza a preparar venta. ... ok
+test_cash_open_and_close_reject_scientific_notation_and_absurd_amounts (cash.tests.CashShiftHistoryTests.test_cash_open_and_close_reject_scientific_notation_and_absurd_amounts)
+BUG-009: Apertura y cierre de caja rechazan notación científica (1e5) y montos desmesurados. ... ok
+test_seller_can_see_shift_history (cash.tests.CashShiftHistoryTests.test_seller_can_see_shift_history) ... ok
+test_shift_history_renders_shortage_surplus_and_exact_labels_and_amounts (cash.tests.CashShiftHistoryTests.test_shift_history_renders_shortage_surplus_and_exact_labels_and_amounts)
+BUG-002: El historial de turnos muestra el monto y la etiqueta de la diferencia (Faltante/Sobrante/Exacto). ... ok
+test_warehouse_gets_403 (cash.tests.CashShiftHistoryTests.test_warehouse_gets_403) ... Forbidden (Permission denied): /caja/turnos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_close_blocked_when_active_draft_has_lines (sales.tests.CashCloseTests.test_close_blocked_when_active_draft_has_lines) ... ok
+test_close_exact_amount_records_zero_difference (sales.tests.CashCloseTests.test_close_exact_amount_records_zero_difference) ... ok
+test_close_shortage_records_negative_difference (sales.tests.CashCloseTests.test_close_shortage_records_negative_difference) ... ok
+test_close_surplus_records_positive_difference (sales.tests.CashCloseTests.test_close_surplus_records_positive_difference) ... ok
+test_closed_shift_detail_shows_correct_amounts (sales.tests.CashCloseTests.test_closed_shift_detail_shows_correct_amounts) ... ok
+test_double_close_does_not_create_duplicate (sales.tests.CashCloseTests.test_double_close_does_not_create_duplicate) ... ok
+test_non_seller_roles_cannot_close_shift (sales.tests.CashCloseTests.test_non_seller_roles_cannot_close_shift) ... Forbidden (Permission denied): /caja/cerrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/cerrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_duplicate_idempotency_key_returns_same_sale (sales.tests.CheckoutTests.test_duplicate_idempotency_key_returns_same_sale) ... ok
+test_exact_payment_creates_sale_and_deducts_lot_stock (sales.tests.CheckoutTests.test_exact_payment_creates_sale_and_deducts_lot_stock) ... ok
+test_idempotency_key_cannot_be_reused_for_another_draft (sales.tests.CheckoutTests.test_idempotency_key_cannot_be_reused_for_another_draft) ... ok
+test_insufficient_cash_rejected_no_sale_no_stock_change (sales.tests.CheckoutTests.test_insufficient_cash_rejected_no_sale_no_stock_change) ... ok
+test_non_seller_roles_cannot_access_checkout (sales.tests.CheckoutTests.test_non_seller_roles_cannot_access_checkout) ... Forbidden (Permission denied): /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /ventas/cobrar/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_overpayment_records_correct_change (sales.tests.CheckoutTests.test_overpayment_records_correct_change) ... ok
+test_two_different_sales_get_unique_sequential_correlatives (sales.tests.CheckoutTests.test_two_different_sales_get_unique_sequential_correlatives) ... ok
+test_other_seller_gets_404_for_different_sale (sales.tests.ReceiptTests.test_other_seller_gets_404_for_different_sale) ... Not Found: /ventas/constancia/fb51e697-57dd-432b-8c91-326d3a2b2d2f/
+ok
+test_receipt_contains_mandatory_legal_notice (sales.tests.ReceiptTests.test_receipt_contains_mandatory_legal_notice) ... ok
+test_receipt_shows_all_required_fields (sales.tests.ReceiptTests.test_receipt_shows_all_required_fields) ... ok
+test_receipt_uses_snapshots_not_live_product_data (sales.tests.ReceiptTests.test_receipt_uses_snapshots_not_live_product_data) ... ok
+test_another_seller_cannot_use_the_open_shift_or_create_draft (sales.tests.SalePreparationTests.test_another_seller_cannot_use_the_open_shift_or_create_draft) ... ok
+test_canceling_logout_keeps_the_session_and_draft (sales.tests.SalePreparationTests.test_canceling_logout_keeps_the_session_and_draft) ... ok
+test_empty_preparation_needs_own_open_shift_and_creates_no_draft (sales.tests.SalePreparationTests.test_empty_preparation_needs_own_open_shift_and_creates_no_draft) ... ok
+test_expired_or_today_lot_is_not_available_for_preparation (sales.tests.SalePreparationTests.test_expired_or_today_lot_is_not_available_for_preparation) ... ok
+test_first_line_creates_draft_and_does_not_move_stock_or_cash (sales.tests.SalePreparationTests.test_first_line_creates_draft_and_does_not_move_stock_or_cash) ... ok
+test_logout_discards_active_draft_but_keeps_shift_and_stock (sales.tests.SalePreparationTests.test_logout_discards_active_draft_but_keeps_shift_and_stock) ... ok
+test_only_seller_role_can_open_the_sales_preparation_route (sales.tests.SalePreparationTests.test_only_seller_role_can_open_the_sales_preparation_route) ... Forbidden (Permission denied): /ventas/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /ventas/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_same_product_is_grouped_and_cannot_exceed_sellable_stock (sales.tests.SalePreparationTests.test_same_product_is_grouped_and_cannot_exceed_sellable_stock) ... ok
+test_search_finds_active_sellable_product_by_name_or_barcode (sales.tests.SalePreparationTests.test_search_finds_active_sellable_product_by_name_or_barcode) ... ok
+test_totals_show_price_base_igv_and_total_with_half_up_rule (sales.tests.SalePreparationTests.test_totals_show_price_base_igv_and_total_with_half_up_rule) ... ok
+test_update_and_remove_last_line_discards_draft_without_stock_change (sales.tests.SalePreparationTests.test_update_and_remove_last_line_discards_draft_without_stock_change) ... ok
+test_admin_can_access_sales_history (sales.tests.SalesHistoryTests.test_admin_can_access_sales_history) ... ok
+test_bug006_draft_warns_seller_when_catalog_price_changes_during_preparation (sales.tests.SalesHistoryTests.test_bug006_draft_warns_seller_when_catalog_price_changes_during_preparation)
+BUG-006: Al actualizar cantidad en el borrador tras cambio de precio del catálogo, se avisa al vendedor. ... ok
+test_bug025_checkout_detects_same_subtotal_product_swap_via_draft_signature (sales.tests.SalesHistoryTests.test_bug025_checkout_detects_same_subtotal_product_swap_via_draft_signature)
+BUG-025: Si se sustituye un producto por otro del mismo precio en otra pestaña, el cobro lo detecta. ... ok
+test_bug029_checkout_renders_discounted_totals_on_validation_error (sales.tests.SalesHistoryTests.test_bug029_checkout_renders_discounted_totals_on_validation_error)
+BUG-029: Si falla el POST en /ventas/cobrar/ con un descuento válido, el resumen muestra el total con descuento. ... ok
+test_bug033_and_bug037_inactive_category_or_product_blocks_search_draft_line_update_and_checkout (sales.tests.SalesHistoryTests.test_bug033_and_bug037_inactive_category_or_product_blocks_search_draft_line_update_and_checkout)
+BUG-033 y BUG-037: Desactivar categoría o producto bloquea búsqueda, actualización de cantidad en borrador y cobro. ... ok
+test_bug035_and_bug036_draft_signature_includes_draft_id_and_checkout_renders_hidden_field_errors (sales.tests.SalesHistoryTests.test_bug035_and_bug036_draft_signature_includes_draft_id_and_checkout_renders_hidden_field_errors)
+BUG-035 y BUG-036: La firma del borrador incluye draft.pk para impedir cobro cruzado entre borradores y muestra errores de campos ocultos. ... ok
+test_discard_draft_endpoint_clears_active_draft (sales.tests.SalesHistoryTests.test_discard_draft_endpoint_clears_active_draft) ... ok
+test_filter_by_correlativo_and_invalid_fecha_do_not_crash (sales.tests.SalesHistoryTests.test_filter_by_correlativo_and_invalid_fecha_do_not_crash) ... ok
+test_filter_by_fecha_returns_200 (sales.tests.SalesHistoryTests.test_filter_by_fecha_returns_200) ... ok
+test_multitab_draft_modification_warns_seller_on_checkout (sales.tests.SalesHistoryTests.test_multitab_draft_modification_warns_seller_on_checkout)
+BUG-007: Si el borrador se modifica en otra pestaña antes de confirmar cobro, se advierte el nuevo subtotal. ... ok
+test_price_change_during_checkout_warns_seller_and_updates_draft_line_price (sales.tests.SalesHistoryTests.test_price_change_during_checkout_warns_seller_and_updates_draft_line_price)
+BUG-006: Si el Admin cambia el precio mientras la vendedora está en /ventas/cobrar/, se alerta y actualiza el precio. ... ok
+test_sales_history_and_shift_history_display_discount_column_and_totals (sales.tests.SalesHistoryTests.test_sales_history_and_shift_history_display_discount_column_and_totals)
+BUG-015: El historial de ventas y del turno muestran la columna Descuento (S/) y totales. ... ok
+test_sales_receipt_hides_nueva_venta_for_admin_and_shows_back_to_history (sales.tests.SalesHistoryTests.test_sales_receipt_hides_nueva_venta_for_admin_and_shows_back_to_history)
+BUG-008 y BUG-023: En la constancia de venta, Admin no ve 'Nueva venta' (que daba 403) y ve 'Volver al historial'. ... ok
+test_seller_can_access_sales_history (sales.tests.SalesHistoryTests.test_seller_can_access_sales_history) ... ok
+test_non_seller_gets_403 (sales.tests.SalesShiftHistoryTests.test_non_seller_gets_403) ... Forbidden (Permission denied): /ventas/historial/turno/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 27, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+ok
+test_seller_with_no_shift_gets_200_with_empty_message (sales.tests.SalesShiftHistoryTests.test_seller_with_no_shift_gets_200_with_empty_message) ... ok
+test_seller_with_open_shift_sees_page (sales.tests.SalesShiftHistoryTests.test_seller_with_open_shift_sees_page) ... ok
+
+----------------------------------------------------------------------
+Ran 145 tests in 22.685s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

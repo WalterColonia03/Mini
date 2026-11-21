@@ -1,0 +1,196 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 2 test(s).
+Found 2 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) ... 
+  test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=0.5) ... FAIL
+  test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=Decimal('1.5')) ... FAIL
+  test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=True) ... FAIL
+  test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=inf) ... ERROR
+  test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=Decimal('NaN')) ... FAIL
+test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) ... 
+  test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=0.5) ... FAIL
+  test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=Decimal('1.5')) ... FAIL
+  test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=True) ... FAIL
+  test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=inf) ... ERROR
+  test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=Decimal('NaN')) ... FAIL
+
+======================================================================
+ERROR: test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 34, in test_edit_rejects_invalid_minimum_without_saving_other_fields
+    update_product(actor=self.admin, product=product, name="Cambio rechazado", barcode="MIN-NEW",
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\services.py", line 94, in update_product
+    product.full_clean(validate_unique=False)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\base.py", line 1647, in full_clean
+    self.clean_fields(exclude=exclude)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 114, in clean_fields
+    super().clean_fields(exclude=exclude)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\base.py", line 1702, in clean_fields
+    setattr(self, f.attname, f.clean(raw_value, self))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 835, in clean
+    value = self.to_python(value)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2145, in to_python
+    return int(value)
+           ^^^^^^^^^^
+OverflowError: cannot convert float infinity to integer
+
+======================================================================
+ERROR: test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 22, in test_registration_does_not_truncate_fractions_or_accept_booleans
+    register_canned_product(actor=self.admin, name="Mínimo", barcode="MIN-1",
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\services.py", line 157, in register_canned_product
+    product.full_clean(validate_unique=False)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\base.py", line 1647, in full_clean
+    self.clean_fields(exclude=exclude)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 114, in clean_fields
+    super().clean_fields(exclude=exclude)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\base.py", line 1702, in clean_fields
+    setattr(self, f.attname, f.clean(raw_value, self))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 835, in clean
+    value = self.to_python(value)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2145, in to_python
+    return int(value)
+           ^^^^^^^^^^
+OverflowError: cannot convert float infinity to integer
+
+======================================================================
+FAIL: test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=0.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 33, in test_edit_rejects_invalid_minimum_without_saving_other_fields
+    with self.assertRaises(ValidationError) as error:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=Decimal('1.5'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 33, in test_edit_rejects_invalid_minimum_without_saving_other_fields
+    with self.assertRaises(ValidationError) as error:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 33, in test_edit_rejects_invalid_minimum_without_saving_other_fields
+    with self.assertRaises(ValidationError) as error:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_edit_rejects_invalid_minimum_without_saving_other_fields (catalog.test_audit03_limits.MinimumStockServiceTests.test_edit_rejects_invalid_minimum_without_saving_other_fields) (value=Decimal('NaN'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 37, in test_edit_rejects_invalid_minimum_without_saving_other_fields
+    self.assertEqual(list(Product.objects.values()), before)
+AssertionError: Lists differ: [{'id[114 chars]e': 'Cambio rechazado', 'search_name': 'cambio[404 chars]tc)}] != [{'id[114 chars]e': 'Original', 'search_name': 'original', 'ba[391 chars]tc)}]
+
+First differing element 0:
+{'id'[113 chars]e': 'Cambio rechazado', 'search_name': 'cambio[403 chars]utc)}
+{'id'[113 chars]e': 'Original', 'search_name': 'original', 'ba[390 chars]utc)}
+
+Diff is 1261 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=0.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 21, in test_registration_does_not_truncate_fractions_or_accept_booleans
+    with self.assertRaises(ValidationError) as error:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=Decimal('1.5'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 24, in test_registration_does_not_truncate_fractions_or_accept_booleans
+    self.assertIn("minimum_stock", error.exception.message_dict)
+AssertionError: 'minimum_stock' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 24, in test_registration_does_not_truncate_fractions_or_accept_booleans
+    self.assertIn("minimum_stock", error.exception.message_dict)
+AssertionError: 'minimum_stock' not found in {'barcode': ['Ya existe un producto con este código de barras.']}
+
+======================================================================
+FAIL: test_registration_does_not_truncate_fractions_or_accept_booleans (catalog.test_audit03_limits.MinimumStockServiceTests.test_registration_does_not_truncate_fractions_or_accept_booleans) (value=Decimal('NaN'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_limits.py", line 25, in test_registration_does_not_truncate_fractions_or_accept_booleans
+    self.assertFalse(Product.objects.exists())
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.074s
+
+FAILED (failures=8, errors=2)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

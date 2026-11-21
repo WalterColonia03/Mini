@@ -1,0 +1,68 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 8 test(s).
+Found 8 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_activation_message_describes_state_with_zero_stock (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_activation_message_describes_state_with_zero_stock) ... ok
+test_bad_state_input_does_not_change_product (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_bad_state_input_does_not_change_product) ... ok
+test_category_buttons_converge_on_the_requested_state (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_category_buttons_converge_on_the_requested_state) ... ok
+test_inactive_label_matches_criterion (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_inactive_label_matches_criterion) ... ok
+test_inactive_product_blocks_both_inventory_services_without_writes (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_inactive_product_blocks_both_inventory_services_without_writes) ... ok
+test_legacy_category_toggle_rechecks_the_current_state (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_legacy_category_toggle_rechecks_the_current_state) ... ok
+test_legacy_toggle_reads_current_state_even_with_stale_instance (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_legacy_toggle_reads_current_state_even_with_stale_instance) ... ok
+test_named_disable_and_enable_requests_are_repeatable (catalog.test_audit03_availability.ProductAvailabilityAuditTests.test_named_disable_and_enable_requests_are_repeatable) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.245s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

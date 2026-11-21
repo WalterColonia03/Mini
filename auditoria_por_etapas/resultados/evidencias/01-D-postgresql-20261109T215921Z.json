@@ -1,0 +1,19 @@
+{
+  "caso": "E01-PG-01",
+  "inicio_utc": "2026-11-09T21:59:21.568937+00:00",
+  "herramienta": "PostgreSQL nativo efímero / Django Client CSRF / conexiones por hilo",
+  "docker": "Motor Docker Desktop no disponible; se usa binario local ya instalado.",
+  "escenarios": [],
+  "limpieza": {
+    "carpeta_propia_eliminada": true
+  },
+  "comando_fallido": {
+    "nombre": "initdb",
+    "codigo": 1,
+    "diagnostico": "The files belonging to this database system will be owned by user \"walte\".\nThis user must also own the server process.\n\nThe database cluster will be initialized with locale \"C\".\nThe default text search configuration will be set to \"english\".\n\nData page checksums are enabled.\ninitdb: error: could not open file \"C:\\Users\\walte\\AppData\\Local\\Temp\\audit01-pg-haq0myum\\password\" for reading: Permission denied"
+  },
+  "resultado": "INCOMPLETO",
+  "fase": "initdb",
+  "error_tipo": "RuntimeError",
+  "fin_utc": "2026-11-09T21:59:21.688394+00:00"
+}

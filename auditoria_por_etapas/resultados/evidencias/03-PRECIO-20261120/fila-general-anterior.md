@@ -1,0 +1,5 @@
+Fila de etapa 03 conservada antes de actualizar el estado vigente.
+
+| Etapa | Fecha | Cobertura | Estado | Pendientes | Cursor |
+|---|---|---|---|---|---|
+| [03](ETAPA-03.md#reval-03-20261114) Categorías y productos | 14/11/2026 | Revalidación primera pasada (`7816d33`, `08` `4f696b6a...`): `120/120` `catalog`, `134/134` cruce, `57/57` Chrome (`1366×900`+`390×844`)/HTTP/ORM, `5/5` PG `18.4`. Lector físico heredado (`10–11/11`) y `PG 17` pendientes | **REVALIDADA PARCIAL en primera pasada** (`HU-CAT-01..02`/`J-CA1..4`/`HU-PROD-01..02,04` cumplen en muestra; `HU-CAT-03..04` futuros; `HU-PROD-03,05` parciales) | Sin `@never_cache` en 5 rutas `catalog`; `POST disponible/` sin `is_active` alterna a ciegas (`HU-PROD-05`); `BARCODE_PATTERN` admite `\t`/`\xa0`; `barcode_capture.js` habilita copia en error HTML/5xx; UI/CSS mixta y sin aviso en línea en `GET /ventas/` con ítem inactivo; remanentes nominales `"enlatados"` y `03` desincronizada (`52–78`). `0001..0007` ya aplicadas en `r1_pmv.sqlite3` | `PROP-03-REVAL-01..07` / prueba física lector vigente / `15-SEGURIDAD-BASELINE-01` |

@@ -1,0 +1,101 @@
+{
+  "stamp_utc": "20261111T220034273638Z",
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "route_count_total": 108,
+  "hu_sol_routes_found": [],
+  "stock_entry_create_source": "@roles_required(Role.Code.WAREHOUSE)\n@never_cache\n@require_http_methods([\"GET\", \"POST\"])\ndef stock_entry_create(request):\n    product_form = StockEntryProductForm(request.POST or None)\n    lot_formset = LotInputFormSet(request.POST or None, prefix=\"lots\")\n    if request.method == \"POST\" and product_form.is_valid() and lot_formset.is_valid():\n        lot_inputs = [LotInput(**form.cleaned_data) for form in lot_formset if form.cleaned_data]\n        try:\n            load = register_stock_entry(\n                actor=request.user,\n                product=product_form.cleaned_data[\"product\"],\n                lots=lot_inputs,\n                supplier=product_form.cleaned_data.get(\"supplier\"),\n            )\n        except ValidationError as error:\n            for message in error.messages:\n                product_form.add_error(None, message)\n        else:\n            messages.success(\n                request,\n                f\"Entrada de lotes registrada para «{load.product.name}». Costo promedio actualizado.\",\n            )\n            return redirect(\"inventory-load-created\", load_id=load.pk)\n    return render(\n        request,\n        \"inventory/stock_entry_form.html\",\n        {\"product_form\": product_form, \"lot_formset\": lot_formset},\n    )\n",
+  "register_stock_entry_source": "@transaction.atomic\ndef register_stock_entry(\n    *,\n    actor,\n    product: \"Product\",\n    lots: list,\n    supplier=None,\n    business_date=None,\n) -> \"InitialInventoryLoad\":\n    \"\"\"Registra una entrada posterior (no inicial) de lotes y recalcula el costo promedio.\n\n    Requiere que el producto ya tenga su carga inicial confirmada (HU-INV-01a).\n    Solo ALMACENERO puede ejecutar esta acción.\n    \"\"\"\n    from catalog.models import Product as ProductModel\n    from .models import InitialInventoryLoad as IIL\n\n    locked_actor = _lock_warehouse_actor(actor, \"Solo el almacenero puede registrar entradas de inventario.\")\n\n    current_date = business_date or timezone.localdate()\n    validated = _validate_lots(lots, business_date=current_date)\n\n    if not isinstance(product, ProductModel) or product.pk is None:\n        raise ValidationError(\"El producto seleccionado no es válido.\")\n    locked_product = ProductModel.objects.select_for_update().filter(pk=product.pk).first()\n    if locked_product is None:\n        raise ValidationError(\"El producto seleccionado ya no existe.\")\n    locked_category = Category.objects.select_for_update().get(pk=locked_product.category_id)\n    if not locked_product.is_active or not locked_category.is_active:\n        raise ValidationError(\"El producto no está disponible para registrar entradas.\")\n    supplier = _lock_receipt_supplier(supplier)\n    if not IIL.objects.filter(product=locked_product).exists():\n        raise ValidationError(\"El producto no tiene carga inicial confirmada. Use la carga inicial primero.\")\n\n    repeated = set(\n        Lot.objects.filter(\n            product=locked_product,\n            number_normalized__in=[item.number for item in validated],\n        ).values_list(\"number_normalized\", flat=True)\n    )\n    if repeated:\n        raise ValidationError(f\"El lote {sorted(repeated)[0]} ya existe para este producto.\")\n\n    # Reutilizamos la InitialInventoryLoad existente como referencia técnica,\n    # marcando is_initial=False para distinguir las entradas posteriores (BUG-024)\n    # y registrando al almacenero responsable de cada lote (BUG-032).\n    existing_load = IIL.objects.get(product=locked_product)\n    # RN-14 uses the previous moving average, not the purchase costs of the\n    # lots left by FEFO. Preserve the existing eligible-stock policy.\n    previous_lots = Lot.objects.filter(product=locked_product, available_quantity__gt=0)\n    eligible = previous_lots.filter(expiration_date__gt=current_date)\n    previous_quantity = sum(eligible.values_list('available_quantity', flat=True))\n    incoming_quantity = sum(item.quantity for item in validated)\n    incoming_cost = sum(item.unit_cost * item.quantity for item in validated)\n    Lot.objects.bulk_create([\n        Lot(\n            product=locked_product,\n            initial_load=existing_load,\n            supplier=supplier,\n            responsible=locked_actor,\n            is_initial=False,\n            number=item.number,\n            number_normalized=item.number,\n            initial_quantity=item.quantity,\n            available_quantity=item.quantity,\n            unit_cost=item.unit_cost,\n            expiration_date=item.expiration_date,\n        )\n        for item in validated\n    ])\n\n    locked_product.average_cost = (\n        (previous_quantity * locked_product.average_cost + incoming_cost)\n        / (previous_quantity + incoming_quantity)\n    ).quantize(Decimal('0.0001'), rounding=ROUND_HALF_UP)\n    locked_product.save(update_fields=('average_cost', 'updated_at'))\n    return existing_load\n",
+  "empty_post": {
+    "header_csrf_empty_body": {
+      "status": 200,
+      "has_alert": false,
+      "is_bound_bug_reproduced": true
+    },
+    "body_csrf_only": {
+      "status": 200,
+      "has_alert": true
+    }
+  },
+  "management_form_tamper": {
+    "missing_management_form": {
+      "status": 200,
+      "raised": null,
+      "has_alert": true
+    },
+    "negative_total_forms": {
+      "status": 200,
+      "raised": null,
+      "has_alert": true
+    },
+    "alpha_total_forms": {
+      "status": 200,
+      "raised": null,
+      "has_alert": true
+    },
+    "huge_total_forms_5000": {
+      "status": 200,
+      "raised": null,
+      "has_alert": true
+    }
+  },
+  "form_eligibility": {
+    "includes_loaded": true,
+    "includes_exhausted": true,
+    "includes_expired_only": true,
+    "excludes_no_load": true,
+    "excludes_inactive_product": true,
+    "excludes_inactive_category": true,
+    "includes_active_supplier": true,
+    "excludes_inactive_supplier": true
+  },
+  "inactive_supplier_sentinel": {
+    "status": 200,
+    "has_inactive_sentinel_value": true,
+    "has_inactivo_label": true
+  },
+  "http_combo_validation": {
+    "status": 200,
+    "rejects_sci_notation": true,
+    "rejects_lot0_qty0": true,
+    "unmasks_lot1_today_lima": true
+  },
+  "bulk_create_integrity_error_parity": {
+    "result": "raw_IntegrityError_leaked",
+    "message": "Simulated DB unique violation inside bulk_create"
+  },
+  "service_unsaved_product": "ValidationError: ['El producto seleccionado ya no existe.']",
+  "service_deleted_product_pk": "ValidationError: ['El producto seleccionado ya no existe.']",
+  "service_no_initial_load": "ValidationError: ['El producto no tiene carga inicial confirmada. Use la carga inicial primero.']",
+  "previous_qty_zero_cases": {
+    "exhausted_average_cost": "6.2500",
+    "expired_only_ignores_expired_cost_4_sets_1_5": "1.5000"
+  },
+  "roles_and_cache_control": {
+    "anon_get_status": 302,
+    "anon_get_location": "/?next=/inventario/entrada/",
+    "seller_get_status": 403,
+    "admin_get_status": 403,
+    "wh_get_status": 200,
+    "wh_get_cache_control": "max-age=0, no-cache, no-store, must-revalidate, private",
+    "wh_has_no_store": true
+  },
+  "postgresql_repro": {
+    "empty_post_header_csrf_pg": {
+      "status": 200,
+      "has_alert": false
+    },
+    "nul_lot_number_http": {
+      "status": 200,
+      "has_alert": true
+    },
+    "nul_product_http": {
+      "status": 200,
+      "has_alert": true
+    },
+    "nul_lot_number_service": "ValidationError: ['Lote 1: el número contiene un carácter no válido.']",
+    "port_closed": true
+  },
+  "protected_unchanged": true
+}

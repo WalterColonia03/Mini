@@ -1,0 +1,14 @@
+# Fuentes primarias externas y límites de aplicabilidad
+
+Consulta: 12/11/2026. Se usan para contrastar decisiones del proyecto, no para atribuir al negocio una obligación sin conocer sus circunstancias.
+
+| Fuente primaria | Qué respalda | Aplicabilidad y límite |
+|---|---|---|
+| [Scrum Guide oficial, noviembre2020](https://scrumguides.org/scrum-guide.html) | Product Backlog emergente, selección de Sprint, incremento y Definition of Done | Apoya separar backlog de Sprint y no llamar Hecho al trabajo sin DoD. No obliga Jira, SP, seis personas ni216horas; no acredita que se celebraron eventos Scrum |
+| [PostgreSQL: política de versiones](https://www.postgresql.org/support/versioning/) | Soporte por versión mayor y recomendación de mantener versión menor actual; cambio mayor requiere procedimiento de actualización | Conservar17 como objetivo documentado y verificarlo.18.4 local es evidencia de otro entorno. Antes de despliegue fijar parche soportado y ensayarlo; no se actualizó servidor alguno |
+| [SUNAT: obligados a emisión electrónica](https://cpe.sunat.gob.pe/informacion_general/obligados_cpe) | Designaciones/condiciones de obligación y aviso de indisponibilidad del padrón desde01/06/2026 | No permite inferir el régimen ni obligaciones particulares del usuario. La constancia interna no demuestra emisión fiscal; confirmar RUC/régimen/canal real antes de usar el sistema para operación real |
+| [SUNAT: SEE-SOL](https://cpe.sunat.gob.pe/sistema_emision/see_sol) | Existencia del canal oficial SOL y condiciones para emitir | Un canal externo es una alternativa viable a estudiar; el proyecto no tiene integración ni conciliación fiscal automatizada. No se accedió a ClaveSOL ni a datos del contribuyente |
+| [ANPD: DS16-2024-JUS](https://www.gob.pe/institucion/anpd/normas-legales/6554453-16-2024-jus) y [publicación oficial El Peruano](https://busquedas.elperuano.pe/dispositivo/SE/2349653-1) | Reglamento de la Ley29733, publicado30/11/2024 | Requiere análisis del tratamiento real; no se fija plazo de retención, procedimiento de notificación o exigencia de un módulo por analogía |
+| [ANPD: nuevo reglamento](https://www.gob.pe/institucion/anpd/campa%C3%B1as/128319-nuevo-reglamento-de-proteccion-de-datos-personales) | La autoridad informa entrada en vigor31/03/2025 | Corrobora fecha general citada por documentación previa; no certifica cumplimiento del minimarket ni todas las disposiciones particulares |
+
+El enlace informativo MINJUSDH utilizado en el documento anterior devolvió418 en esta consulta. Se buscó corroboración en ANPD/El Peruano; no se inventó el contenido inaccesible. La revisión normativa completa, los datos tratados, responsables, régimen tributario y canal oficial no se deducen del repositorio. El límite de RUC11dígitos del formulario es una validación interna de formato, no acreditación SUNAT. El promedio móvil propuesto es política de control interno, no mandato legal ni certificación contable.

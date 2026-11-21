@@ -1,0 +1,403 @@
+{
+  "pass": "primera",
+  "sublote": "13-B-04",
+  "at_utc": "2026-11-13T16:47:14.910174+00:00",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit13-pg-c54fab9931e300a7223741b1",
+  "database": "audit13_4790bb9ef7",
+  "port": 49676,
+  "cases": [
+    {
+      "id": "PG-01-admin-seven",
+      "expected": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "observed": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "ok": true
+    },
+    {
+      "id": "PG-02-warehouse-three",
+      "expected": {
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "observed": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3
+      },
+      "ok": true
+    },
+    {
+      "id": "PG-03-seller-none",
+      "expected": null,
+      "observed": null,
+      "ok": true
+    },
+    {
+      "id": "PG-04-next-Lima-day",
+      "expected": {
+        "sales_count": 1,
+        "sales_total": "92.22"
+      },
+      "observed": {
+        "sales_count": 1,
+        "sales_total": "92.22"
+      },
+      "ok": true
+    },
+    {
+      "id": "PG-05-linked-/inventario/stock/",
+      "expected": [
+        3,
+        6,
+        5
+      ],
+      "observed": [
+        3,
+        6,
+        5
+      ],
+      "ok": true
+    },
+    {
+      "id": "PG-05-linked-/productos/vencimientos/",
+      "expected": [
+        30,
+        6,
+        5,
+        11
+      ],
+      "observed": [
+        30,
+        6,
+        5,
+        11
+      ],
+      "ok": true
+    },
+    {
+      "id": "PG-05-linked-/ventas/historial/?fecha=2026-11-13",
+      "expected": [
+        3,
+        "60.06"
+      ],
+      "observed": [
+        3,
+        "60.06"
+      ],
+      "ok": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-0",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        9588,
+        3472
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-1",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        9588,
+        3472
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-2",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        9588,
+        3472
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-3",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        9588,
+        3472
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    },
+    {
+      "id": "PG-06-concurrent-snapshot-4",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "observed_summary": {
+        "expiring": 6,
+        "expired": 5,
+        "low_stock": 3,
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "before": {
+        "sales_count": 3,
+        "sales_total": "60.06",
+        "discount_total": "5.06",
+        "open_shifts": 1,
+        "low_stock": 3,
+        "expiring": 6,
+        "expired": 5
+      },
+      "after": {
+        "expiring": 5,
+        "expired": 5,
+        "low_stock": 4,
+        "sales_count": 3,
+        "sales_total": "67.16",
+        "discount_total": "5.06",
+        "open_shifts": 1
+      },
+      "independent_pids": [
+        9588,
+        3472
+      ],
+      "writer_committed_between_first_query_and_read_completion": true
+    }
+  ],
+  "plan08_sha256": "eee0807a618a8995b07b524c63e3c1cefecd71aa8a74cc504da7147dbf508d4f",
+  "identity_views_sha256": "67c398ae422340b75cb49dbea48de10f0e9d4c81cf761c87752ca411fbdfdb5d",
+  "postgres_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "date_lima": "2026-11-13",
+  "isolation": "read committed",
+  "reader_pid": 9588,
+  "fixture": {
+    "run": "etapa13-pg-20261113T164714900703Z",
+    "date_lima": "2026-11-13",
+    "timezone": "America/Lima",
+    "accounts": {
+      "admin": "19f7d81d-dd1a-46c3-8f93-043fb5ae8027",
+      "warehouse": "fe24855b-cefc-4328-a226-6104e440c667",
+      "seller": "07d8d714-2713-4a7b-9039-1d226148467b",
+      "seller2": "e46016f1-b5a6-4ebf-b921-c53b24e6ca22"
+    },
+    "products": {
+      "sin-lotes": "676f7cf7-7ecb-41b2-9402-a66a03cdec15",
+      "igual-minimo": "2a6dae92-8f1f-43ec-b513-81596d8c5be0",
+      "sobre-minimo": "65e54c12-ac99-49c7-9da6-20e37f7dcea7",
+      "solo-vencido": "7d66fd71-6d79-47b3-a792-2bafa0a03d94",
+      "mixto": "032d751e-0b4f-4f06-b7b0-954db0b2d356",
+      "producto-inactivo": "6dfc0ece-289a-46d5-88e7-5eca7155e15c",
+      "categoria-inactiva": "378f7337-b0d7-4280-99a1-af15afc6cfd0",
+      "venta-integracion": "f85d6d43-fde0-4b77-8867-ce31c15fc7b4"
+    },
+    "lots": {
+      "A13-igual-minimo-0": "646ae08b-aa9e-4663-954a-f02e7f6b2c83",
+      "A13-sobre-minimo-0": "100de8d0-d2e7-42e3-94e5-e2e7090aaa48",
+      "A13-solo-vencido-0": "3964bbb6-b23d-4809-b34a-7b69ffa6f1a1",
+      "A13-solo-vencido-1": "72dfcc3a-5867-4a76-a18a-898a7d8aec10",
+      "A13-mixto-0": "ee9d5fce-6648-4c70-8619-7410f215d59f",
+      "A13-mixto-1": "dfa1f59b-b1b0-42c9-bd40-2e3e46745c70",
+      "A13-mixto-2": "23b2757c-c17a-475d-8d80-fab98c32cd65",
+      "A13-mixto-3": "f65e8016-ae2a-4519-90db-ddf0b935ec02",
+      "A13-mixto-4": "d4251957-ce32-4913-a9db-30261cc6bab6",
+      "A13-producto-inactivo-0": "bd0ed788-edf0-4bc6-834b-b40fbc63fad2",
+      "A13-producto-inactivo-1": "365a237f-d6bb-4ef4-9a46-bbf3bdc96e50",
+      "A13-categoria-inactiva-0": "47e6caf8-2732-49aa-a50f-cf9a8f71784d",
+      "A13-categoria-inactiva-1": "93d4f0c3-5635-4516-9c84-17441f046799",
+      "A13-venta-integracion-0": "7d771cad-e58d-49a1-aa72-b78cce866603"
+    },
+    "sales": [
+      {
+        "name": "prev-boundary",
+        "id": "f3f03ff6-e550-40e7-a355-53cd354c5439",
+        "at_lima": "2026-11-12 23:59:59.999999-05:00",
+        "total": "91.11",
+        "discount": "1.11",
+        "seller": "seller2@audit13.invalid",
+        "shift": "2a722995-bd80-40fb-9479-bd21ed2e808b"
+      },
+      {
+        "name": "start-boundary",
+        "id": "2dc12aa6-bb14-487a-9487-d46dcca720a5",
+        "at_lima": "2026-11-13 00:00:00-05:00",
+        "total": "10.01",
+        "discount": "0.01",
+        "seller": "seller2@audit13.invalid",
+        "shift": "2a722995-bd80-40fb-9479-bd21ed2e808b"
+      },
+      {
+        "name": "today-other",
+        "id": "b59b3e86-875b-4a01-95ef-858bd9d82b36",
+        "at_lima": "2026-11-13 10:00:00-05:00",
+        "total": "20.02",
+        "discount": "2.02",
+        "seller": "seller@audit13.invalid",
+        "shift": "35ff3f72-892d-4b35-b78e-837ae9bd8998"
+      },
+      {
+        "name": "end-boundary",
+        "id": "7cb79ee4-0a61-4845-92f0-695774008035",
+        "at_lima": "2026-11-13 23:59:59.999999-05:00",
+        "total": "30.03",
+        "discount": "3.03",
+        "seller": "seller@audit13.invalid",
+        "shift": "35ff3f72-892d-4b35-b78e-837ae9bd8998"
+      },
+      {
+        "name": "next-boundary",
+        "id": "de250033-efc2-4b0c-9a66-edef37df6370",
+        "at_lima": "2026-11-14 00:00:00-05:00",
+        "total": "92.22",
+        "discount": "2.22",
+        "seller": "seller@audit13.invalid",
+        "shift": "35ff3f72-892d-4b35-b78e-837ae9bd8998"
+      }
+    ],
+    "open_shift": "35ff3f72-892d-4b35-b78e-837ae9bd8998",
+    "closed_shift": "2a722995-bd80-40fb-9479-bd21ed2e808b",
+    "expected_summary": {
+      "sales_count": 3,
+      "sales_total": "60.06",
+      "discount_total": "5.06",
+      "open_shifts": 1,
+      "low_stock": 3,
+      "expiring": 6,
+      "expired": 5
+    },
+    "fixture_note": "Sales/expired lots inserted as synthetic historical snapshots via ORM; not proof of historical checkout or validation. Integration probe separately uses services."
+  },
+  "writer_pid": 3472,
+  "error": "duplicate key value violates unique constraint \"catalog_product_barcode_normalized_key\"\nDETAIL:  Key (barcode_normalized)=() already exists.",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\backends\\utils.py\", line 105, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\psycopg\\cursor.py\", line 97, in execute\n    raise ex.with_traceback(None)\npsycopg.errors.UniqueViolation: duplicate key value violates unique constraint \"catalog_product_barcode_normalized_key\"\nDETAIL:  Key (barcode_normalized)=() already exists.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\auditoria_por_etapas\\resultados\\soporte\\audit13_pg.py\", line 125, in <module>\n    Product.objects.bulk_create(prods,batch_size=500)\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\models\\manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\models\\query.py\", line 808, in bulk_create\n    returned_columns = self._batched_insert(\n                       ^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\models\\query.py\", line 1901, in _batched_insert\n    self._insert(\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\models\\query.py\", line 1873, in _insert\n    return query.get_compiler(using=using).execute_sql(returning_fields)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\models\\sql\\compiler.py\", line 1882, in execute_sql\n    cursor.execute(sql, params)\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\backends\\utils.py\", line 79, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\backends\\utils.py\", line 92, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\backends\\utils.py\", line 100, in _execute\n    with self.db.wrap_database_errors:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\django\\db\\backends\\utils.py\", line 105, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\walte\\OneDrive\\Imágenes\\planificacion_limpia\\r1-pmv\\.venv\\Lib\\site-packages\\psycopg\\cursor.py\", line 97, in execute\n    raise ex.with_traceback(None)\ndjango.db.utils.IntegrityError: duplicate key value violates unique constraint \"catalog_product_barcode_normalized_key\"\nDETAIL:  Key (barcode_normalized)=() already exists.\n",
+  "port_closed": true,
+  "finished_utc": "2026-11-13T16:47:28.216577+00:00"
+}

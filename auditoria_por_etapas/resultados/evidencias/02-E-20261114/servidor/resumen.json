@@ -1,0 +1,75 @@
+{
+  "started_utc": "2026-11-15T02:44:24.357274+00:00",
+  "stage": "02-E",
+  "check": {
+    "command": "python manage.py check",
+    "returncode": 0,
+    "passed": true,
+    "stdout_tail": [
+      "System check identified no issues (0 silenced)."
+    ],
+    "stderr_tail": []
+  },
+  "makemigrations_check": {
+    "command": "python manage.py makemigrations --check --dry-run",
+    "returncode": 0,
+    "passed": true,
+    "stdout_tail": [
+      "No changes detected"
+    ],
+    "stderr_tail": []
+  },
+  "full_test_suite": {
+    "command": "python manage.py test identity app_platform catalog inventory cash sales tests -v 2",
+    "returncode": 0,
+    "passed": true,
+    "stdout_tail": [
+      "  Applying inventory.0005_lot_responsible... OK",
+      "  Applying inventory.0006_lot_received_at_immutable... OK",
+      "  Applying inventory.0007_output_unit_cost... OK",
+      "  Applying inventory.0008_stock_receipts... OK",
+      "  Applying inventory.0009_initial_load_snapshots... OK",
+      "  Applying inventory.0010_writeoff_history... OK",
+      "  Applying inventory.0011_adjustment_history_and_origin... OK",
+      "  Applying sales.0001_initial... OK",
+      "  Applying sales.0002_salecounter_sale_saleline... OK",
+      "  Applying sales.0003_sale_discount_amount... OK",
+      "  Applying sales.0004_saleline_product... OK",
+      "  Applying sales.0005_saleline_unit_cost... OK",
+      "  Applying sales.0006_sale_lot_traceability... OK",
+      "  Applying sales.0007_integration_money_limits... OK",
+      "  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK",
+      "  Applying sessions.0001_initial... OK",
+      "System check identified no issues (0 silenced).",
+      "PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.",
+      "PMV baseline data ensured: 3 roles, 4 fictional accounts, 1 category, 1 cash register.",
+      "Productos demo creados: 4"
+    ],
+    "stderr_tail": [
+      "test_database_url_rejects_non_postgresql_scheme (app_platform.test_env.EnvironmentConfigurationTests.test_database_url_rejects_non_postgresql_scheme) ... ok",
+      "test_dotenv_does_not_override_process_environment (app_platform.test_env.EnvironmentConfigurationTests.test_dotenv_does_not_override_process_environment) ... ok",
+      "test_empty_database_url_uses_local_sqlite (app_platform.test_env.EnvironmentConfigurationTests.test_empty_database_url_uses_local_sqlite) ... ok",
+      "test_invalid_boolean_is_rejected (app_platform.test_env.EnvironmentConfigurationTests.test_invalid_boolean_is_rejected) ... ok",
+      "test_postgresql_url_decodes_percent_encoded_credentials (app_platform.test_env.EnvironmentConfigurationTests.test_postgresql_url_decodes_percent_encoded_credentials) ... ok",
+      "test_postgresql_url_is_parsed_without_logging_credentials (app_platform.test_env.EnvironmentConfigurationTests.test_postgresql_url_is_parsed_without_logging_credentials) ... ok",
+      "test_cookie_session_and_header_baseline_is_enabled (app_platform.test_security.SecurityConfigurationTests.test_cookie_session_and_header_baseline_is_enabled) ... ok",
+      "test_logging_filter_redacts_query_json_cookie_and_authorization_values (app_platform.test_security.SecurityConfigurationTests.test_logging_filter_redacts_query_json_cookie_and_authorization_values) ... ok",
+      "test_upgrade_preserves_old_rows_with_unknown_cost (inventory.test_audit14e_valuation.LegacyOutputCostMigrationTests.test_upgrade_preserves_old_rows_with_unknown_cost) ... ok",
+      "test_old_rows_remain_identical_without_receipt_backfill (inventory.test_audit14g_receipts.ReceiptMigrationTests.test_old_rows_remain_identical_without_receipt_backfill) ... ok",
+      "test_nullable_migration_preserves_old_rows_and_lot_instant_guard (inventory.test_audit14h_initial_history.InitialHistoryMigrationTests.test_nullable_migration_preserves_old_rows_and_lot_instant_guard) ... ok",
+      "test_stage12_migrations_round_trip_and_no_pending_migrations (sales.test_audit12_receipts_history.Stage12MigrationOrderingTests.test_stage12_migrations_round_trip_and_no_pending_migrations) ... ok",
+      "test_upgrade_preserves_unknown_history_without_fefo_backfill (sales.test_audit14f_allocations.LegacyAllocationMigrationTests.test_upgrade_preserves_unknown_history_without_fefo_backfill) ... ok",
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 652 tests in 252.300s",
+      "",
+      "OK",
+      "Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...",
+      ""
+    ]
+  },
+  "finished_utc": "2026-11-15T02:48:49.550164+00:00",
+  "prod_db_unchanged": true,
+  "prod_db_sha256": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58",
+  "all_passed": true
+}

@@ -1,0 +1,149 @@
+{
+  "mode": "Chrome product recategorization, stale destination and role boundaries",
+  "cases": [
+    {
+      "id": "stock-inicial-20",
+      "ok": true
+    },
+    {
+      "id": "categoria-inicial",
+      "ok": true
+    },
+    {
+      "id": "warehouse-get-edicion-denegado",
+      "ok": true,
+      "status": 403
+    },
+    {
+      "id": "warehouse-post-edicion-denegado",
+      "ok": true,
+      "status": 403
+    },
+    {
+      "id": "seller-get-edicion-denegado",
+      "ok": true,
+      "status": 403
+    },
+    {
+      "id": "seller-post-edicion-denegado",
+      "ok": true,
+      "status": 403
+    },
+    {
+      "id": "permisos-sin-mutacion",
+      "ok": true
+    },
+    {
+      "id": "mensaje-reclasificacion",
+      "ok": true
+    },
+    {
+      "id": "ficha-solo-cambia-categoria",
+      "ok": true
+    },
+    {
+      "id": "reclasificar-conserva-catalog.Category",
+      "ok": true
+    },
+    {
+      "id": "reclasificar-conserva-inventory.Lot",
+      "ok": true
+    },
+    {
+      "id": "reclasificar-conserva-inventory.InitialInventoryLoad",
+      "ok": true
+    },
+    {
+      "id": "reclasificar-conserva-cash.CashShift",
+      "ok": true
+    },
+    {
+      "id": "reclasificar-conserva-sales.Sale",
+      "ok": true
+    },
+    {
+      "id": "reclasificar-conserva-sales.SaleLine",
+      "ok": true
+    },
+    {
+      "id": "reclasificar-conserva-sales.SaleDraft",
+      "ok": true
+    },
+    {
+      "id": "reclasificar-conserva-sales.SaleDraftLine",
+      "ok": true
+    },
+    {
+      "id": "reclasificar-conserva-commerce",
+      "ok": true
+    },
+    {
+      "id": "vecino-integro",
+      "ok": true
+    },
+    {
+      "id": "almacen-categoria-stock",
+      "ok": true,
+      "cells": [
+        "AUD03 Bebida de prueba",
+        "Alimentos",
+        "AUD03-BEBIDA",
+        "8,50",
+        "20",
+        "10",
+        "Disponible"
+      ]
+    },
+    {
+      "id": "historico-integro",
+      "ok": true
+    },
+    {
+      "id": "cobro-abierto-confirma",
+      "ok": true
+    },
+    {
+      "id": "destino-inactivo-antes-envio",
+      "ok": true
+    },
+    {
+      "id": "destino-antiguo-rechazado",
+      "ok": false,
+      "messages": [
+        "Escoja una opción válida. Esa opción no está entre las disponibles."
+      ]
+    },
+    {
+      "id": "rechazo-atomico",
+      "ok": true
+    },
+    {
+      "id": "otros-campos-retienen-intento",
+      "ok": true
+    },
+    {
+      "id": "historico-final-integro",
+      "ok": true
+    }
+  ],
+  "findings": [],
+  "posts": [
+    {
+      "role": "admin",
+      "path": "/productos/bec8b63f-f850-420d-98f7-5ce804ba553a/editar/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    },
+    {
+      "role": "admin2",
+      "path": "/productos/categorias/5e175739-8099-4faa-a9e7-dc1bb6fd5128/estado/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/bec8b63f-f850-420d-98f7-5ce804ba553a/editar/"
+    }
+  ],
+  "browser": "157.0.8103.39"
+}

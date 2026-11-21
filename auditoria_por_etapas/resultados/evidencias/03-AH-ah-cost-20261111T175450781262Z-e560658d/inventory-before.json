@@ -1,0 +1,126 @@
+{
+  "criteria": [
+    "INV01b/CA01-02",
+    "RN14",
+    "RN28",
+    "INV02/CA01-03 boundary",
+    "INV03/CA02-03 boundary"
+  ],
+  "routes": [
+    "/inventario/carga-inicial/",
+    "/inventario/entrada/",
+    "/inventario/stock/",
+    "/inventario/bajas/nueva/",
+    "/inventario/ajustes/nuevo/",
+    "/ventas/",
+    "/ventas/cobrar/"
+  ],
+  "roles": [
+    "warehouse receives and writes off",
+    "admin adjusts",
+    "seller sells and is denied inventory writes"
+  ],
+  "forms": {
+    "StockWriteOffForm": {
+      "lot_id": {
+        "label": "None",
+        "required": true,
+        "type": "UUIDField",
+        "initial": "None",
+        "minimum": "None",
+        "maximum": "None",
+        "max_length": null
+      },
+      "idempotency_key": {
+        "label": "None",
+        "required": false,
+        "type": "UUIDField",
+        "initial": "None",
+        "minimum": "None",
+        "maximum": "None",
+        "max_length": null
+      },
+      "quantity": {
+        "label": "Cantidad a dar de baja",
+        "required": true,
+        "type": "IntegerField",
+        "initial": "None",
+        "minimum": "1",
+        "maximum": "999999",
+        "max_length": null
+      },
+      "reason": {
+        "label": "Motivo",
+        "required": true,
+        "type": "ChoiceField",
+        "initial": "None",
+        "minimum": "None",
+        "maximum": "None",
+        "max_length": null
+      },
+      "notes": {
+        "label": "Detalle (obligatorio para Daño y Robo)",
+        "required": false,
+        "type": "CharField",
+        "initial": "None",
+        "minimum": "None",
+        "maximum": "None",
+        "max_length": null
+      }
+    },
+    "PhysicalAdjustmentForm": {
+      "lot_id": {
+        "label": "None",
+        "required": true,
+        "type": "UUIDField",
+        "initial": "None",
+        "minimum": "None",
+        "maximum": "None",
+        "max_length": null
+      },
+      "idempotency_key": {
+        "label": "None",
+        "required": false,
+        "type": "UUIDField",
+        "initial": "None",
+        "minimum": "None",
+        "maximum": "None",
+        "max_length": null
+      },
+      "delta": {
+        "label": "Ajuste (positivo=entrada, negativo=faltante)",
+        "required": true,
+        "type": "IntegerField",
+        "initial": "None",
+        "minimum": "-999999",
+        "maximum": "999999",
+        "max_length": null
+      },
+      "reason": {
+        "label": "Motivo del ajuste",
+        "required": true,
+        "type": "CharField",
+        "initial": "None",
+        "minimum": "None",
+        "maximum": "None",
+        "max_length": 300
+      }
+    }
+  },
+  "cases": [
+    "two costs and FEFO sale",
+    "advance business date to first expiration",
+    "receipt excludes expired quantity but uses old average",
+    "partial expired writeoff reprices live stock",
+    "positive and negative physical adjustment",
+    "historical sale unchanged",
+    "role denials and rejected reason"
+  ],
+  "not_approved": [
+    "valuation policy",
+    "full writeoff/adjustment HUs",
+    "sanitary recall",
+    "concurrency",
+    "deployment"
+  ]
+}

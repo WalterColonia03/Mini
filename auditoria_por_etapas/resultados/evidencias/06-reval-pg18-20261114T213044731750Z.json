@@ -1,0 +1,139 @@
+{
+  "started_utc": "20261114T213044731750Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit06-reval-pg-d88637f7eb4f58c8",
+  "port": 50268,
+  "cases": [
+    {
+      "id": "PG06R-01_same_key_concurrent_replay",
+      "ok": true,
+      "details": {
+        "ids": [
+          "da85858d-b69e-4a97-933c-31b503fa6570",
+          "da85858d-b69e-4a97-933c-31b503fa6570"
+        ],
+        "physical": 15,
+        "avg": "2.6667"
+      }
+    },
+    {
+      "id": "PG06R-02_divergent_and_cross_actor_race",
+      "ok": true,
+      "details": {
+        "div_res": [
+          [
+            "err",
+            3,
+            "La clave de recepción ya fue utilizada con otro contenido o responsable."
+          ],
+          [
+            "ok",
+            7,
+            "ed102a5d-86c2-4552-b4b2-02ebe78e3aad"
+          ]
+        ],
+        "actor_res": [
+          [
+            "err",
+            "74fd10cc-7155-4d21-b476-0226489bb474",
+            "La clave de recepción ya fue utilizada con otro contenido o responsable."
+          ],
+          [
+            "ok",
+            "01e58173-5f8f-4364-98d0-7d69a15c25e2",
+            "43cb60a3-cba1-43e3-a16c-6e4301b92abf"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "PG06R-03_http_double_submit_and_distinct_commercial",
+      "ok": true,
+      "details": {
+        "http_same_res": [
+          [
+            302,
+            "/inventario/recepciones/68a646b6-c8b0-4656-bd59-8f61729ce513/"
+          ],
+          [
+            302,
+            "/inventario/recepciones/68a646b6-c8b0-4656-bd59-8f61729ce513/"
+          ]
+        ],
+        "http_com_res": [
+          [
+            302,
+            "/inventario/recepciones/6fe6e7e6-18bd-4ff2-8a91-e6008f3ad575/"
+          ],
+          [
+            302,
+            "/inventario/recepciones/278b7846-85be-4b4b-bb9a-fbb1adbf2154/"
+          ]
+        ],
+        "physical": 12
+      }
+    },
+    {
+      "id": "PG06R-04_concurrent_contradictory_lot_date",
+      "ok": true,
+      "details": {
+        "date_res": [
+          [
+            "err",
+            "2026-12-29",
+            "El lote CONF-C ya existe con otro vencimiento. Aclare la fecha antes de confirmar."
+          ],
+          [
+            "ok",
+            "2027-02-12",
+            "d051f5a7-2d00-4fa1-8318-101c66304cc6"
+          ]
+        ],
+        "physical": 8
+      }
+    },
+    {
+      "id": "PG06R-05_entry_vs_checkout_and_lock_wait",
+      "ok": false,
+      "details": {
+        "after_pair": [
+          "4.0714",
+          "4.0714"
+        ],
+        "physical": 28,
+        "lock_wait": null
+      }
+    }
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "error": {
+    "type": "AssertionError",
+    "message": "PG Case failed: PG06R-05_entry_vs_checkout_and_lock_wait -> {'after_pair': ['4.0714', '4.0714'], 'physical': 28, 'lock_wait': None}"
+  },
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-browser-20261111T220616001895Z-502b8eca\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-browser-20261111T220739393077Z-53a7025e\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-browser-20261111T220821554129Z-e6d4236f\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-browser-20261111T220956059116Z-1321c8e3\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-browser-20261111T221317815541Z-26db57d5\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-checks-20261111T220524889625Z-542f1b9a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-checks-20261111T221617077048Z-6cb98b0d\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-checks-20261114T162006336492Z-d13eae5c\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-repro-20261111T220034273638Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-browser-20261114T212745468050Z-dce3e1b1\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T162551786448Z-16eb7d53\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T162648574723Z-d5b1d4d0\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T162718552353Z-54703f3f\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T162756271833Z-fb74bdb0\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T212125839073Z-89f9658f\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T212148831784Z-cafcf0eb\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T212224350619Z-41f0a2af\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T212306253422Z-2483a1bc\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T212516734717Z-d3f486c9\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa06-reval-server-20261114T212733200909Z-caa926fa\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-14T21:31:15.795264+00:00"
+}

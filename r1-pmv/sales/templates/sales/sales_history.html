@@ -1,0 +1,127 @@
+{% extends "identity/base.html" %}
+
+{% block title %}Historial de ventas{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Caja y ventas</p>
+    <h2>Historial de ventas</h2>
+    <p class="lede">
+      {% if is_admin_view %}
+        Consulta las ventas confirmadas de toda la tienda por correlativo, fecha, vendedor o turno.
+      {% else %}
+        Consulta únicamente tus ventas confirmadas por correlativo, fecha o turno.
+      {% endif %}
+    </p>
+  </div>
+  <div class="page-heading-actions">
+    {% if not is_admin_view %}
+      <a class="button button-secondary" href="{% url 'sales-shift-history' %}">Ventas del turno</a>
+      <a class="button button-secondary" href="{% url 'cash-shift-history' %}">Mis turnos</a>
+    {% endif %}
+    <a class="button button-secondary" href="{% url 'dashboard' %}">Volver al inicio</a>
+  </div>
+</section>
+
+<form method="get" class="panel form-panel history-filter-panel mb-4">
+  <div class="history-filter-grid">
+    <div>
+      <label for="sales-correlative" class="form-label fw-semibold">Correlativo</label>
+      <input id="sales-correlative" type="text" name="correlativo" value="{{ correlativo }}"
+             maxlength="64" class="form-control" placeholder="V-00000001">
+    </div>
+    <div>
+      <label for="sales-date" class="form-label fw-semibold">Fecha exacta</label>
+      <input id="sales-date" type="date" name="fecha" value="{{ fecha }}" class="form-control">
+    </div>
+    <div>
+      <label for="sales-date-from" class="form-label fw-semibold">Desde</label>
+      <input id="sales-date-from" type="date" name="fecha_desde" value="{{ fecha_desde }}" class="form-control">
+    </div>
+    <div>
+      <label for="sales-date-to" class="form-label fw-semibold">Hasta</label>
+      <input id="sales-date-to" type="date" name="fecha_hasta" value="{{ fecha_hasta }}" class="form-control">
+    </div>
+    {% if is_admin_view %}
+    <div>
+      <label for="sales-seller" class="form-label fw-semibold">Vendedor</label>
+      <select id="sales-seller" name="vendedor" class="form-select">
+        <option value="">Todos</option>
+        {% for seller in sellers %}
+          <option value="{{ seller.pk }}" {% if vendedor == seller.pk|stringformat:"s" %}selected{% endif %}>{{ seller.display_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    {% endif %}
+    <div>
+      <label for="sales-shift" class="form-label fw-semibold">Turno</label>
+      <select id="sales-shift" name="turno" class="form-select">
+        <option value="">Todos</option>
+        {% for sh in shifts %}
+          <option value="{{ sh.pk }}" {% if turno == sh.pk|stringformat:"s" %}selected{% endif %}>
+            {{ sh.cash_register.code }} · {{ sh.opened_at|date:"d/m/Y H:i" }}{% if is_admin_view %} · {{ sh.seller.display_name }}{% endif %}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="form-actions history-filter-actions">
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+    <a href="{% url 'sales-history' %}" class="btn btn-outline-secondary">Limpiar</a>
+  </div>
+</form>
+
+{% if sales %}
+<div class="alert alert-info mb-3" data-testid="sales-history-summary">
+  <strong>Total vendido (filtrado):</strong> S/ {{ total_vendido|floatformat:2 }} &middot;
+  <strong>Descuentos otorgados:</strong> S/ {{ total_descuentos|floatformat:2 }} &middot;
+  <strong>Ventas del conjunto filtrado completo:</strong> {{ total_sales_count }}
+  (página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }})
+</div>
+<div class="table-responsive" tabindex="0" role="region" aria-label="Historial de ventas, tabla desplazable">
+  <table class="table table-bordered table-hover align-middle sales-history-table">
+    <thead class="table-dark">
+      <tr>
+        <th>Correlativo</th>
+        <th>Vendedor</th>
+        <th>Fecha/Hora</th>
+        <th>Caja</th>
+        <th>Pago</th>
+        <th class="text-end">Descuento (S/)</th>
+        <th class="text-end">Total (S/)</th>
+        <th class="text-end">Efectivo recibido</th>
+        <th class="text-end">Vuelto</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sale in sales %}
+      <tr>
+        <td class="font-monospace">
+          <a href="{% url 'sales-receipt' sale.pk %}">{{ sale.correlative }}</a>
+        </td>
+        <td>{{ sale.seller_snapshot_name|default:"No disponible (registro anterior)" }}</td>
+        <td>{{ sale.confirmed_at|date:"d/m/Y H:i" }}</td>
+        <td>{{ sale.cash_register_snapshot_code|default:"No disponible (registro anterior)" }}</td>
+        <td>Efectivo</td>
+        <td class="text-end">{{ sale.discount_amount|floatformat:2 }}</td>
+        <td class="text-end">{{ sale.total_amount|floatformat:2 }}</td>
+        <td class="text-end">{{ sale.cash_received|floatformat:2 }}</td>
+        <td class="text-end">{{ sale.change_given|floatformat:2 }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<nav aria-label="Páginas de ventas" class="form-actions" style="margin-top:1rem;align-items:center;">
+  {% if previous_url %}<a class="button button-secondary" href="{{ previous_url }}">Anterior</a>{% endif %}
+  <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }} &middot; 25 ventas por página</span>
+  {% if next_url %}<a class="button button-secondary" href="{{ next_url }}">Siguiente</a>{% endif %}
+</nav>
+{% elif has_invalid_query %}
+<div class="alert alert-warning" role="alert">No se realizó la consulta. Corrija los filtros o la página indicados.</div>
+{% else %}
+<div class="alert alert-info">No se encontraron ventas con los filtros aplicados.</div>
+{% endif %}
+{% endblock %}
+

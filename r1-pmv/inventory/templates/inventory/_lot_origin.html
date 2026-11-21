@@ -1,0 +1,7 @@
+{% if lot.adjustment_origin_id %}
+<small class="help">Origen AJUSTE {{ lot.adjustment_origin_id }}</small>
+{% elif lot.receipt_line %}
+<small class="help">Recepción {{ lot.receipt_line.receipt.correlative }}</small>
+{% else %}
+<small class="help">Sin constancia propia de recepción</small>
+{% endif %}

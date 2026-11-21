@@ -1,0 +1,4128 @@
+{
+  "fecha_local": "2026-11-05",
+  "metodo": "Extraccion estatica de identificadores y referencias; no ejecuta pruebas",
+  "historias": [
+    {
+      "id": "HU-AUTH-01",
+      "nombre": "Ingresar con mi cuenta de trabajo",
+      "modulo": "AUTH",
+      "fuente": "09_Product_Backlog.md:46",
+      "reglas": [
+        "RN-29"
+      ],
+      "actor": "empleado de la bodega",
+      "criterios": [
+        {
+          "id": "HU-AUTH-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:18",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:19",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-01/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:20",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-01/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:21",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "R1 SELECCIONADO",
+      "dependencias": [],
+      "fuente_hu": "08_Historias_de_Usuario.md:13",
+      "fuente_backlog": "09_Product_Backlog.md:46",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-AUTH-02",
+      "nombre": "Autenticación — Bloquear cuenta por intentos fallidos",
+      "modulo": "AUTH",
+      "fuente": "09_Product_Backlog.md:75",
+      "reglas": [
+        "RN-17"
+      ],
+      "actor": "empleado o administrador",
+      "criterios": [
+        {
+          "id": "HU-AUTH-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:30",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:31",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:32",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:25",
+      "fuente_backlog": "09_Product_Backlog.md:75",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-AUTH-03",
+      "nombre": "Salir de mi cuenta al terminar",
+      "modulo": "AUTH",
+      "fuente": "09_Product_Backlog.md:47",
+      "reglas": [
+        "RN-29",
+        "RN-30"
+      ],
+      "actor": "empleado de la bodega",
+      "criterios": [
+        {
+          "id": "HU-AUTH-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:41",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:42",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-03/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:43",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "R1 SELECCIONADO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:36",
+      "fuente_backlog": "09_Product_Backlog.md:47",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-AUTH-04a",
+      "nombre": "Autenticación — Cerrar automáticamente la sesión previa",
+      "modulo": "AUTH",
+      "fuente": "09_Product_Backlog.md:118",
+      "reglas": [],
+      "actor": "empleado",
+      "criterios": [
+        {
+          "id": "HU-AUTH-04a/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:52",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-04a/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:53",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-04a/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:54",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01",
+        "HU-AUTH-03"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:47",
+      "fuente_backlog": "09_Product_Backlog.md:118",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-AUTH-04b",
+      "nombre": "Autenticación — Descartar venta sin confirmar al cerrarse la sesión",
+      "modulo": "AUTH",
+      "fuente": "09_Product_Backlog.md:119",
+      "reglas": [],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-AUTH-04b/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:63",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-04b/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:64",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-04a",
+        "HU-VEN-01b"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:58",
+      "fuente_backlog": "09_Product_Backlog.md:119",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-AUTH-05",
+      "nombre": "Autenticación — Recuperar contraseña por correo",
+      "modulo": "AUTH",
+      "fuente": "09_Product_Backlog.md:120",
+      "reglas": [
+        "RN-17",
+        "RN-18",
+        "RN-24"
+      ],
+      "actor": "empleado",
+      "criterios": [
+        {
+          "id": "HU-AUTH-05/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:73",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-05/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:74",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-05/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:75",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-05/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:76",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-AUTH-05/CA-05",
+          "fuente": "08_Historias_de_Usuario.md:77",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:68",
+      "fuente_backlog": "09_Product_Backlog.md:120",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-USR-01",
+      "nombre": "Usuarios — Listar empleados del sistema",
+      "modulo": "USR",
+      "fuente": "09_Product_Backlog.md:77",
+      "reglas": [],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-USR-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:86",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:87",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-01/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:88",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:81",
+      "fuente_backlog": "09_Product_Backlog.md:77",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:44"
+    },
+    {
+      "id": "HU-USR-02",
+      "nombre": "Usuarios — Crear cuenta de nuevo empleado",
+      "modulo": "USR",
+      "fuente": "09_Product_Backlog.md:76",
+      "reglas": [
+        "RN-12",
+        "RN-24"
+      ],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-USR-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:97",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:98",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:99",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-02/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:100",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:92",
+      "fuente_backlog": "09_Product_Backlog.md:76",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:45"
+    },
+    {
+      "id": "HU-USR-03",
+      "nombre": "Usuarios — Editar datos y rol de un empleado",
+      "modulo": "USR",
+      "fuente": "09_Product_Backlog.md:122",
+      "reglas": [
+        "RN-12"
+      ],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-USR-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:109",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:110",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-03/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:111",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-USR-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:104",
+      "fuente_backlog": "09_Product_Backlog.md:122",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:58"
+    },
+    {
+      "id": "HU-USR-04",
+      "nombre": "Usuarios — Desactivar cuenta de empleado",
+      "modulo": "USR",
+      "fuente": "09_Product_Backlog.md:78",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-USR-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:120",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:121",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-04/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:122",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-USR-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:115",
+      "fuente_backlog": "09_Product_Backlog.md:78",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:59"
+    },
+    {
+      "id": "HU-USR-05",
+      "nombre": "Usuarios — Reactivar cuenta de empleado",
+      "modulo": "USR",
+      "fuente": "09_Product_Backlog.md:123",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-USR-05/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:131",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-05/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:132",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-USR-04"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:126",
+      "fuente_backlog": "09_Product_Backlog.md:123",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-USR-06",
+      "nombre": "Usuarios — Forzar cierre de sesión remoto",
+      "modulo": "USR",
+      "fuente": "09_Product_Backlog.md:121",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-USR-06/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:141",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-USR-06/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:142",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-USR-01",
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:136",
+      "fuente_backlog": "09_Product_Backlog.md:121",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-LOG-01",
+      "nombre": "Supervisión de accesos – Consultar registro de accesos",
+      "modulo": "LOG",
+      "fuente": "09_Product_Backlog.md:124",
+      "reglas": [],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-LOG-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:151",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-LOG-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:152",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-LOG-01/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:153",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01",
+        "HU-AUTH-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:146",
+      "fuente_backlog": "09_Product_Backlog.md:124",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CAT-01",
+      "nombre": "Categorías — Ver lista de categorías de productos",
+      "modulo": "CAT",
+      "fuente": "09_Product_Backlog.md:66",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-CAT-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:166",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAT-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:167",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:161",
+      "fuente_backlog": "09_Product_Backlog.md:66",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:35"
+    },
+    {
+      "id": "HU-CAT-02",
+      "nombre": "Categorías — Crear nueva categoría de productos",
+      "modulo": "CAT",
+      "fuente": "09_Product_Backlog.md:65",
+      "reglas": [],
+      "actor": "administrador de la bodega",
+      "criterios": [
+        {
+          "id": "HU-CAT-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:176",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAT-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:177",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAT-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:178",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:171",
+      "fuente_backlog": "09_Product_Backlog.md:65",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:36"
+    },
+    {
+      "id": "HU-CAT-03",
+      "nombre": "Categorías — Editar nombre de categoría",
+      "modulo": "CAT",
+      "fuente": "09_Product_Backlog.md:125",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-CAT-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:187",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAT-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:188",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-CAT-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:182",
+      "fuente_backlog": "09_Product_Backlog.md:125",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CAT-04",
+      "nombre": "Categorías — Eliminar categoría sin productos",
+      "modulo": "CAT",
+      "fuente": "09_Product_Backlog.md:126",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-CAT-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:197",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAT-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:198",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-CAT-02",
+        "HU-PROD-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:192",
+      "fuente_backlog": "09_Product_Backlog.md:126",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-PROD-01",
+      "nombre": "Productos — Ver catálogo completo de productos",
+      "modulo": "PROD",
+      "fuente": "09_Product_Backlog.md:67",
+      "reglas": [
+        "RN-06"
+      ],
+      "actor": "administrador o vendedor",
+      "criterios": [
+        {
+          "id": "HU-PROD-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:207",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:208",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-01/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:209",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-PROD-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:202",
+      "fuente_backlog": "09_Product_Backlog.md:67",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:37"
+    },
+    {
+      "id": "HU-PROD-02",
+      "nombre": "Registrar un producto enlatado",
+      "modulo": "PROD",
+      "fuente": "09_Product_Backlog.md:48",
+      "reglas": [
+        "RN-06",
+        "RN-27",
+        "RN-29"
+      ],
+      "actor": "administrador de la bodega",
+      "criterios": [
+        {
+          "id": "HU-PROD-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:218",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:219",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:220",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-02/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:221",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-02/CA-05",
+          "fuente": "08_Historias_de_Usuario.md:222",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "R1 SELECCIONADO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:213",
+      "fuente_backlog": "09_Product_Backlog.md:48",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-PROD-03",
+      "nombre": "Productos — Escanear código de barras para registrar producto",
+      "modulo": "PROD",
+      "fuente": "09_Product_Backlog.md:127",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-PROD-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:231",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:232",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-PROD-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:226",
+      "fuente_backlog": "09_Product_Backlog.md:127",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-PROD-04",
+      "nombre": "Productos — Editar datos de un producto",
+      "modulo": "PROD",
+      "fuente": "09_Product_Backlog.md:68",
+      "reglas": [
+        "RN-06"
+      ],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-PROD-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:241",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:242",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-04/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:243",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-04/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:244",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-04/CA-05",
+          "fuente": "08_Historias_de_Usuario.md:245",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-PROD-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:236",
+      "fuente_backlog": "09_Product_Backlog.md:68",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:38"
+    },
+    {
+      "id": "HU-PROD-05",
+      "nombre": "Productos — Gestionar estado de disponibilidad comercial",
+      "modulo": "PROD",
+      "fuente": "09_Product_Backlog.md:69",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-PROD-05/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:254",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-05/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:255",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-05/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:256",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-PROD-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:249",
+      "fuente_backlog": "09_Product_Backlog.md:69",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:39"
+    },
+    {
+      "id": "HU-PROD-06",
+      "nombre": "Productos — Consultar vencimientos de productos",
+      "modulo": "PROD",
+      "fuente": "09_Product_Backlog.md:70",
+      "reglas": [
+        "RN-03"
+      ],
+      "actor": "administrador o encargado del almacén",
+      "criterios": [
+        {
+          "id": "HU-PROD-06/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:265",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-06/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:266",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROD-06/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:267",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-01a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:260",
+      "fuente_backlog": "09_Product_Backlog.md:70",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:40"
+    },
+    {
+      "id": "HU-PROV-01",
+      "nombre": "Proveedores — Ver lista de proveedores",
+      "modulo": "PROV",
+      "fuente": "09_Product_Backlog.md:95",
+      "reglas": [],
+      "actor": "administrador o encargado del almacén",
+      "criterios": [
+        {
+          "id": "HU-PROV-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:276",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROV-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:277",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:271",
+      "fuente_backlog": "09_Product_Backlog.md:95",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:60"
+    },
+    {
+      "id": "HU-PROV-02",
+      "nombre": "Proveedores — Registrar nuevo proveedor",
+      "modulo": "PROV",
+      "fuente": "09_Product_Backlog.md:94",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-PROV-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:286",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROV-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:287",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROV-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:288",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:281",
+      "fuente_backlog": "09_Product_Backlog.md:94",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:61"
+    },
+    {
+      "id": "HU-PROV-03",
+      "nombre": "Proveedores — Editar datos de un proveedor",
+      "modulo": "PROV",
+      "fuente": "09_Product_Backlog.md:129",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-PROV-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:297",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROV-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:298",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-PROV-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:292",
+      "fuente_backlog": "09_Product_Backlog.md:129",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-PROV-04",
+      "nombre": "Proveedores — Gestionar estado de vigencia del proveedor",
+      "modulo": "PROV",
+      "fuente": "09_Product_Backlog.md:96",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-PROV-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:307",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROV-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:308",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-PROV-04/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:309",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-PROV-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:302",
+      "fuente_backlog": "09_Product_Backlog.md:96",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:62"
+    },
+    {
+      "id": "HU-INV-01a",
+      "nombre": "Registrar las existencias iniciales por lotes",
+      "modulo": "INV",
+      "fuente": "09_Product_Backlog.md:49",
+      "reglas": [
+        "RN-01",
+        "RN-03",
+        "RN-14",
+        "RN-19",
+        "RN-29"
+      ],
+      "actor": "encargado del almacén",
+      "criterios": [
+        {
+          "id": "HU-INV-01a/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:322",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-01a/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:323",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-01a/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:324",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-01a/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:325",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-01a/CA-05",
+          "fuente": "08_Historias_de_Usuario.md:326",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "R1 SELECCIONADO",
+      "dependencias": [
+        "HU-PROD-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:317",
+      "fuente_backlog": "09_Product_Backlog.md:49",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-INV-01b",
+      "nombre": "Inventario — Recalcular el costo promedio en entradas posteriores",
+      "modulo": "INV",
+      "fuente": "09_Product_Backlog.md:97",
+      "reglas": [
+        "RN-14"
+      ],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-INV-01b/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:335",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-01b/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:336",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-01a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:330",
+      "fuente_backlog": "09_Product_Backlog.md:97",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:63"
+    },
+    {
+      "id": "HU-INV-02",
+      "nombre": "Inventario — Registrar baja de inventario por merma",
+      "modulo": "INV",
+      "fuente": "09_Product_Backlog.md:79",
+      "reglas": [
+        "RN-04",
+        "RN-05",
+        "RN-20"
+      ],
+      "actor": "encargado del almacén",
+      "criterios": [
+        {
+          "id": "HU-INV-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:345",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:346",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:347",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-02/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:348",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-01a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:340",
+      "fuente_backlog": "09_Product_Backlog.md:79",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:64"
+    },
+    {
+      "id": "HU-INV-03",
+      "nombre": "Inventario – Realizar ajuste por conteo físico",
+      "modulo": "INV",
+      "fuente": "09_Product_Backlog.md:80",
+      "reglas": [
+        "RN-01"
+      ],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-INV-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:357",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:358",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-03/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:359",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-01a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:352",
+      "fuente_backlog": "09_Product_Backlog.md:80",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:65"
+    },
+    {
+      "id": "HU-INV-04",
+      "nombre": "Mercadería — Consultar movimientos de un producto",
+      "modulo": "INV",
+      "fuente": "09_Product_Backlog.md:81",
+      "reglas": [],
+      "actor": "administrador o encargado del almacén",
+      "criterios": [
+        {
+          "id": "HU-INV-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:368",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:369",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-04/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:370",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-04/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:371",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-01a",
+        "HU-VEN-01c",
+        "HU-INV-02",
+        "HU-INV-03"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:363",
+      "fuente_backlog": "09_Product_Backlog.md:81",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:88"
+    },
+    {
+      "id": "HU-INV-05",
+      "nombre": "Inventario — Consultar historial de bajas",
+      "modulo": "INV",
+      "fuente": "09_Product_Backlog.md:82",
+      "reglas": [],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-INV-05/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:380",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-05/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:381",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:375",
+      "fuente_backlog": "09_Product_Backlog.md:82",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-INV-06",
+      "nombre": "Inventario — Consultar historial de ajustes",
+      "modulo": "INV",
+      "fuente": "09_Product_Backlog.md:83",
+      "reglas": [],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-INV-06/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:390",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-INV-06/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:391",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-03"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:385",
+      "fuente_backlog": "09_Product_Backlog.md:83",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-SOL-01",
+      "nombre": "Reposición – Crear solicitud de reposición",
+      "modulo": "SOL",
+      "fuente": "09_Product_Backlog.md:98",
+      "reglas": [
+        "RN-06"
+      ],
+      "actor": "encargado del almacén",
+      "criterios": [
+        {
+          "id": "HU-SOL-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:400",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:401",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-01/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:402",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-PROD-02",
+        "HU-PROV-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:395",
+      "fuente_backlog": "09_Product_Backlog.md:98",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-SOL-02",
+      "nombre": "Reposición — Listar solicitudes con filtro por estado",
+      "modulo": "SOL",
+      "fuente": "09_Product_Backlog.md:99",
+      "reglas": [],
+      "actor": "encargado del almacén o administrador",
+      "criterios": [
+        {
+          "id": "HU-SOL-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:411",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:412",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:413",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-SOL-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:406",
+      "fuente_backlog": "09_Product_Backlog.md:99",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-SOL-03",
+      "nombre": "Reposición — Aprobar solicitud de reposición",
+      "modulo": "SOL",
+      "fuente": "09_Product_Backlog.md:100",
+      "reglas": [
+        "RN-16"
+      ],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-SOL-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:422",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:423",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-03/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:424",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-SOL-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:417",
+      "fuente_backlog": "09_Product_Backlog.md:100",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-SOL-04",
+      "nombre": "Reposición — Rechazar solicitud de reposición",
+      "modulo": "SOL",
+      "fuente": "09_Product_Backlog.md:101",
+      "reglas": [],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-SOL-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:433",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:434",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-SOL-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:428",
+      "fuente_backlog": "09_Product_Backlog.md:101",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-SOL-05a",
+      "nombre": "Reposición — Completar la recepción total de una solicitud",
+      "modulo": "SOL",
+      "fuente": "09_Product_Backlog.md:102",
+      "reglas": [
+        "RN-01",
+        "RN-03",
+        "RN-14",
+        "RN-19"
+      ],
+      "actor": "encargado del almacén",
+      "criterios": [
+        {
+          "id": "HU-SOL-05a/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:443",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-05a/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:444",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-05a/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:445",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-05a/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:446",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-SOL-03",
+        "HU-INV-01a",
+        "HU-INV-01b"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:438",
+      "fuente_backlog": "09_Product_Backlog.md:102",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-SOL-05b",
+      "nombre": "Reposición — Registrar una recepción parcial con saldo pendiente",
+      "modulo": "SOL",
+      "fuente": "09_Product_Backlog.md:103",
+      "reglas": [
+        "RN-01",
+        "RN-03",
+        "RN-14",
+        "RN-19"
+      ],
+      "actor": "encargado del almacén",
+      "criterios": [
+        {
+          "id": "HU-SOL-05b/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:455",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-05b/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:456",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-SOL-05b/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:457",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-SOL-05a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:450",
+      "fuente_backlog": "09_Product_Backlog.md:103",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CAJA-01",
+      "nombre": "Abrir el turno de caja",
+      "modulo": "CAJA",
+      "fuente": "09_Product_Backlog.md:50",
+      "reglas": [
+        "RN-10",
+        "RN-29"
+      ],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-CAJA-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:470",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:471",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-01/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:472",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-01/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:473",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "R1 SELECCIONADO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:465",
+      "fuente_backlog": "09_Product_Backlog.md:50",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CAJA-02",
+      "nombre": "Cerrar y cuadrar la caja",
+      "modulo": "CAJA",
+      "fuente": "09_Product_Backlog.md:54",
+      "reglas": [
+        "RN-10",
+        "RN-29",
+        "RN-30"
+      ],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-CAJA-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:482",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:483",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:484",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-02/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:485",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-02/CA-05",
+          "fuente": "08_Historias_de_Usuario.md:486",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "R1 SELECCIONADO",
+      "dependencias": [
+        "HU-CAJA-01",
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:477",
+      "fuente_backlog": "09_Product_Backlog.md:54",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CAJA-03",
+      "nombre": "Caja — Registrar movimiento manual de efectivo",
+      "modulo": "CAJA",
+      "fuente": "09_Product_Backlog.md:88",
+      "reglas": [
+        "RN-10",
+        "RN-11",
+        "RN-15"
+      ],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-CAJA-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:495",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:496",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-03/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:497",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-03/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:498",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-CAJA-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:490",
+      "fuente_backlog": "09_Product_Backlog.md:88",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CAJA-04",
+      "nombre": "Caja — Ver resumen del turno activo",
+      "modulo": "CAJA",
+      "fuente": "09_Product_Backlog.md:89",
+      "reglas": [],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-CAJA-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:507",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:508",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-CAJA-01",
+        "HU-VEN-01c",
+        "HU-CAJA-03"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:502",
+      "fuente_backlog": "09_Product_Backlog.md:89",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CAJA-05",
+      "nombre": "Caja — Consultar historial de turnos de caja",
+      "modulo": "CAJA",
+      "fuente": "09_Product_Backlog.md:73",
+      "reglas": [],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-CAJA-05/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:517",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-05/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:518",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-CAJA-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:512",
+      "fuente_backlog": "09_Product_Backlog.md:73",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:43"
+    },
+    {
+      "id": "HU-CAJA-06",
+      "nombre": "Caja — Aprobar cierre de turno",
+      "modulo": "CAJA",
+      "fuente": "09_Product_Backlog.md:90",
+      "reglas": [],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-CAJA-06/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:527",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-06/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:528",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-CAJA-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:522",
+      "fuente_backlog": "09_Product_Backlog.md:90",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CAJA-07",
+      "nombre": "Caja – Forzar cierre de turno de caja",
+      "modulo": "CAJA",
+      "fuente": "09_Product_Backlog.md:91",
+      "reglas": [
+        "RN-23"
+      ],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-CAJA-07/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:537",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CAJA-07/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:538",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-CAJA-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:532",
+      "fuente_backlog": "09_Product_Backlog.md:91",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-VEN-01a",
+      "nombre": "Ventas — Bloquear la pantalla de venta por inactividad",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:74",
+      "reglas": [
+        "RN-22"
+      ],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-VEN-01a/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:547",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01a/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:548",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01a/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:549",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-CAJA-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:542",
+      "fuente_backlog": "09_Product_Backlog.md:74",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-VEN-01b",
+      "nombre": "Preparar una venta y revisar existencias",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:51",
+      "reglas": [
+        "RN-03",
+        "RN-10",
+        "RN-27",
+        "RN-29",
+        "RN-30"
+      ],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-VEN-01b/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:558",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01b/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:559",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01b/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:560",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01b/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:561",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01b/CA-05",
+          "fuente": "08_Historias_de_Usuario.md:562",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "R1 SELECCIONADO",
+      "dependencias": [
+        "HU-CAJA-01",
+        "HU-INV-01a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:553",
+      "fuente_backlog": "09_Product_Backlog.md:51",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-VEN-01c",
+      "nombre": "Cobrar en efectivo y descontar existencias",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:52",
+      "reglas": [
+        "RN-03",
+        "RN-10",
+        "RN-19",
+        "RN-25",
+        "RN-27",
+        "RN-28",
+        "RN-29",
+        "RN-30"
+      ],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-VEN-01c/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:571",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01c/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:572",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01c/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:573",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01c/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:574",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01c/CA-05",
+          "fuente": "08_Historias_de_Usuario.md:575",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-01c/CA-06",
+          "fuente": "08_Historias_de_Usuario.md:576",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "R1 SELECCIONADO",
+      "dependencias": [
+        "HU-VEN-01b"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:566",
+      "fuente_backlog": "09_Product_Backlog.md:52",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-VEN-02a",
+      "nombre": "Generar una constancia interna de venta",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:53",
+      "reglas": [
+        "RN-26",
+        "RN-27",
+        "RN-29"
+      ],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-VEN-02a/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:585",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-02a/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:586",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-02a/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:587",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-02a/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:588",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "R1 SELECCIONADO",
+      "dependencias": [
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:580",
+      "fuente_backlog": "09_Product_Backlog.md:53",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-VEN-04",
+      "nombre": "Ventas – Buscar producto por código de barras",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:128",
+      "reglas": [],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-VEN-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:597",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:598",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01b"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:592",
+      "fuente_backlog": "09_Product_Backlog.md:128",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-VEN-05a",
+      "nombre": "Ventas — Consultar las ventas de mi turno",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:71",
+      "reglas": [
+        "RN-07"
+      ],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-VEN-05a/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:607",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-05a/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:608",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c",
+        "HU-CAJA-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:602",
+      "fuente_backlog": "09_Product_Backlog.md:71",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:41"
+    },
+    {
+      "id": "HU-VEN-05b",
+      "nombre": "Ventas — Consultar el historial de ventas con filtros",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:72",
+      "reglas": [
+        "RN-07"
+      ],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-VEN-05b/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:617",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-05b/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:618",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-05b/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:619",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:612",
+      "fuente_backlog": "09_Product_Backlog.md:72",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": "r1-pmv/CONTROL_SPRINTS.md:42"
+    },
+    {
+      "id": "HU-VEN-06a",
+      "nombre": "Ventas — Anular una venta cobrada en efectivo",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:84",
+      "reglas": [
+        "RN-08",
+        "RN-10"
+      ],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-VEN-06a/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:628",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-06a/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:629",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-06a/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:630",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c",
+        "HU-VEN-02a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:623",
+      "fuente_backlog": "09_Product_Backlog.md:84",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-VEN-06b",
+      "nombre": "Ventas — Anular una venta cobrada con Yape",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:87",
+      "reglas": [
+        "RN-08"
+      ],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-VEN-06b/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:639",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-06b/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:640",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-06a",
+        "HU-VEN-07"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:634",
+      "fuente_backlog": "09_Product_Backlog.md:87",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-VEN-06c",
+      "nombre": "Ventas — Definir el destino de la mercadería devuelta",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:85",
+      "reglas": [
+        "RN-09"
+      ],
+      "actor": "encargado del almacén o administrador",
+      "criterios": [
+        {
+          "id": "HU-VEN-06c/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:649",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-06c/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:650",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-06c/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:651",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-06a",
+        "HU-INV-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:644",
+      "fuente_backlog": "09_Product_Backlog.md:85",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-VEN-07",
+      "nombre": "Cobrar con Yape y registrar el código de operación",
+      "modulo": "VEN",
+      "fuente": "09_Product_Backlog.md:86",
+      "reglas": [
+        "RN-02"
+      ],
+      "actor": "vendedor",
+      "criterios": [
+        {
+          "id": "HU-VEN-07/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:660",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-07/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:661",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-07/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:662",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-07/CA-04",
+          "fuente": "08_Historias_de_Usuario.md:663",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-07/CA-05",
+          "fuente": "08_Historias_de_Usuario.md:664",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-VEN-07/CA-06",
+          "fuente": "08_Historias_de_Usuario.md:665",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01b",
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:655",
+      "fuente_backlog": "09_Product_Backlog.md:86",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CONF-01",
+      "nombre": "Configuración — Ver configuración actual del negocio",
+      "modulo": "CONF",
+      "fuente": "09_Product_Backlog.md:92",
+      "reglas": [],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-CONF-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:678",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CONF-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:679",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-AUTH-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:673",
+      "fuente_backlog": "09_Product_Backlog.md:92",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CONF-02",
+      "nombre": "Configuración — Actualizar configuración del negocio",
+      "modulo": "CONF",
+      "fuente": "09_Product_Backlog.md:93",
+      "reglas": [],
+      "actor": "administrador",
+      "criterios": [
+        {
+          "id": "HU-CONF-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:688",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CONF-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:689",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-CONF-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:690",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-CONF-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:683",
+      "fuente_backlog": "09_Product_Backlog.md:93",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-DASH-01",
+      "nombre": "Resumen del negocio — Ver indicadores de ventas en tiempo real",
+      "modulo": "DASH",
+      "fuente": "09_Product_Backlog.md:106",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-DASH-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:699",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-DASH-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:700",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-DASH-01/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:701",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:694",
+      "fuente_backlog": "09_Product_Backlog.md:106",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-DASH-02",
+      "nombre": "Resumen del negocio — Ver gráfico de evolución de ventas por día",
+      "modulo": "DASH",
+      "fuente": "09_Product_Backlog.md:113",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-DASH-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:710",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-DASH-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:711",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:705",
+      "fuente_backlog": "09_Product_Backlog.md:113",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-DASH-03",
+      "nombre": "Resumen del negocio – Ver alertas operativas (stock crítico, vencimientos y turnos)",
+      "modulo": "DASH",
+      "fuente": "09_Product_Backlog.md:105",
+      "reglas": [
+        "RN-06",
+        "RN-23"
+      ],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-DASH-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:720",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-DASH-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:721",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-DASH-03/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:722",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-01a",
+        "HU-CAJA-05",
+        "HU-PROD-06"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:715",
+      "fuente_backlog": "09_Product_Backlog.md:105",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-DASH-04",
+      "nombre": "Resumen del negocio – Ver ranking de productos más vendidos",
+      "modulo": "DASH",
+      "fuente": "09_Product_Backlog.md:114",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-DASH-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:731",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-DASH-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:732",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:726",
+      "fuente_backlog": "09_Product_Backlog.md:114",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-DASH-05",
+      "nombre": "Resumen del negocio — Ver solicitudes de reposición pendientes",
+      "modulo": "DASH",
+      "fuente": "09_Product_Backlog.md:115",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-DASH-05/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:741",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-DASH-05/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:742",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-DASH-05/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:743",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-SOL-01"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:736",
+      "fuente_backlog": "09_Product_Backlog.md:115",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-REP-01",
+      "nombre": "Reportes — Consultar reporte analítico de ventas totales por período",
+      "modulo": "REP",
+      "fuente": "09_Product_Backlog.md:107",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-REP-01/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:752",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-01/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:753",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:747",
+      "fuente_backlog": "09_Product_Backlog.md:107",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-REP-02",
+      "nombre": "Reportes – Consultar reporte completo de ranking de productos más vendidos",
+      "modulo": "REP",
+      "fuente": "09_Product_Backlog.md:108",
+      "reglas": [],
+      "actor": "dueño de la bodega",
+      "criterios": [
+        {
+          "id": "HU-REP-02/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:762",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-02/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:763",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-02/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:764",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:757",
+      "fuente_backlog": "09_Product_Backlog.md:108",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-REP-03",
+      "nombre": "Reportes — Ver ventas desglosadas por día",
+      "modulo": "REP",
+      "fuente": "09_Product_Backlog.md:116",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-REP-03/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:773",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-03/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:774",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:768",
+      "fuente_backlog": "09_Product_Backlog.md:116",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-REP-04",
+      "nombre": "Reportes — Ver ventas por método de pago",
+      "modulo": "REP",
+      "fuente": "09_Product_Backlog.md:109",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-REP-04/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:783",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-04/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:784",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c",
+        "HU-VEN-07"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:778",
+      "fuente_backlog": "09_Product_Backlog.md:109",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-REP-05",
+      "nombre": "Reportes – Consultar reporte de productos bajo stock mínimo",
+      "modulo": "REP",
+      "fuente": "09_Product_Backlog.md:104",
+      "reglas": [
+        "RN-06"
+      ],
+      "actor": "administrador o dueño",
+      "criterios": [
+        {
+          "id": "HU-REP-05/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:793",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-05/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:794",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-05/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:795",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-01a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:788",
+      "fuente_backlog": "09_Product_Backlog.md:104",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-REP-06",
+      "nombre": "Reportes — Ver resumen general del inventario",
+      "modulo": "REP",
+      "fuente": "09_Product_Backlog.md:110",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-REP-06/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:804",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-06/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:805",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-01a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:799",
+      "fuente_backlog": "09_Product_Backlog.md:110",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-REP-07",
+      "nombre": "Reportes — Ver margen de ganancia por producto",
+      "modulo": "REP",
+      "fuente": "09_Product_Backlog.md:111",
+      "reglas": [
+        "RN-14",
+        "RN-27",
+        "RN-28"
+      ],
+      "actor": "dueño de la bodega",
+      "criterios": [
+        {
+          "id": "HU-REP-07/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:814",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-07/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:815",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-07/CA-03",
+          "fuente": "08_Historias_de_Usuario.md:816",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-VEN-01c",
+        "HU-INV-01a"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:809",
+      "fuente_backlog": "09_Product_Backlog.md:111",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-REP-08",
+      "nombre": "Reportes — Ver mermas agrupadas por motivo",
+      "modulo": "REP",
+      "fuente": "09_Product_Backlog.md:112",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-REP-08/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:825",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-08/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:826",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-INV-02"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:820",
+      "fuente_backlog": "09_Product_Backlog.md:112",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-REP-09",
+      "nombre": "Reportes — Exportar reportes analíticos de gestión a PDF",
+      "modulo": "REP",
+      "fuente": "09_Product_Backlog.md:117",
+      "reglas": [],
+      "actor": "dueño o administrador",
+      "criterios": [
+        {
+          "id": "HU-REP-09/CA-01",
+          "fuente": "08_Historias_de_Usuario.md:836",
+          "estado": "NO EXAMINADO"
+        },
+        {
+          "id": "HU-REP-09/CA-02",
+          "fuente": "08_Historias_de_Usuario.md:837",
+          "estado": "NO EXAMINADO"
+        }
+      ],
+      "seleccion": "PREVISTO/FUTURO",
+      "dependencias": [
+        "HU-REP-01",
+        "HU-REP-02",
+        "HU-REP-05",
+        "HU-REP-07",
+        "HU-REP-08"
+      ],
+      "fuente_hu": "08_Historias_de_Usuario.md:830",
+      "fuente_backlog": "09_Product_Backlog.md:117",
+      "estado_ejecucion": "NO EXAMINADO",
+      "adicional_declarado": null
+    },
+    {
+      "id": "HU-CLI-01",
+      "modulo": "CLI",
+      "actor": "No detallado",
+      "nombre": "Idea sin CA detallados",
+      "reglas": [],
+      "criterios": [],
+      "fuente_hu": "08_Historias_de_Usuario.md:843",
+      "fuente_backlog": "09_Product_Backlog.md:140",
+      "estado_ejecucion": "NO APLICA: fuera del horizonte; no aprobado",
+      "adicional_declarado": null,
+      "seleccion": "FUERA DEL HORIZONTE",
+      "dependencias": [],
+      "fuente": "09_Product_Backlog.md:140"
+    },
+    {
+      "id": "HU-CLI-02",
+      "modulo": "CLI",
+      "actor": "No detallado",
+      "nombre": "Idea sin CA detallados",
+      "reglas": [],
+      "criterios": [],
+      "fuente_hu": "08_Historias_de_Usuario.md:843",
+      "fuente_backlog": "09_Product_Backlog.md:141",
+      "estado_ejecucion": "NO APLICA: fuera del horizonte; no aprobado",
+      "adicional_declarado": null,
+      "seleccion": "FUERA DEL HORIZONTE",
+      "dependencias": [],
+      "fuente": "09_Product_Backlog.md:141"
+    },
+    {
+      "id": "HU-CLI-03",
+      "modulo": "CLI",
+      "actor": "No detallado",
+      "nombre": "Idea sin CA detallados",
+      "reglas": [],
+      "criterios": [],
+      "fuente_hu": "08_Historias_de_Usuario.md:843",
+      "fuente_backlog": "09_Product_Backlog.md:142",
+      "estado_ejecucion": "NO APLICA: fuera del horizonte; no aprobado",
+      "adicional_declarado": null,
+      "seleccion": "FUERA DEL HORIZONTE",
+      "dependencias": [],
+      "fuente": "09_Product_Backlog.md:142"
+    },
+    {
+      "id": "HU-VEN-02b",
+      "modulo": "VEN",
+      "actor": "No detallado",
+      "nombre": "Idea sin CA detallados",
+      "reglas": [],
+      "criterios": [],
+      "fuente_hu": "08_Historias_de_Usuario.md:843",
+      "fuente_backlog": "09_Product_Backlog.md:143",
+      "estado_ejecucion": "NO APLICA: fuera del horizonte; no aprobado",
+      "adicional_declarado": null,
+      "seleccion": "FUERA DEL HORIZONTE",
+      "dependencias": [],
+      "fuente": "09_Product_Backlog.md:143"
+    },
+    {
+      "id": "HU-VEN-02c",
+      "modulo": "VEN",
+      "actor": "No detallado",
+      "nombre": "Idea sin CA detallados",
+      "reglas": [],
+      "criterios": [],
+      "fuente_hu": "08_Historias_de_Usuario.md:843",
+      "fuente_backlog": "09_Product_Backlog.md:144",
+      "estado_ejecucion": "NO APLICA: fuera del horizonte; no aprobado",
+      "adicional_declarado": null,
+      "seleccion": "FUERA DEL HORIZONTE",
+      "dependencias": [],
+      "fuente": "09_Product_Backlog.md:144"
+    },
+    {
+      "id": "HU-VEN-03",
+      "modulo": "VEN",
+      "actor": "No detallado",
+      "nombre": "Idea sin CA detallados",
+      "reglas": [],
+      "criterios": [],
+      "fuente_hu": "08_Historias_de_Usuario.md:843",
+      "fuente_backlog": "09_Product_Backlog.md:145",
+      "estado_ejecucion": "NO APLICA: fuera del horizonte; no aprobado",
+      "adicional_declarado": null,
+      "seleccion": "FUERA DEL HORIZONTE",
+      "dependencias": [],
+      "fuente": "09_Product_Backlog.md:145"
+    },
+    {
+      "id": "HU-VEN-08",
+      "modulo": "VEN",
+      "actor": "No detallado",
+      "nombre": "Idea sin CA detallados",
+      "reglas": [],
+      "criterios": [],
+      "fuente_hu": "08_Historias_de_Usuario.md:843",
+      "fuente_backlog": "09_Product_Backlog.md:146",
+      "estado_ejecucion": "NO APLICA: fuera del horizonte; no aprobado",
+      "adicional_declarado": null,
+      "seleccion": "FUERA DEL HORIZONTE",
+      "dependencias": [],
+      "fuente": "09_Product_Backlog.md:146"
+    },
+    {
+      "id": "HU-VEN-09",
+      "modulo": "VEN",
+      "actor": "No detallado",
+      "nombre": "Idea sin CA detallados",
+      "reglas": [],
+      "criterios": [],
+      "fuente_hu": "08_Historias_de_Usuario.md:843",
+      "fuente_backlog": "09_Product_Backlog.md:147",
+      "estado_ejecucion": "NO APLICA: fuera del horizonte; no aprobado",
+      "adicional_declarado": null,
+      "seleccion": "FUERA DEL HORIZONTE",
+      "dependencias": [],
+      "fuente": "09_Product_Backlog.md:147"
+    }
+  ],
+  "reglas": [
+    {
+      "id": "RN-01",
+      "nombre": "Control de existencias",
+      "historias": [
+        "HU-INV-01a",
+        "HU-INV-03",
+        "HU-SOL-05a",
+        "HU-SOL-05b"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:13",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-02",
+      "nombre": "Pagos con billetera digital",
+      "historias": [
+        "HU-VEN-07"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:14",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-03",
+      "nombre": "Control de vencimientos",
+      "historias": [
+        "HU-INV-01a",
+        "HU-VEN-01b",
+        "HU-VEN-01c",
+        "HU-PROD-06",
+        "HU-SOL-05a",
+        "HU-SOL-05b"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:15",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-04",
+      "nombre": "Mermas y pérdidas",
+      "historias": [
+        "HU-INV-02"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:16",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-05",
+      "nombre": "Causas de baja",
+      "historias": [
+        "HU-INV-02"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:17",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-06",
+      "nombre": "Umbral de existencias mínimas",
+      "historias": [
+        "HU-PROD-01",
+        "HU-PROD-02",
+        "HU-PROD-04",
+        "HU-SOL-01",
+        "HU-REP-05",
+        "HU-DASH-03"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:18",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-07",
+      "nombre": "Acceso a ventas",
+      "historias": [
+        "HU-VEN-05a",
+        "HU-VEN-05b"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:19",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-08",
+      "nombre": "Anulación de ventas",
+      "historias": [
+        "HU-VEN-06a",
+        "HU-VEN-06b"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:20",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-09",
+      "nombre": "Destino de mercadería",
+      "historias": [
+        "HU-VEN-06c"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:21",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-10",
+      "nombre": "Turno y efectivo de caja",
+      "historias": [
+        "HU-CAJA-01",
+        "HU-CAJA-02",
+        "HU-CAJA-03",
+        "HU-VEN-01b",
+        "HU-VEN-01c",
+        "HU-VEN-06a"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:22",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-11",
+      "nombre": "Movimientos de caja",
+      "historias": [
+        "HU-CAJA-03"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:23",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-12",
+      "nombre": "Cuentas de empleados",
+      "historias": [
+        "HU-USR-02",
+        "HU-USR-03"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:24",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-13",
+      "nombre": "Comprobantes futuros",
+      "historias": [],
+      "fuente": "07_Reglas_de_Negocio.md:25",
+      "estado": "FUERA DEL HORIZONTE"
+    },
+    {
+      "id": "RN-14",
+      "nombre": "Costo de mercadería",
+      "historias": [
+        "HU-INV-01a",
+        "HU-INV-01b",
+        "HU-SOL-05a",
+        "HU-SOL-05b",
+        "HU-REP-07"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:26",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-15",
+      "nombre": "Moneda en caja",
+      "historias": [
+        "HU-CAJA-03"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:27",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-16",
+      "nombre": "Reposición",
+      "historias": [
+        "HU-SOL-03"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:28",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-17",
+      "nombre": "Seguridad de acceso",
+      "historias": [
+        "HU-AUTH-02",
+        "HU-AUTH-05"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:29",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-18",
+      "nombre": "Recuperación de clave",
+      "historias": [
+        "HU-AUTH-05"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:30",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-19",
+      "nombre": "Prioridad de salida",
+      "historias": [
+        "HU-INV-01a",
+        "HU-VEN-01c",
+        "HU-SOL-05a",
+        "HU-SOL-05b"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:31",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-20",
+      "nombre": "Detalle de pérdidas",
+      "historias": [
+        "HU-INV-02"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:32",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-21",
+      "nombre": "Identificación tributaria futura",
+      "historias": [],
+      "fuente": "07_Reglas_de_Negocio.md:33",
+      "estado": "FUERA DEL HORIZONTE"
+    },
+    {
+      "id": "RN-22",
+      "nombre": "Seguridad en mostrador",
+      "historias": [
+        "HU-VEN-01a"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:34",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-23",
+      "nombre": "Inactividad de caja",
+      "historias": [
+        "HU-CAJA-07",
+        "HU-DASH-03"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:35",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-24",
+      "nombre": "Seguridad de contraseñas",
+      "historias": [
+        "HU-USR-02",
+        "HU-AUTH-05"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:36",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-25",
+      "nombre": "Registro de venta",
+      "historias": [
+        "HU-VEN-01c"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:37",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-26",
+      "nombre": "Constancia interna",
+      "historias": [
+        "HU-VEN-02a"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:38",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-27",
+      "nombre": "Cálculo de IGV",
+      "historias": [
+        "HU-PROD-02",
+        "HU-VEN-01b",
+        "HU-VEN-01c",
+        "HU-VEN-02a",
+        "HU-REP-07"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:39",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-28",
+      "nombre": "Costo histórico de venta",
+      "historias": [
+        "HU-VEN-01c",
+        "HU-REP-07"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:40",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-29",
+      "nombre": "Autorización de R1-PMV",
+      "historias": [
+        "HU-AUTH-01",
+        "HU-AUTH-03",
+        "HU-PROD-02",
+        "HU-INV-01a",
+        "HU-CAJA-01",
+        "HU-VEN-01b",
+        "HU-VEN-01c",
+        "HU-VEN-02a",
+        "HU-CAJA-02"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:41",
+      "estado": "NO EXAMINADO"
+    },
+    {
+      "id": "RN-30",
+      "nombre": "Venta en preparación",
+      "historias": [
+        "HU-AUTH-03",
+        "HU-VEN-01b",
+        "HU-VEN-01c",
+        "HU-CAJA-02"
+      ],
+      "fuente": "07_Reglas_de_Negocio.md:42",
+      "estado": "NO EXAMINADO"
+    }
+  ],
+  "tareas": [
+    {
+      "id": "S1-ARQ-01",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoR; DT-01 a DT-15",
+      "dependencias": "Ninguna",
+      "fuente": "16_Task_Breakdown.md:57",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-PLAT-01",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoD-5,8",
+      "dependencias": "Ninguna",
+      "fuente": "16_Task_Breakdown.md:58",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CI-01",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoD-5,6,8",
+      "dependencias": "[H] S1-PLAT-01",
+      "fuente": "16_Task_Breakdown.md:59",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-DB-01",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "RN-01, RN-03, RN-10, RN-12, RN-14, RN-19, RN-25, RN-26, RN-27, RN-28, RN-29",
+      "dependencias": "[H] S1-ARQ-01",
+      "fuente": "16_Task_Breakdown.md:60",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-DB-02",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoD-3; NFR-01, NFR-02, NFR-08",
+      "dependencias": "[H] S1-DB-01",
+      "fuente": "16_Task_Breakdown.md:61",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-DB-03",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoD-3; RN-10, RN-12, RN-25, RN-26",
+      "dependencias": "[H] S1-DB-02",
+      "fuente": "16_Task_Breakdown.md:62",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-DB-04",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "HU-AUTH-01; HU-PROD-02; HU-CAJA-01",
+      "dependencias": "[H] S1-DB-02; [I] S1-SEC-02",
+      "fuente": "16_Task_Breakdown.md:63",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-DB-05",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoD-6,7; NFR-05",
+      "dependencias": "[H] S1-DB-04",
+      "fuente": "16_Task_Breakdown.md:64",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-SEC-01",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoD-5; NFR-08, NFR-09",
+      "dependencias": "[H] S1-ARQ-01",
+      "fuente": "16_Task_Breakdown.md:65",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-SEC-02",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoD-5; HU-AUTH-01, HU-AUTH-03; RN-29; NFR-03, NFR-09",
+      "dependencias": "[H] S1-SEC-01",
+      "fuente": "16_Task_Breakdown.md:66",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-ENV-01",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "Puerta de piloto; NFR-06, NFR-07, NFR-08, NFR-09",
+      "dependencias": "[H] S1-PLAT-01, S1-DB-02, S1-SEC-01; [I] S1-CI-01",
+      "fuente": "16_Task_Breakdown.md:67",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-QA-DB-01",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoD-3,6",
+      "dependencias": "[H] S1-DB-03, S1-DB-04, S1-DB-05, S1-CI-01",
+      "fuente": "16_Task_Breakdown.md:68",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-QA-DB-02",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "DoD-4; RN-25",
+      "dependencias": "[H] S1-INV01A-TXDB, S1-VEN01C-TXDB, S1-CAJA02-SVC",
+      "fuente": "16_Task_Breakdown.md:69",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-QA-DB-03",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "RN-01, RN-10, RN-19, RN-25, RN-26",
+      "dependencias": "[H] S1-CAJA01-CONC, S1-VEN01C-IDEM, S1-CAJA02-SVC; [I] S1-INV01A-TXDB",
+      "fuente": "16_Task_Breakdown.md:70",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-OPS-DB-01",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "Puerta de piloto; NFR-10",
+      "dependencias": "[H] S1-ENV-01, S1-DB-05",
+      "fuente": "16_Task_Breakdown.md:71",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-OPS-DB-02",
+      "tipo": "Task",
+      "padre": "TRANSVERSAL",
+      "referencias": "Puerta de piloto; NFR-10",
+      "dependencias": "[H] S1-OPS-DB-01, S1-QA-DB-01; [I] nueve Stories integradas",
+      "fuente": "16_Task_Breakdown.md:72",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH01-UI",
+      "tipo": "Subtask / UI",
+      "padre": "HU-AUTH-01",
+      "referencias": "CA1-4; NFR-06",
+      "dependencias": "[H] S1-ARQ-01, S1-PLAT-01; [I] S1-AUTH01-SVC",
+      "fuente": "16_Task_Breakdown.md:81",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH01-SVC",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-AUTH-01",
+      "referencias": "CA1-3; RN-12; NFR-03, NFR-09",
+      "dependencias": "[H] S1-DB-02, S1-SEC-02; [I] S1-DB-04",
+      "fuente": "16_Task_Breakdown.md:82",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH01-AUTHZ",
+      "tipo": "Subtask / seguridad",
+      "padre": "HU-AUTH-01",
+      "referencias": "CA1,4; RN-29; NFR-03",
+      "dependencias": "[H] S1-AUTH01-SVC, S1-SEC-02",
+      "fuente": "16_Task_Breakdown.md:83",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH01-AUTO",
+      "tipo": "Subtask / QA automática",
+      "padre": "HU-AUTH-01",
+      "referencias": "CA1-4",
+      "dependencias": "[H] S1-AUTH01-SVC, S1-AUTH01-AUTHZ, S1-CI-01",
+      "fuente": "16_Task_Breakdown.md:84",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH01-MAN",
+      "tipo": "Subtask / QA manual",
+      "padre": "HU-AUTH-01",
+      "referencias": "CA1-4",
+      "dependencias": "[H] S1-AUTH01-UI, S1-AUTH01-AUTO",
+      "fuente": "16_Task_Breakdown.md:85",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH01-REV",
+      "tipo": "Subtask / revisión independiente",
+      "padre": "HU-AUTH-01",
+      "referencias": "CA1-4; DoD",
+      "dependencias": "[H] S1-AUTH01-MAN",
+      "fuente": "16_Task_Breakdown.md:86",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH03-UI",
+      "tipo": "Subtask / UI",
+      "padre": "HU-AUTH-03",
+      "referencias": "CA1-3; RN-30",
+      "dependencias": "[H] S1-AUTH01-UI; [I] S1-AUTH03-SVC",
+      "fuente": "16_Task_Breakdown.md:93",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH03-SVC",
+      "tipo": "Subtask / servicio-seguridad",
+      "padre": "HU-AUTH-03",
+      "referencias": "CA1-3; RN-29, RN-30; NFR-03, NFR-09",
+      "dependencias": "[H] S1-AUTH01-SVC, S1-AUTH01-AUTHZ",
+      "fuente": "16_Task_Breakdown.md:94",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH03-AUTO",
+      "tipo": "Subtask / QA automática",
+      "padre": "HU-AUTH-03",
+      "referencias": "CA1-3",
+      "dependencias": "[H] S1-AUTH03-UI, S1-AUTH03-SVC, S1-CI-01",
+      "fuente": "16_Task_Breakdown.md:95",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH03-MAN",
+      "tipo": "Subtask / QA manual",
+      "padre": "HU-AUTH-03",
+      "referencias": "CA1-3",
+      "dependencias": "[H] S1-AUTH03-AUTO",
+      "fuente": "16_Task_Breakdown.md:96",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-AUTH03-REV",
+      "tipo": "Subtask / revisión independiente",
+      "padre": "HU-AUTH-03",
+      "referencias": "CA1-3; DoD",
+      "dependencias": "[H] S1-AUTH03-MAN",
+      "fuente": "16_Task_Breakdown.md:97",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-PROD02-UI",
+      "tipo": "Subtask / UI",
+      "padre": "HU-PROD-02",
+      "referencias": "CA1-5; RN-06, RN-27",
+      "dependencias": "[H] S1-ARQ-01; [I] S1-PROD02-SVC",
+      "fuente": "16_Task_Breakdown.md:104",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-PROD02-SVC",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-PROD-02",
+      "referencias": "CA1-5; RN-06, RN-27, RN-29",
+      "dependencias": "[H] S1-DB-03; [I] S1-AUTH01-AUTHZ",
+      "fuente": "16_Task_Breakdown.md:105",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-PROD02-AUTO",
+      "tipo": "Subtask / QA automática",
+      "padre": "HU-PROD-02",
+      "referencias": "CA1-5",
+      "dependencias": "[H] S1-PROD02-SVC, S1-CI-01",
+      "fuente": "16_Task_Breakdown.md:106",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-PROD02-MAN",
+      "tipo": "Subtask / QA manual",
+      "padre": "HU-PROD-02",
+      "referencias": "CA1-5",
+      "dependencias": "[H] S1-PROD02-UI, S1-PROD02-AUTO; [I] S1-DB-04",
+      "fuente": "16_Task_Breakdown.md:107",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-PROD02-REV",
+      "tipo": "Subtask / revisión independiente",
+      "padre": "HU-PROD-02",
+      "referencias": "CA1-5; DoD",
+      "dependencias": "[H] S1-PROD02-MAN",
+      "fuente": "16_Task_Breakdown.md:108",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-INV01A-UI",
+      "tipo": "Subtask / UI",
+      "padre": "HU-INV-01a",
+      "referencias": "CA1-5",
+      "dependencias": "[H] S1-ARQ-01; [I] S1-PROD02-UI, S1-INV01A-VALID",
+      "fuente": "16_Task_Breakdown.md:115",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-INV01A-VALID",
+      "tipo": "Subtask / servicio",
+      "padre": "HU-INV-01a",
+      "referencias": "CA1-3; RN-01, RN-03, RN-29; NFR-03",
+      "dependencias": "[H] S1-DB-03; [I] S1-PROD02-SVC, S1-AUTH01-AUTHZ",
+      "fuente": "16_Task_Breakdown.md:116",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-INV01A-TXDB",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-INV-01a",
+      "referencias": "CA1-5; RN-01, RN-14, RN-19",
+      "dependencias": "[H] S1-DB-03, S1-INV01A-VALID; [I] S1-PROD02-SVC",
+      "fuente": "16_Task_Breakdown.md:117",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-INV01A-AUTO",
+      "tipo": "Subtask / QA automática",
+      "padre": "HU-INV-01a",
+      "referencias": "CA1-5",
+      "dependencias": "[H] S1-INV01A-TXDB, S1-CI-01",
+      "fuente": "16_Task_Breakdown.md:118",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-INV01A-MAN",
+      "tipo": "Subtask / QA manual",
+      "padre": "HU-INV-01a",
+      "referencias": "CA1-5",
+      "dependencias": "[H] S1-INV01A-UI, S1-INV01A-AUTO",
+      "fuente": "16_Task_Breakdown.md:119",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-INV01A-REV",
+      "tipo": "Subtask / revisión independiente",
+      "padre": "HU-INV-01a",
+      "referencias": "CA1-5; DoD",
+      "dependencias": "[H] S1-INV01A-MAN; [I] S1-QA-DB-02",
+      "fuente": "16_Task_Breakdown.md:120",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA01-UI",
+      "tipo": "Subtask / UI",
+      "padre": "HU-CAJA-01",
+      "referencias": "CA1-4; RN-10, RN-29",
+      "dependencias": "[H] S1-ARQ-01; [I] S1-CAJA01-SVC",
+      "fuente": "16_Task_Breakdown.md:127",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA01-SVC",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-CAJA-01",
+      "referencias": "CA1,2,4; RN-10, RN-29",
+      "dependencias": "[H] S1-DB-03; [I] S1-AUTH01-AUTHZ",
+      "fuente": "16_Task_Breakdown.md:128",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA01-CONC",
+      "tipo": "Subtask / BD-concurrencia",
+      "padre": "HU-CAJA-01",
+      "referencias": "CA3; RN-10",
+      "dependencias": "[H] S1-CAJA01-SVC",
+      "fuente": "16_Task_Breakdown.md:129",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA01-AUTO",
+      "tipo": "Subtask / QA automática",
+      "padre": "HU-CAJA-01",
+      "referencias": "CA1-4",
+      "dependencias": "[H] S1-CAJA01-CONC, S1-CI-01",
+      "fuente": "16_Task_Breakdown.md:130",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA01-MAN",
+      "tipo": "Subtask / QA manual",
+      "padre": "HU-CAJA-01",
+      "referencias": "CA1-4",
+      "dependencias": "[H] S1-CAJA01-UI, S1-CAJA01-AUTO",
+      "fuente": "16_Task_Breakdown.md:131",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA01-REV",
+      "tipo": "Subtask / revisión independiente",
+      "padre": "HU-CAJA-01",
+      "referencias": "CA1-4; DoD",
+      "dependencias": "[H] S1-CAJA01-MAN",
+      "fuente": "16_Task_Breakdown.md:132",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01B-UI",
+      "tipo": "Subtask / UI",
+      "padre": "HU-VEN-01b",
+      "referencias": "CA2,3,5; RN-27, RN-30",
+      "dependencias": "[H] S1-ARQ-01; [I] S1-PROD02-UI, S1-VEN01B-SVC",
+      "fuente": "16_Task_Breakdown.md:139",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01B-SVC",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-VEN-01b",
+      "referencias": "CA1-5; RN-03, RN-27, RN-29, RN-30",
+      "dependencias": "[H] S1-DB-03; [I] S1-AUTH01-AUTHZ, S1-INV01A-TXDB, S1-CAJA01-SVC",
+      "fuente": "16_Task_Breakdown.md:140",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01B-AUTO",
+      "tipo": "Subtask / QA automática",
+      "padre": "HU-VEN-01b",
+      "referencias": "CA1-5; NFR-05",
+      "dependencias": "[H] S1-VEN01B-SVC, S1-CI-01; [I] S1-ENV-01",
+      "fuente": "16_Task_Breakdown.md:141",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01B-MAN",
+      "tipo": "Subtask / QA manual",
+      "padre": "HU-VEN-01b",
+      "referencias": "CA1-5",
+      "dependencias": "[H] S1-VEN01B-UI, S1-VEN01B-AUTO; [I] HU-INV-01a y HU-CAJA-01 integradas",
+      "fuente": "16_Task_Breakdown.md:142",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01B-REV",
+      "tipo": "Subtask / revisión independiente",
+      "padre": "HU-VEN-01b",
+      "referencias": "CA1-5; DoD",
+      "dependencias": "[H] S1-VEN01B-MAN",
+      "fuente": "16_Task_Breakdown.md:143",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01C-UI",
+      "tipo": "Subtask / UI",
+      "padre": "HU-VEN-01c",
+      "referencias": "CA1,2,5",
+      "dependencias": "[H] S1-VEN01B-UI; [I] S1-VEN01C-PAY",
+      "fuente": "16_Task_Breakdown.md:150",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01C-PAY",
+      "tipo": "Subtask / servicio",
+      "padre": "HU-VEN-01c",
+      "referencias": "CA1,2,3; RN-25, RN-27, RN-29, RN-30; NFR-03",
+      "dependencias": "[H] S1-DB-03; [I] S1-VEN01B-SVC, S1-CAJA01-SVC, S1-AUTH01-AUTHZ",
+      "fuente": "16_Task_Breakdown.md:151",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01C-FEFO",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-VEN-01c",
+      "referencias": "CA3; RN-03, RN-19",
+      "dependencias": "[H] S1-DB-03; [I] S1-INV01A-TXDB",
+      "fuente": "16_Task_Breakdown.md:152",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01C-TXDB",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-VEN-01c",
+      "referencias": "CA3,4,6; RN-25, RN-28",
+      "dependencias": "[H] S1-DB-03; [I] S1-VEN01C-PAY, S1-VEN01C-FEFO",
+      "fuente": "16_Task_Breakdown.md:153",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01C-IDEM",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-VEN-01c",
+      "referencias": "CA4,5; RN-25, RN-26",
+      "dependencias": "[H] S1-VEN01C-TXDB",
+      "fuente": "16_Task_Breakdown.md:154",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01C-AUTO",
+      "tipo": "Subtask / QA automática",
+      "padre": "HU-VEN-01c",
+      "referencias": "CA1-6; NFR-05",
+      "dependencias": "[H] S1-VEN01C-PAY, S1-VEN01C-FEFO, S1-VEN01C-TXDB, S1-VEN01C-IDEM, S1-CI-01; [I] S1-ENV-01",
+      "fuente": "16_Task_Breakdown.md:155",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01C-MAN",
+      "tipo": "Subtask / QA manual",
+      "padre": "HU-VEN-01c",
+      "referencias": "CA1-6",
+      "dependencias": "[H] S1-VEN01C-UI, S1-VEN01C-AUTO; [I] S1-QA-DB-03, HU-VEN-01b integrada",
+      "fuente": "16_Task_Breakdown.md:156",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN01C-REV",
+      "tipo": "Subtask / revisión independiente",
+      "padre": "HU-VEN-01c",
+      "referencias": "CA1-6; DoD",
+      "dependencias": "[H] S1-VEN01C-MAN; [I] S1-QA-DB-02",
+      "fuente": "16_Task_Breakdown.md:157",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN02A-UI",
+      "tipo": "Subtask / UI",
+      "padre": "HU-VEN-02a",
+      "referencias": "CA1-3; RN-26, RN-27",
+      "dependencias": "[H] S1-ARQ-01; [I] S1-VEN02A-SVC",
+      "fuente": "16_Task_Breakdown.md:164",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN02A-SVC",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-VEN-02a",
+      "referencias": "CA1,2,4; RN-26, RN-27, RN-28",
+      "dependencias": "[H] S1-DB-03; [I] S1-VEN01C-TXDB, S1-VEN01C-IDEM",
+      "fuente": "16_Task_Breakdown.md:165",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN02A-AUTO",
+      "tipo": "Subtask / QA automática",
+      "padre": "HU-VEN-02a",
+      "referencias": "CA1-4",
+      "dependencias": "[H] S1-VEN02A-UI, S1-VEN02A-SVC, S1-CI-01",
+      "fuente": "16_Task_Breakdown.md:166",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN02A-MAN",
+      "tipo": "Subtask / QA manual",
+      "padre": "HU-VEN-02a",
+      "referencias": "CA1-4",
+      "dependencias": "[H] S1-VEN02A-AUTO; [I] HU-VEN-01c integrada",
+      "fuente": "16_Task_Breakdown.md:167",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-VEN02A-REV",
+      "tipo": "Subtask / revisión independiente",
+      "padre": "HU-VEN-02a",
+      "referencias": "CA1-4; DoD",
+      "dependencias": "[H] S1-VEN02A-MAN",
+      "fuente": "16_Task_Breakdown.md:168",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA02-UI",
+      "tipo": "Subtask / UI",
+      "padre": "HU-CAJA-02",
+      "referencias": "CA1-4; RN-10, RN-30",
+      "dependencias": "[H] S1-CAJA01-UI; [I] S1-CAJA02-SVC",
+      "fuente": "16_Task_Breakdown.md:175",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA02-SVC",
+      "tipo": "Subtask / servicio-BD",
+      "padre": "HU-CAJA-02",
+      "referencias": "CA1-5; RN-10, RN-25, RN-29, RN-30; NFR-03",
+      "dependencias": "[H] S1-DB-03; [I] S1-CAJA01-CONC, S1-VEN01C-TXDB, S1-AUTH01-AUTHZ",
+      "fuente": "16_Task_Breakdown.md:176",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA02-AUTO",
+      "tipo": "Subtask / QA automática",
+      "padre": "HU-CAJA-02",
+      "referencias": "CA1-5",
+      "dependencias": "[H] S1-CAJA02-SVC, S1-CI-01",
+      "fuente": "16_Task_Breakdown.md:177",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA02-MAN",
+      "tipo": "Subtask / QA manual",
+      "padre": "HU-CAJA-02",
+      "referencias": "CA1-5",
+      "dependencias": "[H] S1-CAJA02-UI, S1-CAJA02-AUTO; [I] S1-QA-DB-03, HU-VEN-01c integrada",
+      "fuente": "16_Task_Breakdown.md:178",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    },
+    {
+      "id": "S1-CAJA02-REV",
+      "tipo": "Subtask / revisión independiente",
+      "padre": "HU-CAJA-02",
+      "referencias": "CA1-5; DoD",
+      "dependencias": "[H] S1-CAJA02-MAN; [I] S1-QA-DB-02",
+      "fuente": "16_Task_Breakdown.md:179",
+      "estado": "PLAN HISTORICO / NO EXAMINADO"
+    }
+  ],
+  "matriz_historica_r1": [
+    {
+      "criterio": "HU-AUTH-01/CA-01",
+      "pruebas_planificadas": [
+        "AT-AUTH01-01",
+        "MT-AUTH01-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-AUTH01-CA01"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:60",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-AUTH-01/CA-02",
+      "pruebas_planificadas": [
+        "AT-AUTH01-02",
+        "ST-AUTH01-01",
+        "MT-AUTH01-02"
+      ],
+      "evidencias_planificadas": [
+        "EV-AUTH01-CA02"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:61",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-AUTH-01/CA-03",
+      "pruebas_planificadas": [
+        "AT-AUTH01-03",
+        "ST-AUTH01-02",
+        "MT-AUTH01-03"
+      ],
+      "evidencias_planificadas": [
+        "EV-AUTH01-CA03"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:62",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-AUTH-01/CA-04",
+      "pruebas_planificadas": [
+        "AT-AUTH01-04",
+        "ST-AUTH01-03",
+        "MT-AUTH01-04"
+      ],
+      "evidencias_planificadas": [
+        "EV-AUTH01-CA04"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:63",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-AUTH-03/CA-01",
+      "pruebas_planificadas": [
+        "AT-AUTH03-01",
+        "MT-AUTH03-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-AUTH03-CA01"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:69",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-AUTH-03/CA-02",
+      "pruebas_planificadas": [
+        "AT-AUTH03-02",
+        "MT-AUTH03-02"
+      ],
+      "evidencias_planificadas": [
+        "EV-AUTH03-CA02"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:70",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-AUTH-03/CA-03",
+      "pruebas_planificadas": [
+        "ST-AUTH03-01",
+        "MT-AUTH03-03"
+      ],
+      "evidencias_planificadas": [
+        "EV-AUTH03-CA03"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:71",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-PROD-02/CA-01",
+      "pruebas_planificadas": [
+        "AT-PROD02-01",
+        "MT-PROD02-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-PROD02-CA01"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:77",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-PROD-02/CA-02",
+      "pruebas_planificadas": [
+        "AT-PROD02-02",
+        "MT-PROD02-02"
+      ],
+      "evidencias_planificadas": [
+        "EV-PROD02-CA02"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:78",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-PROD-02/CA-03",
+      "pruebas_planificadas": [
+        "AT-PROD02-03",
+        "CT-PROD02-01",
+        "MT-PROD02-03"
+      ],
+      "evidencias_planificadas": [
+        "EV-PROD02-CA03"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:79",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-PROD-02/CA-04",
+      "pruebas_planificadas": [
+        "AT-PROD02-04",
+        "MT-PROD02-04"
+      ],
+      "evidencias_planificadas": [
+        "EV-PROD02-CA04"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:80",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-PROD-02/CA-05",
+      "pruebas_planificadas": [
+        "AT-PROD02-05",
+        "ST-PROD02-01",
+        "MT-PROD02-05"
+      ],
+      "evidencias_planificadas": [
+        "EV-PROD02-CA05"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:81",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-INV-01a/CA-01",
+      "pruebas_planificadas": [
+        "AT-INV01A-01",
+        "ST-INV01A-01",
+        "CT-CONC-01",
+        "MT-INV01A-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-INV01A-CA01"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:87",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-INV-01a/CA-02",
+      "pruebas_planificadas": [
+        "AT-INV01A-02",
+        "AT-TIME-01",
+        "MT-INV01A-02"
+      ],
+      "evidencias_planificadas": [
+        "EV-INV01A-CA02"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:88",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-INV-01a/CA-03",
+      "pruebas_planificadas": [
+        "AT-INV01A-03",
+        "CT-ROLLBACK-01",
+        "MT-INV01A-03"
+      ],
+      "evidencias_planificadas": [
+        "EV-INV01A-CA03"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:89",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-INV-01a/CA-04",
+      "pruebas_planificadas": [
+        "AT-INV01A-04",
+        "MT-INV01A-04"
+      ],
+      "evidencias_planificadas": [
+        "EV-INV01A-CA04"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:90",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-INV-01a/CA-05",
+      "pruebas_planificadas": [
+        "AT-INV01A-05",
+        "MT-INV01A-05"
+      ],
+      "evidencias_planificadas": [
+        "EV-INV01A-CA05"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:91",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-CAJA-01/CA-01",
+      "pruebas_planificadas": [
+        "AT-CAJA01-01",
+        "ST-CAJA01-01",
+        "MT-CAJA01-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-CAJA01-CA01"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:97",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-CAJA-01/CA-02",
+      "pruebas_planificadas": [
+        "AT-CAJA01-02",
+        "MT-CAJA01-02"
+      ],
+      "evidencias_planificadas": [
+        "EV-CAJA01-CA02"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:98",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-CAJA-01/CA-03",
+      "pruebas_planificadas": [
+        "CT-CONC-02",
+        "MT-CAJA01-03"
+      ],
+      "evidencias_planificadas": [
+        "EV-CAJA01-CA03"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:99",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-CAJA-01/CA-04",
+      "pruebas_planificadas": [
+        "AT-CAJA01-03",
+        "ST-CAJA01-01",
+        "MT-CAJA01-04"
+      ],
+      "evidencias_planificadas": [
+        "EV-CAJA01-CA04"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:100",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-01",
+      "pruebas_planificadas": [
+        "AT-VEN01B-01",
+        "ST-VEN01B-01",
+        "MT-VEN01B-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01B-CA01"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:106",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-02",
+      "pruebas_planificadas": [
+        "AT-VEN01B-02",
+        "MT-VEN01B-02",
+        "PT-SEARCH-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01B-CA02"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:107",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-03",
+      "pruebas_planificadas": [
+        "AT-VEN01B-03",
+        "MT-VEN01B-03"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01B-CA03"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:108",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-04",
+      "pruebas_planificadas": [
+        "AT-VEN01B-04",
+        "AT-TIME-02",
+        "MT-VEN01B-04"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01B-CA04"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:109",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01b/CA-05",
+      "pruebas_planificadas": [
+        "AT-VEN01B-05",
+        "MT-VEN01B-05",
+        "AT-CAJA02-04"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01B-CA05"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:110",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-01",
+      "pruebas_planificadas": [
+        "AT-VEN01C-01",
+        "MT-VEN01C-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01C-CA01"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:116",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-02",
+      "pruebas_planificadas": [
+        "AT-VEN01C-02",
+        "MT-VEN01C-02"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01C-CA02"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:117",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-03",
+      "pruebas_planificadas": [
+        "AT-VEN01C-03",
+        "ST-VEN01C-01",
+        "CT-CONC-03",
+        "MT-VEN01C-03"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01C-CA03"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:118",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-04",
+      "pruebas_planificadas": [
+        "CT-ROLLBACK-02",
+        "PT-CHECKOUT-01",
+        "MT-VEN01C-04"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01C-CA04"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:119",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-05",
+      "pruebas_planificadas": [
+        "AT-VEN01C-04",
+        "CT-CONC-04",
+        "MT-VEN01C-05"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01C-CA05"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:120",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-01c/CA-06",
+      "pruebas_planificadas": [
+        "AT-VEN01C-05",
+        "MT-VEN01C-06"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN01C-CA06"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:121",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-01",
+      "pruebas_planificadas": [
+        "AT-VEN02A-01",
+        "MT-VEN02A-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN02A-CA01"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:127",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-02",
+      "pruebas_planificadas": [
+        "AT-VEN02A-02",
+        "ST-VEN02A-01",
+        "MT-VEN02A-02"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN02A-CA02"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:128",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-03",
+      "pruebas_planificadas": [
+        "AT-VEN02A-03",
+        "MT-VEN02A-03"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN02A-CA03"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:129",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-VEN-02a/CA-04",
+      "pruebas_planificadas": [
+        "AT-VEN02A-04",
+        "ST-VEN02A-02",
+        "MT-VEN02A-04"
+      ],
+      "evidencias_planificadas": [
+        "EV-VEN02A-CA04"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:130",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-01",
+      "pruebas_planificadas": [
+        "AT-CAJA02-01",
+        "ST-CAJA02-01",
+        "MT-CAJA02-01"
+      ],
+      "evidencias_planificadas": [
+        "EV-CAJA02-CA01"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:136",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-02",
+      "pruebas_planificadas": [
+        "AT-CAJA02-02",
+        "MT-CAJA02-02"
+      ],
+      "evidencias_planificadas": [
+        "EV-CAJA02-CA02"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:137",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-03",
+      "pruebas_planificadas": [
+        "AT-CAJA02-03",
+        "CT-CONC-05",
+        "MT-CAJA02-03"
+      ],
+      "evidencias_planificadas": [
+        "EV-CAJA02-CA03"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:138",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-04",
+      "pruebas_planificadas": [
+        "AT-CAJA02-04",
+        "CT-CONC-05",
+        "MT-CAJA02-04"
+      ],
+      "evidencias_planificadas": [
+        "EV-CAJA02-CA04"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:139",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    },
+    {
+      "criterio": "HU-CAJA-02/CA-05",
+      "pruebas_planificadas": [
+        "AT-CAJA02-05",
+        "CT-CONC-02",
+        "MT-CAJA02-05"
+      ],
+      "evidencias_planificadas": [
+        "EV-CAJA02-CA05"
+      ],
+      "fuente": "03_Matriz_de_Trazabilidad_y_Pruebas.md:140",
+      "estado": "NO EJECUTADO EN ETAPA 00"
+    }
+  ]
+}

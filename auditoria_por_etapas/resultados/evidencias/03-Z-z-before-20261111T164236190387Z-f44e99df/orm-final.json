@@ -1,0 +1,254 @@
+{
+  "catalog.Category": [
+    {
+      "id": "0bb2481d-a030-4f36-8523-0d0c77fcfb1a",
+      "name": "Suspendida",
+      "name_normalized": "suspendida",
+      "is_active": false
+    },
+    {
+      "id": "1ff870ec-a1d3-408b-b4bb-5e06ae76bd31",
+      "name": "Productos enlatados",
+      "name_normalized": "productos enlatados",
+      "is_active": true
+    },
+    {
+      "id": "3c021004-cad8-4f1f-9e5a-4b561cb24068",
+      "name": "Higiene",
+      "name_normalized": "higiene",
+      "is_active": true
+    }
+  ],
+  "catalog.Product": [
+    {
+      "id": "023505ac-3635-4559-8b50-3246bf5b857c",
+      "name": "Interno Z",
+      "barcode": "Z01NUEVO02",
+      "category_id": "3c021004-cad8-4f1f-9e5a-4b561cb24068",
+      "sale_price": "4.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "5ad284b2-759f-4089-a504-4b29a3dedc76",
+      "name": "Anterior Z1",
+      "barcode": "012345678905",
+      "category_id": "3c021004-cad8-4f1f-9e5a-4b561cb24068",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "a9b3ca0e-82ab-4bfc-b929-c4e148a2dffb",
+      "name": "Anterior Z2",
+      "barcode": "0012345678905",
+      "category_id": "3c021004-cad8-4f1f-9e5a-4b561cb24068",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    },
+    {
+      "id": "fa9bc492-aeb1-4d15-82a5-94002fe1ccd7",
+      "name": "Anterior Z3",
+      "barcode": "4006381333931",
+      "category_id": "3c021004-cad8-4f1f-9e5a-4b561cb24068",
+      "sale_price": "3.00",
+      "minimum_stock": 10,
+      "unit": "UND",
+      "controls_expiration": true,
+      "is_active": true
+    }
+  ],
+  "inventory.Lot": [
+    {
+      "id": "035849d2-12ed-4ae0-8a58-99c2c56d4f46",
+      "product_id": "a9b3ca0e-82ab-4bfc-b929-c4e148a2dffb",
+      "available_quantity": 5,
+      "initial_quantity": 6
+    },
+    {
+      "id": "56d87ad0-851f-4874-80a6-52a98ef754e9",
+      "product_id": "5ad284b2-759f-4089-a504-4b29a3dedc76",
+      "available_quantity": 4,
+      "initial_quantity": 5
+    },
+    {
+      "id": "abe18ca4-e0de-43fe-b41f-9c9e43d1c404",
+      "product_id": "fa9bc492-aeb1-4d15-82a5-94002fe1ccd7",
+      "available_quantity": 6,
+      "initial_quantity": 7
+    }
+  ],
+  "inventory.InitialInventoryLoad": [
+    {
+      "id": "32c67e0a-fdb0-41fc-8d29-81d60be7fa62",
+      "product_id": "fa9bc492-aeb1-4d15-82a5-94002fe1ccd7"
+    },
+    {
+      "id": "c14dc636-feb6-4590-8176-20d84b087098",
+      "product_id": "5ad284b2-759f-4089-a504-4b29a3dedc76"
+    },
+    {
+      "id": "ee360dc6-3c3c-47c5-91c5-46418ad78e8f",
+      "product_id": "a9b3ca0e-82ab-4bfc-b929-c4e148a2dffb"
+    }
+  ],
+  "cash.CashShift": [
+    {
+      "id": "c29c61f5-2f7f-4d9e-89ef-7e3a9efd00a7",
+      "status": "OPEN",
+      "opening_amount": "50.00"
+    }
+  ],
+  "sales.Sale": [
+    {
+      "id": "47f3748a-8a1d-4220-9af2-39fa64271f4c",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    },
+    {
+      "id": "4e3d4b84-3b2c-4df9-93b7-ccb1221ed380",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    },
+    {
+      "id": "e795f4eb-3a0e-448b-85cf-08e0a63fa253",
+      "total_amount": "3.00",
+      "cash_received": "5.00",
+      "change_given": "2.00"
+    }
+  ],
+  "sales.SaleLine": [
+    {
+      "id": "3768bec7-833d-43a6-acb0-5a90e6ccf3cc",
+      "product_id": "a9b3ca0e-82ab-4bfc-b929-c4e148a2dffb",
+      "product_snapshot_name": "Anterior Z2",
+      "product_snapshot_barcode": "0012345678905",
+      "unit_price": "3.00",
+      "quantity": 1
+    },
+    {
+      "id": "8ce303cc-ed10-4105-82bc-957532362b65",
+      "product_id": "fa9bc492-aeb1-4d15-82a5-94002fe1ccd7",
+      "product_snapshot_name": "Anterior Z3",
+      "product_snapshot_barcode": "4006381333931",
+      "unit_price": "3.00",
+      "quantity": 1
+    },
+    {
+      "id": "aa86d295-984c-4813-ae0a-2723b3d5f773",
+      "product_id": "5ad284b2-759f-4089-a504-4b29a3dedc76",
+      "product_snapshot_name": "Anterior Z1",
+      "product_snapshot_barcode": "012345678905",
+      "unit_price": "3.00",
+      "quantity": 1
+    }
+  ],
+  "sales.SaleDraft": [
+    {
+      "id": "1ff7f9d2-c12b-4f49-93ef-49e706ef4894",
+      "status": "DISCARDED"
+    },
+    {
+      "id": "329d7b04-5a72-45f2-b977-c6dc463928b9",
+      "status": "DISCARDED"
+    },
+    {
+      "id": "8bfdd86b-8685-47b5-9807-287a13af627b",
+      "status": "DISCARDED"
+    }
+  ],
+  "sales.SaleDraftLine": [
+    {
+      "id": "02eeffff-30cf-48f3-a959-17c19ac48cdf",
+      "draft_id": "8bfdd86b-8685-47b5-9807-287a13af627b",
+      "product_id": "a9b3ca0e-82ab-4bfc-b929-c4e148a2dffb",
+      "quantity": 1,
+      "unit_price": "3.00"
+    },
+    {
+      "id": "4833aebf-5c2f-4edc-86e8-5614a1d9d99f",
+      "draft_id": "329d7b04-5a72-45f2-b977-c6dc463928b9",
+      "product_id": "fa9bc492-aeb1-4d15-82a5-94002fe1ccd7",
+      "quantity": 1,
+      "unit_price": "3.00"
+    },
+    {
+      "id": "84d07736-4ca0-4278-a7a5-5160052bfe09",
+      "draft_id": "1ff7f9d2-c12b-4f49-93ef-49e706ef4894",
+      "product_id": "5ad284b2-759f-4089-a504-4b29a3dedc76",
+      "quantity": 1,
+      "unit_price": "3.00"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "023505ac-3635-4559-8b50-3246bf5b857c",
+      "barcode_normalized": "z01nuevo02",
+      "search_name": "interno z",
+      "average_cost": "0.0000"
+    },
+    {
+      "id": "5ad284b2-759f-4089-a504-4b29a3dedc76",
+      "barcode_normalized": "012345678905",
+      "search_name": "anterior z1",
+      "average_cost": "1.0000"
+    },
+    {
+      "id": "a9b3ca0e-82ab-4bfc-b929-c4e148a2dffb",
+      "barcode_normalized": "0012345678905",
+      "search_name": "anterior z2",
+      "average_cost": "1.0000"
+    },
+    {
+      "id": "fa9bc492-aeb1-4d15-82a5-94002fe1ccd7",
+      "barcode_normalized": "4006381333931",
+      "search_name": "anterior z3",
+      "average_cost": "1.0000"
+    }
+  ],
+  "identity": [
+    {
+      "id": "023505ac-3635-4559-8b50-3246bf5b857c",
+      "barcode_type": "INTERNAL"
+    },
+    {
+      "id": "5ad284b2-759f-4089-a504-4b29a3dedc76",
+      "barcode_type": "UNCLASSIFIED"
+    },
+    {
+      "id": "a9b3ca0e-82ab-4bfc-b929-c4e148a2dffb",
+      "barcode_type": "UNCLASSIFIED"
+    },
+    {
+      "id": "fa9bc492-aeb1-4d15-82a5-94002fe1ccd7",
+      "barcode_type": "UNCLASSIFIED"
+    }
+  ],
+  "catalog.ProductBarcodeKey": [
+    {
+      "product_id": "a9b3ca0e-82ab-4bfc-b929-c4e148a2dffb",
+      "reading_key": "0012345678905"
+    },
+    {
+      "product_id": "5ad284b2-759f-4089-a504-4b29a3dedc76",
+      "reading_key": "012345678905"
+    },
+    {
+      "product_id": "fa9bc492-aeb1-4d15-82a5-94002fe1ccd7",
+      "reading_key": "4006381333931"
+    },
+    {
+      "product_id": "023505ac-3635-4559-8b50-3246bf5b857c",
+      "reading_key": "z01nuevo02"
+    }
+  ]
+}

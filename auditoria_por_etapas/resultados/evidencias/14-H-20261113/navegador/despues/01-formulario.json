@@ -1,0 +1,327 @@
+{
+  "id": "01-formulario",
+  "rol": "ALMACENERO",
+  "utc": "2026-11-14T04:48:54.535546+00:00",
+  "ruta": "/inventario/carga-inicial/",
+  "texto_visible": "Saltar al contenido\nM\nMinimarket\nGestión de bodega\n\nOPERACIONES\n\n⌂\nInicio\n☷\nVer inventario y alertas\n⏳\nVencimientos de lotes\n◫\nExistencias iniciales\n✚\nEntrada de mercadería\n☒\nRegistrar merma\n\nCONSULTA\n\n☰\nCatálogo de productos\n✦\nProveedores\nA\nAlmacén original 14H\nAlmacenero\n↪\nCerrar sesión\n\nMINIMARKET\n\nExistencias iniciales\nAlmacén original 14H\nAlmacenero\n\nEXISTENCIAS INICIALES\n\nRegistrar existencias iniciales por lotes\n\nIngresa uno o varios lotes de un producto, con sus cantidades en unidades y fechas de vencimiento.\n\nVolver al inicio\n1\nProducto\nProducto\nSeleccione un producto\nProducto original 14H (INT-14H)\n\nSolo aparecen productos activos que todavía no tienen carga inicial. Si el producto ya tuvo su carga inicial y deseas ingresar una nueva compra o reposición por lotes, usa Entrada de mercadería.\n\nProveedor (opcional)\nSin proveedor asignado\nProveedor original 14H (20000000014)\n2\nLotes recibidos\nCompleta una o más filas\nLote 1\nNúmero de lote\nCantidad\nCosto unitario (S/)\nVencimiento\nLote 2\nNúmero de lote\nCantidad\nCosto unitario (S/)\nVencimiento\nLote 3\nNúmero de lote\nCantidad\nCosto unitario (S/)\nVencimiento\nLote 4\nNúmero de lote\nCantidad\nCosto unitario (S/)\nVencimiento\nConfirmar existencias\nCancelar\nMinimarket · Gestión de bodega",
+  "controles": [
+    {
+      "campo": "product",
+      "etiqueta": "Producto",
+      "tipo": "select-one",
+      "valor": "Seleccione un producto",
+      "opciones": [
+        "Seleccione un producto",
+        "Producto original 14H (INT-14H)"
+      ],
+      "obligatorio": true,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "supplier",
+      "etiqueta": "Proveedor (opcional)",
+      "tipo": "select-one",
+      "valor": "Sin proveedor asignado",
+      "opciones": [
+        "Sin proveedor asignado",
+        "Proveedor original 14H (20000000014)"
+      ],
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "lots-0-number",
+      "etiqueta": "Número de lote",
+      "tipo": "text",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": "64"
+    },
+    {
+      "campo": "lots-0-quantity",
+      "etiqueta": "Cantidad",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "1",
+      "max": "999999",
+      "paso": "1",
+      "longitud": null
+    },
+    {
+      "campo": "lots-0-unit_cost",
+      "etiqueta": "Costo unitario (S/)",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "0.0001",
+      "max": "9999999.9999",
+      "paso": "0.0001",
+      "longitud": null
+    },
+    {
+      "campo": "lots-0-expiration_date",
+      "etiqueta": "Vencimiento",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "lots-1-number",
+      "etiqueta": "Número de lote",
+      "tipo": "text",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": "64"
+    },
+    {
+      "campo": "lots-1-quantity",
+      "etiqueta": "Cantidad",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "1",
+      "max": "999999",
+      "paso": "1",
+      "longitud": null
+    },
+    {
+      "campo": "lots-1-unit_cost",
+      "etiqueta": "Costo unitario (S/)",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "0.0001",
+      "max": "9999999.9999",
+      "paso": "0.0001",
+      "longitud": null
+    },
+    {
+      "campo": "lots-1-expiration_date",
+      "etiqueta": "Vencimiento",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "lots-2-number",
+      "etiqueta": "Número de lote",
+      "tipo": "text",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": "64"
+    },
+    {
+      "campo": "lots-2-quantity",
+      "etiqueta": "Cantidad",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "1",
+      "max": "999999",
+      "paso": "1",
+      "longitud": null
+    },
+    {
+      "campo": "lots-2-unit_cost",
+      "etiqueta": "Costo unitario (S/)",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "0.0001",
+      "max": "9999999.9999",
+      "paso": "0.0001",
+      "longitud": null
+    },
+    {
+      "campo": "lots-2-expiration_date",
+      "etiqueta": "Vencimiento",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    },
+    {
+      "campo": "lots-3-number",
+      "etiqueta": "Número de lote",
+      "tipo": "text",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": "64"
+    },
+    {
+      "campo": "lots-3-quantity",
+      "etiqueta": "Cantidad",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "1",
+      "max": "999999",
+      "paso": "1",
+      "longitud": null
+    },
+    {
+      "campo": "lots-3-unit_cost",
+      "etiqueta": "Costo unitario (S/)",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "0.0001",
+      "max": "9999999.9999",
+      "paso": "0.0001",
+      "longitud": null
+    },
+    {
+      "campo": "lots-3-expiration_date",
+      "etiqueta": "Vencimiento",
+      "tipo": "date",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    }
+  ],
+  "testigo": {
+    "sha256": "7f89b4c1161b2df46a25f7e7c9e633a5d8f50ba992fd106819bd3becbf84d8a5",
+    "por_tabla": {
+      "cash_cashregister": "a7ac7db7d4243d891359dc2ff093207b799450e3369ac8f8e69a6202cd372749",
+      "cash_cashshift": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "cash_cashshiftclose": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "catalog_category": "d7215015081342d4a452cc094cf5c10f2f3c5f23f5edb0478b694bb9ec1d0210",
+      "catalog_product": "738373c5f6a1ee1d66d22ae28bf7d2b090860b63e7a346abcb112fae77678bb2",
+      "catalog_productbarcodekey": "facc7b1b7f1445e8d5348c0f8eca643a02e47bf03b4b7f8f614f0905ac95715d",
+      "inventory_initialinventoryload": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_initialloadline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_lot": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_physicaladjustment": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceipt": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptcounter": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockwriteoff": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_supplier": "a88265e79007e88b8b6e5863bed032d9ac39ab8e8a172a30f302cb5f4ce8065b",
+      "sales_sale": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_salecounter": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saledraft": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saledraftline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_saleline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_salelotallocation": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "identity_role_membership_active": "d37b310029ebc424529ed8f05e942d3784c3cd317f1be1ed3642343a98a18b73"
+    },
+    "filas": {
+      "cash_cashregister": 1,
+      "cash_cashshift": 0,
+      "cash_cashshiftclose": 0,
+      "catalog_category": 1,
+      "catalog_product": 1,
+      "catalog_productbarcodekey": 1,
+      "inventory_initialinventoryload": 0,
+      "inventory_initialloadline": 0,
+      "inventory_lot": 0,
+      "inventory_physicaladjustment": 0,
+      "inventory_stockreceipt": 0,
+      "inventory_stockreceiptcounter": 0,
+      "inventory_stockreceiptline": 0,
+      "inventory_stockwriteoff": 0,
+      "inventory_supplier": 1,
+      "sales_sale": 0,
+      "sales_salecounter": 0,
+      "sales_saledraft": 0,
+      "sales_saledraftline": 0,
+      "sales_saleline": 0,
+      "sales_salelotallocation": 0
+    },
+    "cuentas_rol_activas": [
+      [
+        "ADMIN",
+        1
+      ],
+      [
+        "ALMACENERO",
+        1
+      ],
+      [
+        "VENDEDOR",
+        1
+      ]
+    ],
+    "categorias": [
+      {
+        "name": "Familia 14H",
+        "is_active": 1,
+        "state_version": 0
+      }
+    ],
+    "productos": [
+      {
+        "name": "Producto original 14H",
+        "barcode": "INT-14H",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 0,
+        "is_active": 1
+      }
+    ],
+    "proveedores": [
+      {
+        "name": "Proveedor original 14H",
+        "ruc": "20000000014",
+        "is_active": 1
+      }
+    ],
+    "lotes": [],
+    "borrador": [],
+    "ventas": [],
+    "lineas": [],
+    "bajas": [],
+    "turnos": [],
+    "cierres": []
+  },
+  "sin_mutacion_verificada": false
+}

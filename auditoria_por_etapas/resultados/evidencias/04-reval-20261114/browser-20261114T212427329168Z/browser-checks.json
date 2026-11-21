@@ -1,0 +1,495 @@
+{
+  "stamp_utc": "20261114T212427329168Z",
+  "run_dir": "auditoria_por_etapas/resultados/datos/etapa04-reval-20261114T212427329168Z",
+  "base_url": "http://127.0.0.1:58046",
+  "checks": [
+    {
+      "id": "isolation_hmac_proof",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "srv_run": "etapa04-reval-20261114T212427329168Z",
+        "cache_control_login": "max-age=0, no-cache, no-store, must-revalidate, private"
+      }
+    },
+    {
+      "id": "anon_redirects",
+      "ok": true,
+      "detail": {
+        "list": {
+          "status": 302,
+          "location": "/?next=/inventario/proveedores/"
+        },
+        "new": {
+          "status": 302,
+          "location": "/?next=/inventario/proveedores/nuevo/"
+        },
+        "post_no_csrf": {
+          "status": 403,
+          "location": ""
+        }
+      }
+    },
+    {
+      "id": "warehouse_readonly_empty_list",
+      "ok": true,
+      "detail": {
+        "nav": [
+          "⌂\nInicio",
+          "☷\nVer inventario y alertas",
+          "⏳\nVencimientos de lotes",
+          "◫\nExistencias iniciales",
+          "✚\nEntrada de mercadería",
+          "☒\nRegistrar merma",
+          "☰\nCatálogo de productos",
+          "✦\nProveedores"
+        ],
+        "new_btn": 0,
+        "toggle_forms": 0
+      }
+    },
+    {
+      "id": "warehouse_create_denied_403",
+      "ok": true,
+      "detail": {
+        "get_status": 403,
+        "post_status": 403
+      }
+    },
+    {
+      "id": "seller_no_nav_and_403",
+      "ok": true,
+      "detail": {
+        "nav": [
+          "⌂\nInicio",
+          "$\nApertura de caja",
+          "▦\nPreparar venta",
+          "✖\nCerrar turno",
+          "☰\nMis ventas del turno",
+          "☰\nMi historial de ventas",
+          "☰\nMi historial de turnos"
+        ],
+        "get_list": 403,
+        "get_new": 403
+      }
+    },
+    {
+      "id": "create_validations_and_csrf",
+      "ok": true,
+      "detail": {
+        "maxlengths": {
+          "name": "160",
+          "ruc": "11",
+          "phone": "20"
+        },
+        "focus_initial": "id_name",
+        "focus_after_empty": "id_name",
+        "sunat_disclaimer_ok": true,
+        "cache_list": "max-age=0, no-cache, no-store, must-revalidate, private",
+        "bad_csrf_status": 403,
+        "variant_results": {
+          "unicode_ruc": {
+            "url": "http://127.0.0.1:58046/inventario/proveedores/nuevo/",
+            "errors": [
+              "El RUC debe contener exactamente 11 dígitos numéricos."
+            ],
+            "focus": "id_ruc",
+            "count": 0
+          },
+          "ruc_10_digits": {
+            "url": "http://127.0.0.1:58046/inventario/proveedores/nuevo/",
+            "errors": [
+              "El RUC debe contener exactamente 11 dígitos numéricos."
+            ],
+            "focus": "id_ruc",
+            "count": 0
+          },
+          "ruc_letters": {
+            "url": "http://127.0.0.1:58046/inventario/proveedores/nuevo/",
+            "errors": [
+              "El RUC debe contener exactamente 11 dígitos numéricos."
+            ],
+            "focus": "id_ruc",
+            "count": 0
+          },
+          "symbols_name": {
+            "url": "http://127.0.0.1:58046/inventario/proveedores/nuevo/",
+            "errors": [
+              "El nombre comercial debe contener letras o números."
+            ],
+            "focus": "id_name",
+            "count": 0
+          },
+          "letters_phone": {
+            "url": "http://127.0.0.1:58046/inventario/proveedores/nuevo/",
+            "errors": [
+              "El teléfono debe incluir al menos un dígito y solo puede contener números, espacios y signos (+, -, paréntesis)."
+            ],
+            "focus": "id_phone",
+            "count": 0
+          },
+          "symbols_phone": {
+            "url": "http://127.0.0.1:58046/inventario/proveedores/nuevo/",
+            "errors": [
+              "El teléfono debe incluir al menos un dígito y solo puede contener números, espacios y signos (+, -, paréntesis)."
+            ],
+            "focus": "id_phone",
+            "count": 0
+          }
+        },
+        "http_variant_results": {
+          "ruc_12_digits_http": {
+            "status": 200,
+            "count": 0
+          },
+          "name_161_http": {
+            "status": 200,
+            "count": 0
+          },
+          "phone_21_http": {
+            "status": 200,
+            "count": 0
+          },
+          "name_collapsed_156_raw_165_http": {
+            "status": 200,
+            "count": 0
+          },
+          "phone_collapsed_13_raw_22_http": {
+            "status": 200,
+            "count": 0
+          },
+          "nul_name_http": {
+            "status": 200,
+            "count": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "create_homonyms_leading_zero_and_dup",
+      "ok": true,
+      "detail": {
+        "s1": [
+          "Distribuidora Sol SAC",
+          "20123456789",
+          "+51 (1) 555-1234"
+        ],
+        "s2": [
+          "Distribuidora Sol SAC",
+          "20987654321",
+          ""
+        ],
+        "s3": [
+          "Lácteos Andinos EIRL",
+          "00123456789"
+        ]
+      }
+    },
+    {
+      "id": "search_and_nul_guard",
+      "ok": true,
+      "detail": {
+        "rows_all": 3,
+        "rows_hom": 2,
+        "rows_ruc": 1,
+        "rows_accent_probe_unaccented": 0,
+        "nul_text": "La búsqueda contiene caracteres no válidos.",
+        "long_q_status": 200
+      }
+    },
+    {
+      "id": "toggle_idempotent_invalid_and_perms",
+      "ok": true,
+      "detail": {
+        "tab1_flash": "Proveedor «Distribuidora Sol SAC» ahora está inactivo.",
+        "tab2_flash": "El proveedor «Distribuidora Sol SAC» ya se encontraba inactivo.",
+        "s2_before_omitted": false,
+        "s2_after_omitted": true,
+        "toggle_omitted_http": 302,
+        "wh_toggle_status": 403,
+        "edit_404": [
+          404,
+          404
+        ],
+        "toggle_get_405": 405,
+        "has_confirmation_step": false
+      }
+    },
+    {
+      "id": "stale_inactive_rejected_and_sentinel_preserved",
+      "ok": true,
+      "detail": {
+        "init_options": [
+          "Sin proveedor asignado",
+          "Distribuidora Sol SAC (20123456789)",
+          "Distribuidora Sol SAC (20987654321)",
+          "Lácteos Andinos EIRL (00123456789)"
+        ],
+        "entry_options": [
+          "Sin proveedor asignado",
+          "Distribuidora Sol SAC (20123456789)",
+          "Distribuidora Sol SAC (20987654321)",
+          "Lácteos Andinos EIRL (00123456789)"
+        ],
+        "init_sentinel": "__inactive__:8227da49-706a-4cd8-a9dd-b9fb019d2fe9",
+        "entry_sentinel": "__inactive__:8227da49-706a-4cd8-a9dd-b9fb019d2fe9",
+        "load_none_url": "http://127.0.0.1:58046/inventario/cargas/1186ce96-77f6-4514-bb4e-906d3674bae8/",
+        "rcpt_s1_url": "http://127.0.0.1:58046/inventario/recepciones/17de2222-cd8f-4c6b-8af1-02418bea8a18/"
+      }
+    },
+    {
+      "id": "downstream_historical_visibility_and_homonyms",
+      "ok": true,
+      "detail": {
+        "hom_load_has_s1_ruc": true,
+        "hom_rcpt_s2_has_s2_ruc": true,
+        "kardex_has_rucs": false,
+        "expirations_has_rucs": false,
+        "kardex_rows": [
+          "14/11/2026 16:25:47 (Lima)\t▲ Entrada\tCarga inicial — Lote HOM-L1 (Distribuidora Sol SAC) Ver carga inicial\t+8\t8\tAlmacenero Turno",
+          "14/11/2026 16:25:50 (Lima)\t▲ Entrada\tRecepción R-00000002 — Lote HOM-L2 (Distribuidora Sol SAC) Ver recepción\t+6\t14\tAlmacenero Turno"
+        ],
+        "exp_rows": [
+          "Aceite Vegetal 1L\tAbarrotes Audit04e\tL-BASE-01\t—\t29 de noviembre de 2026\nEn 15 días\n\t5\tPróximo\t—",
+          "Arroz Costeño 750g\tAbarrotes Audit04e\tLI-STALE-1\t—\t29 de noviembre de 2026\nEn 15 días\n\t5\tPróximo\t—",
+          "Leche Evaporada 400g\tAbarrotes Audit04e\tHOM-L1\tDistribuidora Sol SAC\t29 de noviembre de 2026\nEn 15 días\n\t8\tPróximo\t—",
+          "Aceite Vegetal 1L\tAbarrotes Audit04e\tLE-STALE-1\tDistribuidora Sol SAC\t29 de diciembre de 2026\nEn 45 días\n\t4\tPróximo\t—",
+          "Leche Evaporada 400g\tAbarrotes Audit04e\tHOM-L2\tDistribuidora Sol SAC\t29 de diciembre de 2026\nEn 45 días\n\t6\tPróximo\t—"
+        ]
+      }
+    },
+    {
+      "id": "mobile_390x844_viewport",
+      "ok": true,
+      "detail": {
+        "supplier_list": {
+          "docW": 390,
+          "winW": 390,
+          "no_horizontal_overflow": true
+        },
+        "supplier_create": {
+          "docW": 390,
+          "winW": 390,
+          "no_horizontal_overflow": true
+        },
+        "stock_receipt": {
+          "docW": 390,
+          "winW": 390,
+          "no_horizontal_overflow": true
+        }
+      }
+    },
+    {
+      "id": "logout_and_back_button",
+      "ok": true,
+      "detail": {
+        "post_logout": "http://127.0.0.1:58046/",
+        "after_back": "http://127.0.0.1:58046/?next=/salir/",
+        "after_reload": "http://127.0.0.1:58046/?next=/salir/"
+      }
+    },
+    {
+      "id": "revoked_admin_browser_session_blocked",
+      "ok": true,
+      "detail": {
+        "final_url": "http://127.0.0.1:58046/?next=/inventario/proveedores/nuevo/",
+        "suppliers_before": 3,
+        "suppliers_after": 3
+      }
+    }
+  ],
+  "observations": [
+    {
+      "id": "OBS-04-FORM-MAXLEN-PRE-NORMALIZE",
+      "detail": "SupplierForm rejects inputs whose raw length exceeds 160/20 due to internal spaces even when normalized length is <= 160/20; create_supplier() service accepts normalized length. Also browser HTML maxlength=11/160/20 silently truncates pasted oversizes instead of warning.",
+      "maxlengths": {
+        "name": "160",
+        "ruc": "11",
+        "phone": "20"
+      },
+      "http_variant_results": {
+        "ruc_12_digits_http": {
+          "status": 200,
+          "count": 0
+        },
+        "name_161_http": {
+          "status": 200,
+          "count": 0
+        },
+        "phone_21_http": {
+          "status": 200,
+          "count": 0
+        },
+        "name_collapsed_156_raw_165_http": {
+          "status": 200,
+          "count": 0
+        },
+        "phone_collapsed_13_raw_22_http": {
+          "status": 200,
+          "count": 0
+        },
+        "nul_name_http": {
+          "status": 200,
+          "count": 0
+        }
+      }
+    },
+    {
+      "id": "OBS-04-RUC-PASTE-MAXLENGTH-TRUNCATION",
+      "detail": "HTML maxlength=11 on input[name='ruc'] silently truncates pasted ' 20123456789 ' (leading space) to ' 2012345678' before submit, causing false 10-digit failure (or cutting last digit).",
+      "pasted_value": " 20123456789 ",
+      "dom_input_value": " 2012345678"
+    }
+  ],
+  "defects_reproduced": [
+    {
+      "id": "DEF-04-DEC04-C02-OMIT-TARGET",
+      "severity": "HIGH",
+      "contract": "DEC-04-RUC-VALIDACION/C-02 & CP-HU-PROV-04-001",
+      "detail": "POST /inventario/proveedores/8227da49-706a-4cd8-a9dd-b9fb019d2fe9/estado/ omitting 'is_active' returned HTTP 302 and MUTATED is_active from False to True."
+    },
+    {
+      "id": "DEF-04-DEC04-C01-HOMONYMS-NO-RUC-CROSSMODULE",
+      "severity": "MEDIUM",
+      "contract": "DEC-04-RUC-VALIDACION/C-01",
+      "detail": "Homonymous suppliers ('Distribuidora Sol SAC', RUC 20123456789 vs 20987654321) are NOT distinguished by RUC in Kardex (/inventario/productos/<id>/movimientos/) or Expirations (/productos/vencimientos/).",
+      "kardex_has_rucs": false,
+      "expirations_has_rucs": false
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "server_500s": [],
+  "ui_literals": {
+    "supplier_create_text": "Nuevo proveedor\nNombre comercial\nRUC\n11 dígitos numéricos (solo valida formato; no verifica existencia ni condición ante SUNAT).\nTeléfono\nOpcional. Hasta 20 caracteres: números, espacios y signos (+, -, paréntesis).\nGuardar\nCancelar",
+    "admin_list_headers": [],
+    "admin_empty_text": "Proveedores\n+ Nuevo proveedor\nBuscar por nombre o RUC\nBuscar\nNo hay proveedores registrados.",
+    "wh_empty_text": "Proveedores\nBuscar por nombre o RUC\nBuscar\nNo hay proveedores registrados.",
+    "admin_list_text_with_rows": "Proveedores\n+ Nuevo proveedor\nBuscar por nombre o RUC\nBuscar\nNOMBRE\tRUC\tTELÉFONO\tESTADO\tACCIONES\nDistribuidora Sol SAC\t20123456789\t+51 (1) 555-1234\tActivo\t\nDesactivar\n\nDistribuidora Sol SAC\t20987654321\t—\tActivo\t\nDesactivar\n\nLácteos Andinos EIRL\t00123456789\t01 4445566\tActivo\t\nDesactivar",
+    "toggle_form_html": "<form method=\"post\" action=\"/inventario/proveedores/8227da49-706a-4cd8-a9dd-b9fb019d2fe9/estado/\">\n            <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"VoAoA8RSx0hKsmoOgc8M0KyETs9oaWGR54H6IkxBMcceVlsBUgjch8NTf0EiQw9B\">\n            <input type=\"hidden\" name=\"is_active\" value=\"false\">\n            <button type=\"submit\" class=\"btn btn-sm btn-outline-warning\">\n              Desactivar\n            </button>\n          </form>",
+    "warehouse_populated_headers": [
+      "NOMBRE",
+      "RUC",
+      "TELÉFONO",
+      "ESTADO"
+    ],
+    "warehouse_populated_text": "Proveedores\nBuscar por nombre o RUC\nBuscar\nNOMBRE\tRUC\tTELÉFONO\tESTADO\nDistribuidora Sol SAC\t20123456789\t+51 (1) 555-1234\tActivo\nDistribuidora Sol SAC\t20987654321\t—\tInactivo\nLácteos Andinos EIRL\t00123456789\t01 4445566\tActivo",
+    "wh_rcpt_s2_visible": true
+  },
+  "double_submit_create": {
+    "first_status": 302,
+    "second_status": 200,
+    "second_has_dup_error": true,
+    "db_count_before_cleanup": 1
+  },
+  "protected_unchanged": false,
+  "protected_detail": {
+    "protected_unchanged": false,
+    "changed": [
+      {
+        "path": "auditoria_por_etapas/resultados/datos/01-F-20261114/audit.sqlite3",
+        "before": "f4c9e1fb19ab1cf868ff230e1a89190b04473203a76392c5fb6b7099eb3bca6b",
+        "after": "1f1260112fc9d632e0221cca548f336f18e64306d00deebf0fa654d4f91480e5"
+      },
+      {
+        "path": "auditoria_por_etapas/resultados/datos/etapa05-narrow-20261114T212417217952Z-601be2ad/audit.sqlite3",
+        "before": "bdf57a55533d3e0c6bae2571c165bcc8e944092a6ef9e281086dc050d326b1fb",
+        "after": "9b6a217a347a4b1f81b59aedb2f611d714b991ee24205877611cbd7471282d00"
+      }
+    ],
+    "deleted": [
+      "auditoria_por_etapas/resultados/datos/03-REVAL-20261114T212254Z-b51a30/audit.sqlite3"
+    ],
+    "new_concurrent_external_dbs": [
+      "auditoria_por_etapas/resultados/datos/03-REVAL-20261114T212433Z-0cf2ed/audit.sqlite3",
+      "auditoria_por_etapas/resultados/datos/etapa06-reval-server-20261114T212516734717Z-d3f486c9/audit.sqlite3",
+      "auditoria_por_etapas/resultados/datos/etapa07-07b-browser-empty-20261114T212451376865Z-010e8919/audit.sqlite3",
+      "auditoria_por_etapas/resultados/datos/etapa07-07b-browser-full-20261114T212551651862Z-b0fa4420/audit.sqlite3",
+      "auditoria_por_etapas/resultados/datos/etapa07-07b-probes-20261114T212432090295Z-90456fdc/audit.sqlite3"
+    ]
+  },
+  "db_snapshot": {
+    "suppliers": [
+      {
+        "id": "82841cd2-37e2-44b2-85a7-8854c662a037",
+        "name": "Distribuidora Sol SAC",
+        "ruc": "20123456789",
+        "phone": "+51 (1) 555-1234",
+        "is_active": true
+      },
+      {
+        "id": "8227da49-706a-4cd8-a9dd-b9fb019d2fe9",
+        "name": "Distribuidora Sol SAC",
+        "ruc": "20987654321",
+        "phone": "",
+        "is_active": false
+      },
+      {
+        "id": "78258989-0fb9-4090-a4a0-6577905327e2",
+        "name": "Lácteos Andinos EIRL",
+        "ruc": "00123456789",
+        "phone": "01 4445566",
+        "is_active": true
+      }
+    ],
+    "loads": [
+      {
+        "id": "e7469c2c-613e-4c18-83f2-8922898f73e2",
+        "product": "Aceite Vegetal 1L",
+        "lot_supplier_ids": [
+          null,
+          "82841cd2-37e2-44b2-85a7-8854c662a037"
+        ],
+        "supplier_snapshot_name": "",
+        "supplier_snapshot_ruc": ""
+      },
+      {
+        "id": "1186ce96-77f6-4514-bb4e-906d3674bae8",
+        "product": "Arroz Costeño 750g",
+        "lot_supplier_ids": [
+          null
+        ],
+        "supplier_snapshot_name": "",
+        "supplier_snapshot_ruc": ""
+      },
+      {
+        "id": "24e139a1-7539-41cb-9601-bb5c2a9d49f4",
+        "product": "Leche Evaporada 400g",
+        "lot_supplier_ids": [
+          "82841cd2-37e2-44b2-85a7-8854c662a037",
+          "8227da49-706a-4cd8-a9dd-b9fb019d2fe9"
+        ],
+        "supplier_snapshot_name": "Distribuidora Sol SAC",
+        "supplier_snapshot_ruc": "20123456789"
+      }
+    ],
+    "receipts": [
+      {
+        "correlative": "R-00000001",
+        "product": "Aceite Vegetal 1L",
+        "supplier_id": "82841cd2-37e2-44b2-85a7-8854c662a037",
+        "supplier_snapshot_name": "Distribuidora Sol SAC",
+        "supplier_snapshot_ruc": "20123456789"
+      },
+      {
+        "correlative": "R-00000002",
+        "product": "Leche Evaporada 400g",
+        "supplier_id": "8227da49-706a-4cd8-a9dd-b9fb019d2fe9",
+        "supplier_snapshot_name": "Distribuidora Sol SAC",
+        "supplier_snapshot_ruc": "20987654321"
+      }
+    ],
+    "lots_count": 5,
+    "session_count": 3,
+    "revoked_active": false
+  },
+  "summary": {
+    "total_checks": 14,
+    "passed_checks": 14,
+    "failed_checks": [],
+    "defects_reproduced_count": 2,
+    "console_errors": 0,
+    "page_errors": 0,
+    "server_500s": 0
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "mode": "Chrome sequential cross-reclassification with a multiproduct draft; no concurrency claim",
+  "cases": [
+    {
+      "id": "isolation",
+      "ok": true
+    },
+    {
+      "id": "initial-categories",
+      "ok": true
+    },
+    {
+      "id": "initial-stocks",
+      "ok": true
+    },
+    {
+      "id": "draft-two-products",
+      "ok": true
+    },
+    {
+      "id": "warehouse-get-denied",
+      "ok": true
+    },
+    {
+      "id": "warehouse-post-denied",
+      "ok": true
+    },
+    {
+      "id": "seller-get-denied",
+      "ok": true
+    },
+    {
+      "id": "seller-post-denied",
+      "ok": true
+    },
+    {
+      "id": "denials-no-change",
+      "ok": true
+    },
+    {
+      "id": "cross-moved",
+      "ok": true
+    },
+    {
+      "id": "preserve-catalog.Category",
+      "ok": true
+    },
+    {
+      "id": "preserve-inventory.Lot",
+      "ok": true
+    },
+    {
+      "id": "preserve-inventory.InitialInventoryLoad",
+      "ok": true
+    },
+    {
+      "id": "preserve-cash.CashShift",
+      "ok": true
+    },
+    {
+      "id": "preserve-sales.Sale",
+      "ok": true
+    },
+    {
+      "id": "preserve-sales.SaleLine",
+      "ok": true
+    },
+    {
+      "id": "preserve-sales.SaleDraft",
+      "ok": true
+    },
+    {
+      "id": "preserve-sales.SaleDraftLine",
+      "ok": true
+    },
+    {
+      "id": "preserve-commerce",
+      "ok": true
+    },
+    {
+      "id": "warehouse-AUD03-BEBIDA",
+      "ok": true,
+      "cells": [
+        "AUD03 Bebida de prueba",
+        "Alimentos",
+        "AUD03-BEBIDA",
+        "8,50",
+        "20",
+        "10",
+        "Disponible"
+      ]
+    },
+    {
+      "id": "warehouse-AUD03-EMPTY",
+      "ok": true,
+      "cells": [
+        "AUD03 Sin carga",
+        "Higiene",
+        "AUD03-EMPTY",
+        "4,00",
+        "6 Stock bajo",
+        "10",
+        "Disponible"
+      ]
+    },
+    {
+      "id": "receipt-preserved-before-sale",
+      "ok": true
+    },
+    {
+      "id": "one-new-sale",
+      "ok": true
+    },
+    {
+      "id": "stock-after",
+      "ok": true
+    },
+    {
+      "id": "categories-after",
+      "ok": true
+    },
+    {
+      "id": "new-sale-two-lines",
+      "ok": true
+    },
+    {
+      "id": "receipt-preserved-after-sale",
+      "ok": true
+    }
+  ],
+  "posts": [
+    {
+      "role": "admin",
+      "path": "/productos/2bd37580-c6dc-4ad4-8ce1-5d2b5590e586/editar/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/63c80fba-7892-4acd-a3ab-0a2d692bd4cc/editar/"
+    },
+    {
+      "role": "seller",
+      "path": "/ventas/cobrar/"
+    }
+  ],
+  "browser": "157.0.8103.39"
+}

@@ -1,0 +1,543 @@
+{
+  "generated_lima": "2026-11-09T10:12:49.554504-05:00",
+  "baseline_generated_lima": "2026-11-05T14:46:30.004568-05:00",
+  "scope": "Root file hashes and 49 preexisting tracked changes; Git path/status comparison. No app/test execution.",
+  "head": "7816d3328115cf5aa5bcdd0985fffd795b3ae084 2026-10-14T17:53:58-05:00 fix: align inventory and logout acceptance criteria",
+  "head_unchanged": true,
+  "branch": "chore/S1-PLAT-01-walter-r1-pmv-import",
+  "status": [
+    "M .env.example",
+    " M .gitignore",
+    " M README.md",
+    " M cash/forms.py",
+    " M cash/models.py",
+    " M cash/services.py",
+    " M cash/templates/cash/cash_open.html",
+    " M cash/templates/cash/cash_shift_opened.html",
+    " M cash/tests.py",
+    " M cash/urls.py",
+    " M cash/views.py",
+    " M catalog/forms.py",
+    " M catalog/models.py",
+    " M catalog/services.py",
+    " M catalog/templates/catalog/product_created.html",
+    " M catalog/tests.py",
+    " M catalog/urls.py",
+    " M catalog/views.py",
+    " M config/env.py",
+    " M config/settings.py",
+    " M evidencias/CONTROL_DE_HORAS_Y_ESTADO.md",
+    " M identity/forms.py",
+    " M identity/models.py",
+    " M identity/services.py",
+    " M identity/static/identity/app.css",
+    " M identity/static/identity/favicon.svg",
+    " M identity/templates/identity/base.html",
+    " M identity/templates/identity/dashboard.html",
+    " M identity/templates/identity/login.html",
+    " M identity/templates/identity/logout_confirm.html",
+    " M identity/tests.py",
+    " M identity/urls.py",
+    " M identity/views.py",
+    " M inventory/forms.py",
+    " M inventory/models.py",
+    " M inventory/services.py",
+    " M inventory/templates/inventory/initial_load_created.html",
+    " M inventory/templates/inventory/initial_load_form.html",
+    " M inventory/tests.py",
+    " M inventory/urls.py",
+    " M inventory/views.py",
+    " M sales/forms.py",
+    " M sales/models.py",
+    " M sales/services.py",
+    " M sales/templates/sales/sales_draft.html",
+    " M sales/tests.py",
+    " M sales/urls.py",
+    " M sales/views.py",
+    " M templates/403.html",
+    "?? AUDITORIA_USABILIDAD_05NOV2026.md",
+    "?? CONTROL_SPRINTS.md",
+    "?? PROMPT_PRUEBAS_EXPLORATORIAS.md",
+    "?? REPORTE_CAOS_Y_UX_QA.md",
+    "?? REPORTE_PRUEBAS_EXPLORATORIAS_05NOV2026.md",
+    "?? cash/migrations/0003_cashshiftclose.py",
+    "?? cash/templates/cash/cash_close.html",
+    "?? cash/templates/cash/cash_shift_closed.html",
+    "?? cash/templates/cash/cash_shift_history.html",
+    "?? catalog/management/__init__.py",
+    "?? catalog/management/commands/__init__.py",
+    "?? catalog/management/commands/seed_demo.py",
+    "?? catalog/templates/catalog/category_form.html",
+    "?? catalog/templates/catalog/category_list.html",
+    "?? catalog/templates/catalog/product_edit.html",
+    "?? catalog/templates/catalog/product_expirations.html",
+    "?? catalog/templates/catalog/product_list.html",
+    "?? config/test_runner.py",
+    "?? docs/alcance_comercial_y_normativo.md",
+    "?? evidencias/HU-CAJA-02/S1-CAJA02-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-CAJA-05/S2-CAJA05-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-CAT-01/S2-CAT01-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-CAT-02/S2-CAT02-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-INV-01b/S3-INV01B-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-INV-02/S3-INV02-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-INV-03/S3-INV03-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-PROD-01/S2-PROD01-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-PROD-04/S2-PROD04-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-PROD-05/S2-PROD05-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-PROD-06/S2-PROD06-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-PROV-01/S3-PROV01-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-PROV-02/S3-PROV02-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-PROV-04/S3-PROV04-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-USR-01/S2-USR01-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-USR-02/S2-USR02-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-USR-03/S3-USR03-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-USR-04/S3-USR04-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-VEN-01c/S1-VEN01C-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-VEN-02a/S1-VEN02A-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-VEN-05a/S2-VEN05A-AUTO/resultado-prueba.md",
+    "?? evidencias/HU-VEN-05b/S2-VEN05B-AUTO/resultado-prueba.md",
+    "?? identity/migrations/0003_alter_role_code.py",
+    "?? identity/migrations/0004_alter_role_code.py",
+    "?? identity/migrations/0005_loginattempt.py",
+    "?? identity/templates/identity/employee_edit.html",
+    "?? identity/templates/identity/employee_form.html",
+    "?? identity/templates/identity/employee_list.html",
+    "?? inventory/migrations/0002_supplier_physicaladjustment_stockwriteoff.py",
+    "?? inventory/migrations/0003_lot_supplier.py",
+    "?? inventory/migrations/0004_lot_is_initial.py",
+    "?? inventory/migrations/0005_lot_responsible.py",
+    "?? inventory/templates/inventory/adjustment_form.html",
+    "?? inventory/templates/inventory/product_movements.html",
+    "?? inventory/templates/inventory/stock_entry_form.html",
+    "?? inventory/templates/inventory/stock_overview.html",
+    "?? inventory/templates/inventory/supplier_form.html",
+    "?? inventory/templates/inventory/supplier_list.html",
+    "?? inventory/templates/inventory/writeoff_form.html",
+    "?? sales/migrations/0002_salecounter_sale_saleline.py",
+    "?? sales/migrations/0003_sale_discount_amount.py",
+    "?? sales/migrations/0004_saleline_product.py",
+    "?? sales/templates/sales/sales_checkout.html",
+    "?? sales/templates/sales/sales_history.html",
+    "?? sales/templates/sales/sales_receipt.html",
+    "?? sales/templates/sales/sales_shift_history.html",
+    "?? templates/404.html"
+  ],
+  "status_unchanged": true,
+  "checked": [
+    {
+      "path": "01_Proyecto_y_Releases.md",
+      "sha256_baseline": "c48d551ad139d82aa1218670088b001e8e64d84819a98a238d949145324d588a",
+      "sha256_current": "c48d551ad139d82aa1218670088b001e8e64d84819a98a238d949145324d588a",
+      "unchanged": true
+    },
+    {
+      "path": "02_Diseno_Tecnico_R1_PMV.md",
+      "sha256_baseline": "96a6e4b3be0feb8ad9a5cb3612bf1979c21ba7c4531244575b13fbb983943df8",
+      "sha256_current": "96a6e4b3be0feb8ad9a5cb3612bf1979c21ba7c4531244575b13fbb983943df8",
+      "unchanged": true
+    },
+    {
+      "path": "03_Matriz_de_Trazabilidad_y_Pruebas.md",
+      "sha256_baseline": "14dea67d787e8ef13f194bccca2473d56a7fec25528745d083e6fc3a41f09525",
+      "sha256_current": "14dea67d787e8ef13f194bccca2473d56a7fec25528745d083e6fc3a41f09525",
+      "unchanged": true
+    },
+    {
+      "path": "04_Evidencias.md",
+      "sha256_baseline": "90e3b987a702524b429ca364c904ba5147e536de225ff1192dca976f7f3f73b8",
+      "sha256_current": "90e3b987a702524b429ca364c904ba5147e536de225ff1192dca976f7f3f73b8",
+      "unchanged": true
+    },
+    {
+      "path": "07_Reglas_de_Negocio.md",
+      "sha256_baseline": "ae80cfc94f468ddb62fea55bc2b76de1aaaccb6e99ee7cff5cf8d276c2359dbe",
+      "sha256_current": "ae80cfc94f468ddb62fea55bc2b76de1aaaccb6e99ee7cff5cf8d276c2359dbe",
+      "unchanged": true
+    },
+    {
+      "path": "08_Historias_de_Usuario.md",
+      "sha256_baseline": "d458d235edd01f83a6e8df301714b6d823b069e72d9ab27a148ae899d42a63fe",
+      "sha256_current": "d458d235edd01f83a6e8df301714b6d823b069e72d9ab27a148ae899d42a63fe",
+      "unchanged": true
+    },
+    {
+      "path": "09_Product_Backlog.md",
+      "sha256_baseline": "5c2cd88e4b834d25461b2993472d060de136a44a42991d32cde132a8e8a9dfdc",
+      "sha256_current": "5c2cd88e4b834d25461b2993472d060de136a44a42991d32cde132a8e8a9dfdc",
+      "unchanged": true
+    },
+    {
+      "path": "14_Sprint_Planning.md",
+      "sha256_baseline": "0e6ee2676517a6c287efd8d1ee1a014c07e1b2c7dc7efdc027deec66a9811f72",
+      "sha256_current": "0e6ee2676517a6c287efd8d1ee1a014c07e1b2c7dc7efdc027deec66a9811f72",
+      "unchanged": true
+    },
+    {
+      "path": "16_Task_Breakdown.md",
+      "sha256_baseline": "2d30412570018f46516d7207b3503e827595968437d2cd00bd2e8c7f342ded78",
+      "sha256_current": "2d30412570018f46516d7207b3503e827595968437d2cd00bd2e8c7f342ded78",
+      "unchanged": true
+    },
+    {
+      "path": "20_Corte_De_Exposicion_Martes.md",
+      "sha256_baseline": "34be59c1ba8e910c2636328abad352ff5fb4b8e7f8e36a1ce2349fc5c2f8e24f",
+      "sha256_current": "34be59c1ba8e910c2636328abad352ff5fb4b8e7f8e36a1ce2349fc5c2f8e24f",
+      "unchanged": true
+    },
+    {
+      "path": "21_Alcance_Actual_y_Diferencias.md",
+      "sha256_baseline": "8ba93ca4666bd54cd0a1d9dcd00a2eb30cf7cedf37720a741683ded037cc26a3",
+      "sha256_current": "8ba93ca4666bd54cd0a1d9dcd00a2eb30cf7cedf37720a741683ded037cc26a3",
+      "unchanged": true
+    },
+    {
+      "path": "PLAN DE CHATGPT.MD",
+      "sha256_baseline": "1c2486bc7043cb0b78d302d9fc42b30b2136369db3720747ee9072d9f4b16597",
+      "sha256_current": "1c2486bc7043cb0b78d302d9fc42b30b2136369db3720747ee9072d9f4b16597",
+      "unchanged": true
+    },
+    {
+      "path": "PLANIFICACION_SCRUM_R1PMV.xlsx",
+      "sha256_baseline": "a9604b90d08dead7b815817f859004a802353aaf6f91f7e78a4467fa18406b49",
+      "sha256_current": "a9604b90d08dead7b815817f859004a802353aaf6f91f7e78a4467fa18406b49",
+      "unchanged": true
+    },
+    {
+      "path": "prompts_sprint_1_CORREGIDO_2026-10-12.zip",
+      "sha256_baseline": "77aef81b1b32c522eb50563c9999c774b7fc3f938b00fa66c39c850dc73b32f1",
+      "sha256_current": "77aef81b1b32c522eb50563c9999c774b7fc3f938b00fa66c39c850dc73b32f1",
+      "unchanged": true
+    },
+    {
+      "path": "prompts_sprint_1_OBSOLETO_2026-10-10.rar",
+      "sha256_baseline": "8c8e4ed21b7abeefc3603b8e5ca559e77642ed9b48b7b69af7c93f8bd1a60e5e",
+      "sha256_current": "8c8e4ed21b7abeefc3603b8e5ca559e77642ed9b48b7b69af7c93f8bd1a60e5e",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv-integracion-sprint1.zip",
+      "sha256_baseline": "9d83e18a2e14a7a6aef68a46e2b1dbf38e8d975273bcc99c73933921072bd179",
+      "sha256_current": "9d83e18a2e14a7a6aef68a46e2b1dbf38e8d975273bcc99c73933921072bd179",
+      "unchanged": true
+    },
+    {
+      "path": "REPORTE_CAOS_Y_UX_QA.md",
+      "sha256_baseline": "dfd8e4b962ba92ae1d1d3b1974591cb6d306659b4e5390eef218893e99b1be10",
+      "sha256_current": "dfd8e4b962ba92ae1d1d3b1974591cb6d306659b4e5390eef218893e99b1be10",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/.env.example",
+      "sha256_baseline": "dd209bb867563079db6f9e406e53c98d4a57befaeb02295faf5c80fa0bb1f9f9",
+      "sha256_current": "dd209bb867563079db6f9e406e53c98d4a57befaeb02295faf5c80fa0bb1f9f9",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/.gitignore",
+      "sha256_baseline": "7680e50f65c81bf701804f6c3c6cad944a9ecacc2c1d6370659b79c7dc23092c",
+      "sha256_current": "7680e50f65c81bf701804f6c3c6cad944a9ecacc2c1d6370659b79c7dc23092c",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/README.md",
+      "sha256_baseline": "a7fa8a4b04b18363459f435d999bed2775cee8115953369b04212a3100f0583a",
+      "sha256_current": "a7fa8a4b04b18363459f435d999bed2775cee8115953369b04212a3100f0583a",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/cash/forms.py",
+      "sha256_baseline": "24958000b90ae242fbe775bbb0466d34565b5b16656beab126e85db7666ea7fa",
+      "sha256_current": "24958000b90ae242fbe775bbb0466d34565b5b16656beab126e85db7666ea7fa",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/cash/models.py",
+      "sha256_baseline": "f1f4d021f68f508b6cec695dfd078339fbb0b7cb6258034625323349afa5e746",
+      "sha256_current": "f1f4d021f68f508b6cec695dfd078339fbb0b7cb6258034625323349afa5e746",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/cash/services.py",
+      "sha256_baseline": "79b5bc5eb46384c3a72605ac1ba9640562ae20e43fe885a883ba136365681fb9",
+      "sha256_current": "79b5bc5eb46384c3a72605ac1ba9640562ae20e43fe885a883ba136365681fb9",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/cash/templates/cash/cash_open.html",
+      "sha256_baseline": "d5d4c18291fc22069a3de749ae61556ea5c2c549d938d23b2c6370861bb32bac",
+      "sha256_current": "d5d4c18291fc22069a3de749ae61556ea5c2c549d938d23b2c6370861bb32bac",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/cash/templates/cash/cash_shift_opened.html",
+      "sha256_baseline": "596cbbefa93bc056d388e6d65d9e76cecc902e748570bfac4b96ef6dbcefb78c",
+      "sha256_current": "596cbbefa93bc056d388e6d65d9e76cecc902e748570bfac4b96ef6dbcefb78c",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/cash/tests.py",
+      "sha256_baseline": "b3ef17ed6e1b5a4b7038678ddf8351abc23a2b5f336204ff5820839739c2e970",
+      "sha256_current": "b3ef17ed6e1b5a4b7038678ddf8351abc23a2b5f336204ff5820839739c2e970",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/cash/urls.py",
+      "sha256_baseline": "bb782415860a08d4945c014ca7339c349e6be3588d6c4d72140cd0b913a630e4",
+      "sha256_current": "bb782415860a08d4945c014ca7339c349e6be3588d6c4d72140cd0b913a630e4",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/cash/views.py",
+      "sha256_baseline": "c2d57fb095d6924a1d255662d6dd32ceed939cb99c97c934030dbc739dc42b98",
+      "sha256_current": "c2d57fb095d6924a1d255662d6dd32ceed939cb99c97c934030dbc739dc42b98",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/catalog/forms.py",
+      "sha256_baseline": "5d97d8f84e0dc225373c5e781309f5e5b0e95cccdf6fcd27f071c0ce5fae21e0",
+      "sha256_current": "5d97d8f84e0dc225373c5e781309f5e5b0e95cccdf6fcd27f071c0ce5fae21e0",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/catalog/models.py",
+      "sha256_baseline": "9b05a150dae25f51f91f6779a1ab998781fa0fc53a2412e949004eb6928ca07d",
+      "sha256_current": "9b05a150dae25f51f91f6779a1ab998781fa0fc53a2412e949004eb6928ca07d",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/catalog/services.py",
+      "sha256_baseline": "343a3a22d768b36035cb455461df9086c1910956abd3fc8b27ae86102b4b6baa",
+      "sha256_current": "343a3a22d768b36035cb455461df9086c1910956abd3fc8b27ae86102b4b6baa",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/catalog/templates/catalog/product_created.html",
+      "sha256_baseline": "9d36be79b7b022c2c5a6754b229b6150efef230c7a605c15019a8467cd58b48f",
+      "sha256_current": "9d36be79b7b022c2c5a6754b229b6150efef230c7a605c15019a8467cd58b48f",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/catalog/tests.py",
+      "sha256_baseline": "d74666c80a9d5db0c98011381e8852cfd6ff1593eee561f8c31954bc84c8a47d",
+      "sha256_current": "d74666c80a9d5db0c98011381e8852cfd6ff1593eee561f8c31954bc84c8a47d",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/catalog/urls.py",
+      "sha256_baseline": "476dc7e5820df33111af84d609bfe74fcd683835366266871d0ab1f452c82e1c",
+      "sha256_current": "476dc7e5820df33111af84d609bfe74fcd683835366266871d0ab1f452c82e1c",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/catalog/views.py",
+      "sha256_baseline": "31571b20a945db33d801b30ec95b5f86a2994672bb956fd3d18abac7e92c3fe7",
+      "sha256_current": "31571b20a945db33d801b30ec95b5f86a2994672bb956fd3d18abac7e92c3fe7",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/config/env.py",
+      "sha256_baseline": "0ad5dffc10cc2ef2d7f8d3fb3763d8ef4d99132b20d23d12b0c70f77bc91b5c8",
+      "sha256_current": "0ad5dffc10cc2ef2d7f8d3fb3763d8ef4d99132b20d23d12b0c70f77bc91b5c8",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/config/settings.py",
+      "sha256_baseline": "e2f3d116e44702ba4df97eaee8f7ace7fa50a6b54e0545d4b8922cac71465685",
+      "sha256_current": "e2f3d116e44702ba4df97eaee8f7ace7fa50a6b54e0545d4b8922cac71465685",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/evidencias/CONTROL_DE_HORAS_Y_ESTADO.md",
+      "sha256_baseline": "42ae7be6fc33ba374e9d654e2dc7afd1040106bdd92b440c683774b167394f45",
+      "sha256_current": "42ae7be6fc33ba374e9d654e2dc7afd1040106bdd92b440c683774b167394f45",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/forms.py",
+      "sha256_baseline": "aea36b357104b556cc0b4ccf81c82ca07dc29b91da8ac374da170f9c38c5bda5",
+      "sha256_current": "aea36b357104b556cc0b4ccf81c82ca07dc29b91da8ac374da170f9c38c5bda5",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/models.py",
+      "sha256_baseline": "bdad1c4c70e1d17428d93eae1790fc8f573ffbba8456ebfbbd2b15080a5b8b3d",
+      "sha256_current": "bdad1c4c70e1d17428d93eae1790fc8f573ffbba8456ebfbbd2b15080a5b8b3d",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/services.py",
+      "sha256_baseline": "e5c388cfd1312e895cbd9c04ca4215af706d18ac0dff9e04b4c603ee41cee736",
+      "sha256_current": "e5c388cfd1312e895cbd9c04ca4215af706d18ac0dff9e04b4c603ee41cee736",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/static/identity/app.css",
+      "sha256_baseline": "fd1e00df900624a10a9296c255a8ea94eb8d2233987608b4e70b5b3323cb4eb8",
+      "sha256_current": "fd1e00df900624a10a9296c255a8ea94eb8d2233987608b4e70b5b3323cb4eb8",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/static/identity/favicon.svg",
+      "sha256_baseline": "d1cd6299f7c750c72b1f0e39992cf3e94ab82087f0b84e29c75e81fbe63ad7e4",
+      "sha256_current": "d1cd6299f7c750c72b1f0e39992cf3e94ab82087f0b84e29c75e81fbe63ad7e4",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/templates/identity/base.html",
+      "sha256_baseline": "ef5b64957344c2cc61daf5512b6ee7924f873db575eaff9383caece84c38049d",
+      "sha256_current": "ef5b64957344c2cc61daf5512b6ee7924f873db575eaff9383caece84c38049d",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/templates/identity/dashboard.html",
+      "sha256_baseline": "ba4ae338f808afe8b14a87762b5f1e2fdf9d25efaa44a06f282c56ac772e0fe5",
+      "sha256_current": "ba4ae338f808afe8b14a87762b5f1e2fdf9d25efaa44a06f282c56ac772e0fe5",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/templates/identity/login.html",
+      "sha256_baseline": "d710f7f488454ff13a6e1059fad852a8f022d9f58f965d4a7d6f7f19d208a8b4",
+      "sha256_current": "d710f7f488454ff13a6e1059fad852a8f022d9f58f965d4a7d6f7f19d208a8b4",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/templates/identity/logout_confirm.html",
+      "sha256_baseline": "bab871951c7f6541b75ed0742e8649debf94632040e0b2621f737aaf3f1af03e",
+      "sha256_current": "bab871951c7f6541b75ed0742e8649debf94632040e0b2621f737aaf3f1af03e",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/tests.py",
+      "sha256_baseline": "d80525e2203713d7fd54f30806534d79d08af654119a10310510569c55a775d2",
+      "sha256_current": "d80525e2203713d7fd54f30806534d79d08af654119a10310510569c55a775d2",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/urls.py",
+      "sha256_baseline": "62b4f57fcc3250c4cbb2d34cfaa2fe4de884fa3691a59c724f55ae6faeb30da6",
+      "sha256_current": "62b4f57fcc3250c4cbb2d34cfaa2fe4de884fa3691a59c724f55ae6faeb30da6",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/identity/views.py",
+      "sha256_baseline": "3804c0a40290cb8e0e90f594edef14ddc68221b0651a482ac84edb6bb0ea18b1",
+      "sha256_current": "3804c0a40290cb8e0e90f594edef14ddc68221b0651a482ac84edb6bb0ea18b1",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/inventory/forms.py",
+      "sha256_baseline": "028d46f70d4f0775193fc204fcffa20e56cefbda6a4c53f1fc94b45015ee6772",
+      "sha256_current": "028d46f70d4f0775193fc204fcffa20e56cefbda6a4c53f1fc94b45015ee6772",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/inventory/models.py",
+      "sha256_baseline": "1937ad8b4bbc6dab621e65a55e2aefc65f24dc296cad09ef9f8a9038c469200c",
+      "sha256_current": "1937ad8b4bbc6dab621e65a55e2aefc65f24dc296cad09ef9f8a9038c469200c",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/inventory/services.py",
+      "sha256_baseline": "9d5624ac7b40949806133fd0c633d3a54d4cf0518f9887e28dbf4c6b0af56a55",
+      "sha256_current": "9d5624ac7b40949806133fd0c633d3a54d4cf0518f9887e28dbf4c6b0af56a55",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/inventory/templates/inventory/initial_load_created.html",
+      "sha256_baseline": "91bac86eae7e22ed82f216ce803dd0330af3ef7b0aed3904fd3d96fbf5c5fd3a",
+      "sha256_current": "91bac86eae7e22ed82f216ce803dd0330af3ef7b0aed3904fd3d96fbf5c5fd3a",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/inventory/templates/inventory/initial_load_form.html",
+      "sha256_baseline": "2df842ca16edbfd713162d9294eae322abd087a1810d72e07823b42d2556a8a8",
+      "sha256_current": "2df842ca16edbfd713162d9294eae322abd087a1810d72e07823b42d2556a8a8",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/inventory/tests.py",
+      "sha256_baseline": "0f0cd0625296aca9475714c67b7e4d67bbddbde7779888c40eaa33e49e9b1fa5",
+      "sha256_current": "0f0cd0625296aca9475714c67b7e4d67bbddbde7779888c40eaa33e49e9b1fa5",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/inventory/urls.py",
+      "sha256_baseline": "a657ce9d7fa369d0710d20f4cdba7c7ab722ce88c9cf77f6be0330f1a2163765",
+      "sha256_current": "a657ce9d7fa369d0710d20f4cdba7c7ab722ce88c9cf77f6be0330f1a2163765",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/inventory/views.py",
+      "sha256_baseline": "2476f7acf79e9fc7695ff7154f9699c39accaa326610d5673e858731774aa389",
+      "sha256_current": "2476f7acf79e9fc7695ff7154f9699c39accaa326610d5673e858731774aa389",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/sales/forms.py",
+      "sha256_baseline": "125ac263476d52733025824df9ca71fa61d6fd27eef28f241b858a10bc496199",
+      "sha256_current": "125ac263476d52733025824df9ca71fa61d6fd27eef28f241b858a10bc496199",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/sales/models.py",
+      "sha256_baseline": "d7d37c37b649c3ce3fa26f2b0b2ff91109eb0c927b6098496e70bcf42fa22328",
+      "sha256_current": "d7d37c37b649c3ce3fa26f2b0b2ff91109eb0c927b6098496e70bcf42fa22328",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/sales/services.py",
+      "sha256_baseline": "f247371d26c704a335acb9d5142c0a763ffa56480a7d4534ea1b0dc8826bf5aa",
+      "sha256_current": "f247371d26c704a335acb9d5142c0a763ffa56480a7d4534ea1b0dc8826bf5aa",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/sales/templates/sales/sales_draft.html",
+      "sha256_baseline": "4ee5ddabdb184e2330c4e1d3274d613918d89128c63af3dd75232cd4248db1b7",
+      "sha256_current": "4ee5ddabdb184e2330c4e1d3274d613918d89128c63af3dd75232cd4248db1b7",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/sales/tests.py",
+      "sha256_baseline": "ca81ec3eecc210457a4e84ecd4350ac5fbb04c065cfeee36b10d9dd5ad9d29c1",
+      "sha256_current": "ca81ec3eecc210457a4e84ecd4350ac5fbb04c065cfeee36b10d9dd5ad9d29c1",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/sales/urls.py",
+      "sha256_baseline": "5895fd47e031b719dbe699bb6f18b84bbfbf80f881ca4ba339be88249446cbe7",
+      "sha256_current": "5895fd47e031b719dbe699bb6f18b84bbfbf80f881ca4ba339be88249446cbe7",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/sales/views.py",
+      "sha256_baseline": "fa16af9829e11ad6e28fe795d3f6c55f4708160bb07629634dbcde7818e9f5cc",
+      "sha256_current": "fa16af9829e11ad6e28fe795d3f6c55f4708160bb07629634dbcde7818e9f5cc",
+      "unchanged": true
+    },
+    {
+      "path": "r1-pmv/templates/403.html",
+      "sha256_baseline": "fb9d2cb058ded6a4d17b56d1cbfab51d80c0ebf5546190137a69a2a4588c4e9a",
+      "sha256_current": "fb9d2cb058ded6a4d17b56d1cbfab51d80c0ebf5546190137a69a2a4588c4e9a",
+      "unchanged": true
+    }
+  ],
+  "changed": [],
+  "baseline_hashed_untracked": false,
+  "limitations": [
+    "Untracked files were not hashed in the original sources inventory; same status does not prove their content unchanged.",
+    "No spreadsheet cells, formulas, rendered layout or test outcomes were examined."
+  ],
+  "planning_structure": {
+    "stories_including_out_of_horizon": 82,
+    "base_criteria": 219,
+    "unique_base_criteria": 219,
+    "rules": 30,
+    "tasks": 67,
+    "unique_tasks": 67,
+    "r1_matrix_rows": 41,
+    "matrix_matches_r1_criterion_ids": true,
+    "unique_references_checked": 514,
+    "unresolved_file_line_references": [],
+    "semantic_acceptance": "NO EXAMINADO; IDs and file/line existence only."
+  }
+}

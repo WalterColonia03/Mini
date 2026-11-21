@@ -1,0 +1,802 @@
+{
+  "started_utc": "20261111T034421069411Z",
+  "cluster": "C:\\Users\\walte\\AppData\\Local\\Temp\\audit03u-pg-21fd8c53b477b3c9a68d77de",
+  "port": 63208,
+  "cases": [
+    {
+      "id": "PG-U-suspension",
+      "ok": true,
+      "checks": {
+        "wait_observed": true,
+        "first_action_committed": true,
+        "second_action_completed": true,
+        "category_inactive": true,
+        "product_reclassified": true,
+        "historical_unchanged": true,
+        "commercial_product_unchanged": true,
+        "shift_unchanged": true,
+        "expected_response": true,
+        "expected_sale_count": true,
+        "expected_draft_state": true,
+        "rejected_without_mutation": true,
+        "reactivation_and_retry": true,
+        "service_replay_idempotent": true,
+        "final_lots": true,
+        "one_sale_23_soles": true,
+        "two_sale_lines": true,
+        "historic_still_preserved": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "active": false,
+            "version": 1
+          }
+        },
+        "contender": {
+          "status": "committed",
+          "value": {
+            "http": 200,
+            "review": true,
+            "location_is_receipt": false
+          }
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": true
+      },
+      "before": {
+        "categories": [
+          {
+            "id": "b7e3671f-1b45-483d-bc7b-6d139bd472da",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "c68cdb19-6514-480e-b6ff-7e515a3735a5",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "products": [
+          {
+            "id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "category_id": "b7e3671f-1b45-483d-bc7b-6d139bd472da",
+            "name": "U Q suspension",
+            "barcode": "UQ-suspension",
+            "sale_price": "6.00",
+            "is_active": true
+          },
+          {
+            "id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "category_id": "c68cdb19-6514-480e-b6ff-7e515a3735a5",
+            "name": "U P suspension",
+            "barcode": "UP-suspension",
+            "sale_price": "8.50",
+            "is_active": true
+          }
+        ],
+        "draft": [
+          {
+            "id": "b7e1c7c1-f10b-4a7c-a9e5-ae5325b0977c",
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "available_quantity": 10
+          },
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "available_quantity": 9
+          }
+        ],
+        "sale": [],
+        "details": [],
+        "historic": [
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "quantity": 1,
+            "unit_price": "8.50",
+            "product_snapshot_name": "U P suspension",
+            "product_snapshot_barcode": "UP-suspension"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 2
+          }
+        ],
+        "shift": [
+          {
+            "id": "f97796df-4389-45e2-8ef9-aa8e9d85dfca",
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ]
+      },
+      "after": {
+        "categories": [
+          {
+            "id": "b7e3671f-1b45-483d-bc7b-6d139bd472da",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "c68cdb19-6514-480e-b6ff-7e515a3735a5",
+            "is_active": false,
+            "state_version": 1
+          }
+        ],
+        "products": [
+          {
+            "id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "category_id": "b7e3671f-1b45-483d-bc7b-6d139bd472da",
+            "name": "U Q suspension",
+            "barcode": "UQ-suspension",
+            "sale_price": "6.00",
+            "is_active": true
+          },
+          {
+            "id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "category_id": "c68cdb19-6514-480e-b6ff-7e515a3735a5",
+            "name": "U P suspension",
+            "barcode": "UP-suspension",
+            "sale_price": "8.50",
+            "is_active": true
+          }
+        ],
+        "draft": [
+          {
+            "id": "b7e1c7c1-f10b-4a7c-a9e5-ae5325b0977c",
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "available_quantity": 10
+          },
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "available_quantity": 9
+          }
+        ],
+        "sale": [],
+        "details": [],
+        "historic": [
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "quantity": 1,
+            "unit_price": "8.50",
+            "product_snapshot_name": "U P suspension",
+            "product_snapshot_barcode": "UP-suspension"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 2
+          }
+        ],
+        "shift": [
+          {
+            "id": "f97796df-4389-45e2-8ef9-aa8e9d85dfca",
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ]
+      },
+      "final": {
+        "categories": [
+          {
+            "id": "b7e3671f-1b45-483d-bc7b-6d139bd472da",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "c68cdb19-6514-480e-b6ff-7e515a3735a5",
+            "is_active": true,
+            "state_version": 2
+          }
+        ],
+        "products": [
+          {
+            "id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "category_id": "b7e3671f-1b45-483d-bc7b-6d139bd472da",
+            "name": "U Q suspension",
+            "barcode": "UQ-suspension",
+            "sale_price": "6.00",
+            "is_active": true
+          },
+          {
+            "id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "category_id": "c68cdb19-6514-480e-b6ff-7e515a3735a5",
+            "name": "U P suspension",
+            "barcode": "UP-suspension",
+            "sale_price": "8.50",
+            "is_active": true
+          }
+        ],
+        "draft": [
+          {
+            "id": "b7e1c7c1-f10b-4a7c-a9e5-ae5325b0977c",
+            "status": "DISCARDED"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "quantity": 1,
+            "unit_price": "6.00"
+          },
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "quantity": 2,
+            "unit_price": "8.50"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "available_quantity": 9
+          },
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "available_quantity": 7
+          }
+        ],
+        "sale": [
+          {
+            "id": "01afc724-0d0c-4aff-847b-e8b4dceb6fd3",
+            "total_amount": "23.00",
+            "cash_received": "50.00",
+            "change_given": "27.00",
+            "correlative": "V-00000002"
+          }
+        ],
+        "details": [
+          {
+            "product_id": "b4f47247-93fa-4069-b7f0-a9a752cd052a",
+            "quantity": 1,
+            "unit_price": "6.00",
+            "product_snapshot_name": "U Q suspension",
+            "product_snapshot_barcode": "UQ-suspension"
+          },
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "quantity": 2,
+            "unit_price": "8.50",
+            "product_snapshot_name": "U P suspension",
+            "product_snapshot_barcode": "UP-suspension"
+          }
+        ],
+        "historic": [
+          {
+            "product_id": "f605d262-5855-4408-96a5-7eb741a08572",
+            "quantity": 1,
+            "unit_price": "8.50",
+            "product_snapshot_name": "U P suspension",
+            "product_snapshot_barcode": "UP-suspension"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 3
+          }
+        ],
+        "shift": [
+          {
+            "id": "f97796df-4389-45e2-8ef9-aa8e9d85dfca",
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ]
+      },
+      "method": "Django test Client CSRF checkout vs real category service, independent PostgreSQL connections; contest wraps winner in transaction and observes pg_blocking_pids; no socket HTTP"
+    },
+    {
+      "id": "PG-U-checkout",
+      "ok": true,
+      "checks": {
+        "wait_observed": true,
+        "first_action_committed": true,
+        "second_action_completed": true,
+        "category_inactive": true,
+        "product_reclassified": true,
+        "historical_unchanged": true,
+        "commercial_product_unchanged": true,
+        "shift_unchanged": true,
+        "expected_response": true,
+        "expected_sale_count": true,
+        "expected_draft_state": true,
+        "next_sale_blocked": true,
+        "service_replay_idempotent": true,
+        "final_lots": true,
+        "one_sale_23_soles": true,
+        "two_sale_lines": true,
+        "historic_still_preserved": true
+      },
+      "race": {
+        "winner": {
+          "status": "committed",
+          "value": {
+            "http": 302,
+            "review": false,
+            "location_is_receipt": true
+          }
+        },
+        "contender": {
+          "status": "committed",
+          "value": {
+            "active": false,
+            "version": 1
+          }
+        },
+        "lock_observed": true,
+        "blocker_matches_winner": true,
+        "distinct_connections": true,
+        "wait_event": "transactionid",
+        "waiter_statement_touches_category": true
+      },
+      "before": {
+        "categories": [
+          {
+            "id": "44c8c954-f5a7-442d-a1d0-6a9df5caa68c",
+            "is_active": true,
+            "state_version": 0
+          },
+          {
+            "id": "c5864a83-2ba7-4c74-9a3b-00a0d8120c2d",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "products": [
+          {
+            "id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "category_id": "44c8c954-f5a7-442d-a1d0-6a9df5caa68c",
+            "name": "U P checkout",
+            "barcode": "UP-checkout",
+            "sale_price": "8.50",
+            "is_active": true
+          },
+          {
+            "id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "category_id": "c5864a83-2ba7-4c74-9a3b-00a0d8120c2d",
+            "name": "U Q checkout",
+            "barcode": "UQ-checkout",
+            "sale_price": "6.00",
+            "is_active": true
+          }
+        ],
+        "draft": [
+          {
+            "id": "40c3f177-6256-4fba-9168-e3b68d24de82",
+            "status": "ACTIVE"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "quantity": 2,
+            "unit_price": "8.50"
+          },
+          {
+            "product_id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "quantity": 1,
+            "unit_price": "6.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "available_quantity": 9
+          },
+          {
+            "product_id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "available_quantity": 10
+          }
+        ],
+        "sale": [],
+        "details": [],
+        "historic": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "quantity": 1,
+            "unit_price": "8.50",
+            "product_snapshot_name": "U P checkout",
+            "product_snapshot_barcode": "UP-checkout"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 4
+          }
+        ],
+        "shift": [
+          {
+            "id": "f97796df-4389-45e2-8ef9-aa8e9d85dfca",
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ]
+      },
+      "after": {
+        "categories": [
+          {
+            "id": "44c8c954-f5a7-442d-a1d0-6a9df5caa68c",
+            "is_active": false,
+            "state_version": 1
+          },
+          {
+            "id": "c5864a83-2ba7-4c74-9a3b-00a0d8120c2d",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "products": [
+          {
+            "id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "category_id": "44c8c954-f5a7-442d-a1d0-6a9df5caa68c",
+            "name": "U P checkout",
+            "barcode": "UP-checkout",
+            "sale_price": "8.50",
+            "is_active": true
+          },
+          {
+            "id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "category_id": "c5864a83-2ba7-4c74-9a3b-00a0d8120c2d",
+            "name": "U Q checkout",
+            "barcode": "UQ-checkout",
+            "sale_price": "6.00",
+            "is_active": true
+          }
+        ],
+        "draft": [
+          {
+            "id": "40c3f177-6256-4fba-9168-e3b68d24de82",
+            "status": "DISCARDED"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "quantity": 2,
+            "unit_price": "8.50"
+          },
+          {
+            "product_id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "quantity": 1,
+            "unit_price": "6.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "available_quantity": 7
+          },
+          {
+            "product_id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "available_quantity": 9
+          }
+        ],
+        "sale": [
+          {
+            "id": "b7a82e2f-d102-43c8-94ea-67272c08281a",
+            "total_amount": "23.00",
+            "cash_received": "50.00",
+            "change_given": "27.00",
+            "correlative": "V-00000004"
+          }
+        ],
+        "details": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "quantity": 2,
+            "unit_price": "8.50",
+            "product_snapshot_name": "U P checkout",
+            "product_snapshot_barcode": "UP-checkout"
+          },
+          {
+            "product_id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "quantity": 1,
+            "unit_price": "6.00",
+            "product_snapshot_name": "U Q checkout",
+            "product_snapshot_barcode": "UQ-checkout"
+          }
+        ],
+        "historic": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "quantity": 1,
+            "unit_price": "8.50",
+            "product_snapshot_name": "U P checkout",
+            "product_snapshot_barcode": "UP-checkout"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 5
+          }
+        ],
+        "shift": [
+          {
+            "id": "f97796df-4389-45e2-8ef9-aa8e9d85dfca",
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ]
+      },
+      "final": {
+        "categories": [
+          {
+            "id": "44c8c954-f5a7-442d-a1d0-6a9df5caa68c",
+            "is_active": false,
+            "state_version": 1
+          },
+          {
+            "id": "c5864a83-2ba7-4c74-9a3b-00a0d8120c2d",
+            "is_active": true,
+            "state_version": 0
+          }
+        ],
+        "products": [
+          {
+            "id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "category_id": "44c8c954-f5a7-442d-a1d0-6a9df5caa68c",
+            "name": "U P checkout",
+            "barcode": "UP-checkout",
+            "sale_price": "8.50",
+            "is_active": true
+          },
+          {
+            "id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "category_id": "c5864a83-2ba7-4c74-9a3b-00a0d8120c2d",
+            "name": "U Q checkout",
+            "barcode": "UQ-checkout",
+            "sale_price": "6.00",
+            "is_active": true
+          }
+        ],
+        "draft": [
+          {
+            "id": "40c3f177-6256-4fba-9168-e3b68d24de82",
+            "status": "DISCARDED"
+          }
+        ],
+        "lines": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "quantity": 2,
+            "unit_price": "8.50"
+          },
+          {
+            "product_id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "quantity": 1,
+            "unit_price": "6.00"
+          }
+        ],
+        "lots": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "available_quantity": 7
+          },
+          {
+            "product_id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "available_quantity": 9
+          }
+        ],
+        "sale": [
+          {
+            "id": "b7a82e2f-d102-43c8-94ea-67272c08281a",
+            "total_amount": "23.00",
+            "cash_received": "50.00",
+            "change_given": "27.00",
+            "correlative": "V-00000004"
+          }
+        ],
+        "details": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "quantity": 2,
+            "unit_price": "8.50",
+            "product_snapshot_name": "U P checkout",
+            "product_snapshot_barcode": "UP-checkout"
+          },
+          {
+            "product_id": "cb6a8574-88e2-48ff-a950-83b859e382c6",
+            "quantity": 1,
+            "unit_price": "6.00",
+            "product_snapshot_name": "U Q checkout",
+            "product_snapshot_barcode": "UQ-checkout"
+          }
+        ],
+        "historic": [
+          {
+            "product_id": "552cce74-af2f-423d-8961-15acf643a13d",
+            "quantity": 1,
+            "unit_price": "8.50",
+            "product_snapshot_name": "U P checkout",
+            "product_snapshot_barcode": "UP-checkout"
+          }
+        ],
+        "counter": [
+          {
+            "next_value": 5
+          }
+        ],
+        "shift": [
+          {
+            "id": "f97796df-4389-45e2-8ef9-aa8e9d85dfca",
+            "status": "OPEN",
+            "opening_amount": "50.00"
+          }
+        ]
+      },
+      "method": "Django test Client CSRF checkout vs real category service, independent PostgreSQL connections; contest wraps winner in transaction and observes pg_blocking_pids; no socket HTTP"
+    }
+  ],
+  "protected_absent_at_start": [
+    "PLANIFICACION_SCRUM_R1PMV.xlsx"
+  ],
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "database": "audit03_78f438d3ad",
+  "isolation": "read committed",
+  "port_closed": true,
+  "protected_unchanged": {
+    "r1-pmv\\r1_pmv.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa00-20261105\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa01-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02-20261109\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T231223297870Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-20261109T235435476251Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235102894578Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa02a-b-20261109T235313324286Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T000927933696Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001124615788Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001235417602Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001320983361Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001337606973Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03a-20261110T001427294717Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010641541584Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T010857906402Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020054712835Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020104229903Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020324334766Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020335877235Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03b-20261110T020505026105Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T023934536531Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024200044720Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024338422290Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024349330265Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024455907968Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024617290091Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024628699915Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024749832414Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03c-20261110T024801097155Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030010177604Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030036511029Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030252413844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030314191882Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030339870193Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03d-20261110T030352675316Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T031505677093Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032216300260Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032251838417Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032333068344Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032528496946Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T032641479670Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03e-20261110T033002861512Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034307344201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03f-20261110T034318782440Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041750658883Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041757169052Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03g-20261110T041945048165Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042659237619Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042730963824Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042756100441Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042844036974Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T042912719703Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03h-20261110T043008623021Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165543164740Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165640773189Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03i-20261110T165730633729Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171321742969Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171341873895Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171546908471Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T171905215655Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172006895618Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172054000837Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03j-20261110T172105045406Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173453359047Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173526027077Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173808145023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T173927046544Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174028204311Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T174235672078Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T175820924988Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180229612612Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180807525819Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T180914638365Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181416503086Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T181948564537Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T182622655374Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T183956099863Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184821961380Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184947335287Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T184949253446Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261110T185008205808Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010526631267Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010655936590Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010725864129Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T010846464247Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011420365490Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T011843801709Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T012116957301Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T013518362010Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014121377023Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014226942611Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T014304366278Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015423105806Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015529367360Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015549608567Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015623098100Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015703446000Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015739066270Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015806678855Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T015848208296Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T020804804408Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021009799064Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021726658069Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T021749298118Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022024345104Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022054827383Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T022113097844Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025217937214Z-6d2387e5\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025317671199Z-66b3aa8c\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025449334980Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025515269778Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025536057632Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025555676509Z-837d210a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025612323774Z-69c9c66e\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T025641628831Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032441129639Z-0bdc8478\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032522908138Z-4bfa962a\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032724611710Z-4f696853\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T032808941201Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T033849664862Z-0c3c972b\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T033958715784Z-c91e0f04\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-20261111T034025997777Z\\audit.sqlite3": true,
+    "auditoria_por_etapas\\resultados\\datos\\etapa03k-migrations-20261111T020942208035Z\\audit.sqlite3": true,
+    "PLANIFICACION_SCRUM_R1PMV.xlsx": true
+  },
+  "finished_utc": "2026-11-11T03:44:33.683050+00:00"
+}

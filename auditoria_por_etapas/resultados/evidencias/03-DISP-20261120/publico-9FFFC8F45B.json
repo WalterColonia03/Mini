@@ -1,0 +1,176 @@
+{
+  "inicio_utc": "2026-11-21T03:10:22.988589+00:00",
+  "url": "https://minimarket-academico-auditoria02.vercel.app",
+  "fixture": "PRECIO-9FFFC8F45B",
+  "controles": [
+    {
+      "caso": "sin borrador previo en turno ficticio",
+      "observado": false,
+      "esperado": false,
+      "cumple": true
+    },
+    {
+      "caso": "venta previa",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    },
+    {
+      "caso": "admin estado",
+      "observado": "Inactivo",
+      "esperado": "Inactivo",
+      "cumple": true
+    },
+    {
+      "caso": "almacén estado",
+      "observado": "Inactivo",
+      "esperado": "Inactivo",
+      "cumple": true
+    },
+    {
+      "caso": "sin oferta",
+      "observado": 0,
+      "esperado": 0,
+      "cumple": true
+    },
+    {
+      "caso": "rechazo al cobrar",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    },
+    {
+      "caso": "entrada rechazada por disponibilidad",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    },
+    {
+      "caso": "rechazos sin mutación",
+      "observado": {
+        "precio": "10.00",
+        "lote": 6,
+        "lineas_venta": [
+          [
+            2,
+            "10.00",
+            "20.00"
+          ]
+        ],
+        "carrito": [
+          "10.00"
+        ],
+        "ventas_turno": 5,
+        "efectivo_esperado": "133.00"
+      },
+      "esperado": {
+        "precio": "10.00",
+        "lote": 6,
+        "lineas_venta": [
+          [
+            2,
+            "10.00",
+            "20.00"
+          ]
+        ],
+        "carrito": [
+          "10.00"
+        ],
+        "ventas_turno": 5,
+        "efectivo_esperado": "133.00"
+      },
+      "cumple": true
+    },
+    {
+      "caso": "histórico accesible durante suspensión",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    },
+    {
+      "caso": "oferta reactivada",
+      "observado": "S/ 10,00",
+      "esperado": "S/ 10,00",
+      "cumple": true
+    },
+    {
+      "caso": "venta recuperada",
+      "observado": true,
+      "esperado": true,
+      "cumple": true
+    },
+    {
+      "caso": "stock final",
+      "observado": 5,
+      "esperado": 5,
+      "cumple": true
+    }
+  ],
+  "estados": {
+    "inicio": {
+      "precio": "10.00",
+      "lote": 8,
+      "lineas_venta": [],
+      "carrito": [],
+      "ventas_turno": 4,
+      "efectivo_esperado": "113.00"
+    },
+    "antes": {
+      "precio": "10.00",
+      "lote": 6,
+      "lineas_venta": [
+        [
+          2,
+          "10.00",
+          "20.00"
+        ]
+      ],
+      "carrito": [
+        "10.00"
+      ],
+      "ventas_turno": 5,
+      "efectivo_esperado": "133.00"
+    },
+    "rechazada": {
+      "precio": "10.00",
+      "lote": 6,
+      "lineas_venta": [
+        [
+          2,
+          "10.00",
+          "20.00"
+        ]
+      ],
+      "carrito": [
+        "10.00"
+      ],
+      "ventas_turno": 5,
+      "efectivo_esperado": "133.00"
+    },
+    "final": {
+      "precio": "10.00",
+      "lote": 5,
+      "lineas_venta": [
+        [
+          2,
+          "10.00",
+          "20.00"
+        ],
+        [
+          1,
+          "10.00",
+          "10.00"
+        ]
+      ],
+      "carrito": [],
+      "ventas_turno": 6,
+      "efectivo_esperado": "143.00"
+    }
+  },
+  "08_sha256": "7cabdc5c045ff0105992e555e6bd1ffd8e6fc042171d394b21efdbc5c212484b",
+  "postgresql": "17.2",
+  "chrome": "157.0.8103.80",
+  "variante": "producto",
+  "resultado": "Disponibilidad ejecutada",
+  "fin_utc": "2026-11-21T03:11:01.227615+00:00"
+}

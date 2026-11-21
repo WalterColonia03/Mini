@@ -1,0 +1,110 @@
+Found 7 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos) ... FAIL
+test_dias_filter_boundaries_and_strict_ascii_validation (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_dias_filter_boundaries_and_strict_ascii_validation) ... ok
+test_exact_date_boundaries_zero_lots_and_deterministic_ordering (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_exact_date_boundaries_zero_lots_and_deterministic_ordering) ... ok
+test_expirations_writeoff_cross_role_lifecycle (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_expirations_writeoff_cross_role_lifecycle) ... ok
+test_lima_utc_midnight_transition_synchronized_across_all_views (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_lima_utc_midnight_transition_synchronized_across_all_views) ... ok
+test_role_matrix_anonymous_and_http_contract (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_role_matrix_anonymous_and_http_contract) ... Forbidden (Permission denied): /inventario/stock/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /productos/vencimientos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /productos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Method Not Allowed (POST): /inventario/stock/
+Method Not Allowed (POST): /productos/vencimientos/
+ok
+test_stock_overview_and_dashboard_avoid_n_plus_one_lot_queries (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_stock_overview_and_dashboard_avoid_n_plus_one_lot_queries) ... ok
+
+======================================================================
+FAIL: test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos (inventory.test_audit07_stock_expirations.Stage07StockExpirationsAuditTests.test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\inventory\test_audit07_stock_expirations.py", line 406, in test_active_inactive_parity_and_rn06_across_dashboard_stock_catalog_and_pos
+    self.assertIn("Categoría desactivada", row_cat_off)
+AssertionError: 'Categoría desactivada' not found in '</strong><br><small>775070000007</small></td>\n        <td>Snacks Suspendidos07</td>\n        <td>\n          \n            2\n          \n        </td>\n        <td>\n          \n            2\n          \n        </td>\n        <td>10</td>\n        <td>\n          \n            <span style="color:#95a5a6;">Categor&#237;a desactivada</span>\n          \n        </td>\n        <td>\n          <div class="d-flex gap-2 flex-wrap stock-actions">\n            <a href="/inventario/productos/53d53838-3150-46c3-ab17-6e44d2ab2c32/movimientos/" class="button">\n              Ver movimientos\n            </a>\n            \n              <a href="/inventario/cargas/b53f4bb3-bd24-4fa3-b3cc-4c9cd2fdbc9b/" class="button button-secondary">\n                Ver carga\n              </a>\n            \n          </div>\n        </td>\n      '
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.934s
+
+FAILED (failures=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

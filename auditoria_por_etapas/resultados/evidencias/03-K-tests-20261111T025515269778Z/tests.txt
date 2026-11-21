@@ -1,0 +1,147 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 48 test(s).
+Found 48 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_intact_obsolete_summary_is_rejected (sales.test_audit03r_review.CheckoutReviewRequiredTests.test_intact_obsolete_summary_is_rejected) ... ok
+test_omitted_review_fields_reject_and_allow_explicit_review (sales.test_audit03r_review.CheckoutReviewRequiredTests.test_omitted_review_fields_reject_and_allow_explicit_review) ... ok
+test_close_blocked_when_active_draft_has_lines (sales.tests.CashCloseTests.test_close_blocked_when_active_draft_has_lines) ... ok
+test_close_exact_amount_records_zero_difference (sales.tests.CashCloseTests.test_close_exact_amount_records_zero_difference) ... ok
+test_close_shortage_records_negative_difference (sales.tests.CashCloseTests.test_close_shortage_records_negative_difference) ... ok
+test_close_surplus_records_positive_difference (sales.tests.CashCloseTests.test_close_surplus_records_positive_difference) ... ok
+test_closed_shift_detail_shows_correct_amounts (sales.tests.CashCloseTests.test_closed_shift_detail_shows_correct_amounts) ... ok
+test_double_close_does_not_create_duplicate (sales.tests.CashCloseTests.test_double_close_does_not_create_duplicate) ... ok
+test_non_seller_roles_cannot_close_shift (sales.tests.CashCloseTests.test_non_seller_roles_cannot_close_shift) ... ok
+test_duplicate_idempotency_key_returns_same_sale (sales.tests.CheckoutTests.test_duplicate_idempotency_key_returns_same_sale) ... ok
+test_exact_payment_creates_sale_and_deducts_lot_stock (sales.tests.CheckoutTests.test_exact_payment_creates_sale_and_deducts_lot_stock) ... ok
+test_idempotency_key_cannot_be_reused_for_another_draft (sales.tests.CheckoutTests.test_idempotency_key_cannot_be_reused_for_another_draft) ... ok
+test_insufficient_cash_rejected_no_sale_no_stock_change (sales.tests.CheckoutTests.test_insufficient_cash_rejected_no_sale_no_stock_change) ... ok
+test_non_seller_roles_cannot_access_checkout (sales.tests.CheckoutTests.test_non_seller_roles_cannot_access_checkout) ... 
+  test_non_seller_roles_cannot_access_checkout (sales.tests.CheckoutTests.test_non_seller_roles_cannot_access_checkout) (role=Role.Code.ADMIN) ... ERROR
+  test_non_seller_roles_cannot_access_checkout (sales.tests.CheckoutTests.test_non_seller_roles_cannot_access_checkout) (role=Role.Code.WAREHOUSE) ... ERROR
+test_overpayment_records_correct_change (sales.tests.CheckoutTests.test_overpayment_records_correct_change) ... ok
+test_two_different_sales_get_unique_sequential_correlatives (sales.tests.CheckoutTests.test_two_different_sales_get_unique_sequential_correlatives) ... ok
+test_other_seller_gets_404_for_different_sale (sales.tests.ReceiptTests.test_other_seller_gets_404_for_different_sale) ... ok
+test_receipt_contains_mandatory_legal_notice (sales.tests.ReceiptTests.test_receipt_contains_mandatory_legal_notice) ... ok
+test_receipt_shows_all_required_fields (sales.tests.ReceiptTests.test_receipt_shows_all_required_fields) ... ok
+test_receipt_uses_snapshots_not_live_product_data (sales.tests.ReceiptTests.test_receipt_uses_snapshots_not_live_product_data) ... ok
+test_another_seller_cannot_use_the_open_shift_or_create_draft (sales.tests.SalePreparationTests.test_another_seller_cannot_use_the_open_shift_or_create_draft) ... ok
+test_canceling_logout_keeps_the_session_and_draft (sales.tests.SalePreparationTests.test_canceling_logout_keeps_the_session_and_draft) ... ok
+test_empty_preparation_needs_own_open_shift_and_creates_no_draft (sales.tests.SalePreparationTests.test_empty_preparation_needs_own_open_shift_and_creates_no_draft) ... ok
+test_expired_or_today_lot_is_not_available_for_preparation (sales.tests.SalePreparationTests.test_expired_or_today_lot_is_not_available_for_preparation) ... ok
+test_first_line_creates_draft_and_does_not_move_stock_or_cash (sales.tests.SalePreparationTests.test_first_line_creates_draft_and_does_not_move_stock_or_cash) ... ok
+test_logout_discards_active_draft_but_keeps_shift_and_stock (sales.tests.SalePreparationTests.test_logout_discards_active_draft_but_keeps_shift_and_stock) ... ok
+test_only_seller_role_can_open_the_sales_preparation_route (sales.tests.SalePreparationTests.test_only_seller_role_can_open_the_sales_preparation_route) ... ok
+test_same_product_is_grouped_and_cannot_exceed_sellable_stock (sales.tests.SalePreparationTests.test_same_product_is_grouped_and_cannot_exceed_sellable_stock) ... ok
+test_search_finds_active_sellable_product_by_name_or_barcode (sales.tests.SalePreparationTests.test_search_finds_active_sellable_product_by_name_or_barcode) ... ok
+test_totals_show_price_base_igv_and_total_with_half_up_rule (sales.tests.SalePreparationTests.test_totals_show_price_base_igv_and_total_with_half_up_rule) ... ok
+test_update_and_remove_last_line_discards_draft_without_stock_change (sales.tests.SalePreparationTests.test_update_and_remove_last_line_discards_draft_without_stock_change) ... ok
+test_admin_can_access_sales_history (sales.tests.SalesHistoryTests.test_admin_can_access_sales_history) ... ok
+test_bug006_draft_warns_seller_when_catalog_price_changes_during_preparation (sales.tests.SalesHistoryTests.test_bug006_draft_warns_seller_when_catalog_price_changes_during_preparation)
+BUG-006: Al actualizar cantidad en el borrador tras cambio de precio del catálogo, se avisa al vendedor. ... ok
+test_bug025_checkout_detects_same_subtotal_product_swap_via_draft_signature (sales.tests.SalesHistoryTests.test_bug025_checkout_detects_same_subtotal_product_swap_via_draft_signature)
+BUG-025: Si se sustituye un producto por otro del mismo precio en otra pestaña, el cobro lo detecta. ... ok
+test_bug029_checkout_renders_discounted_totals_on_validation_error (sales.tests.SalesHistoryTests.test_bug029_checkout_renders_discounted_totals_on_validation_error)
+BUG-029: Si falla el POST en /ventas/cobrar/ con un descuento válido, el resumen muestra el total con descuento. ... ok
+test_bug033_and_bug037_inactive_category_or_product_blocks_search_draft_line_update_and_checkout (sales.tests.SalesHistoryTests.test_bug033_and_bug037_inactive_category_or_product_blocks_search_draft_line_update_and_checkout)
+BUG-033 y BUG-037: Desactivar categoría o producto bloquea búsqueda, actualización de cantidad en borrador y cobro. ... ok
+test_bug035_and_bug036_draft_signature_includes_draft_id_and_checkout_renders_hidden_field_errors (sales.tests.SalesHistoryTests.test_bug035_and_bug036_draft_signature_includes_draft_id_and_checkout_renders_hidden_field_errors)
+BUG-035 y BUG-036: La firma del borrador incluye draft.pk para impedir cobro cruzado entre borradores y muestra errores de campos ocultos. ... ok
+test_discard_draft_endpoint_clears_active_draft (sales.tests.SalesHistoryTests.test_discard_draft_endpoint_clears_active_draft) ... ok
+test_filter_by_correlativo_and_invalid_fecha_do_not_crash (sales.tests.SalesHistoryTests.test_filter_by_correlativo_and_invalid_fecha_do_not_crash) ... ok
+test_filter_by_fecha_returns_200 (sales.tests.SalesHistoryTests.test_filter_by_fecha_returns_200) ... ok
+test_multitab_draft_modification_warns_seller_on_checkout (sales.tests.SalesHistoryTests.test_multitab_draft_modification_warns_seller_on_checkout)
+BUG-007: Si el borrador se modifica en otra pestaña antes de confirmar cobro, se advierte el nuevo subtotal. ... ok
+test_price_change_during_checkout_warns_seller_and_updates_draft_line_price (sales.tests.SalesHistoryTests.test_price_change_during_checkout_warns_seller_and_updates_draft_line_price)
+BUG-006: Si el Admin cambia el precio mientras la vendedora está en /ventas/cobrar/, se alerta y actualiza el precio. ... ok
+test_sales_history_and_shift_history_display_discount_column_and_totals (sales.tests.SalesHistoryTests.test_sales_history_and_shift_history_display_discount_column_and_totals)
+BUG-015: El historial de ventas y del turno muestran la columna Descuento (S/) y totales. ... ok
+test_sales_receipt_hides_nueva_venta_for_admin_and_shows_back_to_history (sales.tests.SalesHistoryTests.test_sales_receipt_hides_nueva_venta_for_admin_and_shows_back_to_history)
+BUG-008 y BUG-023: En la constancia de venta, Admin no ve 'Nueva venta' (que daba 403) y ve 'Volver al historial'. ... ok
+test_seller_can_access_sales_history (sales.tests.SalesHistoryTests.test_seller_can_access_sales_history) ... ok
+test_non_seller_gets_403 (sales.tests.SalesShiftHistoryTests.test_non_seller_gets_403) ... ok
+test_seller_with_no_shift_gets_200_with_empty_message (sales.tests.SalesShiftHistoryTests.test_seller_with_no_shift_gets_200_with_empty_message) ... ok
+test_seller_with_open_shift_sees_page (sales.tests.SalesShiftHistoryTests.test_seller_with_open_shift_sees_page) ... ok
+
+======================================================================
+ERROR: test_non_seller_roles_cannot_access_checkout (sales.tests.CheckoutTests.test_non_seller_roles_cannot_access_checkout) (role=Role.Code.ADMIN)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\tests.py", line 431, in test_non_seller_roles_cannot_access_checkout
+    response, _ = self._post_checkout(Decimal("118.00"))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\tests.py", line 287, in _post_checkout
+    initial = self.client.get(reverse("sales-checkout")).context["form"].initial
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\test\utils.py", line 84, in __getitem__
+    raise KeyError(key)
+KeyError: 'form'
+
+======================================================================
+ERROR: test_non_seller_roles_cannot_access_checkout (sales.tests.CheckoutTests.test_non_seller_roles_cannot_access_checkout) (role=Role.Code.WAREHOUSE)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\tests.py", line 431, in test_non_seller_roles_cannot_access_checkout
+    response, _ = self._post_checkout(Decimal("118.00"))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\tests.py", line 287, in _post_checkout
+    initial = self.client.get(reverse("sales-checkout")).context["form"].initial
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\test\utils.py", line 84, in __getitem__
+    raise KeyError(key)
+KeyError: 'form'
+
+----------------------------------------------------------------------
+Ran 48 tests in 2.768s
+
+FAILED (errors=2)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

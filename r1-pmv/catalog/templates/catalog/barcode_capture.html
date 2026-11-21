@@ -1,0 +1,25 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'catalog/barcode_capture.css' %}">
+<div class="field" id="barcode-capture" data-destination="{{ barcode.id_for_label }}"
+     data-check-url="{% url 'product-barcode-check' %}" data-product-id="{{ product_id|default:'' }}" hidden>
+  <button type="button" class="button button-secondary" id="barcode-capture-open"
+          aria-haspopup="dialog" aria-controls="barcode-capture-dialog">Escanear código</button>
+  <p class="help">Seleccione el tipo de código y abra «Escanear código» para proteger los demás campos.</p>
+  <dialog id="barcode-capture-dialog" class="panel form-panel"
+          aria-labelledby="barcode-capture-title" aria-describedby="barcode-capture-guide">
+    <h3 id="barcode-capture-title">Escanear código</h3>
+    <p id="barcode-capture-guide">Escanee una etiqueta y revise el código antes de copiarlo a la ficha.</p>
+    <div class="field">
+      <label for="barcode-capture-input">Código leído</label>
+      <input id="barcode-capture-input" type="text" maxlength="{{ barcode.field.max_length }}"
+             autocomplete="off" spellcheck="false" aria-describedby="barcode-capture-status barcode-capture-error">
+      <p id="barcode-capture-status" class="help" role="status" aria-live="polite" aria-atomic="true"></p>
+      <div id="barcode-capture-error" class="error-list" role="alert"></div>
+    </div>
+    <div class="form-actions">
+      <button type="button" id="barcode-capture-apply" class="button button-primary" disabled>Usar código</button>
+      <button type="button" id="barcode-capture-cancel" class="button button-secondary">Cancelar</button>
+    </div>
+  </dialog>
+</div>
+<script defer src="{% static 'catalog/barcode_capture.js' %}"></script>

@@ -1,0 +1,247 @@
+{
+  "mode": "Chrome keyboard emulation, no physical phone",
+  "cases": [
+    {
+      "id": "K7-ALTA-0",
+      "ok": true,
+      "code": "00CAT03K-A"
+    },
+    {
+      "id": "K7-ALTA-1",
+      "ok": true,
+      "code": "00CAT03K-B"
+    },
+    {
+      "id": "K7-ALTA-2",
+      "ok": true,
+      "code": "00CAT03K-A"
+    },
+    {
+      "id": "K7-ALTA-3",
+      "ok": true,
+      "code": "00CAT03K-B"
+    },
+    {
+      "id": "K7-ALTA-4",
+      "ok": true,
+      "code": "00CAT03K-B"
+    },
+    {
+      "id": "K7-ALTA-SIN-PERSISTIR",
+      "ok": true
+    },
+    {
+      "id": "K7-ALTA-GUARDADA",
+      "ok": true
+    },
+    {
+      "id": "K7-EDIT-0",
+      "ok": true,
+      "code": "00CAT03K-A"
+    },
+    {
+      "id": "K7-EDIT-1",
+      "ok": true,
+      "code": "00CAT03K-C"
+    },
+    {
+      "id": "K7-EDIT-2",
+      "ok": true,
+      "code": "00CAT03K-A"
+    },
+    {
+      "id": "K7-EDIT-SIN-PERSISTIR",
+      "ok": true
+    },
+    {
+      "id": "K7-EDIT-UUID",
+      "ok": true
+    },
+    {
+      "id": "K7-DUPLICADO-EDICION",
+      "ok": true
+    },
+    {
+      "id": "K7-MANUAL",
+      "ok": true
+    },
+    {
+      "id": "K7-FOCO-REPRODUCIDO",
+      "ok": true
+    },
+    {
+      "id": "K7-FOCO-AL-ABRIR-OBSERVADO",
+      "ok": true,
+      "focusedOnOpen": "name"
+    },
+    {
+      "id": "K7-FOCO-SIN-PERSISTIR",
+      "ok": true
+    },
+    {
+      "id": "K7-PANTALLA-ANTIGUA-RECHAZADA",
+      "ok": true
+    },
+    {
+      "id": "K7-REABRIR-VERSION-ACTUAL",
+      "ok": true,
+      "reopened": {
+        "name": "AUD03 Bebida de prueba",
+        "barcode": "00CAT03K-C",
+        "category": "34962f1b-0d4c-4ae8-a2eb-f365db26e1f3",
+        "sale_price": "9.20",
+        "minimum_stock": "10"
+      }
+    },
+    {
+      "id": "K7-RECUPERACION-SIN-PERDIDA",
+      "ok": true
+    },
+    {
+      "id": "K7-DOBLE-CLIC",
+      "ok": true,
+      "posts": 1,
+      "alerts": []
+    },
+    {
+      "id": "K7-ALMACEN",
+      "ok": true,
+      "cells": [
+        "AUD03 Bebida de prueba",
+        "Higiene",
+        "00CAT03K-C",
+        "9,20",
+        "19",
+        "18",
+        "Disponible"
+      ],
+      "checks": {
+        "name": true,
+        "code": true,
+        "price": true,
+        "minimum": true,
+        "noEdit": true
+      }
+    },
+    {
+      "id": "K7-VENTA-CONSULTA",
+      "ok": true,
+      "cells": [
+        "AUD03 Bebida de prueba",
+        "00CAT03K-C",
+        "19",
+        "S/ 9,20",
+        "Cantidad de AUD03 Bebida de prueba\nAgregar"
+      ]
+    },
+    {
+      "id": "K7-CONSTANCIA",
+      "ok": true
+    },
+    {
+      "id": "K7-INMUTABLE-catalog.Category",
+      "ok": true,
+      "rows": 1
+    },
+    {
+      "id": "K7-INMUTABLE-inventory.Lot",
+      "ok": true,
+      "rows": 1
+    },
+    {
+      "id": "K7-INMUTABLE-inventory.InitialInventoryLoad",
+      "ok": true,
+      "rows": 1
+    },
+    {
+      "id": "K7-INMUTABLE-cash.CashShift",
+      "ok": true,
+      "rows": 1
+    },
+    {
+      "id": "K7-INMUTABLE-sales.Sale",
+      "ok": true,
+      "rows": 1
+    },
+    {
+      "id": "K7-INMUTABLE-sales.SaleLine",
+      "ok": true,
+      "rows": 1
+    },
+    {
+      "id": "K7-INMUTABLE-sales.SaleDraft",
+      "ok": true,
+      "rows": 2
+    },
+    {
+      "id": "K7-INMUTABLE-sales.SaleDraftLine",
+      "ok": true,
+      "rows": 2
+    }
+  ],
+  "findings": [
+    {
+      "id": "K7-FOCO",
+      "status": "INCUMPLE objetivo de evitar sustitucion en otro campo",
+      "priorName": "AUD03 Bebida de prueba",
+      "observedName": "00CAT03K-A",
+      "barcode": "00CAT03K-C",
+      "persisted": false,
+      "explanation": "Global Ctrl+A + BARCODE targets focused name; no save performed."
+    },
+    {
+      "id": "K7-FOCO-AL-ABRIR",
+      "status": "RIESGO REPRODUCIDO",
+      "focusedOnOpen": "name",
+      "observedName": "00CAT03K-A",
+      "barcode": "00CAT03K-C",
+      "persisted": false
+    },
+    {
+      "id": "K7-PANTALLA-ANTIGUA",
+      "status": "CUMPLE muestra",
+      "firstSavedPrice": "9.20",
+      "stalePostedPrice": "8.50",
+      "observedPrice": "9.20",
+      "observedMinimum": 10,
+      "message": [
+        "\n        El producto cambió desde que abrió esta pantalla. Revise la versión actual antes de guardar.\n      "
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "role": "admin",
+      "path": "/productos/nuevo/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/c5966db7-54f6-4502-af7c-578c98dcf318/editar/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/c5966db7-54f6-4502-af7c-578c98dcf318/editar/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/c5966db7-54f6-4502-af7c-578c98dcf318/editar/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/c5966db7-54f6-4502-af7c-578c98dcf318/editar/"
+    },
+    {
+      "role": "admin2",
+      "path": "/productos/c5966db7-54f6-4502-af7c-578c98dcf318/editar/"
+    },
+    {
+      "role": "admin2",
+      "path": "/productos/c5966db7-54f6-4502-af7c-578c98dcf318/editar/"
+    },
+    {
+      "role": "admin",
+      "path": "/productos/c5966db7-54f6-4502-af7c-578c98dcf318/editar/"
+    }
+  ],
+  "browser": "157.0.8103.39"
+}

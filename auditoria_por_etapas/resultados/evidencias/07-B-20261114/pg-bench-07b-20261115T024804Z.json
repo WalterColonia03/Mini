@@ -1,0 +1,1478 @@
+{
+  "stamp": "20261115T024804Z",
+  "engine": "postgresql",
+  "port": 61247,
+  "cases": {
+    "concurrent_checkout_read_committed": {
+      "ok": true,
+      "details": {
+        "during_lock": {
+          "stock_status": 200,
+          "exp_status": 200,
+          "dash_status": 200,
+          "elapsed_ms": 406.78,
+          "sellable_before_commit": 10
+        },
+        "sale_correlative": "V-00000001",
+        "after_commit": {
+          "physical_stock": 10,
+          "sellable_stock": 4,
+          "dash_summary": {
+            "expiring": 1,
+            "expired": 1,
+            "low_stock": 1,
+            "sales_count": 1,
+            "sales_total": "27.00",
+            "discount_total": "0.00",
+            "open_shifts": 1
+          }
+        }
+      }
+    }
+  },
+  "benchmarks": {
+    "lot_total_rows": 20002,
+    "product_total_rows": 2001,
+    "baseline_no_partial_idx": {
+      "endpoints": {
+        "expirations_30": {
+          "min_ms": 3653.95,
+          "median_ms": 3936.59,
+          "max_ms": 4577.5,
+          "times_ms": [
+            3676.18,
+            3653.95,
+            4345.45,
+            3936.59,
+            4577.5
+          ],
+          "response_bytes": 4425395,
+          "query_count": 4
+        },
+        "expirations_7": {
+          "min_ms": 1064.78,
+          "median_ms": 1638.26,
+          "max_ms": 1769.02,
+          "times_ms": [
+            1769.02,
+            1073.56,
+            1664.96,
+            1064.78,
+            1638.26
+          ],
+          "response_bytes": 2028493,
+          "query_count": 4
+        },
+        "stock_overview": {
+          "min_ms": 6124.53,
+          "median_ms": 6573.36,
+          "max_ms": 9635.64,
+          "times_ms": [
+            6179.43,
+            6124.53,
+            6573.36,
+            9287.56,
+            9635.64
+          ],
+          "response_bytes": 2365057,
+          "query_count": 7
+        },
+        "dashboard_admin": {
+          "min_ms": 44.38,
+          "median_ms": 56.86,
+          "max_ms": 78.18,
+          "times_ms": [
+            78.18,
+            44.38,
+            56.86,
+            51.88,
+            57.48
+          ],
+          "response_bytes": 7408,
+          "query_count": 4
+        },
+        "product_list": {
+          "min_ms": 849.94,
+          "median_ms": 980.82,
+          "max_ms": 1509.06,
+          "times_ms": [
+            913.67,
+            849.94,
+            980.82,
+            1432.93,
+            1509.06
+          ],
+          "response_bytes": 2201919,
+          "query_count": 4
+        }
+      },
+      "explains": {
+        "expirations_30": [
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 0.548,
+            "execution_time_ms": 39.275,
+            "top_node": "Sort",
+            "actual_rows": 5002.0,
+            "shared_hit_blocks": 458,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 38.576,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 15.168,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 12.892,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 10.125,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 6.173,
+                "actual_rows": 5002.0,
+                "removed_by_filter": 15000
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 1.107,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 0.438,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.025,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.018,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.026,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_supplier",
+                "index": null,
+                "actual_ms": 0.02,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              }
+            ]
+          }
+        ],
+        "expirations_7": [
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 1.29,
+            "execution_time_ms": 17.676,
+            "top_node": "Sort",
+            "actual_rows": 2001.0,
+            "shared_hit_blocks": 458,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 17.122,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 9.354,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 8.393,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 7.349,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 3.955,
+                "actual_rows": 2001.0,
+                "removed_by_filter": 18001
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 2.094,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 0.847,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.062,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.041,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.035,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_supplier",
+                "index": null,
+                "actual_ms": 0.029,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              }
+            ]
+          }
+        ],
+        "stock_overview": [
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 5.809,
+            "execution_time_ms": 90.952,
+            "top_node": "Sort",
+            "actual_rows": 20002.0,
+            "shared_hit_blocks": 409,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 89.161,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 11.839,
+                "actual_rows": 20002.0,
+                "removed_by_filter": 0
+              }
+            ]
+          },
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 1.675,
+            "execution_time_ms": 19.983,
+            "top_node": "Sort",
+            "actual_rows": 2001.0,
+            "shared_hit_blocks": 457,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 19.362,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 10.748,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 9.517,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 5.741,
+                "actual_rows": 2001.0,
+                "removed_by_filter": 18001
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 2.24,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 1.022,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.077,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.06,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              }
+            ]
+          },
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 0.848,
+            "execution_time_ms": 26.209,
+            "top_node": "Sort",
+            "actual_rows": 3001.0,
+            "shared_hit_blocks": 457,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 25.631,
+                "actual_rows": 3001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 11.635,
+                "actual_rows": 3001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 10.055,
+                "actual_rows": 3001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 5.708,
+                "actual_rows": 3001.0,
+                "removed_by_filter": 17001
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 2.295,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 1.077,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.056,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.045,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              }
+            ]
+          }
+        ],
+        "dashboard_admin": [
+          {
+            "sql_preview": "SELECT expiring, expired, low_stock, sales_count, sales_total, discount_total, open_shifts FROM (SELECT COALESCE(SUM(is_expiring), 0) AS expiring, COALESCE(SUM(is_expired), 0) AS expired FROM (SELECT CASE WHEN (\"inventory_lot\".\"expiration_date\" > '2026-11-14':",
+            "planning_time_ms": 1.469,
+            "execution_time_ms": 36.302,
+            "top_node": "Nested Loop",
+            "actual_rows": 1.0,
+            "shared_hit_blocks": 868,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Nested Loop",
+                "rel": null,
+                "index": null,
+                "actual_ms": 36.006,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Nested Loop",
+                "rel": null,
+                "index": null,
+                "actual_ms": 35.921,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Nested Loop",
+                "rel": null,
+                "index": null,
+                "actual_ms": 35.774,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 6.644,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 5.103,
+                "actual_rows": 13002.0,
+                "removed_by_filter": 7000
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 29.119,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 29.102,
+                "actual_rows": 1.0,
+                "removed_by_filter": 1900
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 22.534,
+                "actual_rows": 19002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 17.824,
+                "actual_rows": 19002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 9.726,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 1.03,
+                "actual_rows": 1901.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 0.608,
+                "actual_rows": 1901.0,
+                "removed_by_filter": 100
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.068,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.054,
+                "actual_rows": 11.0,
+                "removed_by_filter": 0
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.136,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "sales_sale",
+                "index": null,
+                "actual_ms": 0.115,
+                "actual_rows": 1.0,
+                "removed_by_filter": 0
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.078,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "cash_cashshift",
+                "index": null,
+                "actual_ms": 0.071,
+                "actual_rows": 1.0,
+                "removed_by_filter": 0
+              }
+            ]
+          }
+        ],
+        "product_list": [
+          {
+            "sql_preview": "SELECT \"catalog_product\".\"id\", \"catalog_product\".\"category_id\", \"catalog_product\".\"name\", \"catalog_product\".\"search_name\", \"catalog_product\".\"barcode\", \"catalog_product\".\"barcode_type\", \"catalog_product\".\"barcode_normalized\", \"catalog_product\".\"unit\", \"catalog",
+            "planning_time_ms": 0.694,
+            "execution_time_ms": 44.442,
+            "top_node": "Sort",
+            "actual_rows": 2001.0,
+            "shared_hit_blocks": 457,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 43.556,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 40.943,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 30.23,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 22.772,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 11.093,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 1.965,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 0.928,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.076,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.057,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "experimental_partial_index": {
+      "ddl": "CREATE INDEX idx_lot_exp_avail_gt0 ON inventory_lot (expiration_date, received_at, id) WHERE available_quantity > 0",
+      "index_bytes": 663552,
+      "index_size_pretty": "648 kB",
+      "table_total_size_pretty": "8288 kB"
+    },
+    "with_partial_idx": {
+      "endpoints": {
+        "expirations_30": {
+          "min_ms": 2605.96,
+          "median_ms": 3561.48,
+          "max_ms": 4454.95,
+          "times_ms": [
+            4454.95,
+            3561.48,
+            2605.96,
+            4281.64,
+            2811.36
+          ],
+          "response_bytes": 4425395,
+          "query_count": 4
+        },
+        "expirations_7": {
+          "min_ms": 884.52,
+          "median_ms": 1267.39,
+          "max_ms": 2237.75,
+          "times_ms": [
+            2237.75,
+            1267.39,
+            884.52,
+            974.63,
+            2190.99
+          ],
+          "response_bytes": 2028493,
+          "query_count": 4
+        },
+        "stock_overview": {
+          "min_ms": 3507.02,
+          "median_ms": 3630.89,
+          "max_ms": 4893.04,
+          "times_ms": [
+            4893.04,
+            3630.89,
+            4216.71,
+            3507.02,
+            3568.37
+          ],
+          "response_bytes": 2365057,
+          "query_count": 7
+        },
+        "dashboard_admin": {
+          "min_ms": 39.43,
+          "median_ms": 50.96,
+          "max_ms": 81.7,
+          "times_ms": [
+            81.7,
+            50.91,
+            50.96,
+            51.33,
+            39.43
+          ],
+          "response_bytes": 7408,
+          "query_count": 4
+        },
+        "product_list": {
+          "min_ms": 1190.51,
+          "median_ms": 1411.01,
+          "max_ms": 1626.94,
+          "times_ms": [
+            1198.24,
+            1411.01,
+            1463.87,
+            1626.94,
+            1190.51
+          ],
+          "response_bytes": 2201919,
+          "query_count": 4
+        }
+      },
+      "explains": {
+        "expirations_30": [
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 0.696,
+            "execution_time_ms": 32.763,
+            "top_node": "Sort",
+            "actual_rows": 5002.0,
+            "shared_hit_blocks": 429,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 31.984,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 12.582,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 10.464,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 8.46,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Bitmap Heap Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 3.911,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Bitmap Index Scan",
+                "rel": null,
+                "index": "idx_lot_exp_avail_gt0",
+                "actual_ms": 0.341,
+                "actual_rows": 5002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 1.839,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 0.882,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.047,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.036,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.029,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_supplier",
+                "index": null,
+                "actual_ms": 0.02,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              }
+            ]
+          }
+        ],
+        "expirations_7": [
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 1.267,
+            "execution_time_ms": 21.934,
+            "top_node": "Sort",
+            "actual_rows": 2001.0,
+            "shared_hit_blocks": 349,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 21.416,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 8.828,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 7.581,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 6.541,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Bitmap Heap Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 2.587,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Bitmap Index Scan",
+                "rel": null,
+                "index": "idx_lot_exp_avail_gt0",
+                "actual_ms": 0.198,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 2.21,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 1.112,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.06,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.048,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.036,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_supplier",
+                "index": null,
+                "actual_ms": 0.027,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              }
+            ]
+          }
+        ],
+        "stock_overview": [
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 8.384,
+            "execution_time_ms": 120.09,
+            "top_node": "Sort",
+            "actual_rows": 20002.0,
+            "shared_hit_blocks": 409,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 118.46,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 12.726,
+                "actual_rows": 20002.0,
+                "removed_by_filter": 0
+              }
+            ]
+          },
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 1.173,
+            "execution_time_ms": 19.617,
+            "top_node": "Sort",
+            "actual_rows": 2001.0,
+            "shared_hit_blocks": 348,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 18.898,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 8.811,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 7.575,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Bitmap Heap Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 2.961,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Bitmap Index Scan",
+                "rel": null,
+                "index": "idx_lot_exp_avail_gt0",
+                "actual_ms": 0.421,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 2.913,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 1.337,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.098,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.084,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              }
+            ]
+          },
+          {
+            "sql_preview": "SELECT \"inventory_lot\".\"id\", \"inventory_lot\".\"product_id\", \"inventory_lot\".\"initial_load_id\", \"inventory_lot\".\"supplier_id\", \"inventory_lot\".\"responsible_id\", \"inventory_lot\".\"is_initial\", \"inventory_lot\".\"adjustment_origin_id\", \"inventory_lot\".\"number\", \"inve",
+            "planning_time_ms": 1.59,
+            "execution_time_ms": 28.904,
+            "top_node": "Sort",
+            "actual_rows": 3001.0,
+            "shared_hit_blocks": 374,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 28.396,
+                "actual_rows": 3001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 12.534,
+                "actual_rows": 3001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 10.654,
+                "actual_rows": 3001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Bitmap Heap Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 4.225,
+                "actual_rows": 3001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Bitmap Index Scan",
+                "rel": null,
+                "index": "idx_lot_exp_avail_gt0",
+                "actual_ms": 0.432,
+                "actual_rows": 3001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 3.597,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 1.816,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.104,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.077,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              }
+            ]
+          }
+        ],
+        "dashboard_admin": [
+          {
+            "sql_preview": "SELECT expiring, expired, low_stock, sales_count, sales_total, discount_total, open_shifts FROM (SELECT COALESCE(SUM(is_expiring), 0) AS expiring, COALESCE(SUM(is_expired), 0) AS expired FROM (SELECT CASE WHEN (\"inventory_lot\".\"expiration_date\" > '2026-11-14':",
+            "planning_time_ms": 1.368,
+            "execution_time_ms": 30.013,
+            "top_node": "Nested Loop",
+            "actual_rows": 1.0,
+            "shared_hit_blocks": 540,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Nested Loop",
+                "rel": null,
+                "index": null,
+                "actual_ms": 29.793,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Nested Loop",
+                "rel": null,
+                "index": null,
+                "actual_ms": 29.759,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Nested Loop",
+                "rel": null,
+                "index": null,
+                "actual_ms": 29.668,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 3.162,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Index Only Scan",
+                "rel": "inventory_lot",
+                "index": "idx_lot_exp_avail_gt0",
+                "actual_ms": 1.795,
+                "actual_rows": 13002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 26.495,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 26.483,
+                "actual_rows": 1.0,
+                "removed_by_filter": 1900
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 20.702,
+                "actual_rows": 19002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 16.189,
+                "actual_rows": 19002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 8.479,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 1.098,
+                "actual_rows": 1901.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 0.641,
+                "actual_rows": 1901.0,
+                "removed_by_filter": 100
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.073,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.053,
+                "actual_rows": 11.0,
+                "removed_by_filter": 0
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.081,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "sales_sale",
+                "index": null,
+                "actual_ms": 0.069,
+                "actual_rows": 1.0,
+                "removed_by_filter": 0
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.025,
+                "actual_rows": 1.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "cash_cashshift",
+                "index": null,
+                "actual_ms": 0.021,
+                "actual_rows": 1.0,
+                "removed_by_filter": 0
+              }
+            ]
+          }
+        ],
+        "product_list": [
+          {
+            "sql_preview": "SELECT \"catalog_product\".\"id\", \"catalog_product\".\"category_id\", \"catalog_product\".\"name\", \"catalog_product\".\"search_name\", \"catalog_product\".\"barcode\", \"catalog_product\".\"barcode_type\", \"catalog_product\".\"barcode_normalized\", \"catalog_product\".\"unit\", \"catalog",
+            "planning_time_ms": 0.469,
+            "execution_time_ms": 35.646,
+            "top_node": "Sort",
+            "actual_rows": 2001.0,
+            "shared_hit_blocks": 457,
+            "shared_read_blocks": 0,
+            "plan_tree_summary": [
+              {
+                "node": "Sort",
+                "rel": null,
+                "index": null,
+                "actual_ms": 35.039,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Aggregate",
+                "rel": null,
+                "index": null,
+                "actual_ms": 32.417,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 23.171,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash Join",
+                "rel": null,
+                "index": null,
+                "actual_ms": 16.499,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "inventory_lot",
+                "index": null,
+                "actual_ms": 7.387,
+                "actual_rows": 20002.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.899,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_product",
+                "index": null,
+                "actual_ms": 0.426,
+                "actual_rows": 2001.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Hash",
+                "rel": null,
+                "index": null,
+                "actual_ms": 0.033,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              },
+              {
+                "node": "Seq Scan",
+                "rel": "catalog_category",
+                "index": null,
+                "actual_ms": 0.025,
+                "actual_rows": 11.0,
+                "removed_by_filter": null
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "pg_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+  "port_closed": true,
+  "protected_core_unchanged": true,
+  "protected_unchanged": true,
+  "concurrent_external_db_changes": []
+}

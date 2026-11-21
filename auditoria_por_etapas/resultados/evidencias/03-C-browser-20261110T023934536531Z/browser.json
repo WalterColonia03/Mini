@@ -1,0 +1,360 @@
+{
+  "stage": "03-C",
+  "started": "2026-11-10T02:39:38.485Z",
+  "cases": [
+    {
+      "id": "C01-initial",
+      "ok": true,
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nombre del producto",
+          "value": "",
+          "required": true,
+          "type": "text",
+          "max": "",
+          "min": "",
+          "maxLength": 160,
+          "mode": "",
+          "refs": [],
+          "linked": true
+        },
+        {
+          "name": "barcode",
+          "label": "Código de barras",
+          "value": "",
+          "required": true,
+          "type": "text",
+          "max": "",
+          "min": "",
+          "maxLength": 64,
+          "mode": "numeric",
+          "refs": [
+            "id_barcode_helptext"
+          ],
+          "linked": false
+        },
+        {
+          "name": "category",
+          "label": "Categoría",
+          "value": "",
+          "required": true,
+          "type": "select-one",
+          "mode": "",
+          "refs": [],
+          "linked": true
+        },
+        {
+          "name": "unit",
+          "label": "Unidad de medida",
+          "value": "UND",
+          "required": false,
+          "type": "select-one",
+          "mode": "",
+          "refs": [],
+          "linked": true
+        },
+        {
+          "name": "sale_price",
+          "label": "Precio final con IGV (S/)",
+          "value": "",
+          "required": true,
+          "type": "number",
+          "max": "",
+          "min": "0.01",
+          "maxLength": -1,
+          "mode": "decimal",
+          "refs": [
+            "id_sale_price_helptext"
+          ],
+          "linked": false
+        },
+        {
+          "name": "minimum_stock",
+          "label": "Existencia mínima",
+          "value": "10",
+          "required": false,
+          "type": "number",
+          "max": "999999",
+          "min": "0",
+          "maxLength": -1,
+          "mode": "numeric",
+          "refs": [
+            "id_minimum_stock_helptext"
+          ],
+          "linked": false
+        }
+      ],
+      "options": [
+        "---------",
+        "Higiene",
+        "Productos enlatados"
+      ],
+      "screenshot": "01-alta.png"
+    },
+    {
+      "id": "C02-help-links",
+      "ok": false
+    },
+    {
+      "id": "C03-cancel",
+      "ok": true
+    },
+    {
+      "id": "C04-persisted",
+      "ok": true,
+      "product": {
+        "id": "7d5cc6b6-ab29-416b-ba3e-d6df216da5fd",
+        "name": "Atún de prueba",
+        "barcode": "Ac-12 34",
+        "category_id": "ddc24ec2-9d25-42c8-a42a-7dbe869f8f36",
+        "sale_price": "8.50",
+        "minimum_stock": 10,
+        "unit": "UND",
+        "controls_expiration": true,
+        "is_active": true
+      },
+      "normalisedCode": "ac-1234"
+    },
+    {
+      "id": "C05-confirmation",
+      "ok": true,
+      "text": "✓\n\nREGISTRO COMPLETADO\n\nAtún de prueba\n\nEl producto se creó con cero existencias. Los datos siguientes muestran su estado actual.\n\nCódigo\nAc-12 34\nCategoría\nProductos enlatados\nPrecio de venta\nS/ 8,50\nExistencia mínima\n10 UND\nExistencias físicas\n0 UND\nDisponibilidad actual\nNo disponible para venta: sin stock vigente\nRegistrar otro producto\nVer catálogo\nIr al inicio",
+      "screenshot": "05-confirmacion.png"
+    },
+    {
+      "id": "C06-reload-alias",
+      "ok": true
+    },
+    {
+      "id": "C07-visible-errors",
+      "ok": true,
+      "errors": [
+        "\n        Código de barras\n        \n        Debe ser único. Se ignorarán espacios exteriores e internos al compararlo.\n        Ya existe un producto con este código de barras.Ingrese el código de barras.\n      ",
+        "\n        Precio final con IGV (S/)\n        \n        Mayor que cero y con un máximo de dos decimales.\n        Asegúrese de que este valor es mayor o igual a 0.01.\n      ",
+        "\n        Existencia mínima\n        \n        Entero mayor o igual que cero. Si lo deja vacío, se guardará 10.\n        Asegúrese de que este valor es mayor o igual a 0.\n      "
+      ],
+      "screenshot": "07-errores.png"
+    },
+    {
+      "id": "C08-errors-linked",
+      "ok": false
+    },
+    {
+      "id": "C09-empty",
+      "ok": false,
+      "status": 200,
+      "observed": {}
+    },
+    {
+      "id": "C09-name-empty",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "Este campo es obligatorio.Ingrese el nombre del producto."
+      }
+    },
+    {
+      "id": "C09-name-punctuation",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "El nombre del producto debe contener letras o números.Ingrese el nombre del producto."
+      }
+    },
+    {
+      "id": "C09-name-long",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "Asegúrese de que este valor tenga menos de 160 caracteres (tiene 161).Ingrese el nombre del producto."
+      }
+    },
+    {
+      "id": "C09-barcode-empty",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "barcode": "Este campo es obligatorio.Ingrese el código de barras."
+      }
+    },
+    {
+      "id": "C09-barcode-long",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "barcode": "Asegúrese de que este valor tenga menos de 64 caracteres (tiene 65).Ingrese el código de barras."
+      }
+    },
+    {
+      "id": "C09-barcode-chars",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "barcode": "El código de barras solo puede contener letras, números, espacios o guiones.Ingrese el código de barras."
+      }
+    },
+    {
+      "id": "C09-barcode-duplicate",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "barcode": "Ya existe un producto con este código de barras.Ingrese el código de barras."
+      }
+    },
+    {
+      "id": "C09-category-empty",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "category": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "C09-category-inactive",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "category": "Seleccione una categoría válida de la lista."
+      }
+    },
+    {
+      "id": "C09-category-absent",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "category": "Seleccione una categoría válida de la lista."
+      }
+    },
+    {
+      "id": "C09-unit-wrong",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "unit": "Escoja una opción válida. KG no es una de las opciones disponibles."
+      }
+    },
+    {
+      "id": "C09-price-0",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Este campo es obligatorio."
+      }
+    },
+    {
+      "id": "C09-price-1",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Asegúrese de que este valor es mayor o igual a 0.01."
+      }
+    },
+    {
+      "id": "C09-price-2",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Asegúrese de que este valor es mayor o igual a 0.01."
+      }
+    },
+    {
+      "id": "C09-price-3",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Asegúrese de que no haya más de 2 dígitos decimales."
+      }
+    },
+    {
+      "id": "C09-price-4",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Introduzca un número."
+      }
+    },
+    {
+      "id": "C09-price-5",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Introduzca un número decimal válido sin notación científica."
+      }
+    },
+    {
+      "id": "C09-price-6",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "El precio no puede superar S/ 9,999,999.99."
+      }
+    },
+    {
+      "id": "C09-price-7",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "sale_price": "Introduzca un número."
+      }
+    },
+    {
+      "id": "C09-minimum-0",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "minimum_stock": "Asegúrese de que este valor es mayor o igual a 0."
+      }
+    },
+    {
+      "id": "C09-minimum-1",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "minimum_stock": "Introduzca un número entero."
+      }
+    },
+    {
+      "id": "C09-minimum-2",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "minimum_stock": "Introduzca un número entero."
+      }
+    },
+    {
+      "id": "C09-minimum-3",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "minimum_stock": "Asegúrese de que este valor sea menor o igual a 999999."
+      }
+    },
+    {
+      "id": "C09-name-duplicate",
+      "ok": true,
+      "status": 200,
+      "observed": {
+        "name": "Ya existe un producto registrado con este nombre.Ingrese el nombre del producto."
+      }
+    },
+    {
+      "id": "C09-name-uppercase",
+      "ok": false,
+      "status": 302,
+      "observed": {}
+    },
+    {
+      "id": "C10-rejections-persistence",
+      "ok": false
+    }
+  ],
+  "errors": [
+    {
+      "type": "Error",
+      "message": "locator.innerText: Error: strict mode violation: locator('tr').filter({ hasText: 'Atún de prueba' }) resolved to 2 elements:     1) <tr>…</tr> aka getByRole('row', { name: 'ATÚN DE PRUEBA Productos enlatados UNIQUE-02 8,50 0 Stock bajo 10 Sin stock' })     2) <tr>…</tr> aka getByRole('row', { name: 'Atún de prueba Productos enlatados Ac-12 34 8,50 0 Stock bajo 10 Sin stock' })"
+    }
+  ],
+  "browser": "157.0.8103.39",
+  "finished": "2026-11-10T02:39:47.635Z"
+}

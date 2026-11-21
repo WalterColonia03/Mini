@@ -1,0 +1,268 @@
+{
+  "hashes_and_helpers": {
+    "stage08_files_checked": 56,
+    "all_stage08_files_match_14_cierre": true,
+    "all_changed_files_since_14_cierre": [],
+    "dead_helper_references": {
+      "_inventory_payload_signature": [
+        "inventory/views.py:53:def _inventory_payload_signature(*, action: str, lot_id, **fields) -> str:"
+      ],
+      "_resolve_inventory_idempotency_key": [
+        "inventory/views.py:62:def _resolve_inventory_idempotency_key(request, key_value, *, action: str, lot_id, value) -> str:"
+      ],
+      "_load_locked_inventory_session": [
+        "inventory/views.py:70:def _load_locked_inventory_session(request):"
+      ],
+      "_inventory_key_status": [
+        "inventory/views.py:86:def _inventory_key_status(store, key_str: str, signature: str) -> str:"
+      ],
+      "_save_inventory_key": [
+        "inventory/views.py:99:def _save_inventory_key(store, *, is_db_store: bool, key_str: str, signature: str) -> None:"
+      ]
+    },
+    "doc_and_protected_db_hashes": {
+      "08_Historias_de_Usuario.md": "dec15f31693e63b1b8a54f07edc9c74ba6b747adeed25f3f2a8db5586cbc072b",
+      "07_Reglas_de_Negocio.md": "1561386a27d526e93faac833e2e32090fc165f9bf46170f91baec68a4d897d6d",
+      "09_Product_Backlog.md": "9a51bb41b240523ee2d4964e458e84ed688d49be9459cae038e20e2a016c1684",
+      "03_Matriz_de_Trazabilidad_y_Pruebas.md": "a3ef7926424da26c729f3993858e1ef008ceb9932b1d951c225734ce7c712a53",
+      "02_Diseno_Tecnico_R1_PMV.md": "37bcda7bafbbc3aec0def740df719e3c52c52e9003450625ae85f566db8668a1",
+      "16_Task_Breakdown.md": "da6fb767b5032b334acf242938fc02b1d457881c0a5f105f89be7bbbe930f948",
+      "21_Alcance_Actual_y_Diferencias.md": "aa8d5b102b995fa5d1361cc72c24d52d650af71a4da3e239e960e3e9cb9be5d8",
+      "r1-pmv/r1_pmv.sqlite3": "c60b4027d4d2f0953ddcbb828cd6412e9889f9794537de9c50aed7f92fdded58"
+    }
+  },
+  "django_probes": {
+    "form_unit_cost_probes": {
+      "scientific_lower": {
+        "raw_cost": "1e2",
+        "PhysicalAdjustmentForm_valid": true,
+        "PhysicalAdjustmentForm_errors": {},
+        "PhysicalAdjustmentForm_cleaned_unit_cost": "1E+2",
+        "LotInputForm_valid": false,
+        "LotInputForm_errors": {
+          "unit_cost": [
+            "Introduzca un costo decimal válido sin notación científica."
+          ]
+        }
+      },
+      "scientific_upper": {
+        "raw_cost": "1E2",
+        "PhysicalAdjustmentForm_valid": true,
+        "PhysicalAdjustmentForm_errors": {},
+        "PhysicalAdjustmentForm_cleaned_unit_cost": "1E+2",
+        "LotInputForm_valid": false,
+        "LotInputForm_errors": {
+          "unit_cost": [
+            "Introduzca un costo decimal válido sin notación científica."
+          ]
+        }
+      },
+      "arabic_digits": {
+        "raw_cost": "٢.٥",
+        "PhysicalAdjustmentForm_valid": true,
+        "PhysicalAdjustmentForm_errors": {},
+        "PhysicalAdjustmentForm_cleaned_unit_cost": "2.5",
+        "LotInputForm_valid": false,
+        "LotInputForm_errors": {
+          "unit_cost": [
+            "Introduzca un costo decimal válido usando dígitos ASCII."
+          ]
+        }
+      },
+      "five_decimals": {
+        "raw_cost": "1.12345",
+        "PhysicalAdjustmentForm_valid": false,
+        "PhysicalAdjustmentForm_errors": {
+          "unit_cost": [
+            "Asegúrese de que no haya más de 4 dígitos decimales."
+          ]
+        },
+        "PhysicalAdjustmentForm_cleaned_unit_cost": null,
+        "LotInputForm_valid": false,
+        "LotInputForm_errors": {
+          "unit_cost": [
+            "Asegúrese de que no haya más de 4 dígitos decimales."
+          ]
+        }
+      },
+      "negative": {
+        "raw_cost": "-1.00",
+        "PhysicalAdjustmentForm_valid": false,
+        "PhysicalAdjustmentForm_errors": {
+          "unit_cost": [
+            "Asegúrese de que este valor es mayor o igual a 0.0001."
+          ]
+        },
+        "PhysicalAdjustmentForm_cleaned_unit_cost": null,
+        "LotInputForm_valid": false,
+        "LotInputForm_errors": {
+          "unit_cost": [
+            "Asegúrese de que este valor es mayor o igual a 0.0001."
+          ]
+        }
+      },
+      "zero": {
+        "raw_cost": "0",
+        "PhysicalAdjustmentForm_valid": false,
+        "PhysicalAdjustmentForm_errors": {
+          "unit_cost": [
+            "Asegúrese de que este valor es mayor o igual a 0.0001."
+          ]
+        },
+        "PhysicalAdjustmentForm_cleaned_unit_cost": null,
+        "LotInputForm_valid": false,
+        "LotInputForm_errors": {
+          "unit_cost": [
+            "Asegúrese de que este valor es mayor o igual a 0.0001."
+          ]
+        }
+      },
+      "over_max": {
+        "raw_cost": "1000000.00",
+        "PhysicalAdjustmentForm_valid": true,
+        "PhysicalAdjustmentForm_errors": {},
+        "PhysicalAdjustmentForm_cleaned_unit_cost": "1000000.00",
+        "LotInputForm_valid": true,
+        "LotInputForm_errors": {}
+      }
+    },
+    "legacy_zero_cost_writeoff": {
+      "writeoff_unit_cost": "0.0000",
+      "remaining_lot_qty": 4,
+      "positive_adj_rejected_with": [
+        "El costo promedio del stock existente no es fiable. Investigue antes de ajustar."
+      ]
+    },
+    "simultaneous_lote_and_producto_get": {
+      "status_code": 200,
+      "selected_new_lot_heading_present": true,
+      "adjustment_submit_button_present": true
+    },
+    "new_lot_space_normalization": {
+      "saved_number": "LOTE ESPACIO-1",
+      "normalized": "LOTE ESPACIO-1",
+      "adjustment_origin_id": "945013f7-e217-4fb8-942c-6e3f013fe392"
+    },
+    "leap_year_2028_02_29_saved": "2028-02-29",
+    "route_permission_and_404_matrix": {
+      "writeoff_form": {
+        "anon_get": 302,
+        "admin_get": 200,
+        "almacenero_get": 200,
+        "vendedor_get": 403,
+        "admin_put": 405,
+        "admin_delete": 405
+      },
+      "writeoff_receipt": {
+        "anon_get": 302,
+        "admin_get": 200,
+        "almacenero_get": 200,
+        "vendedor_get": 403,
+        "admin_put": 405,
+        "admin_delete": 405
+      },
+      "adjustment_form": {
+        "anon_get": 302,
+        "admin_get": 200,
+        "almacenero_get": 403,
+        "vendedor_get": 403,
+        "admin_put": 405,
+        "admin_delete": 405
+      },
+      "adjustment_detail": {
+        "anon_get": 302,
+        "admin_get": 200,
+        "almacenero_get": 200,
+        "vendedor_get": 403,
+        "admin_put": 405,
+        "admin_delete": 405
+      },
+      "movements": {
+        "anon_get": 302,
+        "admin_get": 200,
+        "almacenero_get": 200,
+        "vendedor_get": 403,
+        "admin_put": 405,
+        "admin_delete": 405
+      },
+      "stock_overview": {
+        "anon_get": 302,
+        "admin_get": 200,
+        "almacenero_get": 200,
+        "vendedor_get": 403,
+        "admin_put": 405,
+        "admin_delete": 405
+      },
+      "future_writeoffs_root": {
+        "anon_get": 404,
+        "admin_get": 404,
+        "almacenero_get": 404,
+        "vendedor_get": 404,
+        "admin_put": 404,
+        "admin_delete": 404
+      },
+      "future_writeoffs_hist": {
+        "anon_get": 404,
+        "admin_get": 404,
+        "almacenero_get": 404,
+        "vendedor_get": 404,
+        "admin_put": 404,
+        "admin_delete": 404
+      },
+      "future_adjustments_root": {
+        "anon_get": 404,
+        "admin_get": 404,
+        "almacenero_get": 404,
+        "vendedor_get": 404,
+        "admin_put": 404,
+        "admin_delete": 404
+      },
+      "future_adjustments_hist": {
+        "anon_get": 404,
+        "admin_get": 404,
+        "almacenero_get": 404,
+        "vendedor_get": 404,
+        "admin_put": 404,
+        "admin_delete": 404
+      }
+    },
+    "vendedor_and_role_cost_visibility": {
+      "vendedor_movements_status": 403,
+      "vendedor_pos_sees_3_cost": false,
+      "almacenero_mov_sees_sale_unit_cost": true,
+      "almacenero_mov_sees_3_0000": true,
+      "admin_mov_sees_Costo_unitario": true,
+      "writeoff_receipt_sees_3_0000": true
+    },
+    "sale_fefo_and_cash_shift_invariance": {
+      "sale_total": "55.00",
+      "allocations": [
+        [
+          "LOTE ESPACIO-1",
+          3
+        ],
+        [
+          "L-INIT-01",
+          7
+        ]
+      ],
+      "expired_lot_allocated": false,
+      "product_physical_stock": 7,
+      "product_sellable_stock": 4,
+      "product_average_cost": "3.0000",
+      "shift_opening_amount": "50.00",
+      "shift_sales_count": 1,
+      "ledger_closing_balance": 7,
+      "ledger_issues": [],
+      "ledger_row_count": 7
+    },
+    "ledger_query_param_checks": {
+      "page_0_status": 200,
+      "page_0_has_error": true,
+      "repeated_tipo_status": 200,
+      "repeated_tipo_has_error": true,
+      "salidas_filter_status": 200,
+      "salidas_preserves_opening_closing": true
+    }
+  }
+}

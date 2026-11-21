@@ -1,0 +1,188 @@
+Found 9 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying cash.0004_integration_money_limits... OK
+  Applying cash.0005_alter_cashshift_options_alter_cashshiftclose_options... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying catalog.0003_normalize_category_spaces... OK
+  Applying catalog.0004_product_search_name... OK
+  Applying catalog.0005_product_name_and_minimum_policy... OK
+  Applying catalog.0006_category_state_version... OK
+  Applying catalog.0007_product_barcode_identity... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying inventory.0006_lot_received_at_immutable... OK
+  Applying inventory.0007_output_unit_cost... OK
+  Applying inventory.0008_stock_receipts... OK
+  Applying inventory.0009_initial_load_snapshots... OK
+  Applying inventory.0010_writeoff_history... OK
+  Applying inventory.0011_adjustment_history_and_origin... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sales.0005_saleline_unit_cost... OK
+  Applying sales.0006_sale_lot_traceability... OK
+  Applying sales.0007_integration_money_limits... OK
+  Applying sales.0008_alter_sale_options_alter_saledraft_options... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_checkout_retry_recovers_receipt_even_with_new_active_draft_without_touching_it (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_recovers_receipt_even_with_new_active_draft_without_touching_it) ... ok
+test_checkout_retry_recovers_receipt_when_no_active_draft (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_recovers_receipt_when_no_active_draft) ... ok
+test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_checkout_retry_tampered_amounts_rejected_and_new_draft_same_key_rejected) ... ok
+test_histories_filters_nul_lima_dates_isolation_and_query_counts (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_histories_filters_nul_lima_dates_isolation_and_query_counts) ... Not Found: /caja/turnos/30216457-0e85-46ca-843e-1731ee89cf1c/cerrado/
+Forbidden (Permission denied): /ventas/historial/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /ventas/historial/turno/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/turnos/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /caja/turnos/52856a30-7f30-445d-9322-54ceb87773aa/cerrado/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Method Not Allowed (POST): /ventas/historial/
+Method Not Allowed (POST): /caja/turnos/
+ok
+test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_legal_notice_subtotal_payment_print_and_snapshot_isolation) ... Not Found: /ventas/constancia/f6329da0-e7d3-47d6-9437-63eb45d2110d/
+Not Found: /ventas/constancia/1bd691c6-6160-42a2-b9b4-387703aa0dfb/
+Not Found: /ventas/constancia/no-es-uuid/
+Forbidden (Permission denied): /ventas/constancia/f6329da0-e7d3-47d6-9437-63eb45d2110d/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Forbidden (Permission denied): /ventas/constancia/f6329da0-e7d3-47d6-9437-63eb45d2110d/
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\identity\authorization.py", line 31, in wrapped
+    raise PermissionDenied("No tiene permiso para esta operación.")
+django.core.exceptions.PermissionDenied: No tiene permiso para esta operación.
+Method Not Allowed (POST): /ventas/constancia/f6329da0-e7d3-47d6-9437-63eb45d2110d/
+ok
+test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback) ... ERROR
+test_seller_menu_closed_acta_title_last_sale_disappears_and_deactivated_cookie (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_seller_menu_closed_acta_title_last_sale_disappears_and_deactivated_cookie) ... FAIL
+test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe) ... ERROR
+test_stage12_migrations_round_trip_and_no_pending_migrations (sales.test_audit12_receipts_history.Stage12MigrationOrderingTests.test_stage12_migrations_round_trip_and_no_pending_migrations) ... ok
+
+======================================================================
+ERROR: test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit12_receipts_history.py", line 683, in test_receipt_line_order_three_items_reversed_uuids_and_legacy_fallback
+    self.assertTrue(r_rev.context["has_original_line_order"])
+                    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\test\utils.py", line 84, in __getitem__
+    raise KeyError(key)
+KeyError: 'has_original_line_order'
+
+======================================================================
+ERROR: test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit12_receipts_history.py", line 502, in test_tied_timestamps_and_26_item_pagination_disjoint_complete_and_safe
+    CashShiftClose.objects.create(
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\base.py", line 558, in __init__
+    _setattr(self, prop, value)
+AttributeError: property 'difference_amount' of 'CashShiftClose' object has no setter
+
+======================================================================
+FAIL: test_seller_menu_closed_acta_title_last_sale_disappears_and_deactivated_cookie (sales.test_audit12_receipts_history.Stage12ReceiptsAndHistoriesTests.test_seller_menu_closed_acta_title_last_sale_disappears_and_deactivated_cookie)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\sales\test_audit12_receipts_history.py", line 758, in test_seller_menu_closed_acta_title_last_sale_disappears_and_deactivated_cookie
+    self.assertContains(r_acta_seller, "@media print")
+AssertionError: False is not true : Couldn't find '@media print' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Turno cerrado \xc2\xb7 Minimarket</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n          \n          \n            <a class="nav-item" href="/caja/abrir/">\n              <span class="nav-icon" aria-hidden="true">$</span><span>Apertura de caja</span>\n            </a>\n            <a class="nav-item" href="/ventas/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Preparar venta</span>\n            </a>\n            <a class="nav-item" href="/caja/cerrar/">\n              <span class="nav-icon" aria-hidden="true">&#10006;</span><span>Cerrar turno</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/turno/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Mis ventas del turno</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Mi historial de ventas</span>\n            </a>\n            <a class="nav-item is-active" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Mi historial de turnos</span>\n            </a>\n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">V</span>\n            <span><strong>Vendedora Uno 12</strong><small>Vendedor</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>\n              Acta de cierre\n              \n            </h1>\n          </div>\n          <div class="topbar-user"><span>Vendedora Uno 12</span><span class="role-pill">Vendedor</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<section class="success-panel panel no-print" data-testid="cash-shift-closed">\n  <div class="success-icon" aria-hidden="true">\xe2\x9c\x93</div>\n  <p class="eyebrow">Cierre registrado</p>\n  <h2>Turno cerrado correctamente</h2>\n  <p class="lede">El turno de CAJA-01 ha sido cerrado y el acta qued\xc3\xb3 registrada.</p>\n</section>\n\n<section class="success-panel panel info-panel cash-close-acta mt-3">\n  <h3>Acta de cierre del turno</h3>\n  <dl class="summary-list summary-list-wide">\n    <div><dt>Caja</dt><dd>CAJA-01</dd></div>\n    <div><dt>Vendedor</dt><dd>Vendedora Uno 12</dd></div>\n    <div><dt>Apertura</dt><dd>14/11/2026 16:23</dd></div>\n    <div><dt>Cierre</dt><dd>14/11/2026 16:23</dd></div>\n    <div><dt>Monto inicial</dt><dd>S/ 50,00</dd></div>\n    <div><dt>Total cobrado</dt><dd>S/ 10,00</dd></div>\n    <div><dt>Monto esperado</dt><dd>S/ 60,00</dd></div>\n    <div><dt>Monto contado</dt><dd>S/ 60,00</dd></div>\n    <div>\n      <dt>Diferencia</dt>\n      <dd>\n        \n          <span class="status status-ready">Exacto S/ 0,00</span>\n        \n      </dd>\n    </div>\n  </dl>\n\n  <div class="form-actions no-print">\n    <a class="button button-primary" href="/inicio/">Volver al inicio</a>\n    <a class="button button-secondary" href="/caja/turnos/">Ver historial de turnos</a>\n    <button class="button button-secondary" type="button" onclick="window.print()">Imprimir acta</button>\n  </div>\n</section>\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  <script src="/static/identity/navigation.js" defer></script>\n  \n</body>\n</html>\n'
+
+----------------------------------------------------------------------
+Ran 9 tests in 9.023s
+
+FAILED (failures=1, errors=2)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

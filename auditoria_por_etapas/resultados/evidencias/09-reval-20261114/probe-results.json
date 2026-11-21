@@ -1,0 +1,294 @@
+{
+  "stamp_utc": "20261115T025848660287Z",
+  "register_edge_cases": {
+    "missing_get_status": 200,
+    "missing_get_has_form": true,
+    "missing_post_status": 200,
+    "missing_post_has_error": true,
+    "missing_post_error_text": "La caja única CAJA-01 no está disponible.",
+    "inactive_get_status": 200,
+    "inactive_get_has_form": true,
+    "inactive_post_status": 200,
+    "inactive_post_has_error": true,
+    "inactive_post_error_text": "La caja única CAJA-01 no está disponible.",
+    "shifts_after_rejects": 0
+  },
+  "open_validation": {
+    "form": {
+      "empty": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "opening_amount": [
+            "Este campo es obligatorio."
+          ]
+        }
+      },
+      "spaces": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "opening_amount": [
+            "Introduzca un número."
+          ]
+        }
+      },
+      "neg_001": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "opening_amount": [
+            "Asegúrese de que este valor es mayor o igual a 0.00."
+          ]
+        }
+      },
+      "neg_zero": {
+        "valid": true,
+        "cleaned": "0.00",
+        "errors": {}
+      },
+      "plus_sign": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "opening_amount": [
+            "Introduzca el monto usando únicamente dígitos ASCII (0-9) y punto decimal."
+          ]
+        }
+      },
+      "3_decimals": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "opening_amount": [
+            "Asegúrese de que no haya más de 2 dígitos decimales."
+          ]
+        }
+      },
+      "sci_notation": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "opening_amount": [
+            "Introduzca un monto decimal válido sin notación científica."
+          ]
+        }
+      },
+      "alpha": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "opening_amount": [
+            "Introduzca un número."
+          ]
+        }
+      },
+      "non_ascii_digits": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "opening_amount": [
+            "Introduzca el monto usando únicamente dígitos ASCII (0-9) y punto decimal."
+          ]
+        }
+      },
+      "over_op_max": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "opening_amount": [
+            "Asegúrese de que este valor es menor o igual a 9999999.99."
+          ]
+        }
+      },
+      "zero": {
+        "valid": true,
+        "cleaned": "0.00",
+        "errors": {}
+      },
+      "op_max": {
+        "valid": true,
+        "cleaned": "9999999.99",
+        "errors": {}
+      }
+    },
+    "service_rejections": {
+      "neg": {
+        "ok": false,
+        "exc_type": "ValidationError",
+        "message": "{'opening_amount': ['Ingrese un monto no negativo con hasta dos decimales.']}"
+      },
+      "3_dec": {
+        "ok": false,
+        "exc_type": "ValidationError",
+        "message": "{'opening_amount': ['Ingrese un monto no negativo con hasta dos decimales.']}"
+      },
+      "over_max": {
+        "ok": false,
+        "exc_type": "ValidationError",
+        "message": "{'opening_amount': ['El monto no puede superar S/ 9999999.99.']}"
+      },
+      "float_type": {
+        "ok": false,
+        "exc_type": "ValidationError",
+        "message": "{'opening_amount': ['Ingrese un monto válido con hasta dos decimales.']}"
+      }
+    },
+    "shifts_count": 0
+  },
+  "cumulative_money_limit": {
+    "close_form": {
+      "empty": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "counted_amount": [
+            "Este campo es obligatorio."
+          ]
+        }
+      },
+      "neg_001": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "counted_amount": [
+            "Asegúrese de que este valor es mayor o igual a 0.00."
+          ]
+        }
+      },
+      "neg_zero": {
+        "valid": true,
+        "cleaned": "0.00",
+        "errors": {}
+      },
+      "plus_sign": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "counted_amount": [
+            "Introduzca el monto usando únicamente dígitos ASCII (0-9) y punto decimal."
+          ]
+        }
+      },
+      "3_decimals": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "counted_amount": [
+            "Asegúrese de que no haya más de 2 dígitos decimales."
+          ]
+        }
+      },
+      "sci_notation": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "counted_amount": [
+            "Introduzca un monto decimal válido sin notación científica."
+          ]
+        }
+      },
+      "non_ascii_digits": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "counted_amount": [
+            "Introduzca el monto usando únicamente dígitos ASCII (0-9) y punto decimal."
+          ]
+        }
+      },
+      "10M_allowed_in_close": {
+        "valid": true,
+        "cleaned": "10000000.00",
+        "errors": {}
+      },
+      "max_14_2": {
+        "valid": true,
+        "cleaned": "999999999999.99",
+        "errors": {}
+      },
+      "over_14_2": {
+        "valid": false,
+        "cleaned": null,
+        "errors": {
+          "counted_amount": [
+            "Asegúrese de que este valor es menor o igual a 999999999999.99.",
+            "Asegúrese de que no haya más de 14 dígitos en total."
+          ]
+        }
+      }
+    },
+    "big_close_result": {
+      "ok": true,
+      "result": "Cierre · CAJA-01 · Ana Vendedora · CLOSED · 2026-11-15 02:58:54.695807+00:00"
+    },
+    "expected": "21999999.99",
+    "counted": "21999999.00",
+    "difference": "-0.99"
+  },
+  "db_constraints_sqlite": {
+    "neg_opening_amount": true,
+    "invalid_status": true,
+    "inconsistent_difference": true,
+    "neg_counted_close": true
+  },
+  "history_and_filters": {
+    "total_shifts_in_db": 28,
+    "rendered_rows_page1_of_28": 25,
+    "rendered_rows_page2_of_28": 3,
+    "page1_and_page2_disjoint": true,
+    "page1_plus_page2_union_equals_28": true,
+    "boundary_high_on_p1_low_on_p2": true,
+    "has_pagination_nav": true,
+    "tie_222_before_111_page2": true,
+    "tie_222_before_111_filtered": true,
+    "fecha_hasta_9999_12_31": {
+      "status": 200,
+      "redirect": null,
+      "cache_control": "max-age=0, no-cache, no-store, must-revalidate, private"
+    },
+    "fecha_desde_9999_12_31_status": 200,
+    "dup_param_last_bad_status": 200,
+    "dup_param_last_bad_has_error": true,
+    "dup_param_last_bad_rows": 0,
+    "dup_param_first_bad_rows": 0,
+    "inverted_status": 200,
+    "inverted_rows": 0,
+    "bad_uuid_status": 200,
+    "bad_uuid_rows": 0,
+    "bad_page_nonascii_rows": 0,
+    "bad_page_out_rows": 0,
+    "bad_page_out_has_warning": true,
+    "seller3_zero_shifts_in_unfiltered_dropdown": false,
+    "seller3_zero_shifts_in_filtered_dropdown": true,
+    "s1_filter_s2_contains_beto": false,
+    "s1_other_closed_status": 404,
+    "adm_closed_status": 200,
+    "adm_closed_h1_text": "Acta de cierre",
+    "adm_closed_h1_cerrar_turno": false,
+    "s1_sidebar_has_cash_history": true,
+    "s1_sidebar_has_sales_history": true,
+    "s1_sidebar_has_sales_shift": true
+  },
+  "links_and_surface": {
+    "logout_warns_open_shift": true,
+    "logout_warns_active_draft": true,
+    "logout_post_redirect": "/",
+    "open_shift_still_open_after_logout": true,
+    "draft_discarded_after_logout": true,
+    "deactivate_blocked_while_open": true,
+    "role_change_blocked_while_open": true,
+    "cash_models_in_django_admin": [
+      "cash.CashRegister",
+      "cash.CashShift"
+    ],
+    "cash_routes_defined": [
+      "/caja/abrir/",
+      "/caja/cerrar/",
+      "/caja/turnos/<uuid:shift_id>/abierto/",
+      "/caja/turnos/<uuid:shift_id>/cerrado/",
+      "/caja/turnos/"
+    ]
+  },
+  "protected_unchanged": true
+}

@@ -1,0 +1,270 @@
+System check identified no issues (0 silenced).
+No changes detected
+Found 18 test(s).
+Found 18 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: app_platform, messages, staticfiles
+  Apply all migrations: admin, auth, cash, catalog, contenttypes, identity, inventory, sales, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying identity.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying cash.0001_initial... OK
+  Applying cash.0002_cashshift... OK
+  Applying cash.0003_cashshiftclose... OK
+  Applying catalog.0001_initial... OK
+  Applying catalog.0002_product... OK
+  Applying identity.0002_alter_account_managers... OK
+  Applying identity.0003_alter_role_code... OK
+  Applying identity.0004_alter_role_code... OK
+  Applying identity.0005_loginattempt... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_supplier_physicaladjustment_stockwriteoff... OK
+  Applying inventory.0003_lot_supplier... OK
+  Applying inventory.0004_lot_is_initial... OK
+  Applying inventory.0005_lot_responsible... OK
+  Applying sales.0001_initial... OK
+  Applying sales.0002_salecounter_sale_saleline... OK
+  Applying sales.0003_sale_discount_amount... OK
+  Applying sales.0004_saleline_product... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_create_collapses_spaces_and_persists_active (catalog.test_audit03_categories.CategoryAudit03Tests.test_create_collapses_spaces_and_persists_active) ... FAIL
+test_duplicate_case_spaces_and_inactive_are_rejected (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_case_spaces_and_inactive_are_rejected) ... 
+  test_duplicate_case_spaces_and_inactive_are_rejected (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_case_spaces_and_inactive_are_rejected) (name='aud03 bebidas y jugos') ... FAIL
+  test_duplicate_case_spaces_and_inactive_are_rejected (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_case_spaces_and_inactive_are_rejected) (name=' AUD03   Bebidas y jugos ') ... FAIL
+  test_duplicate_case_spaces_and_inactive_are_rejected (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_case_spaces_and_inactive_are_rejected) (name='AUD03\tBEBIDAS Y JUGOS') ... FAIL
+test_duplicate_insert_race_is_a_validation_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_insert_race_is_a_validation_error) ... ERROR
+test_empty_list_then_all_names_including_inactive (catalog.test_audit03_categories.CategoryAudit03Tests.test_empty_list_then_all_names_including_inactive) ... ok
+test_error_description_points_to_visible_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_error_description_points_to_visible_error) ... FAIL
+test_form_rejects_121_and_script_is_escaped (catalog.test_audit03_categories.CategoryAudit03Tests.test_form_rejects_121_and_script_is_escaped) ... ok
+test_methods_absent_uuid_and_csrf_do_not_mutate (catalog.test_audit03_categories.CategoryAudit03Tests.test_methods_absent_uuid_and_csrf_do_not_mutate) ... ok
+test_missing_empty_and_whitespace_show_required_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_missing_empty_and_whitespace_show_required_error) ... 
+  test_missing_empty_and_whitespace_show_required_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_missing_empty_and_whitespace_show_required_error) (payload={}) ... FAIL
+  test_missing_empty_and_whitespace_show_required_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_missing_empty_and_whitespace_show_required_error) (payload={'name': ''}) ... FAIL
+  test_missing_empty_and_whitespace_show_required_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_missing_empty_and_whitespace_show_required_error) (payload={'name': ' \t\xa0 '}) ... FAIL
+test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) ... 
+  test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=121) ... FAIL
+  test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=61) ... FAIL
+  test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=0) ... FAIL
+  test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=3) ... FAIL
+  test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=3) ... FAIL
+test_other_roles_and_anonymous_cannot_read_or_write_categories (catalog.test_audit03_categories.CategoryAudit03Tests.test_other_roles_and_anonymous_cannot_read_or_write_categories) ... ok
+test_services_deny_warehouse_and_seller (catalog.test_audit03_categories.CategoryAudit03Tests.test_services_deny_warehouse_and_seller) ... ok
+test_unrelated_database_failure_is_not_hidden (catalog.test_audit03_categories.CategoryAudit03Tests.test_unrelated_database_failure_is_not_hidden) ... ok
+test_name_normalization_is_persisted (catalog.tests.CategoryTests.test_name_normalization_is_persisted) ... ok
+test_admin_can_see_category_list (catalog.tests.CategoryListTests.test_admin_can_see_category_list) ... ok
+test_non_admin_gets_403 (catalog.tests.CategoryListTests.test_non_admin_gets_403) ... ok
+test_admin_creates_category (catalog.tests.CategoryCreateTests.test_admin_creates_category) ... ok
+test_duplicate_name_is_rejected (catalog.tests.CategoryCreateTests.test_duplicate_name_is_rejected) ... ok
+test_non_admin_post_is_forbidden (catalog.tests.CategoryCreateTests.test_non_admin_post_is_forbidden) ... ok
+
+======================================================================
+ERROR: test_duplicate_insert_race_is_a_validation_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_insert_race_is_a_validation_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: catalog_category.name_normalized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 115, in test_duplicate_insert_race_is_a_validation_error
+    create_category(actor=self.admin,name='AUD03 race')
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\services.py", line 22, in create_category
+    return Category.objects.create(name=name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\models.py", line 29, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: catalog_category.name_normalized
+
+======================================================================
+FAIL: test_create_collapses_spaces_and_persists_active (catalog.test_audit03_categories.CategoryAudit03Tests.test_create_collapses_spaces_and_persists_active)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 40, in test_create_collapses_spaces_and_persists_active
+    self.assertEqual(category.name,'AUD03 Bebidas y jugos')
+AssertionError: 'AUD03   Bebidas\t y\xa0jugos' != 'AUD03 Bebidas y jugos'
+- AUD03   Bebidas	 y jugos
+?      --        -  ^
++ AUD03 Bebidas y jugos
+?                ^
+
+
+======================================================================
+FAIL: test_duplicate_case_spaces_and_inactive_are_rejected (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_case_spaces_and_inactive_are_rejected) (name='aud03 bebidas y jugos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 50, in test_duplicate_case_spaces_and_inactive_are_rejected
+    self.assertContains(response,'La categoría ya existe')
+AssertionError: False is not true : Couldn't find 'La categoría ya existe' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Nueva categor\xc3\xada</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n            <p class="sidebar-label">Cat&#225;logo</p>\n            <a class="nav-item" href="/productos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>\n            </a>\n            <a class="nav-item" href="/productos/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>\n            </a>\n            <a class="nav-item is-active" href="/productos/categorias/">\n              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>\n            </a>\n            <p class="sidebar-label">Inventario</p>\n            <a class="nav-item" href="/inventario/proveedores/">\n              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>\n            </a>\n            <a class="nav-item" href="/inventario/stock/">\n              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>\n            </a>\n            <a class="nav-item" href="/productos/vencimientos/">\n              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>\n            </a>\n            <a class="nav-item" href="/inventario/ajustes/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>\n            </a>\n            <p class="sidebar-label">Personal</p>\n            <a class="nav-item" href="/empleados/">\n              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>\n            </a>\n            <p class="sidebar-label">Caja y ventas</p>\n            <a class="nav-item" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>\n            </a>\n          \n          \n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">A</span>\n            <span><strong>AUD03 ADMIN</strong><small>ADMIN</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>\n              Categor&#237;as\n              \n            </h1>\n          </div>\n          <div class="topbar-user"><span>AUD03 ADMIN</span><span class="role-pill">ADMIN</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<div class="row justify-content-center">\n  <div class="col-md-6">\n    <h2 class="mb-4">Nueva categor\xc3\xada</h2>\n\n    <div class="alert alert-info mb-3">\n      Las categor&iacute;as activas estar&aacute;n disponibles inmediatamente al registrar o editar productos en el cat&aacute;logo.\n    </div>\n\n    \n\n    <form method="post" novalidate>\n      <input type="hidden" name="csrfmiddlewaretoken" value="[REDACTED]">\n      <div class="mb-3">\n        <label for="id_name" class="form-label fw-semibold">\n          Nombre de la categor\xc3\xada\n        </label>\n        <input type="text" name="name" value="aud03 bebidas y jugos" autofocus autocomplete="off" maxlength="120" required aria-invalid="true" aria-describedby="id_name_error" id="id_name">\n        \n          <div class="text-danger small mt-1">Ya existe una categor\xc3\xada con ese nombre.</div>\n        \n      </div>\n      <div class="d-flex gap-2">\n        <button type="submit" class="btn btn-primary">Guardar</button>\n        <a href="/productos/categorias/" class="btn btn-secondary">Cancelar</a>\n      </div>\n    </form>\n  </div>\n</div>\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  \n</body>\n</html>\n'
+
+======================================================================
+FAIL: test_duplicate_case_spaces_and_inactive_are_rejected (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_case_spaces_and_inactive_are_rejected) (name=' AUD03   Bebidas y jugos ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 49, in test_duplicate_case_spaces_and_inactive_are_rejected
+    self.assertEqual(response.status_code,200)
+AssertionError: 302 != 200
+
+======================================================================
+FAIL: test_duplicate_case_spaces_and_inactive_are_rejected (catalog.test_audit03_categories.CategoryAudit03Tests.test_duplicate_case_spaces_and_inactive_are_rejected) (name='AUD03\tBEBIDAS Y JUGOS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 49, in test_duplicate_case_spaces_and_inactive_are_rejected
+    self.assertEqual(response.status_code,200)
+AssertionError: 302 != 200
+
+======================================================================
+FAIL: test_error_description_points_to_visible_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_error_description_points_to_visible_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 126, in test_error_description_points_to_visible_error
+    self.assertContains(response,'id="id_name_error"')
+AssertionError: False is not true : Couldn't find 'id="id_name_error"' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Nueva categor\xc3\xada</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n            <p class="sidebar-label">Cat&#225;logo</p>\n            <a class="nav-item" href="/productos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>\n            </a>\n            <a class="nav-item" href="/productos/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>\n            </a>\n            <a class="nav-item is-active" href="/productos/categorias/">\n              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>\n            </a>\n            <p class="sidebar-label">Inventario</p>\n            <a class="nav-item" href="/inventario/proveedores/">\n              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>\n            </a>\n            <a class="nav-item" href="/inventario/stock/">\n              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>\n            </a>\n            <a class="nav-item" href="/productos/vencimientos/">\n              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>\n            </a>\n            <a class="nav-item" href="/inventario/ajustes/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>\n            </a>\n            <p class="sidebar-label">Personal</p>\n            <a class="nav-item" href="/empleados/">\n              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>\n            </a>\n            <p class="sidebar-label">Caja y ventas</p>\n            <a class="nav-item" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>\n            </a>\n          \n          \n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">A</span>\n            <span><strong>AUD03 ADMIN</strong><small>ADMIN</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>\n              Categor&#237;as\n              \n            </h1>\n          </div>\n          <div class="topbar-user"><span>AUD03 ADMIN</span><span class="role-pill">ADMIN</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<div class="row justify-content-center">\n  <div class="col-md-6">\n    <h2 class="mb-4">Nueva categor\xc3\xada</h2>\n\n    <div class="alert alert-info mb-3">\n      Las categor&iacute;as activas estar&aacute;n disponibles inmediatamente al registrar o editar productos en el cat&aacute;logo.\n    </div>\n\n    \n\n    <form method="post" novalidate>\n      <input type="hidden" name="csrfmiddlewaretoken" value="[REDACTED]">\n      <div class="mb-3">\n        <label for="id_name" class="form-label fw-semibold">\n          Nombre de la categor\xc3\xada\n        </label>\n        <input type="text" name="name" autofocus autocomplete="off" maxlength="120" required aria-invalid="true" aria-describedby="id_name_error" id="id_name">\n        \n          <div class="text-danger small mt-1">Este campo es obligatorio.</div>\n        \n      </div>\n      <div class="d-flex gap-2">\n        <button type="submit" class="btn btn-primary">Guardar</button>\n        <a href="/productos/categorias/" class="btn btn-secondary">Cancelar</a>\n      </div>\n    </form>\n  </div>\n</div>\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  \n</body>\n</html>\n'
+
+======================================================================
+FAIL: test_missing_empty_and_whitespace_show_required_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_missing_empty_and_whitespace_show_required_error) (payload={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 57, in test_missing_empty_and_whitespace_show_required_error
+    self.assertContains(response,'El nombre es obligatorio')
+AssertionError: False is not true : Couldn't find 'El nombre es obligatorio' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Nueva categor\xc3\xada</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n            <p class="sidebar-label">Cat&#225;logo</p>\n            <a class="nav-item" href="/productos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>\n            </a>\n            <a class="nav-item" href="/productos/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>\n            </a>\n            <a class="nav-item is-active" href="/productos/categorias/">\n              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>\n            </a>\n            <p class="sidebar-label">Inventario</p>\n            <a class="nav-item" href="/inventario/proveedores/">\n              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>\n            </a>\n            <a class="nav-item" href="/inventario/stock/">\n              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>\n            </a>\n            <a class="nav-item" href="/productos/vencimientos/">\n              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>\n            </a>\n            <a class="nav-item" href="/inventario/ajustes/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>\n            </a>\n            <p class="sidebar-label">Personal</p>\n            <a class="nav-item" href="/empleados/">\n              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>\n            </a>\n            <p class="sidebar-label">Caja y ventas</p>\n            <a class="nav-item" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>\n            </a>\n          \n          \n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">A</span>\n            <span><strong>AUD03 ADMIN</strong><small>ADMIN</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>\n              Categor&#237;as\n              \n            </h1>\n          </div>\n          <div class="topbar-user"><span>AUD03 ADMIN</span><span class="role-pill">ADMIN</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<div class="row justify-content-center">\n  <div class="col-md-6">\n    <h2 class="mb-4">Nueva categor\xc3\xada</h2>\n\n    <div class="alert alert-info mb-3">\n      Las categor&iacute;as activas estar&aacute;n disponibles inmediatamente al registrar o editar productos en el cat&aacute;logo.\n    </div>\n\n    \n\n    <form method="post" novalidate>\n      <input type="hidden" name="csrfmiddlewaretoken" value="[REDACTED]">\n      <div class="mb-3">\n        <label for="id_name" class="form-label fw-semibold">\n          Nombre de la categor\xc3\xada\n        </label>\n        <input type="text" name="name" autofocus autocomplete="off" maxlength="120" required id="id_name">\n        \n      </div>\n      <div class="d-flex gap-2">\n        <button type="submit" class="btn btn-primary">Guardar</button>\n        <a href="/productos/categorias/" class="btn btn-secondary">Cancelar</a>\n      </div>\n    </form>\n  </div>\n</div>\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  \n</body>\n</html>\n'
+
+======================================================================
+FAIL: test_missing_empty_and_whitespace_show_required_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_missing_empty_and_whitespace_show_required_error) (payload={'name': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 57, in test_missing_empty_and_whitespace_show_required_error
+    self.assertContains(response,'El nombre es obligatorio')
+AssertionError: False is not true : Couldn't find 'El nombre es obligatorio' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Nueva categor\xc3\xada</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n            <p class="sidebar-label">Cat&#225;logo</p>\n            <a class="nav-item" href="/productos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>\n            </a>\n            <a class="nav-item" href="/productos/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>\n            </a>\n            <a class="nav-item is-active" href="/productos/categorias/">\n              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>\n            </a>\n            <p class="sidebar-label">Inventario</p>\n            <a class="nav-item" href="/inventario/proveedores/">\n              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>\n            </a>\n            <a class="nav-item" href="/inventario/stock/">\n              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>\n            </a>\n            <a class="nav-item" href="/productos/vencimientos/">\n              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>\n            </a>\n            <a class="nav-item" href="/inventario/ajustes/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>\n            </a>\n            <p class="sidebar-label">Personal</p>\n            <a class="nav-item" href="/empleados/">\n              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>\n            </a>\n            <p class="sidebar-label">Caja y ventas</p>\n            <a class="nav-item" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>\n            </a>\n          \n          \n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">A</span>\n            <span><strong>AUD03 ADMIN</strong><small>ADMIN</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>\n              Categor&#237;as\n              \n            </h1>\n          </div>\n          <div class="topbar-user"><span>AUD03 ADMIN</span><span class="role-pill">ADMIN</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<div class="row justify-content-center">\n  <div class="col-md-6">\n    <h2 class="mb-4">Nueva categor\xc3\xada</h2>\n\n    <div class="alert alert-info mb-3">\n      Las categor&iacute;as activas estar&aacute;n disponibles inmediatamente al registrar o editar productos en el cat&aacute;logo.\n    </div>\n\n    \n\n    <form method="post" novalidate>\n      <input type="hidden" name="csrfmiddlewaretoken" value="[REDACTED]">\n      <div class="mb-3">\n        <label for="id_name" class="form-label fw-semibold">\n          Nombre de la categor\xc3\xada\n        </label>\n        <input type="text" name="name" autofocus autocomplete="off" maxlength="120" required aria-invalid="true" aria-describedby="id_name_error" id="id_name">\n        \n          <div class="text-danger small mt-1">Este campo es obligatorio.</div>\n        \n      </div>\n      <div class="d-flex gap-2">\n        <button type="submit" class="btn btn-primary">Guardar</button>\n        <a href="/productos/categorias/" class="btn btn-secondary">Cancelar</a>\n      </div>\n    </form>\n  </div>\n</div>\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  \n</body>\n</html>\n'
+
+======================================================================
+FAIL: test_missing_empty_and_whitespace_show_required_error (catalog.test_audit03_categories.CategoryAudit03Tests.test_missing_empty_and_whitespace_show_required_error) (payload={'name': ' \t\xa0 '})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 57, in test_missing_empty_and_whitespace_show_required_error
+    self.assertContains(response,'El nombre es obligatorio')
+AssertionError: False is not true : Couldn't find 'El nombre es obligatorio' in the following response
+b'\n<!doctype html>\n<html lang="es-PE">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="color-scheme" content="light">\n  <title>Nueva categor\xc3\xada</title>\n  <link rel="icon" href="/static/identity/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet" href="/static/identity/app.css">\n</head>\n<body class="legacy-workspace ">\n  <a class="skip-link" href="#contenido">Saltar al contenido</a>\n  \n    <div class="app-shell">\n      <aside class="app-sidebar" aria-label="Navegaci&oacute;n principal">\n        <div class="sidebar-brand-row">\n          <a class="sidebar-brand" href="/inicio/" aria-label="Inicio de la aplicaci\xc3\xb3n">\n            <span class="sidebar-brand-mark" aria-hidden="true">M</span>\n            <span><strong>Minimarket</strong><small>Gesti&oacute;n de bodega</small></span>\n          </a>\n\n        </div>\n\n        <nav class="sidebar-nav" id="sidebar-navigation">\n          <p class="sidebar-label">Operaciones</p>\n          <a class="nav-item" href="/inicio/">\n            <span class="nav-icon" aria-hidden="true">&#8962;</span><span>Inicio</span>\n          </a>\n          \n            <p class="sidebar-label">Cat&#225;logo</p>\n            <a class="nav-item" href="/productos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Productos</span>\n            </a>\n            <a class="nav-item" href="/productos/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9638;</span><span>Registrar producto</span>\n            </a>\n            <a class="nav-item is-active" href="/productos/categorias/">\n              <span class="nav-icon" aria-hidden="true">&#9646;</span><span>Categor&#237;as</span>\n            </a>\n            <p class="sidebar-label">Inventario</p>\n            <a class="nav-item" href="/inventario/proveedores/">\n              <span class="nav-icon" aria-hidden="true">&#10022;</span><span>Proveedores</span>\n            </a>\n            <a class="nav-item" href="/inventario/stock/">\n              <span class="nav-icon" aria-hidden="true">&#9783;</span><span>Ver inventario y alertas</span>\n            </a>\n            <a class="nav-item" href="/productos/vencimientos/">\n              <span class="nav-icon" aria-hidden="true">&#9203;</span><span>Vencimientos de lotes</span>\n            </a>\n            <a class="nav-item" href="/inventario/ajustes/nuevo/">\n              <span class="nav-icon" aria-hidden="true">&#9195;</span><span>Ajuste f&#237;sico</span>\n            </a>\n            <p class="sidebar-label">Personal</p>\n            <a class="nav-item" href="/empleados/">\n              <span class="nav-icon" aria-hidden="true">&#9786;</span><span>Empleados</span>\n            </a>\n            <p class="sidebar-label">Caja y ventas</p>\n            <a class="nav-item" href="/caja/turnos/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de turnos</span>\n            </a>\n            <a class="nav-item" href="/ventas/historial/">\n              <span class="nav-icon" aria-hidden="true">&#9776;</span><span>Historial de ventas</span>\n            </a>\n          \n          \n          \n        </nav>\n\n        <div class="sidebar-account" id="sidebar-account">\n          <div class="sidebar-user">\n            <span class="user-avatar" aria-hidden="true">A</span>\n            <span><strong>AUD03 ADMIN</strong><small>ADMIN</small></span>\n          </div>\n          <a class="sidebar-logout" href="/salir/"><span aria-hidden="true">&#8618;</span> Cerrar sesi&oacute;n</a>\n        </div>\n      </aside>\n\n      <div class="app-main">\n        <header class="app-topbar">\n          <div>\n            <p class="topbar-kicker">Minimarket</p>\n            <h1>\n              Categor&#237;as\n              \n            </h1>\n          </div>\n          <div class="topbar-user"><span>AUD03 ADMIN</span><span class="role-pill">ADMIN</span></div>\n        </header>\n  \n\n  <main id="contenido" class="app-content" tabindex="-1">\n    \n    \n<div class="row justify-content-center">\n  <div class="col-md-6">\n    <h2 class="mb-4">Nueva categor\xc3\xada</h2>\n\n    <div class="alert alert-info mb-3">\n      Las categor&iacute;as activas estar&aacute;n disponibles inmediatamente al registrar o editar productos en el cat&aacute;logo.\n    </div>\n\n    \n\n    <form method="post" novalidate>\n      <input type="hidden" name="csrfmiddlewaretoken" value="[REDACTED]">\n      <div class="mb-3">\n        <label for="id_name" class="form-label fw-semibold">\n          Nombre de la categor\xc3\xada\n        </label>\n        <input type="text" name="name" value=" \t\xc2\xa0 " autofocus autocomplete="off" maxlength="120" required aria-invalid="true" aria-describedby="id_name_error" id="id_name">\n        \n          <div class="text-danger small mt-1">Este campo es obligatorio.</div>\n        \n      </div>\n      <div class="d-flex gap-2">\n        <button type="submit" class="btn btn-primary">Guardar</button>\n        <a href="/productos/categorias/" class="btn btn-secondary">Cancelar</a>\n      </div>\n    </form>\n  </div>\n</div>\n\n  </main>\n\n  \n        <footer class="app-footer">Minimarket <span aria-hidden="true">&middot;</span> Gesti&oacute;n de bodega</footer>\n      </div>\n    </div>\n  \n  \n</body>\n</html>\n'
+
+======================================================================
+FAIL: test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=121)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 65, in test_name_length_120_and_121_and_service_validation
+    with self.assertRaises(ValidationError): create_category(actor=self.admin,name=name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=61)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 65, in test_name_length_120_and_121_and_service_validation
+    with self.assertRaises(ValidationError): create_category(actor=self.admin,name=name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 66, in test_name_length_120_and_121_and_service_validation
+    self.assertEqual(Category.objects.count(),1)
+AssertionError: 3 != 1
+
+======================================================================
+FAIL: test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 66, in test_name_length_120_and_121_and_service_validation
+    self.assertEqual(Category.objects.count(),1)
+AssertionError: 3 != 1
+
+======================================================================
+FAIL: test_name_length_120_and_121_and_service_validation (catalog.test_audit03_categories.CategoryAudit03Tests.test_name_length_120_and_121_and_service_validation) (length=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\walte\OneDrive\Imágenes\planificacion_limpia\r1-pmv\catalog\test_audit03_categories.py", line 65, in test_name_length_120_and_121_and_service_validation
+    with self.assertRaises(ValidationError): create_category(actor=self.admin,name=name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.625s
+
+FAILED (failures=13, errors=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

@@ -1,0 +1,321 @@
+{
+  "id": "J27-colision-lote",
+  "rol": "ADMIN",
+  "utc": "2026-11-14T15:28:59.561150+00:00",
+  "ruta": "/inventario/ajustes/nuevo/",
+  "texto_visible": "Saltar al contenido\nM\nMinimarket\nGestión de bodega\n\nOPERACIONES\n\n⌂\nInicio\n\nCATÁLOGO\n\n☰\nProductos\n▦\nRegistrar producto\n▮\nCategorías\n\nINVENTARIO\n\n✦\nProveedores\n☷\nVer inventario y alertas\n⏳\nVencimientos de lotes\n⏫\nAjuste físico\n\nPERSONAL\n\n☺\nEmpleados\n\nCAJA Y VENTAS\n\n☰\nHistorial de turnos\n☰\nHistorial de ventas\nA\nAdmin renombrado14J\nAdministrador\n↪\nCerrar sesión\n\nMINIMARKET\n\nAjuste físico\nAdmin renombrado14J\nAdministrador\nAjuste por conteo físico\nRevise los datos del ajuste\nNúmero del lote nuevo: Ese lote ya está registrado. Seleccione su origen existente; no cree otro lote por ajuste.\nLote nuevo por ajuste: expired14J.\n\nRegistre únicamente unidades encontradas con fecha fiable y motivo documentado. Esto no es una recepción de compra.\n\n\nEscriba la variación de unidades respecto al sistema (ej. +10 para sumar 10 unidades o -3 para restar 3 unidades por faltante).\nAjuste (positivo=entrada, negativo=faltante)\nMotivo del ajuste\nCosto unitario documentado (S/)\nObligatorio si el stock físico del producto está en cero. Con existencias se usa el promedio vigente.\nFuente del costo\nDocumento o referencia que acredita el costo cuando no quedan existencias físicas.\nNúmero del lote nuevo\nEse lote ya está registrado. Seleccione su origen existente; no cree otro lote por ajuste.\nVencimiento fiable del lote\nUn lote vencido se registra como físico no vendible. No se inventan fechas.\nConfirmar ajuste\nCancelar\nMinimarket · Gestión de bodega",
+  "controles": [
+    {
+      "campo": "delta",
+      "etiqueta": "Ajuste (positivo=entrada, negativo=faltante)",
+      "tipo": "number",
+      "valor": "2",
+      "opciones": null,
+      "obligatorio": true,
+      "min": "-999999",
+      "max": "999999",
+      "paso": "1",
+      "longitud": null
+    },
+    {
+      "campo": "reason",
+      "etiqueta": "Motivo del ajuste",
+      "tipo": "textarea",
+      "valor": "No duplicar identidad",
+      "opciones": null,
+      "obligatorio": true,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": "300"
+    },
+    {
+      "campo": "unit_cost",
+      "etiqueta": "Costo unitario documentado (S/)",
+      "tipo": "number",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": "0.0001",
+      "max": "9999999.9999",
+      "paso": "0.0001",
+      "longitud": null
+    },
+    {
+      "campo": "cost_source",
+      "etiqueta": "Fuente del costo",
+      "tipo": "textarea",
+      "valor": "",
+      "opciones": null,
+      "obligatorio": false,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": "300"
+    },
+    {
+      "campo": "number",
+      "etiqueta": "Número del lote nuevo",
+      "tipo": "text",
+      "valor": "E-NUEVO",
+      "opciones": null,
+      "obligatorio": true,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": "64"
+    },
+    {
+      "campo": "expiration_date",
+      "etiqueta": "Vencimiento fiable del lote",
+      "tipo": "date",
+      "valor": "2026-11-14",
+      "opciones": null,
+      "obligatorio": true,
+      "min": null,
+      "max": null,
+      "paso": null,
+      "longitud": null
+    }
+  ],
+  "testigo": {
+    "sha256": "285771ce48602a2621674c308f4073142eeb0cafe577b8513a6584a7efa1a7ed",
+    "por_tabla": {
+      "cash_cashregister": "09406cc88a9a7a7c6aba2d60b5cc3edb8bb8cc68ac0d82528d8e655cf09b7cf6",
+      "cash_cashshift": "f443dbad8acace3008af93c8d05bd280f691bd0d53f66650e0549b8fb412c581",
+      "cash_cashshiftclose": "72a721a7683e7144098e39caf90aa3c17de6ac92fdfe8d8b072d9a934192f790",
+      "catalog_category": "08f44fedb2d63620a049545aaf1e70222619523316724a45f14895688e9071e7",
+      "catalog_product": "6dc8fe91bee2ef7bb179369c7c5dd2973d14daf9d66ad2c354101b796cce5c88",
+      "catalog_productbarcodekey": "19380a4a499d69cf5181c2ab597a6a32429745398bfaa74f2e1ca7bfc2fea2eb",
+      "inventory_initialinventoryload": "8e4c317e851e6330d5874bdd4bf68a4a35aabf41a1718121f649832ca2a4187d",
+      "inventory_initialloadline": "6f228ee682ac4fb5b6675dde744c9ca9b694827a5105c6dead60e5f1d2db6a2c",
+      "inventory_lot": "342bd20ac1967c29753533f949dd77333a74c0452df2e1acd363ad46238bc45d",
+      "inventory_physicaladjustment": "8aa38f1a159ed1ad121a8abb169f8402fbaea11cc1f5853ca06cda62a5d06286",
+      "inventory_stockreceipt": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptcounter": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockreceiptline": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inventory_stockwriteoff": "9b2c4984a1573dd863b81f58b92818654aa315a82528715ca71c362d723b6a88",
+      "inventory_supplier": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sales_sale": "42b5320505e790e62eff1623571cd02ef952f3eb3b33afcff6142acd60fb9b90",
+      "sales_salecounter": "0f99aed32426007c8506b83fccbdc38cffbf39d424ca937978c6d04e4c9273e7",
+      "sales_saledraft": "8f644ca79438b95b89e2ca4d4ca2e55e1cf579e80d38a51ba2e268f6e4c9bbb8",
+      "sales_saledraftline": "47112594f070f04e9196736b0a04597ad4725f75f912eae7a58771d49c644288",
+      "sales_saleline": "25316b2fff169ee11a3a3c73560b3885422a6155edc2357e2eb7356cedc41f7e",
+      "sales_salelotallocation": "a92a0e50c8fe2b43b33def00f72077fef7afc14227cfd44491ccba444755c5d3",
+      "identity_role_membership_active": "d37b310029ebc424529ed8f05e942d3784c3cd317f1be1ed3642343a98a18b73"
+    },
+    "filas": {
+      "cash_cashregister": 1,
+      "cash_cashshift": 1,
+      "cash_cashshiftclose": 1,
+      "catalog_category": 1,
+      "catalog_product": 4,
+      "catalog_productbarcodekey": 4,
+      "inventory_initialinventoryload": 4,
+      "inventory_initialloadline": 3,
+      "inventory_lot": 6,
+      "inventory_physicaladjustment": 5,
+      "inventory_stockreceipt": 0,
+      "inventory_stockreceiptcounter": 0,
+      "inventory_stockreceiptline": 0,
+      "inventory_stockwriteoff": 3,
+      "inventory_supplier": 0,
+      "sales_sale": 1,
+      "sales_salecounter": 1,
+      "sales_saledraft": 1,
+      "sales_saledraftline": 1,
+      "sales_saleline": 1,
+      "sales_salelotallocation": 1
+    },
+    "cuentas_rol_activas": [
+      [
+        "ADMIN",
+        1
+      ],
+      [
+        "ALMACENERO",
+        1
+      ],
+      [
+        "VENDEDOR",
+        1
+      ]
+    ],
+    "categorias": [
+      {
+        "name": "Ajustes14J",
+        "is_active": 1,
+        "state_version": 0
+      }
+    ],
+    "productos": [
+      {
+        "name": "Producto renombrado14J",
+        "barcode": "INT-14J-existing",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 3,
+        "is_active": 1
+      },
+      {
+        "name": "empty14J",
+        "barcode": "INT-14J-empty",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 2.5,
+        "is_active": 1
+      },
+      {
+        "name": "expired14J",
+        "barcode": "INT-14J-expired",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 3,
+        "is_active": 1
+      },
+      {
+        "name": "Legado actual14J",
+        "barcode": "INT-14J-legacy",
+        "sale_price": 10,
+        "minimum_stock": 10,
+        "average_cost": 0,
+        "is_active": 1
+      }
+    ],
+    "proveedores": [],
+    "lotes": [
+      {
+        "number": "A-EMPTY",
+        "initial_quantity": 1,
+        "available_quantity": 0,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "empty14J",
+        "proveedor": null,
+        "autor_carga": "Almacén original14J"
+      },
+      {
+        "number": "A-EXPIRED",
+        "initial_quantity": 2,
+        "available_quantity": 2,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "expired14J",
+        "proveedor": null,
+        "autor_carga": "Almacén original14J"
+      },
+      {
+        "number": "CAMBIO",
+        "initial_quantity": 12,
+        "available_quantity": 9,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "Producto renombrado14J",
+        "proveedor": null,
+        "autor_carga": "Almacén original14J"
+      },
+      {
+        "number": "E-NUEVO",
+        "initial_quantity": 2,
+        "available_quantity": 2,
+        "unit_cost": 3,
+        "expiration_date": "2026-11-14",
+        "producto": "expired14J",
+        "proveedor": null,
+        "autor_carga": "Almacén original14J"
+      },
+      {
+        "number": "LEGADO",
+        "initial_quantity": 5,
+        "available_quantity": 5,
+        "unit_cost": 3,
+        "expiration_date": "2026-12-14",
+        "producto": "Legado actual14J",
+        "proveedor": null,
+        "autor_carga": "Almacén original14J"
+      },
+      {
+        "number": "NUEVO",
+        "initial_quantity": 4,
+        "available_quantity": 1,
+        "unit_cost": 2.5,
+        "expiration_date": "2026-12-14",
+        "producto": "empty14J",
+        "proveedor": null,
+        "autor_carga": "Almacén original14J"
+      }
+    ],
+    "borrador": [
+      {
+        "status": "DISCARDED",
+        "quantity": 2,
+        "unit_price": 10
+      }
+    ],
+    "ventas": [
+      {
+        "correlative": "V-00000001",
+        "total_amount": 20,
+        "base_amount": 16.95,
+        "igv_amount": 3.05,
+        "discount_amount": 0,
+        "cash_received": 20,
+        "change_given": 0,
+        "vendedor": "Venta original14J",
+        "opening_amount": 100
+      }
+    ],
+    "lineas": [
+      {
+        "product_snapshot_name": "empty14J",
+        "product_snapshot_barcode": "INT-14J-empty",
+        "quantity": 2,
+        "unit_price": 10,
+        "amount": 20,
+        "unit_cost": 2.5
+      }
+    ],
+    "bajas": [
+      {
+        "correlativo": "B-00000001",
+        "number": "A-EMPTY",
+        "quantity": 1,
+        "reason": "ROBO",
+        "notes": "Vaciar fixture Q0",
+        "responsable": "Almacén original14J"
+      },
+      {
+        "correlativo": "LEGACY-J",
+        "number": "LEGADO",
+        "quantity": 1,
+        "reason": "ROBO",
+        "notes": "Merma previa conservada",
+        "responsable": "Almacén original14J"
+      },
+      {
+        "correlativo": "B-00000003",
+        "number": "NUEVO",
+        "quantity": 1,
+        "reason": "DAÑO",
+        "notes": "Daño de unidad encontrada",
+        "responsable": "Almacén original14J"
+      }
+    ],
+    "turnos": [
+      {
+        "status": "CLOSED",
+        "opening_amount": 100,
+        "vendedor": "Venta original14J"
+      }
+    ],
+    "cierres": [
+      {
+        "counted_amount": 120,
+        "expected_amount": 120,
+        "difference": 0,
+        "autor": "Venta original14J"
+      }
+    ]
+  },
+  "sin_mutacion_verificada": true
+}

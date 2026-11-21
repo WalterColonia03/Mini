@@ -1,0 +1,29 @@
+{
+  "criteria": [
+    "INV-01a/CA02-03",
+    "INV-01b/CA01",
+    "PROV04 boundary",
+    "PROP-03-RET-T04/T06"
+  ],
+  "routes": [
+    "/inventario/carga-inicial/",
+    "/inventario/entrada/",
+    "/inventario/proveedores/"
+  ],
+  "fields": [
+    "supplier: optional active selection",
+    "product",
+    "lots: number,quantity,unit_cost,expiration_date"
+  ],
+  "roles": [
+    "warehouse fills and submits",
+    "admin deactivates/reactivates supplier",
+    "seller cannot toggle supplier"
+  ],
+  "cases": [
+    "old form after deactivation",
+    "rejection without commerce writes",
+    "reactivate and resubmit",
+    "optional supplier"
+  ]
+}

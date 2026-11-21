@@ -1,0 +1,123 @@
+- link "Saltar al contenido":
+  - /url: "#contenido"
+- complementary "Navegación principal":
+  - link "Inicio de la aplicación":
+    - /url: /inicio/
+    - generic: M
+    - strong: Minimarket
+    - generic: Gestión de bodega
+  - navigation:
+    - paragraph: Operaciones
+    - link "Inicio":
+      - /url: /inicio/
+      - generic: ⌂
+      - generic: Inicio
+    - link "Ver inventario y alertas":
+      - /url: /inventario/stock/
+      - generic: ☷
+      - generic: Ver inventario y alertas
+    - link "Vencimientos de lotes":
+      - /url: /productos/vencimientos/
+      - generic: ⏳
+      - generic: Vencimientos de lotes
+    - link "Existencias iniciales":
+      - /url: /inventario/carga-inicial/
+      - generic: ◫
+      - generic: Existencias iniciales
+    - link "Entrada de mercadería":
+      - /url: /inventario/entrada/
+      - generic: ✚
+      - generic: Entrada de mercadería
+    - link "Registrar merma":
+      - /url: /inventario/bajas/nueva/
+      - generic: ☒
+      - generic: Registrar merma
+    - paragraph: Consulta
+    - link "Catálogo de productos":
+      - /url: /productos/
+      - generic: ☰
+      - generic: Catálogo de productos
+    - link "Proveedores":
+      - /url: /inventario/proveedores/
+      - generic: ✦
+      - generic: Proveedores
+  - generic: A
+  - strong: Audit13 Almacenero warehouse
+  - generic: Almacenero
+  - link "Cerrar sesión":
+    - /url: /salir/
+    - generic: ↪
+    - text: Cerrar sesión
+- banner:
+  - paragraph: Minimarket
+  - heading "Existencias iniciales" [level=1]
+  - generic: Audit13 Almacenero warehouse
+  - generic: Almacenero
+- main:
+  - paragraph: Existencias iniciales
+  - heading "Registrar existencias iniciales por lotes" [level=2]
+  - paragraph: Ingresa uno o varios lotes de un producto, con sus cantidades en unidades y fechas de vencimiento.
+  - link "Volver al inicio":
+    - /url: /inicio/
+  - generic: "1"
+  - heading "Producto" [level=3]
+  - generic: Producto
+  - combobox "Producto":
+    - option "Seleccione un producto" [selected]
+    - option "Audit13 sin-lotes (AUDIT13-sin-lotes)"
+  - paragraph:
+    - text: Solo aparecen productos activos que todavía no tienen carga inicial. Si el producto ya tuvo su carga inicial y deseas ingresar una nueva compra o reposición por lotes, usa
+    - link "Entrada de mercadería":
+      - /url: /inventario/entrada/
+    - text: .
+  - generic: Proveedor (opcional)
+  - combobox "Proveedor (opcional)":
+    - option "Sin proveedor asignado" [selected]
+  - generic: "2"
+  - heading "Lotes recibidos" [level=3]
+  - generic: Completa una o más filas
+  - group "Lotes de la carga inicial":
+    - group "Lote 1":
+      - generic: Lote 1
+      - generic: Número de lote
+      - textbox "Número de lote"
+      - generic: Cantidad
+      - spinbutton "Cantidad"
+      - generic: Costo unitario (S/)
+      - spinbutton "Costo unitario (S/)"
+      - generic: Vencimiento
+      - textbox "Vencimiento"
+    - group "Lote 2":
+      - generic: Lote 2
+      - generic: Número de lote
+      - textbox "Número de lote"
+      - generic: Cantidad
+      - spinbutton "Cantidad"
+      - generic: Costo unitario (S/)
+      - spinbutton "Costo unitario (S/)"
+      - generic: Vencimiento
+      - textbox "Vencimiento"
+    - group "Lote 3":
+      - generic: Lote 3
+      - generic: Número de lote
+      - textbox "Número de lote"
+      - generic: Cantidad
+      - spinbutton "Cantidad"
+      - generic: Costo unitario (S/)
+      - spinbutton "Costo unitario (S/)"
+      - generic: Vencimiento
+      - textbox "Vencimiento"
+    - group "Lote 4":
+      - generic: Lote 4
+      - generic: Número de lote
+      - textbox "Número de lote"
+      - generic: Cantidad
+      - spinbutton "Cantidad"
+      - generic: Costo unitario (S/)
+      - spinbutton "Costo unitario (S/)"
+      - generic: Vencimiento
+      - textbox "Vencimiento"
+  - button "Confirmar existencias"
+  - link "Cancelar":
+    - /url: /inicio/
+- contentinfo: Minimarket · Gestión de bodega

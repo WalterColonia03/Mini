@@ -1,0 +1,473 @@
+{
+  "date_utc": "2026-11-09T23:54:39.242Z",
+  "run": "etapa02a-20261109T235435476251Z",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "engine": "installed Google Chrome headless",
+  "cases": [
+    {
+      "id": "A00-PROOF",
+      "ok": true,
+      "details": {
+        "authenticated_server": true,
+        "run": "etapa02a-20261109T235435476251Z",
+        "status": 200
+      }
+    },
+    {
+      "id": "A01-CA01-ADVERTENCIA",
+      "ok": true,
+      "details": {
+        "screenshot": "A01-sin-borrador.png",
+        "text": "A01-sin-borrador.txt",
+        "url": "http://127.0.0.1:52301/salir/",
+        "before": {
+          "shifts": [
+            {
+              "id": "e5c7d869-92fb-4f4b-a197-b8bc92171bde",
+              "seller__email": "seller@audit02a.invalid",
+              "status": "OPEN",
+              "opening_amount": "50.00"
+            }
+          ],
+          "closes": [],
+          "drafts": [],
+          "lots": [
+            {
+              "id": "aadc5cb2-49cf-47df-a0f4-fd706ce5602d",
+              "available_quantity": 20
+            }
+          ],
+          "sales_count": 0,
+          "sale_lines_count": 0,
+          "sessions_by_user": {
+            "admin@audit02a.invalid": 0,
+            "seller2@audit02a.invalid": 0,
+            "seller@audit02a.invalid": 1,
+            "warehouse@audit02a.invalid": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "A02-CA01-CONFIRMAR",
+      "ok": true,
+      "details": {
+        "screenshot": "A02-salida.png",
+        "text": "A02-salida.txt",
+        "url": "http://127.0.0.1:52301/",
+        "after": {
+          "shifts": [
+            {
+              "id": "e5c7d869-92fb-4f4b-a197-b8bc92171bde",
+              "seller__email": "seller@audit02a.invalid",
+              "status": "OPEN",
+              "opening_amount": "50.00"
+            }
+          ],
+          "closes": [],
+          "drafts": [],
+          "lots": [
+            {
+              "id": "aadc5cb2-49cf-47df-a0f4-fd706ce5602d",
+              "available_quantity": 20
+            }
+          ],
+          "sales_count": 0,
+          "sale_lines_count": 0,
+          "sessions_by_user": {
+            "admin@audit02a.invalid": 0,
+            "seller2@audit02a.invalid": 0,
+            "seller@audit02a.invalid": 0,
+            "warehouse@audit02a.invalid": 0
+          }
+        },
+        "commercial_unchanged": true
+      }
+    },
+    {
+      "id": "A03-ATRAS-SALIR",
+      "ok": true,
+      "details": {
+        "screenshot": "A03-ATRAS-SALIR.png",
+        "text": "A03-ATRAS-SALIR.txt",
+        "url": "http://127.0.0.1:52301/?next=/salir/",
+        "privateVisible": false,
+        "loginVisible": true
+      }
+    },
+    {
+      "id": "A04-ATRAS-TURNO",
+      "ok": true,
+      "details": {
+        "screenshot": "A04-ATRAS-TURNO.png",
+        "text": "A04-ATRAS-TURNO.txt",
+        "url": "http://127.0.0.1:52301/?next=/caja/turnos/e5c7d869-92fb-4f4b-a197-b8bc92171bde/abierto/",
+        "privateVisible": false,
+        "loginVisible": true
+      }
+    },
+    {
+      "id": "A05-COOKIE-REVOCADA",
+      "ok": true,
+      "details": {
+        "get_status": 302,
+        "post_status": 302,
+        "no_mutation": true
+      }
+    },
+    {
+      "id": "A06-ANON-/inicio/",
+      "ok": true,
+      "details": {
+        "status": 302,
+        "location": "/?next=/inicio/"
+      }
+    },
+    {
+      "id": "A06-ANON-/ventas/",
+      "ok": true,
+      "details": {
+        "status": 302,
+        "location": "/?next=/ventas/"
+      }
+    },
+    {
+      "id": "A06-ANON-/caja/abrir/",
+      "ok": true,
+      "details": {
+        "status": 302,
+        "location": "/?next=/caja/abrir/"
+      }
+    },
+    {
+      "id": "A06-ANON-/caja/cerrar/",
+      "ok": true,
+      "details": {
+        "status": 302,
+        "location": "/?next=/caja/cerrar/"
+      }
+    },
+    {
+      "id": "A06-ANON-/empleados/",
+      "ok": true,
+      "details": {
+        "status": 302,
+        "location": "/?next=/empleados/"
+      }
+    },
+    {
+      "id": "A06-ANON-/salir/",
+      "ok": true,
+      "details": {
+        "status": 302,
+        "location": "/?next=/salir/"
+      }
+    },
+    {
+      "id": "A07-REINGRESO-SIN-BORRADOR",
+      "ok": true,
+      "details": {
+        "screenshot": "A07-turno-recuperado.png",
+        "text": "A07-turno-recuperado.txt",
+        "url": "http://127.0.0.1:52301/ventas/"
+      }
+    },
+    {
+      "id": "A08-CA02-ADVERTENCIA",
+      "ok": true,
+      "details": {
+        "screenshot": "A08-con-borrador.png",
+        "text": "A08-con-borrador.txt",
+        "url": "http://127.0.0.1:52301/salir/",
+        "before": {
+          "shifts": [
+            {
+              "id": "e5c7d869-92fb-4f4b-a197-b8bc92171bde",
+              "seller__email": "seller@audit02a.invalid",
+              "status": "OPEN",
+              "opening_amount": "50.00"
+            }
+          ],
+          "closes": [],
+          "drafts": [
+            {
+              "id": "2347bdd1-841f-468e-bc20-1216a2bc32af",
+              "seller": "seller@audit02a.invalid",
+              "status": "ACTIVE",
+              "discarded_at": null,
+              "lines": [
+                {
+                  "id": "f3b68d48-f31c-4333-ba7f-f525dd143a39",
+                  "product_id": "411b544f-a11c-4dbc-aa6e-8528bdebcab0",
+                  "quantity": 2,
+                  "unit_price": "8.50"
+                }
+              ]
+            }
+          ],
+          "lots": [
+            {
+              "id": "aadc5cb2-49cf-47df-a0f4-fd706ce5602d",
+              "available_quantity": 20
+            }
+          ],
+          "sales_count": 0,
+          "sale_lines_count": 0,
+          "sessions_by_user": {
+            "admin@audit02a.invalid": 0,
+            "seller2@audit02a.invalid": 0,
+            "seller@audit02a.invalid": 1,
+            "warehouse@audit02a.invalid": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "A09-CA02-CANCELAR",
+      "ok": true,
+      "details": {
+        "orm_unchanged": true,
+        "url": "http://127.0.0.1:52301/inicio/"
+      }
+    },
+    {
+      "id": "A10-BORRADOR-CONSERVADO",
+      "ok": true,
+      "details": {
+        "screenshot": "A10-cancelar-conserva.png",
+        "text": "A10-cancelar-conserva.txt",
+        "url": "http://127.0.0.1:52301/ventas/"
+      }
+    },
+    {
+      "id": "A11-CSRF-Y-METODO",
+      "ok": true,
+      "details": {
+        "missing_csrf": 403,
+        "put": 405,
+        "orm_unchanged": true
+      }
+    },
+    {
+      "id": "A12-CA02-CONFIRMAR",
+      "ok": true,
+      "details": {
+        "screenshot": "A12-salida-borrador.png",
+        "text": "A12-salida-borrador.txt",
+        "url": "http://127.0.0.1:52301/",
+        "after": {
+          "shifts": [
+            {
+              "id": "e5c7d869-92fb-4f4b-a197-b8bc92171bde",
+              "seller__email": "seller@audit02a.invalid",
+              "status": "OPEN",
+              "opening_amount": "50.00"
+            }
+          ],
+          "closes": [],
+          "drafts": [
+            {
+              "id": "2347bdd1-841f-468e-bc20-1216a2bc32af",
+              "seller": "seller@audit02a.invalid",
+              "status": "DISCARDED",
+              "discarded_at": "2026-11-09 23:54:59.540434+00:00",
+              "lines": []
+            }
+          ],
+          "lots": [
+            {
+              "id": "aadc5cb2-49cf-47df-a0f4-fd706ce5602d",
+              "available_quantity": 20
+            }
+          ],
+          "sales_count": 0,
+          "sale_lines_count": 0,
+          "sessions_by_user": {
+            "admin@audit02a.invalid": 0,
+            "seller2@audit02a.invalid": 0,
+            "seller@audit02a.invalid": 0,
+            "warehouse@audit02a.invalid": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "A13-ATRAS-CON-BORRADOR",
+      "ok": true,
+      "details": {
+        "screenshot": "A13-ATRAS-CON-BORRADOR.png",
+        "text": "A13-ATRAS-CON-BORRADOR.txt",
+        "url": "http://127.0.0.1:52301/?next=/salir/",
+        "privateVisible": false,
+        "loginVisible": true
+      }
+    },
+    {
+      "id": "A14-ATRAS-VENTA",
+      "ok": true,
+      "details": {
+        "screenshot": "A14-ATRAS-VENTA.png",
+        "text": "A14-ATRAS-VENTA.txt",
+        "url": "http://127.0.0.1:52301/?next=/ventas/",
+        "privateVisible": false,
+        "loginVisible": true
+      }
+    },
+    {
+      "id": "A15-OTRO-VENDEDOR-TURNO",
+      "ok": true,
+      "details": {
+        "screenshot": "A15-turno-ajeno.png",
+        "text": "A15-turno-ajeno.txt",
+        "url": "http://127.0.0.1:52301/caja/abrir/"
+      }
+    },
+    {
+      "id": "A16-OTRO-VENDEDOR-VENTA",
+      "ok": true,
+      "details": {
+        "screenshot": "A16-venta-ajena.png",
+        "text": "A16-venta-ajena.txt",
+        "url": "http://127.0.0.1:52301/ventas/"
+      }
+    },
+    {
+      "id": "A17-OTRO-VENDEDOR-CIERRE",
+      "ok": true,
+      "details": {
+        "screenshot": "A17-cierre-ajeno.png",
+        "text": "A17-cierre-ajeno.txt",
+        "url": "http://127.0.0.1:52301/caja/cerrar/"
+      }
+    },
+    {
+      "id": "A18-POST-AJENO-/caja/abrir/",
+      "ok": true,
+      "details": {
+        "status": 200,
+        "no_mutation": true
+      }
+    },
+    {
+      "id": "A18-POST-AJENO-/ventas/",
+      "ok": true,
+      "details": {
+        "status": 200,
+        "no_mutation": true
+      }
+    },
+    {
+      "id": "A18-POST-AJENO-/caja/cerrar/",
+      "ok": true,
+      "details": {
+        "status": 200,
+        "no_mutation": true
+      }
+    },
+    {
+      "id": "A19-CA03-REINGRESO",
+      "ok": true,
+      "details": {
+        "screenshot": "A19-reingreso.png",
+        "text": "A19-reingreso.txt",
+        "url": "http://127.0.0.1:52301/ventas/"
+      }
+    },
+    {
+      "id": "A20-SIN-TURNO-ADVERTENCIA",
+      "ok": true,
+      "details": {
+        "screenshot": "A20-sin-turno.png",
+        "text": "A20-sin-turno.txt",
+        "url": "http://127.0.0.1:52301/salir/",
+        "open_shifts": 0
+      }
+    },
+    {
+      "id": "A21-SIN-TURNO-SALIDA",
+      "ok": true,
+      "details": {
+        "after": {
+          "shifts": [
+            {
+              "id": "e5c7d869-92fb-4f4b-a197-b8bc92171bde",
+              "seller__email": "seller@audit02a.invalid",
+              "status": "CLOSED",
+              "opening_amount": "50.00"
+            }
+          ],
+          "closes": [
+            {
+              "cash_shift_id": "e5c7d869-92fb-4f4b-a197-b8bc92171bde",
+              "counted_amount": "50.00",
+              "expected_amount": "50.00"
+            }
+          ],
+          "drafts": [
+            {
+              "id": "2347bdd1-841f-468e-bc20-1216a2bc32af",
+              "seller": "seller@audit02a.invalid",
+              "status": "DISCARDED",
+              "discarded_at": "2026-11-09 23:54:59.540434+00:00",
+              "lines": []
+            }
+          ],
+          "lots": [
+            {
+              "id": "aadc5cb2-49cf-47df-a0f4-fd706ce5602d",
+              "available_quantity": 20
+            }
+          ],
+          "sales_count": 0,
+          "sale_lines_count": 0,
+          "sessions_by_user": {
+            "admin@audit02a.invalid": 0,
+            "seller2@audit02a.invalid": 1,
+            "seller@audit02a.invalid": 0,
+            "warehouse@audit02a.invalid": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "A22-SALIDA-admin",
+      "ok": true,
+      "details": {
+        "screenshot": "A22-admin-salida.png",
+        "text": "A22-admin-salida.txt",
+        "url": "http://127.0.0.1:52301/salir/",
+        "conditional_warning": true
+      }
+    },
+    {
+      "id": "A22-SALIDA-warehouse",
+      "ok": true,
+      "details": {
+        "screenshot": "A22-warehouse-salida.png",
+        "text": "A22-warehouse-salida.txt",
+        "url": "http://127.0.0.1:52301/salir/",
+        "conditional_warning": true
+      }
+    },
+    {
+      "id": "A23-AUTH04A-FUTURO",
+      "ok": true,
+      "details": {
+        "classification": "PREVISTO/FUTURO",
+        "both_sessions_active": true,
+        "statuses": [
+          200,
+          200
+        ]
+      }
+    }
+  ],
+  "page_errors": [],
+  "browser_version": "157.0.8103.39",
+  "completed_utc": "2026-11-09T23:55:27.758Z",
+  "passed": 32,
+  "failed": 0
+}
